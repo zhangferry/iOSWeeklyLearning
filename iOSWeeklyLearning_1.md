@@ -1,9 +1,10 @@
 # iOS摸鱼周报 第一期
-iOS摸鱼周报，分享大家开发过程遇到的经验教训及学习内容。成立的目的一个是开发知识碎片化，需要有一个地方去总结并用于回顾；另一个是为了逼迫自己不断学习，内卷日益严重的开发环境下，不进则退。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+
+iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。成立的目的一个是开发知识碎片化，需要有一个地方去总结并用于回顾；另一个是为了提醒自己不断学习，内卷日益严重的开发环境下，不进则退。
 
 虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug遭遇。
-
-如果你感觉这期内容对你有帮助（不用一键三连），欢迎贡献你自己的开发小技巧和解bug遭遇，让下期周报可以如约发出。
 
 周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning，可以查看README了解贡献方式；另可关注公众号：iOS成长之路，后台点击进群交流，联系我们。
 
@@ -64,7 +65,7 @@ print(re3)
 
 脚本主要功能为以下内容：
 
-```shell
+```bash
 validate_upload_ipa() {
   validate=`xcrun altool --validate-app -f ${ipa_file} -t ios --apiKey ${api_key} --apiIssuer ${api_issuer} --verbose ;echo $?`
   echo -e "\033[34m 校验结果: ${validate} \033[0m"
@@ -228,7 +229,7 @@ launchd是macOS第一个启动的进程，它的pid为1，整个系统的其他�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20201220131223.png)
 
-每个章节都会有展开内容，多为直接整，少部分为链接内容。
+每个章节都会有展开内容，多为直接整理，少部分为链接内容。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20201220131326.png)
 
@@ -294,10 +295,14 @@ launchd是macOS第一个启动的进程，它的pid为1，整个系统的其他�
 
 当在Mac上开较多软件时，会发现状态栏总是满满当当，看着很不舒服，也降低我们需要选择特定软件的效率，而Dozer就是为解决这种问题而生的。Dozer可以将系统状态栏按照两个小点分为三部分，对于不想让一直显示的图标，我们可以按住Command拖动图标至第一个小圆点的左侧，之后点击第二个小圆点就可以实现隐藏状态栏的功能了。
 
-之前我的状态栏时这样的：
+之前我的状态栏是这样的：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20201219214427.png)
 
 整理之后就变成了这样：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20201219214453.png)
+
+
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
