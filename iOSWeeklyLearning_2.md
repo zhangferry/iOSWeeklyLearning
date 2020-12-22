@@ -40,7 +40,7 @@ A Companion for SwiftUI is an app that documents all the SwiftUI views, shapes, 
 
 Download on the [Mac App Store](https://apps.apple.com/cn/app/a-companion-for-swiftui/id1485436674?mt=12)
 
-![A Companion for SwiftUI](https://ftp.bmp.ovh/imgs/2020/12/1115eec12b0b6a76.png)
+![A Companion for SwiftUI](https://raw.githubusercontent.com/AlleniCode/MyPics/main/BlogPics/A%20Companion%20SwiftUI.png)
 
 
 
