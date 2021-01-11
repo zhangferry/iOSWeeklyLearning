@@ -100,6 +100,7 @@ git push --mirror git@host/new.git # 使用mirror参数推送至新仓库
 ## 那些bug
 
 ### Cateogry和Extension使用相同名称扩展的问题
+问题来源：[l770826421](https://github.com/l770826421)
 
 **bug出现的现象是什么样的？**
 
@@ -107,7 +108,7 @@ git push --mirror git@host/new.git # 使用mirror参数推送至新仓库
 
 Extension扩展
 
-```
+```objective-c
 @interface LSDeviceInfo (LSWatch)
 @property(nonatomic, assign) LSWatchType type;
 @end
@@ -115,7 +116,7 @@ Extension扩展
 
 Cateogry扩展，并实现了type的getter方法
 
-```
+```objective-c
 @interface LSDeviceInfo (LSWatch)
 - (LSWatchType)type;
 @end
