@@ -1,11 +1,19 @@
 # iOSWeeklyLearning
-iOS周报仓库，欢迎大家共享内容。
+iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
-当前内容在`iOSWeeklyLearning_1.md`中。
+## 往期推荐
 
-## 共享形式
+[第一期]()
 
-当前有两种分享形式
+[第二期]()
+
+[第三期]()
+
+[第四期]()
+
+## 内容贡献方式
+
+当前有两种贡献形式
 
 ### Issue
 
@@ -28,3 +36,7 @@ Pull requests适合熟悉一些markdown语法的同学。
 4、提交代码至你的仓库，然后提交Pull requests至该仓库的`main`分支，等待合入即可
 
 之后的提交不再需要fork，仅需234步骤。
+
+## 联系我
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
