@@ -3,13 +3,13 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 ## 往期推荐
 
-[第一期]()
+[第一期](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/WeeklyLearning/iOSWeeklyLearning_1.md)
 
-[第二期]()
+[第二期](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/WeeklyLearning/iOSWeeklyLearning_2.md)
 
-[第三期]()
+[第三期](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/WeeklyLearning/iOSWeeklyLearning_3.md)
 
-[第四期]()
+[第四期](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/WeeklyLearning/iOSWeeklyLearning_4.md)
 
 ## 内容贡献方式
 
@@ -38,5 +38,7 @@ Pull requests适合熟悉一些markdown语法的同学。
 之后的提交不再需要fork，仅需234步骤。
 
 ## 联系我
+
+欢迎关注公众号：iOS成长之路，还可以进群跟我一起交流学习心得。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
