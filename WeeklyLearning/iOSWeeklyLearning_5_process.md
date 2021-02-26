@@ -146,21 +146,49 @@ Scrum中有三个重要角色：
 
 ## 学习资料
 
+介绍两个学习Python的项目
+
+### [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python "30-Days-Of-Python")
+
+英文仓库、Star数5k
+
+教程按照天数分为30天，每天都会介绍一些Python概念，伴有示例和练习。正如该仓库的介绍说的那样，真要30天完成这些内容的学习对很多人来说都是一个挑战，我们可以根据自己的节奏去学习，即使100天才学完他们都是可以的。
+
+
+
+### [Python-100-Days](https://github.com/jackfrued/Python-100-Days "Python-100-Days")
+
+中文仓库、Star数99.9k
+
+这个是国人写的教程，应该是Python类教程里Star数最高的了。更符合国人的学习习惯，伴有教程介绍和示例代码，而且内容更详尽，不单是Python内容，还会扩展一些前端、后端、深度学习等跟Python相关的知识。
+
+
+
+
+
 
 
 ## 开发利器
 
 推荐好用的开发工具。
 
-应用名称
+### Diagrams.net
 
-**推荐来源**：
+**推荐来源**：zhangferry
 
-**下载地址**：
+**下载地址**：https://www.diagrams.net/
 
-**软件状态**：
+**软件状态**：免费
 
 **使用介绍**
+
+强大且方便的流程图绘制软件，同时支持Web端和桌面端。和[Processon的](https://www.processon.com/)免费版只能添加9个文件的限制，Diagrams.net的文件数量是无限制的，而且它支持的流程图控件比Processon还要更多。
+
+* 支持几乎所有的主流流程图元素
+* 远程存储，文件数量不限，可以存储至Github、Google Drive、Dropbox等地方
+* 支持本地桌面端，可以离线绘制，本地存储
+* 支持链接共享，通过链接查看我们当前绘制的流程图
+* 可以导出为图片、HTML、PDF等多种格式
 
 
 
