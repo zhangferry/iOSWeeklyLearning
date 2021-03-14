@@ -10,7 +10,73 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 开发小技巧收录。
 
+### YYModel解析数据提供默认值
 
+当在OC中使用YYModel解析JSON数据时，对于不存在或者返回`null`的数据都会按照`nil`处理。而有些时候我们可能不希望该字段被置为nil，而是希望提供一个默认值，比如NSString类型，如果无法解析就返回`@""`，空字符串。这在一些需要把特定参数包到NSDictionary或者NSArray里的场景不会引起崩溃，也省去了一些判断判空的代码。
+
+实现这个目的需要两个步骤：
+
+**1、找到特性类型的属性**
+
+可以使用runtime提供的`property_copyAttributeList`方法，主要代码是：
+
+```objectivec
+static const char *getPropertyType(objc_property_t property) {
+    //这里也可以利用YYClassPropertyInfo获取对应数据
+    unsigned int attrCount;
+    objc_property_attribute_t *attrs = property_copyAttributeList(property, &attrCount);
+    if (attrs[0].name[0] == 'T') {
+        return attrs[0].value;
+    }
+    return "";
+}
+```
+
+通过`attrs[0].name[0] == 'T'`找到对应属性的编码类型，取出value，NSString对应的`value`是`@"NSString"`。
+
+其他的编码类型可以参考[这里](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100-SW1 "Objective-TypeEncodings")。
+
+找到需要替换的属性就可以替换了，使用KVC的形式：
+
+```objectivec
+[self setValue:obj forKey:propertyName];
+```
+
+**2、在JSON换Model完成的时候进行默认值替换**
+
+这段函数写到哪里合适呢，在NSObject+YYModel.h里找到了这个方法：
+
+```objectivec
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic;
+```
+
+该方法用于校验转成的Model是否符合预期，执行到这里时Model已经完成了转换，我们就可以在这里调用上面写的默认值替换方法。
+
+**封装使用**
+
+我已经写好了一个实现，代码在[这里](https://github.com/zhangferry/YYModel/blob/master/YYModel/NSObject%2BDefaultValue.m "NSObject+DefaultValue")。
+
+使用的时候我们只需在Model类里引用`NSObject+DefaultValue.h`这个头文件，然后实现这个方法即可：
+
+```objectivec
+- (YYPropertyType)provideDefaultValueType {
+    return YYPropertyTypeNSString;
+}
+```
+
+表明我们需要将类中的所有属性在不存在的时候用空字符串代替。
+
+**备注**：YYModel有个[issue](https://github.com/ibireme/YYModel/issues/66 "YYModel issue 66")是讨论这个问题的，但是听作者的意思，这个扩展不应该放到这个库里，所以也就没有当做PR提过去。
+
+### iOS11支持的架构调整
+
+i386架构现在已经用的很少了，它是intel的32位架构，对于iPhone5及以下的模拟器会使用到。虽然用的不多但很多脚本（例如CocoaPods）还是需要这个架构的支持。Xcode12已经移除了iPhone5的模拟器，如果想打出这个架构的包，默认情况是不可行的。我们可以将Build Setting里`Build Active Architecture Only`里的Debug选项置为NO，这样编译出的包是带所有架构的，包括i386。
+
+但是当我们把包的最低支持版本设置为iOS11及以上，这时编译的包就没有i386了，应该是苹果做了移除该架构的处理。如果我们仍需要导出这个架构，就需要用`xcodebuild`命令指定架构实现了，实现命令如下：
+
+```shell
+$ xcodebuild -project ProjectName.xcodeproj -target TargetName -sdk iphonesimulator -arch i386 -configuration Debug -quiet BUILD_DIR=build
+```
 
 ## 编程概念
 
@@ -50,8 +116,11 @@ SQL和NoSQL没有孰强孰弱，NoSQL也并不会代替SQL，只有结合自身�
 ### 什么是ACID
 ACID是指数据库管理系统在写入或者更新资料时，为保证事务可靠性，所必须具有的四个特性。
 A（atomicity）指原子型：一个事务里的所有操作，要么全部完成，要么全部不完成，不存在中间状态，如果中间过程出错，就回滚到事务开始前的状态。
+
 C（consistency）一致性：在事务开始之前和结束之后，数据库完整性没有被破坏。
+
 I（isolation）隔离性：数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。
+
 D（durability）持久性：事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。
 通常关系型数据库都是遵守这四个特性的，而非关系型数据库通常是打破了四个特性的某几条用于实现高并发、易扩展的能力。
 
@@ -87,7 +156,7 @@ ER图是 Entity Relationship Diagram 的简写，也叫实体关系图，它主�
 
 使用直线将联系的各方进行连接。
 
-![ER图示例](https://cdn.nlark.com/yuque/0/2021/png/2215058/1610244057572-40737c32-1f5b-4daa-ba05-6ea0ef37e8e6.png?x-oss-process=image%2Fresize%2Cw_331)
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210314140748.png)
 
 横线表示键，双矩形表示弱实体，成绩单依赖于学生而不可单独存在。
 
@@ -104,12 +173,38 @@ ER图是 Entity Relationship Diagram 的简写，也叫实体关系图，它主�
 
 ## 优秀博客
 
+[函数节流（Throttle）和防抖（Debounce）解析及其OC实现](https://mp.weixin.qq.com/s/h1MYGTYtYo9pcHmqw6tHBw "函数节流（Throttle）和防抖（Debounce）解析及其OC实现")  -- 来自公众号：iOS成长之路
 
+[2021阿里淘系工程师推荐书单](https://mp.weixin.qq.com/s/zi7qWTg8xGf3GaxW6Czj2A "2021阿里淘系工程师推荐书单") -- 来自公众号：淘系技术
+
+[分析字节跳动解决OOM的在线Memory Graph技术实现](https://juejin.cn/post/6895583288451465230 "分析字节跳动解决OOM的在线Memory Graph技术实现") -- 来自掘金：有点特色
+
+[iOS 稳定性问题治理：卡死崩溃监控原理及最佳实践](https://juejin.cn/post/6937091641656721438 "iOS 稳定性问题治理：卡死崩溃监控原理及最佳实践") -- 来自掘金：字节跳动技术团队
+
+[一个iOS流畅性优化工具](https://juejin.cn/post/6934720152546050078 "一个iOS流畅性优化工具") -- 来自掘金：BangRaJun
+
+[iOS防黑产虚假定位检测技术](https://juejin.cn/post/6938197133908672519 "iOS防黑产虚假定位检测技术") -- 来自掘金：欧阳大哥2013
+
+[【译】Flutter 2.0 正式版发布，全平台 Stable](https://juejin.cn/post/6935621027116531720 "[译]Flutter 2.0 正式版发布，全平台 Stable") -- 来自掘金：恋猫de小郭
+
+[如何做一场高质量的分享](https://juejin.cn/post/6938208336802217991 "如何做一场高质量的分享") -- 来自掘金：相学长
 
 
 ## 学习资料
 
+### iOS开发者资源大全
 
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313212015.png)
+
+**推荐来源**：[cat13954](https://github.com/cat13954)
+
+本文档针对市面上几乎所有和 iOS 开发相关的资源文档进行重新整理、融合和补充，更适合国内开发者。
+
+文档内容包含了数十套教程、数千个框架、不计其数的工具、网站、资料等等，目前总计 4600+，涵盖了和 iOS 学习、日常工作中相关的方方面面，不管是 iOS 新手、还是老手，都是值得收藏的一个资源文档。
+
+对于初学者来说，可以先款速浏览一下该文档，先对 iOS 整个生态提前有个完整的印象，打开眼界，对于今后的学习、工作能节省很多时间，少走一些弯路。
+
+对于老手，本文对内容排版也做了优化，便于查找，对于 github 开源项目，也将 Star 标注出来，以便于筛选，对于支持 Swift 项目也做了相应标记。
 
 ## 工具推荐
 
@@ -129,32 +224,56 @@ ER图是 Entity Relationship Diagram 的简写，也叫实体关系图，它主�
 
 F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色，白天亮度像太阳光，在夜间时会让屏幕看着更像是室内光。
 
-![](https://justgetflux.com/images/flux-windows.jpg)
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210314141348.png)
 
 
 
 ### Kap
 
-**推荐来源**：highway
+**推荐来源**：[highway](https://github.com/HighwayLaw)
 
 **地址**：https://getkap.co/
 
-**软件状态**：免费
+**软件状态**：免费，[开源](https://github.com/wulkano/kap "Kap开源地址")
 
 **使用介绍**
 
-间接高效的屏幕录制软件，可以导出为GIF，MP4，WebM，APNG等格式，而且会有很不错的压缩率。
+一款开源且简洁高效的屏幕录制软件，可以导出为GIF，MP4，WebM，APNG等格式，而且会有很不错的压缩率。
 
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211617.png)
 
+鉴于微信公众号对GIF的两条限制：
+
+1、不能超过300帧
+
+2、大小不能超过2M
+
+我们需要对一些GIF进行修剪和压缩才能上传。
+
+删除帧数有一个简单的方法：用Mac自带的预览功能打开GIF，选中想要删除的帧，按Command + Delete即可删除指定帧。另外对于多个连续帧的选中，可以先单击选中第一帧，再按住Shift单击选中末尾帧，即可选中这个区间连续的所有帧。
+
+对于GIF的压缩，推荐另一个工具：docsmall。
+
+### docsmall
+
+**推荐来源**：[zhangferry](zhangferry.com)
+
+**地址**：https://docsmall.com/gif-compress
+
+**软件状态**：免费，Web端
+
+**使用介绍**
+
+上传需要压缩的gif文件即可
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211739.png)
 
 ## 联系我们
-
-[摸鱼周报第一期](https://zhangferry.com/2020/12/20/iOSWeeklyLearning_1/)
-
-[摸鱼周报第二期](https://zhangferry.com/2021/01/03/iOSWeeklyLearning_2/)
 
 [摸鱼周报第三期](https://zhangferry.com/2021/01/10/iOSWeeklyLearning_3/)
 
 [摸鱼周报第四期](https://zhangferry.com/2021/01/24/iOSWeeklyLearning_4/)
+
+[摸鱼周报第五期](https://zhangferry.com/2021/02/28/iOSWeeklyLearning_5/)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
