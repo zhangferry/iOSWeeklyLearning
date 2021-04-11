@@ -1,4 +1,4 @@
-关于使用 Mac Catalyst 为 iPad App 创建 Mac 版本时遇到的二进制库问题 “building for Mac Catalyst, but linking in object file built for iOS Simulator” 的解决方案。
+Apple 在 WWDC 2019 上宣布了 Mac Catalyst 技术，其作用是将 UIKit 从 iOS 移植到 macOS 上。我们可以在 Xcode 11 及更高版本中使用 Mac Catalyst 技术来为 iPad App 创建 Mac 版本，只需勾选一个复选框即可开启该技术，但实际上成功创建出 Mac 版本并不这么轻松，我们还需要解决编译以及更多的适配问题。这里我们谈一谈过程中基本上都会遇到的二进制库链接问题 “building for Mac Catalyst, but linking in object file built for iOS Simulator” 及其解决方案。
 
 ### 问题原因
 
@@ -12,7 +12,7 @@
 
 **二进制库继续以 .a 或 .framework 的形式**
 
-这样需要将Mac支持的架构合入到FAT库，但通常会遇到这样的问题：
+为解决这一问题，我们需要将 Mac 支持的架构合入到 fat 库，但通常会遇到这样的问题：
 
 ```
 ... and ... have the same architectures (archName) and can't be in the same fat output file
@@ -22,7 +22,7 @@
 
 就比如，Xcode12 以上编译出的 iOS Simulator 是带有 arm64 架构指令的，为解决合成 fat 库报以上错误问题，我们需将 iOS Simulator 的 arm64 去除才能继续执行合并操作。但现在，iOS Simulator 和 Mac Catalyst 的 x86_64 都是必须，该怎么办呢？解决方案是为 Mac Catalyst 编译出 x86_64h，这样就能将其和 iOS Simulator 的 x86_64 进行合并。
 
-但是，如果你直接使用 ：
+但是，如果我们直接使用 ：
 
 ```bash
 xcodebuild  -project "xxx.xcodeproj" -scheme "xxx" -destination  "generic/platform=macOS,variant=Mac Catalyst,name=Any Mac" ARCHS="x86_64h" -configuration "Release" 
@@ -34,36 +34,39 @@ xcodebuild  -project "xxx.xcodeproj" -scheme "xxx" -destination  "generic/platf
 None of the architectures in ARCHS (x86_64h) are valid. Consider setting ARCHS to $(ARCHS_STANDARD) or updating it to include at least one value from VALID_ARCHS (arm64, armv7, armv7s, x86_64). (in target 'xxx' from project 'xxx')
 ```
 
-原因是 Apple 的标准体系架构指令中默认是不包含 x86_64h 的。这就需要在 Build Settings 中给 `Architectures` 添加上 x86_64h，同时需要在` User-Defined > VALID_ARCHS 中` 添加上 x86_64h，因为该列表和 Architectures 列表的交集，才是 Xcode 最终生成二进制包所支持的指令集。
+原因是 Apple 的标准体系架构指令中默认是不包含 x86_64h 的。这就需要在 Build Settings 中给 `Architectures` 添加上 x86_64h，同时需要在` User-Defined > VALID_ARCHS` 中添加上 x86_64h，因为该列表和 Architectures 列表的交集，才是 Xcode 最终生成二进制包所支持的指令集。
 
-完成后你将会在 Xcode 中看到设备多出了 My Mac (Intel (x86_64h)) 选项，这时候即可编译出含 x86_64h 的二进制库。
+完成后我们将会在 Xcode 中看到设备多出了 My Mac (Intel (x86_64h)) 选项，这时候即可编译出含 x86_64h 的二进制库。
 
-最后你就可以合成包含 armv7、armv64、i386、x86_64、x86_64h 的 fat 库，这个库将同时支持 iOS、iOS Simulator 和 Mac Catalyst。
+最后我们就可以合成包含 armv7、armv64、i386、x86_64、x86_64h 的 fat 库，这个库将同时支持 iOS、iOS Simulator 和 Mac Catalyst。
 
-**二进制库转为xcframework形式**
+**二进制库转为 xcframework 形式**
 
-相比较 fat 库，更推荐的方式创建包含 iOS、iOS Simulator 和 Mac Catalyst 三种 Framework 变体的 XCFramework。XCFramework 是由 Xcode 创建的可分发二进制框架，它包含 framework 或 library 的变体，以便可以在多个平台（iOS、macOS、tvOS 和 watchOS）包括在 simulator 上使用。
+相比较 fat 库，更推荐的方式是创建包含 iOS、iOS Simulator 和 Mac Catalyst 三种 Framework 变体的 XCFramework。XCFramework 是由 Xcode 创建的可分发二进制框架，它包含 framework 或 library 的变体，以便可以在多个平台（iOS、macOS、tvOS 和 watchOS）包括在 simulator 上使用。
 
-XCFramework 是目前苹果推荐的支持的一种二进制框架格式。XCFramework 对比 Framework 的优点这里也就不展开了。最后我所需要的 xcframework文件 是以下这样的：
+XCFramework 是目前苹果支持且推荐的一种二进制框架格式。XCFramework 相比 Framework 有很多优点，感兴趣的话可以查阅相关资料。最后我们所需要的 xcframework文件 是以下这样的：
 
 ```swift
 |____xxx.xcframework
 | |____Info.plist
 | |____ios-arm64_armv7
+| | |____xxx.framework
 | |____ios-arm64_i386_x86_64-simulator
+| | |____xxx.framework
 | |____ios-arm64_x86_64-maccatalyst
+| | |____xxx.framework
 ```
 
-#### 方案二：阉割指定架构
+#### 方案二：阉割不支持的库及功能
 
-告诉 Xcode 跳过那些不支持 macOS 架构的库的链接和编译阶段，也就是功能阉割。这是必要的，因为对于自家的二进制库可以很轻松的提供 xcframework，但对于三方库就不太好办了，你只能联系第三方去给你提供支持。还有就是有些库本身就不适用于 mac 端，比如三方分享、闪验等。这时候就需要针对 Mac 端对这些功能进行阉割，那具体要怎么进行阉割呢？
-1. 对于 Apple 自己的库，在我们启用 Mac 支持时，Xcode 会尽可能为我们项目的 Mac 构建版本自动排除不兼容的框架。
+让 Xcode 跳过那些不支持 macOS 架构的库的链接和编译阶段，也就是功能阉割。这是必要的，因为对于自家的二进制库可以很轻松的提供 xcframework，但对于三方库就不太好办了，只能联系第三方来给我们提供支持。还有就是有些库本身就不适用于 Mac 端，比如三方分享、闪验等。这时候就需要针对 Mac 端对这些功能进行阉割，那具体要怎么进行阉割呢？
+1. 对于 Apple 自己的库，在我们启用 Mac Catalyst 技术时，Xcode 会尽可能为我们项目的 Mac 构建版本自动排除不兼容的框架。
 2. 对于手动集成的库，我们可以在 `General - Frameworks, Libraries, and Embedded Content` 中将它的 Platforms 设置为 iOS only。
-3. 我想大家还是比较关心通过 Cocoapods 集成的库怎么限制平台。由于篇幅较长，这里就不展开了，下面直接贴上链接，文章中有手动和自动化两种方式：
+3. 我想大家还是比较关心通过 Cocoapods 集成的库怎么限制平台。由于篇幅较长，这里就不展开了，下面贴上文章链接，文中有手动和自动化两种方式：
    - [https://betterprogramming.pub/macos-catalyst-debugging-problems-using-catalyst-and-cocoapods-579679150fa9](https://betterprogramming.pub/macos-catalyst-debugging-problems-using-catalyst-and-cocoapods-579679150fa9)
    - [https://betterprogramming.pub/why-dont-my-pods-compile-with-mac-catalyst-and-how-can-i-solve-it-ffc3fbec824e](https://betterprogramming.pub/why-dont-my-pods-compile-with-mac-catalyst-and-how-can-i-solve-it-ffc3fbec824e)
 
-阉割完成后，你还需要为使用到这些库的代码包上宏：
+阉割完成后，我们还需要为使用到这些库的代码包上以下宏，以让 Xcode 在选择 Mac 端编译时忽略这些代码，否则会在编译时得到许多的 Undefined symbol 错误。
 ```swift
 // Swift
 #if !targetEnvironment(macCatalyst) 
