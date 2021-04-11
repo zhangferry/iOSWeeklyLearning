@@ -1,15 +1,21 @@
 # iOSWeeklyLearning
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
-## 往期推荐
+## 内容分类
 
-[第一期](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/WeeklyLearning/iOSWeeklyLearning_1.md)
+目前周报形式分为如下模块：
 
-[第二期](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/WeeklyLearning/iOSWeeklyLearning_2.md)
+1、开发Tip。对应开发技巧
 
-[第三期](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/WeeklyLearning/iOSWeeklyLearning_3.md)
+2、那些Bug。对应工作中遇到的Bug以及解决方案
 
-[第四期](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/WeeklyLearning/iOSWeeklyLearning_4.md)
+3、编程概念。开发中遇到的技术概念
+
+4、优秀博客。阅读到的高质量博客
+
+5、学习资料。比较成体系的学习资料介绍
+
+6、工具推荐。好用的开发工具或者三方库
 
 ## 内容贡献方式
 
@@ -25,17 +31,21 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 Pull requests适合熟悉一些markdown语法的同学。
 
-你可以这样共享代码：
+## 招募协作者
 
-1、fork本仓库
+既然命名为周报，还是希望能够周更的。但限于个人精力有限，很难做到周更。希望能得到各位小伙伴的支持，现需要招募多位协作者。
 
-2、在当前对应的md文件添加自己的内容
+希望你能够：
 
-3、rebase远程仓库，如果有冲突的话需要解决冲突
+1、热爱技术，习惯逛各种开发论坛
 
-4、提交代码至你的仓库，然后提交Pull requests至该仓库的`main`分支，等待合入即可
+2、喜欢总结，能够发现有意思的技术细节
 
-之后的提交不再需要fork，仅需234步骤。
+你可以做的是：
+
+1、按照上述分类总结自己感兴趣的内容，如果以上分类都不包含，你那又是很有趣的内容，可以再为你开一个分类。
+
+2、每周日晚上十点是截止时间，好东西要在这之前准备好哦。
 
 ## 联系我
 

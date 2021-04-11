@@ -1,4 +1,8 @@
-Apple 在 WWDC 2019 上宣布了 Mac Catalyst 技术，其作用是将 UIKit 从 iOS 移植到 macOS 上。我们可以在 Xcode 11 及更高版本中使用 Mac Catalyst 技术来为 iPad App 创建 Mac 版本，只需勾选一个复选框即可开启该技术，但实际上成功创建出 Mac 版本并不这么轻松，我们还需要解决编译以及更多的适配问题。这里我们谈一谈过程中基本上都会遇到的二进制库链接问题 “building for Mac Catalyst, but linking in object file built for iOS Simulator” 及其解决方案。
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210411201820.png)
+
+Apple 在 WWDC 2019 上宣布了 Mac Catalyst 技术，其作用是将 UIKit 从 iOS 移植到 macOS 上。我们可以在 Xcode 11 及更高版本中使用 Mac Catalyst 技术来为 iPad App 创建 Mac 版本，只需勾选一个复选框即可开启该技术。但实际上成功创建出 Mac 版本并不这么轻松，我们还需要解决编译以及更多的适配问题。
+
+这里我们谈一谈过程中基本上都会遇到的二进制库链接问题 “building for Mac Catalyst, but linking in object file built for iOS Simulator” 及其解决方案。
 
 ### 问题原因
 
