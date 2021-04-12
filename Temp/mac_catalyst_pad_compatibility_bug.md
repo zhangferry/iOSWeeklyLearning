@@ -81,7 +81,7 @@ XCFramework 是目前苹果支持且推荐的一种二进制框架格式。XCFra
 
 由于它们已经被编译所以仅需链接即可。每当我们运行 pod install 或 pod update 时，CocoaPods 都会为我们生成一个 .xcconfig 配置文件。这些文件保存在我们的项目目录下。
 
-```
+```bash
 ${PODS_ROOT}/Target Support Files/Pods-MyAppTargetName/Pods-MyAppTargetName.debug.xcconfig
 ${PODS_ROOT}/Target Support Files/Pods-MyAppTargetName/Pods-MyAppTargetName.release.xcconfig
 ${PODS_ROOT}/Target Support Files/Pods-MyAppTargetName/Pods-MyAppTargetName.distribute.xcconfig
@@ -89,13 +89,13 @@ ${PODS_ROOT}/Target Support Files/Pods-MyAppTargetName/Pods-MyAppTargetName.dist
 
 在该文件中我们可以看到以下配置内容：
 
-```
+```bash
 OTHER_LDFLAGS = $(inherited) -ObjC -framework "FrameworkThatNotSupportsCatalyst" -framework "FrameworkThatSupportsCatalyst"
 ```
 
 该配置内容所对应的就是 `App Target - Build Settings - Linking - Other Linker Flags` 的配置，我们要做的事情更改这部分内容，将仅支持 iOS 和 iPadOS 的库剥离出来，不让其参与 Mac 平台的链接。
 
-```
+```bash
 OTHER_LDFLAGS = $(inherited) -ObjC -framework "FrameworkThatSupportsCatalyst"
 
 OTHER_LDFLAGS[sdk=iphone*] = $(inherited) -ObjC -framework "FrameworkThatNotSupportsCatalyst"
@@ -107,7 +107,7 @@ OTHER_LDFLAGS[sdk=iphone*] = $(inherited) -ObjC -framework "FrameworkThatNotSupp
 
 然后在 Podfile 中添加以下内容：
 
-```
+```bash
 # Podfile
 load 'remove_unsupported_libraries.rb'
 target 'My target' do   
@@ -131,7 +131,7 @@ end
 
    - [https://betterprogramming.pub/macos-catalyst-debugging-problems-using-catalyst-and-cocoapods-579679150fa9](https://betterprogramming.pub/macos-catalyst-debugging-problems-using-catalyst-and-cocoapods-579679150fa9)
    - [https://betterprogramming.pub/why-dont-my-pods-compile-with-mac-catalyst-and-how-can-i-solve-it-ffc3fbec824e](https://betterprogramming.pub/why-dont-my-pods-compile-with-mac-catalyst-and-how-can-i-solve-it-ffc3fbec824e)
-   
+
 
 阉割完成后，我们还需要为使用到这些库的代码包上以下宏，以让 Xcode 在选择 Mac 端编译时忽略这些代码，否则会在编译时得到许多的 Undefined symbol 错误。
 
@@ -150,3 +150,4 @@ end
 ## 写在最后
 
 使用 Mac Catalyst 技术来为 iPad App 创建 Mac 版本的过程中还有很多的适配问题需要处理，在研发收尾后我会发布一篇比较全面的，希望对大家有帮助。
+
