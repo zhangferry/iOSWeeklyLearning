@@ -103,7 +103,7 @@ OTHER_LDFLAGS[sdk=iphone*] = $(inherited) -ObjC -framework "FrameworkThatNotSupp
 
 **流程自动化**
 
-你可以在这里获取脚本 [Hi-iOS/ForMacCatalyst](https://github.com/Hi-iOS/ForMacCatalyst)，并将该脚本放在 Podfile 的同一目录下。
+你可以在这里获取脚本 [fermoya/remove_unsupported_libraries.rb](https://gist.github.com/fermoya/f9be855ad040d5545ae3cb254ed201e4)，并将该脚本放在 Podfile 的同一目录下。
 
 然后在 Podfile 中添加以下内容：
 
