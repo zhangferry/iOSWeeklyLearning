@@ -170,3 +170,170 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 在iOS开发过程中的UI调试常常是让人痛苦的，因为不支持热更新，我们稍微改动一点地方就需要编译整个项目重新运行，这无疑很浪费时间。而Sherlock就是用于解决这个问题的工具（仅支持模拟器），我们可以实时修改各个控件的UI属性，并进行查看最终效果。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124195019.png)
+
+### Diagrams.net
+
+**推荐来源**：[zhangferry](zhangferry.com)
+
+**地址**：https://www.diagrams.net/
+
+**软件状态**：免费，[开源](https://github.com/jgraph/drawio)
+
+**使用介绍**
+
+强大且方便的流程图绘制软件，同时支持Web端和桌面端。和[Processon的](https://www.processon.com/)免费版只能添加9个文件的限制，Diagrams.net的文件数量是无限制的，而且它支持的流程图控件比Processon还要更多。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210227191005.png)
+
+* 支持几乎所有的主流流程图元素
+* 远程存储，文件数量不限，可以存储至Github、Google Drive、Dropbox等地方
+* 支持本地桌面端，可以离线绘制，本地存储
+* 支持链接共享，通过链接查看我们当前绘制的流程图
+* 可以导出为图片、HTML、PDF等多种格式
+
+### Github1s.com
+
+**推荐来源**：[zhangferry](zhangferry.com)
+
+**地址**：https://github.com/conwnet/github1s
+
+这个工具可以使我们访问github的仓库就像直接在VSCode中打开一样，使用方法非常简单，就是将网站域名换成github1s，以Swift仓库为例，访问：https://github1s.com/apple/swift，得到的结果如下。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210228152659.png)
+
+我们可以像在VSCode里一样，直接在浏览器里查看仓库代码。
+
+### F.lux
+
+**推荐来源**：[zhangferry](zhangferry.com)
+
+**地址**：https://justgetflux.com/
+
+**软件状态**：免费
+
+**使用介绍**
+
+电脑的显示器亮度一般是全天保持不变的，这个亮度对于白天使用来说没有任何问题，但是对于夜间使用的话就会有些刺眼，出于对视力的保护，夜间应该让屏幕亮度低一些，暖一些。
+
+F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色，白天亮度像太阳光，在夜间时会让屏幕看着更像是室内光。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210314141348.png)
+
+
+
+### Kap
+
+**推荐来源**：[highway](https://github.com/HighwayLaw)
+
+**地址**：https://getkap.co/
+
+**软件状态**：免费，[开源](https://github.com/wulkano/kap "Kap开源地址")
+
+**使用介绍**
+
+一款开源且简洁高效的屏幕录制软件，可以导出为GIF，MP4，WebM，APNG等格式，而且会有很不错的压缩率。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211617.png)
+
+鉴于微信公众号对GIF的两条限制：
+
+1、不能超过300帧
+
+2、大小不能超过2M
+
+我们需要对一些GIF进行修剪和压缩才能上传。
+
+删除帧数有一个简单的方法：用Mac自带的预览功能打开GIF，选中想要删除的帧，按Command + Delete即可删除指定帧。另外对于多个连续帧的选中，可以先单击选中第一帧，再按住Shift单击选中末尾帧，即可选中这个区间连续的所有帧。
+
+对于GIF的压缩，推荐另一个工具：docsmall。
+
+### docsmall
+
+**推荐来源**：[zhangferry](zhangferry.com)
+
+**地址**：https://docsmall.com/gif-compress
+
+**软件状态**：免费，Web端
+
+**使用介绍**
+
+上传需要压缩的gif文件即可
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211739.png)
+
+### P4Merge
+
+**推荐来源**：zhangferry
+
+**地址**：https://www.perforce.com/downloads/visual-merge-tool
+
+**软件状态**：对开发者免费
+
+**使用介绍**
+
+非常强大的可视化diff工具，如果你嫌[Kaleidoscope](https://kaleidoscope.app/)太贵的话，可以用它做代替品。我们可以把它集成进git，通常diff工具有两个作用一个是作为difftool，一个是作为mergetool。配置流程如下：
+
+```shell
+# difftool
+$ git config --global diff.tool p4merge
+$ git config --global difftool.p4merge.cmd \
+"/Applications/p4merge.app/Contents/Resources/launchp4merge \$LOCAL \$REMOTE"
+# mergetool
+$ git config --global merge.tool p4merge
+$ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/MacOS/p4merge $PWD/$BASE $PWD/$LOCAL $PWD/$REMOTE"
+```
+
+以下是作为mergetool的界面，下面内容为最终合并的内容，我们可以通过右侧的扩展按钮选择当前应该选择哪个分支的内容。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210327200304.png)
+
+## ProfilesManager
+
+**推荐来源**：[jcexk](https://github.com/jcexk)
+
+**地址**：https://github.com/shaojiankui/ProfilesManager/releases
+
+**软件状态**：免费，开源
+
+**使用介绍**
+
+一款Provisioning Profile管理工具，ProfilesManager特点如下：
+
+1. 方便快捷：支持查看电脑中所有的描述文件
+2. 一目了然：通过美化描述文件名，不再是难以辨认的'uuid+ext'格式
+3. 功能强大：支持查看ipa中描述文件和info.plist信息
+4. 结构清晰：通过树状结构查看描述文件包含的详细信息，如：创建时间、失效时间和包含的移动设备信息等
+5. 免费使用：而在App Store上类似功能的软件居然还要收费？？？
+6. 可排序和过滤：通过关键词筛选过滤找到想要的文件，也可以通过头部标签排序文件
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210327112346.png)
+
+### Cleaner for Xcode
+
+**推荐来源**：zhangferry
+
+**地址**：https://github.com/waylybaye/XcodeCleaner-SwiftUI
+
+**软件状态**：开源版本免费，AppStore版本$0.99
+
+**使用介绍**
+
+这个应用可以帮助你清除遗留以及废弃文件，从而极大的节省硬盘空间。 你可以每月或者每周运行一次进行清理。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210410105340.png)
+
+### JSONExport
+
+**推荐来源**：春起梨花开
+
+**地址**：https://github.com/Ahmed-Ali/JSONExport
+
+**软件状态**：免费，开源
+
+**使用介绍**
+
+支持JSON文件直接导出为开发中使用的Model类型。支持Java，Objective-C，Swift等语言的数据模型。
+
+对于一些适配CoreData、Realm的特殊格式也可以完整适配。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210410123533.png)

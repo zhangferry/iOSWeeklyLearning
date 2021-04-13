@@ -65,3 +65,58 @@
 一个非常有趣的讲解设计模式、SOLID原则、重构原则的网站。支持八种语言，有很多丰富的配图帮助我们理解这些重要的编程概念。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124190413.png)
+
+### [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python "30-Days-Of-Python")
+
+简介：英文仓库、Star数5k
+
+教程按照天数分为30天，每天都会介绍一些Python概念，伴有示例和练习。正如该仓库的介绍说的那样，真要30天完成这些内容的学习对很多人来说都是一个挑战，我们可以根据自己的节奏去学习，即使100天才学完他们都是可以的。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210228174503.png)
+
+### [Python-100-Days](https://github.com/jackfrued/Python-100-Days "Python-100-Days")
+
+简介：中文仓库、Star数99.9k
+
+这个是国人写的教程，应该是Python类教程里Star数最高的了。更符合国人的学习习惯，伴有教程介绍和示例代码，而且内容更详尽，不单是Python内容，还会扩展一些前端、后端、深度学习等跟Python相关的知识。
+
+### 斯坦福iOS开发教程
+
+推荐来源：[tzqiang](https://github.com/tzqiang)
+
+地址：https://cs193p.sites.stanford.edu/
+
+这个斯坦福的iOS开发系列教程每年都会更新，最早之前还是OC语言，还是再讲MVC。现在已经更新到Swift和MVVM了，并使用SwiftUI 进行视图搭建。除视频需要到Youtube观看外，其他内容可以在国内网络环境访问。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210227190060.png)
+
+### iOS开发者资源大全
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313212015.png)
+
+**推荐来源**：[cat13954](https://github.com/cat13954)
+
+本文档针对市面上几乎所有和 iOS 开发相关的资源文档进行重新整理、融合和补充，更适合国内开发者。
+
+文档内容包含了数十套教程、数千个框架、不计其数的工具、网站、资料等等，目前总计 4600+，涵盖了和 iOS 学习、日常工作中相关的方方面面，不管是 iOS 新手、还是老手，都是值得收藏的一个资源文档。
+
+对于初学者来说，可以先款速浏览一下该文档，先对 iOS 整个生态提前有个完整的印象，打开眼界，对于今后的学习、工作能节省很多时间，少走一些弯路。
+
+对于老手，本文对内容排版也做了优化，便于查找，对于 github 开源项目，也将 Star 标注出来，以便于筛选，对于支持 Swift 项目也做了相应标记。
+
+### 一个人工智能的诞生
+
+地址：https://jibencaozuo.com/product/1/episode/0。
+
+由回形针制作的人工智能交互视频课程，对，可交互的视频，这种可交互性作为学习还是非常棒的。视频质量很高，趣味性也很强。你可以1元体验第一个章节，如果认为很不错，需要支付49元解锁剩余内容。
+
+作者在每个章节都会设计一些问题，答对了才能进到下一章节。前面几节在讲人工智能学习的一些概念和核心数学思想，最后的两个章节属于练习题，我感觉还是有点难的。但课程整体还是很有意思的，如果想了解可以买来看看。下图是课程的目录：
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210328103223.png)
+
+### Can Balkaya
+
+Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](https://canbalkaya.blog/ "Can Balkaya")，经常发布一些介绍Swift特性相关的文章，质量都很高。我在别的地方看到有人翻译过里面部分文章，说明它还是有一定关注度的，如果英文稍微好些的可以直接订阅这个专栏来看。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210411102014.png)
+
