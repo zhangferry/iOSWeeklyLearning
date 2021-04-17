@@ -44,7 +44,13 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 ## 学习资料
 
+1、[CS-Notes](http://www.cyc2018.xyz/ "CS-Notes")
 
+> 该「Notes」包含技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++等内容，知识结构简练，内容扎实。该仓库的内容皆为作者及 Contributors 的原创，目前在 Github 上获 126k Stars。
+
+2、[Learn Git Branching](https://oschina.gitee.io/learn-git-branching/ "Learn Git Branching")
+
+> 入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
 
 ## 工具推荐
 
