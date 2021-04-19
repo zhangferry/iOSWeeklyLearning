@@ -8,7 +8,24 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 ## 开发Tips
 
-开发小技巧收录。
+不知道有多少同学困惑于Xcode 12的新tab模式，反正我是觉得这种嵌套的tab形式还不如旧版简洁明了。
+
+![](https://www.jessesquires.com/img/xcode12-tabs-with-tabs.png)
+
+想切回旧版本tab模式的，可以按照此文操作：
+[How to fix the incomprehensible tabs in Xcode 12](https://www.jessesquires.com/blog/2020/07/24/how-to-fix-the-incomprehensible-tabs-in-xcode-12/)
+![](https://www.jessesquires.com/img/xcode12-tabs-prefs.png)
+
+通过实验发现，Xcode 12下的“子tab”有以下几个特点：
+> A.当单击文件打开时，tab将显示为斜体，如果双击，则以普通字体显示。斜体表示为“临时”tab，普通字体表示为“静态”tab；
+
+> B.双击tab顶部文件名，或者对“临时”tab编辑后，“临时”tab将切换为“静态”tab；
+
+> C.如果当前位于“静态”tab，新打开的文件会新起一个tab，并排在当前tab之后；
+
+> D.新打开的“临时”文件会在原有的“临时”tab中打开，而不会新起一个“临时”tab；
+
+> E.使用Command + Shift + O打开的是“临时”文件。
 
 
 
