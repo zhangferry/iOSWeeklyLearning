@@ -77,7 +77,7 @@ Rails的两大哲学是：不要自我重复（DRY），多约定，少配置。
 
 [rbenv](https://github.com/rbenv/rbenv "rbenv") 和 RVM 都是目前流行的 Ruby 环境管理工具，它们都能提供不同版本的 Ruby 环境管理和切换。
 
-进行Ruby版本管理的时候更推荐rbenv的方式，当前rbenv有两种安装方式：
+进行 Ruby 版本管理的时候更推荐 rbenv 的方式，你也可以参考 rbenv 官方的 [Why choose rbenv over RVM?](https://github.com/rbenv/rbenv/wiki/Why-rbenv%3F "Why choose rbenv over RVM?")，当前 rbenv 有两种安装方式：
 
 **手动安装**
 
@@ -94,10 +94,6 @@ git clone git://github.com/AndorChen/rbenv-china-mirror.git ~/.rbenv/plugins/rbe
 ```
 
 **homebrew安装**
-
-至于选择哪个看个人习惯，你可以参考 rbenv 官方的 [Why choose rbenv over RVM?](https://github.com/rbenv/rbenv/wiki/Why-rbenv%3F)
-
-你可以使用 Homebrew 来安装 rbenv。
 
 ```bash
 $ brew install rbenv
@@ -155,13 +151,12 @@ gem "fastlane", "> 2.174.0"
 
 然后执行 `bundle install` 来安装 Gem。 Bundler 会自动生成一个 Gemfile.lock 文件来锁定所安装的 Gem 的版本。
 
-这一步只是安装指定版本的Gem，使用的时候我们需要在Gem命令前增加`bundle exec`用于指定通过bundle进行执行。
+这一步只是安装指定版本的 Gem，使用的时候我们需要在 Gem 命令前增加 `bundle exec`，以保证我们使用的是项目级别的 Gem 版本（也就是 Gemfile.lock 文件中锁定的 Gem 版本），而不是操作系统级别的 Gem 版本。
 
 ```bash
 $ bundle exec pod install
 $ bundle exec fastlane beta
 ```
-
 
 
 
