@@ -195,17 +195,34 @@ $ bundle exec fastlane beta
 
 ## 工具推荐
 
-推荐好用的工具。
+### OpenInTerminal
+**推荐来源**：brave723
 
-### Application Name
+**地址**：https://github.com/Ji4n1ng/OpenInTerminal
 
-**推荐来源**：
-
-**地址**：
-
-**软件状态**：
+**软件状态**：免费 
 
 **使用介绍**
+
+OpenInTerminal 是一款开发辅助工具，可以增强 Finder 工具栏以及右键菜单增加在当前位置打开终端的功能。另外还支持：在编辑器中打开当前目录以及在编辑器中打开选择的文件夹或文件
+![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif)
+##### 核心功能
+* 在终端（或编辑器）中打开目录或文件
+* 打开自定义应用
+* 支持 终端iTerm
+
+### SnippetsLib
+**推荐来源**：brave723
+
+**地址**: https://apps.apple.com/cn/app/snippetslab/id1006087419?mt=12
+
+**软件状态**：$9.99
+
+**使用介绍**
+
+SnippetsLab是一款mac代码片段管理工具，使用SnippetsLab可以提高工作效率。它可以帮助您收集和组织有价值的代码片段，您可以随时轻松访问它们
+
+![](https://www.renfei.org/snippets-lab/images/Landing/themes/mojave-dark.jpg)
 
 
 
