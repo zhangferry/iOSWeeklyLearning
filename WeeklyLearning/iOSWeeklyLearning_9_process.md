@@ -9,6 +9,9 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 ## 开发Tips
 
 ### 关于Xcode 12的Tab
+
+贡献者：[highway](https://www.jianshu.com/u/1e59b1fe9df8)
+
 不知道有多少同学困惑于Xcode 12的新tab模式，反正我是觉得这种嵌套的tab形式还不如旧版简洁明了。
 
 ![](https://www.jessesquires.com/img/xcode12-tabs-with-tabs.png)
@@ -28,11 +31,31 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 >
 > E.使用Command + Shift + O打开的是“临时”文件。
 
+### modalPresentationCapturesStatusBarAppearance
 
+贡献者：[beatman423](https://github.com/beatman423)
+
+这边遇到的问题是非全屏present一个导航控制器的时候，咋也控制不了这个导航控制器以及其子控制器的状态栏的style和hidden。后来找到了UIViewController的这个属性，将其设置为YES就可以了。
+
+该属性的描述是：
+
+> Specifies whether a view controller, presented non-fullscreen, takes over control of status bar appearance from the presenting view controller. Defaults to NO.
+
+### 使用Category重写系统方法
+
+贡献者：[ 反向抽烟](opooc.com)
+
+**背景**：想为UITextField提供单独的属性placeholderColor，用来直接设置占位符的颜色，这个时候使用分类设置属性，重写setter和getter,set中直接使用KVC的方式对属性的颜色赋值；这个时候就有个bug,如果在其他类中使用UITextField这个控件的时候，先设置颜色，再设置文字，会发现占位符的颜色没有发生改变。
+
+**解决思路**：首先想到UITextField中的Label是使用的懒加载，当有文字设置的时候，就会初始化这个label，这时候就考虑先设置颜色根本就没起到作用；
+
+**解决办法**：在分类中placeholderColor的setter方法中，使用runtime的objc_setAssociatedObject先把颜色保存起来，这样就能保证先设置的颜色不会丢掉，然后需要重写placeholder的setter方法，让在设置完文字的时候，拿到先前保存的颜色，故要在placeholderColor的getter中用`objc_getAssociatedObject`取，这里有个问题点，在分类中重写placeholder的setter方法的话，在外面设置placeholder的时候，根本不走自己重写的这个setPlaceholder方法，而走系统自带的，这里我还没研究。然后为了解决这个问题，我自己写了个`setDsyPlaceholder方法`，在setDsyPlaceholder里面对标签赋值，同时添加已经保存好的颜色，然后与setPlaceholder做交换，bug修复。
 
 ## 那些Bug
 
 ### fishhook在某些场景下只生效一次
+
+贡献者：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
 
 **问题背景**
 
@@ -48,6 +71,8 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 解决方案：见https://github.com/facebook/fishhook/issues/36
 
 ## 编程概念
+
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
 
 ### 什么是 Homebrew
 
@@ -175,6 +200,9 @@ $ bundle exec fastlane beta
 
 
 ## 优秀博客
+
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
+
 1、[我在Uber亲历的最严重的工程灾难](https://mp.weixin.qq.com/s/O1haH28cTr0tkhRAnVZQ6g "我在Uber亲历的最严重的工程灾难") -- 来自公众号：infoQ
 
 >准备或者已经接入Swfit可以先了解下
@@ -195,16 +223,17 @@ $ bundle exec fastlane beta
 
 >业务的发展引起工程架构做出调整，文章介绍了抖音的工程架构演进历程。作为日活过亿的产品，其工程架构的演变对多数APP来说都具有一定的借鉴意义。
 
-
 ## 学习资料
+
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
 1、[CS-Notes](http://www.cyc2018.xyz/ "CS-Notes")
 
-> 该「Notes」包含技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++等内容，知识结构简练，内容扎实。该仓库的内容皆为作者及 Contributors 的原创，目前在 Github 上获 126k Stars。
+该「Notes」包含技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++等内容，知识结构简练，内容扎实。该仓库的内容皆为作者及 Contributors 的原创，目前在 Github 上获 126k Stars。
 
 2、[Learn Git Branching](https://oschina.gitee.io/learn-git-branching/ "Learn Git Branching")
 
-> 入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
+入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
 
 ## 工具推荐
 
