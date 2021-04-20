@@ -205,23 +205,27 @@ $ bundle exec fastlane beta
 
 1、[我在Uber亲历的最严重的工程灾难](https://mp.weixin.qq.com/s/O1haH28cTr0tkhRAnVZQ6g "我在Uber亲历的最严重的工程灾难") -- 来自公众号：infoQ
 
->准备或者已经接入Swfit可以先了解下
+准备或者已经接入Swfit可以先了解下
 
 2、[美团 iOS 工程 zsource 命令背后的那些事儿](https://mp.weixin.qq.com/s/3qcv1NW4-ce87cvAS4Jsxg "美团 iOS 工程 zsource 命令背后的那些事儿") -- 来自公众号： 美团技术团队
 
->美团技术团队历史文章，对DWARF文件的另一种应用。文章还原了作者解决问题的思路历程，除了技术本身外，解决问题的思路历程也是值得借鉴的。
+美团技术团队历史文章，对DWARF文件的另一种应用。文章还原了作者解决问题的思路历程，除了技术本身外，解决问题的思路历程也是值得借鉴的。
 
 3、[NSObject方法调用过程详细分析](https://juejin.cn/post/6844904000450478087 "NSObject方法调用过程详细分析") -- 来自掘金：maniac_kk
 
->字节跳动maniac_kk同学的一篇优质文章，无论深度还是广度都是非常不错的，很多底层知识融会贯通，值得细细品味
+字节跳动maniac_kk同学的一篇优质文章，无论深度还是广度都是非常不错的，很多底层知识融会贯通，值得细细品味
 
 4、[iOS疑难Crash的寄存器赋值追踪排查技术](https://www.jianshu.com/p/958d4f109bb0 "iOS疑难Crash的寄存器赋值追踪排查技术") -- 来自简书：欧阳大哥
 
->在缺少行号信息时如何通过寄存器赋值推断出具体的问题代码，具有很高的参考价值，在遇到疑难问题时可以考虑是否能借鉴此思路
+在缺少行号信息时如何通过寄存器赋值推断出具体的问题代码，具有很高的参考价值，在遇到疑难问题时可以考虑是否能借鉴此思路
 
 5、[抖音 iOS 工程架构演进](https://juejin.cn/post/6950454120826765325 "抖音 iOS 工程架构演进") -- 来自掘金：字节跳动技术团队
 
->业务的发展引起工程架构做出调整，文章介绍了抖音的工程架构演进历程。作为日活过亿的产品，其工程架构的演变对多数APP来说都具有一定的借鉴意义。
+业务的发展引起工程架构做出调整，文章介绍了抖音的工程架构演进历程。作为日活过亿的产品，其工程架构的演变对多数APP来说都具有一定的借鉴意义。
+
+6、[Swift的一次函数式之旅](https://mp.weixin.qq.com/s/yiF0NwXffrkunGOieWbIRA "Swift的一次函数式之旅") -- 来自公众号：搜狐技术产品
+
+编程本身是抽象的，编程范例就是我们如何抽象这个世界的方法，而函数式编程就是其中一个编程范例。在函数式编程的世界里一切皆函数，那如何利用这个思想解决实际问题呢？文中给出了两个有趣的例子，希望可以帮你解决对函数式编程的疑惑。
 
 ## 学习资料
 
@@ -237,26 +241,26 @@ $ bundle exec fastlane beta
 
 ## 工具推荐
 
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
 ### OpenInTerminal
-**推荐来源**：brave723
 
 **地址**：https://github.com/Ji4n1ng/OpenInTerminal
 
-**软件状态**：免费 
+**软件状态**：免费，开源
 
 **使用介绍**
 
 OpenInTerminal 是一款开发辅助工具，可以增强 Finder 工具栏以及右键菜单增加在当前位置打开终端的功能。另外还支持：在编辑器中打开当前目录以及在编辑器中打开选择的文件夹或文件
 ![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif)
+
 ##### 核心功能
 * 在终端（或编辑器）中打开目录或文件
 * 打开自定义应用
 * 支持 终端iTerm
 
 ### SnippetsLib
-**推荐来源**：brave723
-
-**地址**: https://apps.apple.com/cn/app/snippetslab/id1006087419?mt=12
+**地址**：https://apps.apple.com/cn/app/snippetslab/id1006087419?mt=12
 
 **软件状态**：$9.99
 
@@ -270,12 +274,12 @@ SnippetsLab是一款mac代码片段管理工具，使用SnippetsLab可以提高�
 
 ## 联系我们
 
-[摸鱼周报第三期](https://zhangferry.com/2021/01/10/iOSWeeklyLearning_3/)
-
-[摸鱼周报第四期](https://zhangferry.com/2021/01/24/iOSWeeklyLearning_4/)
-
 [摸鱼周报第五期](https://zhangferry.com/2021/02/28/iOSWeeklyLearning_5/)
 
 [摸鱼周报第六期](https://zhangferry.com/2021/03/14/iOSWeeklyLearning_6/)
+
+[摸鱼周报第七期](https://zhangferry.com/2021/03/28/iOSWeeklyLearning_7/)
+
+[摸鱼周报第八期](https://zhangferry.com/2021/04/11/iOSWeeklyLearning_8/)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
