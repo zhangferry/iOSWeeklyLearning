@@ -14,11 +14,11 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 不知道有多少同学困惑于Xcode 12的新tab模式，反正我是觉得这种嵌套的tab形式还不如旧版简洁明了。
 
-![](https://www.jessesquires.com/img/xcode12-tabs-with-tabs.png)
+![](https://cdn.jsdelivr.net/gh/zhangferry/Images/blog/xcode12-tabs-with-tabs.png)
 
 想切回旧版本tab模式的，可以按照此文操作：
-[How to fix the incomprehensible tabs in Xcode 12](https://www.jessesquires.com/blog/2020/07/24/how-to-fix-the-incomprehensible-tabs-in-xcode-12/)
-![](https://www.jessesquires.com/img/xcode12-tabs-prefs.png)
+[How to fix the incomprehensible tabs in Xcode 12](https://www.jessesquires.com/blog/2020/07/24/how-to-fix-the-incomprehensible-tabs-in-xcode-12/ "How to fix the incomprehensible tabs in Xcode 12")
+![](https://cdn.jsdelivr.net/gh/zhangferry/Images/blog/xcode12-tabs-prefs.png)
 
 通过实验发现，Xcode 12下的“子tab”有以下几个特点：
 > A.当单击文件打开时，tab将显示为斜体，如果双击，则以普通字体显示。斜体表示为“临时”tab，普通字体表示为“静态”tab；
@@ -76,13 +76,19 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 ### 什么是 Homebrew
 
-Homebrew 是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。
+[Homebrew](https://brew.sh/index_zh-cn "Homebrew") 是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。
 
-你可以在这里获取安装脚本：[https://zhuanlan.zhihu.com/p/111014448](https://zhuanlan.zhihu.com/p/111014448)
+安装方法：
 
-![](https://cdn.nlark.com/yuque/0/2021/png/12376889/1618642506356-a9d7bd46-0104-4124-a44c-73f50ad76581.png#clientId=uf4f204d0-23e1-4&from=paste&height=253&id=u3fa0f3bb&margin=%5Bobject%20Object%5D&originHeight=253&originWidth=420&originalType=binary&size=80150&status=done&style=none&taskId=u9d2e2517-8f7f-4b0a-8d0f-919a130320d&width=420)
+```bash
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-参考资料：[https://brew.sh/index_zh-cn](https://brew.sh/index_zh-cn)
+国内镜像：
+
+```bash
+$ /bin/bash -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+```
 
 ### 什么是 Ruby
 
@@ -94,9 +100,13 @@ Ruby的设计和Objective-C有些类似，都是受Smalltalk的影响。而这�
 
 较为知名的几个由Ruby写成的iOS开发工具有：CocoaPods、Fastlane、xcpretty。那这些库为啥使用Ruby开来发呢？
 
-CocoaPods的主要作者Eloy Duran说除了上面提到的Smalltalk影响，还有就是使用Ruby可以在Bundler和RubyGem之间分享代码，早起阶段MacRuby提供了很多解析Xcode projects的方法，作为CLI工具，Ruby具有强大的字符串处理能力。
+来自CocoaPods的主要作者Eloy Duran的说法：
 
-Fastlane工具链的作者之一Felix考虑的则是，已经有部分iOS工具选择了Ruby，像是CocoaPods以及给Fastlane开发带来灵感的nomad-cli。使用Ruby将会更容易与这些工具进行对接。
+> Ruby和Objective-C具有很多来自Smalltalk的特性，有一定相似性；使用Ruby可以在Bundler和RubyGem之间分享代码；早期阶段MacRuby提供了很多解析Xcode projects的方法；作为CLI工具，Ruby具有强大的字符串处理能力。
+
+来自Fastlane工具链的作者之一Felix的说法：
+
+> 已经有部分iOS工具选择了Ruby，像是CocoaPods以及给Fastlane的开发带来灵感的nomad-cli。使用Ruby将会更容易与这些工具进行对接。
 
 [参考来源：A History of Ruby inside iOS Development](https://medium.com/xcblog/a-history-of-ruby-inside-ios-development-427b5a09f91e "A History of Ruby inside iOS Development")
 
@@ -172,8 +182,6 @@ RubyGems 还提供了 Ruby 组件的托管服务，可以集中式的查找和�
 
 在默认情况下 Gems 总是下载 library 的最新版本，这无法确保所安装的 library 版本符合我们预期。因此还需要 Gem Bundler 配合。
 
-![](https://cdn.nlark.com/yuque/0/2021/png/12376889/1618646566177-110f87c1-d2a4-4ef0-b7ee-b9a6b09c389d.png#clientId=uf4f204d0-23e1-4&from=paste&height=200&id=u9b1b0575&margin=%5Bobject%20Object%5D&originHeight=200&originWidth=200&originalType=binary&size=69528&status=done&style=none&taskId=uc8a57254-3e9e-4af4-b745-b9dc43a502f&width=200)
-
 ### 什么是 Bundler
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210419225753.png)
@@ -239,6 +247,8 @@ $ bundle exec fastlane beta
 
 入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
 
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210420215429.png)
+
 ## 工具推荐
 
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
@@ -268,7 +278,7 @@ OpenInTerminal 是一款开发辅助工具，可以增强 Finder 工具栏以及
 
 SnippetsLab是一款mac代码片段管理工具，使用SnippetsLab可以提高工作效率。它可以帮助您收集和组织有价值的代码片段，您可以随时轻松访问它们
 
-![](https://www.renfei.org/snippets-lab/images/Landing/themes/mojave-dark.jpg)
+![](https://cdn.jsdelivr.net/gh/zhangferry/Images/blog/mojave-dark.jpg)
 
 
 
