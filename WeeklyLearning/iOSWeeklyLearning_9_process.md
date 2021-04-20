@@ -8,6 +8,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 ## 开发Tips
 
+### 关于Xcode 12的Tab
 不知道有多少同学困惑于Xcode 12的新tab模式，反正我是觉得这种嵌套的tab形式还不如旧版简洁明了。
 
 ![](https://www.jessesquires.com/img/xcode12-tabs-with-tabs.png)
