@@ -41,16 +41,6 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 > Specifies whether a view controller, presented non-fullscreen, takes over control of status bar appearance from the presenting view controller. Defaults to NO.
 
-### 使用Category重写系统方法
-
-贡献者：[ 反向抽烟](opooc.com)
-
-**背景**：想为UITextField提供单独的属性placeholderColor，用来直接设置占位符的颜色，这个时候使用分类设置属性，重写setter和getter,set中直接使用KVC的方式对属性的颜色赋值；这个时候就有个bug,如果在其他类中使用UITextField这个控件的时候，先设置颜色，再设置文字，会发现占位符的颜色没有发生改变。
-
-**解决思路**：首先想到UITextField中的Label是使用的懒加载，当有文字设置的时候，就会初始化这个label，这时候就考虑先设置颜色根本就没起到作用；
-
-**解决办法**：在分类中placeholderColor的setter方法中，使用runtime的objc_setAssociatedObject先把颜色保存起来，这样就能保证先设置的颜色不会丢掉，然后需要重写placeholder的setter方法，让在设置完文字的时候，拿到先前保存的颜色，故要在placeholderColor的getter中用`objc_getAssociatedObject`取，这里有个问题点，在分类中重写placeholder的setter方法的话，在外面设置placeholder的时候，根本不走自己重写的这个setPlaceholder方法，而走系统自带的，这里我还没研究。然后为了解决这个问题，我自己写了个`setDsyPlaceholder方法`，在setDsyPlaceholder里面对标签赋值，同时添加已经保存好的颜色，然后与setPlaceholder做交换，bug修复。
-
 ## 那些Bug
 
 ### fishhook在某些场景下只生效一次
