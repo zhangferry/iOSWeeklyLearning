@@ -225,6 +225,10 @@ $ bundle exec fastlane beta
 
 编程本身是抽象的，编程范例就是我们如何抽象这个世界的方法，而函数式编程就是其中一个编程范例。在函数式编程的世界里一切皆函数，那如何利用这个思想解决实际问题呢？文中给出了两个有趣的例子，希望可以帮你解决对函数式编程的疑惑。
 
+7、[Category无法覆写系统方法？](https://zhangferry.com/2021/04/21/overwrite_system_category/) -- 来自公众号：iOS成长之路
+
+这是一次非常有趣的解决问题经历，以至于我认为解决方式可能比问题本身更有意思。解决完全没有头绪的问题，我们应该避免陷入不断的猜测和佐证中。深挖问题，找到正确方向才更容易出现转机。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -239,7 +243,7 @@ $ bundle exec fastlane beta
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210420215429.png)
 
-## 工具推荐
+## 开发利器
 
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
 
