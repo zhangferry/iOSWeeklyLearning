@@ -15,6 +15,7 @@ def readWeeklyMd():
     categoryFilePath = executePath + "/../" + categoryFile
     print(weeklyFilePath)
 
+    # 开始之前会擦除之前数据
     for key in categoryMap:
         subFile = categoryFilePath + "/" + key + ".md"
         if os.path.exists(subFile):
@@ -23,59 +24,41 @@ def readWeeklyMd():
                 file.truncate()
 
     output = {"Articles":[], "Concepts":[], "Resources": [], "Tools": []}
-    for subFile in os.listdir(weeklyFilePath):
-        subFile = weeklyFilePath + "/" + subFile
-        print(subFile)
-        if "process" not in subFile and ".md" in subFile:
-            with open(subFile) as file:
-                for k, v in categoryMap.items():
-                    begin = "## " + v
-                    end = "##"
-                    output_lines = []
-                    isStart = False
-                    isEnd = False
-                    lines_content = file.readlines()
-                    for line_content in lines_content:
-                        # print(line_content)
-                        if begin in line_content:
-                            isStart = True
-                            print("isStart")
-                            continue
-                        if end in line_content and isStart:
-                            print("isEnd")
-                            isEnd = True
-                            continue
-                        if isEnd:
-                            print("====")
-                            print(output[k])
-                            output[k] = output_lines
-                            print(output[k])
-                            print("====")
-                            # print(output_lines)
-                            break
-                        if isStart:
-                            output_lines.append(line_content)
-                            # print(line_content)
-                            continue
-                    # print(read_data)
-                    # for k, v in categoryMap.items():
-                        
-                    #     regx = "## " + v
-                    #     if regx in line_content:
-                    #         # start
+    # 为了保证读取的顺序
+    count = len(os.listdir(weeklyFilePath)) - 1
+    for index in range(count):
 
-                    #     # by regx   
-                    #     regx = '{regx}(.*?)## '.format_map(vars())
-                    #     regx = 'r\'{regx}\''.format_map(vars())
-                    #     print(regx)
-                    #     searchObj = re.findall(regx, read_data, re.M | re.S)
-                    #     if searchObj:
-                    #         print(searchObj)
-                    #     else:
-                    #         print("No match!!")
-            print(output)
+        subFile = "{}/iOSWeeklyLearning_{}.md".format(weeklyFilePath, index + 1)
+        print(subFile)
+        if os.path.exists(subFile):
+            with open(subFile) as file:
+                lines_content = file.readlines()
+                for k, v in categoryMap.items():
+                    output[k] = filterData(lines_content, v)
+            # print(output)
             writeToFile(categoryFilePath, output)
     return output
+
+def filterData(lines_data, category_name):
+    begin = "## " + category_name
+    print(category_name)
+    output_lines = []
+    isStart = False
+    isEnd = False
+    for line_content in lines_data:
+        # print(line_content)
+        if begin in line_content:
+            isStart = True
+        elif line_content.count("#") == 2 and isStart:
+            isEnd = True
+        elif isEnd:
+            # print("====")
+            print(output_lines)
+            return output_lines
+        elif isStart:
+            output_lines.append(line_content)
+            # print(line_content)
+    return output_lines
 
 def writeToFile(filePath, contentMap):
 
@@ -88,4 +71,4 @@ def writeToFile(filePath, contentMap):
     print("write success!")
 
 output_read = readWeeklyMd()
-print(output_read)
+# print(output_read)
