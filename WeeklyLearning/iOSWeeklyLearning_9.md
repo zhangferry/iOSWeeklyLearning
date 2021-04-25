@@ -172,6 +172,8 @@ RubyGems 还提供了 Ruby 组件的托管服务，可以集中式的查找和�
 
 在默认情况下 Gems 总是下载 library 的最新版本，这无法确保所安装的 library 版本符合我们预期。因此还需要 Gem Bundler 配合。
 
+[参考：版本管理工具及 Ruby 工具链环境](https://mp.weixin.qq.com/s/s2yJEb2P0_Kk-rIpYBi_9A)
+
 ### 什么是 Bundler
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210419225753.png)
@@ -195,7 +197,7 @@ $ bundle exec pod install
 $ bundle exec fastlane beta
 ```
 
-
+[参考：iOS开发进阶](https://t1.lagounews.com/kR50RoRgcj04C)
 
 ## 优秀博客
 
