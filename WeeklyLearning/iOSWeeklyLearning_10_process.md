@@ -36,7 +36,17 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+1、[LearnOpenGL CN](https://learnopengl-cn.github.io/)
 
+欢迎来到 OpenGL 的世界。这个工程只是我([Joey de Vries](http://joeydevries.com/))的一次小小的尝试，希望能够建立起一个完善的 OpenGL 教学平台。无论你学习 OpenGL 是为了学业，找工作，或仅仅是因为兴趣，这个网站都将能够教会你现代(Core-profile)  OpenGL 从基础，中级，到高级的知识。LearnOpenGL 的目标是使用易于理解的形式，使用清晰的例子，展现现代 OpenGL 的所有知识点，并与此同时为你以后的学习提供有用的参考。
+
+> 该教程是[原教程](https://learnopengl.com/)的中文翻译教程
+
+2、[VisuAlgo](https://visualgo.net/en)
+
+由新加坡国立大学的教授和学生发起、制作并完善的「数据结构和算法动态可视化」网站，在该网站你可以看到许多经典、非经典的，常见的、非常见的算法的可视化，清晰明了的图形化表现和实时的代码解读可以帮助读者更好地理解各种算法及数据结构。同时该网站支持自动问题生成器和验证器（在线测验系统）。
+
+![Animation of Graph Traversal Algorithm](https://www.comp.nus.edu.sg/images/resources/20200309-graph-traversal.gif)
 
 ## 工具推荐
 
