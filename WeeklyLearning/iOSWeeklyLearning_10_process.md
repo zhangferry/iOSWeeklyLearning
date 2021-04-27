@@ -81,6 +81,12 @@ func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPerip
 
 ![Animation of Graph Traversal Algorithm](https://www.comp.nus.edu.sg/images/resources/20200309-graph-traversal.gif)
 
+3、[Announcing our Deprecated Books Repo!](https://www.raywenderlich.com/21965623-announcing-our-deprecated-books-repo)
+
+raywenderlich 是一个学习编程的网站，他们有很大一部分课程和 `iOS` / `Swift` 有关。最近他们开源了一批将要被废弃的书籍。笔者看过其中的 `2D Games`、`3D Games`、`ARKit` 等书籍，其中介绍了 `SpriteKit` 和 `SceneKit` 的相关知识，书本会带着读者循序渐进，了解这些框架的原理以及如何应用。这次名单中还包含了 `Unity AR & VR`、`Realm` 和 `Server Side` 相关的书籍，这些书对于想要学习这些特定领域内容的读者来说是很好的选择。
+
+
+
 ## 工具推荐
 
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
