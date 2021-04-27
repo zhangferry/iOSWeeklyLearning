@@ -12,13 +12,46 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 ## 那些Bug
 
-按照如下格式填写bug
+### iOS 蓝牙设备名称缓存问题总结
+
+整理编辑：[FBY展菲](https://juejin.cn/user/3192637497025335/posts)
 
 **问题背景**
 
-**问题描述**
+* 当设备已经在 App 中连接成功后
+* 修改设备名称
+* App 扫描到的设备名称仍然是之前的名称
+* App 代码中获取名称的方式为（perpheral.name）
 
-**问题原因**
+**问题分析**
+
+当 APP 为中心连接其他的蓝牙设备时。
+
+首次连接成功过后，iOS系统内会将该外设缓存记录下来。
+
+下次重新搜索时，搜索到的蓝牙设备时，直接打印 （peripheral.name），得到的是之前缓存中的蓝牙名称。
+
+如果此期间蓝牙设备更新了名称，（peripheral.name）这个参数并不会改变，所以需要换一种方式获取设备的名称，在广播数据包内有一个字段为 kCBAdvDataLocalName，可以实时获取当前设备名称。
+
+**问题解决**
+
+下面给出OC 和 Swift 的解决方法：
+
+OC
+
+```
+-(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI{
+        NSString *localName = [advertisementData objectForKey:@"kCBAdvDataLocalName"];
+} 
+```
+
+Swift
+
+```
+func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        let localName = advertisementData["kCBAdvDataLocalName"]
+}
+```
 
 ## 编程概念
 
