@@ -1,4 +1,3 @@
-# 学习资源
 
 ### [iOS面试资料总结](http://note.youdao.com/s/SvA1l4Gy)
 
@@ -32,6 +31,7 @@
 
 之前有段时间想系统学习Bash脚本，翻阅很多网站都没有找到满意的文档资料，直到看到这份教程，快快学起来吧。
 
+
 ### [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way "提问的智慧")
 
 开发过程中遇到问题是非常常见的，解决问题的过程免不了要向别人或者社区论坛提问，而提问方式的好坏通常决定了你能否获得想要的答案。有这么一个github仓库：[How-To-Ask-Questions-The-Smart-Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) star数高达13.7k，专门讲述如何更有效的提问，很多论坛也将这个作为提问准则，用于提醒大家有效提问的重要性。
@@ -45,6 +45,7 @@
 [halfrost ](https://github.com/halfrost)总结的leetcode算法题解，使用go语言完成，书中各个题目代码都已经beats 100% 了。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210103211318.png)
+
 
 ### 《Flutter技术解析与实战》
 
@@ -60,11 +61,13 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110172952.png)
 
+
 ### [Refactoring.Guru](https://refactoringguru.cn/ "Refactoring.Guru")
 
 一个非常有趣的讲解设计模式、SOLID原则、重构原则的网站。支持八种语言，有很多丰富的配图帮助我们理解这些重要的编程概念。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124190413.png)
+
 
 ### [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python "30-Days-Of-Python")
 
@@ -90,6 +93,9 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210227190060.png)
 
+
+
+
 ### iOS开发者资源大全
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313212015.png)
@@ -104,6 +110,7 @@
 
 对于老手，本文对内容排版也做了优化，便于查找，对于 github 开源项目，也将 Star 标注出来，以便于筛选，对于支持 Swift 项目也做了相应标记。
 
+
 ### 一个人工智能的诞生
 
 地址：https://jibencaozuo.com/product/1/episode/0。
@@ -114,9 +121,23 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210328103223.png)
 
+
 ### Can Balkaya
 
 Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](https://canbalkaya.blog/ "Can Balkaya")，经常发布一些介绍Swift特性相关的文章，质量都很高。我在别的地方看到有人翻译过里面部分文章，说明它还是有一定关注度的，如果英文稍微好些的可以直接订阅这个专栏来看。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210411102014.png)
+
+
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+1、[CS-Notes](http://www.cyc2018.xyz/ "CS-Notes")
+
+该「Notes」包含技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++等内容，知识结构简练，内容扎实。该仓库的内容皆为作者及 Contributors 的原创，目前在 Github 上获 126k Stars。
+
+2、[Learn Git Branching](https://oschina.gitee.io/learn-git-branching/ "Learn Git Branching")
+
+入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210420215429.png)
 

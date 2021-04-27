@@ -1,4 +1,3 @@
-# 优秀博客合辑
 
 [UIView动画降帧探究](https://mp.weixin.qq.com/s/QVvrgWpjY6mxAqjkrRapPw "UIView动画降帧探究") -- 来自公众号：一瓜技术
 
@@ -19,6 +18,7 @@
 [我看技术人的成长路径](https://juejin.cn/post/6906006025925558279 "我看技术人的成长路径") -- 来自掘金：阿里巴巴云原生
 
 [App Store App隐私保护问卷填写指引](https://info.umeng.com/detail?id=398&cateId=1 "App Store App隐私保护问卷填写指引") -- 来自友盟：最新资讯
+
 
 [GitHub 2020 报告：全球开发者工作与生活的平衡情况](https://juejin.cn/post/6908880779963695118 "GitHub 2020 报告：全球开发者工作与生活的平衡情况") -- 来自掘金：LeviDing
 
@@ -42,7 +42,10 @@
 
 [2020：非适应性完美主义、存在主义哲学、架构、基金翻倍、有效休息｜掘金年度征文](https://juejin.cn/post/6913418068953661448 "2020：非适应性完美主义、存在主义哲学、架构、基金翻倍、有效休息｜掘金年度征文") -- 来自掘金：FeelsChaotic
 
-## 公众号汇总
+
+这期博客推荐顺带考察了一下各大厂的技术公众号运营情况（仅限移动端），虽然技术号不能反映一个公司的全貌，但多少还是能够体现出该公司的开源分享精神的，顺道推荐几篇高质量的文章。内容较多，还会再有一期，先后顺序不代表排名。
+
+### 爱奇艺
 
 公众号：**爱奇艺技术产品团队**
 
@@ -111,7 +114,6 @@
 很抱歉，没有找到他们的技术公众号，只搜到一堆砍价群0。0，如果有了解的小伙伴可以告知下。
 
 ### 搜狐
-
 公众号：**搜狐技术产品**
 综合性技术公众号，输出稳定，质量也不错。偏重运营一些，会有很多转载内容。
 
@@ -120,7 +122,6 @@
 [iOS插件化架构探索](https://mp.weixin.qq.com/s/QJ9YHX-Uy6lDIhJe_5wPGw "iOS插件化架构探索")
 
 ### 腾讯
-
 公众号：**腾讯音乐技术团队**
 腾讯音乐开发团队公众号，更新不稳定，可能一两个月才会有一篇文章，但质量还是不错的。
 
@@ -130,7 +131,6 @@
 另外有点奇怪的是，微信团队和QQ团队竟然没有单独的技术公众号。微信团队之前有个博客：https://wereadteam.github.io/ ，但看了下2020年只发过一篇文章。
 
 ### 美团
-
 公众号：**美团技术团队**
 综合性技术公众号，输出稳定，质量很高，原创文章数量已达358篇，都是团队内部人员写的，非常不错。
 
@@ -139,14 +139,12 @@
 [Flutter包大小治理上的探索与实践](https://mp.weixin.qq.com/s/adC-YUWd-xuUlzeAPHzJoQ "Flutter包大小治理上的探索与实践")
 
 ### 滴滴
-
 公众号：**滴滴技术**
 综合性技术公众号，但是移动端内容真的很少。不过滴滴在开源社区的贡献还是挺大的，DoraemonKit和chameleon都有很高的star数。
 
 [滴滴开源 DoraemonKit：一款像哆啦A梦般全能的App研发工具](https://mp.weixin.qq.com/s/FXATxeEoRMdKzFRDg-zPFg "滴滴开源 DoraemonKit：一款像哆啦A梦般全能的App研发工具")
 
 ### 即刻
-
 公众号：**即刻技术团队**
 综合技术公众号，移动端内容也不少。整理来看即刻做的还是挺不错的。
 
@@ -164,7 +162,7 @@
 | 360      | 360技术      | 综合号，有移动端内容 |
 | 携程     | 携程技术     | 综合号，有移动端内容 |
 
-## 其他文章
+
 
 来自字节跳动技术团队的三篇包体优化文章，涵盖了几乎所有可行且有效的包体优化方案：
 
@@ -196,6 +194,10 @@ iOS签名及证书的几篇文章：
 
 [从预编译的角度理解Swift与Objective-C及混编机制](https://mp.weixin.qq.com/s/gI9vL1KlHuMzMoWWf2tnIw "从预编译的角度理解Swift与Objective-C及混编机制") -- 来自公众号：美团技术团队
 
+
+
+
+
 [函数节流（Throttle）和防抖（Debounce）解析及其OC实现](https://mp.weixin.qq.com/s/h1MYGTYtYo9pcHmqw6tHBw "函数节流（Throttle）和防抖（Debounce）解析及其OC实现")  -- 来自公众号：iOS成长之路
 
 [2021阿里淘系工程师推荐书单](https://mp.weixin.qq.com/s/zi7qWTg8xGf3GaxW6Czj2A "2021阿里淘系工程师推荐书单") -- 来自公众号：淘系技术
@@ -211,6 +213,8 @@ iOS签名及证书的几篇文章：
 [【译】Flutter 2.0 正式版发布，全平台 Stable](https://juejin.cn/post/6935621027116531720 "[译]Flutter 2.0 正式版发布，全平台 Stable") -- 来自掘金：恋猫de小郭
 
 [如何做一场高质量的分享](https://juejin.cn/post/6938208336802217991 "如何做一场高质量的分享") -- 来自掘金：相学长
+
+
 
 [翻译-为什么objc_msgSend必须用汇编实现](http://tutuge.me/2016/06/19/translation-why-objcmsgsend-must-be-written-in-assembly/ "翻译-为什么objc_msgSend必须用汇编实现") -- 来自博客：土土哥的blog
 
@@ -230,11 +234,13 @@ iOS签名及证书的几篇文章：
 
 [青年人在美团是怎样成长的？](https://tech.meituan.com/2020/05/04/meituan-0504-young-people.html "青年人在美团是怎样成长的？") -- 来自博客：美团技术团队
 
-[我离职了](https://juejin.cn/post/6943384976909942815 "我离职了") -- 来自掘金：敖丙
+
+
+1、[我离职了](https://juejin.cn/post/6943384976909942815 "我离职了") -- 来自掘金：敖丙
 
 敖丙还在B站录了[视频](https://www.bilibili.com/video/BV1cp4y1a7DW "我离职了 B站")，看视频可能更有感染力。
 
-[我的玩具——乐高魔方机器人](http://xelz.info/blog/2017/02/18/lego-cube-solver/ "我的玩具——乐高魔方机器人") -- 来自博客：xelz's blog
+2、[我的玩具——乐高魔方机器人](http://xelz.info/blog/2017/02/18/lego-cube-solver/ "我的玩具——乐高魔方机器人") -- 来自博客：xelz's blog
 
 这个真的非常有意思，有理工科思维做一件具体有趣的事情非常酷。大概思路是这样的;
 
@@ -245,14 +251,49 @@ iOS签名及证书的几篇文章：
 - 手机通过蓝牙将还原公式发送给LEGO
 - LEGO按照公式将魔方还原
 
-[关于bitcode, 知道这些就够了](http://xelz.info/blog/2018/11/24/all-you-need-to-know-about-bitcode/ "关于bitcode, 知道这些就够了") -- 来自博客：xelz's blog
+3、[关于bitcode, 知道这些就够了](http://xelz.info/blog/2018/11/24/all-you-need-to-know-about-bitcode/ "关于bitcode, 知道这些就够了") -- 来自博客：xelz's blog
 
-[哈啰出行iOS App首屏秒开优化](https://mp.weixin.qq.com/s/5Ez2BrsyBgQ8aHZqlYtAjg "哈啰出行iOS App首屏秒开优化") -- 来自公众号：哈罗技术团队
+4、[哈啰出行iOS App首屏秒开优化](https://mp.weixin.qq.com/s/5Ez2BrsyBgQ8aHZqlYtAjg "哈啰出行iOS App首屏秒开优化") -- 来自公众号：哈罗技术团队
 
-[SwiftUI: Text 中的插值](https://mp.weixin.qq.com/s/PX8bXSFXgJWMgHqien85jQ "SwiftUI: Text 中的插值") -- 来自公众号：老司机技术周报
+5、[SwiftUI: Text 中的插值](https://mp.weixin.qq.com/s/PX8bXSFXgJWMgHqien85jQ "SwiftUI: Text 中的插值") -- 来自公众号：老司机技术周报
 
-[深入理解MachO数据解析规则](https://mp.weixin.qq.com/s/z8s4urq_KCf2ny5kKOYMHA) -- 来自公众号：iOS成长之路
+6、[深入理解MachO数据解析规则](https://mp.weixin.qq.com/s/z8s4urq_KCf2ny5kKOYMHA) -- 来自公众号：iOS成长之路
 
-[MacBook 升级 SSD 硬盘指北](https://mp.weixin.qq.com/s/LMeO6chdac65JQu1Yy2-Iw) -- 来自公众号：iOS成长之路
+7、[MacBook 升级 SSD 硬盘指北](https://mp.weixin.qq.com/s/LMeO6chdac65JQu1Yy2-Iw) -- 来自公众号：iOS成长之路
 
-[DWARF文件初探——提取轻量符号表](https://mp.weixin.qq.com/s/s8iwQLNtla5nxF_Tmj2wJg "DWARF文件初探——提取轻量符号表") -- 来自公众号：皮拉夫大王在此
+8、[DWARF文件初探——提取轻量符号表](https://mp.weixin.qq.com/s/s8iwQLNtla5nxF_Tmj2wJg "DWARF文件初探——提取轻量符号表") -- 来自公众号：皮拉夫大王在此
+
+
+
+
+
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
+
+1、[我在Uber亲历的最严重的工程灾难](https://mp.weixin.qq.com/s/O1haH28cTr0tkhRAnVZQ6g "我在Uber亲历的最严重的工程灾难") -- 来自公众号：infoQ
+
+准备或者已经接入Swfit可以先了解下
+
+2、[美团 iOS 工程 zsource 命令背后的那些事儿](https://mp.weixin.qq.com/s/3qcv1NW4-ce87cvAS4Jsxg "美团 iOS 工程 zsource 命令背后的那些事儿") -- 来自公众号： 美团技术团队
+
+美团技术团队历史文章，对DWARF文件的另一种应用。文章还原了作者解决问题的思路历程，除了技术本身外，解决问题的思路历程也是值得借鉴的。
+
+3、[NSObject方法调用过程详细分析](https://juejin.cn/post/6844904000450478087 "NSObject方法调用过程详细分析") -- 来自掘金：maniac_kk
+
+字节跳动maniac_kk同学的一篇优质文章，无论深度还是广度都是非常不错的，很多底层知识融会贯通，值得细细品味
+
+4、[iOS疑难Crash的寄存器赋值追踪排查技术](https://www.jianshu.com/p/958d4f109bb0 "iOS疑难Crash的寄存器赋值追踪排查技术") -- 来自简书：欧阳大哥
+
+在缺少行号信息时如何通过寄存器赋值推断出具体的问题代码，具有很高的参考价值，在遇到疑难问题时可以考虑是否能借鉴此思路
+
+5、[抖音 iOS 工程架构演进](https://juejin.cn/post/6950454120826765325 "抖音 iOS 工程架构演进") -- 来自掘金：字节跳动技术团队
+
+业务的发展引起工程架构做出调整，文章介绍了抖音的工程架构演进历程。作为日活过亿的产品，其工程架构的演变对多数APP来说都具有一定的借鉴意义。
+
+6、[Swift的一次函数式之旅](https://mp.weixin.qq.com/s/yiF0NwXffrkunGOieWbIRA "Swift的一次函数式之旅") -- 来自公众号：搜狐技术产品
+
+编程本身是抽象的，编程范例就是我们如何抽象这个世界的方法，而函数式编程就是其中一个编程范例。在函数式编程的世界里一切皆函数，那如何利用这个思想解决实际问题呢？文中给出了两个有趣的例子，希望可以帮你解决对函数式编程的疑惑。
+
+7、[Category无法覆写系统方法？](https://zhangferry.com/2021/04/21/overwrite_system_category/) -- 来自公众号：iOS成长之路
+
+这是一次非常有趣的解决问题经历，以至于我认为解决方式可能比问题本身更有意思。解决完全没有头绪的问题，我们应该避免陷入不断的猜测和佐证中。深挖问题，找到正确方向才更容易出现转机。
+
