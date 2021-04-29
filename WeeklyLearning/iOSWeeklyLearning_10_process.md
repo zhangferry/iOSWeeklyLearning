@@ -116,6 +116,29 @@ gRPC 客户端和服务端可以在多种环境中运行和交互 - 从 Google �
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
 
+1、[iOS14.5隐私追踪功能现重大bug！IDFA选项变灰且无法开启(附解决方案)](https://mp.weixin.qq.com/s/rqzI3iiwdPxtWyP8q4wXJg "iOS14.5隐私追踪功能现重大bug！IDFA选项变灰且无法开启（附解决方案") -- 来自公众号：七麦研究院
+
+>千呼万唤始出来——iOS14.5上线了。
+
+2、[Swift 2021 生态调研报告](https://mp.weixin.qq.com/s/5SXAozM2c6Ivyzl7B9IfQQ "Swift 2021 生态调研报告") -- 来自公众号： 一瓜技术
+
+>Swift崛起一直是大家的共识，但是缺少量化数据。本文对Swift的覆盖量做了细致的分析，从数据层面可以分析Swift的形势。对开发者学习和转型有非常积极的意义。
+
+3、[学会黑科技，一招搞定 iOS 14.2 的 libffi crash](https://mp.weixin.qq.com/s/XLqcCfcNhpCA8Tg6LknBCQ "学会黑科技，一招搞定 iOS 14.2 的 libffi crash") -- 来自公众号： 字节跳动技术团队
+
+>本文主要介绍了libffi在iOS14.2上崩溃的原因以及解决方案。如果有相关问题，可以参考本文解决。
+
+4、[libffi探究](https://juejin.cn/post/6844904177609490440 "libffi探究") -- 来自掘金：酱了里个酱
+
+>如果对libffi不是很了解，可以通过本文来了解和认识下libffi。
+
+5、[CALayer 的 filters](https://juejin.cn/post/6938583362093187086 "CALayer 的 filters") -- 来自掘金：rickytan
+
+>相信很多同学都遇到了哀悼模式黑白色的问题，本文介绍了一种快速便捷的方式，不过存在被拒风险，大家可以灵活把控。
+
+6、[从底层分析一下存在跨进程通信问题的 NSUserDefaults 还能用吗？](https://mp.weixin.qq.com/s/Y1AHFN1kJ9kCjXdFOnUviA "从底层分析一下存在跨进程通信问题的 NSUserDefaults 还能用吗？") -- 来自公众号：酷酷的哀殿
+
+>之前字节的文章介绍了卡死的几种情况，其中包括NSUserDefaults造成的卡死。本文深入分析了NSUserDefaults造成卡死的原因以及用法。
 
 
 ## 学习资料
