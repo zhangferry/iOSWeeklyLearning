@@ -67,49 +67,38 @@ BFF，全称是 Backend For Frontend，即服务于前端的后端。BFF 是一�
 
 要实现 BFF 架构，你可以使用 GraphQL，REST 等技术。
 
-![配图](https://upload-images.jianshu.io/upload_images/3100944-f5d383cf1d142e29.png?imageMogr2/auto-orient/strip|imageView2/2/w/627/format/webp)
+![](https://upload-images.jianshu.io/upload_images/3100944-f5d383cf1d142e29.png?imageMogr2/auto-orient/strip|imageView2/2/w/627/format/webp)
 
 图片来源：https://www.jianshu.com/p/eb1875c62ad3
 
 ### 什么是 RPC
 
-有两种进程间通信方式（IPC，Inter-Process Communication）：LPC 和 RPC。
+RPC，全称是 Remote Procedure Call，即远程过程调用。RPC 是一种进程间通信方式，它允许客户端应用直接调用另一台远程不同计算机上的服务端应用的方法，而不需要了解远程调用的实际通信细节实现，RPC 会做好数据的序列化和传输，使得远程调用就像本地调用一样方便，让创建分布式应用和服务变得更加简单。
 
-LPC，全称是 Local Procedure Cal，即本地过程调用。LPC 的基础是以下提到的 RPC，LPC 对在同一台计算机上运行的进程间通讯进行了优化。
+RPC 的工作流程大致是：客户端应用以本地调用的方式发起远程调用，将参数以及附加信息序列化为能够进行网络传输的消息体，并将消息发送给服务端。服务端对收到的消息进行反序列化后执行请求，然后将结果序列化为消息并返回给客户端。最后客户端接收到消息并反序列化得到数据。
 
-RPC，全称是 Remote Procedure Call，即远程过程调用。它允许客户端应用直接调用另一台远程不同计算机上的服务端应用的方法，而不需要了解远程调用的实际通信细节实现，使得远程调用就像本地调用一样方便。RPC 让创建分布式应用和服务变得更加简单。
-
-从发起远程调用到接收到数据返回结果，大致过程是：
-
-1. 服务消费方（client）调用以本地调用方式调用服务；
-2. client stub 接收到调用后负责将方法、参数等组装成能够进行网络传输的消息体；
-3. client stub 找到服务地址，并将消息发送到服务端；
-4. server stub 收到消息后进行解码；
-5. server stub 根据解码结果调用本地的服务；
-6. 本地服务执行并将结果返回给 server stub；
-7. server stub 将返回结果打包成消息并发送至消费方；
-8. client stub 接收到消息，并进行解码；
-9. 服务消费方得到最终结果。
-
-RPC 相当于将 step2-step8 的步骤进行了封装。
-
-![配图](https://user-gold-cdn.xitu.io/2017/11/23/15fe93fb307ec7e9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+![](https://user-gold-cdn.xitu.io/2017/11/23/15fe93fb307ec7e9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 RPC 有许多成熟、开源的实现方案，常见的 RPC 框架有：gRPC、Dubbo、rpcx、Motan、thrift、brpc、Tars 等等。
 
-参考：https://juejin.cn/post/6844903574506323976
 
 ### 什么是 gRPC
 
-gRPC，全称是 gRPC Remote Procedure Calls，是 Google 开发的一个高性能、通用的开源 RPC 框架。
+gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。
 
 在 gRPC 里客户端应用可以像调用本地对象一样直接调用另一台不同的机器上服务端应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个服务，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个存根能够像服务端一样的方法。
 
-![](http://www.grpc.io/img/grpc_concept_diagram_00.png)
+![](https://www.grpc.io/img/landing-2.svg)
 
 gRPC 客户端和服务端可以在多种环境中运行和交互 - 从 Google 内部的服务器到你自己的笔记本，并且可以用任何 gRPC 支持的语言来编写。所以，你可以很容易地用 Java 创建一个 gRPC 服务端，用 Go、Python、Ruby 来创建客户端。此外，Google 最新 API 将有 gRPC 版本的接口，使你很容易地将 Google 的功能集成到你的应用里。
 
-参考：[gRPC 官方文档中文版V1.0](http://doc.oschina.net/grpc?t=58008)
+### 什么是 SOAP
+
+SOAP，全称是 Simple Object Access Protocol，即简单对象访问协议。
+
+SOAP 是一种基于 XML 的网络通信协议，可使应用程序在 HTTP 之上进行信息交换。或者更简单地说：SOAP 是用于访问网络服务的协议。
+
+对于应用程序开发来说，使程序之间进行因特网通信是很重要的。目前的应用程序通过使用远程过程调用（RPC）在诸如 DCOM 与 CORBA 等对象之间进行通信，但是 HTTP 不是为此设计的。RPC 会产生兼容性以及安全问题；防火墙和代理服务器通常会阻止此类流量。通过 HTTP 在应用程序间通信是更好的方法，因为 HTTP 得到了所有的因特网浏览器及服务器的支持。SOAP 就是被创造出来完成这个任务的。SOAP 提供了一种标准的方法，使得运行在不同的操作系统并使用不同的技术和编程语言的应用程序可以互相进行通信。
 
 
 ## 优秀博客
