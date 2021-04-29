@@ -115,11 +115,12 @@ gRPC 客户端和服务端可以在多种环境中运行和交互 - 从 Google �
 ## 优秀博客
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
+
 1、[iOS14.5隐私追踪功能现重大bug！IDFA选项变灰且无法开启(附解决方案)](https://mp.weixin.qq.com/s/rqzI3iiwdPxtWyP8q4wXJg "iOS14.5隐私追踪功能现重大bug！IDFA选项变灰且无法开启（附解决方案") -- 来自公众号：七麦研究院
 
 >千呼万唤始出来——iOS14.5上线了。
 
-2、[Swift 2021 生态调研报告](https://mp.weixin.qq.com/s/3qcv1NW4-ce87cvAS4Jsxg "Swift 2021 生态调研报告") -- 来自公众号： 一瓜技术
+2、[Swift 2021 生态调研报告](https://mp.weixin.qq.com/s/5SXAozM2c6Ivyzl7B9IfQQ "Swift 2021 生态调研报告") -- 来自公众号： 一瓜技术
 
 >Swift崛起一直是大家的共识，但是缺少量化数据。本文对Swift的覆盖量做了细致的分析，从数据层面可以分析Swift的形势。对开发者学习和转型有非常积极的意义。
 
