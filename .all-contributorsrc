@@ -9,6 +9,16 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "zhangferry",
+      "name": "zhangferry",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13702445?v=4",
+      "profile": "https://github.com/zhangferry",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }
