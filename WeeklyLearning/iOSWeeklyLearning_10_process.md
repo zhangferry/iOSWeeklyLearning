@@ -112,7 +112,9 @@ RPC 的工作流程大致是：客户端应用以本地调用的方式发起远�
 
 ![](https://user-gold-cdn.xitu.io/2017/11/23/15fe93fb307ec7e9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
-RPC 有许多成熟、开源的实现方案，常见的 RPC 框架有：gRPC、Dubbo、rpcx、Motan、thrift、brpc、Tars 等等。
+> RPC 框架可以看作一种代理模式，GoF 的《设计模式》一书中把它称作远程代理。通过远程代理，将网络通信、数据编解码等细节隐藏起来。客户端在使用 RPC 服务的时候，就像使用本地函数一样，无需了解跟服务器交互的细节。除此之外，RPC 服务的开发者也只需要开发业务逻辑，就像开发本地使用的函数一样，不需要关注跟客户端的交互细节。 —— 来自王争的《设计模式之美》
+
+常见的 RPC 框架有：gRPC、Dubbo、rpcx、Motan、thrift、brpc、Tars 等等。
 
 
 ### 什么是 gRPC
