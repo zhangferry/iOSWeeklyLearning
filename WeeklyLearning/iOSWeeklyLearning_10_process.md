@@ -18,38 +18,29 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 **问题背景**
 
-* 当设备已经在 App 中连接成功后
-* 修改设备名称
-* App 扫描到的设备名称仍然是之前的名称
-* App 代码中获取名称的方式为（perpheral.name）
+当设备已经在 App 中连接成功后，修改设备名称，App 扫描到的设备名称仍然是之前的名称（App 代码中获取名称的方式为 `perpheral.name`）。
 
 **问题分析**
 
-当 APP 为中心连接其他的蓝牙设备时。
+当以 APP 为中心连接其他的蓝牙设备时。首次连接成功过后，iOS系统内会将该外设缓存记录下来。下次重新搜索，得到的蓝牙设备名称 `peripheral.name`，直接打印得到的是之前缓存中的名称。
 
-首次连接成功过后，iOS系统内会将该外设缓存记录下来。
-
-下次重新搜索时，搜索到的蓝牙设备时，直接打印 （peripheral.name），得到的是之前缓存中的蓝牙名称。
-
-如果此期间蓝牙设备更新了名称，（peripheral.name）这个参数并不会改变，所以需要换一种方式获取设备的名称，在广播数据包内有一个字段为 kCBAdvDataLocalName，可以实时获取当前设备名称。
+如果此期间蓝牙设备更新了名称，`peripheral.name` 这个参数并不会改变，所以需要换一种方式获取设备的名称，在广播数据包内有一个字段为 `kCBAdvDataLocalName`，可以实时获取当前设备名称。
 
 **问题解决**
 
 下面给出OC 和 Swift 的解决方法：
 
 OC
-
-```
+```objectivec
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI{
-        NSString *localName = [advertisementData objectForKey:@"kCBAdvDataLocalName"];
+    NSString *localName = [advertisementData objectForKey:@"kCBAdvDataLocalName"];
 } 
 ```
-
 Swift
 
-```
+```swift
 func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        let localName = advertisementData["kCBAdvDataLocalName"]
+    let localName = advertisementData["kCBAdvDataLocalName"]
 }
 ```
 
@@ -57,9 +48,25 @@ func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPerip
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
 
+### 什么是RESTful
+
+RESTful里的REST是Representational State Transfer的缩写，翻译过来就是：表现层状态转化。它是一种互联网软件架构，处理的问题是如何开发在互联网环境中使用的软件。
+
+从含义入手：变现层转态转化。表现层是互联网资源呈现的形式，例如HTML，JSON等，转化就是资源等数据的变化，查询数据，更新数据。
+
+RESTful架构一般满足以下三点即可：
+
+1、一个URI代表一种资源
+
+2、客户端和服务器之间，传递这种自愿的额某种表现层
+
+3、客户端通过4个HTTP动词，对服务器端资源进行操作，实现“表现层状态转化“。
+
+参考：[理解RESTful架构 - 阮一峰](https://www.ruanyifeng.com/blog/2011/09/restful.html "理解RESTful架构")
+
 ### 什么是 BFF
 
-BFF，全称是 Backend For Frontend，即服务于前端的后端。BFF 是一种架构。
+BFF，全称是 Backend For Frontend，即服务于前端的后端，它对应的是一种架构模型而非具体实现。
 
 你可以把 BFF 当作一个中间层，原先前端某个页面可能需要向后端发送多个请求，并将这多个返回结果用于渲染一个页面。而引入 BBF 后，前端只需要向 BFF 发送一个请求，由 BFF 与后端进行交互，然后将返回值整合后返回给前端，降低前端与后端之间的耦合，方便前端接入。除了整合数据外，你还可以在 BFF 层对数据进行裁剪过滤，或者其他业务逻辑处理，而不用在多个前端中做相同的工作。当后端发生变化时，你只需要在 BFF 层做相应的修改，而不用修改多个前端，这极大地减少了的工作量。
 
@@ -70,6 +77,20 @@ BFF，全称是 Backend For Frontend，即服务于前端的后端。BFF 是一�
 ![](https://upload-images.jianshu.io/upload_images/3100944-f5d383cf1d142e29.png?imageMogr2/auto-orient/strip|imageView2/2/w/627/format/webp)
 
 图片来源：https://www.jianshu.com/p/eb1875c62ad3
+
+### 什么是GraphQL
+
+GraphQL（展开为Graph Query Language）是Facebook开发的应用层查询语言，于2015年开源。注意这里是查询语言，跟SQL的Structured Query Language类似，也是一种DSL。
+
+>  GraphQL 的本质是程序员想对JSON使用SQL。 —— 来自阮一峰的翻译
+
+它解决的问题是RESTful接口数据冗余，多个接口的数据聚合，接口经常改动等问题。
+
+REST数据是通过一个个URI定位到的，而GraphQL的模型更像是对象模型，它可以灵活地将相应数据的结构交给客户端，而且没有任何冗余，也让 API 更容易地随着时间推移而演进。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/33034116-558F-40ED-B191-31D9E28715F2.png)
+
+GraphQL起的是一个API网关的作用。
 
 ### 什么是 RPC
 
@@ -107,46 +128,52 @@ SOAP 是一种基于 XML 的网络通信协议，可使应用程序在 HTTP 之�
 
 1、[iOS14.5隐私追踪功能现重大bug！IDFA选项变灰且无法开启(附解决方案)](https://mp.weixin.qq.com/s/rqzI3iiwdPxtWyP8q4wXJg "iOS14.5隐私追踪功能现重大bug！IDFA选项变灰且无法开启（附解决方案") -- 来自公众号：七麦研究院
 
->千呼万唤始出来——iOS14.5上线了。
+千呼万唤始出来——iOS14.5上线了。
 
 2、[Swift 2021 生态调研报告](https://mp.weixin.qq.com/s/5SXAozM2c6Ivyzl7B9IfQQ "Swift 2021 生态调研报告") -- 来自公众号： 一瓜技术
 
->Swift崛起一直是大家的共识，但是缺少量化数据。本文对Swift的覆盖量做了细致的分析，从数据层面可以分析Swift的形势。对开发者学习和转型有非常积极的意义。
+Swift崛起一直是大家的共识，但是缺少量化数据。本文对Swift的覆盖量做了细致的分析，从数据层面可以分析Swift的形势。对开发者学习和转型有非常积极的意义。
 
 3、[学会黑科技，一招搞定 iOS 14.2 的 libffi crash](https://mp.weixin.qq.com/s/XLqcCfcNhpCA8Tg6LknBCQ "学会黑科技，一招搞定 iOS 14.2 的 libffi crash") -- 来自公众号： 字节跳动技术团队
 
->本文主要介绍了libffi在iOS14.2上崩溃的原因以及解决方案。如果有相关问题，可以参考本文解决。
+本文主要介绍了libffi在iOS14.2上崩溃的原因以及解决方案。如果有相关问题，可以参考本文解决。
 
 4、[libffi探究](https://juejin.cn/post/6844904177609490440 "libffi探究") -- 来自掘金：酱了里个酱
 
->如果对libffi不是很了解，可以通过本文来了解和认识下libffi。
+如果对libffi不是很了解，可以通过本文来了解和认识下libffi。
 
 5、[CALayer 的 filters](https://juejin.cn/post/6938583362093187086 "CALayer 的 filters") -- 来自掘金：rickytan
 
->相信很多同学都遇到了哀悼模式黑白色的问题，本文介绍了一种快速便捷的方式，不过存在被拒风险，大家可以灵活把控。
+相信很多同学都遇到了哀悼模式黑白色的问题，本文介绍了一种快速便捷的方式，不过存在被拒风险，大家可以灵活把控。
 
 6、[从底层分析一下存在跨进程通信问题的 NSUserDefaults 还能用吗？](https://mp.weixin.qq.com/s/Y1AHFN1kJ9kCjXdFOnUviA "从底层分析一下存在跨进程通信问题的 NSUserDefaults 还能用吗？") -- 来自公众号：酷酷的哀殿
 
->之前字节的文章介绍了卡死的几种情况，其中包括NSUserDefaults造成的卡死。本文深入分析了NSUserDefaults造成卡死的原因以及用法。
+之前字节的文章介绍了卡死的几种情况，其中包括NSUserDefaults造成的卡死。本文深入分析了NSUserDefaults造成卡死的原因以及用法。
+
+7、[用树莓派打造一个超薄魔镜的简单教程](https://onevcat.com/2021/04/magicmirror/ "用树莓派打造一个超薄魔镜的简单教程") -- 来自博客：OneV's Den
+
+看喵神如何使用树莓派 + 单向玻璃 + 显示器打造一个魔镜。实现原理是：贴紧墙面的一侧无光，类似监控室；我们生活的空间光线较为充足，类似被监控房间；在镜子后方屏幕发出的光，相当于“改善”了镜子内侧的光线条件，这部分光透过镜子，被我们看到，从而形成“镜中屏”的效果。
+
+
 
 
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
-1、[LearnOpenGL CN](https://learnopengl-cn.github.io/)
+### [LearnOpenGL CN](https://learnopengl-cn.github.io/)
 
 欢迎来到 OpenGL 的世界。这个工程只是我([Joey de Vries](http://joeydevries.com/))的一次小小的尝试，希望能够建立起一个完善的 OpenGL 教学平台。无论你学习 OpenGL 是为了学业，找工作，或仅仅是因为兴趣，这个网站都将能够教会你现代(Core-profile)  OpenGL 从基础，中级，到高级的知识。LearnOpenGL 的目标是使用易于理解的形式，使用清晰的例子，展现现代 OpenGL 的所有知识点，并与此同时为你以后的学习提供有用的参考。
 
 > 该教程是[原教程](https://learnopengl.com/)的中文翻译教程
 
-2、[VisuAlgo](https://visualgo.net/en)
+### [VisuAlgo](https://visualgo.net/en)
 
 由新加坡国立大学的教授和学生发起、制作并完善的「数据结构和算法动态可视化」网站，在该网站你可以看到许多经典、非经典的，常见的、非常见的算法的可视化，清晰明了的图形化表现和实时的代码解读可以帮助读者更好地理解各种算法及数据结构。同时该网站支持自动问题生成器和验证器（在线测验系统）。
 
 ![Animation of Graph Traversal Algorithm](https://www.comp.nus.edu.sg/images/resources/20200309-graph-traversal.gif)
 
-3、[Announcing our Deprecated Books Repo!](https://www.raywenderlich.com/21965623-announcing-our-deprecated-books-repo)
+### [Announcing our Deprecated Books Repo!](https://www.raywenderlich.com/21965623-announcing-our-deprecated-books-repo)
 
 raywenderlich 是一个学习编程的网站，他们有很大一部分课程和 `iOS` / `Swift` 有关。最近他们开源了一批将要被废弃的书籍。笔者看过其中的 `2D Games`、`3D Games`、`ARKit` 等书籍，其中介绍了 `SpriteKit` 和 `SceneKit` 的相关知识，书本会带着读者循序渐进，了解这些框架的原理以及如何应用。这次名单中还包含了 `Unity AR & VR`、`Realm` 和 `Server Side` 相关的书籍，这些书对于想要学习这些特定领域内容的读者来说是很好的选择。
 
@@ -154,17 +181,32 @@ raywenderlich 是一个学习编程的网站，他们有很大一部分课程和
 
 ## 工具推荐
 
-整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
 
-### Application Name
+### SwitchHosts
 
-**地址**：
+**地址**：https://swh.app/zh/
 
-**软件状态**：
+**软件状态**：[开源](https://github.com/oldj/SwitchHosts)，免费
 
 **使用介绍**
 
+SwitchHosts 是一个管理、切换多个 hosts 方案的工具。它支持多个Host方案的不同组合；支持导入导出，方便协作分享；还可以通过Alfred插件进行快速切换。
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430084948.png)
 
+### DevUtils
+
+**地址**：https://devutils.app/
+
+**软件状态**：[开源](https://github.com/DevUtilsApp/DevUtils-app)，部分功能付费
+
+**使用介绍**
+
+DevUtils是一个开源的开发工具聚合的应用。它包含了常用的时间戳解析，JSON格式化，Base64编解码，正则表达式测试等功能。有了它我们就可以放弃掉站长之家，各种JSON格式化网站的使用了。
+
+大家如果不想付费，直接下源码，关掉付费验证就行。如果觉得软件有帮助且有支付能力的话希望还是可以支持下作者。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430085707.png)
 
 ## 联系我们
 
