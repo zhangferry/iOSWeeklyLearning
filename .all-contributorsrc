@@ -54,6 +54,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "fanbaoying",
+      "name": "BaoYing-Fan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24238160?v=4",
+      "profile": "https://juejin.im/user/5a30d987f265da430d580126",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
