@@ -2,11 +2,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
-
-## 内容分类
-
-目前周报形式分为如下模块：
+iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些有用的学习内容。当前周报形式分为如下模块：
 
 1、开发Tip。对应开发技巧
 
@@ -20,37 +16,41 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 6、工具推荐。好用的开发工具或者三方库
 
+另外对于编程概念、优秀博客、学习资料和工具推荐进行了单独分类，可以查看 `CategorySummary` 文件夹内的单独分类。
+
 ## 内容贡献方式
 
-当前有两种贡献形式
+非常系统大家能够帮我们共享内容，当前有两种贡献形式：
 
 ### Issue
 
 可以点击仓库的New issue -> 选择适合自己的模板 -> 填写内容提交即可。
 
-当前有三个模板：bug、阅读、学习资料、
+当前有四个模板可以选择：bug、阅读、学习资料、好用的开发或者效率类工具。
+
+也可以按照自己的喜好，贡献任意格式的内容。
 
 ### Pull requests
 
-Pull requests适合熟悉一些markdown语法的同学。
+Pull requests适合熟悉一些Markdown语法的同学。选择这种方式的同学需要看下：[写作指导](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/Guide/blog_writer.md)，再行投稿，防止因为格式的原因被拒哦。
 
 ## 招募联合编辑
 
-既然命名为周报，还是希望能够周更的。但限于个人精力有限，很难做到周更。希望能得到各位小伙伴的支持，现需要招募多位协作者。
+如果对周报感兴趣，也希望你能够加入我们，作为我们的常驻编辑。
 
 希望你能够：
 
-1、热爱技术，习惯逛各种开发论坛
+1、有一定的写作博客经验且熟悉Markdown语法
 
-2、喜欢总结，能够发现有意思的技术细节
+2、热爱技术，习惯逛各种开发论坛
 
 你可以做的是：
 
-1、按照当前分类总结自己感兴趣的内容，如果以上分类都不包含，你那又是很有趣的内容，可以再为你开一个分类。
+1、按照当前分类总结自己感兴趣的内容
 
-2、每周日晚上十点是截止发稿时间，在这之前准备好哦。
+2、按时交稿。每周日晚上十点是截止发稿时间，需要在这之前准备好内容进行提交。
 
-**既然是联合编辑，我们的共同目标就是周一发稿，希望大家可以定期关注当期周报进度。**如果内容足够，当前进度可以不用关注，富余内容留作下期素材
+期待你的加入！
 
 ### 可能获得的收获
 
@@ -73,6 +73,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+
 <table>
   <tr>
     <td align="center"><a href="https://github.com/zhangferry"><img src="https://avatars.githubusercontent.com/u/13702445?v=4?s=100" width="100px;" alt=""/><br /><sub><b>zhangferry</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=zhangferry" title="Documentation">📖</a></td>
