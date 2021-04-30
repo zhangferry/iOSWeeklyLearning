@@ -48,29 +48,29 @@ func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPerip
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
 
-本期选题来源于林永坚的[iOS开发进阶](https://t8.lagounews.com/dR5FRrRtcO4F8)课程里的「跨平台架构：如何设计 BFF 架构系统？」这一节内容。如有表述不准确的地方，欢迎指出，定会随时改正。
+本期选题来源于林永坚的 [iOS开发进阶](https://t8.lagounews.com/dR5FRrRtcO4F8) 课程里的「跨平台架构：如何设计 BFF 架构系统？」这一节内容。如有表述不准确的地方，欢迎指出，定会随时改正。
 
-### 什么是RESTful
+### 什么是 RESTful
 
-RESTful里的REST是Representational State Transfer的缩写，翻译过来就是：表现层状态转化。它是一种互联网软件架构，处理的问题是如何开发在互联网环境中使用的软件。
+RESTful 里的 REST 是 Representational State Transfer 的缩写，翻译过来就是：表现层状态转化。它是一种互联网软件架构，处理的问题是如何开发在互联网环境中使用的软件。
 
-从含义入手：变现层转态转化。表现层是互联网资源呈现的形式，例如HTML，JSON等，转化就是资源等数据的变化，查询数据，更新数据。
+从含义入手：表现层状态转化。表现层是互联网资源呈现的形式，例如 HTML，JSON 等，转化就是资源等数据的变化，查询数据，更新数据。
 
-RESTful架构一般满足以下三点即可：
+RESTful 架构一般满足以下三点即可：
 
-1、一个URI代表一种资源
+1、一个 URI 代表一种资源
 
-2、客户端和服务器之间，传递这种自愿的额某种表现层
+2、客户端和服务器之间，传递这种资源的某种表现层
 
-3、客户端通过4个HTTP动词，对服务器端资源进行操作，实现“表现层状态转化“。
+3、客户端通过 4 个 HTTP 动词，对服务器端资源进行操作，实现“表现层状态转化“。
 
-参考：[理解RESTful架构 - 阮一峰](https://www.ruanyifeng.com/blog/2011/09/restful.html "理解RESTful架构")
+参考：[理解 RESTful 架构 - 阮一峰](https://www.ruanyifeng.com/blog/2011/09/restful.html "理解 RESTful 架构")
 
 ### 什么是 SOAP
 
 SOAP，全称是 Simple Object Access Protocol，即简单对象访问协议。从 W3C SOAP 1.2 版开始，SOAP 这一缩写不再代表 Simple Object Access Protocol，而是仅仅作为协议名称而已。
 
-SOAP 是一种相对古老（比REST还要早）的网络通信协议，它主是基于 XML 进行传输的。SOAP 和 REST 是早期互联网应用常用的两种方案。
+SOAP 是一种相对古老（比 REST 还要早）的网络通信协议，它主是基于 XML 进行传输的。SOAP 和 REST 是早期互联网应用常用的两种方案。
 
 对于应用程序开发来说，使程序之间进行因特网通信是很重要的。目前的应用程序通过使用远程过程调用（RPC）在诸如 DCOM 与 CORBA 等对象之间进行通信，但是 HTTP 不是为此设计的。RPC 会产生兼容性以及安全问题；防火墙和代理服务器通常会阻止此类流量。通过 HTTP 在应用程序间通信是更好的方法，因为 HTTP 得到了所有的因特网浏览器及服务器的支持。SOAP 就是被创造出来完成这个任务的。SOAP 提供了一种标准的方法，使得运行在不同的操作系统并使用不同的技术和编程语言的应用程序可以互相进行通信。
 
@@ -90,13 +90,13 @@ BFF，全称是 Backend For Frontend，即服务于前端的后端，它是一�
 
 参考：[BFF —— Backend For Frontend](https://www.jianshu.com/p/eb1875c62ad3 "BFF —— Backend For Frontend")
 
-### 什么是GraphQL
+### 什么是 GraphQL
 
-GraphQL（展开为Graph Query Language）是Facebook开发的应用层查询语言，于2015年开源。注意这里是查询语言，跟SQL的Structured Query Language类似，也是一种DSL。
+GraphQL（展开为 Graph Query Language）是 Facebook 开发的应用层查询语言，于 2015 年开源。注意这里是查询语言，跟 SQL 的 Structured Query Language 类似，也是一种 DSL。
 
->  GraphQL 的本质是程序员想对JSON使用SQL。 —— 来自阮一峰的翻译
+>  GraphQL 的本质是程序员想对 JSON 使用 SQL。 —— 来自阮一峰的翻译
 
-它是一种 BFF 的实现方案。REST数据是通过一个个URI定位到的，而GraphQL的模型更像是对象模型。GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
+它是一种 BFF 的实现方案。REST 数据是通过一个个 URI 定位到的，而 GraphQL 的模型更像是对象模型。GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/33034116-558F-40ED-B191-31D9E28715F2.png)
 
@@ -106,7 +106,7 @@ GraphQL（展开为Graph Query Language）是Facebook开发的应用层查询语
 
 ### 什么是 RPC
 
-RPC，全称是 Remote Procedure Call，即远程过程调用。RPC 是一种进程间通信方式，它允许客户端应用直接调用另一台远程不同计算机上的服务端应用的方法，而不需要了解远程调用的实际通信细节实现。RPC 会做好数据的序列化和传输，使得远程调用就像本地调用一样方便，让创建分布式应用和服务变得更加简单。促使RPC诞生的领域既是分布式。
+RPC，全称是 Remote Procedure Call，即远程过程调用。RPC 是一种进程间通信方式，它允许客户端应用直接调用另一台远程不同计算机上的服务端应用的方法，而不需要了解远程调用的实际通信细节实现。RPC 会做好数据的序列化和传输，使得远程调用就像本地调用一样方便，让创建分布式应用和服务变得更加简单。促使 RPC 诞生的领域既是分布式。
 
 RPC 的工作流程大致是：客户端应用以本地调用的方式发起远程调用，将参数以及附加信息序列化为能够进行网络传输的消息体，并将消息发送给服务端。服务端对收到的消息进行反序列化后执行请求，然后将结果序列化为消息并返回给客户端。最后客户端接收到消息并反序列化得到数据。
 
@@ -117,7 +117,7 @@ RPC 有许多成熟、开源的实现方案，常见的 RPC 框架有：gRPC、D
 
 ### 什么是 gRPC
 
-gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。它使用HTTP/2作为传输协议，protocol buffers 作为底层传输格式（默认），protocol buffers 还可以作为接口描述语言。
+gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。它使用 HTTP/2 作为传输协议，protocol buffers 作为底层传输格式（默认），protocol buffers 还可以作为接口描述语言。
 
 在 gRPC 里客户端应用可以像调用本地对象一样直接调用另一台不同的机器上服务端应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个服务，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个存根能够像服务端一样的方法。
 
@@ -125,7 +125,7 @@ gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。它使�
 
 gRPC 客户端和服务端可以在多种环境中运行和交互 -- 从 Google 内部的服务器到你自己的笔记本，并且可以用任何 gRPC 支持的语言来编写。所以，你可以很容易地用 Java 创建一个 gRPC 服务端，用 Go、Python、Ruby 来创建客户端。此外，Google 最新 API 将有 gRPC 版本的接口，使你很容易地将 Google 的功能集成到你的应用里。
 
-Facebook 的调试工具[idb](https://fbidb.io/)（作为 WebDriverAgent 的替代者）里的 `idb_companion` 就是一个 gRPC 服务器。
+Facebook 的调试工具 [idb](https://fbidb.io/)（作为 WebDriverAgent 的替代者）里的 `idb_companion` 就是一个 gRPC 服务器。
 
 参考：[what-is-grpc](https://grpc.io/docs/what-is-grpc/introduction/ "what-is-grpc")
 
