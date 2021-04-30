@@ -1,6 +1,6 @@
 # iOSWeeklyLearning
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
@@ -76,6 +76,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/zhangferry"><img src="https://avatars.githubusercontent.com/u/13702445?v=4?s=100" width="100px;" alt=""/><br /><sub><b>zhangferry</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=zhangferry" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://www.jianshu.com/u/739b677928f7"><img src="https://avatars.githubusercontent.com/u/62095149?v=4?s=100" width="100px;" alt=""/><br /><sub><b>pilaf-king</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=pilaf-king" title="Documentation">📖</a></td>
   </tr>
 </table>
 
