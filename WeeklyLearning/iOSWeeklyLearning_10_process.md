@@ -8,6 +8,45 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 ## 开发Tips
 
+### 可以自动释放的单例
+单例的优点是可以全局共享状态，无需重复建立对象。然而缺点也非常明显，滥用可能会引起内存问题，因为单例对象一旦建立，生命周期就变得和App一样长，在App被kill掉之前无法释放。
+很多情况下，开发者并不希望生命周期这么长。这里推荐一种使用week关键字定义的单例对象，能巧妙做到在其使用者都释放时做到自动释放。
+OC代码如下：
+```
++ (instancetype)sharedInstance {
+    static __weak __className *instance;
+    __className *strongInstance = instance;
+    @synchronized(self) {
+        if (!strongInstance) {
+            strongInstance = [[__className alloc] init];
+            instance = strongInstance;
+        }
+    }
+    return strongInstance;
+}
+
+```
+也可以抽成宏定义：
+```
+//可以自动释放的单例
+#define SINGLETON_H     +(instancetype)sharedInstance;
+
+#define SINGLETON_AUTORELEASE_M(__class) \
++ (instancetype)sharedInstance {\
+    static __weak __class *instance;\
+    __class *strongInstance = instance;\
+    @synchronized(self) {\
+        if (!strongInstance) {\
+            strongInstance = [[__class alloc] init];\
+            instance = strongInstance;\
+        }\
+    }\
+    return strongInstance;\
+}
+
+```
+
+值得注意的是，使用这种方式定义的单例对象时，需要想明白希望该单例对象存活多久，从而选择合适的“父对象”持有该单例，不然该单例对象有可能提前释放。
 
 
 ## 那些Bug
