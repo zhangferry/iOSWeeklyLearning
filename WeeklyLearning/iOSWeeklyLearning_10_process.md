@@ -48,6 +48,8 @@ func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPerip
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
 
+本期选题来源于林永坚的[iOS开发进阶](https://t8.lagounews.com/dR5FRrRtcO4F8)课程里的「跨平台架构：如何设计 BFF 架构系统？」这一节内容。如有表述不准确的地方，欢迎指出，定会随时改正。
+
 ### 什么是RESTful
 
 RESTful里的REST是Representational State Transfer的缩写，翻译过来就是：表现层状态转化。它是一种互联网软件架构，处理的问题是如何开发在互联网环境中使用的软件。
@@ -64,19 +66,29 @@ RESTful架构一般满足以下三点即可：
 
 参考：[理解RESTful架构 - 阮一峰](https://www.ruanyifeng.com/blog/2011/09/restful.html "理解RESTful架构")
 
+### 什么是 SOAP
+
+SOAP，全称是 Simple Object Access Protocol，即简单对象访问协议。从 W3C SOAP 1.2 版开始，SOAP 这一缩写不再代表 Simple Object Access Protocol，而是仅仅作为协议名称而已。
+
+SOAP 是一种相对古老（比REST还要早）的网络通信协议，它主是基于 XML 进行传输的。SOAP 和 REST 是早期互联网应用常用的两种方案。
+
+对于应用程序开发来说，使程序之间进行因特网通信是很重要的。目前的应用程序通过使用远程过程调用（RPC）在诸如 DCOM 与 CORBA 等对象之间进行通信，但是 HTTP 不是为此设计的。RPC 会产生兼容性以及安全问题；防火墙和代理服务器通常会阻止此类流量。通过 HTTP 在应用程序间通信是更好的方法，因为 HTTP 得到了所有的因特网浏览器及服务器的支持。SOAP 就是被创造出来完成这个任务的。SOAP 提供了一种标准的方法，使得运行在不同的操作系统并使用不同的技术和编程语言的应用程序可以互相进行通信。
+
+参考：[SOAP 简介 - 菜鸟](https://www.runoob.com/soap/soap-intro.html "SOAP 简介 - 菜鸟")
+
 ### 什么是 BFF
 
-BFF，全称是 Backend For Frontend，即服务于前端的后端，它对应的是一种架构模型而非具体实现。
+BFF，全称是 Backend For Frontend，即服务于前端的后端，它是一种解决 REST 接口数据冗余的架构模型。
 
-你可以把 BFF 当作一个中间层，原先前端某个页面可能需要向后端发送多个请求，并将这多个返回结果用于渲染一个页面。而引入 BBF 后，前端只需要向 BFF 发送一个请求，由 BFF 与后端进行交互，然后将返回值整合后返回给前端，降低前端与后端之间的耦合，方便前端接入。除了整合数据外，你还可以在 BFF 层对数据进行裁剪过滤，或者其他业务逻辑处理，而不用在多个前端中做相同的工作。当后端发生变化时，你只需要在 BFF 层做相应的修改，而不用修改多个前端，这极大地减少了的工作量。
+在 REST 模型下每个接口都对于一个服务器请求，当出现多个端，接口越来越多的情况该架构会面临很多问题。而BFF 就是用于解决这类问题出现的。
+
+你可以把 BFF 当作一个中间层，而引入 BBF 后，前端只需要向 BFF 发送一个请求，由 BFF 与后端进行交互，然后将返回值整合后返回给前端，降低前端与后端之间的耦合，方便前端接入。除了整合数据外，你还可以在 BFF 层对数据进行裁剪过滤，或者其他业务逻辑处理，而不用在多个前端中做相同的工作。当后端发生变化时，你只需要在 BFF 层做相应的修改，而不用修改多个前端，这极大地减少了的工作量。
 
 随着业务的发展，单个 BFF 为了适配多端的差异可能会变得越来越臃肿，可维护性降低，开发成本也会越来越高。这时候就得考虑为对 BFF 层进行拆分，给每种用户体验不同的前端分别对应一个 BFF，比如 PC BFF、移动端 BFF（或者再细拆为 iOS BFF 和 Android BFF） 等等，所以 BFF 也称为面向特定用户体验的适配层。
 
-要实现 BFF 架构，你可以使用 GraphQL，REST 等技术。
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430111611.png)
 
-![](https://upload-images.jianshu.io/upload_images/3100944-f5d383cf1d142e29.png?imageMogr2/auto-orient/strip|imageView2/2/w/627/format/webp)
-
-图片来源：https://www.jianshu.com/p/eb1875c62ad3
+参考：[BFF —— Backend For Frontend](https://www.jianshu.com/p/eb1875c62ad3 "BFF —— Backend For Frontend")
 
 ### 什么是GraphQL
 
@@ -84,17 +96,17 @@ GraphQL（展开为Graph Query Language）是Facebook开发的应用层查询语
 
 >  GraphQL 的本质是程序员想对JSON使用SQL。 —— 来自阮一峰的翻译
 
-它解决的问题是RESTful接口数据冗余，多个接口的数据聚合，接口经常改动等问题。
-
-REST数据是通过一个个URI定位到的，而GraphQL的模型更像是对象模型，它可以灵活地将相应数据的结构交给客户端，而且没有任何冗余，也让 API 更容易地随着时间推移而演进。
+它是一种 BFF 的实现方案。REST数据是通过一个个URI定位到的，而GraphQL的模型更像是对象模型。GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/33034116-558F-40ED-B191-31D9E28715F2.png)
 
-GraphQL起的是一个API网关的作用。
+这里 GraphQL 起的是一个 API 网关的作用。
+
+参考：[GraphQL](https://graphql.cn/ "GraphQL")
 
 ### 什么是 RPC
 
-RPC，全称是 Remote Procedure Call，即远程过程调用。RPC 是一种进程间通信方式，它允许客户端应用直接调用另一台远程不同计算机上的服务端应用的方法，而不需要了解远程调用的实际通信细节实现，RPC 会做好数据的序列化和传输，使得远程调用就像本地调用一样方便，让创建分布式应用和服务变得更加简单。
+RPC，全称是 Remote Procedure Call，即远程过程调用。RPC 是一种进程间通信方式，它允许客户端应用直接调用另一台远程不同计算机上的服务端应用的方法，而不需要了解远程调用的实际通信细节实现。RPC 会做好数据的序列化和传输，使得远程调用就像本地调用一样方便，让创建分布式应用和服务变得更加简单。促使RPC诞生的领域既是分布式。
 
 RPC 的工作流程大致是：客户端应用以本地调用的方式发起远程调用，将参数以及附加信息序列化为能够进行网络传输的消息体，并将消息发送给服务端。服务端对收到的消息进行反序列化后执行请求，然后将结果序列化为消息并返回给客户端。最后客户端接收到消息并反序列化得到数据。
 
@@ -105,21 +117,19 @@ RPC 有许多成熟、开源的实现方案，常见的 RPC 框架有：gRPC、D
 
 ### 什么是 gRPC
 
-gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。
+gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。它使用HTTP/2作为传输协议，protocol buffers 作为底层传输格式（默认），protocol buffers 还可以作为接口描述语言。
 
 在 gRPC 里客户端应用可以像调用本地对象一样直接调用另一台不同的机器上服务端应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个服务，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个存根能够像服务端一样的方法。
 
 ![](https://www.grpc.io/img/landing-2.svg)
 
-gRPC 客户端和服务端可以在多种环境中运行和交互 - 从 Google 内部的服务器到你自己的笔记本，并且可以用任何 gRPC 支持的语言来编写。所以，你可以很容易地用 Java 创建一个 gRPC 服务端，用 Go、Python、Ruby 来创建客户端。此外，Google 最新 API 将有 gRPC 版本的接口，使你很容易地将 Google 的功能集成到你的应用里。
+gRPC 客户端和服务端可以在多种环境中运行和交互 -- 从 Google 内部的服务器到你自己的笔记本，并且可以用任何 gRPC 支持的语言来编写。所以，你可以很容易地用 Java 创建一个 gRPC 服务端，用 Go、Python、Ruby 来创建客户端。此外，Google 最新 API 将有 gRPC 版本的接口，使你很容易地将 Google 的功能集成到你的应用里。
 
-### 什么是 SOAP
+Facebook 的调试工具[idb](https://fbidb.io/)（作为 WebDriverAgent 的替代者）里的 `idb_companion` 就是一个 gRPC 服务器。
 
-SOAP，全称是 Simple Object Access Protocol，即简单对象访问协议。
+参考：[what-is-grpc](https://grpc.io/docs/what-is-grpc/introduction/ "what-is-grpc")
 
-SOAP 是一种基于 XML 的网络通信协议，可使应用程序在 HTTP 之上进行信息交换。或者更简单地说：SOAP 是用于访问网络服务的协议。
 
-对于应用程序开发来说，使程序之间进行因特网通信是很重要的。目前的应用程序通过使用远程过程调用（RPC）在诸如 DCOM 与 CORBA 等对象之间进行通信，但是 HTTP 不是为此设计的。RPC 会产生兼容性以及安全问题；防火墙和代理服务器通常会阻止此类流量。通过 HTTP 在应用程序间通信是更好的方法，因为 HTTP 得到了所有的因特网浏览器及服务器的支持。SOAP 就是被创造出来完成这个任务的。SOAP 提供了一种标准的方法，使得运行在不同的操作系统并使用不同的技术和编程语言的应用程序可以互相进行通信。
 
 
 ## 优秀博客
