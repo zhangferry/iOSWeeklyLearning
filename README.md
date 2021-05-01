@@ -1,6 +1,6 @@
 # iOSWeeklyLearning
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些有用的学习内容。当前周报形式分为如下模块：
 
@@ -73,7 +73,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-
 <table>
   <tr>
     <td align="center"><a href="https://github.com/zhangferry"><img src="https://avatars.githubusercontent.com/u/13702445?v=4?s=100" width="100px;" alt=""/><br /><sub><b>zhangferry</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=zhangferry" title="Documentation">📖</a></td>
@@ -82,6 +81,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Mim0sa"><img src="https://avatars.githubusercontent.com/u/25274332?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mim0sa</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=Mim0sa" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/HighwayLaw"><img src="https://avatars.githubusercontent.com/u/10418403?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HighwayLaw</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=HighwayLaw" title="Documentation">📖</a></td>
     <td align="center"><a href="https://juejin.im/user/5a30d987f265da430d580126"><img src="https://avatars.githubusercontent.com/u/24238160?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BaoYing-Fan</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=fanbaoying" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/brave723"><img src="https://avatars.githubusercontent.com/u/1267034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>brave723</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=brave723" title="Documentation">📖</a></td>
   </tr>
 </table>
 
