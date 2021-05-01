@@ -16,7 +16,9 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/13702445?v=4",
       "profile": "https://github.com/zhangferry",
       "contributions": [
-        "doc"
+        "doc",
+	"blog",
+	"review"
       ]
     },
     {
@@ -25,7 +27,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/62095149?v=4",
       "profile": "https://www.jianshu.com/u/739b677928f7",
       "contributions": [
-        "doc"
+        "blog"
       ]
     },
     {
@@ -34,7 +36,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/76877122?v=4",
       "profile": "https://juejin.cn/user/782508012091645/posts",
       "contributions": [
-        "doc"
+        "blog"
       ]
     },
     {
@@ -43,7 +45,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/25274332?v=4",
       "profile": "https://github.com/Mim0sa",
       "contributions": [
-        "doc"
+        "blog"
       ]
     },
     {
@@ -52,7 +54,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/10418403?v=4",
       "profile": "https://github.com/HighwayLaw",
       "contributions": [
-        "doc"
+        "blog"
       ]
     },
     {
@@ -61,7 +63,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/24238160?v=4",
       "profile": "https://juejin.im/user/5a30d987f265da430d580126",
       "contributions": [
-        "doc"
+        "blog"
       ]
     },
     {
@@ -70,7 +72,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1267034?v=4",
       "profile": "https://github.com/brave723",
       "contributions": [
-        "doc"
+        "blog"
       ]
     }
   ],
