@@ -60,12 +60,6 @@ Pull requests适合熟悉一些Markdown语法的同学。选择这种方式的�
 
 3、积累技术影响力
 
-## 联系我
-
-欢迎关注公众号：iOS成长之路，还可以进群跟我一起交流学习心得。
-
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -91,3 +85,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## 联系我们
+
+欢迎关注公众号：iOS成长之路，还可以进群跟我一起交流学习心得。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
