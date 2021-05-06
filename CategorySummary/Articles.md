@@ -1,4 +1,4 @@
-
+***
 [UIView动画降帧探究](https://mp.weixin.qq.com/s/QVvrgWpjY6mxAqjkrRapPw "UIView动画降帧探究") -- 来自公众号：一瓜技术
 
 [llvm 编译器高级用法：第三方库插桩](https://mp.weixin.qq.com/s/RKg8f6B2jSNuFEImtMnq2Q "llvm 编译器高级用法：第三方库插桩") -- 来自公众号：搜狐技术产品
@@ -19,7 +19,7 @@
 
 [App Store App隐私保护问卷填写指引](https://info.umeng.com/detail?id=398&cateId=1 "App Store App隐私保护问卷填写指引") -- 来自友盟：最新资讯
 
-
+***
 [GitHub 2020 报告：全球开发者工作与生活的平衡情况](https://juejin.cn/post/6908880779963695118 "GitHub 2020 报告：全球开发者工作与生活的平衡情况") -- 来自掘金：LeviDing
 
 [2020 腾讯Techo Park - Flutter与大前端的革命](https://juejin.cn/post/6908357007749693454 "2020 腾讯Techo Park - Flutter与大前端的革命") -- 来自掘金：恋猫de小郭
@@ -42,7 +42,7 @@
 
 [2020：非适应性完美主义、存在主义哲学、架构、基金翻倍、有效休息｜掘金年度征文](https://juejin.cn/post/6913418068953661448 "2020：非适应性完美主义、存在主义哲学、架构、基金翻倍、有效休息｜掘金年度征文") -- 来自掘金：FeelsChaotic
 
-
+***
 这期博客推荐顺带考察了一下各大厂的技术公众号运营情况（仅限移动端），虽然技术号不能反映一个公司的全貌，但多少还是能够体现出该公司的开源分享精神的，顺道推荐几篇高质量的文章。内容较多，还会再有一期，先后顺序不代表排名。
 
 ### 爱奇艺
@@ -113,7 +113,7 @@
 
 很抱歉，没有找到他们的技术公众号，只搜到一堆砍价群0。0，如果有了解的小伙伴可以告知下。
 
-### 搜狐
+***### 搜狐
 公众号：**搜狐技术产品**
 综合性技术公众号，输出稳定，质量也不错。偏重运营一些，会有很多转载内容。
 
@@ -163,7 +163,7 @@
 | 携程     | 携程技术     | 综合号，有移动端内容 |
 
 
-
+***
 来自字节跳动技术团队的三篇包体优化文章，涵盖了几乎所有可行且有效的包体优化方案：
 
 [抖音品质建设 - iOS安装包大小优化实践篇](https://juejin.cn/post/6916317500992913421 "抖音品质建设 - iOS安装包大小优化实践篇") -- 来自掘金：字节跳动技术团队
@@ -197,7 +197,7 @@ iOS签名及证书的几篇文章：
 
 
 
-
+***
 [函数节流（Throttle）和防抖（Debounce）解析及其OC实现](https://mp.weixin.qq.com/s/h1MYGTYtYo9pcHmqw6tHBw "函数节流（Throttle）和防抖（Debounce）解析及其OC实现")  -- 来自公众号：iOS成长之路
 
 [2021阿里淘系工程师推荐书单](https://mp.weixin.qq.com/s/zi7qWTg8xGf3GaxW6Czj2A "2021阿里淘系工程师推荐书单") -- 来自公众号：淘系技术
@@ -215,7 +215,7 @@ iOS签名及证书的几篇文章：
 [如何做一场高质量的分享](https://juejin.cn/post/6938208336802217991 "如何做一场高质量的分享") -- 来自掘金：相学长
 
 
-
+***
 [翻译-为什么objc_msgSend必须用汇编实现](http://tutuge.me/2016/06/19/translation-why-objcmsgsend-must-be-written-in-assembly/ "翻译-为什么objc_msgSend必须用汇编实现") -- 来自博客：土土哥的blog
 
 [深度长文：细说iOS代码签名](http://xelz.info/blog/2019/01/11/ios-code-signature/ "深度长文：细说iOS代码签名") -- 来自博客：xelz's blog
@@ -235,7 +235,7 @@ iOS签名及证书的几篇文章：
 [青年人在美团是怎样成长的？](https://tech.meituan.com/2020/05/04/meituan-0504-young-people.html "青年人在美团是怎样成长的？") -- 来自博客：美团技术团队
 
 
-
+***
 1、[我离职了](https://juejin.cn/post/6943384976909942815 "我离职了") -- 来自掘金：敖丙
 
 敖丙还在B站录了[视频](https://www.bilibili.com/video/BV1cp4y1a7DW "我离职了 B站")，看视频可能更有感染力。
@@ -266,7 +266,7 @@ iOS签名及证书的几篇文章：
 
 
 
-
+***
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
 
 1、[我在Uber亲历的最严重的工程灾难](https://mp.weixin.qq.com/s/O1haH28cTr0tkhRAnVZQ6g "我在Uber亲历的最严重的工程灾难") -- 来自公众号：infoQ
@@ -296,4 +296,36 @@ iOS签名及证书的几篇文章：
 7、[Category无法覆写系统方法？](https://zhangferry.com/2021/04/21/overwrite_system_category/) -- 来自公众号：iOS成长之路
 
 这是一次非常有趣的解决问题经历，以至于我认为解决方式可能比问题本身更有意思。解决完全没有头绪的问题，我们应该避免陷入不断的猜测和佐证中。深挖问题，找到正确方向才更容易出现转机。
+
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
+
+1、[iOS14.5隐私追踪功能现重大bug！IDFA选项变灰且无法开启(附解决方案)](https://mp.weixin.qq.com/s/rqzI3iiwdPxtWyP8q4wXJg "iOS14.5隐私追踪功能现重大bug！IDFA选项变灰且无法开启（附解决方案") -- 来自公众号：七麦研究院
+
+千呼万唤始出来——iOS14.5上线了。
+
+2、[Swift 2021 生态调研报告](https://mp.weixin.qq.com/s/5SXAozM2c6Ivyzl7B9IfQQ "Swift 2021 生态调研报告") -- 来自公众号： 一瓜技术
+
+Swift 崛起一直是大家的共识，但是缺少量化数据。本文对 Swift 的覆盖量做了细致的分析，从数据层面可以分析 Swift 的形势。对开发者学习和转型有非常积极的意义。
+
+3、[学会黑科技，一招搞定 iOS 14.2 的 libffi crash](https://mp.weixin.qq.com/s/XLqcCfcNhpCA8Tg6LknBCQ "学会黑科技，一招搞定 iOS 14.2 的 libffi crash") -- 来自公众号： 字节跳动技术团队
+
+本文主要介绍了 libffi 在 iOS14.2 上崩溃的原因以及解决方案。如果有相关问题，可以参考本文解决。
+
+4、[libffi探究](https://juejin.cn/post/6844904177609490440 "libffi探究") -- 来自掘金：酱了里个酱
+
+如果对 libffi 不是很了解，可以通过本文来了解和认识下 libffi。
+
+5、[CALayer 的 filters](https://juejin.cn/post/6938583362093187086 "CALayer 的 filters") -- 来自掘金：rickytan
+
+相信很多同学都遇到了哀悼模式黑白色的问题，本文介绍了一种快速便捷的方式，不过存在被拒风险，大家可以灵活把控。
+
+6、[从底层分析一下存在跨进程通信问题的 NSUserDefaults 还能用吗？](https://mp.weixin.qq.com/s/Y1AHFN1kJ9kCjXdFOnUviA "从底层分析一下存在跨进程通信问题的 NSUserDefaults 还能用吗？") -- 来自公众号：酷酷的哀殿
+
+之前字节的文章介绍了卡死的几种情况，其中包括 NSUserDefaults 造成的卡死。本文深入分析了 NSUserDefaults 造成卡死的原因以及用法。
+
+7、[用树莓派打造一个超薄魔镜的简单教程](https://onevcat.com/2021/04/magicmirror/ "用树莓派打造一个超薄魔镜的简单教程") -- 来自博客：OneV's Den
+
+看喵神如何使用树莓派 + 单向玻璃 + 显示器打造一个魔镜。实现原理是：贴紧墙面的一侧无光，类似监控室；我们生活的空间光线较为充足，类似被监控房间；在镜子后方屏幕发出的光，相当于“改善”了镜子内侧的光线条件，这部分光透过镜子，被我们看到，从而形成“镜中屏”的效果。
+
 

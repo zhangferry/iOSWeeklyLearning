@@ -1,4 +1,4 @@
-
+***
 ### [iOS面试资料总结](http://note.youdao.com/s/SvA1l4Gy)
 
 地址：http://note.youdao.com/s/SvA1l4Gy
@@ -31,7 +31,7 @@
 
 之前有段时间想系统学习Bash脚本，翻阅很多网站都没有找到满意的文档资料，直到看到这份教程，快快学起来吧。
 
-
+***
 ### [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way "提问的智慧")
 
 开发过程中遇到问题是非常常见的，解决问题的过程免不了要向别人或者社区论坛提问，而提问方式的好坏通常决定了你能否获得想要的答案。有这么一个github仓库：[How-To-Ask-Questions-The-Smart-Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) star数高达13.7k，专门讲述如何更有效的提问，很多论坛也将这个作为提问准则，用于提醒大家有效提问的重要性。
@@ -46,7 +46,7 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210103211318.png)
 
-
+***
 ### 《Flutter技术解析与实战》
 
 咸鱼团队对Flutter技术的探索与实战分析，听说他们已经在准备写第二本Flutter书了。可以关注公众号：**咸鱼技术获取**，后台免费获取，另有实体书可以淘宝搜索购买。
@@ -61,14 +61,14 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110172952.png)
 
-
+***
 ### [Refactoring.Guru](https://refactoringguru.cn/ "Refactoring.Guru")
 
 一个非常有趣的讲解设计模式、SOLID原则、重构原则的网站。支持八种语言，有很多丰富的配图帮助我们理解这些重要的编程概念。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124190413.png)
 
-
+***
 ### [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python "30-Days-Of-Python")
 
 简介：英文仓库、Star数5k
@@ -95,7 +95,7 @@
 
 
 
-
+***
 ### iOS开发者资源大全
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313212015.png)
@@ -110,7 +110,7 @@
 
 对于老手，本文对内容排版也做了优化，便于查找，对于 github 开源项目，也将 Star 标注出来，以便于筛选，对于支持 Swift 项目也做了相应标记。
 
-
+***
 ### 一个人工智能的诞生
 
 地址：https://jibencaozuo.com/product/1/episode/0。
@@ -121,14 +121,14 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210328103223.png)
 
-
+***
 ### Can Balkaya
 
 Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](https://canbalkaya.blog/ "Can Balkaya")，经常发布一些介绍Swift特性相关的文章，质量都很高。我在别的地方看到有人翻译过里面部分文章，说明它还是有一定关注度的，如果英文稍微好些的可以直接订阅这个专栏来看。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210411102014.png)
 
-
+***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
 1、[CS-Notes](http://www.cyc2018.xyz/ "CS-Notes")
@@ -140,4 +140,25 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210420215429.png)
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### [LearnOpenGL CN](https://learnopengl-cn.github.io/)
+
+欢迎来到 OpenGL 的世界。这个工程只是我([Joey de Vries](http://joeydevries.com/))的一次小小的尝试，希望能够建立起一个完善的 OpenGL 教学平台。无论你学习 OpenGL 是为了学业，找工作，或仅仅是因为兴趣，这个网站都将能够教会你现代(Core-profile)  OpenGL 从基础，中级，到高级的知识。LearnOpenGL 的目标是使用易于理解的形式，使用清晰的例子，展现现代 OpenGL 的所有知识点，并与此同时为你以后的学习提供有用的参考。
+
+> 该教程是[原教程](https://learnopengl.com/)的中文翻译教程
+
+### [VisuAlgo](https://visualgo.net/en)
+
+由新加坡国立大学的教授和学生发起、制作并完善的「数据结构和算法动态可视化」网站，在该网站你可以看到许多经典、非经典的，常见的、非常见的算法的可视化，清晰明了的图形化表现和实时的代码解读可以帮助读者更好地理解各种算法及数据结构。同时该网站支持自动问题生成器和验证器（在线测验系统）。
+
+![VisuAlgo](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430185031.png)
+
+### [Announcing our Deprecated Books Repo!](https://www.raywenderlich.com/21965623-announcing-our-deprecated-books-repo)
+
+[raywenderlich](https://www.raywenderlich.com) 是一个学习编程的网站，他们有很大一部分课程和 `iOS` / `Swift` 有关。最近他们开源了一批将要被废弃的书籍，主要是相对「过时」，没有更新必要的书籍。笔者看过其中的 `2D Games`、`3D Games`、`ARKit` 等书籍，其中介绍了 `SpriteKit` 和 `SceneKit` 的相关知识，书本会带着读者循序渐进，了解这些框架的原理以及如何应用。这次名单中还包含了 `Unity AR & VR`、`Realm` 和 `Server Side` 相关的书籍，这些书对于想要学习这些特定领域内容的读者来说是很好的选择。
+
+可以在这里下载：[deprecated-books](https://github.com/raywenderlich/deprecated-books "deprecated-books")
 

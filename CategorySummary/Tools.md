@@ -1,4 +1,4 @@
-
+***
 较少好用的开发工具。
 
 ### Vimac App - control macOS UI with the keyboard only
@@ -51,7 +51,7 @@
 
 
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)***
 推荐好用的开发工具。
 
 ### A Companion for SwiftUI
@@ -116,7 +116,7 @@ end tell
 ```
 
 该脚本是针对`iTerm`终端设置的。
-
+***
 推荐好用的开发工具。
 
 ### MacZip(原名eZip)
@@ -151,7 +151,7 @@ uTools是一个丰富的生产力工具集，支持将近百种的插件。它�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110110536.png)
 
-
+***
 推荐好用的开发工具。
 
 ### kaleidoscope
@@ -182,7 +182,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124195019.png)
 
-
+***
 推荐好用的开发工具。
 
 ### Diagrams.net
@@ -217,7 +217,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 我们可以像在VSCode里一样，直接在浏览器里查看仓库代码。
 
-
+************
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
 
 ### OpenInTerminal
@@ -249,3 +249,4 @@ SnippetsLab是一款mac代码片段管理工具，使用SnippetsLab可以提高�
 
 
 
+***

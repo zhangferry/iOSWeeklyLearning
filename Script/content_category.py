@@ -66,6 +66,7 @@ def writeToFile(filePath, contentMap):
         subFile = filePath + "/" + key + ".md"
         if os.path.exists(subFile):
             with open(subFile, "a", encoding='utf-8') as file:
+                file.write("***")
                 for content_line in contentMap[key]:
                     file.writelines(content_line)
     print("write success!")
