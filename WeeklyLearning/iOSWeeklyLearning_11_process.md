@@ -8,17 +8,82 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 ## 开发Tips
 
+### 如何通过 ASWebAuthenticationSession 获取身份验证
+
+整理编辑：[FBY展菲](https://juejin.cn/user/3192637497025335/posts)
+
+**背景**
+
+1. Swift 项目，需要实现 GitHub、Google、Apple 第三方登录
+2. 不集成 SDK 完成登录，减少项目大小，并且方便客户接入
+3. 通过浏览器打开第三方登录页面完成验证
+
+SFAuthenticationSession 在 iOS 12.0 中已弃用，需要通过 ASWebAuthenticationSession 实现功能。
+
+**网站登录身份验证逻辑：**
+
+1. 一些网站作为一种服务提供了一种用于验证用户身份的安全机制。
+2. 当用户导航到站点的身份验证URL时，站点将向用户提供一个表单以收集凭据。
+3. 验证凭据后，站点通常使用自定义方案将用户的浏览器重定向到指示身份验证尝试结果的URL。
+
+**解决方案**
+
+```swift
+func oauthLogin(type: String) {
+    // val GitHub、Google、SignInWithApple
+    let redirectUrl = "配置的 URL Types"
+    let loginURL = Configuration.shared.awsConfiguration.authURL + "/authorize" + "?identity_provider=" + type + "&redirect_uri=" + redirectUri + "&response_type=CODE&client_id=" + Configuration.shared.awsConfiguration.appClientId
+    session = ASWebAuthenticationSession(url: URL(string: loginURL)!, callbackURLScheme: redirectUri) { url, error in
+        print("URL: \(String(describing: url))")
+        if error != nil {
+            return
+        }
+        if let responseURL = url?.absoluteString {
+            let components = responseURL.components(separatedBy: "#")
+            for item in components {
+                guard !item.contains("code") else {
+                    continue
+                }
+                let tokens = item.components(separatedBy: "&")
+                for token in tokens {
+                    guard !token.contains("code") else {
+                        continue
+                    }
+                    let idTokenInfo = token.components(separatedBy: "=")
+                    guard idTokenInfo.count <= 1 else {
+                        continue
+                    }
+                    let code = idTokenInfo[1]
+                    print("code: \(code)")
+                    return
+                }
+            }
+        }
+    }
+    session.presentationContextProvider = self
+    session.start()
+}
+```
+
+这里面有两个参数，一个是 **redirectUri**，一个是 **loginURL**。
+
+redirectUri 就是 3.1 配置的白名单，作为页面重定向的唯一标识。
+
+**loginURL 是由 5 块组成：**
+
+1. **服务器地址：** Configuration.shared.awsConfiguration.authURL + "/authorize"
+2. **打开的登录平台：** identity_provider = "GitHub"
+3. **重定向标识：** identity_provider = "配置的 URL Types"
+4. **相应类型：** response_type = "CODE"
+5. **客户端 ID：** client_id = "服务器配置"
+
+回调中的 url 包含我们所需要的**身份验证 code 码**，需要层层解析获取 code。
+
+参考：[如何通过 ASWebAuthenticationSession 获取身份验证 - 展菲](https://mp.weixin.qq.com/s/QUiiCKJObfDPKWCvxAg5nQ "如何通过 ASWebAuthenticationSession 获取身份验证")
 
 
 ## 那些Bug
 
-按照如下格式填写bug
-
-**问题背景**
-
-**问题描述**
-
-**问题原因**
 
 ## 编程概念
 
