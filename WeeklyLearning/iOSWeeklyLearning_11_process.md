@@ -29,28 +29,30 @@ func oauthLogin(type: String) {
     let loginURL = Configuration.shared.awsConfiguration.authURL + "/authorize" + "?identity_provider=" + type + "&redirect_uri=" + redirectUri + "&response_type=CODE&client_id=" + Configuration.shared.awsConfiguration.appClientId
     session = ASWebAuthenticationSession(url: URL(string: loginURL)!, callbackURLScheme: redirectUri) { url, error in
         print("URL: \(String(describing: url))")
-        if error != nil {
+        guard error == nil else {
             return
-        }                                                                                       						// The callback URL format depends on the provider.
-        if let responseURL = url?.absoluteString {
-            let components = responseURL.components(separatedBy: "#")
-            for item in components {
-                guard !item.contains("code") else {
+        }
+        // The callback URL format depends on the provider.
+        guard let responseURL = url?.absoluteString else {
+            return
+        }
+        let components = responseURL.components(separatedBy: "#")
+        for item in components {
+            guard !item.contains("code") else {
+                continue
+            }
+            let tokens = item.components(separatedBy: "&")
+            for token in tokens {
+                guard !token.contains("code") else {
                     continue
                 }
-                let tokens = item.components(separatedBy: "&")
-                for token in tokens {
-                    guard !token.contains("code") else {
-                        continue
-                    }
-                    let idTokenInfo = token.components(separatedBy: "=")
-                    guard idTokenInfo.count <= 1 else {
-                        continue
-                    }
-                    let code = idTokenInfo[1]
-                    print("code: \(code)")
-                    return
+                let idTokenInfo = token.components(separatedBy: "=")
+                guard idTokenInfo.count <= 1 else {
+                    continue
                 }
+                let code = idTokenInfo[1]
+                print("code: \(code)")
+                return
             }
         }
     }
