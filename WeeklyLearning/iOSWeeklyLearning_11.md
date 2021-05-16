@@ -29,11 +29,8 @@ func oauthLogin(type: String) {
     let loginURL = Configuration.shared.awsConfiguration.authURL + "/authorize" + "?identity_provider=" + type + "&redirect_uri=" + redirectUri + "&response_type=CODE&client_id=" + Configuration.shared.awsConfiguration.appClientId
     session = ASWebAuthenticationSession(url: URL(string: loginURL)!, callbackURLScheme: redirectUri) { url, error in
         print("URL: \(String(describing: url))")
-        guard error == nil else {
-            return
-        }
         // The callback URL format depends on the provider.
-        guard let responseURL = url?.absoluteString else {
+        guard error == nil, let responseURL = url?.absoluteString else {
             return
         }
         let components = responseURL.components(separatedBy: "#")
