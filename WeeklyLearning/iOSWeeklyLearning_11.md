@@ -94,7 +94,7 @@ redirectUri 就是 3.1 配置的白名单，作为页面重定向的唯一标识
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
 
-该期主题来源于对 [xuan总](https://github.com/crisxuan) 的那篇 [程序必知的硬核知识大全](https://github.com/zhangferry/iOSWeeklyLearning) 的部分总结，引用图片也来源于此，该文档已经过其本人授权放到了周报仓库里，有兴趣的读者可以去下载全文阅读。
+该期主题来源于对 [xuan总](https://github.com/crisxuan) 的那篇 [程序必知的硬核知识大全](https://github.com/zhangferry/iOSWeeklyLearning/tree/main/Resources/Books) 的部分总结，引用图片也来源于此，该文档已经过其本人授权放到了周报仓库里，有兴趣的读者可以去下载全文阅读。
 
 ### 什么是 CPU
 

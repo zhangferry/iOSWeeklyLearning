@@ -162,3 +162,14 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 可以在这里下载：[deprecated-books](https://github.com/raywenderlich/deprecated-books "deprecated-books")
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### [Five Stars Blog](https://www.fivestars.blog/)
+
+该网站由 [Federico Zanetello](https://twitter.com/zntfdr) 一手经营，其全部内容对所有人免费开放，每周都有新的文章发布。网站内较多文章在探寻 `iOS` 和 `Swift` 的具体工作原理，其关于 `SwiftUI` 的文章也比较多，文章的质量不错，值得关注一下。
+
+### [iOS Core Animation: Advanced Techniques 中文译本](https://zsisme.gitbooks.io/ios-/content/index.html)
+
+iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 [iOS Core Animation: Advanced Techniques](http://www.amazon.com/iOS-Core-Animation-Advanced-Techniques-ebook/dp/B00EHJCORC/ref=sr_1_1?ie=UTF8&qid=1423192842&sr=8-1&keywords=Core+Animation+Advanced+Techniques)，很老但是价值很高的书，感谢译者的工作。该书详细介绍了 Core Animation(Layer Kit) 的方方面面：CALayer，图层树，专属图层，隐式动画，离屏渲染，性能优化等等，虽然该书年代久远了一些，但是笔者每次看依然能悟到新知识🤖！如果想复习一下这方面知识，该译本将会是绝佳选择。
+
