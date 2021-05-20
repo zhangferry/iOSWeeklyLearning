@@ -143,16 +143,47 @@ bool isBroadcast = [targetHostName hasSuffix:@"255"];
 
 
 ## 工具推荐
-
+ 
+### SwiftFormat for Xcode
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
 
-### Application Name
+**地址**：https://github.com/nicklockwood/SwiftFormat
 
-**地址**：
-
-**软件状态**：
+**软件状态**：免费 
 
 **使用介绍**
+
+SwiftFormat 是用于重新格式化 Swift 代码的命令行工具。它会在保持代码意义的前提下，将代码进行格式化
+
+很多项目都有固定的代码风格，统一的代码规范有助于项目的迭代和维护，而有的程序员却无视这些规则。同时，手动强制的去修改代码的风格又容易出错，而且没有人愿意去做这些无聊的工作。
+
+如果有自动化的工具能完成这些工作，那几乎是最完美的方案了。在代码 review 时就不需要每次都强调无数遍繁琐的代码格式问题了
+
+ 
+
+ ![](https://github.com/nicklockwood/SwiftFormat/blob/master/EditorExtension/Application/Assets.xcassets/AppIcon.appiconset/icon_256x256.png)
+
+### Notion
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+**地址**: https://www.notion.so/desktop
+
+**软件状态**：个人免费，团队收费
+
+**使用介绍**
+
+Notion是一款极其出色的个人笔记软件，它将“万物皆对象”的思维运用到笔记中，让使用者可以天马行空地去创造、拖拽、链接；Notion不仅是一款优秀的个人笔记软件，其功能还涵盖了项目管理、wiki、文档等等
+
+##### 核心功能
+* 支持导入丰富的文件和内容 
+* 内置丰富的模板
+* 简洁的用户界面、方便的拖动和新建操作
+* 支持Board视图，同时可以添加任意数量的其他类型视图并自定义相关的过滤条件
+* 复制图片即完成上传，无需其他图床 
+* 保存历史操作记录并记录相关时间
+* 强大的关联功能，比如日历与笔记，笔记与文件以及网页链接
+
+![](https://www.notion.so/cdn-cgi/image/f=auto,w=3840,q=100/front-static/pages/work/carousel-desktop/tasks-v5/en-US.png)
 
 
 
