@@ -130,9 +130,13 @@ bool isBroadcast = [targetHostName hasSuffix:@"255"];
 
 **使用介绍**
 
-SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS or Linux.
+SwiftFormat 是用于重新格式化 Swift 代码的命令行工具。它会在保持代码意义的前提下，将代码进行格式化
 
-SwiftFormat goes above and beyond what you might expect from a code formatter. In addition to adjusting white space it can insert or remove implicit self, remove redundant parentheses, and correct many other deviations from the standard Swift idioms
+很多项目都有固定的代码风格，统一的代码规范有助于项目的迭代和维护，而有的程序员却无视这些规则。同时，手动强制的去修改代码的风格又容易出错，而且没有人愿意去做这些无聊的工作。
+
+如果有自动化的工具能完成这些工作，那几乎是最完美的方案了。在代码 review 时就不需要每次都强调无数遍繁琐的代码格式问题了
+
+ 
 
  ![](https://github.com/nicklockwood/SwiftFormat/blob/master/EditorExtension/Application/Assets.xcassets/AppIcon.appiconset/icon_256x256.png)
 
