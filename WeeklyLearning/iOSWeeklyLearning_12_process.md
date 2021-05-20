@@ -29,7 +29,7 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 6、[了解和分析iOS Crash](https://segmentfault.com/a/1190000016411126 "了解和分析iOS Crash") -- 来自segmentfault：腾讯WeTest
 
 
-iOS crash相关很好很全面的文章，已收藏。
+iOS crash相关很好很全面的文章，作者加了注解帮助我们理解，已收藏。
 
 
 ## 那些Bug
