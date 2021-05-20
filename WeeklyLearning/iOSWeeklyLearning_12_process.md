@@ -11,6 +11,86 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 那些Bug
 
+### 解决 iOS 14.5 UDP 广播 sendto 返回 -1
+
+整理编辑：[FBY展菲](https://juejin.cn/user/3192637497025335/posts)
+
+### 1. 问题背景
+
+1. 手机系统升级到 iOS 14.5 之后，UDP 广播发送失败
+2. 项目中老版本使用到 socket 
+3. 项目中新版本使用 CocoaAsyncSocket
+4. 两种 UDP 发包方式都会报错 No route to host
+
+**报错具体内容如下：**
+
+```
+sendto: -1
+client: sendto fail, but just ignore it
+: No route to host
+```
+
+### 2. 问题分析
+
+##### 2.1  sendto 返回 -1 问题排查
+
+我们知道发送广播 sendto 返回 -1，正常情况sendto 返回值大于 0 。
+首先判断 socket 连接是否建立
+
+```
+self._sck_fd4 = socket(AF_INET,SOCK_DGRAM,0);
+if (DEBUG_ON) {
+     NSLog(@"client init() _sck_fd4=%d",self._sck_fd4);
+}
+```
+self._sck_fd4 打印：
+
+```
+server init(): _sck_fd4=12
+```
+
+socket 连接正常，接下来判断数据发包
+
+```
+sendto(self._sck_fd4, bytes, dataLen, 0, (struct sockaddr*)&target_addr, addr_len) = -1
+```
+
+数据发送失败
+
+##### 2.2  增加 NSLocalNetworkUsageDescription 权限
+
+1. Info.plist 添加 `NSLocalNetworkUsageDescription`
+
+2. 发送一次UDP广播，触发权限弹框，让用户点击好，允许访问本地网络。
+
+发现问题依旧存在
+
+##### 2.3 发送单播排查
+
+由于项目中发送广播设置的 hostName 为 255.255.255.255，为了排查决定先发送单播看是否能成功。
+
+将单播地址改为 192.168.0.101 之后发现是可以发送成功的，然后在新版本 CocoaAsyncSocket 库中发送单播也是可以成功的。
+
+UDP 广播推荐使用 192.168.0.255 ，将广播地址改了之后，问题解决了，设备可以收到 UDP 广播数据。
+
+### 3. 问题解决
+
+由于 192.168.0.255 广播地址只是当前本地地址，App 中需要动态改变前三段 192.168.0 本地地址，解决方法如下：
+
+```
+NSString *localInetAddr4 = [ESP_NetUtil getLocalIPv4];
+NSArray *arr = [localInetAddr4 componentsSeparatedByString:@"."];
+NSString *deviceAddress4 = [NSString stringWithFormat:@"%@.%@.%@.255",arr[0], arr[1], arr[2]];
+```
+
+发包过滤，只需要过滤地址最后一段是否为 255
+
+```
+bool isBroadcast = [targetHostName hasSuffix:@"255"];
+```
+
+
+参考：[解决 iOS 14.5 UDP 广播 sendto 返回 -1 - 展菲](https://mp.weixin.qq.com/s/2SmIYq6qCTFXHDL3j6LoeA "解决 iOS 14.5 UDP 广播 sendto 返回 -1")
 
 ## 编程概念
 
