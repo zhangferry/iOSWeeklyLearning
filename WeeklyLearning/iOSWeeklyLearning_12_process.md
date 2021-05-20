@@ -120,16 +120,43 @@ bool isBroadcast = [targetHostName hasSuffix:@"255"];
 
 
 ## 工具推荐
-
+ 
+### SwiftFormat for Xcode
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
 
-### Application Name
+**地址**：https://github.com/nicklockwood/SwiftFormat
 
-**地址**：
-
-**软件状态**：
+**软件状态**：免费 
 
 **使用介绍**
+
+SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS or Linux.
+
+SwiftFormat goes above and beyond what you might expect from a code formatter. In addition to adjusting white space it can insert or remove implicit self, remove redundant parentheses, and correct many other deviations from the standard Swift idioms
+
+ ![](https://github.com/nicklockwood/SwiftFormat/blob/master/EditorExtension/Application/Assets.xcassets/AppIcon.appiconset/icon_256x256.png)
+
+### Notion
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+**地址**: https://www.notion.so/desktop
+
+**软件状态**：个人免费，团队收费
+
+**使用介绍**
+
+Notion是一款极其出色的个人笔记软件，它将“万物皆对象”的思维运用到笔记中，让使用者可以天马行空地去创造、拖拽、链接；Notion不仅是一款优秀的个人笔记软件，其功能还涵盖了项目管理、wiki、文档等等
+
+##### 核心功能
+* 支持导入丰富的文件和内容 
+* 内置丰富的模板
+* 简洁的用户界面、方便的拖动和新建操作
+* 支持Board视图，同时可以添加任意数量的其他类型视图并自定义相关的过滤条件
+* 复制图片即完成上传，无需其他图床 
+* 保存历史操作记录并记录相关时间
+* 强大的关联功能，比如日历与笔记，笔记与文件以及网页链接
+
+![](https://www.notion.so/cdn-cgi/image/f=auto,w=3840,q=100/front-static/pages/work/carousel-desktop/tasks-v5/en-US.png)
 
 
 
