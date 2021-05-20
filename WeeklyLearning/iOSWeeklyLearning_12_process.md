@@ -6,7 +6,21 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 开发Tips
 
+1、[普通技术人的成长路径 - 一位客户端老兵的经验之谈](https://mp.weixin.qq.com/s/IrSQyyc0J3SXBuWs9M3SYA "普通技术人的成长路径 - 一位客户端老兵的经验之谈") -- 来自公众号： 老司机周报
 
+青衫不负踏歌行，莫忘曾经是书生。很认同其中的一些观点和思考。不知道大家是否跟我一样，存在各种各样的焦虑：客三消、内卷、35岁危机... 抽空可以读读此文，让内心的焦躁得到暂时的缓解。
+
+2、[Swift 汇编（一）Protocol Witness Table 初探](https://mp.weixin.qq.com/s/lRKVZk5c1tX7AtWVgD56OA "Swift 汇编（一）Protocol Witness Table 初探") -- 来自公众号：Swift 社区
+之前关注过Protocol Witness Table，但是没有抽时间去了解。很有深度的一篇文章，值得阅读，如果有时间可以跟着作者的思路亲自动手调试下。
+
+3、[Wakeup in XNU](https://mp.weixin.qq.com/s/8OBAmyCLa6_eFYqIJgoCQw "Wakeup in XNU") -- 来自公众号： 网易云音乐大前端团队
+去年年底的时候在群里帮一位同学解析了一个weakup日志。weakup日志看起来比较奇怪，可能很多同学并没有遇到类似的问题。通过这篇专业的文章可以让大家对weakup有个初步了解。
+
+4、[快手客户端稳定性体系建设](https://blog.csdn.net/Kwai_tech/article/details/107964806 "快手客户端稳定性体系建设") -- 来自CSDN：快手技术团队
+这里面就提到了快手遇到了weakup崩溃以及如何定位相关问题的。
+
+5、[iOS技能拓展 初识符号与链接](https://juejin.cn/post/6961576195332309006 "iOS技能拓展 初识符号与链接") -- 来自掘金：我是好宝宝
+熟悉Mach-O与链接会成为面试的加分项，正在面试的同学可以关注下。
 
 
 ## 那些Bug
