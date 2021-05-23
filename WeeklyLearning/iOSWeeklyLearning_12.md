@@ -260,11 +260,11 @@ RLE 是 run-length encoding的缩写，中文翻译为游程编码，是一种�
 
 3、[Wakeup in XNU](https://mp.weixin.qq.com/s/8OBAmyCLa6_eFYqIJgoCQw "Wakeup in XNU") -- 来自公众号： 网易云音乐大前端团队
 
-去年年底的时候在群里帮一位同学解析了一个weakup日志。weakup日志看起来比较奇怪，可能很多同学并没有遇到类似的问题。通过这篇专业的文章可以让大家对weakup有个初步了解。
+去年年底的时候在群里帮一位同学解析了一个 wakeup 日志。wakeup 日志看起来比较奇怪，可能很多同学并没有遇到类似的问题。通过这篇专业的文章可以让大家对 wakeup 有个初步了解。
 
 4、[快手客户端稳定性体系建设](https://blog.csdn.net/Kwai_tech/article/details/107964806 "快手客户端稳定性体系建设") -- 来自CSDN：快手技术团队
 
-这里面就提到了快手遇到了weakup崩溃以及如何定位相关问题的。
+这里面就提到了快手遇到了 wakeup 崩溃以及如何定位相关问题的。
 
 5、[iOS技能拓展 初识符号与链接](https://juejin.cn/post/6961576195332309006 "iOS技能拓展 初识符号与链接") -- 来自掘金：我是好宝宝
 
