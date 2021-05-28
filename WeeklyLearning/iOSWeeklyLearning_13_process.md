@@ -188,6 +188,20 @@ I/O 端口号、IRQ、DMA 通道可以说是识别外围设备的 3 点组合。
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### 喵神预告：新书，开工！
+
+喵神关于 `async-swift` 的书开工了。（来源于其[微博](https://weibo.com/onevcat)）
+
+![New Book! Go!](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/11661621992188_.pic.jpg)
+
+### 30 seconds of code
+
+地址：https://www.30secondsofcode.org/
+
+该网站的口号是：「能找到满足你所有开发需求的代码片段！」，他有许多语言的常用代码片段（Code Snippets），例如排序算法、hex 转 rgb、时间转换等等，能让你轻松地找到各个语言的这些常用代码，让你的开发效率大大提升！（可惜目前还没有 `Swift` 的板块🥲
+
+
+
 ## 工具推荐
 
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
