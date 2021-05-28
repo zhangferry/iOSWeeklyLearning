@@ -6,7 +6,58 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 开发Tips
 
+### CocoaPods 常见操作
 
+#### pod install 和 pod update 的区别
+
+ 什么时候使用pod install：用这个命令安装或者删除一些pods。即使在执行这个命令之前已经有Podfile文件。
+ 什么时候使用pod update: 当我们想更新某个pods 到某个新的版本。（注意我们不建议直接使用这个命令，使用pod update podName）。
+ 
+#### pod install 使用时机
+
+当我们的工程首次想使用cocoapods 管理第三方库的时候。当我们每次编辑我们的Podfile时候比如（添加，删除或者编辑一个pod库的时候）。
+
+* 每次我们执行pod install 命令的时候，会下载安装新的pod,并把每个pod的版本写到Podfile.lock 文件里。这个文件跟踪所有的pod库的版本并锁定他们的版本。
+* 当执行pod install的时候，只解析Podfile.lock中没有列出的pod依赖项。1. 对于Podfile.lock 列出的版本，会不需要检查pods是否有更新直接使用既有的版本安装。2. 对于Podfile.lock 未列出的版本，会根据Podfile 描述的版本安装。
+
+#### pod outdated 使用时机
+
+之前说如果想更新某个库采用例如pod update podName 而不是整体更新。在之前想列出Podfile.lock 里哪些库有新的版本可以使用这个命令pod outdated。
+
+#### pod update 使用时机
+
+当我们执行pod update podName 的时候。CocoaPods将试着找到podName的最新版本，会忽略Podfile.lock文件的版本，会尽可能的更新到最新的版本。如果Podfile写了版本，会匹配Podfile的版本。如果不写版本会更新到最新的版本，并更新Podfile.lock文件版本。
+
+如果我们直接使用pod update命令。CocoaPods会更新Podfile里所列出的所有的库到可能的最新的版本。并更新Podfile.lock版本。
+
+### CocoaPods 一个完整使用场景
+
+#### 阶段一：团队成员七七创建了一个项目
+
+七七创建这个项目，想使用库AFN，SDWebImage等库。因此七七在Podfile列出来这些库，然后使用pod install。这时候AFN使用了1.0.0版本，SDWebImage使用了1.0.0版本。
+Podfile.lock会跟踪锁定AFN，SDWebImage 到1.0.0版本。
+
+#### 阶段二：七七添加一个新的pod
+
+后面，七七添加一个库YYmodel到Podfile里。这时候SDWebImage维护者更新了2.0.0版本。七七 pod install后更新下来的是YYmodel。由于之前Podfile.lock跟踪锁定了SDWebImage等库，这时候安装仍然是1.0.0版本。、
+
+#### 阶段三：灰灰加入了这个项目
+
+由于灰灰电脑上从来没有这个项目。clone项目并且使用pod install。由于七七把Podfile.lock文件纳入了版本控制。这时候灰灰pod install 后安装的版本是个七七一样的版本。因为之前库的版本都在Podfile.lock跟踪锁定了，即使那些库的维护者更新了N个版本。
+
+#### 阶段四：检查某个库是否有新的版本
+
+七七想检查这些pods是否有新的版本。使用pod outdated 会告诉七七SDWebImage最新版已经更新到了2.0.0。正好由于SDWebImage 有个crash问题，因此七七决定更新SDWebImage到2.0.0版本。因此使用pod update SDWebImage命令更新SDWebImage到2.0.0版本，这时Podfile.lock会更新锁定版本到2.0.0版本。
+
+#### 阶段五：项目持有管理者七七同步版本给其他团队成员
+
+如果灰灰想使用最新的版本，只能通过七七提交的Podfile.lock 和 Podfile 来更新相应的库。
+
+### CocoaPods 使用建议
+
+* 工程持有管理者对项目进行cocoapods初始化的时候会有一个Podfile.lock 这个文件我们需要纳入版本控制里。这些其他团队协作人员直接使用pod install来安装使用。
+
+* 如果需要更新某个库到某一个版本，由项目持有管理者采用pod update podName的方式更新某个库到一定的版本。然后提交Podfile.lock 和 Podfile 文件。其他团队直接pod install使用。
 
 
 ## 那些Bug
