@@ -173,3 +173,35 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 [iOS Core Animation: Advanced Techniques](http://www.amazon.com/iOS-Core-Animation-Advanced-Techniques-ebook/dp/B00EHJCORC/ref=sr_1_1?ie=UTF8&qid=1423192842&sr=8-1&keywords=Core+Animation+Advanced+Techniques)，很老但是价值很高的书，感谢译者的工作。该书详细介绍了 Core Animation(Layer Kit) 的方方面面：CALayer，图层树，专属图层，隐式动画，离屏渲染，性能优化等等，虽然该书年代久远了一些，但是笔者每次看依然能悟到新知识🤖！如果想复习一下这方面知识，该译本将会是绝佳选择。
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Swift by Sundell
+
+地址：https://www.swiftbysundell.com/
+
+[John Sundell](https://twitter.com/johnsundell) 的博客网站（同时他也是 [Publish](https://github.com/JohnSundell/Publish) 的作者），网站主要的内容是关于 `Swift` 开发的文章、播客和新闻。其文章清晰易懂，难度范围也比较广，各个水平的开发者应该都能找到适合自己水平的文章。其网站上部分关于 `SwiftUI` 的文章中，还能实时预览 `SwiftUI` 代码所对应的运行效果，贼舒服😈。
+
+### 100 Days of SwiftUI from Paul Hudson
+
+地址：https://www.hackingwithswift.com/100/swiftui
+
+[Paul Hudson](https://twitter.com/twostraws) 是一个免费的 `SwiftUI` 课程，比较基础，是一个绝佳的新手教程。他会简单教一下 `Swift` 语言，然后用 `SwiftUI` 开始构建 iOS App。课程对应的网站 [Hacking with Swift](https://www.hackingwithswift.com/) 上也有很多 `iOS` 开发中比较基础的教程和解答，总的来说比较适合刚接触 `iOS` 开发的人群🤠。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### 喵神预告：新书，开工！
+
+[喵神](https://weibo.com/onevcat)关于 `async-swift` 的书开工了。是关于Swift5.5的新特性**协程**，待书籍完工的第一时间我们会通过周报再通知到大家。
+
+![New Book! Go!](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/11661621992188_.pic.jpg)
+
+### 30 seconds of code
+
+地址：https://www.30secondsofcode.org/
+
+该网站的口号是：「能找到满足你所有开发需求的代码片段！」，他有许多语言的常用代码片段（Code Snippets），例如排序算法、hex 转 rgb、时间转换等等，能让你轻松地找到各个语言的这些常用代码，让你的开发效率大大提升！（可惜目前还没有 `Swift` 的板块🥲
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210529183606.png)
+

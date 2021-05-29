@@ -356,3 +356,77 @@ RoyCao的另一篇文章，感觉挺有价值的也挺有意思的。
 
 不用看作者，光看插图就知道是戴老师的文章。期待后续对混编和动态性的介绍。
 
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
+
+1、[普通技术人的成长路径 - 一位客户端老兵的经验之谈](https://mp.weixin.qq.com/s/IrSQyyc0J3SXBuWs9M3SYA "普通技术人的成长路径 - 一位客户端老兵的经验之谈") -- 来自公众号： 老司机周报
+
+青衫不负踏歌行，莫忘曾经是书生。很认同其中的一些观点和思考。不知道大家是否跟我一样，存在各种各样的焦虑：客三消、内卷、35岁危机... 抽空可以读读此文，让内心的焦躁得到暂时的缓解。
+
+2、[Swift 汇编（一）Protocol Witness Table 初探](https://mp.weixin.qq.com/s/lRKVZk5c1tX7AtWVgD56OA "Swift 汇编（一）Protocol Witness Table 初探") -- 来自公众号：Swift 社区
+
+之前关注过 Protocol Witness Table，但是没有抽时间去了解。很有深度的一篇文章，值得阅读，如果有时间可以跟着作者的思路亲自动手调试下。
+
+3、[Wakeup in XNU](https://mp.weixin.qq.com/s/8OBAmyCLa6_eFYqIJgoCQw "Wakeup in XNU") -- 来自公众号： 网易云音乐大前端团队
+
+去年年底的时候在群里帮一位同学解析了一个 wakeup 日志。wakeup 日志看起来比较奇怪，可能很多同学并没有遇到类似的问题。通过这篇专业的文章可以让大家对 wakeup 有个初步了解。
+
+4、[快手客户端稳定性体系建设](https://blog.csdn.net/Kwai_tech/article/details/107964806 "快手客户端稳定性体系建设") -- 来自CSDN：快手技术团队
+
+这里面就提到了快手遇到了 wakeup 崩溃以及如何定位相关问题的。
+
+5、[iOS技能拓展 初识符号与链接](https://juejin.cn/post/6961576195332309006 "iOS技能拓展 初识符号与链接") -- 来自掘金：我是好宝宝
+
+熟悉Mach-O与链接会成为面试的加分项，正在面试的同学可以关注下。
+
+6、[了解和分析iOS Crash](https://segmentfault.com/a/1190000016411126 "了解和分析iOS Crash") -- 来自segmentfault：腾讯WeTest
+
+iOS crash相关很好很全面的文章，作者加了注解帮助我们理解，已收藏。
+
+7、[A站 的 Swift 实践 —— 下篇](https://mp.weixin.qq.com/s/EIPHLdxBMb5MiRDDfxzJtA "A站 的 Swift 实践 —— 下篇") -- 来自公众号：快手大前端技术
+
+这个是戴铭老师的 Swift 实践的下篇，相对于上篇更偏向于宏观的介绍 Swift，这篇则更加贴近实际开发场景。Swift 实战的推进有两个重要问题需要解决，一个是 Module 化，处理组件及混编问题，一个是 Swift 的 Hook 方案，处理各种 Hook 场景。
+
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
+
+
+本期博客汇总的主题是 `watchdog`
+
+1、[iOS watchdog (看门狗机制)](https://www.jianshu.com/p/6cf4aeced795 "iOS watchdog (看门狗机制)") -- 来自简书：Mr_Xie
+
+
+先来简单了解什么是 watchdog。
+
+2、[iOS App 后台任务的坑](http://www.cocoachina.com/articles/27303 "iOS App 后台任务的坑") -- 来自cocoachina ：米米狗
+
+
+后台任务泄漏是导致触发 watchdog 常见情况之一，还有一种情况就是主线程卡死，文章中有介绍如何区分。
+
+
+3、[Addressing Watchdog Terminations](https://developer.apple.com/documentation/xcode/addressing-watchdog-terminations "Addressing Watchdog Terminations")
+
+
+苹果的官方文档。对我个人而言，了解 scene-create 和 scene-update 的含义在排查问题过程中起到了一定的作用。
+
+
+4、[你的 App 在 iOS 13 上被卡死了吗](https://zhuanlan.zhihu.com/p/99232749 "你的 App 在 iOS 13 上被卡死了吗")
+
+
+进入实践阶段，其实我们很少真的在主线程做大量耗时操作如网络请求等。触发 watchdog 往往是不经意的，甚至你不会怀疑你的代码有任何问题。这篇文章介绍的是 58 同城团队如何定位到剪切板造成的启动卡死。
+
+
+5、[iOS 稳定性问题治理：卡死崩溃监控原理及最佳实践](https://juejin.cn/post/6937091641656721438 "iOS 稳定性问题治理：卡死崩溃监控原理及最佳实践")
+
+
+这篇文章是字节跳动 APM 团队早些时候发表的，是业界少有的公开介绍卡死崩溃的原因的文章，具有很强的借鉴意义。我们在做启动卡死优化的过程中，文中提到的相关问题基本都有遇到，只不过在此之前并不知道什么原因以及如何解决。所以说如果你想做卡死治理，可以参考下这篇文章。
+
+6、[面试过 500+ 位候选人之后，想谈谈面试官视角的一些期待](https://mp.weixin.qq.com/s/kv-_oZObp7QRHeAbrkdfsA "面试过500+位候选人之后，想谈谈面试官视角的一些期待")
+
+《iOS 稳定性问题治理：卡死崩溃监控原理及最佳实践》的作者在面试了 500+ 候选人后写的文章，有需要的同学可以针对性的做些准备。
+
+7、[论证：iOS安全性，为什么需要审核？](https://juejin.cn/post/6967199105541996575 "论证：iOS安全性，为什么需要审核？")
+
+[@iHTCboy](https://github.com/iHTCboy)：从辩论的视角分析 iOS 安全性，同时与 macOS 安全性进行对比，提出了让 iOS 更加安全的建议，文中同时也总结了非常多 iOS 和 macOS 安全技术小知识，可以让大家在短时间里快速入门和重温 Apple OS 安全性知识点。
+
+
