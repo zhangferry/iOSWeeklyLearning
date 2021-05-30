@@ -23,34 +23,18 @@ Podfile 文件是 pod 执行的核心文件，它的解析逻辑推荐看这篇�
 
 pod update 可以全局升级，也可以指定 podName 单个升级。当我们执行 `pod update podName` 的时候，会忽略 Podfile.lock 文件的版本，根据 Podfile 的定义尽可能更新到最新的版本，并更新 Podfile.lock 文件。该命令会同样适配于 pod 库 podspec文件内部定义的依赖。 可以通过`pod outdated` 检测出过期的依赖版本和可升级版本。
 
-### CocoaPods 一个完整使用场景
+对于 install 和 update 有两个常用参数：
 
-#### 阶段一：团队成员七七创建了一个项目
-
-七七创建这个项目，想使用库 AFN，SDWebImage 等库。因此七七在Podfile列出来这些库，然后使用 pod install。这时候AFN使用了1.0.0版本，SDWebImage 使用了1.0.0版本。
-Podfile.lock 会跟踪锁定AFN，SDWebImage 到1.0.0版本。
-
-#### 阶段二：七七添加一个新的pod
-
-后面，七七添加一个库 YYmodel 到Podfile 里。这时候 SDWebImage 维护者更新了2.0.0版本。七七 pod install 后更新下来的是 YYmodel。由于之前 Podfile.lock 跟踪锁定了 SDWebImage 等库，这时候安装仍然是1.0.0版本。
-
-#### 阶段三：灰灰加入了这个项目
-
-由于灰灰电脑上从来没有这个项目。clone项目并且使用 pod install。由于七七把Podfile.lock文件纳入了版本控制。这时候灰灰pod install 后安装的版本是个七七一样的版本。因为之前库的版本都在Podfile.lock跟踪锁定了，即使那些库的维护者更新了N个版本。
-
-#### 阶段四：检查某个库是否有新的版本
-
-七七想检查这些pods是否有新的版本。使用 pod outdated 会告诉七七 SDWebImage 最新版已经更新到了2.0.0。正好由于 SDWebImage 有个crash问题，因此七七决定更新 SDWebImage 到2.0.0版本。因此使用`pod update SDWebImage` 命令更新 SDWebImage 到2.0.0版本，这时Podfile.lock会更新锁定版本到2.0.0版本。
-
-#### 阶段五：项目持有管理者七七同步版本给其他团队成员
-
-如果灰灰想使用最新的版本，只能通过七七提交的 Podfile.lock 和 Podfile 来更新相应的库。
+* --repo-update：该参数会更新所有的 repo，例如该更新了一个私有库版本，直接 install 是找不到对应版本的，我们不想更新所有的依赖库，只想更新 对应的 repo，就可以使用该指令。该参数还对应一个特有命令：`pod repo update`。
+* --no-repo-update：update 操作会默认更新所有 repo，有时这并不是必须的，且该步骤会同步 pod 公有 repo，导致比较耗时，这时就可以增加该参数，用于关闭该更新操作。
 
 ### CocoaPods 使用建议
 
-* 工程持有管理者对项目进行 cocoapods 初始化的时候会有一个 Podfile.lock 这个文件我们需要纳入版本控制里。这些其他团队协作人员直接使用`pod install`来安装使用。
+* 推荐使用 Gemfile 管理 pod 版本，每次执行 pod 通过 bundle 进行，例如： `bundle exec pod install` 。
 
-* 如果需要更新某个库到某一个版本，由项目持有管理者采用 `pod update podName` 的方式更新某个库到一定的版本。然后提交 Podfile.lock 和 Podfile 文件。其他团队直接pod install使用。
+* 工程持有管理者对项目进行 CocoaPods 初始化的时候会有一个 Podfile.lock 这个文件我们需要纳入版本控制里。
+
+* 如果需要更新某个库到某一个版本，由项目持有管理者采用 `pod update podName` 的方式更新某个库到一定的版本。然后提交 Podfile.lock 和 Podfile 文件。
 
 
 ## 那些Bug
@@ -75,12 +59,12 @@ Podfile.lock 会跟踪锁定AFN，SDWebImage 到1.0.0版本。
 
 **问题解决**
 
-上面说的 module stability 已经实现了，也就是可以通过 `.swiftinterface` 文件描述二进制包。它的实现对应一个参数，在 Build Setting 里是 `Build Libraries for Distribution`，我们将其设置为 YES ，生成的 Framework 里就会包含对应的 `.swiftinterface` 文件，就能实现不同版本编译器之间的兼容问题。
+上面说的 module stability 已经实现了，就是可以通过 `.swiftinterface` 文件描述二进制包。它的实现对应一个编译参数`-enable-library-evolution`，在 Build Setting 里就是 `Build Libraries for Distribution`，我们将其设置为 YES ，生成的 Framework 里就会包含对应的 `.swiftinterface` 文件，就能实现不同版本编译器之间的兼容问题。
 
 但到这里还没完全结束，遇到了另一个问题：
 
 ```
-/*.framework/Modules/*.swiftmodule/arm64-apple-ios.swiftinterface:6:8: cannot load underlying module for 'SnapKit'
+/*.framework/Modules/*.swiftmodule/arm64-apple-ios.swiftinterface:5:8: cannot load underlying module for 'SnapKit'
 
 failed to build module '*' from its module interface; the compiler that produced it, 'Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)', may have used features that aren't supported by this compiler, 'Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
 ```
@@ -285,12 +269,14 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 ## 联系我们
 
-[摸鱼周报第五期](https://zhangferry.com/2021/02/28/iOSWeeklyLearning_5/)
+[iOS摸鱼周报 第八期](https://zhangferry.com/2021/04/11/iOSWeeklyLearning_8/)
 
-[摸鱼周报第六期](https://zhangferry.com/2021/03/14/iOSWeeklyLearning_6/)
+[iOS摸鱼周报 第九期](https://zhangferry.com/2021/04/24/iOSWeeklyLearning_9/)
 
-[摸鱼周报第七期](https://zhangferry.com/2021/03/28/iOSWeeklyLearning_7/)
+[iOS摸鱼周报 第十期](https://zhangferry.com/2021/05/05/iOSWeeklyLearning_10/)
 
-[摸鱼周报第八期](https://zhangferry.com/2021/04/11/iOSWeeklyLearning_8/)
+[iOS摸鱼周报 第十一期](https://zhangferry.com/2021/05/16/iOSWeeklyLearning_11/)
+
+[iOS摸鱼周报 第十二期](https://zhangferry.com/2021/05/22/iOSWeeklyLearning_12/)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
