@@ -6,7 +6,7 @@ Markdown 是一个 Web 上使用的文本到HTML的转换工具，可以通过�
 
 Markdown的运用对应两项内容：Markdown语法 + Markdown工具。
 
-### Markdown语法{#custom-id}
+### Markdown语法
 
 Markdown语法分两部分：
 
