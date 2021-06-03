@@ -88,7 +88,29 @@ yarn ios
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
 
+本期文章主题`APP性能`
 
+[揭秘 APM iOS SDK 的核心技术]("https://github.com/aozhimin/iOS-APM-Secrets" 揭秘 APM iOS SDK 的核心技术) -- 来自github:aozhimin
+
+[iOS-Monitor-Platform]("https://github.com/aozhimin/iOS-Monitor-Platform" iOS-Monitor-Platform) -- 来自github:aozhimin
+
+以上两篇文章来自aozhimin，作者在介绍性能监控方案的同时也透露了如何利用逆向技术分析他人的技术方案。
+
+[美团外卖iOS App冷启动治理]("https://tech.meituan.com/2018/12/06/waimai-ios-optimizing-startup.html" 美团外卖iOS App冷启动治理) -- 来自美团技术团队
+
+美团早些年的技术文章，文中的很多内容依旧不过时。
+
+[抖音品质建设 - iOS启动优化《实战篇》]("https://mp.weixin.qq.com/s/ekXfFu4-rmZpHwzFuKiLXw"  抖音品质建设 - iOS启动优化《实战篇》)-- 微信公众号：字节跳动技术团队
+
+本文介绍的都是抖音遇到的具体问题，很具有参考性。
+
+[从探索到实践，iOS动态库懒加载实录]("https://mp.weixin.qq.com/s/g5FKnOcW6KonqBSW8XO9Jw" 从探索到实践，iOS动态库懒加载实录) -- 微信公众号：58技术
+
+上文中提到了非常规方案--动态库懒加载。本文则介绍了58同城APP中如何对部分代码修改为动态库并实现懒加载的。目前动态库懒加载在58集团有大量的应用。
+
+[抖音品质建设 - iOS 安装包大小优化实践篇]("https://mp.weixin.qq.com/s/LSP8kC09zjb-sDjgZaikbg" 抖音品质建设 - iOS 安装包大小优化实践篇) -- 微信公众号：字节跳动技术团队
+
+我们统计到58APP iOS12及以下还是有相当一部用户的。文中提到的段迁移实践后确实起到了不小的下载优化作用。
 
 ## 学习资料
 
