@@ -146,6 +146,45 @@ yarn ios
 	- React Native 原理与实践：https://zhuanlan.zhihu.com/p/343519887
 
 
+### 什么是 Vue
+
+Vue 即 Vue.js，是一套用于构建用户界面的 JavaScript 框架。
+
+在过去的十年里，得益于 JS，网页变得更加动态化和强大，我们把很多的服务端代码放到了浏览器中，这样就产生了成千上万行的 JS 代码，它们链接了各式各样的 HTML 和 CSS 文件，但缺乏正规的组织形式，这就是为什么越来越多的开发者使用 JS 框架来组织代码，诸如 Angular、React、Vue 等。
+
+在为 AngularJS 工作之后，作者尤雨溪开发出了 Vue。AngularJS 是 Vue 早期开发的灵感来源，同时 Vue 中也解决了 AngularJS 中存在的许多问题。
+
+Vue (读音 /vjuː/，类似于 view)，尤雨溪曾在知乎回答到，Vue 之所以叫 Vue，是因为它是个视图层库，而 vue 是 view 的法语。
+
+**Vue 是一套渐进式框架，它被设计为可以自底向上逐层应用**
+
+这是 Vue 与其他 js 框架最大的不同。渐进式框架简单理解就是：你可以只用我的一部分，而非必须用我的全部；你可以将我作为应用的一部分嵌入，而非必须全部使用。Vue 支持你根据实际需求，在不同的阶段使用 Vue 中不同的功能，用最小最快的成本一步步搭建应用，不断渐进，而不是要求你一下子用上全家桶（vue-cli、vue-router、vuex 等）。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605012155.png)
+
+你可以看看：[Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485737&idx=1&sn=14fe8a5c72aaa98c11bf6fc57ae1b6c0&source=41#wechat_redirect)
+
+
+**Vue 的核心库只关注视图层，通过尽可能简单的 API 实现响应的数据绑定和组合**
+
+在 HTML 中，DOM 就是视图，我们把 HTML 中的 DOM 与其他的部分独立开来划分出一个层次，这个层次就叫做视图层。如果页面元素很多，数据和视图像传统开发一样全部混合在 HTML 中话就很难维护，因此我们要把视图层抽取出来并且单独去关注它。
+
+Vue 会自动响应数据的变化情况，并且根据你在代码中预先写好的绑定关系，对所有绑定在一起的数据和视图都进行修改。对比手动改变 DOM 来更新视图的传统做法，Vue 的数据驱动视图更新真是太棒了。
+
+**Vue 易用、灵活、高效** 
+
+* 易用：在有 HTML、CSS、JavaScript 的基础上，可以快速上手
+* 灵活：不断繁荣的生态系统，可以在一个库和一套完整框架之间自如伸缩
+* 高效：20kB min+gzip 运行大小，超快虚拟 DOM，最省心的优化
+
+**Vue 对比其他框架** 
+
+如果你想了解 Vue 与 React、AngularJS (Angular 1)、Angular (原本的 Angular 2)、Ember、Knockout、Polymer、Riot 等其它 js 框架的对比，可以参考 Vue 官方的 [Vue 对比其他框架](https://cn.vuejs.org/v2/guide/comparison.html)。
+
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605011045.png)
+
+
 ## 优秀博客
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
