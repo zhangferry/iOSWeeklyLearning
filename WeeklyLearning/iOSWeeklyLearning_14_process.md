@@ -75,7 +75,7 @@ iOS 开发者账号续费虽然流程有点繁琐且只支持信用卡付款，�
 
 ## 编程概念
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)，[我是熊大](https://juejin.cn/user/1151943916921885/posts)
 
 ### React Native
 
@@ -89,7 +89,7 @@ React Native 是一个使用React和应用平台的原生功能来构建 Android
 	- 跨平台（JavaScript框架）虚拟 DOM
 	- 热更新，iOS审核有限制
 	- 对web开发者友好，上手快
-	- 性能和几乎和原生相当
+	- 性能几乎和原生相当
 - React Native 的不足：
 	- 由于 React Native 和原生交互依赖的只有一个 Bridge，而且 JS 和 Native 交互是异步的，所以对需要和 Native 大量实时交互的功能可能会有性能上的不足，比如动画效率，性能是不如原生的。
 
@@ -111,10 +111,11 @@ React Native 是一个使用React和应用平台的原生功能来构建 Android
         - 原作者：Google
         - 自己的渲染引擎
         - 支持平台：iOS、Android、Windows、Web、macOS 和 Linux 
-    点评：Flutter全平台制霸，RN局限于移动端；Flutter社区更活跃，RN更稳定；性能方面RN更依赖于iOS或android的原生实现，Flutter则依赖自己的渲染框架；最后，跨平台方案需谨慎。
+    点评：Flutter全平台制霸，RN局限于移动端；Flutter社区更活跃，RN更稳定；性能方面RN更依赖于iOS或Android的原生实现，Flutter则依赖自己的渲染框架；最后，跨平台方案需谨慎。
 - RN集成方式：
     - 需要用到的工具或资源：Node、Watchman、Xcode 和 CocoaPods
     - 安装脚本（需耗时✨  Done in 178.50s.）： https://github.com/zhangferry/iOSWeeklyLearning/tree/main/Script/rn-setup.sh
+    - 脚本执行完毕后，会自动打开Xcode以及模拟器
 
 ```
 #使用Homebrew来安装 Node 和 Watchman
