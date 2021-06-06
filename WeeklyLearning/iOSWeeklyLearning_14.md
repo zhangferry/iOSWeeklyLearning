@@ -12,6 +12,8 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ![包大小优化脑图](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/%E5%AE%89%E8%A3%85%E5%8C%85%E7%98%A6%E8%BA%AB.jpeg)
 
+因篇幅问题仅展示一张梳理过后的图片，完整文章可以查看小专栏的这篇：https://xiaozhuanlan.com/topic/6147250839。
+
 参考链接：[头条包大小优化](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzI1MzYzMjE0MQ==&action=getalbum&album_id=1665528287604817930&scene=173&from_msgid=2247487459&from_itemidx=1&count=3&nolastread=1#wechat_redirect "头条包大小优化")、[Apple Build settings reference](https://help.apple.com/xcode/mac/current/#/itcaec37c2a6?sub=dev881878d77 "Apple Build settings reference")、[iOS IPA 包体积优化](https://blog.jonyfang.com/2019/11/10/2019-11-10-ios-ipa/ "iOS IPA 包体积优化")
 
 

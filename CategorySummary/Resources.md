@@ -205,3 +205,18 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210529183606.png)
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### WWDC NOTES
+
+地址：https://www.wwdcnotes.com/
+
+这是国外一个记录 WWDC 笔记的社区，致力于收集所有苹果的 WWDC 视频的笔记和文章。每年 WWDC 的新内容数量惊人，观看所有 WWDC 视频需要数百个小时。但有时观看这些视频也是了解某些新技术如何运作、如何使用的唯一途径。WWDC NOTES 网站可以作为对所展示内容的快速回顾、作为参考、甚至单纯是作为一种节省时间的方法。欢迎每个人对 WWDC NOTES 做出贡献👏！
+
+### Newbie Security List
+
+地址：https://github.com/findneo/Newbie-Security-List
+
+一个关于网络安全学习资料的 github 仓库。其中包含网络安全相关的博客、工具、电子书籍资料、在线知识库、在线漏洞库、本地搭建教学、相关文档以及相关练习平台，目前已经获 430 🌟了。
+

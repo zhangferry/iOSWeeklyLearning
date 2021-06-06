@@ -3,7 +3,7 @@ import os
 import sys
 import re
 
-categoryMap = {"Articles": "优秀博客", "Concepts": "编程概念", "Resources":"学习资料", "Tools": "开发利器"}
+categoryMap = {"Articles": "优秀博客", "Concepts": "编程概念", "Resources":"学习资料", "Tools": "工具推荐"}
 
 weeklyFile = "WeeklyLearning"
 categoryFile = "categorySummary"

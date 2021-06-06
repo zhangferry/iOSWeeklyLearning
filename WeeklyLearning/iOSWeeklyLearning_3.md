@@ -287,7 +287,7 @@ Command Line Tools 是 一个运行在macos上的命令行工具集，它的安�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110172952.png)
 
-## 开发利器
+## 工具推荐
 
 推荐好用的开发工具。
 

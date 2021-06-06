@@ -51,7 +51,8 @@
 
 
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)***
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+***
 推荐好用的开发工具。
 
 ### A Companion for SwiftUI
@@ -217,36 +218,260 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 我们可以像在VSCode里一样，直接在浏览器里查看仓库代码。
 
-************
+***
+推荐好用的工具。
+
+### F.lux
+
+**推荐来源**：[zhangferry](zhangferry.com)
+
+**地址**：https://justgetflux.com/
+
+**软件状态**：免费
+
+**使用介绍**
+
+电脑的显示器亮度一般是全天保持不变的，这个亮度对于白天使用来说没有任何问题，但是对于夜间使用的话就会有些刺眼，出于对视力的保护，夜间应该让屏幕亮度低一些，暖一些。
+
+F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色，白天亮度像太阳光，在夜间时会让屏幕看着更像是室内光。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210314141348.png)
+
+
+
+### Kap
+
+**推荐来源**：[highway](https://github.com/HighwayLaw)
+
+**地址**：https://getkap.co/
+
+**软件状态**：免费，[开源](https://github.com/wulkano/kap "Kap开源地址")
+
+**使用介绍**
+
+一款开源且简洁高效的屏幕录制软件，可以导出为GIF，MP4，WebM，APNG等格式，而且会有很不错的压缩率。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211617.png)
+
+鉴于微信公众号对GIF的两条限制：
+
+1、不能超过300帧
+
+2、大小不能超过2M
+
+我们需要对一些GIF进行修剪和压缩才能上传。
+
+删除帧数有一个简单的方法：用Mac自带的预览功能打开GIF，选中想要删除的帧，按Command + Delete即可删除指定帧。另外对于多个连续帧的选中，可以先单击选中第一帧，再按住Shift单击选中末尾帧，即可选中这个区间连续的所有帧。
+
+对于GIF的压缩，推荐另一个工具：docsmall。
+
+### docsmall
+
+**推荐来源**：[zhangferry](zhangferry.com)
+
+**地址**：https://docsmall.com/gif-compress
+
+**软件状态**：免费，Web端
+
+**使用介绍**
+
+上传需要压缩的gif文件即可
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211739.png)
+
+***
+推荐好用的工具。
+
+### P4Merge
+
+**推荐来源**：zhangferry
+
+**地址**：https://www.perforce.com/downloads/visual-merge-tool
+
+**软件状态**：对开发者免费
+
+**使用介绍**
+
+非常强大的可视化diff工具，如果你嫌[Kaleidoscope](https://kaleidoscope.app/)太贵的话，可以用它做代替品。我们可以把它集成进git，通常diff工具有两个作用一个是作为difftool，一个是作为mergetool。配置流程如下：
+
+```shell
+# difftool
+$ git config --global diff.tool p4merge
+$ git config --global difftool.p4merge.cmd \
+"/Applications/p4merge.app/Contents/Resources/launchp4merge \$LOCAL \$REMOTE"
+# mergetool
+$ git config --global merge.tool p4merge
+$ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/MacOS/p4merge $PWD/$BASE $PWD/$LOCAL $PWD/$REMOTE"
+```
+
+以下是作为mergetool的界面，下面内容为最终合并的内容，我们可以通过右侧的扩展按钮选择当前应该选择哪个分支的内容。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210327200304.png)
+
+***
+推荐好用的工具。
+
+### Cleaner for Xcode
+
+**推荐来源**：zhangferry
+
+**地址**：https://github.com/waylybaye/XcodeCleaner-SwiftUI
+
+**软件状态**：开源版本免费，AppStore版本$0.99
+
+**使用介绍**
+
+这个应用可以帮助你清除遗留以及废弃文件，从而极大的节省硬盘空间。 你可以每月或者每周运行一次进行清理。
+
+![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210410105340.png)
+
+******
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### SwitchHosts
+
+**地址**：https://swh.app/zh/
+
+**软件状态**：[开源](https://github.com/oldj/SwitchHosts)，免费
+
+**使用介绍**
+
+SwitchHosts 是一个管理、切换多个 Host 方案的工具。它支持多个 Host 方案的不同组合；支持导入导出，方便协作分享；还可以通过 Alfred 插件进行快速切换。
+![SwitchHosts](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430084948.png)
+
+### DevUtils
+
+**地址**：https://devutils.app/
+
+**软件状态**：[开源](https://github.com/DevUtilsApp/DevUtils-app)，部分功能付费
+
+**使用介绍**
+
+DevUtils 是一个开源的开发工具聚合的应用。它包含了常用的时间戳解析，JSON 格式化，Base64 编解码，正则表达式测试等功能。有了它我们就可以放弃掉站长之家，各种 JSON 格式化网站的使用了。
+
+大家如果不想付费，直接下源码，关掉付费验证就行。如果觉得软件有帮助且有支付能力的话希望还是可以支持下作者。
+
+![DevUtils](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430085707.png)
+
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### Moment
+
+**地址**：https://fireball.studio/moment
+
+**软件状态**：￥30，可以试用7天
+
+**使用介绍**
+
+Moment 是一个存在于菜单栏和通知中心的倒计时应用程序，以帮助你记住最难忘的日子和生活。这个类似手机端的 Countdown。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/menubar-mockup.jpg)
+
+### One Switch
+
+**地址**：https://fireball.studio/oneswitch
+
+**软件状态**：￥30，可以试用7天
+
+**使用介绍**
+
+One Switch 是一个聚合的开关控制软件，使用它可以在菜单控制栏直接配置桌面的隐藏显示、锁屏、暗黑模式、连接AirPods 等功能。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/mbp-mockup.png)
+
+***
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
 
-### OpenInTerminal
+### SwiftFormat for Xcode
 
-**地址**：https://github.com/Ji4n1ng/OpenInTerminal
+**地址**：https://github.com/nicklockwood/SwiftFormat
 
-**软件状态**：免费，开源
+**软件状态**：免费 ，开源
 
 **使用介绍**
 
-OpenInTerminal 是一款开发辅助工具，可以增强 Finder 工具栏以及右键菜单增加在当前位置打开终端的功能。另外还支持：在编辑器中打开当前目录以及在编辑器中打开选择的文件夹或文件
-![](https://user-images.githubusercontent.com/11001224/78589385-b797b880-7872-11ea-9062-c11a49461598.gif)
+SwiftFormat 是用于重新格式化 Swift 代码的命令行工具。它会在保持代码意义的前提下，将代码进行格式化
+
+很多项目都有固定的代码风格，统一的代码规范有助于项目的迭代和维护，而有的程序员却无视这些规则。同时，手动强制的去修改代码的风格又容易出错，而且没有人愿意去做这些无聊的工作。
+
+如果有自动化的工具能完成这些工作，那几乎是最完美的方案了。在代码 review 时就不需要每次都强调无数遍繁琐的代码格式问题了。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522213832.png)
+
+### Notion
+
+**地址**: https://www.notion.so/desktop
+
+**软件状态**：个人免费，团队收费
+
+**使用介绍**
+
+Notion 是一款极其出色的个人笔记软件，它将“万物皆对象”的思维运用到笔记中，让使用者可以天马行空地去创造、拖拽、链接；Notion 不仅是一款优秀的个人笔记软件，其功能还涵盖了项目管理、wiki、文档等等。
 
 ##### 核心功能
-* 在终端（或编辑器）中打开目录或文件
-* 打开自定义应用
-* 支持 终端iTerm
 
-### SnippetsLib
-**地址**：https://apps.apple.com/cn/app/snippetslab/id1006087419?mt=12
+* 支持导入丰富的文件和内容 
+* 内置丰富的模板
+* 简洁的用户界面、方便的拖动和新建操作
+* 支持 Board 视图，同时可以添加任意数量的其他类型视图并自定义相关的过滤条件
+* 复制图片即完成上传，无需其他图床 
+* 保存历史操作记录并记录相关时间
+* 强大的关联功能，比如日历与笔记，笔记与文件以及网页链接
 
-**软件状态**：$9.99
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522213919.png)
+
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### Whatpulse
+
+**地址**：https://whatpulse.org/
+
+**软件状态**：基础功能免费，高级功能付费
 
 **使用介绍**
 
-SnippetsLab是一款mac代码片段管理工具，使用SnippetsLab可以提高工作效率。它可以帮助您收集和组织有价值的代码片段，您可以随时轻松访问它们
+Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的键盘、鼠标、网络等情况的使用详情并将其做成简单的统计表格，用于分析每天的电脑使用情况。
 
-![](https://cdn.jsdelivr.net/gh/zhangferry/Images/blog/mojave-dark.jpg)
+翻到一张之前公司电脑使用该软件将近一年的留存成果，100万+ 按键次数，使用最多的竟然是删除键。。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210529185605.png)
+
+# OctoMouse
+
+**地址**：https://konsomejona.github.io/OctoMouse/index.html
+
+**软件状态**：免费，[开源](https://github.com/KonsomeJona/OctoMouse)
+
+**使用介绍**
+
+该软件主要用于统计键盘及鼠标的行为信息，比较有意思的是，它对鼠标的统计会包含移动距离参数。可以试试看多久才能让鼠标移动 5km。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210529191107.png)
+
+***
+### 柠檬清理
+ 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+**地址**: https://lemon.qq.com/
+
+**软件状态**: 免费 
+
+**软件介绍**
+
+腾讯柠檬清理Lite版-重点聚焦清理功能，包含系统/应用垃圾清理、大文件清理、重复文件清理、相似照片清理4个方面，当前还支持在状态栏上查看当前网速信息，帮助你实时了解Mac状况。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/16227749924686.jpg)
+
+**核心功能**
+
+* 便捷好用的状态栏清理：可直接在状态栏上查看实时网速，方便及时了解网速变化。支持快速清理，轻轻一点，不留垃圾。
+
+* 系统/应用垃圾清理
+
+* 大文件清理：帮你快速全面查找占用超过50M的大文件。
+
+* 重复文件清理
 
 
-
-************

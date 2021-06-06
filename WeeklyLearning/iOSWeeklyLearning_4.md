@@ -242,7 +242,7 @@ POSIX是Portable Operation System Interface的缩写，即可移植操作系统�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124190413.png)
 
-## 开发利器
+## 工具推荐
 
 推荐好用的开发工具。
 
