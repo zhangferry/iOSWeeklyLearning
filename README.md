@@ -32,7 +32,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 
 ### Pull requests
 
-Pull requests适合熟悉一些Markdown语法的同学。选择这种方式的同学需要看下：[写作指导](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/Guide/blog_writer.md)，再行投稿，防止因为格式的原因被拒哦。
+Pull requests适合熟悉一些Markdown语法的同学。选择这种方式的同学需要看下：[写作指导](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/Resources/Guide/blog_writer.md)，再行投稿，防止因为格式的原因被拒哦。
 
 ## 招募联合编辑
 
