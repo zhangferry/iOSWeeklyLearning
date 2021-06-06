@@ -40,7 +40,7 @@ iOS 开发者账号续费虽然流程有点繁琐且只支持信用卡付款，�
 
 3. 确认账单地址和所使用信用卡信息一致。这个问题之前真的没有注意，于是每张卡都确认了账单地址然后重试，依然失败。
 
-4. 可能是系统问题，换个时间重试。前后试了1个多星期，并且试了白天和晚上，加上试了vpn，都是一样的结果。
+4. 可能是系统问题，换个时间重试。前后试了 1 个多星期，并且试了白天和晚上，加上试了 vpn，都是一样的结果。
 
 5. 电话联系 Apple 客服。给到的回复是苹果系统续费出现问题，建议有两个，一个是通过客服进行线下支付，另一个是尝试使用同时拥有银联 + Visa / Mastercard 的信用卡续费。
 
@@ -50,7 +50,7 @@ iOS 开发者账号续费虽然流程有点繁琐且只支持信用卡付款，�
 
 通过客服进行线下支付和自己在线上支付有以下几点不同：
 
-* 线上是688元人民币，线下订单因为是提到美国总部，所以支付99美元。
+* 线上是 688 元人民币，线下订单因为是提到美国总部，所以支付 99 美元。
 
 * 线下支付无法提供发票。
 
@@ -72,13 +72,13 @@ iOS 开发者账号续费虽然流程有点繁琐且只支持信用卡付款，�
 
 ## 编程概念
 
-从本期编程概念开始将介绍前端相关的多个概念，本期带来的内容是对 `React`、`Vue`、`React Native` 的介绍，如有错误，欢迎指正。
+从本期开始，编程概念模块将介绍前端相关的多个概念。本期带来的内容是对 `React`、`React Native`、`Vue` 的介绍。如有错误，欢迎指正。
 
 ### 关于前端
 
-通常我们说的前端有两个含义，一个是特指Web前端，其跟移动端平级；还有一个指大前端，包含于移动端。这里咱们取的含义是Web前端。
+通常我们说的前端有两个含义，一个是特指 Web 前端，其跟移动端平级；另一个指大前端，包含移动端。这里咱们取的含义是 Web 前端。
 
-Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去的十年里，得益于 JS，网页变得更加动态化和强大，我们把很多的服务端代码放到了浏览器中，这样就产生了成千上万行的 JS 代码，它们链接了各式各样的 HTML 和 CSS 文件，但缺乏正规的组织形式，这就是为什么越来越多的开发者使用 JS 框架来组织代码，诸如 Angular、React、Vue 等。
+Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去的十年里，得益于 JS，网页变得更加动态化和强大，我们把很多的服务端代码放到了浏览器中，这样就产生了成千上万行的 JS 代码，它们链接了各式各样的 HTML 和 CSS 文件，但缺乏正规的组织形式，这就是为什么越来越多的开发者使用 JS 框架来组织代码，诸如 React、Vue、Angular 等。
 
 ### 什么是 React
 
@@ -86,17 +86,17 @@ Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去�
 
 内容整理：[zhangferry](https://zhangferry.com)
 
-[React](https://reactjs.org/) 是由 Facebook 开发的用于构建用户界面的 JavaScript 库，其已开源在 Github，拥有169k的超高 star 数，在前端领域使用极广泛。
+[React](https://reactjs.org/) 是由 Facebook 开发的用于构建用户界面的 JavaScript 库，其已开源在 Github，拥有 169k 的超高 star 数，在前端领域使用极广泛。
 
 它有这三大特性：
 
-* 声明式：React使创建交互式UI变得轻而易举，为你应用的每一个状态设计简洁的视图，当数据变动时React能高效更新并渲染合适的组件。
+* 声明式：React 使创建交互式 UI 变得轻而易举，为你应用的每一个状态设计简洁的视图，当数据变动时 React 能高效更新并渲染合适的组件。
 
-* 组件化：构建管理自身状态的封装组件，然后对其组合以复杂的UI。
+* 组件化：构建管理自身状态的封装组件，然后对其组合以复杂的 UI。
 
 * 一次学习，扩平台编写：无论你现在使用什么技术栈，在无需重写现有代码的前提下，都可以通过引入 React 来开发新功能。React 还可以使用 Node 进行服务器渲染，或使用 [React Native](https://reactnative.dev/) 开发原生移动应用。
 
-我们来看一个官网的例子来简单了解下 React 的使用，我们的目的是要实现一个前端 Markdown 渲染的效果，上面是输入框，下面是渲染的HTML效果，这里使用一个名为**remarkable**的外部库，代码如下：
+我们来看一个官网的例子来简单了解下 React 的使用，我们的目的是要实现一个前端 Markdown 渲染的效果，上面是输入框，下面是渲染的 HTML 效果，这里使用一个名为 **remarkable** 的外部库，代码如下：
 
 ```java
 // React.Component 就是内置组件，其有一系列组件
@@ -156,16 +156,16 @@ ReactDOM.render(
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605200722.png)
 
-其具有这些特点：跨平台（JavaScript框架）虚拟 DOM、热更新，iOS审核有限制、对web开发者友好，上手快、性能几乎和原生相当。
+其具有这些特点：跨平台（JavaScript 框架）虚拟 DOM、热更新，iOS 审核有限制、对 Web 开发者友好，上手快，性能几乎和原生相当。
 
 React Native 的不足：
-- 由于 React Native 和原生交互依赖的只有一个 Bridge，而且 JS 和 Native 交互是异步的，所以对需要和 Native 大量实时交互的功能可能会有性能上的不足，比如动画效率，性能是不如原生的。
+- 由于 React Native 和原生交互依赖的只有一个 Bridge，而且 JS 和 Native 交互是异步的，所以对于需要和 Native 大量实时交互的功能可能会有性能上的不足，比如动画效率，性能是不如原生的。
 
 - React Native 始终是依赖原生的能力，所以摆脱不了对原生的依赖，相对 Flutter 的自己来画 UI 来说，React Native 显得有些尴尬。
 
 引入 React Native 是基于 JavaScript 实现的，所以要在 iOS 端使用它的话，我们就需要安装 `Node.js`，并利用 Node 工具安装 React Native。以下介绍一个简单步骤：
 ```bash
-#使用Homebrew来安装 Node
+# 使用 Homebrew 来安装 Node
 brew install node
 
 # 安装 yarn
@@ -186,32 +186,33 @@ yarn ios
 
 内容整理：[师大小海腾](https://juejin.cn/user/782508012091645)
 
-Vue（读音 /vjuː/）即 Vue.js。尤雨溪曾在知乎回答到，Vue 之所以叫 Vue，是因为它是个视图层库，而 vue 是 view 的法语。其是一套用于构建用户界面的**渐进式**框架。
+[Vue](https://cn.vuejs.org/)（读音 /vjuː/）即 Vue.js。作者尤雨溪曾在知乎回答到，Vue 之所以叫 Vue，是因为它是个视图层库，而 vue 是 view 的法语。其是一套用于构建用户界面的**渐进式**框架。
 
 **渐进式的含义是它被设计为可以自底向上逐层应用。**
 
-这是 Vue 与其他 js 框架最大的不同。渐进式框架简单理解就是：你可以只用我的一部分，而非必须用我的全部；你可以将我作为应用的一部分嵌入，而非必须全部使用。Vue 支持你根据实际需求，在不同的阶段使用 Vue 中不同的功能，用最小最快的成本一步步搭建应用，不断渐进，而不是要求你一下子用上全家桶（vue-cli、vue-router、vuex 等）。
+这是 Vue 与其他 JS 框架最大的不同。渐进式框架简单理解就是：你可以只用我的一部分，而非必须用我的全部；你可以仅将我作为应用的一部分嵌入，而非必须全部使用。Vue 支持你根据实际需求，在不同的阶段使用 Vue 中不同的功能，用最小最快的成本一步步搭建应用，不断渐进，而不是要求你一下子用上全家桶（vue-cli、vue-router、vuex 等）。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605012155.png)
 
-你可以看看：[Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485737&idx=1&sn=14fe8a5c72aaa98c11bf6fc57ae1b6c0&source=41#wechat_redirect "Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案")
+你可以看看：[Vue 作者尤雨溪：Vue 2.0，渐进式前端解决方案](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485737&idx=1&sn=14fe8a5c72aaa98c11bf6fc57ae1b6c0&source=41#wechat_redirect "Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案")
 
 **Vue 的核心库只关注视图层，通过尽可能简单的 API 实现响应的数据绑定和组合**
 
 在 HTML 中，DOM 就是视图，我们把 HTML 中的 DOM 与其他的部分独立开来划分出一个层次，这个层次就叫做视图层。如果页面元素很多，数据和视图像传统开发一样全部混合在 HTML 中话就很难维护，因此我们要把视图层抽取出来并且单独去关注它。
 
-Vue 会自动响应数据的变化情况，并且根据你在代码中预先写好的绑定关系，对所有绑定在一起的数据和视图都进行修改。对比手动改变 DOM 来更新视图的传统做法，Vue 的数据驱动视图更新真是太棒了。
+Vue 支持数据的双向绑定。即数据变化驱动视图更新，视图更新也会驱动数据变化。而我们只需要通过简单的 API 即可实现这种绑定关系。
 
-Vue 具有易用、灵活、高效的特点：
+**Vue 具有易用、灵活、高效的特点**
 
 - 易用：在有 HTML、CSS、JavaScript 的基础上，可以快速上手
 - 灵活：不断繁荣的生态系统，可以在一个库和一套完整框架之间自如伸缩
 - 高效：20kB min+gzip 运行大小，超快虚拟 DOM，最省心的优化
 
-我们来看一个使用Vue写出来的小例子：一个输入框，一个文本，本文能够根据输入框内容变化：
+**一个例子**
+
+我们来看一个使用 Vue 写出来的小例子：一个输入框，一个文本，文本能够根据输入框内容的变化而变化：
 
 HTML代码：
-
 
 ```html
 <div id="app-6">
@@ -221,7 +222,7 @@ HTML代码：
 </div>
 ```
 
-JS代码：
+JS 代码：
 
 ```javascript
 var app6 = new Vue({
@@ -237,13 +238,13 @@ var app6 = new Vue({
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
 
-本期文章主题`APP性能`
+本期文章主题 `APP 性能`
 
-[揭秘 APM iOS SDK 的核心技术](https://github.com/aozhimin/iOS-APM-Secrets "揭秘 APM iOS SDK 的核心技术") -- 来自github:aozhimin
+[揭秘 APM iOS SDK 的核心技术](https://github.com/aozhimin/iOS-APM-Secrets "揭秘 APM iOS SDK 的核心技术") -- 来自 github:aozhimin
 
-[iOS-Monitor-Platform](https://github.com/aozhimin/iOS-Monitor-Platform "iOS-Monitor-Platform") -- 来自github:aozhimin
+[iOS-Monitor-Platform](https://github.com/aozhimin/iOS-Monitor-Platform "iOS-Monitor-Platform") -- 来自 github:aozhimin
 
-以上两篇文章来自aozhimin，作者在介绍性能监控方案的同时也透露了如何利用逆向技术分析他人的技术方案。
+以上两篇文章来自 aozhimin，作者在介绍性能监控方案的同时也透露了如何利用逆向技术分析他人的技术方案。
 
 [美团外卖iOS App冷启动治理](https://tech.meituan.com/2018/12/06/waimai-ios-optimizing-startup.html "美团外卖iOS App冷启动治理") -- 来自美团技术团队
 
@@ -255,15 +256,15 @@ var app6 = new Vue({
 
 [从探索到实践，iOS动态库懒加载实录](https://mp.weixin.qq.com/s/g5FKnOcW6KonqBSW8XO9Jw "从探索到实践，iOS动态库懒加载实录") -- 微信公众号：58技术
 
-上文中提到了非常规方案--动态库懒加载。本文则介绍了58同城APP中如何对部分代码修改为动态库并实现懒加载的。目前动态库懒加载在58集团有大量的应用。
+上文中提到了非常规方案--动态库懒加载。本文则介绍了 58同城APP 中如何对部分代码修改为动态库并实现懒加载的。目前动态库懒加载在 58集团 有大量的应用。
 
 [抖音品质建设 - iOS 安装包大小优化实践篇](https://mp.weixin.qq.com/s/LSP8kC09zjb-sDjgZaikbg "抖音品质建设 - iOS 安装包大小优化实践篇") -- 微信公众号：字节跳动技术团队
 
-我们统计到58APP iOS12及以下还是有相当一部用户的。文中提到的段迁移实践后确实起到了不小的下载优化作用。
+我们统计到 58APP iOS12 及以下还是有相当一部分用户的。文中提到的段迁移实践后确实起到了不小的下载优化作用。
 
 [揭秘苹果应用审核团队（史上最全版）](https://juejin.cn/post/6970363897668698148/ "揭秘苹果应用审核团队（史上最全版）") -- 掘金：37手游iOS技术运营团队
 
-[@iHTCboy](https://github.com/iHTCboy)：史上最全版：揭秘苹果应用审核团队，告诉你 App Store 的由来，是怎样发展到今天这样辉煌，如何自动化：机器审核+人工审核？审核速度是怎么从7-10天，提升到如今只需要 48 小时的？
+[@iHTCboy](https://github.com/iHTCboy)：史上最全版：揭秘苹果应用审核团队，告诉你 App Store 的由来，是怎样发展到今天这样辉煌，如何自动化：机器审核+人工审核？审核速度是怎么从 7-10 天，提升到如今只需要 48 小时的？
 
 ## 学习资料
 
@@ -292,18 +293,15 @@ var app6 = new Vue({
 
 **软件介绍**
 
-腾讯柠檬清理Lite版-重点聚焦清理功能，包含系统/应用垃圾清理、大文件清理、重复文件清理、相似照片清理4个方面，当前还支持在状态栏上查看当前网速信息，帮助你实时了解Mac状况。
+腾讯柠檬清理 Lite 版-重点聚焦清理功能，包含系统/应用垃圾清理、大文件清理、重复文件清理、相似照片清理 4 个方面，当前还支持在状态栏上查看当前网速信息，帮助你实时了解 Mac 状况。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/16227749924686.jpg)
 
 **核心功能**
 
 * 便捷好用的状态栏清理：可直接在状态栏上查看实时网速，方便及时了解网速变化。支持快速清理，轻轻一点，不留垃圾。
-
 * 系统/应用垃圾清理
-
-* 大文件清理：帮你快速全面查找占用超过50M的大文件。
-
+* 大文件清理：帮你快速全面查找占用超过 50M 的大文件。
 * 重复文件清理
 
 
