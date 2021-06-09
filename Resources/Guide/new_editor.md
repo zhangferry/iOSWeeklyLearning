@@ -24,18 +24,19 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 
 新来的编辑可以按照自己喜好选一个模块进行维护，也可以根据自己的情况向任意模块贡献内容。
 
-| 模块     | 责任人   | 介绍                                                     | id             | 账号地址                                                     |
-| -------- | -------- | -------------------------------------------------------- | -------------- | ------------------------------------------------------------ |
-| 整体编辑 | 张飞     | 爱奇艺蓝牙、RxSwift、逆向                                | zhangferry     | 公众号：iOS成长之路博客：https://zhangferry.com/             |
-| 开发Tip  | highway  | 央行研究院6年iOS开发经验                                 | highway        | 简书：https://www.jianshu.com/u/1e59b1fe9df8                 |
-|          | 人魔七七 | iOS开发老兵                                              | 人魔七七       | 公众号：人魔七七[ ](https://github.com/fanbaoying)https://github.com/renmoqiqi |
-| 那些Bug  | 窦术尧   | 研一在读                                                 | 反向抽烟       | opooc.com                                                    |
-|          | 展菲     | espressif AE 团队，智能家居研发，擅长蓝牙、Wi-Fi、嵌入式 | 展菲           | 公众号：网罗开发公众号：Swift社区掘金：https://juejin.cn/user/3192637497025335GitHub：https://github.com/fanbaoying |
-| 编程概念 | 阿腾     | BabyBus                                                  | 师大小海腾     | https://juejin.cn/user/782508012091645                       |
-| 优秀博客 | 邓竹立   | 58同城无线团队对底层Mach-O和性能优化比较感兴趣           | 皮拉夫大王在此 | 简书：https://www.jianshu.com/u/739b677928f7公众号：皮拉夫大王在此掘金：https://juejin.cn/user/281104094332653 |
-| 学习资料 | Mim0sa   | 没考上研所以家里蹲对界面交互体验这方面比较感兴趣         | Mim0sa         | 掘金：https://juejin.cn/user/1433418892590136                |
-| 工具推荐 | 邢勇     | 樊登读书对工程化工具比较感兴趣                           | brave723       | 掘金：https://juejin.cn/user/307518984425981/posts           |
-|  | 冯士魁     | 《今日水印相机》主程，目前负责海外音视频社交项目 | 我是熊大       | 掘金：https://juejin.cn/user/1151943916921885/posts           |
+| 模块     | 责任人   | 介绍                                                       | id             | 账号地址                                                     |
+| -------- | -------- | ---------------------------------------------------------- | -------------- | ------------------------------------------------------------ |
+| 整体编辑 | 张飞     | 爱奇艺蓝牙、RxSwift、逆向                                  | zhangferry     | 公众号：iOS成长之路博客：https://zhangferry.com/             |
+| 开发Tip  | highway  | 央行研究院6年iOS开发经验                                   | highway        | 简书：https://www.jianshu.com/u/1e59b1fe9df8                 |
+|          | 人魔七七 | iOS开发老兵                                                | 人魔七七       | 公众号：人魔七七[ ](https://github.com/fanbaoying)https://github.com/renmoqiqi |
+| 那些Bug  | 窦术尧   | 研一在读                                                   | 反向抽烟       | opooc.com                                                    |
+|          | 展菲     | espressif AE 团队，智能家居研发，擅长蓝牙、Wi-Fi、嵌入式   | 展菲           | 公众号：网罗开发公众号：Swift社区掘金：https://juejin.cn/user/3192637497025335GitHub：https://github.com/fanbaoying |
+| 编程概念 | 阿腾     | BabyBus                                                    | 师大小海腾     | https://juejin.cn/user/782508012091645                       |
+| 优秀博客 | 邓竹立   | 58同城无线团队对底层Mach-O和性能优化比较感兴趣             | 皮拉夫大王在此 | 简书：https://www.jianshu.com/u/739b677928f7公众号：皮拉夫大王在此掘金：https://juejin.cn/user/281104094332653 |
+| 学习资料 | Mim0sa   | 没考上研所以家里蹲对界面交互体验这方面比较感兴趣           | Mim0sa         | 掘金：https://juejin.cn/user/1433418892590136                |
+| 工具推荐 | 邢勇     | 樊登读书对工程化工具比较感兴趣                             | brave723       | 掘金：https://juejin.cn/user/307518984425981/posts           |
+|          | 冯士魁   | 《今日水印相机》主程，目前负责海外音视频社交项目           | 我是熊大       | 掘金：https://juejin.cn/user/1151943916921885/posts          |
+|          | 夏天     | iOS开发老兵 游荡在各种博客之间，对底层和性能优化比较感兴趣 | 夏天           | 公众号：iOS成长指北 掘金：https://juejin.cn/user/3298190611456638 |
 
 新来的编辑需要按照这个格式，提交填写个人资料。
 
@@ -62,4 +63,3 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 ## 其他事项
 
 各位编辑如果自身有优秀的作品或者公司招聘信息等，可以优先推广。
-
