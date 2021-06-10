@@ -29,6 +29,18 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+## SwiftLee
+
+链接：https://www.avanderlee.com/
+
+一个分享关于 Swift、iOS 和 Xcode 技巧和窍门的每周博客，博客的文章写得清晰易懂，排版、配图和动画质量也很高。值得关注一下。同时作者也是 [Swift for Good](https://www.swiftforgood.com/) 的联合作者，是一本将所有全部收入将用于慈善的 Swift 学习书籍，有兴趣也可以看一下😺。
+
+## WWDC21 内参
+
+链接：https://xiaozhuanlan.com/wwdc21
+
+一年一度的 WWDC 又来啦！今年官方一共会放出 200 个 Session，内参作者们会根据必要性和实际情况选择合适的内容进行深度解读，让大家快速了解 WWDC21 中那些值得关注的 Session。现在也开放了今年 《WWDC21 内参》 [购买链接](https://xiaozhuanlan.com/wwdc21)，目前限时售价是 9.9 元。所有的《WWDC 内参》的收入，都会归为参与的作者所有。（摸鱼周报的编辑们也会成为内参作者做出一些贡献😁）
+
 ## 工具推荐
 
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
