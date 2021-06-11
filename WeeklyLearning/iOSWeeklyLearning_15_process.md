@@ -37,7 +37,7 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 [砸壳这件破事](https://mp.weixin.qq.com/s/xFHA2tlc6HCLti_ihlrsZA "砸壳这件破事") -- 来自：非尝咸鱼贩
 
 
-谈到逆向首先需要来了解下砸壳。到底什么是”壳“，砸壳到底砸的是什么？
+谈到逆向首先需要来了解下砸壳。到底什么是“壳”，砸壳到底砸的是什么？
 
 
 [iOS App 签名的原理](http://blog.cnbang.net/tech/3386/ "iOS App 签名的原理") -- 来自：bang's blog
