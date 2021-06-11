@@ -23,6 +23,39 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)
 
+本期周报主题：`逆向原理篇`
+
+[iosre](https://iosre.com "iosre") -- 来自网站：https://iosre.com
+
+
+一个活跃逆向论坛。
+
+
+[iOS逆向(11)-砸壳原理剖析，主动加载所有framework](https://juejin.cn/post/6844904006024691726 "iOS逆向(11)-砸壳原理剖析，主动加载所有framework") -- 来自掘金：一缕清风扬万里
+
+
+[砸壳这件破事](https://mp.weixin.qq.com/s/xFHA2tlc6HCLti_ihlrsZA "砸壳这件破事") -- 来自：非尝咸鱼贩
+
+
+谈到逆向首先需要来了解下砸壳。到底什么是”壳“，砸壳到底砸的是什么？
+
+
+[iOS App 签名的原理](http://blog.cnbang.net/tech/3386/ "iOS App 签名的原理") -- 来自：bang's blog
+
+
+这篇文章是我经常拿出来翻看的，每次谈到签名流程都需要查看下。
+
+
+[Code Signing - iOS 代码段的校验机制分析](https://mp.weixin.qq.com/s/msUwo3YUcfHXkuAp5wRfyQ "Code Signing - iOS 代码段的校验机制分析") -- 来自公众号：高级页面仔
+
+
+这篇文章对签名校验讲述的很详细，使用xnuspy可以hook系统缺页中断函数，这可能对我们日后的性能分析有帮助。
+
+
+[iOS LLDB中反反调试分析与实现](https://mp.weixin.qq.com/s/egrQxxJSympB-L6BdVDQVA "iOS LLDB中反反调试分析与实现")  -- 来自公众号：看雪学院
+
+
+__TEXT段是只读的，到底能不能在运行期间修改呢？可以看看这篇文章。
 
 
 ## 学习资料
