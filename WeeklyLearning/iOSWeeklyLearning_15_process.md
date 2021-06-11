@@ -173,7 +173,42 @@ Localizable 是 Mac 上的一款桌面工具，在商店搜索 Localizable 就�
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
 
+### 什么是 Webpack
 
+近年来 Web 应用变得更加复杂与庞大，Web 前端技术的应用范围也更加广泛。 从复杂庞大的管理后台到对性能要求苛刻的移动网页，再到类似 ReactNative 的原生应用开发方案，Web 前端工程师在面临更多机遇的同时也会面临更大的挑战。 通过直接编写 JavaScript、CSS、HTML 开发 Web 应用的方式已经无法应对当前 Web 应用的发展。近年来前端社区涌现出许多新思想与框架，比如使用模块化把一个复杂的系统分解到多个模块以方便编码，使用 React、Vue、Angular2 等 JS 框架，以及一些新语言的诞生如 ES6、TypeScript、Flow、SCSS 等。
+
+Webpack 是一个打包模块化 JavaScript 的工具，在 Webpack 里一切文件皆模块，通过 Loader 转换文件，通过 Plugin 注入钩子，最后输出由多个模块组合成的文件。Webpack 专注于构建模块化项目。
+
+其官网的首页图很形象的画出了 Webpack 是什么，如下：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210612002026.png)
+
+一切文件：JavaScript、CSS、SCSS、图片、模板，在 Webpack 眼中都是一个个模块，这样的好处是能清晰的描述出各个模块之间的依赖关系，以方便 Webpack 对模块进行组合和打包。 经过 Webpack 的处理，最终会输出浏览器能使用的静态资源。
+
+Webpack 具有很大的灵活性，能配置如何处理文件，大致使用如下：
+
+```
+module.exports = {
+  // 所有模块的入口，Webpack 从入口开始递归解析出所有依赖的模块
+  entry: './app.js',
+  output: {
+    // 把入口所依赖的所有模块打包成一个文件 bundle.js 输出 
+    filename: 'bundle.js'
+  }
+}
+```
+
+Webpack 的优点是：
+
+* 专注于处理模块化的项目，能做到开箱即用一步到位；
+* 通过 Plugin 扩展，完整好用又不失灵活；
+* 使用场景不仅限于 Web 开发；
+* 社区庞大活跃，经常引入紧跟时代发展的新特性，能为大多数场景找到已有的开源扩展；
+* 良好的开发体验。
+
+Webpack 的缺点是只能用于采用模块化开发的项目。
+
+参考：[gwuhaolin/dive-into-webpack](https://github.com/gwuhaolin/dive-into-webpack "gwuhaolin/dive-into-webpack")
 
 
 ## 优秀博客
