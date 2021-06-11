@@ -45,14 +45,16 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
 
-### Application Name
+### Diffchecker
 
-**地址**：
+**地址**：https://www.diffchecker.com/
 
-**软件状态**：
+**软件状态**：收费
 
-**使用介绍**
+**介绍**
+Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户快速的比较您的文本文件、文档、PDF、照片、图形和扫描等，并且界面简单直观，输入两个文件的内容，然后单击“查找差异”即可，并且具有绝对的安全性，能够保障您的文件安全，具有统一差异、字符级差异、文件夹差异、导出为PDF、语法高亮、文件导入、无广告等优势
 
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/1623388796593.jpg)
 
 
 ## 联系我们
