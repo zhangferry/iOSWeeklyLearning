@@ -7,53 +7,9 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 ## 开发Tips
 整理编辑：[FBY展菲](https://github.com/fanbaoying)
 
-### 去掉 iOS 导航栏返回按钮文本三种方案
+### 去掉 iOS 导航栏返回按钮文本两种方案
 
 **方案一**
-
-1. 自定义 `UINavigationController`
-2. 遵守 `<UINavigationBarDelegate>` 协议
-3. 实现下面方法：
-
-```objectivec
-#pragma mark --------- UINavigationBarDelegate
-
-- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item {
-    
-    //设置导航栏返回按钮文字
-    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:nil action:nil];
-    /*
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[UITextAttributeTextColor] = [UIColor whiteColor];
-    [back setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    */
-    item.backBarButtonItem = back;
-    
-    return YES;
-}
-```
-
-> **注意：该方法会出现部分子控制器页面的返回按钮文字出现的bug，需要在其子控制器页面的父控制器里再次如上设置返回按钮才行**
-
-```objectivec
-子控制器页面的父控制器
-
-#pragma mark -------- 生命周期函数
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    //重新设置下级子页面导航栏返回按钮文字
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.backBarButtonItem = item;
-
-}
-```
-
-**方案二**
 
 1. 自定义 `UINavigationController`
 2. 遵守 `<UINavigationBarDelegate>` 协议
@@ -72,7 +28,7 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 }
 ```
 
-**方案三（推荐）**
+**方案二（推荐）**
 
 1. 给 `UIViewController` 添加类别（这里的类别不需要导入可直接使用）
 2. 然后在 `load` 方法里面用 `Method Swzilling` 方法替换交换 `ViewDidAppear` 方法，代码如下：
@@ -119,7 +75,7 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector)
 @end
 ```
 
-参考：[去掉 iOS 导航栏返回按钮文本三种方案 - 展菲](https://mp.weixin.qq.com/s/VoVzBNlqWkk522t_aLC35A "去掉 iOS 导航栏返回按钮文本三种方案")
+参考：[去掉 iOS 导航栏返回按钮文本三种方案 - 展菲](https://mp.weixin.qq.com/s/VoVzBNlqWkk522t_aLC35A)
 
 
 ## 那些Bug
@@ -173,7 +129,18 @@ Localizable 是 Mac 上的一款桌面工具，在商店搜索 Localizable 就�
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
 
+<<<<<<< HEAD
 ### 什么是 Webpack
+=======
+### BootStrap
+
+前端主要知识都是围绕HTML、CSS 和 JavaScript 展开，这次介绍的 [BootStrap](https://www.bootcss.com/) 是一个再HTML和CSS层面发展起来的框架。它最初由 Twitter 开发，后在Github [开源](https://github.com/twbs/bootstrap)。其具有以下特点：
+
+* 解决响应式布局问题，比如电脑端、Pad端、移动端共用一套布局方式，却能根据屏幕尺寸进行适配。
+* 封装了很多课重用的组件，例如下拉菜单，弹框等，可以直接调用。
+* 提供一套优雅的HTML + CSS 规范，统一了代码风格。
+
+>>>>>>> add other process articles
 
 近年来 Web 应用变得更加复杂与庞大，Web 前端技术的应用范围也更加广泛。 从复杂庞大的管理后台到对性能要求苛刻的移动网页，再到类似 ReactNative 的原生应用开发方案，Web 前端工程师在面临更多机遇的同时也会面临更大的挑战。 通过直接编写 JavaScript、CSS、HTML 开发 Web 应用的方式已经无法应对当前 Web 应用的发展。近年来前端社区涌现出许多新思想与框架，比如使用模块化把一个复杂的系统分解到多个模块以方便编码，使用 React、Vue、Angular2 等 JS 框架，以及一些新语言的诞生如 ES6、TypeScript、Flow、SCSS 等。
 
@@ -241,15 +208,12 @@ Flutter 是目前开发者首选的跨平台开发框架。Flutter 2.2在 Google
 
 一个活跃逆向论坛。
 
-
 [iOS逆向(11)-砸壳原理剖析，主动加载所有framework](https://juejin.cn/post/6844904006024691726 "iOS逆向(11)-砸壳原理剖析，主动加载所有framework") -- 来自掘金：一缕清风扬万里
-
 
 [砸壳这件破事](https://mp.weixin.qq.com/s/xFHA2tlc6HCLti_ihlrsZA "砸壳这件破事") -- 来自：非尝咸鱼贩
 
 
 谈到逆向首先需要来了解下砸壳。到底什么是“壳”，砸壳到底砸的是什么？
-
 
 [iOS App 签名的原理](http://blog.cnbang.net/tech/3386/ "iOS App 签名的原理") -- 来自：bang's blog
 
@@ -273,13 +237,13 @@ __TEXT段是只读的，到底能不能在运行期间修改呢？可以看看�
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
-## SwiftLee
+### SwiftLee
 
 链接：https://www.avanderlee.com/
 
 一个分享关于 Swift、iOS 和 Xcode 技巧和窍门的每周博客，博客的文章写得清晰易懂，排版、配图和动画质量也很高。值得关注一下。同时作者也是 [Swift for Good](https://www.swiftforgood.com/) 的联合作者，是一本将所有全部收入将用于慈善的 Swift 学习书籍，有兴趣也可以看一下😺。
 
-## WWDC21 内参
+### WWDC21 内参
 
 链接：https://xiaozhuanlan.com/wwdc21
 
