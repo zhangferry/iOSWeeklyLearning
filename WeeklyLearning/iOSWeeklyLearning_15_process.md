@@ -173,7 +173,24 @@ Localizable 是 Mac 上的一款桌面工具，在商店搜索 Localizable 就�
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
 
+### 什么是 Flutter
 
+![](![](https://raw.githubusercontent.com/Tliens/p-i-c/master/flutter.png))
+
+Flutter 是目前开发者首选的跨平台开发框架。Flutter 2.2在 Google I/O 2021 大会上正式发布,从移动设备扩展到 web、桌面设备以及嵌入式设备。
+国内开发者占比20%，使用Flutter的公司包含腾讯、字节、BMW、SHEIN、Grab 和 滴滴 等。
+
+它具有以下特点或优势：
+* 支持全平台，从移动设备扩展到 web、桌面设备以及嵌入式设备
+* 相对于其他跨平台框架，性能更佳，Flutter直接重写了UIKit，底层渲染自己实现，并非接口调用
+* Flutter 是如今最流行的跨平台开发框架
+* 针对不同平台，有针对不同平台开发者的开发指南
+
+遇到的问题：
+* Flutter安装，在国内比较麻烦，即使有国内flutter安装指南
+* 包体检变大，iOS引入后，包体积增加10MB左右
+
+推荐文章：[Flutter实用教程](https://flutter.cn/docs/cookbook)
 
 
 ## 优秀博客
