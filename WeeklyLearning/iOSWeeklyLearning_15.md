@@ -50,11 +50,9 @@ SELECT SUM(case when result = 'win' then 1 else -1 end) as result_score FROM gam
 ```objectivec
 #pragma mark --------- UINavigationBarDelegate
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item {
-    
     //设置导航栏返回按钮文字，Title不要设置为nil
     UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     item.backBarButtonItem = back;
-    
     return YES;
 }
 ```
@@ -71,7 +69,7 @@ SELECT SUM(case when result = 'win' then 1 else -1 end) as result_score FROM gam
 
 **方案三**
 
-给 `UIViewController` 添加类别，然后在 `load` 方法里面用 `Method Swzilling` 将 `ViewDidAppear` 方法与我们的 Hook 方法进行交换。该方案需要注意与其他 Hook 方案是否冲突，特别是三方库，不是很推荐。其代码如下：
+给 `UIViewController` 添加类别，然后在 `load` 方法里面用 `Method Swzilling` 将 `ViewDidAppear` 方法与我们的 Hook 方法进行交换。其代码如下：
 
 ```objectivec
 #import "UIViewController+HideNavBackTitle.h"
@@ -167,7 +165,7 @@ Localizable 是 Mac 上的一款桌面工具，在商店搜索 Localizable 就�
 
 内容整理：[zhangferry](https://zhangferry.com)
 
-目前 Web 应用广泛使用在 PC、Pad、移动端等多个平台，但各个端的布局样式相差较大，如果能使用统一的方式描述布局将是非常有必要的，而这就是BootStrap的主要功能之一。
+目前 Web 应用广泛使用在 PC、Pad、移动端等多个平台，但各个端的布局样式相差较大，如果能使用统一的方式描述布局将是非常有必要的，而这就是 BootStrap 的主要功能之一。
 
 BootStrap 最初由 Twitter 开发，后在Github [开源](https://github.com/twbs/bootstrap)。它除了解决不同端统一布局的问题，还封装了很多可重用的组件，例如下拉菜单，弹框等，可以直接调用。另外它还提供一套优雅的 HTML + CSS 规范，统一了代码风格。
 
@@ -182,16 +180,16 @@ BootStrap 最初由 Twitter 开发，后在Github [开源](https://github.com/tw
 近年来 Web 应用变得更加复杂与庞大，它们拥有着复杂的 JavaScript 代码和一大堆依赖包。为了简化开发的复杂度，前端社区涌现出很多好的实践方法：
 
 * 模块化，让我们可以把复杂的程序细化为小的文件；
-* 类似于 TypeScript 这种在 JavaScript 基础上拓展的开发语言：使我们能够实现目前版本的 JavaScript 不能直接使用的特性，并且之后还能能转换为JavaScript文件使浏览器可以识别；
+* 类似于 TypeScript 这种在 JavaScript 基础上拓展的开发语言：使我们能够实现目前版本的 JavaScript 不能直接使用的特性，并且之后还能能转换为 JavaScript 文件使浏览器可以识别；
 * scss，less 等 CSS 预处理器；
 
-这些改进确实大大的提高了我们的开发效率，但是利用它们开发的文件往往需要进行额外的处理才能让浏览器识别，而手动处理又是非常繁琐的，这就为 WebPack 这一类的工具的出现提供了需求。
+这些改进确实大大的提高了我们的开发效率，但是利用它们开发的文件往往需要进行额外的处理才能让浏览器识别，而手动处理又是非常繁琐的，这就为 Webpack 这一类的工具的出现提供了需求。
 
 其官网的首页图很形象的画出了 Webpack 是什么，如下：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210612002026.png)
 
-其是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 webpack 处理应用程序时，它会在内部构建一个 [依赖图(dependency graph)](https://webpack.docschina.org/concepts/dependency-graph/)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。
+其是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 Webpack 处理应用程序时，它会在内部构建一个 [依赖图(dependency graph)](https://webpack.docschina.org/concepts/dependency-graph/)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。
 
 参考：[gwuhaolin/dive-into-webpack](https://github.com/gwuhaolin/dive-into-webpack "gwuhaolin/dive-into-webpack")，[什么是webpack打包工具以及其优点用法](https://blog.csdn.net/weixin_42941619/article/details/87706623 "什么是webpack打包工具以及其优点用法")
 
@@ -203,9 +201,9 @@ BootStrap 最初由 Twitter 开发，后在Github [开源](https://github.com/tw
 
 Flutter 是目前开发者首选的跨平台开发框架。Flutter 2.2在 Google I/O 2021 大会上正式发布，从移动设备扩展到 web、桌面设备以及嵌入式设备，真正实现了全端覆盖。
 
-Flutter的核心原则是一切皆为widget，与其他将视图、控制器、布局和其他属性分离的框架不同，Flutter具有一致的统一对象模型：widget。
+Flutter的核心原则是一切皆为 widget，与其他将视图、控制器、布局和其他属性分离的框架不同，Flutter具有一致的统一对象模型：widget。
 
-> 当前iOS的界面元素由 UIView + UIViewController + AutoLayout 组合而成，到了 SwiftUI 则统一用 View 描述，类似 Flutter 的widget。
+> 当前iOS的界面元素由 UIView + UIViewController + AutoLayout 组合而成，到了 SwiftUI 则统一用 View 描述，类似 Flutter 的 widget。
 
 其使用声明式语法，比如实现一个简单 widget padding 的功能：
 
@@ -233,7 +231,7 @@ Flutter 拥有更优的性能，主要原因就是它用于一套自己独有的
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210613103605.png)
 
-Flutter 仍有一些缺点，即导致包体变大，iOS引入后，包体积增加10MB左右。
+Flutter 仍有一些缺点，即导致包体变大，iOS 引入后，包体积增加 10MB 左右。
 
 推荐文章：[Flutter实用教程](https://flutter.cn/docs/cookbook "Flutter实用教程")
 
@@ -269,8 +267,7 @@ Flutter 仍有一些缺点，即导致包体变大，iOS引入后，包体积增
 
 [iOS LLDB中反反调试分析与实现](https://mp.weixin.qq.com/s/egrQxxJSympB-L6BdVDQVA "iOS LLDB中反反调试分析与实现")  -- 来自公众号：看雪学院
 
-
-__TEXT段是只读的，到底能不能在运行期间修改呢？可以看看这篇文章。
+`__TEXT` 段是只读的，到底能不能在运行期间修改呢？可以看看这篇文章。
 
 
 ## 学习资料
