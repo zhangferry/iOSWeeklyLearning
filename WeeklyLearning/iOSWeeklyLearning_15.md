@@ -125,7 +125,7 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector)
 
 项目实现国际化功能，编译时遇到错误，`read failed: Couldn't parse property list because the input data was in an invalid format`
 
-![](https://upload-images.jianshu.io/upload_images/2829694-32beb8f3d6c7d838.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210614164606.png)
 
 根据错误提示告诉我们是数据格式的问题。具体问题出现在那里下面分析一下
 
@@ -155,7 +155,7 @@ $ plutil -lint path/Localizable.strings
 
 Localizable 是 Mac 上的一款桌面工具，在商店搜索 Localizable 就可以找到，使用方式也很简单，只需要将  Localizable.strings 文件拖到对应区域就可以，然后会反馈哪一行格式有问题，对应解决就好，非常方便。
 
-![](https://upload-images.jianshu.io/upload_images/2829694-2d5c9279f35f29d3.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210614164630.png)
 
 参考：[iOS 国际化文本格式报错 - 展菲](https://mp.weixin.qq.com/s/qFfXwI9sLqxm9wTpsSS6rQ)
 
