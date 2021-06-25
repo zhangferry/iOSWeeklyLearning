@@ -24,6 +24,68 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 开发Tips
 
+### Swift 实现页面的淡入淡出效果
+
+内容整理：[FBY展菲](https://github.com/fanbaoying)
+
+实现页面淡入淡出效果，实现思路：
+
+1. 创建 `testView` 页面，`frame` 和页面大小一样大
+2. 设置背景颜色
+3. 设置 `tag` 用于定位 `view`
+4. 设置透明度为 0
+5. 创建当前页面点击手势
+6. 创建淡出页面的点击手势
+
+源码如下：
+
+```swift
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let testView = UIView(frame: self.view.frame)
+        testView.backgroundColor = .blue
+        testView.tag = 1000
+        self.view.addSubview(testView)
+        testView.alpha = 0.0
+        
+        // 创建当前页面点击手势
+        let tap = UITapGestureRecognizer(target: self, action: #selector(test))
+        self.view.addGestureRecognizer(tap)
+        
+        // 创建淡出页面的点击手势
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(test2))
+        testView.addGestureRecognizer(tap2)
+}
+```
+
+实现手势方法，在 `test` 方法中实现 `animate`设置持续时间 `0.5` 秒，在 `animations` 通过 `tag` 定位出现的 `view` 设置透明度为 1。使用 `self.view.layoutIfNeeded()` 立即更新视图。
+
+在 `test2` 方法中需要实现隐藏页面的功能，需要定位到 `view` 并将透明度设置为 0。然后立即更新视图。
+
+源码如下：
+
+```swift
+@objc func test() {
+    // 改变透明度
+    UIView.animate(withDuration: 0.5, animations: {
+        let view = self.view.viewWithTag(1000)
+        view?.alpha = 1.0
+        self.view.layoutIfNeeded()
+    })
+}
+
+@objc func test2() {
+    // 改变透明度
+    UIView.animate(withDuration: 0.5, animations: {
+        let view = self.view.viewWithTag(1000)
+        view?.alpha = 0.0
+        self.view.layoutIfNeeded()
+    })
+}
+```
+
+参考：[Swift 实现页面的淡入淡出效果 - 展菲](https://mp.weixin.qq.com/s/Wu4yQ97r011Z3bIK4MDBjw "Swift 实现页面的淡入淡出效果")
 
 
 ## 面试解析
