@@ -1,6 +1,6 @@
 # iOSWeeklyLearning
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些有用的学习内容。当前周报形式分为如下模块：
 
@@ -80,6 +80,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/renmoqiqi"><img src="https://avatars.githubusercontent.com/u/8848376?v=4?s=100" width="100px;" alt=""/><br /><sub><b>renmoqiqi</b></sub></a><br /><a href="#blog-renmoqiqi" title="Blogposts">📝</a></td>
     <td align="center"><a href="https://github.com/Tliens"><img src="https://avatars.githubusercontent.com/u/31976044?v=4?s=100" width="100px;" alt=""/><br /><sub><b>我是熊大</b></sub></a><br /><a href="#blog-Tliens" title="Blogposts">📝</a></td>
+    <td align="center"><a href="https://juejin.im/user/571d719171cfe4006170de6f"><img src="https://avatars.githubusercontent.com/u/8653935?v=4?s=100" width="100px;" alt=""/><br /><sub><b>xia</b></sub></a><br /><a href="#blog-LoneyIsError" title="Blogposts">📝</a></td>
   </tr>
 </table>
 
