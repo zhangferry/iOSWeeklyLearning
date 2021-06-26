@@ -2,21 +2,34 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+## 周报介绍
+
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些有用的学习内容。当前周报形式分为如下模块：
 
-1、开发Tip。对应开发技巧
+1、本期话题。来自与编辑和读者的话题讨论
 
-2、那些Bug。对应工作中遇到的Bug以及解决方案
+2、开发Tips。一些实用的开发技巧
 
-3、编程概念。开发中遇到的技术概念
+3、面试解析。分享一些高频的面试题及面试技巧
 
-4、优秀博客。阅读到的高质量博客
+4、优秀博客。高质量博客推荐
 
 5、学习资料。比较成体系的学习资料介绍
 
 6、工具推荐。好用的开发工具或者三方库
 
 另外对于编程概念、优秀博客、学习资料和工具推荐进行了单独分类，可以查看 `CategorySummary` 文件夹内的单独分类。
+
+### 订阅形式
+
+公众号：iOS成长之路
+
+博客：https://www.zhangferry.com
+
+RSS：https://zhangferry.com/atom.xml
+
+掘金：https://juejin.cn/user/2242659450368119/posts
 
 ## 内容贡献方式
 

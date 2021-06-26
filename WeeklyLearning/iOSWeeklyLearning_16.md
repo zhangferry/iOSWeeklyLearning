@@ -2,90 +2,21 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
 
-iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
+iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
-## 卷首语
+## 本期话题
 
-@zhangferry：摸鱼周报在经过一波问卷调查之后得出了以下几个结论：
+[@zhangferry](https://zhangferry.com)：我们在摸鱼周报按照既定格式跑了15期之后做了一次问卷调查，主要用于统计大家对周报的意见以及后续的优化方向。问卷的结果有部分是符合预期的，但也有些跟原先设想并不一致，所以我们也停更了一期用于改版，本期内容即是新版格式，如果后续还有别的意见，也欢迎留言通知我们。
 
-* 编程概念模块大家不感兴趣。
+改动内容是去掉了**那些Bug**、**编程概念**模块，然后增加另外两个模块本期话题和面试解析。
 
-* 很期待面试相关内容。
+重点说下**本期话题**模块的作用，我们在调研了各个领域有名气的周报之后，发现了一份独树一帜且跟我们气质相符的周报：阮一峰的科技爱好者周刊。阮一峰的周刊特别之处在于它不仅是在讲科技，还会有每周话题用来讲述生活中的一些思考，当科技与人文思考发生了碰撞，类似”黑客与画家“的感觉，立意就丰满了起来，就我个人感受也非常喜欢看这一类的思考。
 
-* 期望一些开发者的成长经验传授。
-
-随之我们做出了一些模块的调整，就是本期内容啦。
-
-编程模块我一直认为是摸鱼周报的特色，概念是一组内容的精简概括，能否界定清楚其含义会影响我们与后端，与前端，与产品，与投放同学之间的交流是否高效，且每期这些内容都会耗费很多时间去整理，结果却有些”吃力不讨好“，确实没想到。也可能仅仅是选题内容大家不感兴趣而已，所以我们选择将该模块暂时下掉，以释放一些整理内容和篇幅过多的压力，后面也有可能会再补上来。
-
-另外我们在调研了各个领域有名气的周报之后，发现一份独树一帜且有温度的周报：阮一峰的科技爱好者周刊。感觉有温度的原因就是它不仅是在讲科技，还有个每周话题用来探讨生活中的一些问题，当科技与人文思考发生了碰撞，内容一下感觉就丰满了起来。所以每期我们也会加个卷首语，讲下生活感想，或读书感悟，或经验教训等。大家如果有合适的心得体会也欢迎投稿给我们。
-
-还有一点变化是增加了一个问题留言模块，目前主要发布的三个平台：公众号、掘金、博客都有留言功能，大家可以把自己遇到的问题填到留言板上，推荐是技术、成长、职业规划类的。我们会选一个问题在下一期进行回答，如果问题超出了我们几位编辑的认知范围，会找认识的其他大佬进行解答。所以欢迎大家贡献你们的问题！
+所以我们也决定加一个本期话题的模块，讲下生活感想，读书感悟，或职场教训等。主题来源不仅限于众位联合编辑，也欢迎各位读者跟我们一起探讨问题，或者向我们抛出问题。之后的**本期话题**会从多个选题里选一个进行探讨，如果问题超出了我们几位编辑的认知范围，会找认识的其他大佬进行解答。欢迎大家贡献话题内容！
 
 ## 开发Tips
 
-### Swift 实现页面的淡入淡出效果
-
-内容整理：[FBY展菲](https://github.com/fanbaoying)
-
-实现页面淡入淡出效果，实现思路：
-
-1. 创建 `testView` 页面，`frame` 和页面大小一样大
-2. 设置背景颜色
-3. 设置 `tag` 用于定位 `view`
-4. 设置透明度为 0
-5. 创建当前页面点击手势
-6. 创建淡出页面的点击手势
-
-源码如下：
-
-```swift
-override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let testView = UIView(frame: self.view.frame)
-        testView.backgroundColor = .blue
-        testView.tag = 1000
-        self.view.addSubview(testView)
-        testView.alpha = 0.0
-        
-        // 创建当前页面点击手势
-        let tap = UITapGestureRecognizer(target: self, action: #selector(test))
-        self.view.addGestureRecognizer(tap)
-        
-        // 创建淡出页面的点击手势
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(test2))
-        testView.addGestureRecognizer(tap2)
-}
-```
-
-实现手势方法，在 `test` 方法中实现 `animate`设置持续时间 `0.5` 秒，在 `animations` 通过 `tag` 定位出现的 `view` 设置透明度为 1。使用 `self.view.layoutIfNeeded()` 立即更新视图。
-
-在 `test2` 方法中需要实现隐藏页面的功能，需要定位到 `view` 并将透明度设置为 0。然后立即更新视图。
-
-源码如下：
-
-```swift
-@objc func test() {
-    // 改变透明度
-    UIView.animate(withDuration: 0.5, animations: {
-        let view = self.view.viewWithTag(1000)
-        view?.alpha = 1.0
-        self.view.layoutIfNeeded()
-    })
-}
-
-@objc func test2() {
-    // 改变透明度
-    UIView.animate(withDuration: 0.5, animations: {
-        let view = self.view.viewWithTag(1000)
-        view?.alpha = 0.0
-        self.view.layoutIfNeeded()
-    })
-}
-```
-
-参考：[Swift 实现页面的淡入淡出效果 - 展菲](https://mp.weixin.qq.com/s/Wu4yQ97r011Z3bIK4MDBjw "Swift 实现页面的淡入淡出效果")
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
 ### 图片压缩
 
@@ -93,7 +24,7 @@ override func viewDidLoad() {
 
 #### 有损压缩和无损压缩
 
-常见的压缩工具有 tinypng，pngquant，ImageAlpha、ImageOptim、pngcrush、optipng、pngout、pngnq、advpng 等，根据其压缩方式分成两大阵营：有损压缩和无损压缩
+常见的压缩工具有 tinypng，pngquant，ImageAlpha、ImageOptim、pngcrush、optipng、pngout、pngnq、advpng 等，根据其压缩方式分成两大阵营：有损压缩和无损压缩。
 
 根据资料显示，tinypng、pngquant、ImageAlpha、pngnq 都是有损压缩，基本采用的都是quantization算法，将 24 位的 PNG 图片转换为 8 位的 PNG 图片，减少图片的颜色数；pngcrush、optipng、pngout、advpng 都是无损压缩，采用的都是基于 LZ/Huffman 的DEFLATE 算法，减少图片 IDAT chunk 区域的数据。一般有损压缩的压缩率会大大高于无损压缩。
 
@@ -106,7 +37,7 @@ override func viewDidLoad() {
 
 可以通过查看[这个表格](http://jamiemason.github.io/ImageOptim-CLI/comparison/png/photoshop/desc/)对比 TinyPng 和 ImageOptim-CLI 。
 
-对于小图来说，例如我们常见的 icon 图标来说，我们通过改变其编码方式为 RGB with palette 来达到图片压缩效果。你可以使用 ImageOptim 改变图片的编码方式为 RGB with palette。
+对于小图来说，例如我们常见的 icon 图标来说，我们通过改变其编码方式为 `RGB with palette` 来达到图片压缩效果。你可以使用 ImageOptim 改变图片的编码方式为 `RGB with palette`。
 
 ```shell
 imageoptim -Q --no-imageoptim --imagealpha --number-of-colors 16 --quality 40-80 ./1.png
@@ -120,16 +51,16 @@ imageoptim -Q --no-imageoptim --imagealpha --number-of-colors 16 --quality 40-80
 
 我们一般使用  Assets Catalogs 对图片资源进行管理。其会存在对应的优化方式
 
-![](https://raw.githubusercontent.com/LoneyIsError/blog_images/main/640.webp)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626221623.png)
 
-在构建过程中，Xcode 会通过自己的压缩算法重新对图片进行处理。在构建 Assets Catalogs 的编译产物 Assest.car 的过程中，Xcode 会使用 `actool` 对  Assets Catalogs  中的 png 图片进行解码，由此得到 Bitmap 数据，然后再运用 actool 的编码压缩算法进行编码压缩处理。所以不改变编码方式的无损压缩方法最终的包大小来说，可能没有什么作用。
+在构建过程中，Xcode 会通过自己的压缩算法重新对图片进行处理。在构建 Assets Catalogs 的编译产物 Assest.car 的过程中，Xcode 会使用 `actool` 对  Assets Catalogs  中的 png 图片进行解码，由此得到 Bitmap 数据，然后再运用 actool 的编码压缩算法进行编码压缩处理。所以不改变编码方式的无损压缩方法对最终的包大小来说，可能没有什么作用。
 
-对同一张图片，在不同设备、iOS 系统上 Xcode 采用了不同的压缩算法这也导致了下载时候不同的设备针对图片出现大小的区别。
+对同一张图片，在不同设备、不同 iOS 系统上 Xcode 采用了不同的压缩算法这也导致了下载时不同的设备针对图片出现大小的区别。
 
 你可以利用 `assetutil` 工具分析 `Assest.car` 来得到其具体的压缩方法
 
 ```shell
-sudo xcrun --sdk iphoneos assetutil --info ***.app/Assets.car > ***.json
+assetutil --info ***.app/Assets.car > ***.json
 ```
 
 其注意 `Compression` 、`Encoding`、`SizeOnDisk`。
@@ -157,10 +88,10 @@ sudo xcrun --sdk iphoneos assetutil --info ***.app/Assets.car > ***.json
   }
 ```
 
-如果启用  APP Thinning 来生成不同设备的 ipa 包，然后针对每个 ipa 包都进行一次解压缩，并获取其中的 Assets.car 导出对应的 assets.json 似乎有些冗余，你也可以利用京东商城的 APP 瘦身实践中提及的  `assetutil`  的方法从通用包的 Assets.car 文件导出指定设备的 Assets.car 文件
+如果启用  APP Thinning 来生成不同设备的 ipa 包，然后针对每个 ipa 包都进行一次解压缩，并获取其中的 Assets.car 导出对应的 assets.json 似乎有些冗余，你也可以利用[京东商城的 APP 瘦身实践](https://mp.weixin.qq.com/s/xzlFQJ2b-rrw5QIszSLXXQ)中提及的  `assetutil`  的方法从通用包的 Assets.car 文件导出指定设备的 Assets.car 文件：
 
 ```shell
-sudo xcrun --sdk iphoneos assetutil --idiom phone --subtype 570 --scale 3 --display-gamut srgb --graphicsclass MTL2,2 --graphicsclassfallbacks MTL1,2:GLES2,0 --memory 1 --hostedidioms car,watch xxx/Assets.car -o xxx/thinning_assets.car
+assetutil --idiom phone --subtype 570 --scale 3 --display-gamut srgb --graphicsclass MTL2,2 --graphicsclassfallbacks MTL1,2:GLES2,0 --memory 1 --hostedidioms car,watch xxx/Assets.car -o xxx/thinning_assets.car
 ```
 
 #### 压缩的`危害`
@@ -169,21 +100,17 @@ sudo xcrun --sdk iphoneos assetutil --idiom phone --subtype 570 --scale 3 --disp
 
 压缩完成的图片尽量在高分辨率的设备上看看会不会有什么问题，让 UI 妹子好好看看，会不会出现噪点、毛边等现象。
 
-如果一个图片经过有损压缩最终导致其在 Assets.car 中 `SizeOnDisk` 值变得很大的话，但其在各个设备上的表现情况又挺好，你可以尝试将其加到 bundle 中使用，并将其图片格式修改为 `Data`，这样 Xcode 就不会对齐进行压缩处理了。不过不要忘记将调用方法改为 `imageWithContentOfFile:`。
+如果一个图片经过有损压缩最终导致其在 Assets.car 中 `SizeOnDisk` 值变得很大的话，但其在各个设备上的表现情况又挺好，你可以尝试将其加到 bundle 中使用，并将其图片格式修改为 `Data`，这样 Xcode 就不会对其进行压缩处理了。不过不要忘记将调用方法改为 `imageWithContentOfFile:`。
 
-![](https://raw.githubusercontent.com/LoneyIsError/blog_images/main/截屏2021-06-25 17.44.37.png)
-
-![](https://raw.githubusercontent.com/LoneyIsError/blog_images/main/截屏2021-06-25 17.44.37.png)
-
-
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626221653.png)
 
 ## 面试解析
 
-整理编辑：
+整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)
 
-本期主题：计算机网络
+面试解析是新出的模块，我们会按照主题介绍一些高频面试题，本期主题是**计算机网络**，以下题目均来自真实面试场景。
 
-一：输入网址进入网页按回车刷新网页都发生了什么？URL 输入到显示的过程？
+### 输入网址进入网页按回车刷新网页都发生了什么？URL 输入到显示的过程？
 
 1. DNS 解析：当用户输入一个网址并按下回车键的时候，浏览器获得一个域名，而在实际通信过程中，我们需要的是一个 IP 地址，因此我们需要先把域名转换成相应 IP 地址；
 2. TCP 连接：浏览器通过 DNS 获取到 Web 服务器真正的 IP 地址后，便向 Web 服务器发起 TCP 连接请求，通过 TCP 三次握手建立好连接后，浏览器便可以将 HTTP 请求数据发送给服务器了；
@@ -192,7 +119,7 @@ sudo xcrun --sdk iphoneos assetutil --idiom phone --subtype 570 --scale 3 --disp
 5. 浏览器渲染：浏览器根据响应开始显示页面，首先解析 HTML 文件构建 DOM 树，然后解析 CSS 文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上；
 6. 断开连接：客户端和服务器通过四次挥手终止 TCP 连接。
 
-二：拥塞控制有哪些阶段？如何实现拥塞控制？TCP 的拥塞控制解释一下？
+### 拥塞控制有哪些阶段？如何实现拥塞控制？TCP 的拥塞控制解释一下？
 
 1. 拥塞控制考虑整个网络，是全局性的考虑
 2. 慢启动算法，由小到大逐渐增加发送数据量；每收到一个报文确认就加 1 倍的报文数量；增长到慢启动阈值后就不增了；
@@ -200,7 +127,7 @@ sudo xcrun --sdk iphoneos assetutil --idiom phone --subtype 570 --scale 3 --disp
 4. 快速重传，接收端收到的序列号不连续时，连发 3 个重复的确认报文给发送方；
 5. 快速恢复，拥塞窗口变为原来的一半，阈值也变为发生拥塞时大小的一半，继续拥塞避免算法。
 
-三：TCP 怎么保证可靠传输？TCP 怎样实现可靠传输的？TCP 为什么可以保证可靠传输？怎么理解 TCP 的连接，可靠和字节流？
+### TCP 怎么保证可靠传输？TCP 怎样实现可靠传输的？TCP 为什么可以保证可靠传输？怎么理解 TCP 的连接，可靠和字节流？
 
 1. 数据分块：应用数据被分割成 TCP 认为最适合发送的数据块；
 2. 序列号和确认应答：TCP 给发送的每一个包进行编号，在传输的过程中，每次接收方收到数据后，都会对传输方进行确认应答，即发送 ACK 报文，这个 ACK 报文当中带有对应的确认序列号，告诉发送方成功接收了哪些数据以及下一次的数据从哪里开始发。除此之外，接收方可以根据序列号对数据包进行排序，把有序数据传送给应用层，并丢弃重复的数据；
@@ -231,52 +158,75 @@ sudo xcrun --sdk iphoneos assetutil --idiom phone --subtype 570 --scale 3 --disp
 
 四、[抖音品质建设 - iOS启动优化《原理篇》]( https://juejin.cn/post/6887741815529832456  "抖音品质建设 - iOS启动优化《原理篇》") -- 来自掘金：字节跳动技术团队
 
-面试官经常问一个问题：从用户点击图标开始，到用户看到第一帧图像，都经历了哪些过程。这篇文章将会给出非常全面的答案。想要做启动优化首先要了解iOS在启动时都做了哪些事情。文章首先介绍了一些基础概念，如：启动的种类、dyld、mmap、Page In等。随后介绍了IPA的构建流程，透露了如何基于LLVM插桩来实现无用代码检测。文章着重介绍了dyld3的启动流程。dyld3都缓存了哪些内容?Rebase & Bind 各自是做什么的？启动终点应该定在哪里？这些内容是面试中常见的问题。
-
-
+面试官经常问一个问题：从用户点击图标开始，到用户看到第一帧图像，都经历了哪些过程。这篇文章将会给出非常全面的答案。想要做启动优化首先要了解 iOS 在启动时都做了哪些事情。文章首先介绍了一些基础概念，如：启动的种类、dyld、mmap、Page In等。随后介绍了 IPA 的构建流程，透露了如何基于 LLVM 插桩来实现无用代码检测。文章着重介绍了 dyld3 的启动流程。dyld3 都缓存了哪些内容？Rebase & Bind 各自是做什么的？启动终点应该定在哪里？这些内容是面试中常见的问题。
 
 五、[58 同城 App 性能治理实践-iOS 启动时间优化]( https://mp.weixin.qq.com/s/wkK2UBvuUZW3Pf0Yd_3XTA "58 同城 App 性能治理实践-iOS 启动时间优化") -- 来自公众号：58技术
 
-这篇文章是58同城APP做启动优化的实践整理。从启动耗时监控到启动治理文章都有介绍。文中介绍了如何横向对比两个APP的启动时间、如何进行动态库懒加载实现启动优化、Swift符号如何收集等方案。对APP的启动优化实践有一定的参考意义。
+这篇文章是58同城 APP 做启动优化的实践整理。从启动耗时监控到启动治理文章都有介绍。文中介绍了如何横向对比两个 APP 的启动时间、如何进行动态库懒加载实现启动优化、Swift符号如何收集等方案。对 APP 的启动优化实践有一定的参考意义。
 
 
 六、[哈啰出行iOS App首屏秒开优化](https://mp.weixin.qq.com/s/5Ez2BrsyBgQ8aHZqlYtAjg "哈啰出行iOS App首屏秒开优化") -- 来自公众号：哈啰技术
 
-此篇文章与前两篇文章内容上稍有重叠，但是偏重于介绍图片及动画解码对APP启动的影响。本文提供了多个具有参考价值的案例，如：Lottie框架在同步处理转码时的性能问题。作者提出了Lottie处理大图或者关键帧多张的图片阻塞主线程的问题，并给出了相应的处理方式。
+此篇文章与前两篇文章内容上稍有重叠，但是偏重于介绍图片及动画解码对 APP 启动的影响。本文提供了多个具有参考价值的案例，如：Lottie 框架在同步处理转码时的性能问题。作者提出了 Lottie 处理大图或者关键帧多张的图片阻塞主线程的问题，并给出了相应的处理方式。
 
 
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
-### [RSSHub](https://docs.rsshub.app/ "RSSHub")
+### RSSHub
+
+地址：https://docs.rsshub.app/
 
 RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以给任何奇奇怪怪的内容生成 RSS 订阅源。RSSHub 借助于开源社区的力量快速发展中，目前已适配数百家网站的上千项内容，且可以配合浏览器扩展和移动端的 App 一起使用，同时也欢迎编写你感兴趣的订阅源。
 
-### [中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide "中文技术文档的写作规范")
+### 中文技术文档的写作规范
+
+地址：https://github.com/ruanyf/document-style-guide
 
 来自阮一峰的中文技术文档的写作规范。编者在各大博客平台看技术文章的时候，经常会为文章的格式所苦恼，严重的情况下甚至导致编者直接关闭该篇文章。实际上中文文案的写作规范不是那么复杂，学十几分钟、练习几篇文章，就能写出得体的文案格式。良好的写作规范既能节约沟通成本，也能提升文章气质，学到就是赚到，是一辈子的财富。另也强力推荐这篇[中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines#%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%88%E6%8E%92%E7%89%88%E6%8C%87%E5%8C%97 "中文文案排版指北")做参考。
 
-## 开发利器
+## 工具推荐
 
-整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
 
+### WWDC
 
+**地址**：https://wwdc.io/ 
 
-## 问题留言
+**软件状态**：免费，[开源](https://github.com/insidegui/WWDC)
 
+**介绍**
 
+一个观看 WWDC 视频的应用，目前 2021年的 WWDC Sessions 在官方的 Developer 应用还没有上架，但这个应用已经可以看了。其支持视频下载、最高5分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等，这么全的功能，完全克服了网页看视频的种种弊端，简直是看 WWDC 必备应用。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626230114.png)
+
+### ScreenSize
+
+**地址**：https://www.screensizes.app/
+
+**介绍**
+
+一个在线的 Apple 设备尺寸及设备内各组件的尺寸整理网站，非常之全。这里简要概括下其在 iPhone 设备包含的内容：
+
+* 横竖屏状态的安全区域大小
+* 三种 Widget 尺寸的大小
+* 标准模式和系统放大模式的尺寸大小
+* 各个设备之间的尺寸对比
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626223430.png)
 
 ## 联系我们
-
-[iOS摸鱼周报 第九期](https://zhangferry.com/2021/04/24/iOSWeeklyLearning_9/)
-
-[iOS摸鱼周报 第十期](https://zhangferry.com/2021/05/05/iOSWeeklyLearning_10/)
 
 [iOS摸鱼周报 第十一期](https://zhangferry.com/2021/05/16/iOSWeeklyLearning_11/)
 
 [iOS摸鱼周报 第十二期](https://zhangferry.com/2021/05/22/iOSWeeklyLearning_12/)
 
 [iOS摸鱼周报 第十三期](https://zhangferry.com/2021/05/30/iOSWeeklyLearning_13/)
+
+[iOS摸鱼周报 第十四期](https://zhangferry.com/2021/06/06/iOSWeeklyLearning_14/)
+
+[iOS摸鱼周报 第十五期](https://zhangferry.com/2021/06/14/iOSWeeklyLearning_15/)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
