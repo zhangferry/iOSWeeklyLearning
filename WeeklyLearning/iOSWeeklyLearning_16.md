@@ -102,8 +102,6 @@ assetutil --idiom phone --subtype 570 --scale 3 --display-gamut srgb --graphicsc
 
 如果一个图片经过有损压缩最终导致其在 Assets.car 中 `SizeOnDisk` 值变得很大的话，但其在各个设备上的表现情况又挺好，你可以尝试将其加到 bundle 中使用，并将其图片格式修改为 `Data`，这样 Xcode 就不会对其进行压缩处理了。不过不要忘记将调用方法改为 `imageWithContentOfFile:`。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626221653.png)
-
 ## 面试解析
 
 整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)
@@ -160,12 +158,12 @@ assetutil --idiom phone --subtype 570 --scale 3 --display-gamut srgb --graphicsc
 
 面试官经常问一个问题：从用户点击图标开始，到用户看到第一帧图像，都经历了哪些过程。这篇文章将会给出非常全面的答案。想要做启动优化首先要了解 iOS 在启动时都做了哪些事情。文章首先介绍了一些基础概念，如：启动的种类、dyld、mmap、Page In等。随后介绍了 IPA 的构建流程，透露了如何基于 LLVM 插桩来实现无用代码检测。文章着重介绍了 dyld3 的启动流程。dyld3 都缓存了哪些内容？Rebase & Bind 各自是做什么的？启动终点应该定在哪里？这些内容是面试中常见的问题。
 
-五、[58 同城 App 性能治理实践-iOS 启动时间优化]( https://mp.weixin.qq.com/s/wkK2UBvuUZW3Pf0Yd_3XTA "58 同城 App 性能治理实践-iOS 启动时间优化") -- 来自公众号：58技术
+五、[58 同城 App 性能治理实践-iOS 启动时间优化]( https://mp.weixin.qq.com/s/wkK2UBvuUZW3Pf0Yd_3XTA) -- 来自公众号：58技术
 
 这篇文章是58同城 APP 做启动优化的实践整理。从启动耗时监控到启动治理文章都有介绍。文中介绍了如何横向对比两个 APP 的启动时间、如何进行动态库懒加载实现启动优化、Swift符号如何收集等方案。对 APP 的启动优化实践有一定的参考意义。
 
 
-六、[哈啰出行iOS App首屏秒开优化](https://mp.weixin.qq.com/s/5Ez2BrsyBgQ8aHZqlYtAjg "哈啰出行iOS App首屏秒开优化") -- 来自公众号：哈啰技术
+六、[哈啰出行iOS App首屏秒开优化](https://mp.weixin.qq.com/s/5Ez2BrsyBgQ8aHZqlYtAjg) -- 来自公众号：哈啰技术
 
 此篇文章与前两篇文章内容上稍有重叠，但是偏重于介绍图片及动画解码对 APP 启动的影响。本文提供了多个具有参考价值的案例，如：Lottie 框架在同步处理转码时的性能问题。作者提出了 Lottie 处理大图或者关键帧多张的图片阻塞主线程的问题，并给出了相应的处理方式。
 
@@ -198,7 +196,7 @@ RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以�
 
 **介绍**
 
-一个观看 WWDC 视频的应用，目前 2021年的 WWDC Sessions 在官方的 Developer 应用还没有上架，但这个应用已经可以看了。其支持视频下载、最高5分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等，这么全的功能，完全克服了网页看视频的种种弊端，简直是看 WWDC 必备应用。
+一个开源的非官方 WWDC 视频的应用，其支持视频下载、最高5分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等。相比于官方应用来说，其功能只多不少（官方新版的 Developer 应用添加了代码片段预览功能），而且更新比较迅速，已经发展到了 v7.3.3版本，可以查看 2021 年的 Sessions。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626230114.png)
 
