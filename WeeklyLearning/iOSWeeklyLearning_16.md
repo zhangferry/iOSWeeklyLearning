@@ -6,13 +6,13 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：我们在摸鱼周报按照既定格式跑了 15 期之后做了一次问卷调查，主要用于统计大家对周报的意见以及后续的优化方向。问卷的结果有部分是符合预期的，但也有些跟原先设想并不一致，所以我们也停更了一期用于改版，本期内容即是新版格式，如果后续还有别的意见，也欢迎留言通知我们。
+[@zhangferry](https://zhangferry.com)：大家好，iOS摸鱼周报不知不觉已经发布到第 16 期啦！为了了解大家对周报的想法和建议，我们做了一次问卷调查，问卷的结果大体上符合预期的设想，有一些好的建议我们也采纳了。所以在上一周我们停更一期做了新内容的准备，本期内容就是改版后的第一期。如果大家后续有什么好的想法和建议，还可以继续给我们留言反馈，希望摸鱼周报能同大家一起进步~
 
-改动内容是去掉了**那些Bug**、**编程概念**模块，然后增加另外两个模块**本期话题**和**面试解析**。
+**调整内容**：去掉了`那些Bug`、`编程概念`模块，增加了`本期话题`和`面试解析`。
 
-重点说下**本期话题**模块的作用，我们在调研了各个领域有名气的周报之后，发现了一份独树一帜且跟我们气质相符的周报：阮一峰的科技爱好者周刊。阮一峰的周刊特别之处在于它不仅是在讲科技，还会有每周话题用来讲述生活中的一些思考，当科技与人文思考发生了碰撞，类似”黑客与画家“的感觉，立意就丰满了起来，就我个人感受也非常喜欢看这一类的思考。
+重点说下`本期话题`模块的作用，我们在调研了各个领域有名气的周报之后，发现了一份独树一帜且跟我们气质相符的周报：阮一峰的科技爱好者周刊。阮一峰的周刊特别之处在于它不仅是在讲科技，还会有每周话题用来讲述生活中的一些思考，比如近几期的话题：“培训班 vs 大学，求职成功率比较”，“你的城市有多少张病床”等。为了让一份技术性周报变的有温度，我认为是需要加入一些人文性质的思考的。
 
-所以我们也决定加一个本期话题的模块，讲下生活感想，读书感悟，或职场教训等。主题来源不仅限于众位联合编辑，也欢迎各位读者跟我们一起探讨问题，或者向我们抛出问题。之后的**本期话题**会从多个选题里选一个进行探讨，如果问题超出了我们几位编辑的认知范围，会找认识的其他大佬进行解答。欢迎大家贡献话题内容！
+所以我们决定加这个`本期话题`模块，主题来源不仅限于众位联合编辑，也欢迎各位读者跟我们一起探讨问题，或者向我们抛出问题。可以是技术思考，生活感想，读书感悟，职场教训，职业困境等等。之后的`本期话题`会从多个选题里选一个进行探讨，如果问题超出了我们的认知范围，会找认识的其他大佬进行解答。so，对于这个新东西，欢迎大家贡献有趣的话题内容啊~
 
 ## 开发Tips
 
@@ -24,9 +24,9 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 #### 有损压缩和无损压缩
 
-常见的压缩工具有 tinypng，pngquant，ImageAlpha、ImageOptim、pngcrush、optipng、pngout、pngnq、advpng 等，根据其压缩方式分成两大阵营：有损压缩和无损压缩。
+常见的压缩工具有 TinyPNG，pngquant，ImageAlpha、ImageOptim、pngcrush、optipng、pngout、pngnq、advpng 等，根据其压缩方式分成两大阵营：有损压缩和无损压缩。
 
-根据资料显示，tinypng、pngquant、ImageAlpha、pngnq 都是有损压缩，基本采用的都是 quantization 算法，将 24 位的 PNG 图片转换为 8 位的 PNG 图片，减少图片的颜色数；pngcrush、optipng、pngout、advpng 都是无损压缩，采用的都是基于 LZ/Huffman 的 DEFLATE 算法，减少图片 IDAT chunk 区域的数据。一般有损压缩的压缩率会大大高于无损压缩。
+根据资料显示，TinyPNG、pngquant、ImageAlpha、pngnq 都是有损压缩，基本采用的都是 quantization 算法，将 24 位的 PNG 图片转换为 8 位的 PNG 图片，减少图片的颜色数；pngcrush、optipng、pngout、advpng 都是无损压缩，采用的都是基于 LZ/Huffman 的 DEFLATE 算法，减少图片 IDAT chunk 区域的数据。一般有损压缩的压缩率会大大高于无损压缩。
 
 #### 压缩工具
 
@@ -35,7 +35,7 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 * [TinyPNG4Mac](https://github.com/kyleduo/TinyPNG4Mac)：利用 [tinify](https://tinify.cn) 提供的 API，目前 tinify 的免费版压缩数量是单次不超过 20 张且大小不超过 5M。对于一般的 iOS 应用程序来说，足够日常开发的使用；
 * [ImageOptim-CLI](https://github.com/JamieMason/ImageOptim-CLI)：自动先后执行压缩率较高的为 [ImageAlpha](http://pngmini.com/) 的有损压缩 加上 [ImageOptim](https://imageoptim.com/) 的无损压缩。
 
-可以通过查看[这个表格](http://jamiemason.github.io/ImageOptim-CLI/comparison/png/photoshop/desc/ "这个表格")对比 TinyPng 和 ImageOptim-CLI 。
+可以通过查看[这个表格](http://jamiemason.github.io/ImageOptim-CLI/comparison/png/photoshop/desc/ "压缩对比表格")对比 TinyPng 和 ImageOptim-CLI 。
 
 对于小图来说，例如我们常见的 icon 图标来说，我们通过改变其编码方式为 `RGB with palette` 来达到图片压缩效果。你可以使用 ImageOptim 改变图片的编码方式为 `RGB with palette`。
 
@@ -57,15 +57,13 @@ imageoptim -Q --no-imageoptim --imagealpha --number-of-colors 16 --quality 40-80
 
 对同一张图片，在不同设备、不同 iOS 系统上 Xcode 采用了不同的压缩算法这也导致了下载时不同的设备针对图片出现大小的区别。
 
-你可以利用 `assetutil` 工具分析 `Assest.car` 来得到其具体的压缩方法
+可以利用 `assetutil` 工具分析 `Assest.car` 来得到其具体的压缩方法：
 
 ```shell
 assetutil --info ***.app/Assets.car > ***.json
 ```
 
-其注意 `Compression` 、`Encoding`、`SizeOnDisk`。
-
-> 可以在  Assets Catalogs 中添加 jpg 文件，然后找到对应的文件部分，判断其是否会被转换成 png 格式
+需要注意 Json 文件中这几个参数的值 `Compression` 、`Encoding`、`SizeOnDisk`。
 
 ```json
  {
