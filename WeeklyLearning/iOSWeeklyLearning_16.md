@@ -35,7 +35,7 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 * [TinyPNG4Mac](https://github.com/kyleduo/TinyPNG4Mac)：利用 [tinify](https://tinify.cn) 提供的 API，目前 tinify 的免费版压缩数量是单次不超过 20 张且大小不超过 5M。对于一般的 iOS 应用程序来说，足够日常开发的使用；
 * [ImageOptim-CLI](https://github.com/JamieMason/ImageOptim-CLI)：自动先后执行压缩率较高的为 [ImageAlpha](http://pngmini.com/) 的有损压缩 加上 [ImageOptim](https://imageoptim.com/) 的无损压缩。
 
-可以通过查看[这个表格](http://jamiemason.github.io/ImageOptim-CLI/comparison/png/photoshop/desc/)对比 TinyPng 和 ImageOptim-CLI 。
+可以通过查看[这个表格](http://jamiemason.github.io/ImageOptim-CLI/comparison/png/photoshop/desc/ "这个表格")对比 TinyPng 和 ImageOptim-CLI 。
 
 对于小图来说，例如我们常见的 icon 图标来说，我们通过改变其编码方式为 `RGB with palette` 来达到图片压缩效果。你可以使用 ImageOptim 改变图片的编码方式为 `RGB with palette`。
 
@@ -43,7 +43,7 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 imageoptim -Q --no-imageoptim --imagealpha --number-of-colors 16 --quality 40-80 ./1.png
 ```
 
-通过 [Palette Images](http://www.manifold.net/doc/mfd9/palette_images.htm) 深入了解 `palette`。
+通过 [Palette Images](http://www.manifold.net/doc/mfd9/palette_images.htm "Palette Images") 深入了解 `palette`。
 
 这里的压缩是指使用 Xcode 自带的压缩功能。
 
