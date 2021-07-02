@@ -70,7 +70,7 @@ let combinedEAcute: Character = "\u{65}\u{301}"          // e followed by ́
 
 三次握手是指建立一个 TCP 连接时，需要客户端和服务端总共发送 3 个包，需要三次握手才能确认双方的接收与发送能力是否正常。
 
-![](https://pic1.zhimg.com/80/v2-c2602875a99f219451bb5d9fe087812c_720w.jpg)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210703051424.png)
 
 * 第一次握手：客户端要向服务端发起连接请求，首先客户端随机生成一个起始序列号 ISN（比如是 100），那客户端向服务端发送的报文段包含 SYN 标志位（也就是 SYN=1），序列号 seq=100。
 * 第二次握手：服务端收到客户端发过来的报文后，发现 SYN=1，知道这是一个连接请求，于是将客户端的起始序列号 100 存起来，并且随机生成一个服务端的起始序列号（比如是 300）。然后给客户端回复一段报文，回复报文包含 SYN 和 ACK 标志（也就是 SYN=1，ACK=1）、序列号 seq=300、确认号 ack=101（客户端发过来的序列号 +1）。`这时候服务端可以确认客户端的发送能力和自己的接收能力正常`。
@@ -78,7 +78,7 @@ let combinedEAcute: Character = "\u{65}\u{301}"          // e followed by ́
 
 四次挥手的目的是关闭一个 TCP 连接。
 
-![](https://pic4.zhimg.com/80/v2-083462b035aeaa02bbf10f67ab78f51f_720w.jpg)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210703051443.png)
 
 比如客户端初始化的序列号 ISA=100，服务端初始化的序列号 ISA=300。TCP 连接成功后客户端总共发送了 1000 个字节的数据，服务端在客户端发 FIN 报文前总共回复了 2000 个字节的数据。
 
