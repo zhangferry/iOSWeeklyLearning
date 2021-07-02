@@ -31,7 +31,11 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Swift Algorithm Club
 
+地址：https://github.com/raywenderlich/swift-algorithm-club
+
+由 [raywenderlich](https://www.raywenderlich.com/whats-new) 创立的 Swift 算法俱乐部，在这里会用 Swift 来解释和实现大部分常见的数据结构和算法，例如栈、队列、快速排序、BFS、KMP 等等，如果按照他的学习路线来学习的话，难度由浅入深，循序渐进，很适合入门选手。另外你也可以自己选择感兴趣的内容来查看，适合想要温习算法和数据结构或者温习 Swift 语法的朋友👍。
 
 ## 工具推荐
 
