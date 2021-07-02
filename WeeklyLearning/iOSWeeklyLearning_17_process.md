@@ -12,15 +12,17 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
-### bug 的表现 
+###  从一个 bug 引发的关于 Swift 中 String.count 和 NSString.length 的探究
+
+#### 什么样的 bug
 
 在为 `NSMutableAttributedString` 添加 attribuites 的时候需要传入相应的属性的字典以及最终需要应用的范围（NSRange）, 当使用Swift 的 `String.count` 创建 `NSRange` 时，发现在某些语言下（印度语言，韩语）对应位置的文字没有应用预期的显示效果
 
-### 如何解决
+#### 如何解决
 
 通过打印同一个字符串在 NSString 类型下的 **length** 和在 Swift 类型下的 **count** 发现二者的值并不相等，**length** 比 **count** 要大一些。也就是说，在创建 NSRange 时，Swift 的 `String.count` 并不可靠，我们可以使用 `NSString.length` 解决这个问题。
 
-### 这个 bug 的引发关于 `length` 和 `count` 的探究
+#### `length` 和 `count` 的不同
 
 那么，为什么同一个字符串的 `长度` 在 String 与 NSString 中会得到不同的值呢？我们来看一下 `String.count` 与 `NSString.length` 各自的官方定义：
 
