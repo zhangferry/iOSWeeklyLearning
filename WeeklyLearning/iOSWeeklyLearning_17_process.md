@@ -159,17 +159,18 @@ iOS系统会自动对get请求进行缓存；同时提供了`NSURLCache`支持�
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
-### WWDC
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+### Paste
+ 
 
-**地址**：https://wwdc.io/ 
+**地址**: https://apps.apple.com/us/app/paste-clipboard-manager/id967805235
 
-**软件状态**：免费，[开源](https://github.com/insidegui/WWDC)
+**软件状态**: 收费 ¥98/年 
 
-**介绍**
+**软件介绍**
+Paste for Mac是Mac平台上一款专业的剪切板记录增强工具，它能够为您储存您在设备上复制您的所有内容，并将其储存在Paste Mac的历史记录中。是您日常生活工作中必不可少的一款软件
 
-一个开源的非官方 WWDC 视频的应用，其支持视频下载、最高 5 分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等。相比于官方应用来说，其功能只多不少（官方新版的 Developer 应用添加了代码片段预览功能），而且更新比较迅速，已经发展到了 v7.3.3 版本，可以查看 2021 年的 Sessions。
-
+![](https://cdn.macwk.com/public/uploads/_/originals/paste-screen-01-1.jpg)
 
 
 
