@@ -160,6 +160,16 @@ iOS系统会自动对get请求进行缓存；同时提供了`NSURLCache`支持�
 ## 工具推荐
 
 整理编辑：[zhangferry](https://zhangferry.com)
+### WWDC
+
+**地址**：https://wwdc.io/ 
+
+**软件状态**：免费，[开源](https://github.com/insidegui/WWDC)
+
+**介绍**
+
+一个开源的非官方 WWDC 视频的应用，其支持视频下载、最高 5 分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等。相比于官方应用来说，其功能只多不少（官方新版的 Developer 应用添加了代码片段预览功能），而且更新比较迅速，已经发展到了 v7.3.3 版本，可以查看 2021 年的 Sessions。
+
 
 
 
