@@ -9,7 +9,7 @@
 > * 面试专题带来网络部分的第二弹，关于 TCP 连接，关于三次握手，四次握手。
 > * 博客部分整理了一些网络优化的文章，网络请求分为：请求前阶段，连接阶段，数据处理阶段，各个阶段都是可以进行优化的。
 > * 如何用 Swift 实现常用的数据结构？来看 Swift Algorithm Club 吧。
-> * 一个好用的剪切板工具：Paste - Clipboard Manager。
+> * 桌面版 Homebrew：Cakebrew，一个好用的剪切板工具：Paste - Clipboard Manager。
 
 ## 本期话题
 
@@ -88,7 +88,7 @@ print((combinedEAcute as NSString).length) // 2
 
 整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)
 
-面试解析是新出的模块，我们会按照主题讲解一些高频面试题，本期主题是**计算机网络**，以下题目均来自真实面试场景。
+面试解析是新出的模块，我们会按照主题讲解一些高频面试题，本期主题是**计算机网络**，以下题目均来自真实面试场景。计算机网络是面试必考的知识点，最好比较系统的去学习了解，推荐书籍：《图解 TCP/IP》、《网络是怎样连接的》；推荐付费课程：[计算机网络通关 29 讲](https://t7.lagounews.com/RR7FRYRDsi3B1 "计算机网络通关 29 讲")，大家可以根据自己喜欢的学习方式进行选择。
 
 
 ### 什么是 TCP 的三次握手和四次挥手？
@@ -97,7 +97,7 @@ print((combinedEAcute as NSString).length) // 2
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210704165732.png)
 
-几个标志位：
+握手阶段主要依靠以下几个标志位：
 * SYN：在建立连接时使用，用来同步序号。SYN=1 代表这是一个请求建立连接或同意建立连接的报文，只有前两次握手中 SYN 才为 1，带 SYN 标志的 TCP 报文段称为同步报文段；
   * 当 SYN=1，ACK=0 时，表示这是一个请求建立连接的报文段
   * 当 SYN=1，ACK=1 时，表示对方同意建立连接
@@ -124,7 +124,7 @@ print((combinedEAcute as NSString).length) // 2
 
 ### 为什么 TCP 连接是三次握手？两次不可以吗？
 
-三次握手是为了确认双方的接收与发送能力都正常。
+TCP 是一个全双工协议，它要保证双方都具有接收与发送的能力。
 
 因为需要考虑连接时丢包的问题，如果只握手两次，第二次握手时如果服务端发给客户端的确认报文段丢失，此时服务端已经准备好了收发数据（可以理解为服务端已经连接成功），而客户端一直没收到服务端的确认报文，所以客户端就不知道服务端是否已经准备好了（可以理解为客户端未连接成功），这种情况下客户端不会给服务端发数据，也会忽略服务端发过来的数据。
 
@@ -133,7 +133,9 @@ print((combinedEAcute as NSString).length) // 2
 
 ### 为什么 TCP 连接是三次握手，关闭的时候却要四次挥手？
 
-因为只有在客户端和服务端都没有数据要发送的时候才能断开 TCP 连接。而客户端发出 FIN 报文时只能保证客户端没有数据发了，服务端还有没有数据发客户端是不知道的。而服务端收到客户端的 FIN 报文后只能先回复客户端一个确认报文来告诉客户端我服务端已经收到你的 FIN 报文了，但我服务端还有一些数据没发完，等这些数据发完了服务端才能给客户端发 FIN 报文（所以不能一次性将确认报文和 FIN 报文发给客户端，就是这里多出来了一次）。
+主要是建立连接时接收者的 SYN-ACK 一同发送了，而关闭是 FIN 和 ACK 却不能同时发送，因为断开连接要处理的情况比较多，比如服务器端可能还有发送出的消息没有得到 ACK，也可能服务器资源需要释放等。所以先发一个 ACK 表示已经收到了发送方的请求，等上述情况都有了确定的处理，再发 FIN 表示接收方已经完成了后续工作。
+
+类比现实世界中，你收到了一个 Offer，出于礼貌你先回复一下，然后思考一段时间再回复 HR 最终的结果。
 
 
 ### 为什么客户端发出第四次挥手的确认报文后要等 2MSL 的时间才能释放 TCP 连接？
@@ -190,7 +192,18 @@ iOS 系统会自动对 GET 请求进行缓存；同时提供了`NSURLCache`支�
 
 ## 工具推荐
 
-整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)，[zhangferry](https://zhangferry.com)
+
+### Cakebrew
+
+地址：https://www.cakebrew.com/
+
+软件状态：免费，[开源](https://github.com/brunophilipe/Cakebrew)
+
+Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作，对那些不擅长使用命令行的开发来说会是一种苦恼，而且命令行确实不够直观。Cakebrew 是一款桌面端的 Homebrew 管理工具，它包含常用的 Homebrew 功能，并将其可视化，像是已安装工具，可升级工具以及工具库等功能。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210704205546.png)
+
 ### Paste - Clipboard Manager
 
 **地址**: https://apps.apple.com/us/app/paste-clipboard-manager/id967805235
