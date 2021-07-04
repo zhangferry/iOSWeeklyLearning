@@ -3,7 +3,7 @@ import os
 import sys
 import re
 
-categoryMap = {"Articles": "优秀博客", "Concepts": "编程概念", "Resources":"学习资料", "Tools": "工具推荐"}
+categoryMap = {"Articles": "优秀博客", "Interview": "面试解析", "Concepts": "编程概念", "Resources":"学习资料", "Tools": "工具推荐"}
 
 weeklyFile = "WeeklyLearning"
 categoryFile = "categorySummary"
@@ -22,8 +22,7 @@ def readWeeklyMd():
             with open(subFile, "r+", encoding='utf-8') as file:
                 file.seek(0)
                 file.truncate()
-
-    output = {"Articles":[], "Concepts":[], "Resources": [], "Tools": []}
+    output = dict.fromkeys(categoryMap.keys(), [])
     # 为了保证读取的顺序
     count = len(os.listdir(weeklyFilePath)) - 1
     for index in range(count):

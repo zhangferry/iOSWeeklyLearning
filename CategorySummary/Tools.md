@@ -460,18 +460,86 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 **软件介绍**
 
-腾讯柠檬清理Lite版-重点聚焦清理功能，包含系统/应用垃圾清理、大文件清理、重复文件清理、相似照片清理4个方面，当前还支持在状态栏上查看当前网速信息，帮助你实时了解Mac状况。
+腾讯柠檬清理 Lite 版-重点聚焦清理功能，包含系统/应用垃圾清理、大文件清理、重复文件清理、相似照片清理 4 个方面，当前还支持在状态栏上查看当前网速信息，帮助你实时了解 Mac 状况。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/16227749924686.jpg)
 
 **核心功能**
 
 * 便捷好用的状态栏清理：可直接在状态栏上查看实时网速，方便及时了解网速变化。支持快速清理，轻轻一点，不留垃圾。
-
 * 系统/应用垃圾清理
-
-* 大文件清理：帮你快速全面查找占用超过50M的大文件。
-
+* 大文件清理：帮你快速全面查找占用超过 50M 的大文件。
 * 重复文件清理
 
+
+***
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+### Diffchecker
+
+**地址**：https://www.diffchecker.com/
+
+**软件状态**：Web端免费，桌面端 $9/月
+
+**介绍**
+
+Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户快速的比较您的文本文件、文档、PDF、照片、图形和扫描等，并且界面简单直观，输入两个文件的内容，然后单击“查找差异”即可，并且具有绝对的安全性，能够保障您的文件安全，具有统一差异、字符级差异、文件夹差异、导出为 PDF、语法高亮、文件导入、无广告等优势。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/1623388796593.jpg)
+
+
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### WWDC
+
+**地址**：https://wwdc.io/ 
+
+**软件状态**：免费，[开源](https://github.com/insidegui/WWDC)
+
+**介绍**
+
+一个开源的非官方 WWDC 视频的应用，其支持视频下载、最高 5 分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等。相比于官方应用来说，其功能只多不少（官方新版的 Developer 应用添加了代码片段预览功能），而且更新比较迅速，已经发展到了 v7.3.3 版本，可以查看 2021 年的 Sessions。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626230114.png)
+
+### ScreenSize
+
+**地址**：https://www.screensizes.app/
+
+**介绍**
+
+一个在线的 Apple 设备尺寸及设备内各组件的尺寸整理网站，非常之全。这里简要概括下其在 iPhone 设备包含的内容：
+
+* 横竖屏状态的安全区域大小
+* 三种 Widget 尺寸的大小
+* 标准模式和系统放大模式的尺寸大小
+* 各个设备之间的尺寸对比
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626223430.png)
+
+***
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)，[zhangferry](https://zhangferry.com)
+
+### Cakebrew
+
+地址：https://www.cakebrew.com/
+
+软件状态：免费，[开源](https://github.com/brunophilipe/Cakebrew)
+
+Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作，对那些不擅长使用命令行的开发来说会是一种苦恼，而且命令行确实不够直观。Cakebrew 是一款桌面端的 Homebrew 管理工具，它包含常用的 Homebrew 功能，并将其可视化，像是已安装工具，可升级工具以及工具库等功能。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210704205546.png)
+
+### Paste - Clipboard Manager
+
+**地址**: https://apps.apple.com/us/app/paste-clipboard-manager/id967805235
+
+**软件状态**: 收费 ¥98/年 
+
+**软件介绍**
+
+Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它能够为您储存您在设备上复制您的所有内容，并将其储存在 Paste for Mac 的历史记录中。是您日常生活工作中必不可少的一款软件。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210703184817.png)
 

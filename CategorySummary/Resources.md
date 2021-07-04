@@ -1,7 +1,7 @@
 ***
 ### [iOS面试资料总结](http://note.youdao.com/s/SvA1l4Gy)
 
-地址：http://note.youdao.com/s/SvA1l4Gy
+地址：https://github.com/pengwj/iOSInterview
 
 推荐来源：[pengwj](https://github.com/pengwj)
 
@@ -219,4 +219,47 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 地址：https://github.com/findneo/Newbie-Security-List
 
 一个关于网络安全学习资料的 github 仓库。其中包含网络安全相关的博客、工具、电子书籍资料、在线知识库、在线漏洞库、本地搭建教学、相关文档以及相关练习平台，目前已经获 430 🌟了。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### SwiftLee
+
+链接：https://www.avanderlee.com/
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210613155259.png)
+
+一个分享关于 Swift、iOS 和 Xcode 技巧和窍门的每周博客，博客的文章写得清晰易懂，排版、配图和动画质量也很高。值得关注一下。同时网站作者也是 [《Swift for Good》](https://www.swiftforgood.com/ "Swift for Good") 的联合作者之一。《Swift for Good》是由20位顶级作家和演讲者撰写的新书，其所有收入将100%捐给慈善机构，有兴趣也可以看一下😺。
+
+### WWDC21 内参
+
+链接：https://xiaozhuanlan.com/wwdc21
+
+一年一度的 WWDC 又来啦！由**老司机周报**牵头开展的WWDC 21内参活动，目前已经有100多名开发者报名参与其中，也包括多名摸鱼周报的编辑。我们会根据必要性和实际情况选择合适的内容进行深度解读，让大家快速了解 WWDC21 中那些值得关注的 Session。
+
+现在也开放了今年 《WWDC21 内参》的[购买](https://xiaozhuanlan.com/wwdc21)，限时售价 9.9 元，之后会提高为 29.9 元，明年的WWDC 前夕会改为免费领取。所有的《WWDC 内参》的收入，都会归参与的作者所有。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### RSSHub
+
+地址：https://docs.rsshub.app/
+
+RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以给任何奇奇怪怪的内容生成 RSS 订阅源。RSSHub 借助于开源社区的力量快速发展中，目前已适配数百家网站的上千项内容，且可以配合浏览器扩展和移动端的 App 一起使用，同时也欢迎编写你感兴趣的订阅源。
+
+### 中文技术文档的写作规范
+
+地址：https://github.com/ruanyf/document-style-guide
+
+来自阮一峰的中文技术文档的写作规范。编者在各大博客平台看技术文章的时候，经常会为文章的格式所苦恼，严重的情况下甚至导致编者直接关闭该篇文章。实际上中文文案的写作规范不是那么复杂，学十几分钟、练习几篇文章，就能写出得体的文案格式。良好的写作规范既能节约沟通成本，也能提升文章气质，学到就是赚到，是一辈子的财富。另也强力推荐这篇 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines#%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%88%E6%8E%92%E7%89%88%E6%8C%87%E5%8C%97 "中文文案排版指北") 做参考。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Swift Algorithm Club
+
+地址：https://github.com/raywenderlich/swift-algorithm-club
+
+由 [raywenderlich](https://www.raywenderlich.com/whats-new) 创立的 Swift 算法俱乐部，在这里会用 Swift 来解释和实现大部分常见的数据结构和算法，例如栈、队列、快速排序、BFS、KMP 等等，如果按照他的学习路线来学习的话，难度由浅入深，循序渐进，很适合入门选手。另外你也可以自己选择感兴趣的内容来查看，适合想要温习算法和数据结构或者温习 Swift 语法的朋友👍。
 

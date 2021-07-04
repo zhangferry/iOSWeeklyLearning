@@ -221,7 +221,7 @@ launchd是macOS第一个启动的进程，它的pid为1，整个系统的其他�
 
 ### [iOS面试资料总结](http://note.youdao.com/s/SvA1l4Gy)
 
-地址：http://note.youdao.com/s/SvA1l4Gy
+地址：https://github.com/pengwj/iOSInterview
 
 推荐来源：[pengwj](https://github.com/pengwj)
 

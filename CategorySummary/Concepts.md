@@ -1094,13 +1094,13 @@ DMA 全称为 Direct Memory Access，即直接存储器访问。DMA 是一种内
 I/O 端口号、IRQ、DMA 通道可以说是识别外围设备的 3 点组合。不过，IRQ、DMA 通道并不是所有外围设备都具备的。计算机主机通过软件控制硬件时所需要的信息的最低限，是外围设备的 I/O 端口号。IRQ 只对需要中断处理的外围设备来说是必须的，DMA 通道则只对需要 DMA 机制的外围设备来说必须的。
 
 ***
-从本期编程概念开始将介绍前端相关的多个概念，本期带来的内容是对 `React`、`Vue`、`React Native` 的介绍，如有错误，欢迎指正。
+从本期开始，编程概念模块将介绍前端相关的多个概念。本期带来的内容是对 `React`、`React Native`、`Vue` 的介绍。如有错误，欢迎指正。
 
 ### 关于前端
 
-通常我们说的前端有两个含义，一个是特指Web前端，其跟移动端平级；还有一个指大前端，包含于移动端。这里咱们取的含义是Web前端。
+通常我们说的前端有两个含义，一个是特指 Web 前端，其跟移动端平级；另一个指大前端，其包含移动端。这里咱们取的含义是 Web 前端。
 
-Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去的十年里，得益于 JS，网页变得更加动态化和强大，我们把很多的服务端代码放到了浏览器中，这样就产生了成千上万行的 JS 代码，它们链接了各式各样的 HTML 和 CSS 文件，但缺乏正规的组织形式，这就是为什么越来越多的开发者使用 JS 框架来组织代码，诸如 Angular、React、Vue 等。
+Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去的十年里，得益于 JS，网页变得更加动态化和强大，我们把很多的服务端代码放到了浏览器中，这样就产生了成千上万行的 JS 代码，它们链接了各式各样的 HTML 和 CSS 文件，但缺乏正规的组织形式，这就是为什么越来越多的开发者使用 JS 框架来组织代码，诸如 React、Vue、Angular 等。
 
 ### 什么是 React
 
@@ -1108,17 +1108,15 @@ Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去�
 
 内容整理：[zhangferry](https://zhangferry.com)
 
-[React](https://reactjs.org/) 是由 Facebook 开发的用于构建用户界面的 JavaScript 库，其已开源在 Github，拥有169k的超高 star 数，在前端领域使用极广泛。
+[React](https://reactjs.org/) 是由 Facebook 开发的用于构建用户界面的 JavaScript 库，其已开源在 Github，拥有 169k 的超高 star 数，在前端领域使用极广泛。
 
 它有这三大特性：
 
-* 声明式：React使创建交互式UI变得轻而易举，为你应用的每一个状态设计简洁的视图，当数据变动时React能高效更新并渲染合适的组件。
-
-* 组件化：构建管理自身状态的封装组件，然后对其组合以复杂的UI。
-
+* 声明式：React 使创建交互式 UI 变得轻而易举，为你应用的每一个状态设计简洁的视图，当数据变动时 React 能高效更新并渲染合适的组件。
+* 组件化：构建管理自身状态的封装组件，然后对其组合成复杂的 UI。
 * 一次学习，扩平台编写：无论你现在使用什么技术栈，在无需重写现有代码的前提下，都可以通过引入 React 来开发新功能。React 还可以使用 Node 进行服务器渲染，或使用 [React Native](https://reactnative.dev/) 开发原生移动应用。
 
-我们来看一个官网的例子来简单了解下 React 的使用，我们的目的是要实现一个前端 Markdown 渲染的效果，上面是输入框，下面是渲染的HTML效果，这里使用一个名为**remarkable**的外部库，代码如下：
+我们来看一个官网的例子来简单了解下 React 的使用，我们的目的是要实现一个前端 Markdown 渲染的效果，上面是输入框，下面是渲染的 HTML 效果，这里使用一个名为 **remarkable** 的外部库，代码如下：
 
 ```java
 // React.Component 就是内置组件，其有一系列组件
@@ -1174,20 +1172,19 @@ ReactDOM.render(
 
 内容整理：[我是熊大](https://juejin.cn/user/1151943916921885/posts)
 
-[React Native](https://reactnative.dev/) 是一个使用 `React` 和应用平台的原生功能来构建 Android 和 iOS 应用的开源框架，其已经不是一个 Web 前端框架而是一个移动端框架。通过 React Native，可以使用 JavaScript 来访问移动平台的 API，以及使用 React 组件来描述 UI 的外观和行为：一系列可重用、可嵌套的代码。通过一张图简单了解下 React Native 在移动开发中的架构：
+[React Native](https://reactnative.dev/) 是一个使用 `React` 和应用平台的原生功能来构建 Android 和 iOS 应用的开源框架，其已经不是一个 Web 前端框架，而是一个移动端框架。通过 React Native，可以使用 JavaScript 来访问移动平台的 API，以及使用 React 组件来描述 UI 的外观和行为：一系列可重用、可嵌套的代码。通过一张图简单了解下 React Native 在移动开发中的架构：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605200722.png)
 
-其具有这些特点：跨平台（JavaScript框架）虚拟 DOM、热更新，iOS审核有限制、对web开发者友好，上手快、性能几乎和原生相当。
+其具有这些特点：跨平台（JavaScript 框架）虚拟 DOM、热更新，iOS 审核有限制、对 Web 开发者友好，上手快，性能几乎和原生相当。
 
 React Native 的不足：
-- 由于 React Native 和原生交互依赖的只有一个 Bridge，而且 JS 和 Native 交互是异步的，所以对需要和 Native 大量实时交互的功能可能会有性能上的不足，比如动画效率，性能是不如原生的。
-
+- 由于 React Native 和原生交互依赖的只有一个 Bridge，而且 JS 和 Native 交互是异步的，所以对于需要和 Native 大量实时交互的功能可能会有性能上的不足，比如动画效率，性能是不如原生的。
 - React Native 始终是依赖原生的能力，所以摆脱不了对原生的依赖，相对 Flutter 的自己来画 UI 来说，React Native 显得有些尴尬。
 
 引入 React Native 是基于 JavaScript 实现的，所以要在 iOS 端使用它的话，我们就需要安装 `Node.js`，并利用 Node 工具安装 React Native。以下介绍一个简单步骤：
 ```bash
-#使用Homebrew来安装 Node
+# 使用 Homebrew 来安装 Node
 brew install node
 
 # 安装 yarn
@@ -1208,32 +1205,35 @@ yarn ios
 
 内容整理：[师大小海腾](https://juejin.cn/user/782508012091645)
 
-Vue（读音 /vjuː/）即 Vue.js。尤雨溪曾在知乎回答到，Vue 之所以叫 Vue，是因为它是个视图层库，而 vue 是 view 的法语。其是一套用于构建用户界面的**渐进式**框架。
+[Vue](https://cn.vuejs.org/)（读音 /vjuː/）即 Vue.js。作者尤雨溪曾在知乎回答到，Vue 之所以叫 Vue，是因为它是个视图层库，而 vue 是 view 的法语。其是一套用于构建用户界面的**渐进式** JS 框架。
 
 **渐进式的含义是它被设计为可以自底向上逐层应用。**
 
-这是 Vue 与其他 js 框架最大的不同。渐进式框架简单理解就是：你可以只用我的一部分，而非必须用我的全部；你可以将我作为应用的一部分嵌入，而非必须全部使用。Vue 支持你根据实际需求，在不同的阶段使用 Vue 中不同的功能，用最小最快的成本一步步搭建应用，不断渐进，而不是要求你一下子用上全家桶（vue-cli、vue-router、vuex 等）。
+这是 Vue 与其他 JS 框架最大的不同。渐进式框架简单理解就是：你可以只用我的一部分，而非必须用我的全部；你可以仅将我作为应用的一部分嵌入，而非必须全部使用。Vue 支持你根据实际需求，在不同的阶段使用 Vue 中不同的功能，用最小最快的成本一步步搭建应用，不断渐进，而不是要求你一下子用上全家桶（vue-cli、vue-router、vuex 等）。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605012155.png)
 
-你可以看看：[Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485737&idx=1&sn=14fe8a5c72aaa98c11bf6fc57ae1b6c0&source=41#wechat_redirect "Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案")
+你可以看看：[Vue 作者尤雨溪：Vue 2.0，渐进式前端解决方案](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485737&idx=1&sn=14fe8a5c72aaa98c11bf6fc57ae1b6c0&source=41#wechat_redirect "Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案")
 
-**Vue 的核心库只关注视图层，通过尽可能简单的 API 实现响应的数据绑定和组合**
+**Vue 的核心库只关注视图层，通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件**
 
-在 HTML 中，DOM 就是视图，我们把 HTML 中的 DOM 与其他的部分独立开来划分出一个层次，这个层次就叫做视图层。如果页面元素很多，数据和视图像传统开发一样全部混合在 HTML 中话就很难维护，因此我们要把视图层抽取出来并且单独去关注它。
+在 HTML 中，DOM 就是视图，我们把 HTML 中的 DOM 与其他的部分独立开来划分出一个层次，这个层次就叫做视图层。如果页面元素很多，数据和视图像传统开发一样全部混合在 HTML 中话就很难维护，因此我们要把视图层抽取出来并且单独去关注它。Vue 只关注视图层，是一个构建数据的视图集合。
 
-Vue 会自动响应数据的变化情况，并且根据你在代码中预先写好的绑定关系，对所有绑定在一起的数据和视图都进行修改。对比手动改变 DOM 来更新视图的传统做法，Vue 的数据驱动视图更新真是太棒了。
+Vue 支持数据的双向绑定。即数据变化驱动视图更新，视图更新也会驱动数据变化。而我们只需要通过简单的 API 即可实现这种绑定关系。
 
-Vue 具有易用、灵活、高效的特点：
+Vue 允许你将一个网页分割成多个可复用的组件，每个组件都包含属于自己的 HTML、CSS、JS 以用来渲染网页中相应的地方，然后将这些组件自由组合成完整的网页。
+
+**Vue 具有易用、灵活、高效的特点**
 
 - 易用：在有 HTML、CSS、JavaScript 的基础上，可以快速上手
 - 灵活：不断繁荣的生态系统，可以在一个库和一套完整框架之间自如伸缩
 - 高效：20kB min+gzip 运行大小，超快虚拟 DOM，最省心的优化
 
-我们来看一个使用Vue写出来的小例子：一个输入框，一个文本，本文能够根据输入框内容变化：
+**一个例子**
+
+我们来看一个使用 Vue 写出来的小例子：一个输入框，一个文本，文本能够根据输入框内容的变化而变化：
 
 HTML代码：
-
 
 ```html
 <div id="app-6">
@@ -1243,7 +1243,7 @@ HTML代码：
 </div>
 ```
 
-JS代码：
+JS 代码：
 
 ```javascript
 var app6 = new Vue({
@@ -1255,3 +1255,80 @@ var app6 = new Vue({
 ```
 
 
+***
+### BootStrap
+
+内容整理：[zhangferry](https://zhangferry.com)
+
+目前 Web 应用广泛使用在 PC、Pad、移动端等多个平台，但各个端的布局样式相差较大，如果能使用统一的方式描述布局将是非常有必要的，而这就是 BootStrap 的主要功能之一。
+
+BootStrap 最初由 Twitter 开发，后在Github [开源](https://github.com/twbs/bootstrap)。它除了解决不同端统一布局的问题，还封装了很多可重用的组件，例如下拉菜单，弹框等，可以直接调用。另外它还提供一套优雅的 HTML + CSS 规范，统一了代码风格。
+
+前端框架很多，但即使再多也都是围绕 HTML + CSS + JavaScript 展开的。前一篇讲的 React、Vue 都是工作在 JavaScript 这一层的，BootStrap 则主要工作在 HTML、CSS 这一层。
+
+这个网站整理了很多基于 BootStrap 建立的站点：https://www.youzhan.org/
+
+### 什么是 Webpack
+
+内容整理：[师大小海腾](https://juejin.cn/user/782508012091645)
+
+近年来 Web 应用变得更加复杂与庞大，它们拥有着复杂的 JavaScript 代码和一大堆依赖包。为了简化开发的复杂度，前端社区涌现出很多好的实践方法：
+
+* 模块化，让我们可以把复杂的程序细化为小的文件；
+* 类似于 TypeScript 这种在 JavaScript 基础上拓展的开发语言：使我们能够实现目前版本的 JavaScript 不能直接使用的特性，并且之后还能能转换为 JavaScript 文件使浏览器可以识别；
+* scss，less 等 CSS 预处理器；
+
+这些改进确实大大的提高了我们的开发效率，但是利用它们开发的文件往往需要进行额外的处理才能让浏览器识别，而手动处理又是非常繁琐的，这就为 Webpack 这一类的工具的出现提供了需求。
+
+其官网的首页图很形象的画出了 Webpack 是什么，如下：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210612002026.png)
+
+其是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 Webpack 处理应用程序时，它会在内部构建一个 [依赖图(dependency graph)](https://webpack.docschina.org/concepts/dependency-graph/)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。
+
+参考：[gwuhaolin/dive-into-webpack](https://github.com/gwuhaolin/dive-into-webpack "gwuhaolin/dive-into-webpack")，[什么是webpack打包工具以及其优点用法](https://blog.csdn.net/weixin_42941619/article/details/87706623 "什么是webpack打包工具以及其优点用法")
+
+### 什么是 Flutter
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210613093819.png)
+
+内容整理：[我是熊大](https://juejin.cn/user/1151943916921885/posts)
+
+Flutter 是目前开发者首选的跨平台开发框架。Flutter 2.2在 Google I/O 2021 大会上正式发布，从移动设备扩展到 web、桌面设备以及嵌入式设备，真正实现了全端覆盖。
+
+Flutter的核心原则是一切皆为 widget，与其他将视图、控制器、布局和其他属性分离的框架不同，Flutter具有一致的统一对象模型：widget。
+
+> 当前iOS的界面元素由 UIView + UIViewController + AutoLayout 组合而成，到了 SwiftUI 则统一用 View 描述，类似 Flutter 的 widget。
+
+其使用声明式语法，比如实现一个简单 widget padding 的功能：
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text("Sample App"),
+    ),
+    body: Center(
+      child: CupertinoButton(
+        onPressed: () {
+          setState(() { _pressedCount += 1; });
+        },
+        child: Text('Hello'),
+        padding: EdgeInsets.only(left: 10.0, right: 10.0),
+      ),
+    ),
+  );
+}
+```
+
+Flutter 拥有更优的性能，主要原因就是它用于一套自己独有的渲染引擎，其整理架构如下：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210613103605.png)
+
+Flutter 仍有一些缺点，即导致包体变大，iOS 引入后，包体积增加 10MB 左右。
+
+推荐文章：[Flutter实用教程](https://flutter.cn/docs/cookbook "Flutter实用教程")
+
+
+******
