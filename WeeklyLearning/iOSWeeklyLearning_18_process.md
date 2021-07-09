@@ -55,7 +55,23 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### 从 0 到 1 设计一台计算机
 
+地址：https://www.bilibili.com/video/BV1wi4y157D3
+
+来自 [Ele实验室](https://space.bilibili.com/481434238) 的计算机组成原理课程，该系列视频主要目的是让大家对「计算机是如何工作的」有个较直观的认识，做为深入学习计算机科学的一个启蒙。观看该系列视频最好有一些数字电路和模拟电路的基础知识，Ele实验室同时也有关于[数电](https://www.bilibili.com/video/BV1Hi4y1t7zY)和[模电](https://www.bilibili.com/video/BV1774114798)的基础知识介绍供大家参考。
+
+### Git Cheat Sheet 中文版
+
+地址：https://github.com/flyhigher139/Git-Cheat-Sheet
+
+Git Cheat Sheet 让你不用再去记所有的 git 命令！对新手友好，可以用于查阅简单的 git 命令。
+
+### 正则表达式 30 分钟入门教程
+
+地址：https://deerchao.cn/tutorials/regex/regex.htm
+
+30 分钟内让你明白正则表达式是什么，并对它有一些基本的了解。别被那些复杂的表达式吓倒，只要跟着我一步一步来，你会发现正则表达式其实并没有想像中的那么困难。除了作为入门教程之外，本文还试图成为可以在日常工作中使用的正则表达式语法参考手册。
 
 ## 工具推荐
 
