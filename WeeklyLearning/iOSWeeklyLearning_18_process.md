@@ -12,6 +12,10 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
+### UICollectionViewFlowLayout 的 scrollDirection 在 vertical 和 Horizontal 下的 item 布局顺序以及 minimumLineSpacing、minimumInteritemSpacing 的区别：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/8618ec82225e46df6702b5e13145b334.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/a2c7e0462462f88c6a0154edef46ccf6.png)
 
 
 ## 面试解析
