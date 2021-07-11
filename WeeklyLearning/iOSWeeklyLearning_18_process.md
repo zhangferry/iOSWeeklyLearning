@@ -6,7 +6,17 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：最近在看一本书《暗时间》，初听这个名字有点一头雾水，但是读了[那篇文章](http://mindhacks.cn/2009/12/20/dark-time/ "暗时间")了解这个概念之后，多少还是受到了一些震撼。
+
+> 有时我们看了很多书却不见得有太多成长，通常是由于并没有领悟和运用起来书中的知识。要达到深入理解的程度是需要靠不断的推理和验证的，而这个过程就是你的思维时间，也即是“暗时间”。走路，做公交，吃饭，睡觉，这些都可以成为暗时间，条件就是你利用这段时间进行思考，反刍和消化看到的东西，日积月累会产生庞大的效应。
+
+这里的暗时间，通常也就是碎片时间，大多数情况，他们都是未被利用的。但未被利用并不代表其不可利用，再考虑每个人使用时间的效率不一致，所以认为时间对每个人是均等的是一个错觉，认为别人有一天，我也有一天，其实根本不是这样。我们应该算的是投入时间和效率的乘积。
+
+3、计算机里不同线程间的切换是有时间开销的，大脑也类似，所以专注的人总能拥有更高的效率。
+
+4、能够迅速进入专注状态，以及能够长期保持专注状态，是高效学习的两个最重要习惯。
+
+5、抗干扰能力是非常重要的一个习惯，只有具备这种能力，才能更有效的利用不同的暗时间。
 
 ## 开发Tips
 
@@ -81,18 +91,40 @@ Git Cheat Sheet 让你不用再去记所有的 git 命令！对新手友好，�
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+### SnippetsLab
+
+**地址**：http://www.renfei.org/snippets-lab/
+
+**软件状态**：$9.99
+
+**软件介绍**：
+
+一款强大的代码片段管理工具，从此告别手动复制粘贴，SnippetsLab 的设计更符合Apple 的交互习惯，支持导航栏快速操作。另外还可以同步 Github Gist 内容，使用iCloud 备份。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210710232333.png)
+
+### CodeExpander
+
+**地址**：https://codeexpander.com/
+
+**软件状态**：普通版免费，高级版付费
+
+**软件介绍**：
+
+专为开发者开发的一个集输入增强、代码片段管理工具，支持跨平台，支持云同步（Github/码云）。免费版包含 90% 左右功能，相对 SnippetsLab 来说其适用范围更广泛，甚至包括一些日常文本的片段处理。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210710231521.png)
+
 
 
 ## 联系我们
 
-[iOS摸鱼周报 第十一期](https://zhangferry.com/2021/05/16/iOSWeeklyLearning_11/)
+[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
 
-[iOS摸鱼周报 第十二期](https://zhangferry.com/2021/05/22/iOSWeeklyLearning_12/)
+[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
 
-[iOS摸鱼周报 第十三期](https://zhangferry.com/2021/05/30/iOSWeeklyLearning_13/)
+[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
 
-[iOS摸鱼周报 第十四期](https://zhangferry.com/2021/06/06/iOSWeeklyLearning_14/)
-
-[iOS摸鱼周报 第十五期](https://zhangferry.com/2021/06/14/iOSWeeklyLearning_15/)
+[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
