@@ -43,7 +43,8 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 | 冯士魁     | 我是熊大       | 《今日水印相机》，目前负责海外音视频社交项目                 | 掘金：https://juejin.cn/user/1151943916921885/posts          |
 | Mim0sa     | Mim0sa         | 没考上研所以家里蹲，WWDC 2017 Scholarship Winner，对界面交互体验这方面比较感兴趣 | 掘金：https://juejin.cn/user/1433418892590136                |
 | 邢勇       | brave723       | 樊登读书，对工程化工具比较感兴趣                             | 掘金：https://juejin.cn/user/307518984425981/posts           |
-| 何天从     | iHTCboy        | 坐标广州，iOS 自动化方向，目前从事游戏 SDK 开发五年啦~       | https://ihtcboy.com/                                         |
+| 何天从     | iHTCboy        | 坐标广州，iOS 自动化方向，目前从事游戏 SDK 开发五年啦~       | https://ihtcboy.com/                                  |
+| CoderStar     | CoderStar        | 坐标北京，大前端开发方向，对前端、后端都有一定涉猎，目前主要工作与iOS相关，喜欢分享干货博文     | 公众号：CoderStar； 掘金：https://juejin.cn/user/588993964541288/posts      |
 
 
 ## 协作形式
