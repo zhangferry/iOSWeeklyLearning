@@ -31,7 +31,19 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Combine Operators
 
+链接：https://apps.apple.com/app/combine-operators/id1507756027
+
+一个用来学习 Combine 的 App，他将一些 Combine 中的各种操作符用可视化的手段表达了出来，还附加了蠢萌蠢萌的动画效果，很适合刚接触的 Combine 的朋友尝试一下。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/co.png)
+
+### Stanford CS193P 2021 SwiftUI 2.0 双语字幕
+
+地址：https://www.bilibili.com/video/BV1q64y1d7x5
+
+Stanford CS193P 2021 SwiftUI 2.0 课程，该课程的老师是 Paul Hegarty，在 Stanford 执教 10 年左右了。该课程创办了很多年，每当 Apple 推出了新技术，例如 Storyboard、SwiftUI，这个白胡子老爷爷就会迅速跟上，更新他的课程，实乃一 it 潮人。你可以去油管 Stanford 官方账号查看该课程，也可以看看 up 主转载的该课程，还上传了中文字幕、英文字幕、繁体字幕的双语版本。理论上来说，你只需要有面向对象编程的相关基础和了解，你就可以看懂该课程，适合想要学习 SwiftUI 入门的朋友。
 
 ## 工具推荐
 
