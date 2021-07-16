@@ -10,7 +10,17 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+### UICollectionView 的scrollDirection 对 minimumLineSpacing 和 minimumInteritemSpacing 影响
+
+滚动方向垂直方向时候原理图
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210716180322.png)
+
+滚动方向水平方向时候原理图
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/3162666d7fa108da73e6549aea9154cf.png)
+
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
 
 
 
