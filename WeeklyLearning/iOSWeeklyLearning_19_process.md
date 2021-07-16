@@ -10,8 +10,43 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+整理编辑：[FBY展菲](https://github.com/fanbaoying)
 
+**介绍**
+
+在项目中遇到数据展示需求时，往往会通过，以列表的形式展示出数据或者以表格的形式展示。但是并不能直观的观察数据的变化，如果通过图表的形式来展示，就可以更快捷的获取到数据变化情况。下面给大家分享统计图包括折线统计图、柱状图、环形图。
+
+**项目展示**
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/iabC3iaGjoCC1jkmpicIzNBCB7EBicUAfiaQaCNkiaK6aKxNyOdjGzgvHMvCa64ZTgoMsjZPHK3ict56dzFibu4tsQoziag/0?wx_fmt=png">
+
+**折线统计图实现思路分析**
+
+1、折线图基础框架实现 `FBYLineGraphBaseView`类
+
+折线图基础框架包括Y轴刻度标签、x 轴刻度标签、与 x 轴平行的网格线的间距、网格线的起始点、x 轴长度、y 轴长度。
+
+2、折线图数据内容显示 `FBYLineGraphContentView` 类
+
+折线图数据内容显示是继承 `FBYLineGraphBaseView` 类进行实现，其中主要包括，X轴最大值、数据内容来实现。
+
+3、折线图颜色控制类 `FBYLineGraphColorView` 类
+
+折线图颜色控制类主要控制选中远点边框宽度和整体布局颜色
+
+4、折线图核心代码类 `FBYLineGraphView` 类
+
+折线图核心代码类主要给引用类提供配置接口和数据接口，其中包括表名、y 轴刻度标签 title、y 轴最大值、x 轴刻度标签的长度（单位长度）、设置折线图显示的数据和对应X坐标轴刻度标签
+
+**柱状图实现思路分析**
+
+实现柱状图的核心代码是 `FBYBarChartView` 类，基础框架包括文字数组、树值数组、渐变色数组、标注值、间距、滑动、渐变方向。
+
+**环形图实现思路分析**
+
+实现环形图的核心代码是 `FBYRingChartView` 类，基础框架包括中心文字、标注值、颜色数组、值数组、图表宽度。
+
+参考：[码一个高颜值统计图 - 展菲](https://mp.weixin.qq.com/s/pzfzqdh7Tko9mfE_cKWqmg "码一个高颜值统计图")
 
 
 ## 面试解析
