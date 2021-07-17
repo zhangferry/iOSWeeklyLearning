@@ -10,6 +10,8 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ## 开发Tips
 
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+
 ### UICollectionView 的scrollDirection 对 minimumLineSpacing 和 minimumInteritemSpacing 影响
 
 滚动方向垂直方向时候原理图
@@ -20,9 +22,47 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/3162666d7fa108da73e6549aea9154cf.png)
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+### 基于不同语言环境下的日期
 
+如果我们的程序存在日期相关操作，并且开发者是一个地域的开发者但是其开发的程序面向全世界时，需要注意一些事情。
 
+例如，中文和英文的阅读方式是从左往右的，排版也是从左往右，我们以左箭头表示前一个，以右箭头表示下一个。而当你面向阿拉伯语、维吾尔语使用者时，这些都是相反的，这就是**LTR（left to right）** 和 **RTL（right to left）**。
+
+除了语言环境的不同，不同的地域也会存在不同的日期格式。一般而言，我们都默认使用 `[NSLocale defaultLocale]` 来获取存储在设备设置中 `Regional Settings` 的地域，而不是指定某个地域 —— 不需要显示设置。
+
+默认的语言/区域设置会导致 `NSCalendar`，`NSDateFormatter` 等类似的跟区域关联类上存在不同的展示
+
+#### **Calendar** 的 firstWeekday
+
+> The firstWeekday property tells you what day of the week the week starts in your locale. In the US, which is the default locale, a week starts on Sun.
+
+当我们使用 `Calendar` 的 `firstWeekday` 属性时，需要注意，这个世界上不是所有地域其 `firstWeekday`  值都是 `1`。比如，对莫斯科来说，其  `firstWeekday`   的值是 `2`。 
+
+如果你的日历控件并没有考虑到这些，对于某一天具体排列在一周的哪天来说，其值是不同的。
+
+笔者之前所做的日历头部是按照周一至周日固定展示的，然后用户在俄罗斯发现日期乱了，日期与周几错乱。
+
+后续直接定死了`firstWeekday = 1` 来功能上解决了这个问题。
+
+#### **DateFormatter**
+
+目前部分地域（部分欧美国家）存在**夏令时**，其会在接近春季开始的时候，将时间调快一小时，并在秋季调回正常时间。
+
+虽然目前现有的设备支持特定的夏令时的展示，但是存在某些历史原因，又是俄罗斯：
+
+```swift
+let dFmt = DateFormatter()
+dFmt.dateFormat = "yyyy-MM-dd"
+dFmt.timeZone = TimeZone(identifier:"Europe/Moscow")
+print(dFmt.date(from:"1981-04-01") as Any) // nil
+print(dFmt.date(from:"1982-04-01") as Any) // nil
+print(dFmt.date(from:"1983-04-01") as Any) // nil
+print(dFmt.date(from:"1984-04-01") as Any) // nil
+```
+
+对于 1981 年-1984 年 4 个年度的俄罗斯来说，4 月 1 号当天没有零点。
+
+如果后台返回给你字符串需要你转换 1981 年-1984 年 4 个年度 4 月 1 号的零点的话，需要注意其日期格式化之后值为 `nil`。
 
 ## 面试解析
 
