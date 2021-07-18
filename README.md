@@ -53,7 +53,7 @@ Pull requests适合熟悉一些Markdown语法的同学。选择这种方式的�
 
 希望你能够：
 
-1、有一定的写作博客经验且熟悉Markdown语法
+1、有一定的写作博客经验且熟悉 Markdown 语法
 
 2、热爱技术，习惯逛各种开发论坛
 
@@ -61,9 +61,9 @@ Pull requests适合熟悉一些Markdown语法的同学。选择这种方式的�
 
 1、按照当前分类总结自己感兴趣的内容
 
-2、按时交稿。每周日晚上十点是截止发稿时间，需要在这之前准备好内容进行提交。
+2、按时交稿。每周四晚上十点是截止发稿时间，需要在这之前准备好内容进行提交。
 
-期待你的加入！
+你可以通过这个[链接](https://github.com/zhangferry/iOSWeeklyLearning/blob/main/Resources/Guide/new_editor.md)了解我们当前的团队和更详细的协作说明，如果感兴趣，欢迎联系我们，期待优秀的你的加入！
 
 ### 可能获得的收获
 
@@ -109,4 +109,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 欢迎关注公众号：iOS成长之路，还可以进群跟我一起交流学习心得。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
