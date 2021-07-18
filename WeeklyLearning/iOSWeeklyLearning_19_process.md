@@ -4,23 +4,34 @@
 
 ### 本期概要
 
-> 
+> * 本期话题讲了关于学习和记忆的一些方法。
+> * 开发 Tips 讲了一个统计图的设计思路，可以试下自己能否也实现一个；如何区分 minimumLineSpacing 和 minimumInteritemSpacing 这两个属性；本地化关于日期的注意事项。
+> * 面试解析
+> * 优秀博客整理了几篇卡顿优化的优质文章。
+> * 学习资料有两个内容，Combine Operators：帮助理解 Combine 操作符的手机端App；还有Stanford 最新的SwiftUI 2.0 双语教程。
+> * 开发工具带来了一个基于 linkmap 分析执行文件大小的工具：LinkMap。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：本期讲下如何学习这个话题，多数内容来源于《暗时间》。书中有句话：
+[@zhangferry](https://zhangferry.com)：本期讲下高效记忆这个话题，多数内容来源于《暗时间》。关于知识书中有句话是这样说的：
 
 > 你所拥有的知识并不取决于你记得多少，而在于它们能否在恰当的时候被回忆起来。
 
-想起来爱因斯坦的另一句话：
+这让我想起爱因斯坦的一句话：
 
 > 教育就是忘记了在学校所学的一切之后剩下的东西。
 
-两种说法非常相似，都在强调使用的重要性。但这些的前提都是我们首先要记住它，然后适当的时候才有可能被唤醒。有效的记忆方法有这些呢，其中最重要的一点就是，记忆存在于大脑是碎片化的，要想记忆某个内容，需要给它提供尽可能多的线索。有以下方法可以提供多线索：过段时间尝试再回忆、通过旧知识的迁移，用自己的语言表述，讲给他人听，书写下来，甚至气味、背景音乐这些都会作为线索进行编码记忆。
+两种说法很相似，都在强调为我所用才是知识的真正价值。而为我所用的前提就是记忆，记住了，才有可能在适当的时候被唤醒，记忆与学习也总是相辅相成的。关于记忆有一个被广泛认可的机制：我们在记忆的时候会将很多线索（例如当时的场景、语言环境等）一并编码进行记忆，事后能否快速提取出来主要就取决于这些线索有多丰富。
 
-对于经验知识的学习来说，光听别人说或者看着别人做还不够，我们可以设法努力设想自己处于别人的境地，感受它们，是他们和你的情绪记忆挂钩。
+针对这一机制有以下方法可用于加深记忆并辅助学习：
 
-另一点，如果一件事情就是一件事情，那永远也无法学到“未来”的知识，所以我们还要抓住核心关键点，剥去无关紧要的细节，抽象出那个核心点，然后进行知识的迁移推广。
+* 过段时间尝试再回忆。它的作用一方面是转换为长时记忆，还有一方面可以通过当前掌握的知识体系重新整合原有知识，有时可以得到新的启发。
+* 用自己的语言表述，书写下来，甚至讲给他人听。这个就是费曼学习法了，它的作用是确保不是我以为我理解了，而是我可以用自己的方式理解。
+* 气味，背景音乐，天气等这些外接因素，都可以作为线索进行编码记忆。有时我们偶然听一首以前流行的歌曲，能一下子回忆起当时的场景和感受，感觉尘封记忆被打开，DNA 动了一样，这些都是基于记忆这个机制导致的。
+
+* 对于经验知识的学习，光听别人说或者看着别人做还不够，我们可以努力设想自己处于别人的境地，感受它们，将它们和你的情绪记忆挂钩。
+
+* 如果一件事情就是一件事情，那我们永远也无法学到“未来”的知识，所以我们还要剥去无关紧要的细节，抽象出那个关键点，这样才能进行知识的迁移与推广。
 
 ## 开发Tips
 
@@ -42,8 +53,7 @@
 
 ```objectivec
 #pragma mark 画折线图
-- (void)drawChartLine
-{
+- (void)drawChartLine {
     UIBezierPath *pAxisPath = [[UIBezierPath alloc] init];
     
     for (int i = 0; i < self.valueArray.count; i ++) {
@@ -81,7 +91,7 @@
 实现柱状图的核心代码是 `FBYBarChartView` 类，基础框架包括文字数组、树值数组、渐变色数组、标注值、间距、滑动、渐变方向。实现核心源码如下:
 
 ```objectivec
-- (void)drawLine{
+- (void)drawLine {
     CAShapeLayer *lineLayer= [CAShapeLayer layer];
     _lineLayer = lineLayer;
     [lineLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:1.5], nil]];
@@ -131,8 +141,7 @@
 实现环形图的核心代码是 `FBYRingChartView` 类，基础框架包括中心文字、标注值、颜色数组、值数组、图表宽度。实现核心源码如下:
 
 ```objectivec
--(void)drawChart
-{
+-(void)drawChart {
     if (_markViewDirection) {
         CGFloat x = 0;
         CGFloat y = 0;
@@ -186,30 +195,25 @@ reloadDatas 方法无效，title 没变，数据源没变，移除 layer 的时�
 解决方案，在 reloadData 时，需要将之前缓存的数组数据 pointArray 清空，不然数组中保存了上次的数据。
 
 
-参考：[码一个高颜值统计图 - 展菲](https://mp.weixin.qq.com/s/pzfzqdh7Tko9mfE_cKWqmg "码一个高颜值统计图")
+参考：[码一个高颜值统计图 - 展菲](https://mp.weixin.qq.com/s/pzfzqdh7Tko9mfE_cKWqmg)
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
 
-### UICollectionView 的scrollDirection 对 minimumLineSpacing 和 minimumInteritemSpacing 影响
+### UICollectionView 的 scrollDirection 对 minimumLineSpacing 和 minimumInteritemSpacing 影响
 
+整理编辑：[人魔七七](https://github.com/renmoqiqi)
 
-滚动方向垂直方向时候原理图
+minimumLineSpacing 和 minimumInteritemSpacing 这两个值表示含义是受滚动方向影响的，不同滚动方向，行列的排列方式不同，我们仅需记住行间距为 lineSpace 即可。下图为可视化的描述：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210716180322.png)
 
-滚动方向水平方向时候原理图
-
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/3162666d7fa108da73e6549aea9154cf.png)
 
-### 基于不同语言环境下的日期
+### 本地化时一些需要注意的日期设置
 
-如果我们的程序存在日期相关操作，并且开发者是一个地域的开发者但是其开发的程序面向全世界时，需要注意一些事情。
+不同地域会有不同的日期格式，一般而言，我们都默认使用 `[NSLocale defaultLocale]` 来获取存储在设备设置中 `Regional Settings` 的地域，而不是指定某个地域，该行为不需要显示设置。
 
-例如，中文和英文的阅读方式是从左往右的，排版也是从左往右，我们以左箭头表示前一个，以右箭头表示下一个。而当你面向阿拉伯语、维吾尔语使用者时，这些都是相反的，这就是**LTR（left to right）** 和 **RTL（right to left）**。
-
-除了语言环境的不同，不同的地域也会存在不同的日期格式。一般而言，我们都默认使用 `[NSLocale defaultLocale]` 来获取存储在设备设置中 `Regional Settings` 的地域，而不是指定某个地域 —— 不需要显示设置。
-
-默认的语言/区域设置会导致 `NSCalendar`，`NSDateFormatter` 等类似的跟区域关联类上存在不同的展示
+默认的语言/区域设置会导致 `NSCalendar`，`NSDateFormatter` 等跟区域关联的类上存在不同的展示
 
 #### **Calendar** 的 firstWeekday
 
@@ -227,7 +231,7 @@ reloadDatas 方法无效，title 没变，数据源没变，移除 layer 的时�
 
 目前部分地域（部分欧美国家）存在**夏令时**，其会在接近春季开始的时候，将时间调快一小时，并在秋季调回正常时间。
 
-虽然目前现有的设备支持特定的夏令时的展示，但是存在某些历史原因，又是俄罗斯：
+虽然目前现有的设备支持特定的夏令时的展示，但是存在某些历史原因，如俄罗斯：
 
 ```swift
 let dFmt = DateFormatter()
@@ -239,9 +243,7 @@ print(dFmt.date(from:"1983-04-01") as Any) // nil
 print(dFmt.date(from:"1984-04-01") as Any) // nil
 ```
 
-对于 1981 年-1984 年 4 个年度的俄罗斯来说，4 月 1 号当天没有零点。
-
-如果后台返回给你字符串需要你转换 1981 年-1984 年 4 个年度 4 月 1 号的零点的话，需要注意其日期格式化之后值为 `nil`。
+对于 1981 年-1984 年 4 个年度的俄罗斯来说，4 月 1 号当天没有零点，会导致转化出的 `Date` 为 nil。如果我们需要做类似转换，就需注意该特殊情况。
 
 ## 面试解析
 
@@ -263,12 +265,12 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 2、[iOS 渲染原理解析](https://mp.weixin.qq.com/s/6ckRnyAALbCsXfZu56kTDw)
 
 
-文章细致的介绍了图像渲染的流程。包括一些细小有趣的知识点，比如CALayer的contents保存了 bitmap信息等。文中当然少不了对离屏渲染的介绍，包括离屏渲染的场景、离屏渲染的原因以及如何避免离屏渲染。文后附有小题目，可以让大家带着问题回顾文章，加深对知识的理解。
+文章细致的介绍了图像渲染的流程。包括一些细小有趣的知识点，比如 CALayer 的 contents 保存了 bitmap 信息等。文中当然少不了对离屏渲染的介绍，包括离屏渲染的场景、离屏渲染的原因以及如何避免离屏渲染。文后附有小题目，可以让大家带着问题回顾文章，加深对知识的理解。
 
 3、[UIView 动画降帧探究](https://mp.weixin.qq.com/s/EcVrrT1M4mI4f4d2b3qV0Q)
 
 
-本文首先介绍为了降帧的目的：降低GPU的使用率，并介绍了为什么动画渲染对GPU有较大的影响。正文中主要介绍了降帧的方案：UIView animation 指定 UIViewAnimationOptionPreferredFramesPerSecond30进行降帧、CADisplayLink逐帧动画降帧。
+本文首先介绍为了降帧的目的：降低GPU的使用率，并介绍了为什么动画渲染对GPU有较大的影响。正文中主要介绍了降帧的方案：UIView animation 指定 UIViewAnimationOptionPreferredFramesPerSecond30 进行降帧、CADisplayLink 逐帧动画降帧。
 
 4、[天罗地网？ iOS卡顿监控实战](https://juejin.cn/post/6844904005437489165 "天罗地网？ iOS卡顿监控实战") -- 来自掘金：进击的蜗牛君
 
@@ -304,13 +306,25 @@ Stanford CS193P 2021 SwiftUI 2.0 课程，该课程的老师是 Paul Hegarty，�
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+**地址**： https://github.com/huanxsd/LinkMap
+
+**软件状态**： 免费 
+
+**软件介绍**
+
+iOS 包的大小，是每个开发必须关注的问题，对于大型项目来说，只是代码段就有可能超过 100M，算上 armv7 和arm64 架构，会超过 200M。 LinkMap 工具通过分析项目的 LinkMap 文件，能够计算出各个类、各个三方库占用的空间大小（代码段+数据段），方便开发者快速定位需要优化的文件。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/linkmap.png)
 
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
+
+[iOS摸鱼周报 第十八期](https://mp.weixin.qq.com/s/JsGmu7pzYLI3Svrmk5i2cA)
 
 [iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
 
@@ -320,4 +334,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
