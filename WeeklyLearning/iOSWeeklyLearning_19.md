@@ -6,7 +6,7 @@
 
 > * 本期话题讲了关于学习和记忆的一些方法。
 > * 开发 Tips 讲了一个统计图的设计思路，可以试下自己能否也实现一个；如何区分 minimumLineSpacing 和 minimumInteritemSpacing 这两个属性；本地化关于日期的注意事项。
-> * 面试解析
+> * 面试解析本期讲解了属性修饰符的几个知识点。
 > * 优秀博客整理了几篇卡顿优化的优质文章。
 > * 学习资料有两个内容，Combine Operators：帮助理解 Combine 操作符的手机端App；还有Stanford 最新的SwiftUI 2.0 双语教程。
 > * 开发工具带来了一个基于 linkmap 分析执行文件大小的工具：LinkMap。
@@ -25,9 +25,9 @@
 
 针对这一机制有以下方法可用于加深记忆并辅助学习：
 
-* 过段时间尝试再回忆。它的作用一方面是转换为长时记忆，还有一方面可以通过当前掌握的知识体系重新整合原有知识，有时可以得到新的启发。
-* 用自己的语言表述，书写下来，甚至讲给他人听。这个就是费曼学习法了，它的作用是确保不是我以为我理解了，而是我可以用自己的方式理解。
-* 气味，背景音乐，天气等这些外接因素，都可以作为线索进行编码记忆。有时我们偶然听一首以前流行的歌曲，能一下子回忆起当时的场景和感受，感觉尘封记忆被打开，DNA 动了一样，这些都是基于记忆这个机制导致的。
+* 过段时间尝试再回忆。它的作用一方面是转换为长时记忆，还有一方面可以通过当前掌握的知识体系重新整合原有知识，这样有时还可以得到新的启发。
+* 用自己的语言表述，书写下来，甚至讲给他人听。这个就是费曼学习法了，它的作用是确保不是我以为我理解了，而是我用自己的方式理解了。
+* 气味，背景音乐，天气等这些外界因素，都可以作为线索进行编码记忆。有时我们偶然听一段以前的音乐，就能一下子回忆起当时的场景和感受，感觉尘封记忆被打开，DNA 动了一样，这些都是由于一个线索串连起来一系列回忆引起的。
 
 * 对于经验知识的学习，光听别人说或者看着别人做还不够，我们可以努力设想自己处于别人的境地，感受它们，将它们和你的情绪记忆挂钩。
 
@@ -197,19 +197,19 @@ reloadDatas 方法无效，title 没变，数据源没变，移除 layer 的时�
 
 参考：[码一个高颜值统计图 - 展菲](https://mp.weixin.qq.com/s/pzfzqdh7Tko9mfE_cKWqmg)
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
-
 ### UICollectionView 的 scrollDirection 对 minimumLineSpacing 和 minimumInteritemSpacing 影响
 
 整理编辑：[人魔七七](https://github.com/renmoqiqi)
 
-minimumLineSpacing 和 minimumInteritemSpacing 这两个值表示含义是受滚动方向影响的，不同滚动方向，行列的排列方式不同，我们仅需记住行间距为 lineSpace 即可。下图为可视化的描述：
+`minimumLineSpacing` 和 `minimumInteritemSpacing` 这两个值表示含义是受滚动方向影响的，不同滚动方向，行列的排列方式不同，我们仅需记住行间距为 lineSpace 即可。下图为可视化的描述：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210716180322.png)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/3162666d7fa108da73e6549aea9154cf.png)
 
 ### 本地化时一些需要注意的日期设置
+
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
 不同地域会有不同的日期格式，一般而言，我们都默认使用 `[NSLocale defaultLocale]` 来获取存储在设备设置中 `Regional Settings` 的地域，而不是指定某个地域，该行为不需要显示设置。
 
@@ -249,7 +249,66 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 
 整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)
 
-面试解析是新出的模块，我们会按照主题讲解一些高频面试题，本期主题是**计算机网络**，以下题目均来自真实面试场景。
+面试解析是新出的模块，我们会按照主题讲解一些高频面试题，本期主题是**属性修饰符**。
+
+### @property 的修饰符有哪些？分别介绍下功能和使用场景?
+
+@property 的本质是：ivar + setter + getter，实例变量由编译器自动生成，所以不同修饰符的区别就在于如何定义 setter 和 getter 方法。
+
+#### 属性修饰符分类
+
+* 原子性：atomic，nonatiomic
+
+* 读写语义：readwrite、readonly、getter、setter
+
+* 内存管理：assign、weak、retain、strong、copy、unsafe_unretained
+
+#### 含义及使用说明
+**atomic/nonatomic**
+
+1、若不指定原子性相关的修饰符，默认为 atomic，其会对属性的 setter 方法加锁。
+
+2、使用 atomic 后，不能再重写 setter 和 getter，否则会产生编译错误。
+
+3、开发中，一般使用 nonatomic，提高多线程访问的性能。
+
+**readonly/readwrite**
+
+1、readonly 表示只读，也就是修饰的变量只有 get 方法，没有 set 方法。
+
+2、readwrite 为默认修饰符，既有 get，也有 set 方法。
+
+3、使用 `getter=methodName` ，`setter=methodName` 可以选择性地在括号里设置自定义 getter、setter 方法名。
+
+**assign/weak**
+
+1、assign 直接赋值，不会增加对象的引用计数，通常用于修饰非 OC 类型，比如 NSInteger/BOOL 等基础数据类型、 C 语言数据类型或对指针的弱引用；也可以用于修饰 OC 对象类型，但是 assign 修饰的对象在该对象释放后，其指针依然存在，不会被置为 nil，此时继续访问会导致野指针崩溃。
+
+2、weak 修饰弱引用，不增加引用计数，主要用于避免循环引用，功能上和 assign 一样，不同的是，用weak 修饰的对象，在释放时会自动将指针置为 nil。
+
+3、一般自己写 UI 控件都是使用 weak，xib 也使用 weak，这是因为控制器的 view 及其 subviews 都已经被强引用的。
+
+**retain/strong**
+
+1、retain 是 MRC 下使用的修饰符。赋值的时候，判断参数地址和实例变量地址不同的话，移除旧对象，新对象的引用计数+1，给到变量；别的对象对其做引用的时候，直接引用计数+1。
+
+2、strong 是默认修饰符，它的底层跟 retain 一样，不过是运行在 ARC 下。
+
+3、不过在声明 Block 时，使用 strong 和 retain 会有截然不同的效果。strong 会等于 copy，而 retain 竟然等于 assign。（记得和Block打通）
+
+**copy**
+
+1、一般 copy 关键字用在 NSString、NSArray、NSDictionary 等属性字段的修饰符，这样外面传可变或者不可变的对象时，内部留下的都是不可变对象。
+
+2、对于不可变对象，进行浅拷贝，对于可变对象进行深拷贝。
+
+3、copy 后的对象都是不可变对象。
+
+4、属性赋值的时候底层先将旧值 release，然后将参数 copy 后给当前变量，参数引用计数不变。
+
+**unsafe_unretained**
+
+就是弱化版本的assign，用来修饰对象，会出现野指针问题。
 
 ## 优秀博客
 
@@ -260,7 +319,7 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 1、[iOS卡顿监测方案总结](https://juejin.cn/post/6844903944867545096 "iOS卡顿监测方案总结")
 
 
-文章总结了业界的很多卡顿监控技术。包括：FPS、runloop、子线程Ping、CPU占用率监测。文章中附带了作者参考和收集到的原文链接，以及部分相关上下游技术的文章。如果您想要做卡顿监控，阅读本文可以节省不少时间和精力。
+文章总结了业界的很多卡顿监控技术。包括：FPS、runloop、子线程 Ping、CPU 占用率监测。文章中附带了作者参考和收集到的原文链接，以及部分相关上下游技术的文章。如果您想要做卡顿监控，阅读本文可以节省不少时间和精力。
 
 2、[iOS 渲染原理解析](https://mp.weixin.qq.com/s/6ckRnyAALbCsXfZu56kTDw)
 
@@ -270,21 +329,20 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 3、[UIView 动画降帧探究](https://mp.weixin.qq.com/s/EcVrrT1M4mI4f4d2b3qV0Q)
 
 
-本文首先介绍为了降帧的目的：降低GPU的使用率，并介绍了为什么动画渲染对GPU有较大的影响。正文中主要介绍了降帧的方案：UIView animation 指定 UIViewAnimationOptionPreferredFramesPerSecond30 进行降帧、CADisplayLink 逐帧动画降帧。
+本文首先介绍为了降帧的目的：降低 GPU 的使用率，并介绍了为什么动画渲染对 GPU 有较大的影响。正文中主要介绍了降帧的方案：UIView animation 指定 `UIViewAnimationOptionPreferredFramesPerSecond30` 进行降帧、`CADisplayLink` 逐帧动画降帧。
 
 4、[天罗地网？ iOS卡顿监控实战](https://juejin.cn/post/6844904005437489165 "天罗地网？ iOS卡顿监控实战") -- 来自掘金：进击的蜗牛君
 
-本文利用"ping"方案，即每隔一段时间就去目标线程中检测状态，如果目标线程"运行良好"，则标记为正常，当一段时间"ping"均不正常时，上报目标线程的堆栈，此时认为目标线程发生了卡顿，作者已经做出了开源工具，方便大家深入研究。
+本文利用 `ping` 方案，即每隔一段时间就去目标线程中检测状态，如果目标线程"运行良好"，则标记为正常，当一段时间 `ping` 均不正常时，上报目标线程的堆栈，此时认为目标线程发生了卡顿，作者已经做出了开源工具，方便大家深入研究。
 
 5、[列表流畅度优化](https://juejin.cn/post/6844903656769208334 "列表流畅度优化") -- 来自掘金：Hello_Vincent
 
-作者借鉴了WWDC18的相关session，从实际角度出发，进行一次列表优化的旅程，从原因到解决办法，最后提出意见，称得上是一篇佳作。
+作者借鉴了 WWDC18 的相关 session，从实际角度出发，进行一次列表优化的旅程，从原因到解决办法，最后提出意见，称得上是一篇佳作。
 
-6、[WWDC2016 Session笔记 - iOS 10 UICollectionView新特性
-](https://juejin.cn/post/6844903441416847374 "WWDC2016 Session笔记 - iOS 10 UICollectionView新特性
+6、[WWDC2016 Session笔记 - iOS 10 UICollectionView新特性](https://juejin.cn/post/6844903441416847374 "WWDC2016 Session笔记 - iOS 10 UICollectionView新特性
 ") -- 来自掘金：一缕殇流化隐半边冰霜
 
-早在WWDC16，官方针对UICollectionView已经做过优化教程，如果你还不知道，可以看一看这篇文章。
+早在 WWDC16，官方针对 `UICollectionView` 已经做过优化教程，如果你还不知道，可以看一看这篇文章。
 
 ## 学习资料
 
