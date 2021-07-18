@@ -270,6 +270,20 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 
 本文首先介绍为了降帧的目的：降低GPU的使用率，并介绍了为什么动画渲染对GPU有较大的影响。正文中主要介绍了降帧的方案：UIView animation 指定 UIViewAnimationOptionPreferredFramesPerSecond30进行降帧、CADisplayLink逐帧动画降帧。
 
+4、[天罗地网？ iOS卡顿监控实战](https://juejin.cn/post/6844904005437489165 "天罗地网？ iOS卡顿监控实战") -- 来自掘金：进击的蜗牛君
+
+本文利用"ping"方案，即每隔一段时间就去目标线程中检测状态，如果目标线程"运行良好"，则标记为正常，当一段时间"ping"均不正常时，上报目标线程的堆栈，此时认为目标线程发生了卡顿，作者已经做出了开源工具，方便大家深入研究。
+
+5、[列表流畅度优化](https://juejin.cn/post/6844903656769208334 "列表流畅度优化") -- 来自掘金：Hello_Vincent
+
+作者借鉴了WWDC18的相关session，从实际角度出发，进行一次列表优化的旅程，从原因到解决办法，最后提出意见，称得上是一篇佳作。
+
+6、[WWDC2016 Session笔记 - iOS 10 UICollectionView新特性
+](https://juejin.cn/post/6844903441416847374 "WWDC2016 Session笔记 - iOS 10 UICollectionView新特性
+") -- 来自掘金：一缕殇流化隐半边冰霜
+
+早在WWDC16，官方针对UICollectionView已经做过优化教程，如果你还不知道，可以看一看这篇文章。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
