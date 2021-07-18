@@ -8,7 +8,7 @@
 > * 开发 Tips 讲了一个统计图的设计思路，可以试下自己能否也实现一个；如何区分 minimumLineSpacing 和 minimumInteritemSpacing 这两个属性；本地化关于日期的注意事项。
 > * 面试解析本期讲解了属性修饰符的几个知识点。
 > * 优秀博客整理了几篇卡顿优化的优质文章。
-> * 学习资料有两个内容，Combine Operators：帮助理解 Combine 操作符的手机端App；还有Stanford 最新的SwiftUI 2.0 双语教程。
+> * 学习资料有两个内容，Combine Operators：帮助理解 Combine 操作符的手机端 App；还有 Stanford 最新的 SwiftUI 2.0 双语教程。
 > * 开发工具带来了一个基于 linkmap 分析执行文件大小的工具：LinkMap。
 
 ## 本期话题
@@ -49,7 +49,7 @@
 
 **折线统计图实现思路分析**
 
-折线图基础框架包括Y轴刻度标签、x 轴刻度标签、与 x 轴平行的网格线的间距、网格线的起始点、x 轴长度、y 轴长度，折线图数据内容显示是继承 `FBYLineGraphBaseView` 类进行实现，其中主要包括，X轴最大值、数据内容来实现，核心源码如下：
+折线图基础框架包括 Y 轴刻度标签、x 轴刻度标签、与 x 轴平行的网格线的间距、网格线的起始点、x 轴长度、y 轴长度，折线图数据内容显示是继承 `FBYLineGraphBaseView` 类进行实现，其中主要包括，X 轴最大值、数据内容来实现，核心源码如下：
 
 ```objectivec
 #pragma mark 画折线图
@@ -66,7 +66,7 @@
         
         CGPoint point = CGPointMake(point_X, point_Y);
         
-        // 记录各点的坐标方便后边添加渐变阴影 和 点击层视图 等
+        // 记录各点的坐标方便后边添加 渐变阴影 和 点击层视图 等
         [pointArray addObject:[NSValue valueWithCGPoint:point]];
         
         if (i == 0) {
@@ -88,7 +88,7 @@
 
 **柱状图实现思路分析**
 
-实现柱状图的核心代码是 `FBYBarChartView` 类，基础框架包括文字数组、树值数组、渐变色数组、标注值、间距、滑动、渐变方向。实现核心源码如下:
+实现柱状图的核心代码是 `FBYBarChartView` 类，基础框架包括文字数组、数值数组、渐变色数组、标注值、间距、滑动、渐变方向。实现核心源码如下:
 
 ```objectivec
 - (void)drawLine {
@@ -243,7 +243,7 @@ print(dFmt.date(from:"1983-04-01") as Any) // nil
 print(dFmt.date(from:"1984-04-01") as Any) // nil
 ```
 
-对于 1981 年-1984 年 4 个年度的俄罗斯来说，4 月 1 号当天没有零点，会导致转化出的 `Date` 为 nil。如果我们需要做类似转换，就需注意该特殊情况。
+对于 1981 年 - 1984 年 4 个年度的俄罗斯来说，4 月 1 号当天没有零点，会导致转化出的 `Date` 为 nil。如果我们需要做类似转换，就需注意该特殊情况。
 
 ## 面试解析
 
@@ -352,7 +352,7 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 
 地址：https://apps.apple.com/app/combine-operators/id1507756027
 
-一个用来学习 Combine 的 App，他将一些 Combine 中的各种操作符用可视化的手段表达了出来，还附加了蠢萌蠢萌的动画效果，很适合刚接触的 Combine 的朋友尝试一下。
+一个用来学习 Combine 的 App，他将一些 Combine 中的各种操作符用可视化的手段表达了出来，还附加了蠢萌蠢萌的动画效果，很适合刚接触 Combine 的朋友尝试一下。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/co.png)
 
@@ -372,7 +372,7 @@ Stanford CS193P 2021 SwiftUI 2.0 课程，该课程的老师是 Paul Hegarty，�
 
 **软件介绍**
 
-iOS 包的大小，是每个开发必须关注的问题，对于大型项目来说，只是代码段就有可能超过 100M，算上 armv7 和arm64 架构，会超过 200M。 LinkMap 工具通过分析项目的 LinkMap 文件，能够计算出各个类、各个三方库占用的空间大小（代码段+数据段），方便开发者快速定位需要优化的文件。
+iOS 包的大小，是每个开发必须关注的问题，对于大型项目来说，只是代码段就有可能超过 100M，算上 armv7 和 arm64 架构，会超过 200M。 LinkMap 工具通过分析项目的 LinkMap 文件，能够计算出各个类、各个三方库占用的空间大小（代码段+数据段），方便开发者快速定位需要优化的文件。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/linkmap.png)
 
