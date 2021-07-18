@@ -436,7 +436,7 @@ AAPLListItem *matchingItem = [self.list itemWithName:nil];  // warning!
 ```objectivec
 @property (nonatomic, copy) NSString *name;
 
-— (instancetype) initWithName:(NSString *)name {
+— (instancetype)initWithName:(NSString *)name {
     if (self = [super init]) {
         _name = [name copy];
     }
