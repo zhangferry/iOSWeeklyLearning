@@ -5,8 +5,8 @@
 ### 本期概要
 
 > * 本期话题讲了关于学习和记忆的一些方法。
-> * 开发 Tips 讲了一个统计图的设计思路，可以试下自己能否也实现一个；如何区分 minimumLineSpacing 和 minimumInteritemSpacing 这两个属性；本地化关于日期的注意事项。
-> * 面试解析本期讲解了属性及属性关键字的几个知识点。
+> * 开发 Tips 讲了如何区分 minimumLineSpacing 和 minimumInteritemSpacing 这两个属性及本地化关于日期的注意事项。
+> * 面试解析本期讲解了属性及属性关键字的几个知识点，由[@师大小海腾](https://juejin.cn/user/782508012091645)和[@反向抽烟](https://blog.csdn.net/opooc)整理，内容非常之详细。
 > * 优秀博客整理了几篇卡顿优化的优质文章。
 > * 学习资料有两个内容，Combine Operators：帮助理解 Combine 操作符的手机端 App；还有 Stanford 最新的 SwiftUI 2.0 双语教程。
 > * 开发工具带来了一个基于 linkmap 分析执行文件大小的工具：LinkMap。
@@ -32,168 +32,6 @@
 * 如果一件事情就是一件事情，那我们永远也无法学到“未来”的知识，所以我们还要剥去无关紧要的细节，抽象出那个关键点，这样才能进行知识的迁移与推广。
 
 ## 开发Tips
-
-### 码一个高颜值统计图
-
-整理编辑：[FBY展菲](https://github.com/fanbaoying)
-
-**介绍**
-
-项目开发中有一些需求仅仅通过列表展示是不能满足的，如果通过图表的形式来展示，就可以更快捷的获取到数据变化情况。下面给大家分享三类统计图：**折线统计图**、**柱状图**、**环形图**。
-
-**项目展示**
-
-<img src="https://mmbiz.qpic.cn/mmbiz_png/iabC3iaGjoCC1jkmpicIzNBCB7EBicUAfiaQaCNkiaK6aKxNyOdjGzgvHMvCa64ZTgoMsjZPHK3ict56dzFibu4tsQoziag/0?wx_fmt=png">
-
-**折线统计图实现思路分析**
-
-折线图基础框架包括 Y 轴刻度标签、x 轴刻度标签、与 x 轴平行的网格线的间距、网格线的起始点、x 轴长度、y 轴长度，折线图数据内容显示是继承 `FBYLineGraphBaseView` 类进行实现，其中主要包括，X 轴最大值、数据内容来实现，核心源码如下：
-
-```objectivec
-#pragma mark 画折线图
-- (void)drawChartLine {
-    UIBezierPath *pAxisPath = [[UIBezierPath alloc] init];
-    
-    for (int i = 0; i < self.valueArray.count; i ++) {
-        
-        CGFloat point_X = self.xScaleMarkLEN * i + self.startPoint.x;
-        
-        CGFloat value = [self.valueArray[i] floatValue];
-        CGFloat percent = value / self.maxValue;
-        CGFloat point_Y = self.yAxis_L * (1 - percent) + self.startPoint.y;
-        
-        CGPoint point = CGPointMake(point_X, point_Y);
-        
-        // 记录各点的坐标方便后边添加 渐变阴影 和 点击层视图 等
-        [pointArray addObject:[NSValue valueWithCGPoint:point]];
-        
-        if (i == 0) {
-            [pAxisPath moveToPoint:point];
-        }
-        else {
-            [pAxisPath addLineToPoint:point];
-        }
-    }
-    
-    CAShapeLayer *pAxisLayer = [CAShapeLayer layer];
-    pAxisLayer.lineWidth = 1;
-    pAxisLayer.strokeColor = [UIColor colorWithRed:255/255.0 green:69/255.0 blue:0/255.0 alpha:1].CGColor;
-    pAxisLayer.fillColor = [UIColor clearColor].CGColor;
-    pAxisLayer.path = pAxisPath.CGPath;
-    [self.layer addSublayer:pAxisLayer];
-}
-```
-
-**柱状图实现思路分析**
-
-实现柱状图的核心代码是 `FBYBarChartView` 类，基础框架包括文字数组、数值数组、渐变色数组、标注值、间距、滑动、渐变方向。实现核心源码如下:
-
-```objectivec
-- (void)drawLine {
-    CAShapeLayer *lineLayer= [CAShapeLayer layer];
-    _lineLayer = lineLayer;
-    [lineLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:1.5], nil]];
-    lineLayer.fillColor = [UIColor clearColor].CGColor;
-    lineLayer.lineWidth = 0.5f;
-    lineLayer.strokeColor = [UIColor grayColor].CGColor;
-    _height = self.frame.size.height;
-    _width = self.frame.size.width;
-    _barMargin = 20.0;
-    _lineHeight = _height - 20;
-    if (_type == OrientationHorizontal) {
-        _x = 60;
-        _y = 0;
-        _lineWidth = _width - _x - 20;
-    } else{
-        _x = 40;
-        _y = 20;
-        _lineWidth = _width - _x;
-    }
-    
-    //参照线
-    UIBezierPath *linePath = [UIBezierPath bezierPath];
-    
-    [linePath moveToPoint:CGPointMake(_x,_y)];
-    [linePath addLineToPoint:CGPointMake(_x + _lineWidth,_y)];
-    [linePath addLineToPoint:CGPointMake(_x + _lineWidth,_lineHeight)];
-    [linePath addLineToPoint:CGPointMake(_x,_lineHeight)];
-    [linePath addLineToPoint:CGPointMake(_x,_y)];
-    if (_type == OrientationHorizontal) {
-        for (int i = 1; i < _markLabelCount; i++) {
-            [linePath moveToPoint:CGPointMake(_x + _lineWidth / _markLabelCount * i, 0)];
-            [linePath addLineToPoint:CGPointMake(_x + _lineWidth / _markLabelCount * i,_lineHeight)];
-        }
-    } else{
-        for (int i = 1; i < _markLabelCount; i++) {
-            [linePath moveToPoint:CGPointMake(_x, (_lineHeight - _y) / _markLabelCount * i +_y)];
-            [linePath addLineToPoint:CGPointMake(_x + _lineWidth,(_lineHeight - _y) / _markLabelCount * i + _y)];
-        }
-    }
-    lineLayer.path = linePath.CGPath;
-    [self.layer addSublayer:lineLayer];
-}
-```
-
-**环形图实现思路分析**
-
-实现环形图的核心代码是 `FBYRingChartView` 类，基础框架包括中心文字、标注值、颜色数组、值数组、图表宽度。实现核心源码如下:
-
-```objectivec
--(void)drawChart {
-    if (_markViewDirection) {
-        CGFloat x = 0;
-        CGFloat y = 0;
-        CGFloat mvWidth = 100;
-        CGFloat mvHeight = 12;
-        CGFloat margin = 0;
-        
-        _mvArray = [NSMutableArray array];
-        for (int i = 0; i < _valueArray.count; i++) {
-            int indexX = i % 2;
-            int indexY = i / 2;
-            
-            if (_markViewDirection == MarkViewDirectionLeft) {
-                margin = (_radius * 2 - 12 * _valueArray.count) / 5;
-                x = _width * 0.75 - _radius - mvWidth - 30;
-                y = (_height - _radius * 2) / 2 + (margin + mvHeight) * i;
-            } else if (_markViewDirection == MarkViewDirectionRight){
-                margin = (_radius * 2 - 12 * _valueArray.count) / 5;
-                x = _width * 0.25 + _radius + 30;
-                y = (_height - _radius * 2) / 2 + (margin + mvHeight) * i;
-            } else if (_markViewDirection == MarkViewDirectionTop){
-                x = indexX == 0 ? _width / 2 - 15 - mvWidth : _width / 2 + 15;
-                y = _height * 0.75 - _radius - 30 - (_valueArray.count / 2) * 12 - (_valueArray.count / 2 - 1) * 10 + indexY * (12 + 10);
-            }  else if (_markViewDirection == MarkViewDirectionBottom){
-                x = indexX == 0 ? _width / 2 - 15 - mvWidth : _width / 2 + 15;
-                y = _height * 0.25 + _radius + 30 + indexY * (12 + 10);
-            }
-        }
-    }
-    
-    [_layerArray enumerateObjectsUsingBlock:^(CAShapeLayer *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CABasicAnimation *ani = [CABasicAnimation animationWithKeyPath : NSStringFromSelector ( @selector (strokeEnd))];
-        ani.fromValue = @0;
-        ani.toValue = @1;
-        ani.duration = 1.0;
-        [obj addAnimation:ani forKey:NSStringFromSelector(@selector(strokeEnd))];
-    }];
-    
-    [_mvArray enumerateObjectsUsingBlock:^(UIView *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [UIView animateWithDuration:1 animations:^{
-            obj.alpha = 1;
-        }];
-    }];
-}
-```
-
-**遇到的问题**（已解决）
-
-reloadDatas 方法无效，title 没变，数据源没变，移除 layer 的时候还会闪退
-
-解决方案，在 reloadData 时，需要将之前缓存的数组数据 pointArray 清空，不然数组中保存了上次的数据。
-
-
-参考：[码一个高颜值统计图 - 展菲](https://mp.weixin.qq.com/s/pzfzqdh7Tko9mfE_cKWqmg)
 
 ### UICollectionView 的 scrollDirection 对 minimumLineSpacing 和 minimumInteritemSpacing 影响
 
@@ -245,7 +83,7 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 
 ## 面试解析
 
-整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)
+整理编辑：[反向抽烟](https://blog.csdn.net/opooc)、[师大小海腾](https://juejin.cn/user/782508012091645)
 
 面试解析是新出的模块，我们会按照主题讲解一些高频面试题，本期主题是**属性及属性关键字**。
 
@@ -264,6 +102,7 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 帮我们自动生成 setter 和 getter 方法的实现以及 _ivar。
 
 你还可以通过 @synthesize 来指定实例变量名字，如果你不喜欢默认的以下划线开头来命名实例变量的话。但最好还是用默认的，否则影响可读性。
+
 如果不想令编译器合成存取方法，则可以自己实现。如果你只实现了其中一个存取方法 setter or getter，那么另一个还是会由编译器来合成。但是需要注意的是，如果你实现了属性所需的全部方法（如果属性是 readwrite 则需实现 setter and getter，如果是 readonly 则只需实现 getter 方法），那么编译器就不会自动进行 @synthesize，这时候就不会生成该属性的实例变量，需要根据实际情况自己手动 @synthesize 一下。
 
 ```objectivec
@@ -278,13 +117,13 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 @dynamic ivar;
 ```
 
-以前我们需要手动对每个 @property 添加 @synthesize，而在 iOS 6 之后 LLVM 编译器引入了 “`property autosynthesis`”，即属性自动合成。换句话说，就是编译器会自动为每个 @property 添加 @synthesize。
+以前我们需要手动对每个 @property 添加 @synthesize，而在 iOS 6 之后 LLVM 编译器引入了 `property autosynthesis`，即属性自动合成。换句话说，就是编译器会自动为每个 @property 添加 @synthesize。
 
 那你可能就会问了，@synthesize 现在有什么用呢？
 
 1. 如果我们同时重写了 setter 和 getter 方法，则编译器就不会自动为这个 @property 添加 @synthesize，这时候就不存在 _ivar，所以我们需要手动添加 @synthesize。
 2. 如果该属性是 readonly，那么只要你重写了 getter 方法，`property autosynthesis` 就不会执行，同样的你需要手动添加 @synthesize 如果你需要的话，看你这个属性是要定义为存储属性还是计算属性吧。
-3. 实现协议中要求的属性
+3. 实现协议中要求的属性。
 
 此外需要注意的是，分类当中添加的属性，也不会 `property autosynthesis` 哦。因为类的内存布局在编译的时候会确定，但是分类是在运行时才加载并将数据合并到宿主类中的，所以分类当中不能添加成员变量，只能通过关联对象间接实现分类有成员变量的效果。如果你给分类添加了一个属性，但没有手动给它实现 getter、setter（如果属性是 readonly 则不需要实现）的话，编译器就会给你警告啦 `Property 'ivar' requires method 'ivar'、'setIvar:' to be defined - use @dynamic or provide a method implementation in this category`，编译器已经告诉我们了有两种解决方式来消除警告：
 
@@ -297,12 +136,12 @@ print(dFmt.date(from:"1984-04-01") as Any) // nil
 
 分类|属性关键字
 --|--
-原子性|atomic、nonatomic
-读写权限|readwrite、readonly
-方法名|setter、getter
-内存管理|assign、weak、unsafe_unretained、retain、strong、copy
-可空性|(nullable、_Nullable 、__nullable)、<br>(nonnull、_Nonnull、__nonnull)、<br>(null_unspecified、_Null_unspecified 、__null_unspecified)、<br>null_resettable
-类属性|class
+原子性|`atomic`、`nonatomic`
+读写权限|`readwrite`、`readonly`
+方法名|`setter`、`getter`
+内存管理|`assign`、`weak`、`unsafe_unretained`、`retain`、`strong`、`copy`
+可空性|(`nullable`、`_Nullable` 、`__nullable`)、<br>(`nonnull`、`_Nonnull`、`__nonnull`)、<br>(`null_unspecified`、`_Null_unspecified` 、`__null_unspecified`)、<br>`null_resettable`
+类属性|`class`
 
 
 ##### 原子性
@@ -324,7 +163,7 @@ readonly|只读，只生成 getter 方法的声明和实现。为了达到封装
 
 属性关键字|用法
 --|--
-setter|可以指定生成的 setter 方法名，如 setter = setName。这个关键字笔者在给分类添加属性的时候会用得比较多，为了避免分类方法“覆盖”同名的宿主类（或者其它分类）方法的问题，一般我们都会加前缀，比如 bbIvar，但是这样生成的 setter 方法名就不美观了（为 setBbIvar），于是就使用到了 setter 关键字 `@property (nonatomic, strong, setter = bb_setIvar) NSObject *bbIvar;`
+setter|可以指定生成的 setter 方法名，如 setter = setName。这个关键字笔者在给分类添加属性的时候会用得比较多，为了避免分类方法“覆盖”同名的宿主类（或者其它分类）方法的问题，一般我们都会加前缀，比如 bbIvar，但是这样生成的 setter 方法名就不美观了（为 setBbIvar），于是就使用到了 setter 关键字 `@property (nonatomic, strong, setter = bb_setIvar:) NSObject *bbIvar;`
 getter|可以指定生成的 getter 方法名，如 getter = getName。使用示例：`@property (nonatomic, assign, getter = isEnabled) BOOL enabled;`
 
 ##### 内存管理
@@ -527,7 +366,5 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 [iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
 
 [iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
-
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
