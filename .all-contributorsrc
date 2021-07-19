@@ -112,6 +112,15 @@
       "contributions": [
         "blog"
       ]
+    },
+    {
+      "login": "Coder-Star",
+      "name": "CoderStar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29835618?v=4",
+      "profile": "https://coder-star.github.io/",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
