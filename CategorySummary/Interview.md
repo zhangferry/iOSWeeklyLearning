@@ -78,7 +78,7 @@ TCP 是一个全双工协议，它要保证双方都具有接收与发送的能�
 
 ### 为什么 TCP 连接是三次握手，关闭的时候却要四次挥手？
 
-主要是建立连接时接收者的 SYN-ACK 一同发送了，而关闭是 FIN 和 ACK 却不能同时发送，因为断开连接要处理的情况比较多，比如服务器端可能还有发送出的消息没有得到 ACK，也可能服务器资源需要释放等。所以先发一个 ACK 表示已经收到了发送方的请求，等上述情况都有了确定的处理，再发 FIN 表示接收方已经完成了后续工作。
+主要是建立连接时接收者的 SYN-ACK 一同发送了，而关闭时 FIN 和 ACK 却不能同时发送，因为断开连接要处理的情况比较多，比如服务器端可能还有发送出的消息没有得到 ACK，也可能服务器资源需要释放等。所以先发一个 ACK 表示已经收到了发送方的请求，等上述情况都有了确定的处理，再发 FIN 表示接收方已经完成了后续工作。
 
 类比现实世界中，你收到了一个 Offer，出于礼貌你先回复一下，然后思考一段时间再回复 HR 最终的结果。
 
@@ -88,4 +88,342 @@ TCP 是一个全双工协议，它要保证双方都具有接收与发送的能�
 这里同样是要考虑丢包的问题，如果第四次挥手的报文丢失，服务端没收到确认报文就会重发第三次挥手的报文，这样报文一去一回最长时间就是 2MSL，所以需要等这么长时间来确认服务端确实已经收到了。
 
 参考：[https://zhuanlan.zhihu.com/p/141396896](https://zhuanlan.zhihu.com/p/141396896 "https://zhuanlan.zhihu.com/p/141396896")
+
+***
+整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)
+
+面试解析会按照主题讲解一些高频面试题，本期面试题是 **block 的变量捕获机制**。
+
+### block 的变量捕获机制
+
+block 的变量捕获机制，是为了保证 block 内部能够正常访问外部的变量。
+
+1、对于全局变量，不会捕获到 block 内部，访问方式为`直接访问`；作用域的原因，全局变量哪里都可以直接访问，所以不用捕获。
+
+2、对于局部变量，外部不能直接访问，所以需要捕获。
+
+* auto 类型的局部变量（我们定义出来的变量，默认都是 auto 类型，只是省略了），block 内部会自动生成一个同类型成员变量，用来存储这个变量的值，访问方式为`值传递`。**auto 类型的局部变量可能会销毁，其内存会消失，block 将来执行代码的时候不可能再去访问那块内存，所以捕获其值**。由于是值传递，我们修改 block 外部被捕获变量的值，不会影响到 block 内部捕获的变量值。
+* static 类型的局部变量，block 内部会自动生成一个同类型成员变量，用来存储这个变量的地址，访问方式为`指针传递`。static 变量会一直保存在内存中， 所以捕获其地址即可。相反，由于是指针传递，我们修改 block 外部被捕获变量的值，会影响到 block 内部捕获的变量值。    
+* 对于对象类型的局部变量，block 会连同它的所有权修饰符一起捕获。
+    * 如果 block 是在栈上，将不会对对象产生强引用
+    * 如果 block 被拷贝到堆上，将会调用 block 内部的 `copy(__funcName_block_copy_num)`函数，copy 函数内部又会调用 `assign(_Block_object_assign)`函数，assign 函数将会根据变量的所有权修饰符做出相应的操作，形成强引用（retain）或者弱引用。
+    * 如果 block 从堆上移除，也就是被释放的时候，会调用 block 内部的 `dispose(_Block_object_dispose)`函数，dispose 函数会自动释放引用的变量（release）。
+* 对于 `__block`（可用于解决 block 内部无法修改 auto 变量值的问题） 修饰的变量，编译器会将 `__block` 变量包装成一个 `__Block_byref_varName_num` 对象。它的内存管理几乎等同于访问对象类型的 auto 变量，但还是有差异。
+    * 如果 block 是在栈上，将不会对 `__block` 变量产生强引用
+    * 如果 block 被拷贝到堆上，将会调用 block 内部的 copy
+    函数，copy 函数内部又会调用 assign 函数，assign 函数将会直接对 `__block` 变量形成强引用（retain）。
+    * 如果 block 从堆上移除，也就是被释放的时候，会调用 block 内部的 dispose 函数，dispose 函数会自动释放引用的 `__block` 变量（release）。
+    ![](https://user-gold-cdn.xitu.io/2020/2/23/170724cf4ff4b2bd?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+* 被 `__block `修饰的对象类型的内存管理：
+    * 如果 `__block` 变量是在栈上，将不会对指向的对象产生强引用
+    * 如果 `__block` 变量被拷贝到堆上，将会调用 `__block` 变量内部的 `copy(__Block_byref_id_object_copy)`函数，copy 函数内部会调用 assign 函数，assign 函数又会根据变量的所有权修饰符做出相应的操作，形成强引用（retain）或者弱引用。（注意：这里仅限于 ARC 下会 retain，MRC 下不会 retain，所以在 MRC 下还可以通过 `__block` 解决循环引用的问题）
+    * 如果 `__block` 变量从堆上移除，会调用 `__block` 变量内部的 dispose 函数，dispose 函数会自动释放指向的对象（release）。
+    
+    
+
+掌握了 block 的变量捕获机制，我们就能更好的应对内存管理，避免因使用不当造成内存泄漏。
+
+常见的 block 循环引用为：`self(obj) -> block -> self(obj)`。这里 block 强引用了 self 是因为对于对象类型的局部变量，block 会连同它的所有权修饰符一起捕获，而对象的默认所有权修饰符为 __strong。
+
+```objectivec
+self.block = ^{
+    NSLog(@"%@", self);
+};
+```
+
+> 为什么这里说 self 是局部变量？因为 self 是 OC 方法的一个隐式参数。
+
+为了避免循环引用，我们可以使用 `__weak` 解决，这里 block 将不再持有 self。
+
+```objectivec
+__weak typeof(self) weakSelf = self;
+self.block = ^{
+    NSLog(@"%@", weakSelf);
+};
+```
+
+为了避免在 block 调用过程中 self 提前释放，我们可以使用 `__strong` 在 block 执行过程中持有 self，这就是所谓的 Weak-Strong-Dance。
+
+```objectivec
+__weak typeof(self) weakSelf = self;
+self.block = ^{
+    __strong typeof(self) strongSelf = weakSelf;
+    NSLog(@"%@", strongSelf);
+};
+```
+
+当然，我们平常用的比较多的还是 `@weakify(self)` 和 `@strongify(self)` 啦。
+
+```objectivec
+@weakify(self);
+self.block = ^{
+    @strongify(self);
+    NSLog(@"%@", self);
+};
+```
+
+如果你使用的是 RAC 的 Weak-Strong-Dance，你还可以这样：
+
+```objectivec
+@weakify(self, obj1, obj2);
+self.block = ^{
+    @strongify(self, obj1, obj2);
+    NSLog(@"%@", self);
+};
+```
+
+如果是嵌套的 block：
+
+```objectivec
+@weakify(self);
+self.block = ^{
+    @strongify(self);
+    self.block2 = ^{
+        @strongify(self);
+        NSLog(@"%@", self);
+    }
+};
+```
+
+你是否会疑问，为什么内部不需要再写 @weakify(self) ？这个问题就留给你自己去思考和解决吧！
+
+相比于简单的相互循环引用，block 造成的大环引用更需要你足够细心以及敏锐的洞察力，比如：
+
+```objectivec
+TYAlertView *alertView = [TYAlertView alertViewWithTitle:@"TYAlertView" message:@"This is a message, the alert view containt text and textfiled. "];
+[alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancle handler:^(TYAlertAction *action) {
+    NSLog(@"%@-%@", self, alertView);
+}]];
+self.alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert];
+[self presentViewController:alertController animated:YES completion:nil];
+```
+
+这里循环引用有两处：
+
+1. `self -> alertController -> alertView -> handlerBlock -> self`
+2. `alertView -> handlerBlock -> alertView`
+
+避免循环引用：
+
+```objectivec
+TYAlertView *alertView = [TYAlertView alertViewWithTitle:@"TYAlertView" message:@"This is a message, the alert view containt text and textfiled. "];
+@weakify(self, alertView);
+[alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancle handler:^(TYAlertAction *action) {
+    @strongify(self, alertView);
+    NSLog(@"%@-%@", self, alertView);
+}]];
+self.alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert];
+[self presentViewController:alertController animated:YES completion:nil];
+```
+
+> 另外再和你提一个小知识点，当我们在 block 内部直接使用 _variable 时，编译器会给我们警告：`Block implicitly retains self; explicitly mention 'self' to indicate this is intended behavior`。
+>
+> 原因是 block 中直接使用 `_variable` 会导致 block 隐式的强引用 self。Xcode 认为这可能会隐式的导致循环引用，从而给开发者带来困扰，而且如果不仔细看的话真的不太好排查，笔者之前就因为这个循环引用找了半天，还拉上了我导师一起查找原因。所以警告我们要显式的在 block 中使用 self，以达到 block 显式 retain 住 self 的目的。改用 `self->_variable` 或者 `self.variable`。
+> 
+> 你可能会觉得这种困扰没什么，如果你使用 `@weakify` 和 `@strongify` 那确实不会造成循环引用，因为 `@strongify` 声明的变量名就是 self。那如果你使用 `weak typeof(self) weak_self = self;` 和 `strong typeof(weak_self) strong_self = weak_self` 呢？
+
+***
+整理编辑：[反向抽烟](https://blog.csdn.net/opooc)、[师大小海腾](https://juejin.cn/user/782508012091645)
+
+面试解析是新出的模块，我们会按照主题讲解一些高频面试题，本期主题是**属性及属性关键字**。
+
+### 谈属性及属性关键字
+
+#### @property、@synthesize 和 @dynamic
+
+##### @property
+
+属性用于封装对象中数据，属性的本质是 ivar + setter + getter。
+
+可以用 @property 语法来声明属性。@property 会帮我们自动生成属性的 setter 和 getter 方法的声明。
+
+##### @synthesize
+
+帮我们自动生成 setter 和 getter 方法的实现以及 _ivar。
+
+你还可以通过 @synthesize 来指定实例变量名字，如果你不喜欢默认的以下划线开头来命名实例变量的话。但最好还是用默认的，否则影响可读性。
+
+如果不想令编译器合成存取方法，则可以自己实现。如果你只实现了其中一个存取方法 setter or getter，那么另一个还是会由编译器来合成。但是需要注意的是，如果你实现了属性所需的全部方法（如果属性是 readwrite 则需实现 setter and getter，如果是 readonly 则只需实现 getter 方法），那么编译器就不会自动进行 @synthesize，这时候就不会生成该属性的实例变量，需要根据实际情况自己手动 @synthesize 一下。
+
+```objectivec
+@synthesize ivar = _ivar;
+```
+
+##### @dynamic
+
+告诉编译器不用自动进行 @synthesize，你会在运行时再提供这些方法的实现，无需产生警告，但是它不会影响 @property 生成的 setter 和 getter 方法的声明。@dynamic 是 OC 为动态运行时语言的体现。动态运行时语言与编译时语言的区别：动态运行时语言将函数决议推迟到运行时，编译时语言在编译器进行函数决议。
+
+```objectivec
+@dynamic ivar;
+```
+
+以前我们需要手动对每个 @property 添加 @synthesize，而在 iOS 6 之后 LLVM 编译器引入了 `property autosynthesis`，即属性自动合成。换句话说，就是编译器会自动为每个 @property 添加 @synthesize。
+
+那你可能就会问了，@synthesize 现在有什么用呢？
+
+1. 如果我们同时重写了 setter 和 getter 方法，则编译器就不会自动为这个 @property 添加 @synthesize，这时候就不存在 _ivar，所以我们需要手动添加 @synthesize。
+2. 如果该属性是 readonly，那么只要你重写了 getter 方法，`property autosynthesis` 就不会执行，同样的你需要手动添加 @synthesize 如果你需要的话，看你这个属性是要定义为存储属性还是计算属性吧。
+3. 实现协议中要求的属性。
+
+此外需要注意的是，分类当中添加的属性，也不会 `property autosynthesis` 哦。因为类的内存布局在编译的时候会确定，但是分类是在运行时才加载并将数据合并到宿主类中的，所以分类当中不能添加成员变量，只能通过关联对象间接实现分类有成员变量的效果。如果你给分类添加了一个属性，但没有手动给它实现 getter、setter（如果属性是 readonly 则不需要实现）的话，编译器就会给你警告啦 `Property 'ivar' requires method 'ivar'、'setIvar:' to be defined - use @dynamic or provide a method implementation in this category`，编译器已经告诉我们了有两种解决方式来消除警告：
+
+1. 在这个分类当中提供该属性 getter、setter 方法的实现
+2. 使用 @dynamic 告诉编译器 getter、setter 方法的实现在运行时自然会有，您就不用操心了。当然在这里 @dynamic 只是消除了警告而已，如果你没有在运行时动态添加方法实现的话，那么调用该属性的存取方法还是会 Crash。
+
+
+#### 属性修饰符分类
+
+
+分类|属性关键字
+--|--
+原子性|`atomic`、`nonatomic`
+读写权限|`readwrite`、`readonly`
+方法名|`setter`、`getter`
+内存管理|`assign`、`weak`、`unsafe_unretained`、`retain`、`strong`、`copy`
+可空性|(`nullable`、`_Nullable` 、`__nullable`)、<br>(`nonnull`、`_Nonnull`、`__nonnull`)、<br>(`null_unspecified`、`_Null_unspecified` 、`__null_unspecified`)、<br>`null_resettable`
+类属性|`class`
+
+
+##### 原子性
+
+属性关键字|用法
+-- |--
+atomic|原子性（默认），编译器会自动生成互斥锁（以前是自旋锁，后面改为了互斥锁），对 setter 和 getter 方法进行加锁，可以保证属性的赋值和取值的原子性操作是线程安全的，但不包括操作和访问。<br>比如说 atomic 修饰的是一个数组的话，那么我们对数组进行赋值和取值是可以保证线程安全的。但是如果我们对数组进行操作，比如说给数组添加对象或者移除对象，是不在 atomic 的负责范围之内的，所以给被 atomic 修饰的数组添加对象或者移除对象是没办法保证线程安全的。
+nonatomic|非原子性，一般属性都用 nonatomic 进行修饰，因为 atomic 耗时。
+
+##### 读写权限
+
+属性关键字|用法
+--|--
+readwrite|可读可写（默认），同时生成 setter 方法和 getter 方法的声明和实现。
+readonly|只读，只生成 getter 方法的声明和实现。为了达到封装的目的，我们应该只在确有必要时才将属性对外暴露，并且尽量把对外暴露的属性设为 readonly。如果这时候想在对象内部通过 setter 修改属性，可以在类扩展中将属性重新声明为 readwrite；如果仅在对象内部通过 _ivar 修改，则不需要重新声明为 readwrite。
+
+
+##### 方法名
+
+属性关键字|用法
+--|--
+setter|可以指定生成的 setter 方法名，如 setter = setName。这个关键字笔者在给分类添加属性的时候会用得比较多，为了避免分类方法“覆盖”同名的宿主类（或者其它分类）方法的问题，一般我们都会加前缀，比如 bbIvar，但是这样生成的 setter 方法名就不美观了（为 setBbIvar），于是就使用到了 setter 关键字 `@property (nonatomic, strong, setter = bb_setIvar:) NSObject *bbIvar;`
+getter|可以指定生成的 getter 方法名，如 getter = getName。使用示例：`@property (nonatomic, assign, getter = isEnabled) BOOL enabled;`
+
+##### 内存管理
+
+属性关键字|用法
+--|--
+assign|1. 既可以修饰基本数据类型，也可以修饰对象类型；<br>2. setter 方法的实现是直接赋值，一般用于基本数据类型 ；<br>3. 修饰基本数据类型，如 NSInteger、BOOL、int、float 等；<br>4. 修饰对象类型时，不增加其引用计数；<br>5. 会产生悬垂指针（悬垂指针：assign 修饰的对象在被释放之后，指针仍然指向原对象地址，该指针变为悬垂指针。这时候如果继续通过该指针访问原对象的话，就可能导致程序崩溃）。
+weak|1. 只能修饰对象类型；<br>2. ARC 下才能使用；<br>3. 修饰弱引用，不增加对象引用计数，主要可以用于避免循环引用；<br>4. weak 修饰的对象在被释放之后，会自动将指针置为 nil，不会产生悬垂指针；<br>5. 对于视图，通常还是用在 xib 和 storyboard 上；代码中对于有必要进行 remove 的视图也可以使用 weak，这样 remove 之后会自动置为 nil。
+unsafe_unretained|1. 既可以修饰基本数据类型，也可以修饰对象类型；<br>2. MRC 下经常使用，ARC 下基本不用；<br>3. 同 weak，区别就在于 unsafe_unretained 会产生悬垂指针；<br>4. weak 对性能会有一定的消耗，当一个对象 dealloc 时，需要遍历对象的 weak 表，把表里的所有 weak 指针变量值置为 nil，指向对象的 weak 指针越多，性能消耗就越多。所以 unsafe_unretained 比 weak 快。当明确知道对象的生命周期时，选择 unsafe_unretained 会有一些性能提升。比如 A 持有 B 对象，当 A 销毁时 B 也销毁。这样当 B 存在，A 就一定会存在。而 B 又要调用 A 的接口时，B 就可以存储 A 的 unsafe_unretained 指针。虽然这种性能上的提升是很微小的。但当你很清楚这种情况下，unsafe_unretained 也是安全的，自然可以快一点就是一点。而当情况不确定的时候，应该优先选用 weak。
+retain|1. MRC 下使用，ARC 下基本使用 strong；<br>2. 修饰强引用，将指针原来指向的旧对象释放掉，然后指向新对象，同时将新对象的引用计数加 1；<br>3. setter 方法的实现是 release 旧值，retain 新值，用于 OC 对象类型。
+strong|1. ARC 下才能使用；<br>2. 原理同 retain；<br>3. 但是在修饰 block 时，strong 相当于 copy，而 retain 相当于 assign。
+copy|setter 方法的实现是 release 旧值，copy 新值，一般用于 block、NSString、NSArray、NSDictionary 等类型。使用 copy 和 strong 修饰 block 其实都一样，用 copy 是为了和 MRC 下保持一致的写法；用于 NSString、NSArray、NSDictionary 是为了保证赋值后是一个不可变对象，以免遭外部修改而导致不可预期的结果。
+
+
+##### 可空性
+
+[Nullability and Objective-C](https://developer.apple.com/swift/blog/?id=25 "Nullability and Objective-C")
+
+苹果在 Xcode 6.3 引入的一个 Objective-C 的新特性 `nullability annotations`。这些关键字可以用于属性、方法返回值和参数中，来指定对象的可空性，这样编写代码的时候就会智能提示。在 Swift 中可以使用 `?` 和 `!` 来表示一个对象是 `optional` 的还是 `non-optional`，如 `UIView?` 和 `UIView!`。而在 Objective-C 中则没有这一区分，`UIView` 即可表示这个对象是 `optional`，也可表示是 `non-optioanl`。这样就会造成一个问题：在 Swift 与 Objective-C 混编时，Swift 编译器并不知道一个 Objective-C 对象到底是 `optional` 还是 `non-optional`，因此这种情况下编译器会隐式地将 Objective-C 的对象当成是 `non-optional`。引入 `nullability annotations` 一方面为了让 iOS 程序员平滑地从 Objective-C 过渡到 Swift，另一方面也促使开发者在编写 Objective-C 代码时更加规范，减少同事之间的沟通成本。
+
+关键字 `__nullable` 和 `__nonnull` 是苹果在 Xcode 6.3 中发行的。由于与第三方库的潜在冲突，苹果在 Xcode 7 中将它们更改为 `_Nullable` 和 `_Nonnull`。但是，为了与 Xcode 6.3 兼容，苹果预定义了宏 `__nullable` 和 `__nonnull` 来扩展为新名称。同时苹果同样还支持没有下划线的写法 `nullable` 和 `nonnull`，它们的区别在与放置位置不同。
+
+>注意：此类关键词仅仅提供警告，并不会报编译错误。只能用于声明对象类型，不能声明基本数据类型。
+
+属性关键字|用法
+--|--
+nullable、_Nullable 、__nullable|对象可以为空，区别在于放置位置不同
+nonnull、_Nonnull、__nonnull|对象不能为空，区别在于放置位置不同
+null_unspecified、_Null_unspecified 、__null_unspecified|未指定是否可为空，区别在于放置位置不同
+null_resettable|1. getter 方法不能返回为空，setter 方法可以为空；<br>2. 必须重写 setter 或 getter 方法做非空处理。否则会报警告 `Synthesized setter 'setName:' for null_resettable property 'name' does not handle nil`
+
+
+###### 使用效果
+
+```objectivec
+@interface AAPLList : NSObject <NSCoding, NSCopying>
+// ...
+- (AAPLListItem * _Nullable)itemWithName:(NSString * _Nonnull)name;
+@property (copy, readonly) NSArray * _Nonnull allItems;
+// ...
+@end
+
+// --------------
+
+[self.list itemWithName:nil]; // warning!
+```
+
+###### Audited Regions：Nonnull 区域设置
+
+如果每个属性或每个方法都去指定 `nonnull `和 `nullable`，将是一件非常繁琐的事。苹果为了减轻我们的工作量，专门提供了两个宏： `NS_ASSUME_NONNULL_BEGIN` 和 `NS_ASSUME_NONNULL_END`。在这两个宏之间的代码，所有简单指针类型都被假定为 `nonnull`，因此我们只需要去指定那些 `nullable` 指针类型即可。示例代码如下：
+
+```objectivec
+NS_ASSUME_NONNULL_BEGIN
+@interface AAPLList : NSObject <NSCoding, NSCopying>
+// ...
+- (nullable AAPLListItem *)itemWithName:(NSString *)name;
+- (NSInteger)indexOfItem:(AAPLListItem *)item;
+
+@property (copy, nullable) NSString *name;
+@property (copy, readonly) NSArray *allItems;
+// ...
+@end
+NS_ASSUME_NONNULL_END
+
+// --------------
+
+self.list.name = nil;   // okay
+
+AAPLListItem *matchingItem = [self.list itemWithName:nil];  // warning!
+```
+
+###### 笔者的一些经验总结
+
+* 使用好可空性关键字可以让 Objective-C 开发者平滑地过渡到 Swift，而不会被 Swift 可选类型绊倒。
+* 使用好可空性关键字可以让代码更加规范，比如你不应该将一个指定为 nonnull 的属性赋值为 nil。
+* `NS_ASSUME_NONNULL_BEGIN` 和 `NS_ASSUME_NONNULL_END` 只是苹果为了减轻我们的工作量而提供的宏，而不是允许我们忽略可空性关键字。
+* 如果你没有指定属性/方法参数为 nullable 的话，当给该属性赋值/传参 nil 的时候，会得到烦人的警告。
+* 进行混编的时候，如果你没有给一个可为空的属性指定 nullable，就无法进行可选链式调用，因为 Swift 会把它当作非可选类型来处理，而且你还不能强制解包，因为它可能为 nil，这时候你就得加一层保护。
+
+
+##### 类属性 class
+
+属性可以分为实例属性和类属性：
+
+* 实例属性：每个实例都有一套属于自己的属性值，它们之前是相互独立的；
+* 类属性：可以为类本身定义属性，无论创建了多少个该类型的实例，这些属性都只有唯一一份，因为类是单例。
+
+说白了就是实例属性与 instance 关联，类属性与 class 关联。
+
+用处：类属性用于定义某个类型所有实例共享的数据，比如所有实例都能用的一个常量/变量（就像 C 语言中的静态常量/静态变量）。
+
+通过给属性添加 class 关键字来定义`类属性`。
+
+```objectivec
+@property (class, nonatimoc, strong) NSObject *object;
+```
+
+类属性是不会进行 `property autosynthesis` 的，那怎么关联值呢？
+
+* 如果是存储属性
+    1. 在 .m 中定义一个 static 全局变量，然后在 setter 和 getter 方法中对此变量进行操作。
+    2. 在 setter 和 getter 方法中使用关联对象来存储值。笔者之前遇到的一个使用场景就是，类是通过 Runtime 动态创建的，这样就没办法使用 static 全局变量存储值。于是笔者在父类中定义了一个类属性并使用关联对象来存储值，这样动态创建的子类就可以给它的类属性关联值了。
+* 如果是计算属性，就直接实现 setter 和 getter 方法就好。
+
+#### 其它补充
+
+在设置属性所对应的实例变量时，一定要遵从该属性所声明的语义：
+
+```objectivec
+@property (nonatomic, copy) NSString *name;
+
+— (instancetype)initWithName:(NSString *)name {
+    if (self = [super init]) {
+        _name = [name copy];
+    }
+   	return self;
+}
+```
+
+若是自己来实现存取方法，也应该保证其具备相关属性所声明的性质。
+
+参考：[iOS - 再谈 OC 属性及属性关键字](https://juejin.cn/post/6986323251911720997/ "iOS - 再谈 OC 属性及属性关键字")
 

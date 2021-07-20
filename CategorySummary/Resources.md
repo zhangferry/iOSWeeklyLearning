@@ -263,3 +263,41 @@ RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以�
 
 由 [raywenderlich](https://www.raywenderlich.com/whats-new) 创立的 Swift 算法俱乐部，在这里会用 Swift 来解释和实现大部分常见的数据结构和算法，例如栈、队列、快速排序、BFS、KMP 等等，如果按照他的学习路线来学习的话，难度由浅入深，循序渐进，很适合入门选手。另外你也可以自己选择感兴趣的内容来查看，适合想要温习算法和数据结构或者温习 Swift 语法的朋友👍。
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### 从 0 到 1 设计一台计算机
+
+地址：https://www.bilibili.com/video/BV1wi4y157D3
+
+来自 [Ele实验室](https://space.bilibili.com/481434238) 的计算机组成原理课程，该系列视频主要目的是让大家对「计算机是如何工作的」有个较直观的认识，做为深入学习计算机科学的一个启蒙。观看该系列视频最好有一些数字电路和模拟电路的基础知识，Ele 实验室同时也有关于 [数电](https://www.bilibili.com/video/BV1Hi4y1t7zY "Ele实验室 数电") 和 [模电](https://www.bilibili.com/video/BV1774114798 "Ele实验室 模电") 的基础知识介绍供大家参考。
+
+### Git Cheat Sheet 中文版
+
+地址：https://github.com/flyhigher139/Git-Cheat-Sheet
+
+Git Cheat Sheet 让你不用再去记所有的 git 命令！对新手友好，可以用于查阅简单的 git 命令。
+
+### 正则表达式 30 分钟入门教程
+
+地址：https://deerchao.cn/tutorials/regex/regex.htm
+
+30 分钟内让你明白正则表达式是什么，并对它有一些基本的了解。别被那些复杂的表达式吓倒，只要跟着我一步一步来，你会发现正则表达式其实并没有想象中的那么困难。除了作为入门教程之外，本文还试图成为可以在日常工作中使用的正则表达式语法参考手册。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Combine Operators
+
+地址：https://apps.apple.com/app/combine-operators/id1507756027
+
+一个用来学习 Combine 的 App，他将一些 Combine 中的各种操作符用可视化的手段表达了出来，还附加了蠢萌蠢萌的动画效果，很适合刚接触 Combine 的朋友尝试一下。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/co.png)
+
+### Stanford CS193P 2021 SwiftUI 2.0 双语字幕
+
+地址：https://www.bilibili.com/video/BV1q64y1d7x5
+
+Stanford CS193P 2021 SwiftUI 2.0 课程，该课程的老师是 Paul Hegarty，在 Stanford 执教 10 年左右了。该课程创办了很多年，每当 Apple 推出了新技术，例如 Storyboard、SwiftUI，这个白胡子老爷爷就会迅速跟上，更新他的课程，实乃一 it 潮人。你可以去油管 Stanford 官方账号查看该课程，也可以看看 up 主转载的该课程，还上传了中文字幕、英文字幕、繁体字幕的双语版本。理论上来说，你只需要有面向对象编程及 Swift 语言的相关基础和了解，你就可以看懂该课程，适合想要学习 SwiftUI 入门的朋友。
+

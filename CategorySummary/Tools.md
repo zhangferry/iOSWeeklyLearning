@@ -523,9 +523,11 @@ Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户�
 
 ### Cakebrew
 
-地址：https://www.cakebrew.com/
+**地址**：https://www.cakebrew.com/
 
-软件状态：免费，[开源](https://github.com/brunophilipe/Cakebrew)
+**软件状态**：免费，[开源](https://github.com/brunophilipe/Cakebrew)
+
+**软件介绍**：
 
 Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作，对那些不擅长使用命令行的开发来说会是一种苦恼，而且命令行确实不够直观。Cakebrew 是一款桌面端的 Homebrew 管理工具，它包含常用的 Homebrew 功能，并将其可视化，像是已安装工具，可升级工具以及工具库等功能。
 
@@ -537,9 +539,51 @@ Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作
 
 **软件状态**: 收费 ¥98/年 
 
-**软件介绍**
+**软件介绍**：
 
-Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它能够为您储存您在设备上复制您的所有内容，并将其储存在 Paste for Mac 的历史记录中。是您日常生活工作中必不可少的一款软件。
+Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它能够为您储存您在设备上复制的所有内容，并将其储存在 Paste for Mac 的历史记录中。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210703184817.png)
+
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### SnippetsLab
+
+**地址**：http://www.renfei.org/snippets-lab/
+
+**软件状态**：$9.99
+
+**软件介绍**：
+
+一款强大的代码片段管理工具，从此告别手动复制粘贴，SnippetsLab 的设计更符合 Apple 的交互习惯，支持导航栏快速操作。另外还可以同步 Github Gist 内容，使用 iCloud 备份。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210710232333.png)
+
+### CodeExpander
+
+**地址**：https://codeexpander.com/
+
+**软件状态**：普通版免费，高级版付费
+
+**软件介绍**：
+
+专为开发者开发的一个集输入增强、代码片段管理工具，支持跨平台，支持云同步（Github/码云）。免费版包含 90% 左右功能，相对 SnippetsLab 来说其适用范围更广泛，甚至包括一些日常文本的片段处理。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210710231521.png)
+
+
+
+***
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+**地址**： https://github.com/huanxsd/LinkMap
+
+**软件状态**： 免费 
+
+**软件介绍**
+
+iOS 包的大小，是每个开发必须关注的问题，对于大型项目来说，只是代码段就有可能超过 100M，算上 armv7 和 arm64 架构，会超过 200M。 LinkMap 工具通过分析项目的 LinkMap 文件，能够计算出各个类、各个三方库占用的空间大小（代码段+数据段），方便开发者快速定位需要优化的文件。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/linkmap.png)
 
