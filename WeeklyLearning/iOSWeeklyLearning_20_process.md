@@ -69,16 +69,22 @@ immutable 对象|mutableCopy|可变|深拷贝
 
 #### 使用 copy、mutableCopy 对容器对象进行的深浅拷贝是针对容器对象本身的
 
-使用 copy、mutableCopy 对容器对象（Array、Dictionary、Set）进行的深浅拷贝是针对容器对象本身的，对容器中的对象执行的默认都是浅拷贝。也就是说只拷贝容器对象本身，而不复制其中的数据。主要原因是，容器内的对象未必都能拷贝，而且调用者也未必想在拷贝容器时一并拷贝其中的每个对象。
+使用 copy、mutableCopy 对容器对象（Array、Dictionary、Set）进行的深浅拷贝是指对容器对象本身的，对容器中的对象执行的默认都是浅拷贝。也就是说只拷贝容器对象本身，而不复制其中的数据。主要原因是，容器内的对象未必都能拷贝，而且调用者也未必想在拷贝容器时一并拷贝其中的每个对象。
 
 
-如果想要深拷贝容器对象本身的同时，也对容器内容进行 copy 操作，可使用类似以下的方法，但需要注意的是容器中的对象必须都支持 copy 操作。
+如果想要深拷贝容器对象本身的同时，也对容器内容进行 copy 操作，可使用类似以下的方法，flag 传 YES。但需要注意的是容器中的对象必须都符合 NSCopying 协议，否则会导致 Crash。
 
 ```objectivec
-- (instancetype)initWithArray:(NSArray<ObjectType> *)array copyItems:(BOOL)flag;
+NSArray *deepCopyArray = [[NSArray alloc]initWithArray:someArray copyItems:YES];
 ```
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724044027.png)
+但是，如果容器中的对象的 copy 操作是浅拷贝，那么对于容器来说还不是真正意义上的深拷贝。比如，你需要对一个 `NSArray<NSArray *>` 对象进行真正的深拷贝，可以对该容器对象进行`归档`然后`解档`，只要容器中的对象都符合 NSCoding 协议。而且，使用这种方式，无论容器中存储的模型对象嵌套多少层，都可以实现深拷贝，但前提是嵌套的子模型也需要符合 NSCoding 协议才行，否则会导致 Crash。
+
+```objectivec
+NSArray *trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:oldArray]];
+```
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724054744.png)
 
 #### 实现对自定义对象的拷贝
 
@@ -96,7 +102,6 @@ immutable 对象|mutableCopy|可变|深拷贝
 ```
 
 不论赋值过来的是 NSMutableArray 还是 NSArray 对象，进行 copy 操作后都是 NSArray 对象（深拷贝）。由于属性被声明为 NSMutableArray 类型，就不可避免的会有调用方去调用它的添加对象、移除对象等一些方法，此时由于 copy 的结果是 NSArray 对象，所以就会导致 Crash。
-
 
 
 ## 优秀博客
