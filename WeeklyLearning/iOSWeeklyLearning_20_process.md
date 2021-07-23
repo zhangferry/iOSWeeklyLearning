@@ -94,7 +94,7 @@ NSArray *deepCopyArray = [[NSArray alloc] initWithArray:oldArray copyItems:YES];
 NSMutableArray *mArray = deepCopyArray[0]; // deepCopyArray[0] 已经被深拷贝为 NSArray 对象
 [mArray addObject:@""]; // Crash
 ```
-而`归档解档集合`的方式会保留所有级别的可变性，就像以前一样。
+而 `归档解档集合` 的方式会保留所有级别的可变性，就像以前一样。
 
 #### 实现对自定义对象的拷贝
 
