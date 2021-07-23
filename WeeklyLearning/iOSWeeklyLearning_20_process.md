@@ -71,7 +71,7 @@ immutable 对象|mutableCopy|可变|深拷贝
 
 使用 copy、mutableCopy 对集合对象（Array、Dictionary、Set）进行的深浅拷贝是针对集合对象本身的，对集合中的对象执行的默认都是浅拷贝。也就是说只拷贝集合对象本身，而不复制其中的数据。主要原因是，集合内的对象未必都能拷贝，而且调用者也未必想在拷贝集合时一并拷贝其中的每个对象。
 
-如果想要深拷贝集合对象本身的同时，也对集合内容进行 copy 操作，可使用类似以下的方法，flag 传 YES。但需要注意的是集合中的对象必须都符合 NSCopying 协议，否则会导致 Crash。
+如果想要深拷贝集合对象本身的同时，也对集合内容进行 copy 操作，可使用类似以下的方法，copyItems 传 YES。但需要注意的是集合中的对象必须都符合 NSCopying 协议，否则会导致 Crash。
 
 ```objectivec
 NSArray *deepCopyArray = [[NSArray alloc]initWithArray:someArray copyItems:YES];
@@ -86,7 +86,7 @@ NSArray *trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyed
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724054744.png)
 
 
-需要注意的是，使用 initWithArray:copyItems: 并将 flag 传 YES 时，需要注意生成的副本集合对象中的对象（下一个级别）是不可变的，所有更深的级别都具有它们以前的可变性。比如以下代码将 Crash。
+需要注意的是，使用 initWithArray:copyItems: 并将 copyItems 传 YES 时，需要注意生成的副本集合对象中的对象（下一个级别）是不可变的，所有更深的级别都具有它们以前的可变性。比如以下代码将 Crash。
 
 ```objectivec
 NSArray *oldArray = @[@[].mutableCopy];
