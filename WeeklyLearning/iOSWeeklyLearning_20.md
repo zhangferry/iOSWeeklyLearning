@@ -62,7 +62,7 @@
 
 **折线统计图实现思路分析**
 
-折线图基础框架包括Y轴刻度标签、x 轴刻度标签、与 x 轴平行的网格线的间距、网格线的起始点、x 轴长度、y 轴长度，折线图数据内容显示是继承 `FBYLineGraphBaseView` 类进行实现，其中主要包括，X轴最大值、数据内容来实现，核心源码如下：
+折线图基础框架包括 Y 轴刻度标签、x 轴刻度标签、与 x 轴平行的网格线的间距、网格线的起始点、x 轴长度、y 轴长度，折线图数据内容显示是继承 `FBYLineGraphBaseView` 类进行实现，其中主要包括，X 轴最大值、数据内容来实现，核心源码如下：
 
 ```objectivec
 #pragma mark 画折线图
@@ -79,7 +79,7 @@
         
         CGPoint point = CGPointMake(point_X, point_Y);
         
-        // 记录各点的坐标方便后边添加渐变阴影 和 点击层视图 等
+        // 记录各点的坐标方便后边添加 渐变阴影 和 点击层视图 等
         [pointArray addObject:[NSValue valueWithCGPoint:point]];
         
         if (i == 0) {
@@ -101,7 +101,7 @@
 
 **柱状图实现思路分析**
 
-实现柱状图的核心代码是 `FBYBarChartView` 类，基础框架包括文字数组、树值数组、渐变色数组、标注值、间距、滑动、渐变方向。实现核心源码如下:
+实现柱状图的核心代码是 `FBYBarChartView` 类，基础框架包括文字数组、数值数组、渐变色数组、标注值、间距、滑动、渐变方向。实现核心源码如下:
 
 ```objectivec
 - (void)drawLine {
@@ -125,7 +125,7 @@
         _lineWidth = _width - _x;
     }
     
-    //参照线
+    // 参照线
     UIBezierPath *linePath = [UIBezierPath bezierPath];
     
     [linePath moveToPoint:CGPointMake(_x,_y)];
@@ -205,7 +205,7 @@
 
 `reloadDatas` 方法无效，title 没变，数据源没变，移除 layer 的时候还会闪退
 
-解决方案，在 `reloadData` 时，需要将之前缓存的数组数据 `pointArray` 清空，不然数组中保存了上次的数据。
+解决方案：在 `reloadData` 时，需要将之前缓存的数组数据 `pointArray` 清空，不然数组中保存了上次的数据。
 
 
 参考：[码一个高颜值统计图 - 展菲](https://mp.weixin.qq.com/s/pzfzqdh7Tko9mfE_cKWqmg)
@@ -229,8 +229,8 @@
 
 简而言之：
 
-* 深拷贝：内容拷贝，产生新对象，不增加对象引用计数
-* 浅拷贝：指针拷贝，不产生新对象，增加对象引用计数
+* 深拷贝：内容拷贝，产生新对象，不增加被拷贝对象引用计数
+* 浅拷贝：指针拷贝，不产生新对象，增加被拷贝对象引用计数
 * 区别：1. 是否影响了引用计数；2. 是否开辟了新的内存空间
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724043958.png)
@@ -321,7 +321,7 @@ NSMutableArray *mArray = deepCopyArray[0]; // deepCopyArray[0] 已经被深拷�
 2、[今日头条优化实践： iOS 包大小二进制优化，一行代码减少 60 MB 下载大小](https://mp.weixin.qq.com/s/TnqAqpmuXsGFfpcSUqZ9GQ) -- 来自微信公众号：字节跳动技术团队
 
 
-上篇文章的姊妹篇，也是大家比较熟悉的文章了。总而言之段迁移技术效果很明显，但是段迁移会带来一些其他的问题，比如文中提到的日志解析问题。我们在实践过程中也遇到了各种各样的小问题，一些二进制分析工具会失效，需要针对段迁移的ipa做适配。
+上篇文章的姊妹篇，也是大家比较熟悉的文章了。总而言之段迁移技术效果很明显，但是段迁移会带来一些其他的问题，比如文中提到的日志解析问题。我们在实践过程中也遇到了各种各样的小问题，一些二进制分析工具会失效，需要针对段迁移的 ipa 做适配。
 
 3、[基于mach-o+反汇编的无用类检测](https://www.jianshu.com/p/c41ad330e81c "基于mach-o+反汇编的无用类检测") -- 来自简书：皮拉夫大王
 
@@ -336,12 +336,12 @@ NSMutableArray *mArray = deepCopyArray[0]; // deepCopyArray[0] 已经被深拷�
 5、[iOS 优化 - 瘦身](https://mp.weixin.qq.com/s/wDcYvea5dTq0dh0PBwRu4A) -- 来自微信公众号：CoderStar
 
 
-文章详细介绍了APP瘦身的技巧与方案，包括资源和代码层面。对图片压缩与代码的编译选项有深入的解释。方案比较全面，可以通过此文章检查APP瘦身是否还有哪些方案没有应用。
+文章详细介绍了 APP 瘦身的技巧与方案，包括资源和代码层面。对图片压缩与代码的编译选项有深入的解释。方案比较全面，可以通过此文章检查 APP 瘦身是否还有哪些方案没有应用。
 
 6、[科普：为什么iOS的APP比安卓大好几倍？](https://www.jianshu.com/p/6f2adc5aeb9a "科普：为什么iOS的APP比安卓大好几倍？") -- 来自简书：春暖花已开
 
 
-前几篇文章已经将瘦身的技术介绍的比较完善了。接下来通过这篇文章回答下老板们经常会问到的问题：为什么 iOS 的包比安卓的大？是因为 iOS 的技术不如安卓吗？建议 iOS 程序员都看看这个问题，至少可以满足我们自己的好奇心。
+前几篇文章已经将瘦身的技术介绍得比较完善了。接下来通过这篇文章回答下老板们经常会问到的问题：为什么 iOS 的包比安卓的大？是因为 iOS 的技术不如安卓吗？建议 iOS 程序员都看看这个问题，至少可以满足我们自己的好奇心。
 
 
 ## 学习资料
@@ -358,27 +358,31 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 地址：https://draveness.me//books-1
 
-来自 [Draveness](https://draveness.me/) 的程序员书单，这是书单的系列一，后面应该还会有后续的推荐。这次的推荐中推荐了三本「大部头」：SICP、CTMCP 和 DDIA。即使你和小编一样对感觉这些书晦涩难懂（苦笑），并不准备阅读，也可以从 Draveness 的这篇书单推荐中窥探一眼别人的编程世界是什么样的😉。
+来自 [Draveness](https://draveness.me/) 的程序员书单，这是书单的系列一，应该还会有后续的推荐。这次的推荐中推荐了三本「大部头」：SICP、CTMCP 和 DDIA。即使你和小编一样感觉这些书晦涩难懂（苦笑），并不准备阅读，也可以从 Draveness 的这篇书单推荐中窥探一眼别人的编程世界是什么样的😉。
 
 ## 工具推荐
 
 整理编辑：[CoderStar](https://juejin.cn/user/588993964541288/posts)
+
 ### Snipaste
+
 **地址**： https://zh.snipaste.com/
 
-**软件状态**： 普通版免费，专业版收费，有Mac、Windows两个版本
+**软件状态**： 普通版免费，专业版收费，有 Mac、Windows 两个版本
 
-**软件介绍**
+**软件介绍**：
 
-Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！普通版的功能已经足够使用，笔者认为是最好用的截图软件了！（下图是官方图）
+Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！普通版的功能已经足够使用，笔者认为其是最好用的截图软件了！（下图是官方图）
+
 ![Snipaste](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/N3QEb3VA.png)
 
 ### LSUnusedResources
+
 **地址**： https://github.com/tinymind/LSUnusedResources
 
 **软件状态**： 免费
 
-**软件介绍**
+**软件介绍**：
 
 一个 Mac 应用程序，用于在 Xcode 项目中查找未使用的图像和资源，可以辅助我们优化包体积大小。
 
