@@ -224,12 +224,12 @@
 
 拷贝类型|拷贝方式|特点
 --|--|--
-深拷贝|内存拷贝，让目标对象指针和源对象指针指向 `两片` 内容相同的内存空间。|1. 不会增加被拷贝对象的引用计数；<br>2. 产生了一个内存分配，出现了两块内存。
-浅拷贝|指针拷贝，对内存地址的复制，让目标对象指针和源对象指针指向 `同一片` 内存空间。|1. 会增加被拷贝对象的引用计数；<br>2. 没有进行新的内存分配。<br>注意：如果是小对象如 NSString，可能通过 `Tagged Pointer` 来存储，没有引用计数。
+深拷贝|内存拷贝，让副本对象指针和源对象指针指向 `两片` 内容相同的内存空间。|1. 不会增加被拷贝对象的引用计数；<br>2. 产生了一个内存分配，出现了两块内存。
+浅拷贝|指针拷贝，对内存地址的复制，让副本对象指针和源对象指针指向 `同一片` 内存空间。|1. 会增加被拷贝对象的引用计数；<br>2. 没有进行新的内存分配。<br>注意：如果是小对象如 NSString，可能通过 `Tagged Pointer` 来存储，没有引用计数。
 
 简而言之：
 
-* 深拷贝：内容拷贝，产生新对象，不增加被拷贝对象引用计数
+* 深拷贝：内存拷贝，产生新对象，不增加被拷贝对象引用计数
 * 浅拷贝：指针拷贝，不产生新对象，增加被拷贝对象引用计数
 * 区别：1. 是否影响了引用计数；2. 是否开辟了新的内存空间
 
@@ -241,9 +241,9 @@ iOS 提供了 2 个拷贝方法：
 * copy：不可变拷贝，产生不可变副本
 * mutableCopy：可变拷贝，产生可变副本
 
-对 mutable 对象与 immutable 对象 进行 copy 与 mutableCopy 的结果：
+对 mutable 对象与 immutable 对象进行 copy 与 mutableCopy 的结果：
 
-源对象类型|拷贝方式|目标对象类型|拷贝类型（深/浅）
+源对象类型|拷贝方式|副本对象类型|拷贝类型（深/浅）
 :--:|:--:|:--:|:--:
 mutable 对象|copy|不可变|深拷贝
 mutable 对象|mutableCopy|可变|深拷贝
@@ -254,12 +254,12 @@ immutable 对象|mutableCopy|可变|深拷贝
 
 一个记忆技巧就是：对 immutable 对象进行 copy 操作是 `浅拷贝`，其它情况都是 `深拷贝`。
 
-我们还根据拷贝的目的加深理解：
+我们还可以根据拷贝的目的加深理解：
 
-* 对 immutable 对象进行 copy 操作，产生 immutable 对象，因为源对象和目标对象都不可变，所以进行指针拷贝即可，节省内存
+* 对 immutable 对象进行 copy 操作，产生 immutable 对象，因为源对象和副本对象都不可变，所以进行指针拷贝即可，节省内存
 * 对 immutable 对象进行 mutableCopy 操作，产生 mutable 对象，对象类型不同，所以需要深拷贝
 * 对 mutable 对象进行 copy 操作，产生 immutable 对象，对象类型不同，所以需要深拷贝
-* 对 mutable 对象进行 mutableCopy 操作，产生 mutable 对象，为达到修改源对象或目标对象互不影响的目的，需要深拷贝
+* 对 mutable 对象进行 mutableCopy 操作，产生 mutable 对象，为达到修改源对象或副本对象互不影响的目的，需要深拷贝
 
 #### 使用 copy、mutableCopy 对集合对象进行的深浅拷贝是针对集合对象本身的
 
@@ -302,7 +302,9 @@ NSMutableArray *mArray = deepCopyArray[0]; // deepCopyArray[0] 已经被深拷�
 #### 以下代码会出现什么问题？
 
 ```objectivec
+@interface Model : NSObject
 @property (nonatomic, copy) NSMutableArray *array;
+@end
 ```
 
 不论赋值过来的是 NSMutableArray 还是 NSArray 对象，进行 copy 操作后都是 NSArray 对象（深拷贝）。由于属性被声明为 NSMutableArray 类型，就不可避免的会有调用方去调用它的添加对象、移除对象等一些方法，此时由于 copy 的结果是 NSArray 对象，所以就会导致 Crash。
