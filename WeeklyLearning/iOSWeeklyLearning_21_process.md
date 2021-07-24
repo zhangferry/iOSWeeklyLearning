@@ -53,4 +53,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
