@@ -587,3 +587,30 @@ iOS 包的大小，是每个开发必须关注的问题，对于大型项目来�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/linkmap.png)
 
+***
+整理编辑：[CoderStar](https://juejin.cn/user/588993964541288/posts)
+
+### Snipaste
+
+**地址**： https://zh.snipaste.com/
+
+**软件状态**： 普通版免费，专业版收费，有 Mac、Windows 两个版本
+
+**软件介绍**：
+
+Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！普通版的功能已经足够使用，笔者认为其是最好用的截图软件了！（下图是官方图）
+
+![Snipaste](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/N3QEb3VA.png)
+
+### LSUnusedResources
+
+**地址**： https://github.com/tinymind/LSUnusedResources
+
+**软件状态**： 免费
+
+**软件介绍**：
+
+一个 Mac 应用程序，用于在 Xcode 项目中查找未使用的图像和资源，可以辅助我们优化包体积大小。
+
+![LSUnusedResources](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/LSUnusedResourcesExample.png)
+
