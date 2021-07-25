@@ -13,9 +13,9 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：近期的河南洪灾一直牵动人心，较严重的有郑州、新乡、鹤壁等地，其他的一些城市虽然报道不多，但所处形势也很严峻。我的老家河南周口是沙河、颍河、贾鲁河三河的交汇中心，还是重要的泄洪区，为了承接上流的洪水，7 月 21 号周口市防汛等级升级为一级，并进行上游颍河、贾鲁河的引流，截止 7 月 23 号 15 时，两大河流均未出现漫堤、决口现象。
+[@zhangferry](https://zhangferry.com)：近期的河南洪灾一直牵动人心，较严重的有郑州、新乡、鹤壁等地，其他的一些非洪水直接侵犯的城市，所处形势也很严峻，比如承载泄洪重任的下游泄洪地带。泄洪是治理洪水的有效措施，但也有很大的风险，如果决堤，对两岸人民的生命和财产安全都会造成较大威胁，所以泄洪经常伴随着大量的人员撤离、财产损失。这次郑州泄洪的主要地方就有河南周口，为了承接上游颍河、贾鲁河的洪水，21 号周口市防汛等级升级为一级，截止 23 号 15 时，两大河流均未出现漫堤、决口现象。再下游是安徽的界首与阜阳，安徽省位置特殊，这里泄洪上保河南，下保江苏，绝对的舍小家为大家。我是河南周口的，我媳妇是安徽阜阳的，了解到各自家乡的贡献之后我们感到深深的自豪。
 
-另一方面，一方有难八方支援，发生了太多感动人心的事情，为每一个参与到河南抗洪救灾的人员致以最高的敬意。截止目前洪灾还没有完全退去，还不能掉以轻心。以下是我从多处官方新闻报道中总结的一些防洪应对指南，希望对大家有所帮助。
+另一方面，一方有难八方支援，期间发生了太多感动人心的事情，为每一个参与到河南抗洪救灾的人员致以最高的敬意。截止目前洪灾还没有完全退去，还不能掉以轻心。以下是我从多处官方新闻报道中总结的一些防洪应对指南，希望对大家有所帮助。
 
 ### 洪灾前
 
@@ -42,9 +42,9 @@
 * 尽量不要蹚水，如果无法避免，蹚水之后，用清水清洗干净，并检查有无刮伤，如果有伤口，使用碘酒或其他消毒用品对伤口消毒。
 * 灾情过后的室内，先清理、后消毒、再回迁。
 * 如果感觉身体不适，特别是发热、腹泻，应及时就医。
-* 另外就是当前的新冠疫情仍未散去，还需要戴好口罩，避免人群聚集。
+* 当前的新冠疫情仍未散去，还需要戴好口罩，避免人群聚集。
 
-最后的最后，河南加油！
+最后的最后，河南加油，安徽加油！
 
 ## 开发Tips
 
@@ -52,17 +52,23 @@
 
 整理编辑：[FBY展菲](https://github.com/fanbaoying)
 
-**介绍**
+项目开发中有一些需求仅仅通过列表展示是不能满足的，如果通过图表的形式来展示，就可以更快捷的获取到数据变化情况。大部分情况我们都是使用第三方图表工具，现在我们介绍一个手动绘制的简易统计图，目前支持三种类型：**折线统计图**、**柱状图**、**环形图**。
 
-项目开发中有一些需求仅仅通过列表展示是不能满足的，如果通过图表的形式来展示，就可以更快捷的获取到数据变化情况。下面给大家分享三类统计图：**折线统计图**、**柱状图**、**环形图**。
-
-**项目展示**
+**效果展示**
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724193757.png)
 
 **折线统计图实现思路分析**
 
-折线图基础框架包括 Y 轴刻度标签、x 轴刻度标签、与 x 轴平行的网格线的间距、网格线的起始点、x 轴长度、y 轴长度，折线图数据内容显示是继承 `FBYLineGraphBaseView` 类进行实现，其中主要包括，X 轴最大值、数据内容来实现，核心源码如下：
+观察发现折线图包含这几部分：x轴、y轴及其刻度，背景辅助线，代表走势的折线及圆圈拐点，折线下部的整体渐变。
+
+1、x轴、y轴使用 `UIBezierPath` 描绘路径，使用 `CAShapeLayer` 设置颜色及虚线样式，标签使用UILabel表示，需要注意每个标点的间距。
+
+2、背景辅助线及走势线绘制同坐标轴，区别仅在于线段走势和样式稍微不同。
+
+3、渐变方案整体渐变，然后让折线图下部作为 mask 遮罩即可实现。
+
+柱状图和圆饼图设计思路相似，大家可以自行思考，完整代码可查看这里：[FBYDataDisplay-iOS](https://github.com/fanbaoying/FBYDataDisplay-iOS "FBYDataDisplay-iOS")。以下是折线走势的示例代码：
 
 ```objectivec
 #pragma mark 画折线图
@@ -96,108 +102,6 @@
     pAxisLayer.fillColor = [UIColor clearColor].CGColor;
     pAxisLayer.path = pAxisPath.CGPath;
     [self.layer addSublayer:pAxisLayer];
-}
-```
-
-**柱状图实现思路分析**
-
-实现柱状图的核心代码是 `FBYBarChartView` 类，基础框架包括文字数组、数值数组、渐变色数组、标注值、间距、滑动、渐变方向。实现核心源码如下:
-
-```objectivec
-- (void)drawLine {
-    CAShapeLayer *lineLayer= [CAShapeLayer layer];
-    _lineLayer = lineLayer;
-    [lineLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:1.5], nil]];
-    lineLayer.fillColor = [UIColor clearColor].CGColor;
-    lineLayer.lineWidth = 0.5f;
-    lineLayer.strokeColor = [UIColor grayColor].CGColor;
-    _height = self.frame.size.height;
-    _width = self.frame.size.width;
-    _barMargin = 20.0;
-    _lineHeight = _height - 20;
-    if (_type == OrientationHorizontal) {
-        _x = 60;
-        _y = 0;
-        _lineWidth = _width - _x - 20;
-    } else{
-        _x = 40;
-        _y = 20;
-        _lineWidth = _width - _x;
-    }
-    
-    // 参照线
-    UIBezierPath *linePath = [UIBezierPath bezierPath];
-    
-    [linePath moveToPoint:CGPointMake(_x,_y)];
-    [linePath addLineToPoint:CGPointMake(_x + _lineWidth,_y)];
-    [linePath addLineToPoint:CGPointMake(_x + _lineWidth,_lineHeight)];
-    [linePath addLineToPoint:CGPointMake(_x,_lineHeight)];
-    [linePath addLineToPoint:CGPointMake(_x,_y)];
-    if (_type == OrientationHorizontal) {
-        for (int i = 1; i < _markLabelCount; i++) {
-            [linePath moveToPoint:CGPointMake(_x + _lineWidth / _markLabelCount * i, 0)];
-            [linePath addLineToPoint:CGPointMake(_x + _lineWidth / _markLabelCount * i,_lineHeight)];
-        }
-    } else{
-        for (int i = 1; i < _markLabelCount; i++) {
-            [linePath moveToPoint:CGPointMake(_x, (_lineHeight - _y) / _markLabelCount * i +_y)];
-            [linePath addLineToPoint:CGPointMake(_x + _lineWidth,(_lineHeight - _y) / _markLabelCount * i + _y)];
-        }
-    }
-    lineLayer.path = linePath.CGPath;
-    [self.layer addSublayer:lineLayer];
-}
-```
-
-**环形图实现思路分析**
-
-实现环形图的核心代码是 `FBYRingChartView` 类，基础框架包括中心文字、标注值、颜色数组、值数组、图表宽度。实现核心源码如下:
-
-```objectivec
--(void)drawChart {
-    if (_markViewDirection) {
-        CGFloat x = 0;
-        CGFloat y = 0;
-        CGFloat mvWidth = 100;
-        CGFloat mvHeight = 12;
-        CGFloat margin = 0;
-        
-        _mvArray = [NSMutableArray array];
-        for (int i = 0; i < _valueArray.count; i++) {
-            int indexX = i % 2;
-            int indexY = i / 2;
-            
-            if (_markViewDirection == MarkViewDirectionLeft) {
-                margin = (_radius * 2 - 12 * _valueArray.count) / 5;
-                x = _width * 0.75 - _radius - mvWidth - 30;
-                y = (_height - _radius * 2) / 2 + (margin + mvHeight) * i;
-            } else if (_markViewDirection == MarkViewDirectionRight){
-                margin = (_radius * 2 - 12 * _valueArray.count) / 5;
-                x = _width * 0.25 + _radius + 30;
-                y = (_height - _radius * 2) / 2 + (margin + mvHeight) * i;
-            } else if (_markViewDirection == MarkViewDirectionTop){
-                x = indexX == 0 ? _width / 2 - 15 - mvWidth : _width / 2 + 15;
-                y = _height * 0.75 - _radius - 30 - (_valueArray.count / 2) * 12 - (_valueArray.count / 2 - 1) * 10 + indexY * (12 + 10);
-            }  else if (_markViewDirection == MarkViewDirectionBottom){
-                x = indexX == 0 ? _width / 2 - 15 - mvWidth : _width / 2 + 15;
-                y = _height * 0.25 + _radius + 30 + indexY * (12 + 10);
-            }
-        }
-    }
-    
-    [_layerArray enumerateObjectsUsingBlock:^(CAShapeLayer *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CABasicAnimation *ani = [CABasicAnimation animationWithKeyPath : NSStringFromSelector ( @selector (strokeEnd))];
-        ani.fromValue = @0;
-        ani.toValue = @1;
-        ani.duration = 1.0;
-        [obj addAnimation:ani forKey:NSStringFromSelector(@selector(strokeEnd))];
-    }];
-    
-    [_mvArray enumerateObjectsUsingBlock:^(UIView *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [UIView animateWithDuration:1 animations:^{
-            obj.alpha = 1;
-        }];
-    }];
 }
 ```
 
@@ -398,12 +302,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
+[iOS摸鱼周报 第十九期](https://mp.weixin.qq.com/s/dtyozlqCO7PcpyGhx2qB5g)
+
+[iOS摸鱼周报 第十八期](https://mp.weixin.qq.com/s/JsGmu7pzYLI3Svrmk5i2cA)
+
 [iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
 
 [iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
-
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
-
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
