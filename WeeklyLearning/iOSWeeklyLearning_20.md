@@ -118,13 +118,13 @@
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)
 
-面试解析本期主题是**对深浅拷贝的理解**。
+面试解析本期主题是**对深浅拷贝的理解**。文章将从深拷贝和浅拷贝的区别开始讲起，然后讲解在 iOS 中对 mutable 对象与 immutable 对象进行 copy 与 mutableCopy 的结果，以及如何对集合对象进行真正意义上的深拷贝，最后带你实现对自定义对象的深浅拷贝。
 
 ### 对深浅拷贝的理解
 
 我们先要理解拷贝的目的是：产生一个副本对象，跟源对象互不影响。
 
-深拷贝和浅拷贝：
+#### 深拷贝和浅拷贝
 
 拷贝类型|拷贝方式|特点
 --|--|--
@@ -139,6 +139,7 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724043958.png)
 
+#### 在 iOS 中对 mutable 对象与 immutable 对象进行 copy 与 mutableCopy 的结果
 
 iOS 提供了 2 个拷贝方法：
 
@@ -186,15 +187,15 @@ NSArray *trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyed
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724054744.png)
 
 
-需要注意的是，使用 `initWithArray:copyItems:` 并将 copyItems 传 YES 时，需要注意生成的副本集合对象中的对象（下一个级别）是不可变的，所有更深的级别都具有它们以前的可变性。比如以下代码将 Crash。
-
-```objectivec
-NSArray *oldArray = @[@[].mutableCopy];
-NSArray *deepCopyArray = [[NSArray alloc] initWithArray:oldArray copyItems:YES];
-NSMutableArray *mArray = deepCopyArray[0]; // deepCopyArray[0] 已经被深拷贝为 NSArray 对象
-[mArray addObject:@""]; // Crash
-```
-而 `归档解档集合` 的方式会保留所有级别的可变性，就像以前一样。
+>需要注意的是，使用 `initWithArray:copyItems:` 并将 copyItems 传 YES 时，生成的副本集合对象中的对象（下一个级别）是不可变的，所有更深的级别都具有它们以前的可变性。比如以下代码将 Crash。
+>
+>```objectivec
+>NSArray *oldArray = @[@[].mutableCopy];
+>NSArray *deepCopyArray = [[NSArray alloc] initWithArray:oldArray copyItems:YES];
+>NSMutableArray *mArray = deepCopyArray[0]; // deepCopyArray[0] 已经被深拷贝为 NSArray 对象
+>[mArray addObject:@""]; // Crash
+>```
+>而 `归档解档集合` 的方式会保留所有级别的可变性，就像以前一样。
 
 #### 实现对自定义对象的拷贝
 
@@ -214,6 +215,8 @@ NSMutableArray *mArray = deepCopyArray[0]; // deepCopyArray[0] 已经被深拷�
 ```
 
 不论赋值过来的是 NSMutableArray 还是 NSArray 对象，进行 copy 操作后都是 NSArray 对象（深拷贝）。由于属性被声明为 NSMutableArray 类型，就不可避免的会有调用方去调用它的添加对象、移除对象等一些方法，此时由于 copy 的结果是 NSArray 对象，所以就会导致 Crash。
+
+参考：[iOS 面试解析 - 对深浅拷贝的理解](https://juejin.cn/post/6988858119182876680 "iOS 面试解析 - 对深浅拷贝的理解")
 
 ## 优秀博客
 
