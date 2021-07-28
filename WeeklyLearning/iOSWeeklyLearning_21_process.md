@@ -26,7 +26,24 @@
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
+内存优化可以从以下几点入手：
 
+1. 工具分析，可以利用Xcode自带的instruments中的leak、allocation，也可以利用MLeaksFinder等开源工具。找到内存泄漏、内存激增、内存不释放的位置。
+2. 利用mmap，一种低内存的首选方案
+3. 图片优化，经过第一步之后，一定会发现内存激增极有可能与图片相关
+
+
+1、[iOS的文件内存映射——mmap](https://www.jianshu.com/p/516e7ff6f251 "iOS的文件内存映射——mmap") --来自简书：落影loyinglin
+
+mmap一定是低内存方案的首选。文件映射，用于将文件或设备映射到虚拟地址空间中，以使用户可以像操作内存地址一样操作文件或设备，作者介绍了mmap原理并根据官方代码，整理了一个简单的Demo，有兴趣的人还可以阅读下微信的开源仓库：MMKV。
+
+2、[iOS图片加载速度极限优化—FastImageCache解析](http://blog.cnbang.net/tech/2578/ "iOS图片加载速度极限优化—FastImageCache解析") -- 来自博客：bang
+
+在app中，图片在内存中占用比例相对较大，有没有办法优化缓存一些图片到磁盘中呢？答案是：FastImageCache。FastImageCache是Path团队开发的一个开源库，用于提升图片的加载和渲染速度，让基于图片的列表滑动起来更顺畅，来看看它是怎么做的。
+
+3、[Instruments学习之Allocations](https://www.jianshu.com/p/b617f16acb7f "Instruments学习之Allocations") -- 来自简书：Thebloodelves
+
+详细介绍Allocations的使用，为你分析app内存助力。
 
 
 ## 学习资料
