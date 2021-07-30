@@ -137,7 +137,17 @@ mmap一定是低内存方案的首选。文件映射，用于将文件或设备�
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Open Source Society University
 
+地址：https://github.com/ossu/computer-science
+
+这是在 Github 有 92.7k Stars 的计算机科学自学教程。它是根据计算机科学专业本科生的学位要求设计的。这些课程本身是世界上最好的课程之一，通常来自哈佛、普林斯顿、麻省理工学院等。该课程不仅仅是为了职业培训或专业发展，它是为那些希望在所有计算机学科的基本概念方面有一个适当的、全面的基础的人而设的，也是为那些有纪律、意志和（最重要的是！）良好习惯的人而设的，可以使他们通过这种方式靠自己来获得这些知识。
+
+### Swift Programming for macOS
+
+地址：https://gavinw.me/swift-macos/
+
+尽管 iPhone 和 iPad 的 App 都需要 Mac 来进行代码开发，但关于实际创建原生 Mac App 的相关资料在网上很少见到。这个网站囊括了最新版本使用 Swift 和 SwiftUI 来开发 Mac App 的一些简单例子，给想要学习 Mac 开发的开发者提供一个小型的资源库。
 
 ## 工具推荐
 
