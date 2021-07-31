@@ -132,6 +132,17 @@ mmap一定是低内存方案的首选。文件映射，用于将文件或设备�
 
 详细介绍Allocations的使用，为你分析app内存助力。
 
+4、[【基本功】深入剖析Swift性能优化](https://tech.meituan.com/2018/11/01/swift-compile-performance-optimization.html) -- 来自美团技术团队：亚男
+
+
+Swift已经是大势所趋，各个大厂都已经在做尝试和推广，所以内存优化也离不开Swift。本文前半部分介绍了Swift的数据类型的内存分配情况，先了解Swift的内存基本原理才能在日常开发中提前避免问题的发生。
+
+
+5、[Swift内存泄漏详解([weak self]使用场景)](https://www.jianshu.com/p/cb45b5e016ff) -- 来自简书：码农淏
+
+
+本文通过代码的方式列举了Swift中造成内存泄漏的一些情况，比较适合Swift的初学者，文章较短但是比较实用。OC转Swift的同学可以关注下。
+
 
 ## 学习资料
 
