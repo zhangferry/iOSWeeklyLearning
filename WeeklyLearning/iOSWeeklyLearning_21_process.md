@@ -8,7 +8,13 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：这段时间正值东京奥运会，大家对体育赛事的关注度也是空前高涨，我也全程看了一些比赛，像是帆船、跳水，虽然赛事规则都不是很清楚，就全程盯着五星红旗标记的中国队排名，也能感受到比赛的精彩刺激，这或许就是体育运动的魅力吧。
+
+除了金牌我们同样应该关注到那些参加比赛但并未获得很好名次的运动员，像是乒乓球混打，遗憾丢失金牌，刘诗雯情绪失控，给全国球迷道歉；女排状态不佳，小组赛未出线就被淘汰，郎平教练也是泪洒赛场，给球迷道歉。鲁迅先生的《最先与最后》说过：
+
+> 我没看运动会时，常常这样想：优胜者固然可敬，但那虽然落后而仍非跑至终点不止的竞技者，和见了这样竞技者而肃然不笑的看客，乃正是中国将来的脊梁。
+
+体育赛事的魅力还在于拼搏，坚韧不拔，在于一切皆有可能。即使成绩不理想也无需对任何人道歉，媒体更不应该宣传唯金牌论，我们应该给与他们更多的宽容而不是压力。奥运比赛还有一周，为所有参赛的体育健儿加油！
 
 ## 开发Tips
 ### 关于`UserDefaults`你应该这么用
@@ -132,7 +138,6 @@ func test() {
 2. 利用mmap，一种低内存的首选方案
 3. 图片优化，经过第一步之后，一定会发现内存激增极有可能与图片相关
 
-
 1、[iOS的文件内存映射——mmap](https://www.jianshu.com/p/516e7ff6f251 "iOS的文件内存映射——mmap") --来自简书：落影loyinglin
 
 mmap一定是低内存方案的首选。文件映射，用于将文件或设备映射到虚拟地址空间中，以使用户可以像操作内存地址一样操作文件或设备，作者介绍了mmap原理并根据官方代码，整理了一个简单的Demo，有兴趣的人还可以阅读下微信的开源仓库：MMKV。
@@ -145,13 +150,12 @@ mmap一定是低内存方案的首选。文件映射，用于将文件或设备�
 
 详细介绍Allocations的使用，为你分析app内存助力。
 
-4、[【基本功】深入剖析Swift性能优化](https://tech.meituan.com/2018/11/01/swift-compile-performance-optimization.html) -- 来自美团技术团队：亚男
+4、[【基本功】深入剖析Swift性能优化](https://tech.meituan.com/2018/11/01/swift-compile-performance-optimization.html "[基本功]深入剖析Swift性能优化") -- 来自美团技术团队：亚男
 
 
 Swift已经是大势所趋，各个大厂都已经在做尝试和推广，所以内存优化也离不开Swift。本文前半部分介绍了Swift的数据类型的内存分配情况，先了解Swift的内存基本原理才能在日常开发中提前避免问题的发生。
 
-
-5、[Swift内存泄漏详解([weak self]使用场景)](https://www.jianshu.com/p/cb45b5e016ff) -- 来自简书：码农淏
+5、[Swift内存泄漏详解([weak self]使用场景)](https://www.jianshu.com/p/cb45b5e016ff "Swift内存泄漏详解([weak self]使用场景") -- 来自简书：码农淏
 
 
 本文通过代码的方式列举了Swift中造成内存泄漏的一些情况，比较适合Swift的初学者，文章较短但是比较实用。OC转Swift的同学可以关注下。
@@ -176,6 +180,18 @@ Swift已经是大势所趋，各个大厂都已经在做尝试和推广，所以
 ## 工具推荐
 
 整理编辑：[zhangferry](https://zhangferry.com)
+
+### Messier
+
+**地址**：https://messier-app.github.io/
+
+**状态**：免费
+
+**介绍**：
+
+Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，其相对于 AppleTrace 更易用，且能更方便的在越狱设备上Trace任意应用。它由三部分组成：Tweak插件，动态库（Messier.framework），桌面端应用。非越狱场景，我们使用后两个部分可完成对自己应用的耗时监控，输出为 json 文件，再使用 `chrome://tracing` 将 json 文件绘制为火焰图，效果如下：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/messier copy.gif)
 
 ## 关于我们
 
