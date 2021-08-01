@@ -661,3 +661,37 @@ iOS 系统会自动对 GET 请求进行缓存；同时提供了`NSURLCache`支�
 前几篇文章已经将瘦身的技术介绍得比较完善了。接下来通过这篇文章回答下老板们经常会问到的问题：为什么 iOS 的包比安卓的大？是因为 iOS 的技术不如安卓吗？建议 iOS 程序员都看看这个问题，至少可以满足我们自己的好奇心。
 
 
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+
+内存优化可以从以下几点入手：
+
+* 工具分析，可以利用 Xcode 自带的 Instruments 中的 leak、allocation，也可以利用 MLeaksFinder 等开源工具。找到内存泄漏、内存激增、内存不释放的位置。
+
+* 利用 mmap，一种低内存的首选方案。
+
+* 图片优化，经过第一步之后，一定会发现内存激增极有可能与图片相关。
+
+1、[iOS的文件内存映射——mmap](https://www.jianshu.com/p/516e7ff6f251 "iOS的文件内存映射——mmap") --来自简书：落影loyinglin
+
+mmap 一定是低内存方案的首选。文件映射，用于将文件或设备映射到虚拟地址空间中，以使用户可以像操作内存地址一样操作文件或设备，作者介绍了 mmap 原理并根据官方代码，整理了一个简单的 Demo，有兴趣的人还可以阅读下微信的开源仓库：MMKV。
+
+2、[iOS图片加载速度极限优化—FastImageCache解析](http://blog.cnbang.net/tech/2578/ "iOS图片加载速度极限优化—FastImageCache解析") -- 来自博客：bang
+
+在app中，图片在内存中占用比例相对较大，有没有办法优化缓存一些图片到磁盘中呢？答案是：FastImageCache。FastImageCache 是 Path 团队开发的一个开源库，用于提升图片的加载和渲染速度，让基于图片的列表滑动起来更顺畅，来看看它是怎么做的。
+
+3、[Instruments学习之Allocations](https://www.jianshu.com/p/b617f16acb7f "Instruments学习之Allocations") -- 来自简书：Thebloodelves
+
+详细介绍 Allocations 的使用，为你分析 app 内存助力。
+
+4、[【基本功】深入剖析Swift性能优化](https://tech.meituan.com/2018/11/01/swift-compile-performance-optimization.html "[基本功]深入剖析Swift性能优化") -- 来自美团技术团队：亚男
+
+
+Swift 已经是大势所趋，各个大厂都已经在做尝试和推广，所以内存优化也离不开 Swift。本文前半部分介绍了 Swift 的数据类型的内存分配情况，先了解 Swift 的内存基本原理才能在日常开发中提前避免问题的发生。
+
+5、[Swift内存泄漏详解([weak self]使用场景)](https://www.jianshu.com/p/cb45b5e016ff "Swift内存泄漏详解([weak self]使用场景") -- 来自简书：码农淏
+
+
+本文通过代码的方式列举了 Swift 中造成内存泄漏的一些情况，比较适合 Swift 的初学者，文章较短但是比较实用。OC 转 Swift 的同学可以关注下。
+
+

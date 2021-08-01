@@ -19,12 +19,23 @@ def getSourceFile(index):
 def moveFile(source):
     fileName = source.split("/")[-1]
     target = f"{blog_path}/source/_posts/{fileName}"
+    dateStr = ""
     if os.path.exists(target):
         print("you had copy file before")
-    else:
-        shutil.copyfile(source, target)
-        print("move file success")
-    return target
+        titleArray = []
+        with open(target, "r") as fileHandler:
+            for line in fileHandler.readlines():
+                # 遇到第二个 --- 符号就结束读取
+                titleArray.append(line)
+                if "---" in line and len(titleArray) > 1:
+                    break
+        titleArray.append("\n")
+        dateStr = "".join(titleArray)
+
+    shutil.copyfile(source, target)
+    print("move file success")
+    # print(dateStr)
+    return (dateStr, target)
 
 # 拼接标题头
 def assemblyHeadText(title):
@@ -44,55 +55,59 @@ def assemblyHeadText(title):
 
 
 # 修改文件
-def modifyFile(filePath):
+def modifyFile(filePath, titleStr):
     with open(filePath, "r+") as fileHandler:
         lines = fileHandler.readlines()
         
         newContent = []
-        if "#" in lines[0]:
-            print("modidfying target file")
+        if len(titleStr) == 0:
+            print("created new target file")
             title = lines[0].strip("#").strip()
             titleContent = assemblyHeadText(title)
             newContent.append(titleContent)
             print(len(lines))
             # print(lines.count())
-            for index in range(0, len(lines)):
-                if index > 3:
-                    newContent.append(lines[index])
-            # old = filePath.read()
-            print(newContent)
-            fileHandler.seek(0)
-            for newline in newContent:
-                fileHandler.write(newline)
-            # filePath.write(old)
+        else:
+            newContent.append(titleStr)
+        # 内容处理
+        for index in range(0, len(lines)):
+            if index > 3:
+                newContent.append(lines[index])
+        fileHandler.seek(0)
+        for newline in newContent:
+            fileHandler.write(newline)
+
             
 # 运行和发布
-def runAndPublic(isPublic):
+def runAndPublic(status):
     # os.system的执行每次都是开启一个subshell，导致更新执行目录退出来会复原，所以使用复合语句完成所有任务
     # 还可以使用os提供的os.chdir('/home/data')
+    # os.system("python content_category.py")
     os.chdir(f"{blog_path}")
-    if isPublic:
-        os.system(f"hexo g && hexo d")
-    else:
+    if status == 1:
+        os.system("hexo g && hexo s")
+    elif status == 2:
         val = os.system('ls -al')
-        print(val)
-        os.system(f"hexo g && hexo s")
+        # print(val)
+        os.system("hexo g && hexo d")
+    
     
 
 
 parser = argparse.ArgumentParser(description='Input the weekly index')
 parser.add_argument('--index', '-i', type=int, help='Please input the weekly index')
-parser.add_argument('--isPublic', '-isP', type=int, help='you can asign is public, default is 0')
+parser.add_argument('--status', '-status', type=int, required=False, help='you can asign is public, default is 0')
 
 # main
 if __name__ == '__main__':
     args = parser.parse_args()
     index = args.index
-    isPublic = args.isPublic
+    publicStatus = args.status
 
     sourceFile = getSourceFile(index)
     print(sourceFile)
     targetPath = moveFile(sourceFile)
-    print(targetPath)
-    modifyFile(targetPath)
-    runAndPublic(isPublic)
+    # print(targetPath[1])
+    modifyFile(targetPath[1], targetPath[0])
+    runAndPublic(publicStatus)
+    print("run Success!")

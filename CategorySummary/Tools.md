@@ -614,3 +614,18 @@ Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴�
 
 ![LSUnusedResources](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/LSUnusedResourcesExample.png)
 
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### Messier
+
+**地址**：https://messier-app.github.io/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，其相对于 AppleTrace 更易用，且能更方便的在越狱设备上 Trace 任意应用。它由三部分组成：Tweak 插件，动态库（Messier.framework），桌面端应用。非越狱场景，我们使用后两个部分可完成对自己应用的耗时监控，输出为 json 文件，再使用 `chrome://tracing` 将 json 文件绘制为火焰图，效果如下：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/messier-content.gif)
+
