@@ -14,7 +14,25 @@
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
 
+###  `Reachability` 类的实践准则
 
+在网络请求实践中，常见的操作是监听 `Reachability` 的状态或变换来有选择的对网络的可达性进行判断，做出阻止或暂停请求的对应操作。
+
+一直以来，受到监听网络状态这种手段的影响，当用户在执行某些操作时，会根据获取到的用户当前的网络状态，在网络不可达（**NotReachable**）的情况下会**阻止用户发起网络请求**。
+
+直到我看到了 AFNetworking  Issues 中的 [Docs on Reachability contradict Apple's docs](https://github.com/AFNetworking/AFNetworking/issues/2701#issuecomment-99965186) 。
+
+我们不应该使用 `Reachability` 作为网络是否可用的判断，因为在某些情况下，其返回的状态可能不那么准确。
+
+在  AFNetworking 的定义了关于  `Reachability` 的最佳实践：
+
+> Reachability can be used to determine background information about why a network operation failed, or to trigger a network operation retrying when a connection is established. It should not be used to prevent a user from initiating a network request, as it's possible that an initial request may be required to establish reachability.
+
+请我们应该将其用于**网络请求后失败**的背景信息，或者在失败后用于**判断是否应该重试**。不应该用于阻止用户发起网络请求，因为可能需要初始化请求来建立**可达性**。
+
+我们在网络请求中集成的 `Reachability` 应该用在**请求失败后**，无论是作为请求失败的提示，还是利用可达性状态的更改，作为请求重试的条件。
+
+当我们使用 `AFNetworkReachabilityManager` 或者功能相似的 `Reachability` 类时，我们可基于此来获取当前的网络类型，如 4G 还是 WiFi。但是当我们监听到其状态变为不可达时，不应该立即弹出 `Toast` 来告诉用户当前网络不可用，而应该是当请求失败以后判断该状态是否是不可达，如果是，再提示没有网络。并且，如果该接口需要一定的连贯性的话，可以保留当前的请求参数，提示用户等待网络可达时再主动去请求。
 
 ## 面试解析
 
