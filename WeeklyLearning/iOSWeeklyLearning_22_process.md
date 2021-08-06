@@ -26,6 +26,17 @@
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
+1、[iOS进阶--App功耗优化](http://www.cocoachina.com/articles/21428 "iOS进阶--App功耗优化") -- 来自cocoachina：yyuuzhu 
+
+直观上耗电大户主要包括：CPU、设备唤醒、网络、图像、动画、视频、动作传感器、定位、蓝牙。测试工具：Energy Impact、Energy Log，更加具体的信息查看本文。
+
+2、[iOS耗电量和性能优化的全新框架](https://punmy.cn/2019/06/16/wwdc_417_metrics.html "iOS耗电量和性能优化的全新框架") -- 来自博客：Punmy
+
+在 Session 417 中，苹果推出了三项新的电量和性能监测工具，分别用于开发阶段、内测阶段、以及线上阶段。相信通过本文，你会对你的 App 接下去的耗电量和性能优化的方向，有更好的计划。
+
+3、[耗电优化的几点建议](https://lizhaobomb.github.io/2020/03/02/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%9606%20-%20%E8%80%97%E7%94%B5%E4%BC%98%E5%8C%96/ "耗电优化的几点建议") -- 来自博客：Catalog
+
+关于耗电优化的几点实操性的建议。
 
 
 
