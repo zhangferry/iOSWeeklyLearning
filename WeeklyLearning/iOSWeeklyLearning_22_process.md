@@ -26,19 +26,32 @@
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
-1、[iOS进阶--App功耗优化](http://www.cocoachina.com/articles/21428 "iOS进阶--App功耗优化") -- 来自cocoachina：yyuuzhu 
+本期主题：`电量优化`
+
+
+1、[iOS性能优化之耗电检测](https://www.diffit.cn/2020/09/03/EnergyDetection/) -- 来自：杂货铺
+
+文章介绍了耗电量检测的三种方式：Energy impact、Energy Log、sysdiagnose。 每种方案详细介绍了检测步骤。在Energy Log中提到了“当前台三分钟或后台一分钟CPU线程连续占用80%以上就判定为耗电，同时记录耗电线程堆栈供分析”，这对我们日常分析有一定的帮助。
+
+2、[Analyzing Your App’s Battery Use](https://developer.apple.com/documentation/xcode/analyzing-your-app-s-battery-use) -- 来自：Apple
+
+苹果官方提供了一些性能监控的手段，通过Xcode Organizer可以查看24小时的性能数据，包括电量数据。
+
+3、[iOS 性能优化：使用 MetricKit 2.0 收集数据](https://mp.weixin.qq.com/s/cbP0QlxVlr5oeTrf6yYfFw) -- 来自老司机周报：Jerry4me
+
+既然提到了官方的方案就不得不提到MetricKit。本文介绍了什么是MetricKit，如何使用以及iOS 14之后的新的数据指标。另外需要注意的是MetricKit是iOS13之后才支持的，并且并不能搜集全部用户的数据，只有共享 iPhone 分析的用户数据才能被收集。
+
+4、[iOS进阶--App功耗优化](http://www.cocoachina.com/articles/21428 "iOS进阶--App功耗优化") -- 来自cocoachina：yyuuzhu 
 
 直观上耗电大户主要包括：CPU、设备唤醒、网络、图像、动画、视频、动作传感器、定位、蓝牙。测试工具：Energy Impact、Energy Log，更加具体的信息查看本文。
 
-2、[iOS耗电量和性能优化的全新框架](https://punmy.cn/2019/06/16/wwdc_417_metrics.html "iOS耗电量和性能优化的全新框架") -- 来自博客：Punmy
+5、[iOS耗电量和性能优化的全新框架](https://punmy.cn/2019/06/16/wwdc_417_metrics.html "iOS耗电量和性能优化的全新框架") -- 来自博客：Punmy
 
 在 Session 417 中，苹果推出了三项新的电量和性能监测工具，分别用于开发阶段、内测阶段、以及线上阶段。相信通过本文，你会对你的 App 接下去的耗电量和性能优化的方向，有更好的计划。
 
-3、[耗电优化的几点建议](https://lizhaobomb.github.io/2020/03/02/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%9606%20-%20%E8%80%97%E7%94%B5%E4%BC%98%E5%8C%96/ "耗电优化的几点建议") -- 来自博客：Catalog
+6、[耗电优化的几点建议](https://lizhaobomb.github.io/2020/03/02/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%9606%20-%20%E8%80%97%E7%94%B5%E4%BC%98%E5%8C%96/ "耗电优化的几点建议") -- 来自博客：Catalog
 
 关于耗电优化的几点实操性的建议。
-
-
 
 ## 学习资料
 
