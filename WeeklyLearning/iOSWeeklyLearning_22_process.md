@@ -8,7 +8,7 @@
 >
 > Tips：Reachability 的使用建议，SQL 中 JOIN、UNION的含义，如何在项目中区分 AdHoc 和 AppStore 包。
 >
-> 面试解析：
+> 面试解析：本期讲解 **block 类型** 的相关知识点。
 >
 > 优秀博客：如何做电量方面的优化，关于 MetricKit 的使用。
 >
@@ -147,9 +147,80 @@ AppStore包：AppStore + App Store Connect
 
 ## 面试解析
 
-整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)
 
-面试解析是新出的模块，我们会按照主题讲解一些高频面试题，本期主题是**计算机网络**，以下题目均来自真实面试场景。
+本期讲解 **block 类型** 的相关知识点。
+
+### block 类型
+
+block 有 3 种类型：栈块、堆块、全局块，最终都是继承自 NSBlock 类型。
+
+block 类型|描述|环境
+:--:|:--:|:--:
+`__NSGlobalBlock__`<br>（ _NSConcreteGlobalBlock ）|全局 block，保存在数据段|没有访问自动局部变量
+`__NSStackBlock__`<br>（ _NSConcreteStackBlock ）|栈 block，保存在栈区|访问了自动局部变量
+`__NSMallocBlock__`<br>（ _NSConcreteMallocBlock ）|堆 block，保存在堆区|`__NSStackBlock__` 调用了 copy
+
+**1. 栈块**
+
+定义块的时候，其所占的内存区域是分配在栈中的。块只在定义它的那个范围内有效。
+
+```objectivec
+void (^block)(void);
+if ( /* some condition */ ) {
+    block = ^{
+        NSLog(@"Block A");
+    };
+} else {
+    block = ^{
+        NSLog(@"Block B");
+    };
+}
+block();
+```
+
+上面的代码有危险，定义在 if 及 else 中的两个块都分配在栈内存中，当出了 if 及 else 的范围，栈块可能就会被销毁。如果编译器覆写了该块的内存，那么调用该块就会导致程序崩溃。
+
+>若是在 ARC 下，上面 block 会被自动 copy 到堆，所以不会有问题。但在 MRC 下我们要避免这样写。
+
+**2. 堆块**
+
+为了解决以上问题，可以给块对象发送 copy 消息将其从栈拷贝到堆区，堆块可以在定义它的那个范围之外使用。堆块是带引用计数的对象，所以在 MRC 下如果不再使用堆块需要调用 release 进行释放。
+
+```objectivec
+void (^block)(void);
+if ( /* some condition */ ) {
+    block = [^{
+        NSLog(@"Block A");
+    } copy];
+} else {
+    block = [^{
+        NSLog(@"Block B");
+    } copy];
+}
+block();
+[block release];
+```
+
+**3. 全局块**
+
+如果运行块所需的全部信息都能在编译期确定，包括没有访问自动局部变量等，那么该块就是全局块。全局块可以声明在全局内存中，而不需要在每次用到的时候于栈中创建。
+全局块的 copy 操作是空操作，因为全局块决不可能被系统所回收，其实际上相当于单例。
+
+```objectivec
+void (^block)(void) = ^{
+    NSLog(@"This is a block");
+};
+```
+
+**每一种类型的 block 调用 copy 后的结果如下所示：**
+
+block 类型|副本源的配置存储区|复制效果
+:--|:--|:--
+_NSConcreteGlobalBlock|程序的数据段区|什么也不做
+_NSConcreteStackBlock|栈|从栈复制到堆
+_NSConcreteMallocBlock|堆|引用计数增加
+
 
 ## 优秀博客
 
