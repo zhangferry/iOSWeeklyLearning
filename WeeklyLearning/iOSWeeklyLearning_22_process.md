@@ -12,7 +12,7 @@
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638) 、[zhangferry](https://zhangferry.com)
 
 ###  `Reachability` 类的实践准则
 
@@ -33,6 +33,89 @@
 我们在网络请求中集成的 `Reachability` 应该用在**请求失败后**，无论是作为请求失败的提示，还是利用可达性状态的更改，作为请求重试的条件。
 
 当我们使用 `AFNetworkReachabilityManager` 或者功能相似的 `Reachability` 类时，我们可基于此来获取当前的网络类型，如 4G 还是 WiFi。但是当我们监听到其状态变为不可达时，不应该立即弹出 `Toast` 来告诉用户当前网络不可用，而应该是当请求失败以后判断该状态是否是不可达，如果是，再提示没有网络。并且，如果该接口需要一定的连贯性的话，可以保留当前的请求参数，提示用户等待网络可达时再主动去请求。
+
+### SQL 中的 JOIN 和 UNION
+
+JOIN 作用是把多个表的行结合起来，各个表中对应的列有可能数据为空，就出现了多种结合关系：LEFT JOIN、RIGHT JOIN、INNER JOIN、OUTER JOIN。对应到集合的表示，它们会出现如下 7 种表示方法：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807132907.png)
+
+UNION 表示合并多个 SELECT 结果。UNION 默认会合并相同的值，如果想让结果逐条显示的话可以使用 UNION ALL。
+
+有一个场景：三个表：table1、table2、table3，他们共用一个 id，table2 和 table3 为两个端的数据接口完全相同的数据，我现在要以table1 的某几个列为准，去查看对应到 table2 和 table3 与之关联的几个列的数据。SQL 语句如下：
+
+```sql
+select 
+  t1.id
+	t1.column_name1 as name1,
+	t1.column_name2 as name2,
+  t2.column_name3 as name3,
+  t2.column_name4 as name4
+from 
+	(
+	select 
+    id,
+		column_name1,
+     column_name2
+	from 
+		table1_name
+	) t1
+left join 
+	(
+	select 
+		union_table.* 
+	from
+		(
+        select 
+            id,
+            column_name3,
+            column_name4
+        from 
+            table2_name
+        union all 
+        select 
+            id,
+            column_name3,
+            column_name4
+        from 
+            table3_name
+        ) union_table 
+	) t2 on t1.id = t2.id
+```
+
+### 在项目中区分 AppStore/Adhoc 包
+
+在解决这个问题前，我们先要了解开发环境这个概念，看看你的理解和我下面说的是否一致。iOS 的开发环境通常涉及三个维度：项目，开发端服务器，AppStore服务器。
+
+**项目**
+
+即我们的 Xcode 项目，它由 Project 里的 Configuration管理，默认有两个开发环境：Debug、Release。而我们常用的控制开发环境的宏命令如 `DEBUG` 是Xcode帮我们预置的值，它的设置形式为`DEBUG=1`，这里的内容都是可以修改的。
+
+我们新增一个名为 AppStore 的 Configuration，然后给其设置一个宏`APPSTORE=1`，然后将之前的 Release 设置为 `ADHOC=1`，即是为这两个项目环境指定了特定的宏。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807151150.png)
+
+**开发端服务器**
+
+服务器环境由服务端管理，反应到项目里，我们通常将其跟项目环境保持一致。
+
+**AppStore 服务器**
+
+AppStore 的开发环境根据证书形式来定，在最后的封包环节决定，Xcode 将其分为以下四种场景：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807151744.png)
+
+可以看到 Configuration 设置和 封包环节是相互独立的，如果本地有三个 Configuration 的话，我们可导出的包类型数量最多为：3 x 4 = 12 种。所以如果仅仅用开发包和生成环境包描述一个包的类型肯定是不够用的，但全描述又不现实，又因封包环节在编译之后，所以我们没法提前决定包类型，所以就有了约定成俗的一些习惯。
+
+开发包通常指：Debug + Development，
+
+生产环境包通常指：Release + Ad Hoc 或 Release + App Store Conenct
+
+如题目所说，如果我们要区分Ad Hoc 和 AppStore，就需要新增 Configuration：AppStore，这样的话：
+
+Ad Hoc包：Release + Ad Hoc
+
+AppStore包：AppStore + App Store Connect
 
 ## 面试解析
 
@@ -93,18 +176,28 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+### regex101
+
+**地址**：https://regex101.com
+
+一个正则表达式测试和分析网站，不仅可以将匹配结果进行输出，还会逐个分析表达式的含义。我们以摸鱼周报`关于我们`的文案进行测试，我们想匹配出 “iOS 摸鱼周报”（中间有空格），“iOS成长之路”，这两个字符串，测试结果如下：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807164527.png)
+
+观察右侧结果分析，示例中使用的`*?`非贪婪模式和`(?=，)`零宽度正预测先行断言，都有很详细的讲解。所以该网站还可以作为一个很好的学习正则表达式的工具。
+
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第二十一期](https://mp.weixin.qq.com/s/Hcd8CtkyqD8IXM0SbVJo-A)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第二十期](https://mp.weixin.qq.com/s/PjiZzx3VSAfAGHRJs160aQ)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第十九期](https://mp.weixin.qq.com/s/dtyozlqCO7PcpyGhx2qB5g)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第十八期](https://mp.weixin.qq.com/s/JsGmu7pzYLI3Svrmk5i2cA)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
