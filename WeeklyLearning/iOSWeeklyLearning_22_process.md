@@ -4,11 +4,35 @@
 
 ### 本期概要
 
-> 
+> 本期话题：就 iOS 博客环境来说，公众号优于掘金。
+>
+> Tips：Reachability 的使用建议，SQL 中 JOIN、UNION的含义，如何在项目中区分 AdHoc 和 AppStore 包。
+>
+> 面试解析：
+>
+> 优秀博客：如何做电量方面的优化，关于 MetricKit 的使用。
+>
+> 学习资料：布朗大学的学生制作的「看见统计」课程；一个 Github 仓库 Hacker Laws，总结各种定律和法则。
+>
+> 一个帮助学习正则表达式的在线工具：regex101。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：随手截了下掘金最近的作者排行榜，发现排名靠前的作者在前端和Android端都有不少人在弄公众号，而iOS 端却没有；另一个点是前端和 Android 靠前的都有不少大号，而iOS端靠前的都是小号。因为这个排行是根据最近一段时间作者文章活跃度动态变化的，存在一定的偶然性，但较大的差异还是能看出一些端倪。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/juejin_rank.png)
+
+以下是我总结出的几点（仅指掘金平台）：
+
+* iOS 头部（大号）开发活跃度不高，也可能偶然事件了，大号都在蛰伏下一篇。
+* iOS 写作环境不好，这个由来已久了，一直以来都是面试文章为主，一些培训机构甚至都将掘金作为了学员练手的平台，真正分享项目经验、实践的较少。
+* iOS 端作者写作公众号的较少。公众号有个特点是，方便获取收益，收益通常可以反向刺激写作动力，形成良性循环。
+
+整个反应出的就是 iOS 社区不活跃，但真是这样吗？单就前段时间老司机周报组织的 WWDC21 内参来说，参与者就有 200+，社区肯定还是活跃的啊。所以我得出的结论是，**就iOS 博客环境来说，公众号要优于掘金**。公众号没有推荐机制，多数都是口耳相传，所以就有了这次的想法，介绍一些优质的由个人维护的 iOS 开发公众号。
+
+本期介绍的是：Swift社区。
+
+> 做最好的最专业的 Swift 中文社区，希望更多的人学习和使用 Swift。我们会分享以 Swift 实战、SwiftUI、Swift 基础为核心的技术干货，不忘初心，牢记使命。
 
 ## 开发Tips
 
@@ -101,7 +125,7 @@ left join
 
 **AppStore 服务器**
 
-AppStore 的开发环境根据证书形式来定，在最后的封包环节决定，Xcode 将其分为以下四种场景：
+AppStore 的开发环境根据证书形式来定，其决定了 IAP 和推送的使用场景，在最后的封包环节决定，Xcode 将其分为以下四种场景：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807151744.png)
 
@@ -117,6 +141,10 @@ Ad Hoc包：Release + Ad Hoc
 
 AppStore包：AppStore + App Store Connect
 
+这样代码里我们就可以使用我们上面定义的宏对 Ad Hoc 和 AppStore 进行单独配置了。
+
+既然是约定所以他们之间是不存在强关联的，所以推荐使用脚本进行打包，以避免人为导致的错误。
+
 ## 面试解析
 
 整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)
@@ -129,18 +157,17 @@ AppStore包：AppStore + App Store Connect
 
 本期主题：`电量优化`
 
-
-1、[iOS性能优化之耗电检测](https://www.diffit.cn/2020/09/03/EnergyDetection/) -- 来自：杂货铺
+1、[iOS性能优化之耗电检测](https://www.diffit.cn/2020/09/03/EnergyDetection/ "iOS性能优化之耗电检测") -- 来自：杂货铺
 
 文章介绍了耗电量检测的三种方式：Energy impact、Energy Log、sysdiagnose。 每种方案详细介绍了检测步骤。在Energy Log中提到了“当前台三分钟或后台一分钟CPU线程连续占用80%以上就判定为耗电，同时记录耗电线程堆栈供分析”，这对我们日常分析有一定的帮助。
 
-2、[Analyzing Your App’s Battery Use](https://developer.apple.com/documentation/xcode/analyzing-your-app-s-battery-use) -- 来自：Apple
+2、[Analyzing Your App’s Battery Use](https://developer.apple.com/documentation/xcode/analyzing-your-app-s-battery-use "Analyzing Your App's Battery Use") -- 来自：Apple
 
 苹果官方提供了一些性能监控的手段，通过Xcode Organizer可以查看24小时的性能数据，包括电量数据。
 
-3、[iOS 性能优化：使用 MetricKit 2.0 收集数据](https://mp.weixin.qq.com/s/cbP0QlxVlr5oeTrf6yYfFw) -- 来自老司机周报：Jerry4me
+3、[iOS 性能优化：使用 MetricKit 2.0 收集数据](https://mp.weixin.qq.com/s/cbP0QlxVlr5oeTrf6yYfFw "iOS 性能优化：使用 MetricKit 2.0 收集数据") -- 来自老司机周报：Jerry4me
 
-既然提到了官方的方案就不得不提到MetricKit。本文介绍了什么是MetricKit，如何使用以及iOS 14之后的新的数据指标。另外需要注意的是MetricKit是iOS13之后才支持的，并且并不能搜集全部用户的数据，只有共享 iPhone 分析的用户数据才能被收集。
+既然提到了官方的方案就不得不提到 MetricKit。本文介绍了什么是MetricKit，如何使用以及iOS 14之后的新的数据指标。另外需要注意的是MetricKit是iOS13之后才支持的，并且并不能搜集全部用户的数据，只有共享 iPhone 分析的用户数据才能被收集。
 
 4、[iOS进阶--App功耗优化](http://www.cocoachina.com/articles/21428 "iOS进阶--App功耗优化") -- 来自cocoachina：yyuuzhu 
 
