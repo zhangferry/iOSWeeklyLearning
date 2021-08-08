@@ -629,3 +629,16 @@ Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/messier-content.gif)
 
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### regex101
+
+**地址**：https://regex101.com
+
+一个正则表达式测试和分析网站，不仅可以将匹配结果进行输出，还会逐个分析表达式的含义。我们以摸鱼周报`关于我们`的文案进行测试，我们想匹配出 “iOS 摸鱼周报”（中间有空格），“iOS成长之路”，这两个字符串。文案特征为：”iOS“开头，不能紧跟其他字母，以逗号结尾但不包括逗号。测试结果如下：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807164527.png)
+
+观察右侧结果分析，示例中使用的 `*?` 非贪婪模式和 `(?=，)` 零宽度正预测先行断言，都有很详细的讲解。特别是我们拿到别人写好的正则表达式的时候，通过这个网站可以很好的分析每个语句的作用。
+

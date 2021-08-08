@@ -667,18 +667,16 @@ iOS 系统会自动对 GET 请求进行缓存；同时提供了`NSURLCache`支�
 内存优化可以从以下几点入手：
 
 * 工具分析，可以利用 Xcode 自带的 Instruments 中的 leak、allocation，也可以利用 MLeaksFinder 等开源工具。找到内存泄漏、内存激增、内存不释放的位置。
-
 * 利用 mmap，一种低内存的首选方案。
-
 * 图片优化，经过第一步之后，一定会发现内存激增极有可能与图片相关。
 
-1、[iOS的文件内存映射——mmap](https://www.jianshu.com/p/516e7ff6f251 "iOS的文件内存映射——mmap") --来自简书：落影loyinglin
+1、[iOS的文件内存映射——mmap](https://www.jianshu.com/p/516e7ff6f251 "iOS的文件内存映射——mmap") -- 来自简书：落影loyinglin
 
 mmap 一定是低内存方案的首选。文件映射，用于将文件或设备映射到虚拟地址空间中，以使用户可以像操作内存地址一样操作文件或设备，作者介绍了 mmap 原理并根据官方代码，整理了一个简单的 Demo，有兴趣的人还可以阅读下微信的开源仓库：MMKV。
 
 2、[iOS图片加载速度极限优化—FastImageCache解析](http://blog.cnbang.net/tech/2578/ "iOS图片加载速度极限优化—FastImageCache解析") -- 来自博客：bang
 
-在app中，图片在内存中占用比例相对较大，有没有办法优化缓存一些图片到磁盘中呢？答案是：FastImageCache。FastImageCache 是 Path 团队开发的一个开源库，用于提升图片的加载和渲染速度，让基于图片的列表滑动起来更顺畅，来看看它是怎么做的。
+在 app 中，图片在内存中占用比例相对较大，有没有办法优化缓存一些图片到磁盘中呢？答案是：FastImageCache。FastImageCache 是 Path 团队开发的一个开源库，用于提升图片的加载和渲染速度，让基于图片的列表滑动起来更顺畅，来看看它是怎么做的。
 
 3、[Instruments学习之Allocations](https://www.jianshu.com/p/b617f16acb7f "Instruments学习之Allocations") -- 来自简书：Thebloodelves
 
@@ -694,4 +692,33 @@ Swift 已经是大势所趋，各个大厂都已经在做尝试和推广，所�
 
 本文通过代码的方式列举了 Swift 中造成内存泄漏的一些情况，比较适合 Swift 的初学者，文章较短但是比较实用。OC 转 Swift 的同学可以关注下。
 
+
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+
+本期主题：`电量优化`
+
+1、[iOS性能优化之耗电检测](https://www.diffit.cn/2020/09/03/EnergyDetection/ "iOS性能优化之耗电检测") -- 来自：杂货铺
+
+文章介绍了耗电量检测的三种方式：Energy impact、Energy Log、sysdiagnose。 每种方案详细介绍了检测步骤。在 Energy Log 中提到了“当前台三分钟或后台一分钟 CPU 线程连续占用 80% 以上就判定为耗电，同时记录耗电线程堆栈供分析”，这对我们日常分析有一定的帮助。
+
+2、[Analyzing Your App’s Battery Use](https://developer.apple.com/documentation/xcode/analyzing-your-app-s-battery-use "Analyzing Your App's Battery Use") -- 来自：Apple
+
+苹果官方提供了一些性能监控的手段，通过 Xcode Organizer 可以查看 24 小时的性能数据，包括电量数据。
+
+3、[iOS 性能优化：使用 MetricKit 2.0 收集数据](https://mp.weixin.qq.com/s/cbP0QlxVlr5oeTrf6yYfFw "iOS 性能优化：使用 MetricKit 2.0 收集数据") -- 来自老司机周报：Jerry4me
+
+既然提到了官方的方案就不得不提到 MetricKit。本文介绍了什么是 MetricKit，如何使用以及 iOS 14 之后的新的数据指标。另外需要注意的是 MetricKit 是 iOS13 之后才支持的，并且并不能搜集全部用户的数据，只有共享 iPhone 分析的用户数据才能被收集。
+
+4、[iOS进阶--App功耗优化](http://www.cocoachina.com/articles/21428 "iOS进阶--App功耗优化") -- 来自cocoachina：yyuuzhu 
+
+直观上耗电大户主要包括：CPU、设备唤醒、网络、图像、动画、视频、动作传感器、定位、蓝牙。测试工具：Energy Impact、Energy Log，更加具体的信息查看本文。
+
+5、[iOS耗电量和性能优化的全新框架](https://punmy.cn/2019/06/16/wwdc_417_metrics.html "iOS耗电量和性能优化的全新框架") -- 来自博客：Punmy
+
+在 Session 417 中，苹果推出了三项新的电量和性能监测工具，分别用于开发阶段、内测阶段、以及线上阶段。相信通过本文，你会对你的 App 接下去的耗电量和性能优化的方向，有更好的计划。
+
+6、[耗电优化的几点建议](https://lizhaobomb.github.io/2020/03/02/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%9606%20-%20%E8%80%97%E7%94%B5%E4%BC%98%E5%8C%96/ "耗电优化的几点建议") -- 来自博客：Catalog
+
+关于耗电优化的几点实操性的建议。
 

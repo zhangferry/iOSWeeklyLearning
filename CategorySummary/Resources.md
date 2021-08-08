@@ -331,3 +331,20 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 尽管 iPhone 和 iPad 的 App 都需要 Mac 来进行代码开发，但关于实际创建原生 Mac App 的相关资料在网上很少见到。这个网站囊括了最新版本使用 Swift 和 SwiftUI 来开发 Mac App 的一些简单例子，给想要学习 Mac 开发的开发者提供一个小型的资源库。
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Seeing Theory
+
+地址；https://seeing-theory.brown.edu/cn.html
+
+由布朗大学的学生制作的「看见统计」课程，致力于用数据可视化的手段让数理统计概念更容易理解。其中的内容与国内本科的概率论与数理统计内容也大致相仿，且对于中文的本地化支持的非常好。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/%E6%88%AA%E5%B1%8F2021-08-06%20%E4%B8%8B%E5%8D%885.41.41.png)
+
+### Hacker Laws
+
+地址：https://github.com/dwmkerr/hacker-laws
+
+我们常常会说「xx法则」、「xx定律」，如「摩尔定律」等。在 Hacker Laws 这个仓库中，我们可以找到在开发者群体比较有名或者是比较常见的法则和定律。但要注意：这个资源库包含了对一些法则、原则和模式的解释，**但并不提倡任何一种**。它们是否应该被应用在很大程度上取决于你正在做的事情，要根据情况来判断使用与否。
+
