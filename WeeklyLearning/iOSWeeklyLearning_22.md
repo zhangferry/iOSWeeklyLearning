@@ -171,7 +171,7 @@ block 有 3 种类型：栈块、堆块、全局块，最终都是继承自 NSBl
 
 block 类型|描述|环境
 :--:|:--:|:--:
-`__NSGlobalBlock__`<br>（ _NSConcreteGlobalBlock ）|全局 block，保存在数据段|没有访问自动局部变量
+`__NSGlobalBlock__`<br>（ _NSConcreteGlobalBlock ）|全局 block，保存在数据段区（.data 区）|定义在全局区，或者没有访问自动局部变量
 `__NSStackBlock__`<br>（ _NSConcreteStackBlock ）|栈 block，保存在栈区|访问了自动局部变量
 `__NSMallocBlock__`<br>（ _NSConcreteMallocBlock ）|堆 block，保存在堆区|`__NSStackBlock__` 调用了 copy
 
@@ -231,9 +231,11 @@ void (^block)(void) = ^{
 
 block 类型|副本源的配置存储区|复制效果
 :--|:--|:--
-_NSConcreteGlobalBlock|程序的数据段区|什么也不做
+_NSConcreteGlobalBlock|程序的数据段区（.data 区）|什么也不做
 _NSConcreteStackBlock|栈|从栈复制到堆
 _NSConcreteMallocBlock|堆|引用计数增加
+
+参考：[iOS 面试解析｜block 的类型](https://juejin.cn/post/6994082409687810079 "iOS 面试解析｜block 的类型")
 
 
 ## 优秀博客
