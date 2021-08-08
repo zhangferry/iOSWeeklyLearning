@@ -4,21 +4,16 @@
 
 ### 本期概要
 
-> 本期话题：就 iOS 博客环境来说，公众号优于掘金。
->
-> Tips：Reachability 的使用建议，SQL 中 JOIN、UNION的含义，如何在项目中区分 AdHoc 和 AppStore 包。
->
-> 面试解析：本期讲解 **block 类型** 的相关知识点。
->
-> 优秀博客：如何做电量方面的优化，关于 MetricKit 的使用。
->
-> 学习资料：布朗大学的学生制作的「看见统计」课程；一个 Github 仓库 Hacker Laws，总结各种定律和法则。
->
-> 一个帮助学习正则表达式的在线工具：regex101。
+> * 本期话题：就 iOS 博客环境来说，公众号优于掘金。
+> * Tips：Reachability 的使用建议，SQL 中 JOIN、UNION 的含义，如何在项目中区分 AdHoc 和 AppStore 包。
+> * 面试解析：本期讲解 **block 类型** 的相关知识点。
+> * 优秀博客：如何做电量方面的优化，关于 MetricKit 的使用。
+> * 学习资料：布朗大学的学生制作的「看见统计」课程；一个 Github 仓库 Hacker Laws，总结各种定律和法则。
+> * 一个帮助学习正则表达式的在线工具：regex101。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：随手截了下掘金最近的作者排行榜，发现排名靠前的作者在前端和Android端都有不少人在弄公众号，而iOS 端却没有；另一个点是前端和 Android 靠前的都有不少大号，而iOS端靠前的都是小号。因为这个排行是根据最近一段时间作者文章活跃度动态变化的，存在一定的偶然性，但较大的差异还是能看出一些端倪。
+[@zhangferry](https://zhangferry.com)：随手截了下掘金最近的作者排行榜，发现排名靠前的作者在前端和 Android 端都有不少人在弄公众号，而 iOS 端却没有；另一个点是前端和 Android 端靠前的都有不少大号，而 iOS 端靠前的都是小号。因为这个排行是根据最近一段时间作者文章活跃度动态变化的，存在一定的偶然性，但较大的差异还是能看出一些端倪。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/juejin_rank.png)
 
@@ -115,13 +110,13 @@ left join
 
 ### 在项目中区分 AppStore/Adhoc 包
 
-在解决这个问题前，我们先要了解开发环境这个概念，看看你的理解和我下面说的是否一致。iOS 的开发环境通常涉及三个维度：项目，开发端服务器，AppStore服务器。
+在解决这个问题前，我们先要了解开发环境这个概念，看看你的理解和我下面说的是否一致。iOS 的开发环境通常涉及三个维度：项目，开发端服务器，AppStore 服务器。
 
 **项目**
 
-即我们的 Xcode 项目，它由 Project 里的 Configuration管理，默认有两个开发环境：Debug、Release。而我们常用的控制开发环境的宏命令如 `DEBUG` 是Xcode帮我们预置的值，它的设置形式为`DEBUG=1`，这里的内容都是可以修改的。
+即我们的 Xcode 项目，它由 Project 里的 Configuration 管理，默认有两个开发环境：Debug、Release。而我们常用的控制开发环境的宏命令如 `DEBUG` 是 Xcode 帮我们预置的值，它的设置形式为 `DEBUG=1`，这里的内容都是可以修改的。
 
-我们新增一个名为 AppStore 的 Configuration，然后给其设置一个宏`APPSTORE=1`，然后将之前的 Release 设置为 `ADHOC=1`，即是为这两个项目环境指定了特定的宏。
+我们新增一个名为 AppStore 的 Configuration，然后给其设置一个宏 `APPSTORE=1`，然后将之前的 Release 设置为 `ADHOC=1`，即是为这两个项目环境指定了特定的宏。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807151150.png)
 
@@ -135,17 +130,17 @@ AppStore 的开发环境根据证书形式来定，其决定了 IAP 和推送的
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807151744.png)
 
-可以看到 Configuration 设置和 封包环节是相互独立的，如果本地有三个 Configuration 的话，我们可导出的包类型数量最多为：3 x 4 = 12 种。所以如果仅仅用开发包和生成环境包描述一个包的类型肯定是不够用的，但全描述又不现实，又因封包环节在编译之后，所以我们没法提前决定包类型，所以就有了约定成俗的一些习惯。
+可以看到 Configuration 设置和封包环节是相互独立的，如果本地有三个 Configuration 的话，我们可导出的包类型数量最多为：3 x 4 = 12 种。所以如果仅仅用开发包和生成环境包描述一个包的类型肯定是不够用的，但全描述又不现实，又因封包环节在编译之后，所以我们没法提前决定包类型，所以就有了约定成俗的一些习惯。
 
 开发包通常指：Debug + Development，
 
 生产环境包通常指：Release + Ad Hoc 或 Release + App Store Conenct
 
-如题目所说，如果我们要区分Ad Hoc 和 AppStore，就需要新增 Configuration：AppStore，这样的话：
+如题目所说，如果我们要区分 Ad Hoc 和 AppStore，就需要新增 Configuration：AppStore，这样的话：
 
-Ad Hoc包：Release + Ad Hoc
+Ad Hoc 包：Release + Ad Hoc
 
-AppStore包：AppStore + App Store Connect
+AppStore 包：AppStore + App Store Connect
 
 这样代码里我们就可以使用我们上面定义的宏对 Ad Hoc 和 AppStore 进行单独配置了。
 
@@ -236,15 +231,15 @@ _NSConcreteMallocBlock|堆|引用计数增加
 
 1、[iOS性能优化之耗电检测](https://www.diffit.cn/2020/09/03/EnergyDetection/ "iOS性能优化之耗电检测") -- 来自：杂货铺
 
-文章介绍了耗电量检测的三种方式：Energy impact、Energy Log、sysdiagnose。 每种方案详细介绍了检测步骤。在Energy Log中提到了“当前台三分钟或后台一分钟CPU线程连续占用80%以上就判定为耗电，同时记录耗电线程堆栈供分析”，这对我们日常分析有一定的帮助。
+文章介绍了耗电量检测的三种方式：Energy impact、Energy Log、sysdiagnose。 每种方案详细介绍了检测步骤。在 Energy Log 中提到了“当前台三分钟或后台一分钟 CPU 线程连续占用 80% 以上就判定为耗电，同时记录耗电线程堆栈供分析”，这对我们日常分析有一定的帮助。
 
 2、[Analyzing Your App’s Battery Use](https://developer.apple.com/documentation/xcode/analyzing-your-app-s-battery-use "Analyzing Your App's Battery Use") -- 来自：Apple
 
-苹果官方提供了一些性能监控的手段，通过Xcode Organizer可以查看24小时的性能数据，包括电量数据。
+苹果官方提供了一些性能监控的手段，通过 Xcode Organizer 可以查看 24 小时的性能数据，包括电量数据。
 
 3、[iOS 性能优化：使用 MetricKit 2.0 收集数据](https://mp.weixin.qq.com/s/cbP0QlxVlr5oeTrf6yYfFw "iOS 性能优化：使用 MetricKit 2.0 收集数据") -- 来自老司机周报：Jerry4me
 
-既然提到了官方的方案就不得不提到 MetricKit。本文介绍了什么是MetricKit，如何使用以及iOS 14之后的新的数据指标。另外需要注意的是MetricKit是iOS13之后才支持的，并且并不能搜集全部用户的数据，只有共享 iPhone 分析的用户数据才能被收集。
+既然提到了官方的方案就不得不提到 MetricKit。本文介绍了什么是 MetricKit，如何使用以及 iOS 14 之后的新的数据指标。另外需要注意的是 MetricKit 是 iOS13 之后才支持的，并且并不能搜集全部用户的数据，只有共享 iPhone 分析的用户数据才能被收集。
 
 4、[iOS进阶--App功耗优化](http://www.cocoachina.com/articles/21428 "iOS进阶--App功耗优化") -- 来自cocoachina：yyuuzhu 
 
@@ -288,7 +283,7 @@ _NSConcreteMallocBlock|堆|引用计数增加
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807164527.png)
 
-观察右侧结果分析，示例中使用的`*?`非贪婪模式和`(?=，)`零宽度正预测先行断言，都有很详细的讲解。所以该网站还可以作为一个很好的学习正则表达式的工具。
+观察右侧结果分析，示例中使用的 `*?` 非贪婪模式和 `(?=，)` 零宽度正预测先行断言，都有很详细的讲解。所以该网站还可以作为一个很好的学习正则表达式的工具。
 
 ## 关于我们
 
