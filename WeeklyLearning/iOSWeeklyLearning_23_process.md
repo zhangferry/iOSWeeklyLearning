@@ -13,6 +13,117 @@
 ## 开发Tips
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+###  `PrioritySessionElement` 摊平复杂逻辑流程的设计
+
+###### 用来解决什么问题
+
+* 一开始是用来解决工作中运营活动优先级问题，简化逻辑代码，做到高可读，可扩展。
+* 后续慢慢在使用过程中逐渐衍生新的功能（延时，轮询，条件校验等）
+* 当然最大的特点就是把回调地狱展平把核心都放在同一层级
+
+不知道说什么，以代码图示例，为改进之前 代码是这样写的
+```swift
+// 1
+func function0() {
+    obj0.closure { _ in
+        // to do something
+        obj1.closure { _ in
+            // to do something                      
+            obj2.closure { _ in
+                ...
+                objn.closure { _ in
+                       ...
+                }         
+            }             
+        }        
+    }
+}
+
+or
+// 2.
+func function1 {
+    if 满足活动0条件 {
+        // to do something
+    } else if 满足活动1条件 {
+        // to do something
+    } else if 满足活动2条件 {
+        // to do something
+    }
+    ...
+    else {
+        // to do something
+    }
+}
+```
+
+###### 分析上面那种代码我们可以得出几点结论：
+
+* 上面的代码不管怎么看都是按流程来的或者不同的条件走不同的条件流程
+* 可读性与可维护性一般还行，二次修改错误率很高
+* 扩展性一般几乎没有，只会无限增加代码的行数、条件分支以及回调更深层级
+* 如果功能升级增加类似延迟、轮询，那完全不支持。
+* 复用性可以说无
+
+###### 所以就针对问题解决问题：
+
+* 实现一个容器（`Element`）搭载所有外部实现逻辑
+* 容器（`Element`）以单向链表的方式链接，执行完就自动执行下一个
+* 容器内聚合一个抽象条件逻辑助手（`Promise`）,可随意扩展增加行为,用来检查外部实现是否可以执行链表下一个`Element`（可以形象理解为自来水管路的阀门，电路电气开关之类，当然会有更复杂的阀门与电气开关）
+* 自己管理自己的生命周期，无需外部强引用
+* 容器（`Element`）可以被继承实现，参考`NSOperation`设计
+
+###### 详细的设计介绍这里语雀：https://www.yuque.com/runscode/ios-thinking/priority_element
+###### 详细源码请参考，有`OC、Swift、Java`版本的具体实现 欢迎大家指正：https://github.com/RunsCode/PromisePriorityChain
+#### Example
+```swift
+private func head() -> PriorityElement<String, Int> {
+    return PriorityElement(id: "Head") {  (promise: PriorityPromise<String, Int>) in
+        Println("head input : \(promise.input ?? "")")
+        self.delay(1) { promise.next(1) }
+    }.subscribe { i in
+        Println("head subscribe : \(i ?? -1)")
+    }.catch { err in
+        Println("head catch : \(String(describing: err))")
+    }.dispose {
+        Println("head dispose")
+    }
+}
+// This is a minimalist way to create element, 
+// using anonymous closure parameters and initializing default parameters
+private func neck() -> PriorityElement<Int, String> {
+    return PriorityElement {
+        Println("neck input : \($0.input ?? -1)")
+        $0.output = "I am Neck"
+        $0.validated($0.input == 1)
+    }.subscribe { ... }.catch { err in ... }.dispose { ... }
+}
+// This is a recommended way to create element, providing an ID for debugging
+private func lung() -> PriorityElement<String, String> {
+    return PriorityElement(id: "Lung") { 
+        Println("lung input : \($0.input ?? "-1")")
+        self.count += 1
+        //
+        $0.output = "I am Lung"
+        $0.loop(validated: self.count >= 5, t: 1)
+    }.subscribe { ... }.catch { err in ... }.dispose { ... }
+}
+private func heart() -> PriorityElement<String, String> {}
+private func liver() -> PriorityElement<String, String> {}
+private func over() -> PriorityElement<String, String> {}
+... ...
+let head: PriorityElement<String, Int> = self.head()
+head.then(neck())
+    .then(lung())
+    .then(heart())
+    .then(liver())
+    .then(over())
+// nil also default value()
+head.execute()
+```
+
+也许大家看到这里问到一个一股熟悉的`Goolge`开源的`Promises`&`mxcl`的`PromiseKit`或者`RAC`等的味道
+那么为啥不用那些个神的框架来解决实际问题呢？
+主要有一点：框架功能过于丰富复杂，而我呢，弱水三千我只要一瓢，越轻越好的原则！哈哈
 
 
 
