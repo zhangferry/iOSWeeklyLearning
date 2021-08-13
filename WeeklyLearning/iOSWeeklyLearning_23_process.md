@@ -137,6 +137,20 @@ head.execute()
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
+本期主题：`Swift 指针`
+
+1、[Swift 中的指针使用]( https://onevcat.com/2015/01/swift-pointer/  "Swift 中的指针使用") -- 来自：onevcat
+
+swift中指针使用场景并不常见，但是有些时候我们又不得不尝试去使用指针，因此还是需要对swift的指针运用有一定的了解。这篇文章是喵神15年写的，并在2020年做了更新。文章对C指针和swift的指针应用做了映射，对于有一定C指针基础的同学阅读比较友好。
+
+2、[The 5-Minute Guide to C Pointers](https://denniskubes.com/2017/01/24/the-5-minute-guide-to-c-pointers/ "C语言指针5分钟教程") -- 来自：Dennis Kubes
+
+喵神文章中推荐的C语言指针教程，如果对C指针不了解的话，直接切入到swift的指针还是有一定的困难的。
+
+3、[Swift5.1 - 指针Pointer](https://www.jianshu.com/p/8cff1ef20e8c "Swift5.1 - 指针Pointer") -- 来自简书：HChase
+
+这篇文章根据swift的类型给出了多种使用方法，查找用法非常方便。例如malloc之后如何填充字节、如何根据地址创建指针、如何进行类型转换等。如果在开发中需要使用swift的指针，在不熟悉的情况下可以参考文中的小demo。
+
 
 
 
