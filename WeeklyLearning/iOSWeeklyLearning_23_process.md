@@ -389,7 +389,7 @@ emmm 整理的时候发现后面的版本又做了小优化，具体就不展开
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/objc-isa-class-diagram.jpg)
 
-总之，`[instance/class isKindOfClass:[NSObject class]] == YES` 恒成立。
+总之，`[instance/class isKindOfClass:[NSObject class]]` 恒成立。
 
 
 ## 优秀博客
