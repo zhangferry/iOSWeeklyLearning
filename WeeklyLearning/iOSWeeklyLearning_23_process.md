@@ -378,7 +378,7 @@ emmm 整理的时候发现后面的版本又做了小优化，具体就不展开
 }
 ```
 
-可以看到：
+由此我们可以得出结论：
 
 * `isMemberOfClass:` 方法是判断当前 `instance/class` 对象的 `isa` 指向是不是 `class/meta-class` 对象类型；
 * `isKindOfClass:` 方法是判断当前 `instance/class` 对象的 `isa` 指向是不是 `class/meta-class` 对象或者它的子类类型。
