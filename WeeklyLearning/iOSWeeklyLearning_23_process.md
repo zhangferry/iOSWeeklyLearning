@@ -4,24 +4,66 @@
 
 ### 本期概要
 
+> 本期邀请 CoderStar 聊一下他的学习方法。
+>
 > 
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：上周跟[@展菲](https://github.com/fanbaoying) 聊过之后，有了这个跟各位博主进行访谈的想法。博主+访谈，即可以帮大家介绍优秀的开发者，又能利用访谈的形式近距离了解博主，学习他们的思考和学习方法。本期所选问题是一个初步尝试，大家如果有更好的问题，欢迎留言告诉我们。另介绍一篇早期文章：[专访 YYKit 作者 ibireme: 开源大牛是怎样炼成的](https://blog.devtang.com/2015/11/26/yykit-auther-interview/ "专访 YYKit 作者 ibireme: 开源大牛是怎样炼成的")，该文章也是这个想法的来源之一。
+
+本期介绍的博主也是摸鱼周报的一位联合编辑：[CoderStar](https://juejin.cn/user/588993964541288)。
+
+### 博主访谈
+
+zhangferry：简单介绍下自己和自己的公众号吧
+
+> 自己：CoderStar，坐标北京，目前主要工作与iOS相关，对大前端、后端都有一定涉猎，喜欢分享干货博文。
+>
+> 公众号：CoderStar，分享大前端相关的技术知识，只聊技术干货，目前分享的内容主要是iOS相关的，后续还会分享一些Flutter、Vue前端等相关技术知识。目前公众号文章内容均是自己原创，很欢迎大家投稿一些好文章，大家一块进步。
+
+
+zhangferry：为什么有写公众号的打算？写公众号有带来什么好处吗？
+
+> 最开始写公众号的原因其实比较简单，
+>
+> 1、因为过去积累了一些笔记，比较零散，想整理一下；
+>
+> 2、觉得工作经验已经到了一定的阶段，也是时候将知识梳理一遍，打造自己的知识体系了，融会贯通；
+>
+> 3、是想把自己积累的一些技术知识分享出来，大家一起来交流，创造一个好的技术圈子，一个好的技术圈子实在是太重要了。
+
+> 写公众号的好处：
+>
+> 1、写文章不仅能让我对一个知识点理解的更透彻，也增强了我的写作能力，对于技术知识而言，自己理解是一个阶段，深入浅出的写出来又是一个更高的阶段；
+>
+> 2、可以认识很多小伙伴，同行的路上不会孤单，比如和飞哥就是这样认识的。
+
+
+zhangferry：最近在研究什么有趣的东西？是否可以透露下未来几篇文章的规划？
+
+> 最近在做优化方面的事情，未来几篇文章可能会偏向优化系列或者底层相关。
+
+
+zhangferry：如何让自己每周都能抽出时间写博客呢？有没有什么好的学习方法可以分享？
+
+> 我目前更新的频率是一周一篇文章，一般工作日晚上会去看一些本期文章涉及的资料以及做一些代码实践，然后积累一些笔记，在周末时候将笔记进行整理聚合，形成文章，其实这个过程中还是比较累的，毕竟有的时候工作会忙，但是这个事情一定要坚持，给自己一个目标，不能随随便便就断更，毕竟有第一次断更就有第二次。
+>
+> 学习方法：说一点吧，我自己对于技术的态度是实践型+更优解，当看到一些好的文章的时候，会自己将文章里面的原理或者实现自己动手实践一下，考虑这个方法有什么缺点，并围绕这个技术点去思考有没有更好的解决方案，不断地去寻找更优解。
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
-###  `PrioritySessionElement` 摊平复杂逻辑流程的设计
+整理编辑：**[RunsCode](https://github.com/RunsCode)** [zhangferry](https://zhangferry.com)
+###  如何摊平复杂逻辑流程的设计
 
-###### 用来解决什么问题
+开发中我们通常会遇到以下问题：
 
-* 一开始是用来解决工作中运营活动优先级问题，简化逻辑代码，做到高可读，可扩展。
+* 运营活动优先级问题
 * 后续慢慢在使用过程中逐渐衍生新的功能（延时，轮询，条件校验等）
-* 当然最大的特点就是把回调地狱展平把核心都放在同一层级
+* 逐级递增的回调地狱
 
-###### Talk is cheap, show code
+#### Talk is cheap, show code
+
 ```swift
 // 1
 func function0() {
@@ -56,15 +98,15 @@ func function1 {
 }
 ```
 
-###### 分析上面那种代码我们可以得出几点结论：
+分析上面那种代码我们可以得出以下几点结论：
 
-* 上面的代码不管怎么看都是按流程来的或者不同的条件走不同的条件流程
-* 可读性与可维护性一般还行，二次修改错误率很高
-* 扩展性一般几乎没有，只会无限增加代码的行数、条件分支以及回调更深层级
+* 不管怎么看都是按流程或者条件设计的
+* 可读性还行，可维护性较差，二次修改错误率较高
+* 无扩展性，只能不断增加代码的行数、条件分支以及更深层级的回调
 * 如果功能升级增加类似延迟、轮询，那完全不支持
 * 复用性可以说无
 
-###### 所以就针对问题解决问题：
+#### 解决方案
 
 * 实现一个容器`Element`搭载所有外部实现逻辑
 * 容器`Element`以单向链表的方式链接，执行完就自动执行下一个
@@ -72,8 +114,6 @@ func function1 {
 * 自己管理自己的生命周期，无需外部强引用
 * 容器`Element`可以被继承实现，参考`NSOperation`设计
 
-###### 详细的设计介绍这里：https://www.yuque.com/runscode/ios-thinking/priority_element
-###### 详细源码请参考，有`OC、Swift、Java`版本的具体实现 欢迎大家指正：https://github.com/RunsCode/PromisePriorityChain
 #### Example
 ```swift
 private func head() -> PriorityElement<String, Int> {
@@ -110,7 +150,7 @@ private func lung() -> PriorityElement<String, String> {
 private func heart() -> PriorityElement<String, String> {}
 private func liver() -> PriorityElement<String, String> {}
 private func over() -> PriorityElement<String, String> {}
-... ...
+// ... ...
 let head: PriorityElement<String, Int> = self.head()
 head.then(neck())
     .then(lung())
@@ -121,11 +161,143 @@ head.then(neck())
 head.execute()
 ```
 
-也许大家看到这里闻到一个一股熟悉的`Goolge`开源的`Promises`&`mxcl`的`PromiseKit`或者`RAC`等的味道
+也许大家看到这里闻到一个一股熟悉的 Goolge 开源的`Promises`&`mxcl`的`PromiseKit`或者`RAC`等的味道
 那么为啥不用那些个大神的框架来解决实际问题呢？
+
 主要有一点：框架功能过于丰富而复杂，而我呢，弱水三千我只要一瓢，越轻越好的原则！哈哈
 
+这里可以看到[详细的设计介绍](https://www.yuque.com/runscode/ios-thinking/priority_element "PrioritySessionElement设计与使用")，目前有`OC、Swift、Java`三个版本的具体实现，仓库地址：https://github.com/RunsCode/PromisePriorityChain 欢迎大家指正。
 
+### 项目中区分 AppStore/Adhoc 包（二）
+
+上期介绍了一种约定 `Configuration`，自定义预编译宏进行区分 AppStore/Adhoc 包的方法。后来尝试发现还可以通过应用内配置文件（embedded.mobileprovision）和 IAP 收据名区分包类型。
+
+embedded.mobileprovison 仅在非 AppStore 环境存在，而且它里面还有一个参数 `aps-environment` 可以区分证书的类型是 `development` 还是 `production`，这两个值就对应了Development 和AdHoc包。
+
+另外 IAP 在非上架场景都是沙盒环境（上线 AppStoreConnect 的 TestFlight 包也是沙盒环境），是否为支付的沙盒环境我们可以用 `Bundle.main.appStoreReceiptURL?.lastPathComponent` 是否为 `sandboxReceipt` 进行判断。
+
+所以使用上面两项内容我们可以区分：Development、AdHoc、TestFlight、AppStore。
+
+#### 读取 embedded.mobileprovision
+
+在命令行中我们可以利用 `security` 读取：
+
+```bash
+$ security cms -D -i embedded.mobileprovision
+```
+
+在开发阶段读取方式如下：
+
+```swift
+struct MobileProvision: Decodable {
+    var name: String
+    var appIDName: String
+    var platform: [String]
+    var isXcodeManaged: Bool? = false
+    var creationDate: Date
+    var expirationDate: Date
+    var entitlements: Entitlements
+    
+    private enum CodingKeys : String, CodingKey {
+        case name = "Name"
+        case appIDName = "AppIDName"
+        case platform = "Platform"
+        case isXcodeManaged = "IsXcodeManaged"
+        case creationDate = "CreationDate"
+        case expirationDate = "ExpirationDate"
+        case entitlements = "Entitlements"
+    }
+    
+    // Sublevel: decode entitlements informations
+    struct Entitlements: Decodable {
+        let keychainAccessGroups: [String]
+        let getTaskAllow: Bool
+        let apsEnvironment: Environment
+        
+        private enum CodingKeys: String, CodingKey {
+            case keychainAccessGroups = "keychain-access-groups"
+            case getTaskAllow = "get-task-allow"
+            case apsEnvironment = "aps-environment"
+        }
+        // Occasionally there will be a disable
+        enum Environment: String, Decodable {
+            case development, production, disabled
+        }
+    }
+}
+
+class AppEnv {
+    
+    enum AppCertEnv {
+        case devolopment
+        case adhoc
+        case testflight
+        case appstore
+    }
+    
+    var isAppStoreReceiptSandbox: Bool {
+        return Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
+    }
+    
+    var embeddedMobileProvisionFile: URL? {
+        return Bundle.main.url(forResource: "embedded", withExtension: "mobileprovision")
+    }
+    
+    var appCerEnv: AppCertEnv!
+    
+    init() {
+      	// init or other time
+        assemblyEnv()
+    }
+    
+    func assemblyEnv() {
+        if let provision = parseMobileProvision() {
+            switch provision.entitlements.apsEnvironment {
+            case .development, .disabled:
+                appCerEnv = .devolopment
+            case .production:
+                appCerEnv = .adhoc
+            }
+        } else {
+            if isAppStoreReceiptSandbox {
+                appCerEnv = .testflight
+            } else {
+                appCerEnv = .appstore
+            }
+        }
+    }
+    
+    /// ref://gist.github.com/perlmunger/8318538a02166ab4c275789a9feb8992
+    func parseMobileProvision() -> MobileProvision? {
+        guard let file = embeddedMobileProvisionFile,
+              let string = try? String.init(contentsOf: file, encoding: .isoLatin1) else {
+            return nil
+        }
+        
+        // Extract the relevant part of the data string from the start of the opening plist tag to the ending one.
+        let scanner = Scanner.init(string: string)
+        guard scanner.scanUpTo("<plist", into: nil) != false  else {
+            return nil
+        }
+        var extractedPlist: NSString?
+        guard scanner.scanUpTo("</plist>", into: &extractedPlist) != false else {
+            return nil
+        }
+        
+        guard let plist = extractedPlist?.appending("</plist>").data(using: .isoLatin1) else { return nil}
+        
+        let decoder = PropertyListDecoder()
+        do {
+            let provision = try decoder.decode(MobileProvision.self, from: plist)
+            return provision
+        } catch let error {
+            // TODO: log / handle error
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+}
+```
 
 ## 面试解析
 
@@ -164,8 +336,6 @@ swift中指针使用场景并不常见，但是有些时候我们又不得不尝
 
 本文是使用属性包装器的一篇中文教程、可以结合4、5阅读。
 
-
-
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -176,18 +346,32 @@ swift中指针使用场景并不常见，但是有些时候我们又不得不尝
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+### explainshell
+
+**地址**：https://explainshell.com/
+
+这个网站跟上期介绍的 [regex101](https://regex101.com) 很类似，一个用于解析正则表达式，一个用于解析 shell 指令。不常接触shell 的小伙伴对于一个参数巨多，又巨长的指令可能会手足无措，没关系，这个网站来帮你😏。它会把主要命令和各个参数，传值进行详细的拆分讲解。比如这句列出所有包含 `1a1b1c` 这一 commit 的分支：
+
+```bash
+git branch -a -v --no-abbrev --contains 1a1b1c
+```
+
+解析结果：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210814184638.png)
+
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第二十二期](https://mp.weixin.qq.com/s/JI5mlzX9cYhXJS81k1WE6A)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第二十一期](https://mp.weixin.qq.com/s/Hcd8CtkyqD8IXM0SbVJo-A)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第二十期](https://mp.weixin.qq.com/s/PjiZzx3VSAfAGHRJs160aQ)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第十九期](https://mp.weixin.qq.com/s/dtyozlqCO7PcpyGhx2qB5g)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
