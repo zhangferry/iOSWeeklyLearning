@@ -164,7 +164,11 @@ head.then(neck())
 head.execute()
 ```
 
+<<<<<<< HEAD
 也许大家看到这里闻到一股熟悉的 Goolge `Promises`、mxcl 的`PromiseKit` 或者 `RAC` 等味道，那么为啥不用那些个大神的框架来解决实际问题呢？
+=======
+也许大家看到这里闻到一股熟悉的 [Goolge/Promises](https://github.com/google/promises)、[mxcl/PromiseKit](https://github.com/mxcl/PromiseKit) 或者 [RAC](https://github.com/ReactiveCocoa/ReactiveCocoa) 等味道，那么为啥不用这些个大神的框架来解决实际问题呢？
+>>>>>>> docs: modify topic
 
 主要有一点：框架功能过于丰富而复杂，而我呢，弱水三千我只要一瓢，越轻越好的原则！哈哈
 
