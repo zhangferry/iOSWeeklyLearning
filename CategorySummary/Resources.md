@@ -348,3 +348,24 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 我们常常会说「xx法则」、「xx定律」，如「摩尔定律」等。在 Hacker Laws 这个仓库中，我们可以找到在开发者群体比较有名或者是比较常见的法则和定律。但要注意：这个资源库包含了对一些法则、原则和模式的解释，**但并不提倡任何一种**。它们是否应该被应用在很大程度上取决于你正在做的事情，要根据情况来判断使用与否。
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Machine Learning Crash Course from Google
+
+地址：https://developers.google.com/machine-learning/crash-course
+
+来自 Google 的机器学习教程资料，以 TensorFlow APIs 为基础，进行包括视频教学、真实的案例探究和动手实践练习。由于是谷歌支持的项目，你也可以在通过学习之后，去 Kaggle 竞赛获得真实竞赛经验，或者访问 [Learn with Google AI](https://ai.google/education)，探索更完整的培训资源库。
+
+### ML-For-Beginners from Microsoft
+
+地址：https://github.com/microsoft/ML-For-Beginners
+
+来自 Microsoft 的机器学习教程资料。提供了一个为期 12 周、有 24 个课时的关于机器学习的课程。在这个课程中，你将学习经典的机器学习，主要使用 Scikit-learn 作为一个库来接触机器学习。这在我们即将推出的「AI初学者」课程中有所涉及。这些课程也可以与我们即将推出的「数据科学初学者」课程搭配使用。我们将这些经典技术应用于世界上许多地区的一些数据，请与我们一起到世界各地旅行，来边学习边旅行！在 Microsoft 的仓库中你也可以找到其他所有课程。
+
+### turicreate from Apple
+
+地址：https://apple.github.io/turicreate/docs/userguide/
+
+来自 Apple 的 [turicreate](https://github.com/apple/turicreate) 样例模型以及简化模型程序，他并不是学习机器学习的教程，而是给你提供解决任务的方案。你可以使用 turicreate 来训练推荐算法、对象检测、图像分类、图像相似性或活动分类等简单的机器学习模型。通过产生的 `.mlmodel` 模型，可以直接放到工程中使用 Core ML 来轻松使用。
+

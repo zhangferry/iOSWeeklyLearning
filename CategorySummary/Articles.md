@@ -722,3 +722,33 @@ Swift 已经是大势所趋，各个大厂都已经在做尝试和推广，所�
 
 关于耗电优化的几点实操性的建议。
 
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+
+本期主题：`Swift 指针`、`Swift 属性包裹器`
+
+1、[Swift 中的指针使用]( https://onevcat.com/2015/01/swift-pointer/  "Swift 中的指针使用") -- 来自：onevcat
+
+Swift 中指针使用场景并不常见，但是有些时候我们又不得不尝试去使用指针，因此还是需要对 Swift 的指针运用有一定的了解。这篇文章是喵神 15 年写的，并在 2020 年做了更新。文章对 C 指针和 Swift 的指针应用做了映射，对于有一定 C 指针基础的同学阅读比较友好。
+
+2、[The 5-Minute Guide to C Pointers](https://denniskubes.com/2017/01/24/the-5-minute-guide-to-c-pointers/ "C语言指针5分钟教程") -- 来自：Dennis Kubes
+
+喵神文章中推荐的 C 语言指针教程，如果对 C 指针不了解的话，直接切入到 Swift 的指针还是有一定的困难的。
+
+3、[Swift5.1 - 指针Pointer](https://www.jianshu.com/p/8cff1ef20e8c "Swift5.1 - 指针Pointer") -- 来自简书：HChase
+
+这篇文章根据 Swift 的类型给出了多种使用方法，查找用法非常方便。例如 malloc 之后如何填充字节、如何根据地址创建指针、如何进行类型转换等。如果在开发中需要使用 Swift 的指针，在不熟悉的情况下可以参考文中的小 demo。
+
+4、[使用 Property Wrapper 为 Codable 解码设定默认值](https://onevcat.com/2020/11/codable-default/ "使用 Property Wrapper 为 Codable 解码设定默认值
+") -- 来自：onevcat
+
+在 Swift 中，json 转 model 可以使用 Codable，但因为其无法指定可选值的默认属性，在开发的过程中需要更冗余的代码进行解可选操作；onevcat 的这篇文章就利用 Property Wrapper 为 Codable 解码设定了默认值。此外我将其总结成了一个文件 [SSCodableDefault.swift](https://github.com/Tliens/SpeedySwift/blob/master/Example/SpeedySwift/SSCodableDefault.swift)，欢迎大家使用。
+
+5、[What is a Property Wrapper in Swift](https://sarunw.com/posts/what-is-property-wrappers-in-swift/#custom-logic-over-swift-properties "What is a Property Wrapper in Swift") -- 来自：sarunw
+
+属性包装器是一种包装属性以添加额外逻辑的新类型。作者先抛出问题，分析属性包装器出现之前如何对属性进行包装以及他遇到的问题，然后来利用属性包装器对属性进行逻辑包装，比较了二种方式的区别，简述了属性包装器的好处。
+
+6、[Swift 5 属性包装器Property Wrappers完整指南](https://juejin.cn/post/6844904018121064456 "Swift 5 属性包装器Property Wrappers完整指南") -- 来自掘金：乐Coding
+
+本文是使用属性包装器的一篇中文教程、可以结合 4、5 阅读。
+

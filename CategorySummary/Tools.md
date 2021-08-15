@@ -640,5 +640,22 @@ Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807164527.png)
 
-观察右侧结果分析，示例中使用的 `*?` 非贪婪模式和 `(?=，)` 零宽度正预测先行断言，都有很详细的讲解。特别是我们拿到别人写好的正则表达式的时候，通过这个网站可以很好的分析每个语句的作用。
+观察右侧结果分析，示例中使用的 `*?` 非贪婪模式和 `(?=，)` 零宽度正预测先行断言，都有很详细的讲解。这对于我们理解他人写的正则表达式能起到很好的帮助作用。
+
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### explainshell
+
+**地址**：https://explainshell.com/
+
+这个网站跟上期介绍的 [regex101](https://regex101.com) 很类似，一个用于解析正则表达式，一个用于解析 shell 指令。不常接触 shell 的小伙伴对于一个参数巨多，又巨长的指令可能会手足无措，没关系，这个网站来帮你😏。它会把主要命令和各个参数，传值进行详细的拆分讲解。比如这句列出所有包含 `1a1b1c` 这一 commit 的分支：
+
+```bash
+git branch -a -v --no-abbrev --contains 1a1b1c
+```
+
+解析结果：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210814184638.png)
 
