@@ -4,16 +4,16 @@
 
 ### 本期概要
 
-> * 本期邀请 CoderStar 聊一下他的学习方法。
-> * 简版 PromiseKit 的设计思路；如何通过配置文件区分 AdHoc/AppStore。
-> * `isMemberOfClass`、 `isKindOfClass` 的含义与区别。
-> * 博客部分整理了Swift 指针、Swift 属性包裹器的几篇文章。
-> * 学习资料：
-> * 一个帮助解析 Shell 脚本的网站：explainshell。
+> * 话题：本期邀请 CoderStar 聊一下他的学习方法。
+> * Tips：简版 PromiseKit 的设计思路；如何通过配置文件区分 AdHoc/AppStore。
+> * 面试模块：isMemberOfClass、 isKindOfClass 的含义与区别。
+> * 优秀博客：整理了Swift 指针、Swift 属性包裹器的几篇文章。
+> * 学习资料：介绍三个机器学习的网站。
+> * 开发工具：帮助解析 Shell 脚本的网站：explainshell。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：上周跟 [@展菲](https://github.com/fanbaoying) 聊过之后，有了这个跟各位博主进行访谈的想法。博主+访谈，即可以帮大家介绍优秀的开发者，又能利用访谈的形式近距离了解博主，学习他们的思考和学习方法。本期所选问题是一个初步尝试，大家如果有更好的问题，欢迎留言告诉我们。
+[@zhangferry](https://zhangferry.com)：上周跟 [@展菲](https://github.com/fanbaoying) 聊过之后，有了访谈各位博主的想法。博主 + 访谈，一方面可以给大家介绍优秀的开发者，另一方面访谈的形式方便近距离了解博主，学习他们思考和学习的方法。本期所选问题是一个初步尝试，大家如果有更好的问题，欢迎留言告诉我们。
 
 本期介绍的博主也是摸鱼周报的一位联合编辑：[CoderStar](https://juejin.cn/user/588993964541288)。
 
@@ -21,7 +21,7 @@
 
 zhangferry：简单介绍下自己和自己的公众号吧
 
-> 自己：CoderStar，坐标北京，目前主要工作与 iOS 相关，对大前端、后端都有一定涉猎，喜欢分享干货博文。
+> 我是 CoderStar，坐标北京，目前主要工作与 iOS 相关，对大前端、后端都有一定涉猎，喜欢分享干货博文。
 >
 > 公众号：CoderStar，分享大前端相关的技术知识，只聊技术干货，目前分享的内容主要是 iOS 相关的，后续还会分享一些 Flutter、Vue 前端等相关技术知识。目前公众号文章内容均是自己原创，很欢迎大家投稿一些好文章，大家一块进步。
 

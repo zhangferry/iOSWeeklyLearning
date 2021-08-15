@@ -85,7 +85,7 @@ def runAndPublic(status):
     # os.system("python content_category.py")
     os.chdir(f"{blog_path}")
     if status == 1:
-        os.system("hexo g && hexo s")
+        os.system("hexo g && hexo s -p 4001")
     elif status == 2:
         val = os.system('ls -al')
         # print(val)
