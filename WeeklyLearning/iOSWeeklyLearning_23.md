@@ -4,21 +4,16 @@
 
 ### 本期概要
 
-> 本期邀请 CoderStar 聊一下他的学习方法。
->
-> 简版 PromiseKit 的设计思路；如何通过配置文件区分 AdHoc/AppStore。
->
-> `isMemberOfClass`、 `isKindOfClass` 的含义与区别。
->
-> 博客部分整理了Swift 指针、Swift 属性包裹器的几篇文章。
->
-> 学习资料：
->
-> 一个帮助解析 Shell 脚本的网站：explainshell。
+> * 本期邀请 CoderStar 聊一下他的学习方法。
+> * 简版 PromiseKit 的设计思路；如何通过配置文件区分 AdHoc/AppStore。
+> * `isMemberOfClass`、 `isKindOfClass` 的含义与区别。
+> * 博客部分整理了Swift 指针、Swift 属性包裹器的几篇文章。
+> * 学习资料：
+> * 一个帮助解析 Shell 脚本的网站：explainshell。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：上周跟[@展菲](https://github.com/fanbaoying) 聊过之后，有了这个跟各位博主进行访谈的想法。博主+访谈，即可以帮大家介绍优秀的开发者，又能利用访谈的形式近距离了解博主，学习他们的思考和学习方法。本期所选问题是一个初步尝试，大家如果有更好的问题，欢迎留言告诉我们。
+[@zhangferry](https://zhangferry.com)：上周跟 [@展菲](https://github.com/fanbaoying) 聊过之后，有了这个跟各位博主进行访谈的想法。博主+访谈，即可以帮大家介绍优秀的开发者，又能利用访谈的形式近距离了解博主，学习他们的思考和学习方法。本期所选问题是一个初步尝试，大家如果有更好的问题，欢迎留言告诉我们。
 
 本期介绍的博主也是摸鱼周报的一位联合编辑：[CoderStar](https://juejin.cn/user/588993964541288)。
 
@@ -26,9 +21,9 @@
 
 zhangferry：简单介绍下自己和自己的公众号吧
 
-> 自己：CoderStar，坐标北京，目前主要工作与iOS相关，对大前端、后端都有一定涉猎，喜欢分享干货博文。
+> 自己：CoderStar，坐标北京，目前主要工作与 iOS 相关，对大前端、后端都有一定涉猎，喜欢分享干货博文。
 >
-> 公众号：CoderStar，分享大前端相关的技术知识，只聊技术干货，目前分享的内容主要是iOS相关的，后续还会分享一些Flutter、Vue前端等相关技术知识。目前公众号文章内容均是自己原创，很欢迎大家投稿一些好文章，大家一块进步。
+> 公众号：CoderStar，分享大前端相关的技术知识，只聊技术干货，目前分享的内容主要是 iOS 相关的，后续还会分享一些 Flutter、Vue 前端等相关技术知识。目前公众号文章内容均是自己原创，很欢迎大家投稿一些好文章，大家一块进步。
 
 
 zhangferry：为什么有写公众号的打算？写公众号有带来什么好处吗？
@@ -109,18 +104,18 @@ func function1 {
 分析上面那种代码我们可以得出以下几点结论：
 
 * 不管怎么看都是按流程或者条件设计的
-* 可读性还行，可维护性较差，二次修改错误率较高
+* 可读性还行，但可维护性较差，二次修改错误率较高
 * 无扩展性，只能不断增加代码的行数、条件分支以及更深层级的回调
 * 如果功能升级增加类似延迟、轮询，那完全不支持
 * 复用性可以说无
 
 #### 解决方案
 
-* 实现一个容器`Element`搭载所有外部实现逻辑
-* 容器`Element`以单向链表的方式链接，执行完就自动执行下一个
-* 容器内聚合一个抽象条件逻辑助手`Promise`，可随意扩展增加行为，用来检查外部实现是否可以执行链表下一个`Element`（可以形象理解为自来水管路的阀门，电路电气开关之类，当然会有更复杂的阀门与电气开关）
+* 实现一个容器 `Element` 搭载所有外部实现逻辑
+* 容器 `Element` 以单向链表的方式链接，执行完就自动执行下一个
+* 容器内聚合一个抽象条件逻辑助手 `Promise`，可随意扩展增加行为，用来检查外部实现是否可以执行链表下一个 `Element`（可以形象理解为自来水管路的阀门，电路电气开关之类，当然会有更复杂的阀门与电气开关）
 * 自己管理自己的生命周期，无需外部强引用
-* 容器`Element`可以被继承实现，参考`NSOperation`设计
+* 容器 `Element` 可以被继承实现，参考 `NSOperation` 设计
 
 #### Example
 ```swift
@@ -169,17 +164,17 @@ head.then(neck())
 head.execute()
 ```
 
-也许大家看到这里闻到一股熟悉的 Goolge `Promises`、mxcl的`PromiseKit`或者`RAC`等味道，那么为啥不用那些个大神的框架来解决实际问题呢？
+也许大家看到这里闻到一股熟悉的 Goolge `Promises`、mxcl 的`PromiseKit` 或者 `RAC` 等味道，那么为啥不用那些个大神的框架来解决实际问题呢？
 
 主要有一点：框架功能过于丰富而复杂，而我呢，弱水三千我只要一瓢，越轻越好的原则！哈哈
 
-这里可以看到[详细的设计介绍](https://www.yuque.com/runscode/ios-thinking/priority_element "PrioritySessionElement设计与使用")，目前有`OC、Swift、Java`三个版本的具体实现。仓库地址：https://github.com/RunsCode/PromisePriorityChain 欢迎大家指正。
+这里可以看到[详细的设计介绍](https://www.yuque.com/runscode/ios-thinking/priority_element "PrioritySessionElement设计与使用")，目前有 `OC、Swift、Java` 三个版本的具体实现。仓库地址：https://github.com/RunsCode/PromisePriorityChain 欢迎大家指正。
 
 ### 项目中区分 AppStore/Adhoc 包（二）
 
 上期介绍了一种约定 `Configuration`，自定义预编译宏进行区分 AppStore/Adhoc 包的方法。后来尝试发现还可以通过应用内配置文件（embedded.mobileprovision）和 IAP 收据名区分包类型。
 
-embedded.mobileprovison 仅在非 AppStore 环境存在，而且它里面还有一个参数 `aps-environment` 可以区分证书的类型是 `development` 还是 `production`，这两个值就对应了Development 和AdHoc包。
+embedded.mobileprovison 仅在非 AppStore 环境存在，而且它里面还有一个参数 `aps-environment` 可以区分证书的类型是 `development` 还是 `production`，这两个值就对应了 Development 和 AdHoc 包。
 
 另外 IAP 在非上架场景都是沙盒环境（上线 AppStoreConnect 的 TestFlight 包也是沙盒环境），是否为支付的沙盒环境我们可以用 `Bundle.main.appStoreReceiptURL?.lastPathComponent` 是否为 `sandboxReceipt` 进行判断。
 
@@ -396,7 +391,7 @@ emmm 整理的时候发现后面的版本又做了小优化，具体就不展开
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/objc-isa-class-diagram.jpg)
 
-总之，`[instance/class isKindOfClass:[NSObject class]]` 恒成立。
+总之，`[instance/class isKindOfClass:[NSObject class]]` 恒成立。（严谨点，需要是 NSObject 及其子类类型）
 
 
 ## 优秀博客
@@ -407,28 +402,28 @@ emmm 整理的时候发现后面的版本又做了小优化，具体就不展开
 
 1、[Swift 中的指针使用]( https://onevcat.com/2015/01/swift-pointer/  "Swift 中的指针使用") -- 来自：onevcat
 
-swift中指针使用场景并不常见，但是有些时候我们又不得不尝试去使用指针，因此还是需要对swift的指针运用有一定的了解。这篇文章是喵神15年写的，并在2020年做了更新。文章对C指针和swift的指针应用做了映射，对于有一定C指针基础的同学阅读比较友好。
+Swift 中指针使用场景并不常见，但是有些时候我们又不得不尝试去使用指针，因此还是需要对 Swift 的指针运用有一定的了解。这篇文章是喵神 15 年写的，并在 2020 年做了更新。文章对 C 指针和 Swift 的指针应用做了映射，对于有一定 C 指针基础的同学阅读比较友好。
 
 2、[The 5-Minute Guide to C Pointers](https://denniskubes.com/2017/01/24/the-5-minute-guide-to-c-pointers/ "C语言指针5分钟教程") -- 来自：Dennis Kubes
 
-喵神文章中推荐的C语言指针教程，如果对C指针不了解的话，直接切入到swift的指针还是有一定的困难的。
+喵神文章中推荐的 C 语言指针教程，如果对 C 指针不了解的话，直接切入到 Swift 的指针还是有一定的困难的。
 
 3、[Swift5.1 - 指针Pointer](https://www.jianshu.com/p/8cff1ef20e8c "Swift5.1 - 指针Pointer") -- 来自简书：HChase
 
-这篇文章根据swift的类型给出了多种使用方法，查找用法非常方便。例如malloc之后如何填充字节、如何根据地址创建指针、如何进行类型转换等。如果在开发中需要使用swift的指针，在不熟悉的情况下可以参考文中的小demo。
+这篇文章根据 Swift 的类型给出了多种使用方法，查找用法非常方便。例如 malloc 之后如何填充字节、如何根据地址创建指针、如何进行类型转换等。如果在开发中需要使用 Swift 的指针，在不熟悉的情况下可以参考文中的小 demo。
 
 4、[使用 Property Wrapper 为 Codable 解码设定默认值](https://onevcat.com/2020/11/codable-default/ "使用 Property Wrapper 为 Codable 解码设定默认值
 ") -- 来自：onevcat
 
-在Swift中，json转model可以使用Codable，但因为其无法指定可选值的默认属性，在开发的过程中需要更冗余的代码进行解可选操作；onevcat的这篇文章就利用Property Wrapper 为 Codable 解码设定了默认值。此外我将其总结成了一个文件[SSCodableDefault.swift](https://github.com/Tliens/SpeedySwift/blob/master/Example/SpeedySwift/SSCodableDefault.swift)，欢迎大家使用。
+在 Swift 中，json 转 model 可以使用 Codable，但因为其无法指定可选值的默认属性，在开发的过程中需要更冗余的代码进行解可选操作；onevcat 的这篇文章就利用 Property Wrapper 为 Codable 解码设定了默认值。此外我将其总结成了一个文件 [SSCodableDefault.swift](https://github.com/Tliens/SpeedySwift/blob/master/Example/SpeedySwift/SSCodableDefault.swift)，欢迎大家使用。
 
 5、[What is a Property Wrapper in Swift](https://sarunw.com/posts/what-is-property-wrappers-in-swift/#custom-logic-over-swift-properties "What is a Property Wrapper in Swift") -- 来自：sarunw
 
-属性包装器是一种包装属性以添加额外逻辑的新类型。作者先抛出问题，分析属性包装器出现之前如何对属性进行包装以及他遇到的问题，然后来利用属性包裹器对属性进行逻辑包装，比较了二种方式的区别，简述了属性包裹器的好处。
+属性包装器是一种包装属性以添加额外逻辑的新类型。作者先抛出问题，分析属性包装器出现之前如何对属性进行包装以及他遇到的问题，然后来利用属性包装器对属性进行逻辑包装，比较了二种方式的区别，简述了属性包装器的好处。
 
 6、[Swift 5 属性包装器Property Wrappers完整指南](https://juejin.cn/post/6844904018121064456 "Swift 5 属性包装器Property Wrappers完整指南") -- 来自掘金：乐Coding
 
-本文是使用属性包装器的一篇中文教程、可以结合4、5阅读。
+本文是使用属性包装器的一篇中文教程、可以结合 4、5 阅读。
 
 ## 学习资料
 
@@ -444,7 +439,7 @@ swift中指针使用场景并不常见，但是有些时候我们又不得不尝
 
 **地址**：https://explainshell.com/
 
-这个网站跟上期介绍的 [regex101](https://regex101.com) 很类似，一个用于解析正则表达式，一个用于解析 shell 指令。不常接触shell 的小伙伴对于一个参数巨多，又巨长的指令可能会手足无措，没关系，这个网站来帮你😏。它会把主要命令和各个参数，传值进行详细的拆分讲解。比如这句列出所有包含 `1a1b1c` 这一 commit 的分支：
+这个网站跟上期介绍的 [regex101](https://regex101.com) 很类似，一个用于解析正则表达式，一个用于解析 shell 指令。不常接触 shell 的小伙伴对于一个参数巨多，又巨长的指令可能会手足无措，没关系，这个网站来帮你😏。它会把主要命令和各个参数，传值进行详细的拆分讲解。比如这句列出所有包含 `1a1b1c` 这一 commit 的分支：
 
 ```bash
 git branch -a -v --no-abbrev --contains 1a1b1c
