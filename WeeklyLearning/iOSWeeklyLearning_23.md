@@ -6,11 +6,19 @@
 
 > 本期邀请 CoderStar 聊一下他的学习方法。
 >
-> 
+> 简版 PromiseKit 的设计思路；如何通过配置文件区分 AdHoc/AppStore。
+>
+> `isMemberOfClass`、 `isKindOfClass` 的含义与区别。
+>
+> 博客部分整理了Swift 指针、Swift 属性包裹器的几篇文章。
+>
+> 学习资料：
+>
+> 一个帮助解析 Shell 脚本的网站：explainshell。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：上周跟[@展菲](https://github.com/fanbaoying) 聊过之后，有了这个跟各位博主进行访谈的想法。博主+访谈，即可以帮大家介绍优秀的开发者，又能利用访谈的形式近距离了解博主，学习他们的思考和学习方法。本期所选问题是一个初步尝试，大家如果有更好的问题，欢迎留言告诉我们。另介绍一篇早期文章：[专访 YYKit 作者 ibireme: 开源大牛是怎样炼成的](https://blog.devtang.com/2015/11/26/yykit-auther-interview/ "专访 YYKit 作者 ibireme: 开源大牛是怎样炼成的")，该文章也是这个想法的来源之一。
+[@zhangferry](https://zhangferry.com)：上周跟[@展菲](https://github.com/fanbaoying) 聊过之后，有了这个跟各位博主进行访谈的想法。博主+访谈，即可以帮大家介绍优秀的开发者，又能利用访谈的形式近距离了解博主，学习他们的思考和学习方法。本期所选问题是一个初步尝试，大家如果有更好的问题，欢迎留言告诉我们。
 
 本期介绍的博主也是摸鱼周报的一位联合编辑：[CoderStar](https://juejin.cn/user/588993964541288)。
 
@@ -53,7 +61,7 @@ zhangferry：如何让自己每周都能抽出时间写博客呢？有没有什�
 
 ## 开发Tips
 
-整理编辑：**[RunsCode](https://github.com/RunsCode)** [zhangferry](https://zhangferry.com)
+整理编辑：[RunsCode](https://github.com/RunsCode)、 [zhangferry](https://zhangferry.com)
 ###  如何摊平复杂逻辑流程的设计
 
 开发中我们通常会遇到以下问题：
@@ -161,12 +169,11 @@ head.then(neck())
 head.execute()
 ```
 
-也许大家看到这里闻到一个一股熟悉的 Goolge 开源的`Promises`&`mxcl`的`PromiseKit`或者`RAC`等的味道
-那么为啥不用那些个大神的框架来解决实际问题呢？
+也许大家看到这里闻到一股熟悉的 Goolge `Promises`、mxcl的`PromiseKit`或者`RAC`等味道，那么为啥不用那些个大神的框架来解决实际问题呢？
 
 主要有一点：框架功能过于丰富而复杂，而我呢，弱水三千我只要一瓢，越轻越好的原则！哈哈
 
-这里可以看到[详细的设计介绍](https://www.yuque.com/runscode/ios-thinking/priority_element "PrioritySessionElement设计与使用")，目前有`OC、Swift、Java`三个版本的具体实现，仓库地址：https://github.com/RunsCode/PromisePriorityChain 欢迎大家指正。
+这里可以看到[详细的设计介绍](https://www.yuque.com/runscode/ios-thinking/priority_element "PrioritySessionElement设计与使用")，目前有`OC、Swift、Java`三个版本的具体实现。仓库地址：https://github.com/RunsCode/PromisePriorityChain 欢迎大家指正。
 
 ### 项目中区分 AppStore/Adhoc 包（二）
 
