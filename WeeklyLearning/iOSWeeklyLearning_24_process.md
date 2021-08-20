@@ -36,8 +36,11 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[FBY展菲](https://github.com/fanbaoying)
 
+1、[Swift 基于闭包的类型擦除](https://mp.weixin.qq.com/s/K1VfyOX96C4Hw2GxpcKnuw) -- 来自公众号：Swift社区
+
+本文重点介绍在 Swift 中处理泛型时可能发生的一种情况，以及通常是如何使用基于**闭包的类型擦除技术**来解决这种情况。
 
 
 
