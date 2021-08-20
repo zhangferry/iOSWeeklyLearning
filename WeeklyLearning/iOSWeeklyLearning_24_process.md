@@ -13,8 +13,164 @@
 ## 开发Tips
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+### `Objective-C defer` VS `Swift defer`
 
 
+###### 背景
+- - -
+
+
+如果`Swift`写久了，突然转到`Objective-C`是不是有种不知所措的感觉？是不是有以下几点？
+* **泛型** `OC`这个泛型写着很鸡肋，但是也不是毫无是处，至少有编码类型提示
+
+* **协议**
+`Objective-C`协议与`Swift`协议，一个比较明显的区别语法区别就是 `extension`
+习惯了`extension`之后， 写`Objective-C`的时候就不知道咋办了，难道要我写继承？不存在的
+经过摸索一番之后，偶然发现有`GitHub`大佬在11年后， 用`Objective-C`的`Runtime`实现了`extension`，后续有机会在讲
+
+* **枚举** em......算了，当我没说，不是一个东西，也不在一个维度
+
+所以就有了后面的事情了，尽可能在`Objective-C`里面实现`Swift`的语法糖
+`Swift defer` 这个语法糖多好用不用多说，直接来`Objective-C`实现
+
+######准备工作
+- - -
+
+* <font color=#FF0000 size=4>`__attribute__` </font>：是一个用于在声明时指定一些特性的编译器指令，它可以让我们进行更多的错误检查和高级优化工作
+
+    ```swift
+    struct __attribute__ ((__packed__)) sc3 {
+        char a;
+        char *b;
+    };
+    ...// 使用方式
+    __attribute__ ((attribute-list))
+    ```
+    想了解更多，参考： https://nshipster.cn/__attribute__/
+    
+* <font color=#FF0000 size=4>`cleanup(...)`</font>：接受一个函数指针，在作用域结束的时候触发该函数指针
+
+###### 简单实践
+- - -
+
+
+到这一步，我们已经了解了大概功能了，那我们实战一下
+
+```cpp
+# include <stdlib.h>
+# include <stdio.h>
+
+void free_buffer(char **buffer) { printf("3. free buffer\n"); }
+void delete_file(int *value) { printf("2. delete file\n"); }
+void close_file(FILE **fp) { printf("1. close file \n"); }
+
+int main(int argc, char **argv) {
+  //  执行顺序与压栈顺序相反
+  char *buffer __attribute__ ((__cleanup__(free_buffer))) = malloc(20);
+  int res __attribute__ ((__cleanup__(delete_file)));
+  FILE *fp __attribute__ ((__cleanup__(close_file)));
+  printf("0. open file \n");
+  return 0;
+}
+```
+输出结果：
+
+```cpp
+0. open file 
+1. close file 
+2. delete file
+3. free buffer
+[Finished in 683ms]
+```
+但是到这一步的话，我们使用不方便啊，何况我们还是iOSer，这个不友好啊
+那么继续改造成`Objective-C`独有版本
+
+###### 实战优化
+- - -
+
+```objectivec
+- (void)hello:(NSString *)str {
+	defer {
+    	// do something
+	}
+}
+```
+要做到这个形式，那需要什么呢？
+* 代码块，那就只能是 `NSBlock`
+```objectivec
+typedef void(^executeCleanupBlock)(void);
+```
+* 宏函数 or 全局函数？想到`Objective-C`又没有尾随闭包这一说，那全局函数肯定不行，也就只能全局宏了
+```objectivec
+#ifndef defer
+#define defer \
+__strong executeCleanupBlock blk __attribute__((cleanup(deferFunction), unused)) = ^
+#endif
+...
+// .m 文件
+void deferFunction (__strong executeCleanupBlock *block) {
+    (*block)();
+}
+```
+
+OK 大功告成跑一下
+```objectivec
+defer {
+    NSLog(@"defer 1");
+};
+defer { // error: Redefinition of 'blk'
+    NSLog(@"defer 2");
+};
+defer { // error: Redefinition of 'blk'
+    NSLog(@"defer 3");
+};
+NSLog(@"beign defer");
+```
+不好意思， 不行，报错 <font color=#FF0000 size=4>`error: Redefinition of 'blk'`</font>，为什么？（想一想）
+上最终解决版本之前还得认识两个东西
+* <font color=#FF0000 size=4>`__LINE__` </font>：获取当前行号
+* <font color=#FF0000 size=4> `##` </font>：连接两个字符
+```objectivec
+#define defer_concat_(A, B) A ## B
+#define defer_concat(A, B) defer_concat_(A, B)
+...
+//为什么要多一个下划线的宏， 这是因为每次只能展开一个宏， `__LINE__` 的正确行号在第二层才能被解开
+```
+
+###### 最终方案
+- - - -
+
+
+好了，差不多了， 是时候展示真功夫了
+
+```objectivec
+#define defer_concat_(A, B) A ## B
+#define defer_concat(A, B) defer_concat_(A, B)
+
+typedef void(^executeCleanupBlock)(void);
+
+#if defined(__cplusplus)
+extern "C" {
+#endif
+void deferFunction (__strong executeCleanupBlock _Nonnull *_Nonnull block);
+#if defined(__cplusplus)
+}
+#endif
+
+#ifndef defer
+#define defer \
+__strong executeCleanupBlock defer_concat(blk, __LINE__) __attribute__((cleanup(deferFunction), unused)) = ^
+#endif
+// .m 文件
+void deferFunction (__strong executeCleanupBlock *block) {
+    (*block)();
+}
+```
+总共就这么多代码，满足你要的`defer`
+
+其实到了这里已经结束了， 但是还要讲一句：
+这里的实现与原作者`Justin Spahr-Summers` https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h
+略有差异，原作更丰富，这边只是拆分一步步分析得到结果， 原版有 `autoreleasepool` and `try {} @catch (...) {}`
 
 ## 面试解析
 
