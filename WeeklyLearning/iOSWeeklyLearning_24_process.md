@@ -16,7 +16,7 @@
 ### `Objective-C defer` VS `Swift defer`
 
 
-###### 背景
+##### 背景
 - - -
 
 
@@ -33,12 +33,12 @@
 所以就有了后面的事情了，尽可能在`Objective-C`里面实现`Swift`的语法糖
 `Swift defer` 这个语法糖多好用不用多说，直接来`Objective-C`实现
 
-######准备工作
+##### 准备工作
 - - -
 首先要知道实现`defer`的前提是需要有指令or或者函数在作用域出栈的时候触发我的`defer`闭包
 那满足条件的就它两了
 
-* <font color=#FF0000 size=4>`__attribute__` </font>：是一个用于在声明时指定一些特性的编译器指令，它可以让我们进行更多的错误检查和高级优化工作
+* `__attribute__` ：是一个用于在声明时指定一些特性的编译器指令，它可以让我们进行更多的错误检查和高级优化工作
 
     ```swift
     struct __attribute__ ((__packed__)) sc3 {
@@ -50,9 +50,9 @@
     ```
     想了解更多，参考： https://nshipster.cn/__attribute__/
     
-* <font color=#FF0000 size=4>`cleanup(...)`</font>：接受一个函数指针，在作用域结束的时候触发该函数指针
+* `cleanup(...)`：接受一个函数指针，在作用域结束的时候触发该函数指针
 
-###### 简单实践
+##### 简单实践
 - - -
 
 
@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
 但是到这一步的话，我们使用不方便啊，何况我们还是iOSer，这个不友好啊
 那么继续改造成`Objective-C`独有版本
 
-###### 实战优化
+##### 实战优化
 - - -
 
 ```objectivec
@@ -128,10 +128,10 @@ defer { // error: Redefinition of 'blk'
 };
 NSLog(@"beign defer");
 ```
-不好意思， 不行，报错 <font color=#FF0000 size=4>`error: Redefinition of 'blk'`</font>，为什么？（想一想）
+不好意思， 不行，报错 `error: Redefinition of 'blk'`，为什么？（想一想）
 上最终解决版本之前还得认识两个东西
-* <font color=#FF0000 size=4>`__LINE__` </font>：获取当前行号
-* <font color=#FF0000 size=4> `##` </font>：连接两个字符
+* `__LINE__` ：获取当前行号
+* `##` ：连接两个字符
 ```objectivec
 #define defer_concat_(A, B) A ## B
 #define defer_concat(A, B) defer_concat_(A, B)
@@ -139,7 +139,7 @@ NSLog(@"beign defer");
 //为什么要多一个下划线的宏， 这是因为每次只能展开一个宏， `__LINE__` 的正确行号在第二层才能被解开
 ```
 
-###### 最终方案
+##### 最终方案
 - - - -
 
 
