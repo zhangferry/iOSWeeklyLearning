@@ -121,6 +121,15 @@
       "contributions": [
         "blog"
       ]
+    },
+    {
+      "login": "RunsCode",
+      "name": "dev-wang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25574478?v=4",
+      "profile": "http://blog.csdn.net/qq_24761271",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
