@@ -1,6 +1,6 @@
 # iOSWeeklyLearning
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## 周报介绍
@@ -96,6 +96,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://juejin.im/user/571d719171cfe4006170de6f"><img src="https://avatars.githubusercontent.com/u/8653935?v=4?s=100" width="100px;" alt=""/><br /><sub><b>xia</b></sub></a><br /><a href="#blog-LoneyIsError" title="Blogposts">📝</a></td>
     <td align="center"><a href="https://github.com/opooc"><img src="https://avatars.githubusercontent.com/u/26709018?v=4?s=100" width="100px;" alt=""/><br /><sub><b>opooc</b></sub></a><br /><a href="#blog-opooc" title="Blogposts">📝</a></td>
     <td align="center"><a href="https://coder-star.github.io/"><img src="https://avatars.githubusercontent.com/u/29835618?v=4?s=100" width="100px;" alt=""/><br /><sub><b>CoderStar</b></sub></a><br /><a href="#blog-Coder-Star" title="Blogposts">📝</a></td>
+    <td align="center"><a href="http://blog.csdn.net/qq_24761271"><img src="https://avatars.githubusercontent.com/u/25574478?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dev-wang</b></sub></a><br /><a href="#blog-RunsCode" title="Blogposts">📝</a></td>
   </tr>
 </table>
 
