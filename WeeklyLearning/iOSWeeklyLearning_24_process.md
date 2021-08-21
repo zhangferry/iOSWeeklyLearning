@@ -12,7 +12,7 @@
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)、[人魔七七](https://github.com/renmoqiqi)
 ### `Objective-C defer` VS `Swift defer`
 
 
@@ -20,22 +20,22 @@
 - - -
 
 
-如果`Swift`写久了，突然转到`Objective-C`是不是有种不知所措的感觉？是不是有以下几点？
-* **泛型** `OC`这个泛型写着很鸡肋，但是也不是毫无是处，至少有编码类型提示
+如果 `Swift` 写久了，突然转到 `Objective-C` 是不是有种不知所措的感觉？是不是有以下几点？
+* **泛型** `OC` 这个泛型写着很鸡肋，但是也不是毫无是处，至少有编码类型提示
 
 * **协议**
-`Objective-C`协议与`Swift`协议，一个比较明显的区别语法区别就是 `extension`
-习惯了`extension`之后， 写`Objective-C`的时候就不知道咋办了，难道要我写继承？不存在的
-经过摸索一番之后，偶然发现有`GitHub`大佬在11年后， 用`Objective-C`的`Runtime`实现了`extension`，后续有机会在讲
+`Objective-C` 协议与 `Swift` 协议，一个比较明显的区别语法区别就是 `extension`
+习惯了 `extension `之后， 写 `Objective-C` 的时候就不知道咋办了，难道要我写继承？不存在的
+经过摸索一番之后，偶然发现有 `GitHub` 大佬在 2011 年后，用 `Objective-C` 的 `Runtime` 实现了 `extension`，后续有机会再讲
 
 * **枚举** em......算了，当我没说，不是一个东西，也不在一个维度
 
-所以就有了后面的事情了，尽可能在`Objective-C`里面实现`Swift`的语法糖
-`Swift defer` 这个语法糖多好用不用多说，直接来`Objective-C`实现
+所以就有了后面的事情了，尽可能在 `Objective-C` 里面实现 `Swift` 的语法糖
+`Swift defer` 这个语法糖多好用不用多说，直接来 `Objective-C` 实现
 
 ##### 准备工作
 - - -
-首先要知道实现`defer`的前提是需要有指令or或者函数在作用域出栈的时候触发我的`defer`闭包
+首先要知道实现 `defer` 的前提是需要有指令或者函数在作用域出栈的时候触发我的 `defer` 闭包
 那满足条件的就它两了
 
 * `__attribute__` ：是一个用于在声明时指定一些特性的编译器指令，它可以让我们进行更多的错误检查和高级优化工作
@@ -67,7 +67,7 @@ void delete_file(int *value) { printf("2. delete file\n"); }
 void close_file(FILE **fp) { printf("1. close file \n"); }
 
 int main(int argc, char **argv) {
-  //  执行顺序与压栈顺序相反
+  // 执行顺序与压栈顺序相反
   char *buffer __attribute__ ((__cleanup__(free_buffer))) = malloc(20);
   int res __attribute__ ((__cleanup__(delete_file)));
   FILE *fp __attribute__ ((__cleanup__(close_file)));
@@ -84,8 +84,8 @@ int main(int argc, char **argv) {
 3. free buffer
 [Finished in 683ms]
 ```
-但是到这一步的话，我们使用不方便啊，何况我们还是iOSer，这个不友好啊
-那么继续改造成`Objective-C`独有版本
+但是到这一步的话，我们使用不方便啊，何况我们还是 iOSer，这个不友好啊
+那么继续改造成 `Objective-C` 独有版本
 
 ##### 实战优化
 - - -
@@ -102,7 +102,7 @@ int main(int argc, char **argv) {
 ```objectivec
 typedef void(^executeCleanupBlock)(void);
 ```
-* 宏函数 or 全局函数？想到`Objective-C`又没有尾随闭包这一说，那全局函数肯定不行，也就只能全局宏了
+* 宏函数 or 全局函数？想到 `Objective-C` 又没有尾随闭包这一说，那全局函数肯定不行，也就只能全局宏了
 ```objectivec
 #ifndef defer
 #define defer \
@@ -136,7 +136,7 @@ NSLog(@"beign defer");
 #define defer_concat_(A, B) A ## B
 #define defer_concat(A, B) defer_concat_(A, B)
 ...
-//为什么要多一个下划线的宏， 这是因为每次只能展开一个宏， `__LINE__` 的正确行号在第二层才能被解开
+// 为什么要多一个下划线的宏， 这是因为每次只能展开一个宏，`__LINE__` 的正确行号在第二层才能被解开
 ```
 
 ##### 最终方案
@@ -168,19 +168,19 @@ void deferFunction (__strong executeCleanupBlock *block) {
     (*block)();
 }
 ```
-总共就这么多代码，满足你要的`defer`
+总共就这么多代码，满足你要的 `defer`
 
 其实到了这里已经结束了， 但是还要讲一句：
-这里的实现与原作者`Justin Spahr-Summers` https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h
+这里的实现与原作者 `Justin Spahr-Summers` https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h
 略有差异，原作更丰富，这边只是拆分一步步分析得到结果， 原版有 `autoreleasepool` and `try {} @catch (...) {}`
 
 ## 面试解析
 
-整理编辑：[反向抽烟](opooc.com)、[师大小海腾](https://juejin.cn/user/782508012091645)、[FBY展菲](https://github.com/fanbaoying)
+整理编辑：[FBY展菲](https://github.com/fanbaoying)
 
-面试解析是新出的模块，我们会按照主题讲解一些高频面试题，本期主题是**计算机网络**，以下题目均来自真实面试场景。
+本期面试解析讲解的是离屏渲染的相关知识点。
 
-**为什么圆角和裁剪后 iOS 绘制会触发离屏渲染？**
+### 为什么圆角和裁剪后 iOS 绘制会触发离屏渲染？
 
 默认情况下每个视图都是完全独立绘制渲染的。
 而当某个父视图设置了圆角和裁剪并且又有子视图时，父视图只会对自身进行裁剪绘制和渲染。
@@ -189,7 +189,7 @@ void deferFunction (__strong executeCleanupBlock *block) {
 
 解决的方法是当父视图被裁剪和有圆角并且有子视图时，就单独的开辟一块绘制上下文，把自身和所有子视图的内容都统一绘制在这个上下文中，这样子视图也不需要再单独绘制了，所有裁剪都会统一处理。当父视图绘制完成时再将开辟的缓冲上下文拷贝到屏幕上下文中去。这个过程就是离屏渲染！！
 
-所以离屏渲染其实和我们先将内容绘制在位图内存上下文然后再统一拷贝到屏幕上下文中的双缓存技术是非常相似的。使用离屏渲染主要因为iOS内部的视图独立绘制技术所导致的一些缺陷而不得不才用的技术。
+所以离屏渲染其实和我们先将内容绘制在位图内存上下文然后再统一拷贝到屏幕上下文中的双缓存技术是非常相似的。使用离屏渲染主要因为 iOS 内部的视图独立绘制技术所导致的一些缺陷而不得不才用的技术。
 
 
 ## 优秀博客
@@ -205,16 +205,15 @@ void deferFunction (__strong executeCleanupBlock *block) {
 
 2、[swift 闭包(闭包表达式、尾随闭包、逃逸闭包、自动闭包)](https://juejin.cn/post/6972560642427486238 "swift 闭包(闭包表达式、尾随闭包、逃逸闭包、自动闭包)") -- 来自掘金：NewBoy
 
-关于swift 闭包的初级文章，内容整合了几乎所有swift闭包的概念和用法。比较适合swift 初学者或者是从OC 转向swift的同学。
+关于 Swift 闭包的初级文章，内容整合了几乎所有 Swift 闭包的概念和用法。比较适合 Swift 初学者或者是从 OC 转向 Swift 的同学。
 
 
 3、[Day6 - Swift 闭包详解 上](https://mp.weixin.qq.com/s/bE-Bt0VQ8aT3TtZz9EwfYg) -- 来自微信公众号： iOS成长指北
 
-
 4、[Day7 - Swift 闭包详解 下](https://mp.weixin.qq.com/s/op8Kf3hOgmPHTXPiGioI0g) -- 来自微信公众号： iOS成长指北
 
 
-Swift 闭包学习的两篇文章，也是包含了swift的概念及用法，其中部分用法及概念更加细致。两篇文章是作者学习思考再输出的成果，因此在文章中有些作者的理解，这对我们学习是比较重要的，而且比较通俗易懂。
+Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，其中部分用法及概念更加细致。两篇文章是作者学习思考再输出的成果，因此在文章中有些作者的理解，这对我们学习是比较重要的，而且比较通俗易懂。
 
 
 
