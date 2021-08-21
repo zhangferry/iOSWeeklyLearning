@@ -59,8 +59,8 @@
 到这一步，我们已经了解了大概功能了，那我们实战一下
 
 ```cpp
-# include <stdlib.h>
-# include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 void free_buffer(char **buffer) { printf("3. free buffer\n"); }
 void delete_file(int *value) { printf("2. delete file\n"); }
@@ -92,9 +92,9 @@ int main(int argc, char **argv) {
 
 ```objectivec
 - (void)hello:(NSString *)str {
-	defer {
+    defer {
     	// do something
-	}
+    }
 }
 ```
 要做到这个形式，那需要什么呢？
