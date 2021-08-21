@@ -196,9 +196,25 @@ void deferFunction (__strong executeCleanupBlock *block) {
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[FBY展菲](https://github.com/fanbaoying)
 
+本期主题：`Swift 闭包`
+
 1、[Swift 基于闭包的类型擦除](https://mp.weixin.qq.com/s/K1VfyOX96C4Hw2GxpcKnuw) -- 来自公众号：Swift社区
 
 本文重点介绍在 Swift 中处理泛型时可能发生的一种情况，以及通常是如何使用基于**闭包的类型擦除技术**来解决这种情况。
+
+
+2、[swift 闭包(闭包表达式、尾随闭包、逃逸闭包、自动闭包)](https://juejin.cn/post/6972560642427486238 "swift 闭包(闭包表达式、尾随闭包、逃逸闭包、自动闭包)") -- 来自掘金：NewBoy
+
+关于swift 闭包的初级文章，内容整合了几乎所有swift闭包的概念和用法。比较适合swift 初学者或者是从OC 转向swift的同学。
+
+
+3、[Day6 - Swift 闭包详解 上](https://mp.weixin.qq.com/s/bE-Bt0VQ8aT3TtZz9EwfYg) -- 来自微信公众号： iOS成长指北
+
+
+4、[Day7 - Swift 闭包详解 下](https://mp.weixin.qq.com/s/op8Kf3hOgmPHTXPiGioI0g) -- 来自微信公众号： iOS成长指北
+
+
+Swift 闭包学习的两篇文章，也是包含了swift的概念及用法，其中部分用法及概念更加细致。两篇文章是作者学习思考再输出的成果，因此在文章中有些作者的理解，这对我们学习是比较重要的，而且比较通俗易懂。
 
 
 
