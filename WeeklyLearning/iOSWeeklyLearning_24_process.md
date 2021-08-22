@@ -12,14 +12,26 @@
 
 ## 开发Tips
 
+<<<<<<< HEAD
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)、[人魔七七](https://github.com/renmoqiqi)
 ### `Objective-C defer` VS `Swift defer`
+=======
+整理编辑：[RunsCode](https://github.com/RunsCode)
+>>>>>>> doc: add tools ad #24
 
+### 在 Objective-C 中实现 Swift 中的 defer 功能
 
-##### 背景
-- - -
+期望效果是下面这样，函数执行完出栈之前，要执行 defer 内定义的内容。
 
+```objectivec
+- (void)hello:(NSString *)str {
+	defer {
+    	// do something
+	}
+}
+```
 
+<<<<<<< HEAD
 如果 `Swift` 写久了，突然转到 `Objective-C` 是不是有种不知所措的感觉？是不是有以下几点？
 * **泛型** `OC` 这个泛型写着很鸡肋，但是也不是毫无是处，至少有编码类型提示
 
@@ -37,26 +49,21 @@
 - - -
 首先要知道实现 `defer` 的前提是需要有指令或者函数在作用域出栈的时候触发我的 `defer` 闭包
 那满足条件的就它两了
+=======
+#### 准备工作
 
-* `__attribute__` ：是一个用于在声明时指定一些特性的编译器指令，它可以让我们进行更多的错误检查和高级优化工作
+实现`defer`的前提是需要有指令能够让函数在作用域出栈的时候触发`defer`里的闭包内容，这里需要用到两个东西：
+>>>>>>> doc: add tools ad #24
 
-    ```swift
-    struct __attribute__ ((__packed__)) sc3 {
-        char a;
-        char *b;
-    };
-    ...// 使用方式
-    __attribute__ ((attribute-list))
-    ```
-    想了解更多，参考： https://nshipster.cn/__attribute__/
-    
-* `cleanup(...)`：接受一个函数指针，在作用域结束的时候触发该函数指针
+`__attribute__` ：一个用于在声明时指定一些特性的编译器指令，它可以让我们进行更多的错误检查和高级优化工作。
 
-##### 简单实践
-- - -
+想了解更多，参考： https://nshipster.cn/__attribute__/
 
+`cleanup(...)`：接受一个函数指针，在作用域结束的时候触发该函数指针。
 
-到这一步，我们已经了解了大概功能了，那我们实战一下
+#### 简单实践
+
+到这一步，我们已经了解了大概功能了，那我们实战一下：
 
 ```cpp
 #include <stdlib.h>
@@ -84,12 +91,16 @@ int main(int argc, char **argv) {
 3. free buffer
 [Finished in 683ms]
 ```
+<<<<<<< HEAD
 但是到这一步的话，我们使用不方便啊，何况我们还是 iOSer，这个不友好啊
 那么继续改造成 `Objective-C` 独有版本
+=======
+但是到这一步的话，我们使用不方便啊，何况我们还是iOSer，这个不友好啊。那么继续改造成`Objective-C`独有版本。
+>>>>>>> doc: add tools ad #24
 
-##### 实战优化
-- - -
+#### 实战优化
 
+<<<<<<< HEAD
 ```objectivec
 - (void)hello:(NSString *)str {
     defer {
@@ -98,6 +109,9 @@ int main(int argc, char **argv) {
 }
 ```
 要做到这个形式，那需要什么呢？
+=======
+要做到上面那个理性方案，还需要什么呢？
+>>>>>>> doc: add tools ad #24
 * 代码块，那就只能是 `NSBlock`
 ```objectivec
 typedef void(^executeCleanupBlock)(void);
@@ -129,18 +143,23 @@ defer { // error: Redefinition of 'blk'
 NSLog(@"beign defer");
 ```
 不好意思， 不行，报错 `error: Redefinition of 'blk'`，为什么？（想一想）
+
 上最终解决版本之前还得认识两个东西
+
 * `__LINE__` ：获取当前行号
 * `##` ：连接两个字符
 ```objectivec
 #define defer_concat_(A, B) A ## B
 #define defer_concat(A, B) defer_concat_(A, B)
 ...
+<<<<<<< HEAD
 // 为什么要多一个下划线的宏， 这是因为每次只能展开一个宏，`__LINE__` 的正确行号在第二层才能被解开
+=======
+//为什么要多一个下划线的宏， 这是因为每次只能展开一个宏， __LINE__ 的正确行号在第二层才能被解开
+>>>>>>> doc: add tools ad #24
 ```
 
-##### 最终方案
-- - - -
+#### 最终方案
 
 
 好了，差不多了， 是时候展示真功夫了
@@ -168,11 +187,17 @@ void deferFunction (__strong executeCleanupBlock *block) {
     (*block)();
 }
 ```
+<<<<<<< HEAD
 总共就这么多代码，满足你要的 `defer`
 
 其实到了这里已经结束了， 但是还要讲一句：
 这里的实现与原作者 `Justin Spahr-Summers` https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h
 略有差异，原作更丰富，这边只是拆分一步步分析得到结果， 原版有 `autoreleasepool` and `try {} @catch (...) {}`
+=======
+总共就这么多代码，实现 OC 版本的`defer`。
+
+其实到了这里已经结束了， 但是还要讲一句：这里与 Justin Spahr-Summers 在 [libextobj](https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h "libextobj") 里的实现略有差异，当前实现更简单，libextobj 里的功能更丰富一些。
+>>>>>>> doc: add tools ad #24
 
 ## 面试解析
 
@@ -202,11 +227,9 @@ void deferFunction (__strong executeCleanupBlock *block) {
 
 本文重点介绍在 Swift 中处理泛型时可能发生的一种情况，以及通常是如何使用基于**闭包的类型擦除技术**来解决这种情况。
 
-
 2、[swift 闭包(闭包表达式、尾随闭包、逃逸闭包、自动闭包)](https://juejin.cn/post/6972560642427486238 "swift 闭包(闭包表达式、尾随闭包、逃逸闭包、自动闭包)") -- 来自掘金：NewBoy
 
 关于 Swift 闭包的初级文章，内容整合了几乎所有 Swift 闭包的概念和用法。比较适合 Swift 初学者或者是从 OC 转向 Swift 的同学。
-
 
 3、[Day6 - Swift 闭包详解 上](https://mp.weixin.qq.com/s/bE-Bt0VQ8aT3TtZz9EwfYg) -- 来自微信公众号： iOS成长指北
 
@@ -215,7 +238,9 @@ void deferFunction (__strong executeCleanupBlock *block) {
 
 Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，其中部分用法及概念更加细致。两篇文章是作者学习思考再输出的成果，因此在文章中有些作者的理解，这对我们学习是比较重要的，而且比较通俗易懂。
 
+5、[Closures](https://docs.swift.org/swift-book/LanguageGuide/Closures.html) -- 来自：Swift Document
 
+[@zhangferry](zhangferry.com)：对于概念的理解官方文档还是非常有必要看的。闭包跟 C/OC 中的 Block，其他语言中的 Lambda 含义是类似的。Swift 与 OC 混编时，闭包与 Block 也是完全兼容可以互相替换的，但两者仍有区别。Block 更多强调的是匿名代码块，闭包则是除这之外还有真正的一级对象的含义。
 
 ## 学习资料
 
@@ -226,6 +251,20 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 ## 工具推荐
 
 整理编辑：[zhangferry](https://zhangferry.com)
+
+# KeeWeb
+
+**地址**：https://keeweb.info/
+
+**软件状态**：免费，[开源](https://github.com/keeweb/keeweb)
+
+**软件介绍**：
+
+KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。它不需要任何服务器或额外的资源。该应用程序可以在浏览器中运行，也可以作为桌面应用程序运行。更重要的是它还可以利用 Dropbox、Google  Drive 进行远程同步。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210822081714.png)
+
+
 
 ## 关于我们
 
