@@ -59,7 +59,7 @@ zhangferry：对待参加面试的小伙伴有没有什么建议？
 
 ##### 准备工作
 
-实现`defer`的前提是需要有指令能够让函数在作用域出栈的时候触发`defer`里的闭包内容，这里需要用到两个东西：
+实现 `defer` 的前提是需要有指令能够让函数在作用域出栈的时候触发 `defer` 里的闭包内容，这里需要用到两个东西：
 
 `__attribute__` ：一个用于在声明时指定一些特性的编译器指令，它可以让我们进行更多的错误检查和高级优化工作。
 
@@ -98,7 +98,7 @@ int main(int argc, char **argv) {
 [Finished in 683ms]
 ```
 
-但是到这一步的话，我们使用不方便啊，何况我们还是iOSer，这个不友好啊。那么继续改造成`Objective-C`独有版本。
+但是到这一步的话，我们使用不方便啊，何况我们还是 iOSer，这个不友好啊。那么继续改造成 `Objective-C` 独有版本。
 
 #### 实战优化
 
@@ -144,7 +144,7 @@ NSLog(@"beign defer");
 #define defer_concat_(A, B) A ## B
 #define defer_concat(A, B) defer_concat_(A, B)
 ...
-//为什么要多一个下划线的宏， 这是因为每次只能展开一个宏， __LINE__ 的正确行号在第二层才能被解开
+// 为什么要多一个下划线的宏， 这是因为每次只能展开一个宏， __LINE__ 的正确行号在第二层才能被解开
 ```
 
 #### 最终方案
@@ -176,7 +176,7 @@ void deferFunction (__strong executeCleanupBlock *block) {
 }
 ```
 
-总共就这么多代码，实现 OC 版本的`defer`。
+总共就这么多代码，实现 OC 版本的 `defer`。
 
 其实到了这里已经结束了， 但是还要讲一句：这里与 Justin Spahr-Summers 在 [libextobj](https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h "libextobj") （`@onExit{}`）里的实现略有差异，当前实现更简单，libextobj 里的功能更丰富一些。
 
@@ -186,14 +186,14 @@ void deferFunction (__strong executeCleanupBlock *block) {
 
 match 创建证书有两种方式：
 
-*  `fastlane match nuke`，对原证书 revoke 重新生成一份新的，这会导致原证书不可用，如果多APP账号，不建议这样。
+*  `fastlane match nuke`，对原证书 revoke 重新生成一份新的，这会导致原证书不可用，如果多 App 账号，不建议这样。
 * 通过已有证书导出为 `match` 格式加密文件，进行维护。
 
 第二种方案不会影响原证书使用，比较推荐。但是看网上介绍这种方案的非常少，所以还是简单总结下：
 
 1、导出文件
 
-需要导出证书、p12两个文件，将他们放到一个特定文件夹，假定他们的命名分别为：cert.cer、cert.p12。
+需要导出证书、p12 两个文件，将他们放到一个特定文件夹，假定他们的命名分别为：cert.cer、cert.p12。
 
 2、使用 openssl 进行加密
 
@@ -214,7 +214,7 @@ $ openssl enc -aes-256-cbc -k {password} -in "cert.p12" -out "cert.enc.p12" -a -
 
 4、使用
 
-还记得我们上面设计的加密参数吗，在使用的时候也是需要用到的，我们将其放到 `.env` 这个文件中作为全局变量，它有一个特定的变量名`MATCH_PASSWROD`。使用的时候用下面的语句就可以下载安装证书了：
+还记得我们上面设计的加密参数吗，在使用的时候也是需要用到的，我们将其放到 `.env` 这个文件中作为全局变量，它有一个特定的变量名 `MATCH_PASSWROD`。使用的时候用下面的语句就可以下载安装证书了：
 
 ```bash
 $ fastlane match development
@@ -276,7 +276,7 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 
 地址：https://github.com/shimohq/chinese-programmer-wrong-pronunciation
 
-在担心和同事讨论代码的时念的单词同事听不懂？开会 review 代码的时候突然遇到不会读的单词？如果你遇到过这些问题，那来看看这个 github 仓库吧。它是一个收录了在编程领域容易发音错误单词的仓库，目前已经有 14.4k stars 了，他标注出了易错的读音和正确的读音，且支持在线听读音。
+在担心和同事讨论代码的时候念的单词同事听不懂？开会 review 代码的时候突然遇到不会读的单词？如果你遇到过这些问题，那来看看这个 github 仓库吧。它是一个收录了在编程领域容易发音错误单词的仓库，目前已经有 14.4k stars 了，他标注出了易错的读音和正确的读音，且支持在线听读音。
 
 ### IoT for Beginners
 
