@@ -51,9 +51,9 @@ zhangferry：对待参加面试的小伙伴有没有什么建议？
 
 ```objectivec
 - (void)hello:(NSString *)str {
-	defer {
-    	// do something
-	}
+		defer {
+    		// do something
+		}
 }
 ```
 
@@ -80,12 +80,12 @@ void delete_file(int *value) { printf("2. delete file\n"); }
 void close_file(FILE **fp) { printf("1. close file \n"); }
 
 int main(int argc, char **argv) {
-  // 执行顺序与压栈顺序相反
-  char *buffer __attribute__ ((__cleanup__(free_buffer))) = malloc(20);
-  int res __attribute__ ((__cleanup__(delete_file)));
-  FILE *fp __attribute__ ((__cleanup__(close_file)));
-  printf("0. open file \n");
-  return 0;
+  	// 执行顺序与压栈顺序相反
+  	char *buffer __attribute__ ((__cleanup__(free_buffer))) = malloc(20);
+  	int res __attribute__ ((__cleanup__(delete_file)));
+  	FILE *fp __attribute__ ((__cleanup__(close_file)));
+ 	  printf("0. open file \n");
+  	return 0;
 }
 ```
 输出结果：
