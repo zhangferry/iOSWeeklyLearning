@@ -4,22 +4,42 @@
 
 ### 本期概要
 
-> 
+> * 话题：跟一位同学聊一下蚂蚁的面试经历。
+> * Tips：设计 OC 版本的 defer 功能。
+> * 面试模块：离屏渲染。
+> * 优秀博客：整理了Swift 闭包相关的文章。
+> * 学习资料：
+> * 开发工具：一款免费开源的跨平台密码管理工具：KeeWeb。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：本期访谈对象是 [@拉布拉卡]()，他最近换工作刚入职了蚂蚁金服，今天跟他聊一下最近市场的面试状况和一些面试经历。（部分内容待晚上补充，先略过）
+
+1、简单介绍下自己吧
+
+> 
+
+2、面试准备了多久？重点准备了哪些东西？
+
+> 重点准备有3周左右，但之前也有陆陆续续在看一些东西。重点内容：
+
+3、对目前市面上的公司面试的感受有哪些？有没有什么难忘的经历？
+
+> 虽然我们总是调侃 iOS 没人要了，但市面上对 iOS 需要还是挺多的。相对来说，它不只要求你的基础要牢固，还有就是项目经验，重难点，框架设计能力，封装能力，这些都会考察。
+
+4、准备面试有哪些好的建议
+
+> 对 iOS 整个基础知识要有一个全面的理解，因为很多知识并非单点，很多内容是互通的，所以理解记忆的时候可以发散一下，尝试把一些内容串起来。另外就是项目这块，项目有哪些难点，这个要提前准备，面熟的时候思路要清晰。
+
+5、能说下蚂蚁大致的面试思路和考察重点吗？
+
+> 
 
 ## 开发Tips
 
-<<<<<<< HEAD
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)、[人魔七七](https://github.com/renmoqiqi)
-### `Objective-C defer` VS `Swift defer`
-=======
-整理编辑：[RunsCode](https://github.com/RunsCode)
->>>>>>> doc: add tools ad #24
-
 ### 在 Objective-C 中实现 Swift 中的 defer 功能
+
+整理编辑：[RunsCode](https://github.com/RunsCode)、[zhangferry](zhangferry.com)
 
 期望效果是下面这样，函数执行完出栈之前，要执行 defer 内定义的内容。
 
@@ -31,29 +51,9 @@
 }
 ```
 
-<<<<<<< HEAD
-如果 `Swift` 写久了，突然转到 `Objective-C` 是不是有种不知所措的感觉？是不是有以下几点？
-* **泛型** `OC` 这个泛型写着很鸡肋，但是也不是毫无是处，至少有编码类型提示
-
-* **协议**
-`Objective-C` 协议与 `Swift` 协议，一个比较明显的区别语法区别就是 `extension`
-习惯了 `extension `之后， 写 `Objective-C` 的时候就不知道咋办了，难道要我写继承？不存在的
-经过摸索一番之后，偶然发现有 `GitHub` 大佬在 2011 年后，用 `Objective-C` 的 `Runtime` 实现了 `extension`，后续有机会再讲
-
-* **枚举** em......算了，当我没说，不是一个东西，也不在一个维度
-
-所以就有了后面的事情了，尽可能在 `Objective-C` 里面实现 `Swift` 的语法糖
-`Swift defer` 这个语法糖多好用不用多说，直接来 `Objective-C` 实现
-
 ##### 准备工作
-- - -
-首先要知道实现 `defer` 的前提是需要有指令或者函数在作用域出栈的时候触发我的 `defer` 闭包
-那满足条件的就它两了
-=======
-#### 准备工作
 
 实现`defer`的前提是需要有指令能够让函数在作用域出栈的时候触发`defer`里的闭包内容，这里需要用到两个东西：
->>>>>>> doc: add tools ad #24
 
 `__attribute__` ：一个用于在声明时指定一些特性的编译器指令，它可以让我们进行更多的错误检查和高级优化工作。
 
@@ -91,27 +91,13 @@ int main(int argc, char **argv) {
 3. free buffer
 [Finished in 683ms]
 ```
-<<<<<<< HEAD
-但是到这一步的话，我们使用不方便啊，何况我们还是 iOSer，这个不友好啊
-那么继续改造成 `Objective-C` 独有版本
-=======
+
 但是到这一步的话，我们使用不方便啊，何况我们还是iOSer，这个不友好啊。那么继续改造成`Objective-C`独有版本。
->>>>>>> doc: add tools ad #24
 
 #### 实战优化
 
-<<<<<<< HEAD
-```objectivec
-- (void)hello:(NSString *)str {
-    defer {
-    	// do something
-    }
-}
-```
-要做到这个形式，那需要什么呢？
-=======
-要做到上面那个理性方案，还需要什么呢？
->>>>>>> doc: add tools ad #24
+要做到上面那个理想方案，还需要什么呢？
+
 * 代码块，那就只能是 `NSBlock`
 ```objectivec
 typedef void(^executeCleanupBlock)(void);
@@ -152,11 +138,7 @@ NSLog(@"beign defer");
 #define defer_concat_(A, B) A ## B
 #define defer_concat(A, B) defer_concat_(A, B)
 ...
-<<<<<<< HEAD
-// 为什么要多一个下划线的宏， 这是因为每次只能展开一个宏，`__LINE__` 的正确行号在第二层才能被解开
-=======
 //为什么要多一个下划线的宏， 这是因为每次只能展开一个宏， __LINE__ 的正确行号在第二层才能被解开
->>>>>>> doc: add tools ad #24
 ```
 
 #### 最终方案
@@ -187,17 +169,53 @@ void deferFunction (__strong executeCleanupBlock *block) {
     (*block)();
 }
 ```
-<<<<<<< HEAD
-总共就这么多代码，满足你要的 `defer`
 
-其实到了这里已经结束了， 但是还要讲一句：
-这里的实现与原作者 `Justin Spahr-Summers` https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h
-略有差异，原作更丰富，这边只是拆分一步步分析得到结果， 原版有 `autoreleasepool` and `try {} @catch (...) {}`
-=======
 总共就这么多代码，实现 OC 版本的`defer`。
 
-其实到了这里已经结束了， 但是还要讲一句：这里与 Justin Spahr-Summers 在 [libextobj](https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h "libextobj") 里的实现略有差异，当前实现更简单，libextobj 里的功能更丰富一些。
->>>>>>> doc: add tools ad #24
+其实到了这里已经结束了， 但是还要讲一句：这里与 Justin Spahr-Summers 在 [libextobj](https://github.com/jspahrsummers/libextobjc/blob/master/extobjc/EXTScope.h "libextobj") （`@onExit{}`）里的实现略有差异，当前实现更简单，libextobj 里的功能更丰富一些。
+
+### 使用现有证书创建 Fastlane match 格式加密文件
+
+简单说下 match 管理证书的工作流程，它将证书文件进行加密存放到 git 仓库，使用方 clone 这个仓库然后解密证书文件，再把证书安装到本机的 keychain 里。这样不同设备上就可以愉快的共享证书了。
+
+match 创建证书有两种方式：
+
+*  `fastlane match nuke`，对原证书 revoke 重新生成一份新的，这会导致原证书不可用，如果多APP账号，不建议这样。
+* 通过已有证书导出为 `match` 格式加密文件，进行维护。
+
+第二种方案不会影响原证书使用，比较推荐。但是看网上介绍这种方案的非常少，所以还是简单总结下：
+
+1、导出文件
+
+需要导出证书、p12两个文件，将他们放到一个特定文件夹，假定他们的命名分别为：cert.cer、cert.p12。
+
+2、使用 openssl 进行加密
+
+需要一个预设密码，这个可以自定义，作为加密和解密的一个特定参数。
+
+```bash
+$ openssl enc -aes-256-cbc -k {password} -in "cert.cer" -out "cert.enc.cer" -a -e -salt
+$ openssl enc -aes-256-cbc -k {password} -in "cert.p12" -out "cert.enc.p12" -a -e -salt
+```
+
+3、推送证书到 git 仓库
+
+每个证书文件都有特定的 ID，推送之前我们还需要修改加密证书的文件名。该 ID 在开发者网站证书详情那一页的网址最后面展示。就是下面码糊住的那一块：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210822095006.png)
+
+然后我们将那两个文件放到 git 仓库的 certs 目录对应的类型（development/distribution）下，然后进行推送。
+
+4、使用
+
+还记得我们上面设计的加密参数吗，在使用的时候也是需要用到的，我们将其放到 `.env` 这个文件中作为全局变量，它有一个特定的变量名`MATCH_PASSWROD`。使用的时候用下面的语句就可以下载安装证书了：
+
+```bash
+$ fastlane match development
+$ fastlane match adhoc
+```
+
+参考：https://docs.fastlane.tools/actions/match/
 
 ## 面试解析
 
@@ -240,7 +258,7 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 
 5、[Closures](https://docs.swift.org/swift-book/LanguageGuide/Closures.html) -- 来自：Swift Document
 
-[@zhangferry](zhangferry.com)：对于概念的理解官方文档还是非常有必要看的。闭包跟 C/OC 中的 Block，其他语言中的 Lambda 含义是类似的。Swift 与 OC 混编时，闭包与 Block 也是完全兼容可以互相替换的，但两者仍有区别。Block 更多强调的是匿名代码块，闭包则是除这之外还有真正的一级对象的含义。
+[@zhangferry](zhangferry.com)：对于概念的理解官方文档还是非常有必要看的。闭包跟 C/OC 中的 Block，其他语言中的 Lambda 含义是类似的。Swift 与 OC 混编时，闭包与 Block 是完全兼容的。但就含义来说两者仍有区别，Block 更多强调的是匿名代码块，闭包则是除这之外还有真正的一级对象的含义。
 
 ## 学习资料
 
