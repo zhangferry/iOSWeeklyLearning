@@ -55,6 +55,48 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+## SwitchHosts
+
+###### 地址： https://github.com/oldj/SwitchHosts/releases
+
+###### 软件状态：免费，开源
+
+###### 使用场景
+```ruby
+➜  /Users/username brew update                         
+fatal: unable to access 'https://github.com/Homebrew/homebrew-core/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 
+Error: Fetching /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core failed!
+Fetching /usr/local/Homebrew failed!
+Fetching /usr/local/Homebrew/Library/Taps/dart-lang/homebrew-dart failed!
+Fetching /usr/local/Homebrew/Library/Taps/homebrew/homebrew-services failed!
+```
+
+```ruby
+/Users/username/demo git:(master) git push
+fatal: unable to access 'https://github.com/xx/xxxxx.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 
+```
+
+```ruby
+➜  /Users/username curl -l https://github.com/xx/xxxxx
+curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+```
+如果有遇到这种类似443问题的，极有可能是DNS污染
+
+###### DNS 污染
+`DNS` 污染，感兴趣的朋友可以去了解一下。
+
+###### 解决方案
+* 打开 https://www.ipaddress.com/ 输入访问不了的域名
+* 然后 SwitchHosts就上场了，修改方便还有历史修改记录，防止误操作
+
+###### 使用方法
+* 因为加载出来的系统`hosts`不能直接修改
+* 新建一个新的`hosts`文件，直接`cmd+s` 会去覆盖系统`hosts` ,输入密码就完成了
+* 然后重启终端就基本上就OK了
+
+
+![SwitchHosts](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210826182241.png)
+
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
