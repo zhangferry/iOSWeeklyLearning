@@ -12,8 +12,79 @@
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+### 如何清除 iOS APP 的启动屏幕缓存
 
+整理编辑：[FBY展菲](https://github.com/fanbaoying)
+
+每当我在我的 `iOS` 应用程序中修改了 `LaunchScreen.storyboad` 中的某些内容时，我都会遇到一个问题：
+
+**系统会缓存启动图像，即使删除了该应用程序，它实际上也很难清除原来的缓存。**
+
+有时我修改了 `LaunchScreen.storyboad`，删除应用程序并重新启动，它显示了新的 `LaunchScreen.storyboad`，但 `LaunchScreen.storyboad` 中引用的任何图片都不会显示，从而使启动屏显得不正常。
+
+今天，我在应用程序的沙盒中进行了一些挖掘，发现该 `Library` 文件夹中有一个名为 `SplashBoard` 的文件夹，该文件夹是启动屏缓存的存储位置。
+
+因此，要完全清除应用程序的启动屏幕缓存，您所需要做的就是在应用程序内部运行以下代码（已将该代码扩展到 `UIApplication` 的中）：
+
+```swift
+import UIKit
+
+public extension  UIApplication {
+
+    func clearLaunchScreenCache() {
+        do {
+            try FileManager.default.removeItem(atPath: NSHomeDirectory()+"/Library/SplashBoard")
+        } catch {
+            print("Failed to delete launch screen cache: \(error)")
+        }
+    }
+
+}
+```
+
+在启动屏开发过程中，您可以将其放在应用程序初始化代码中，然后在不修改启动屏时将其禁用。
+
+这个技巧在启动屏出问题时为我节省了很多时间，希望也能为您节省一些时间。
+
+**使用介绍**
+
+```swift
+UIApplication.shared.clearLaunchScreenCache()
+```
+
+* 文章提到的缓存目录在沙盒下如下图所示：
+
+
+* OC 代码,创建一个 `UIApplication` 的 `Category`
+
+```objectivec
+#import <UIKit/UIKit.h>
+
+@interface UIApplication (LaunchScreen)
+- (void)clearLaunchScreenCache;
+@end
+#import "UIApplication+LaunchScreen.h"
+
+@implementation UIApplication (LaunchScreen)
+- (void)clearLaunchScreenCache {
+    NSError *error;
+    [NSFileManager.defaultManager removeItemAtPath:[NSString stringWithFormat:@"%@/Library/SplashBoard",NSHomeDirectory()] error:&error];
+    if (error) {
+        NSLog(@"Failed to delete launch screen cache: %@",error);
+    }
+}
+@end
+```
+
+OC使用方法
+
+```objectivec
+#import "UIApplication+LaunchScreen.h"
+
+[UIApplication.sharedApplication clearLaunchScreenCache];
+```
+
+参考：[如何清除 iOS APP 的启动屏幕缓存](https://mp.weixin.qq.com/s/1esgRgu1iqFwB1Wv8-GlEQ)
 
 
 ## 面试解析
