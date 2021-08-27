@@ -44,6 +44,11 @@
 
 本文探讨了协议和泛型的底层实现原理，文中涉及到编译器对于 Swift 的性能优化，十分推荐阅读。
 
+5、[Swift 泛型底层实现原理](http://chuquan.me/2020/04/20/implementing-swift-generic/ "Swift 泛型底层实现原理") -- 来自博客：楚权的世界
+
+
+本文介绍了swift相关的底层原理，干货较多。例如VWT的作用、什么是Type Metadata、Metadata Pattern等等。如果有些概念不是很清楚的话可以阅读文章下面的参考文献。
+
 
 ## 学习资料
 
