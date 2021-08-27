@@ -33,7 +33,17 @@
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Adobe Color Wheel
 
+地址：https://color.adobe.com/zh/create/color-wheel
+
+来自 Adobe 的调色盘网站，可以选择不同的色彩规则，例如：类比、分割辅色、三元色等等方案来生成配色，也可以通过导入照片来提取颜色，并且可以通过辅助工具例如对比度检查器来，确认文字和图案在底色上的预览情况。另外，你也可以通过 Adobe 的「探索」和「趋势」社区来学习如何搭配颜色，或者是寻找配色灵感。
+
+### Awesome-tips
+
+地址：https://awesome-tips.gitbook.io/ios/
+
+来自知识小集整理的 iOS 开发 tip，已经整合成了 gitbook。虽然时间稍稍有点久了，但其中的文章都比较优质，在遇到的问题的时候可以翻阅一下，讲不定会有新的收获。
 
 ## 工具推荐
 
