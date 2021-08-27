@@ -36,7 +36,7 @@
 
 本文通俗易懂的解析了什么是泛型，泛型的应用场景，泛型和其他Swift特性摩擦出的火花，最后对泛型进行了总结。
 
-3、[WWDC2018 - Swift 泛型 Swift Generics](https://juejin.cn/post/7000916678150193159/ "WWDC2018 - Swift 泛型 Swift Generics") -- 来自掘金：西野圭吾
+3、[WWDC2018 - Swift 泛型 Swift Generics](https://juejin.cn/post/6844903623185399822/ "WWDC2018 - Swift 泛型 Swift Generics") -- 来自掘金：西野圭吾
 
 本文回顾了 Swift 中对于泛型支持的历史变更，可以了解下泛型不同版本的历史以及特性。
 
