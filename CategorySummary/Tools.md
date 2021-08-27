@@ -659,3 +659,18 @@ git branch -a -v --no-abbrev --contains 1a1b1c
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210814184638.png)
 
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+# KeeWeb
+
+**地址**：https://keeweb.info/
+
+**软件状态**：免费，[开源](https://github.com/keeweb/keeweb)
+
+**软件介绍**：
+
+KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。它不需要任何服务器或额外的资源。该应用程序可以在浏览器中运行，也可以作为桌面应用程序运行。更重要的是它还可以利用 Dropbox、Google  Drive 进行远程同步。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210822081714.png)
+

@@ -369,3 +369,18 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 来自 Apple 的 [turicreate](https://github.com/apple/turicreate) 样例模型以及简化模型程序，他并不是学习机器学习的教程，而是给你提供解决任务的方案。你可以使用 turicreate 来训练推荐算法、对象检测、图像分类、图像相似性或活动分类等简单的机器学习模型。通过产生的 `.mlmodel` 模型，可以直接放到工程中使用 Core ML 来轻松使用。
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### 中国程序员容易发音错误的单词
+
+地址：https://github.com/shimohq/chinese-programmer-wrong-pronunciation
+
+在担心和同事讨论代码的时候念的单词同事听不懂？开会 review 代码的时候突然遇到不会读的单词？如果你遇到过这些问题，那来看看这个 github 仓库吧。它是一个收录了在编程领域容易发音错误单词的仓库，目前已经有 14.4k stars 了，他标注出了易错的读音和正确的读音，且支持在线听读音。
+
+### IoT for Beginners
+
+地址：https://github.com/microsoft/IoT-For-Beginners
+
+这是来自微软 Azure 的物联网课程，是一个为期 12 周的 24 课时的课程，其中有所有关于物联网的基础知识，每节课都包括课前和课后测验、完成课程的书面说明、解决方案、作业等。其中每个项目都是适合学生或业余爱好者的、在真实世界可用的硬件，且每个项目都会提供相关的背景知识来研究具体的项目领域。
+

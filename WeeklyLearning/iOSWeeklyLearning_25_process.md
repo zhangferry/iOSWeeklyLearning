@@ -24,9 +24,25 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[FBY展菲](https://github.com/fanbaoying)
 
+本期主题：`Swift 泛型`
 
+1、[Swift 进阶： 泛型](https://mp.weixin.qq.com/s/WOPbESx7YIAUes_1y3wyMw) -- 来自公众号：Swift社区
+
+泛型是 Swift 最强大的特性之一，很多 Swift 标准库是基于泛型代码构建的。你可以创建一个容纳  Int 值的数组，或者容纳 String 值的数组，甚至容纳任何 Swift 可以创建的其他类型的数组。同样，你可以创建一个存储任何指定类型值的字典，而且类型没有限制。
+
+2、[Swift 泛型解析](https://juejin.cn/post/7000916678150193159/ "Swift 泛型解析") -- 来自掘金：我是熊大
+
+本文通俗易懂的解析了什么是泛型，泛型的应用场景，泛型和其他Swift特性摩擦出的火花，最后对泛型进行了总结。
+
+3、[WWDC2018 - Swift 泛型 Swift Generics](https://juejin.cn/post/7000916678150193159/ "WWDC2018 - Swift 泛型 Swift Generics") -- 来自掘金：西野圭吾
+
+本文回顾了 Swift 中对于泛型支持的历史变更，可以了解下泛型不同版本的历史以及特性。
+
+4、[Swift 性能优化(2)——协议与泛型的实现](http://chuquan.me/2020/02/19/swift-performance-protocol-type-generic-type/ "Swift 性能优化(2)——协议与泛型的实现") -- 来自博客：楚权的世界
+
+本文探讨了协议和泛型的底层实现原理，文中涉及到编译器对于 Swift 的性能优化，十分推荐阅读。
 
 
 ## 学习资料
