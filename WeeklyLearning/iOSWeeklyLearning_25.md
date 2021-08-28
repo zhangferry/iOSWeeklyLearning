@@ -117,7 +117,7 @@ UIApplication.shared.clearLaunchScreenCache()
 
 * 文章提到的缓存目录在沙盒下如下图所示：
 
-![](https://user-images.githubusercontent.com/24238160/131212546-3ac9cf3c-cad5-48c5-913a-3e1408595e44.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210828174459.png)
 
 * OC 代码,创建一个 `UIApplication` 的 `Category`
 
@@ -154,7 +154,9 @@ OC使用方法
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-很多 Swift 项目里都集成了 SwiftLint 用于代码检查。SwiftLint 的执行通常在编译的早期且全量检查的，目前我们项目的每次 lint 时间在 12s 左右。但细想一下，并没有改变的代码多次被 lint 是一种浪费。顺着这个思路在官方的 [issues](https://github.com/realm/SwiftLint/issues/413 "SwiftLint issue 413") 里找到了可以过滤非修改文件的参考方法，其是通过 `git diff` 查找到变更的代码，仅对变更代码进行 lint 处理。使用该方案后，每次 lint 时长基本保持在 2s 以内。下面附上该脚本，需要注意的是 `SWIFT_LINT` 要根据自己的集成方式进行替换，这里是 CocoaPod 的集成方式：
+很多 Swift 项目里都集成了 SwiftLint 用于代码检查。SwiftLint 的执行通常在编译的早期且全量检查的，目前我们项目的每次 lint 时间在 12s 左右。但细想一下，并没有改变的代码多次被 lint 是一种浪费。顺着这个思路在官方的 [issues](https://github.com/realm/SwiftLint/issues/413 "SwiftLint issue 413") 里找到了可以过滤非修改文件的参考方法，其是通过 `git diff` 查找到变更的代码，仅对变更代码进行 lint 处理。使用该方案后，每次 lint 时长基本保持在 2s 以内。
+
+下面附上该脚本，需要注意的是 `SWIFT_LINT` 要根据自己的集成方式进行替换，这里是 CocoaPod 的集成方式：
 
 ```bash
 # Run SwiftLint
