@@ -54,6 +54,7 @@ UIApplication.shared.clearLaunchScreenCache()
 
 * 文章提到的缓存目录在沙盒下如下图所示：
 
+![](https://user-images.githubusercontent.com/24238160/131212546-3ac9cf3c-cad5-48c5-913a-3e1408595e44.png)
 
 * OC 代码,创建一个 `UIApplication` 的 `Category`
 
