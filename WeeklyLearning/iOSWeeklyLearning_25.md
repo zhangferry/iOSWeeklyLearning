@@ -295,7 +295,7 @@ echo "SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to comp
 
 整理编辑：[CoderStar](http://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18#wechat_redirect)
 
-# OhMyStar
+### OhMyStar
 
 **地址**：https://ohmystarapp.com/
 
