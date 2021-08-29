@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 话题：本期跟竹立交流一下关于求职和学习方法的话题。
-> * Tips：如何清除启动图的缓存；如何优化SwiftLint流程。
+> * Tips：如何清除启动图的缓存；如何优化 SwiftLint 流程。
 > * 面试模块：本期解析一道 GCD 死锁题。
 > * 优秀博客：整理了 Swift 泛型相关的几篇文章。
 > * 学习资料：Adobe 的调色板网站：Adobe Color Wheel；知识小集的 Tips 汇总：Awesome-tips。
@@ -21,9 +21,9 @@ zhangferry：简单介绍下自己吧。
 
 zhangferry：你对二进制的研究很深入，还在社区做过一次玩转二进制的直播分享，为什么会对这一领域感兴趣？能讲一些想要学好这方面内容的几点建议吗？
 
-> 我对二进制的研究还远远算不上深入，可能在个别细分的领域有一点探索，但是从整体来说二进制涉及的知识太庞大，因此还算不上深入。对二进制的探索主要是之前的技术项目所引导的。当时在做技术项目时遇到了一个问题：“如何动态调用项目中的static C 函数？”，当时感觉研究的方向应该为mach-o文件，最终随着调研的慢慢深入，也就对二进制文件有了一定的了解。
+> 我对二进制的研究还远远算不上深入，可能在个别细分的领域有一点探索，但是从整体来说二进制涉及的知识太庞大，因此还算不上深入。对二进制的探索主要是之前的技术项目所引导的。当时在做技术项目时遇到了一个问题：“如何动态调用项目中的 static C 函数？”，当时感觉研究的方向应该为 mach-o 文件，最终随着调研的慢慢深入，也就对二进制文件有了一定的了解。
 >
-> 想要学习二进制相关的内容其实我没有特别好的建议，因为我并没有成体系的去学习这方面内容，更多的是利用空闲时间凭借个人的兴趣去探索。有兴趣才会在探索过程中感受到有所收获，在其他技术方向上也是这样。如果大家对二进制文件解析感兴趣，58 同城近期会有一次线上技术沙龙，主要介绍58如何打造集团内 Swift 混编生态的。我会借助沙龙的机会介绍下 Swift 的二进制解析。
+> 想要学习二进制相关的内容其实我没有特别好的建议，因为我并没有成体系的去学习这方面内容，更多的是利用空闲时间凭借个人的兴趣去探索。有兴趣才会在探索过程中感受到有所收获，在其他技术方向上也是这样。如果大家对二进制文件解析感兴趣，58 同城近期会有一次线上技术沙龙，主要介绍 58 如何打造集团内 Swift 混编生态的。我会借助沙龙的机会介绍下 Swift 的二进制解析。
 
 zhangferry：作为一位资深开发，能讲下你认为的高级开发和资深开发之间的区别吗？在你看来要达到资深开发需要具备哪些素质？
 
@@ -37,13 +37,13 @@ zhangferry：你具有多年面试官的经历，能简单总结下你认为的�
 >
 > 或者通过面试能让我们看到即使候选人目前还处于成长期，但是经过培养是可以有更长远成长的。很多团队招人不外乎就这两种：要么候选人现在很厉害，要么候选人将来很厉害。
 >
-> 一些场景比较复杂的大型APP，有些问题比较复杂，不是特别好定位，这需要一定的技术基础，灵活的思维，甚至要求心理素质过硬。大家可以看下我的[2019年终总结](https://www.jianshu.com/p/0a4831219cba "皮拉夫大王 2019年终总结")中提到的**<工作篇>**，我整理了日常工作中遇到的部分问题记录到总结中，这也是 58 T5级别工程师的日常工作内容和要求。
+> 一些场景比较复杂的大型 APP，有些问题比较复杂，不是特别好定位，这需要一定的技术基础，灵活的思维，甚至要求心理素质过硬。大家可以看下我的[2019年终总结](https://www.jianshu.com/p/0a4831219cba "皮拉夫大王 2019年终总结")中提到的**<工作篇>**，我整理了日常工作中遇到的部分问题记录到总结中，这也是 58 T5级别工程师的日常工作内容和要求。
 >
 > 如果作为团队的老板，你肯定希望自己的属下能够具备打硬仗的实力，而不仅仅是写写需求做做任务，在关键的时刻能够攻坚克难才是团队价值的体现。以上几点要求如果只是看看面经，刷刷算法可能还不够。因此在日常工作中，我们就应该养成良好的习惯，多问几个为什么，多做探索调研和储备，不要放过一些细节。
 >
 > 回到正题，我们从简历和面试的实际情况来看下有哪些是被鼓励的：
 >
->（1）项目经历（这里不是指写了哪些APP）比较匹配。比如团队目前的重点在与包大小治理，如果你的简历中有相关实践并且做的比较深入，那这就是加分项。
+>（1）项目经历（这里不是指写了哪些 APP）比较匹配。比如团队目前的重点在与包大小治理，如果你的简历中有相关实践并且做的比较深入，那这就是加分项。
 >
 >（2）令人耳目一新的技术。有些技术比较前沿或者并未广泛被大家所熟知，在这个领域候选人有较深入的研究。（这表明候选人已经找到了第二曲线）
 >
@@ -69,9 +69,9 @@ zhangferry：如何保持学习热情，给我们分享一些你的学习方法�
 
 zhangferry：个人有什么想法，可以借助于摸鱼周报进行宣传的。
 
-> （1）希望大家多多关注WBBlades开源项目： https://github.com/wuba/WBBlades ，觉得OK的话给我个 star 鼓励一下。
+> （1）希望大家多多关注 WBBlades 开源项目：https://github.com/wuba/WBBlades ，觉得 OK 的话给我个 star 鼓励一下。
 >
-> （2）58主APP、人人车、到家精选等团队正在招人，简历可以投递到zhulideng@yeah.net。秋天到了，我想赚点内推费填几件衣服。
+> （2）58 主 APP、人人车、到家精选等团队正在招人，简历可以投递到 zhulideng@yeah.net。秋天到了，我想赚点内推费填几件衣服。
 
 ## 开发Tips
 
@@ -127,12 +127,13 @@ UIApplication.shared.clearLaunchScreenCache()
 @interface UIApplication (LaunchScreen)
 - (void)clearLaunchScreenCache;
 @end
+  
 #import "UIApplication+LaunchScreen.h"
-
+  
 @implementation UIApplication (LaunchScreen)
 - (void)clearLaunchScreenCache {
     NSError *error;
-    [NSFileManager.defaultManager removeItemAtPath:[NSString stringWithFormat:@"%@/Library/SplashBoard",NSHomeDirectory()] error:&error];
+    [NSFileManager.defaultManager removeItemAtPath:[NSString stringWithFormat:@"%@/Library/SplashBoard", NSHomeDirectory()] error:&error];
     if (error) {
         NSLog(@"Failed to delete launch screen cache: %@",error);
     }
@@ -140,7 +141,7 @@ UIApplication.shared.clearLaunchScreenCache()
 @end
 ```
 
-OC使用方法
+OC 使用方法
 
 ```objectivec
 #import "UIApplication+LaunchScreen.h"
@@ -156,7 +157,7 @@ OC使用方法
 
 很多 Swift 项目里都集成了 SwiftLint 用于代码检查。SwiftLint 的执行通常在编译的早期且全量检查的，目前我们项目的每次 lint 时间在 12s 左右。但细想一下，并没有改变的代码多次被 lint 是一种浪费。顺着这个思路在官方的 [issues](https://github.com/realm/SwiftLint/issues/413 "SwiftLint issue 413") 里找到了可以过滤非修改文件的参考方法，其是通过 `git diff` 查找到变更的代码，仅对变更代码进行 lint 处理。使用该方案后，每次 lint 时长基本保持在 2s 以内。
 
-下面附上该脚本，需要注意的是 `SWIFT_LINT` 要根据自己的集成方式进行替换，这里是 CocoaPod 的集成方式：
+下面附上该脚本，需要注意的是 `SWIFT_LINT` 要根据自己的集成方式进行替换，这里是 CocoaPods 的集成方式：
 
 ```bash
 # Run SwiftLint
@@ -192,7 +193,7 @@ echo "SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to comp
 
 ## 面试解析
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
 本期解析一道 GCD 死锁题。
 
@@ -255,7 +256,7 @@ echo "SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to comp
 
 2、[Swift 泛型解析](https://juejin.cn/post/7000916678150193159/ "Swift 泛型解析") -- 来自掘金：我是熊大
 
-本文通俗易懂的解析了什么是泛型，泛型的应用场景，泛型和其他Swift特性摩擦出的火花，最后对泛型进行了总结。
+本文通俗易懂的解析了什么是泛型，泛型的应用场景，泛型和其他 Swift 特性摩擦出的火花，最后对泛型进行了总结。
 
 3、[WWDC2018 - Swift 泛型 Swift Generics](https://juejin.cn/post/6844903623185399822/ "WWDC2018 - Swift 泛型 Swift Generics") -- 来自掘金：西野圭吾
 
@@ -267,7 +268,7 @@ echo "SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to comp
 
 5、[Swift 泛型底层实现原理](http://chuquan.me/2020/04/20/implementing-swift-generic/ "Swift 泛型底层实现原理") -- 来自博客：楚权的世界
 
-本文介绍了swift相关的底层原理，干货较多。例如VWT的作用、什么是Type Metadata、Metadata Pattern等等。如果有些概念不是很清楚的话可以阅读文章下面的参考文献。
+本文介绍了 Swift 相关的底层原理，干货较多。例如 VWT 的作用、什么是 Type Metadata、Metadata Pattern 等等。如果有些概念不是很清楚的话可以阅读文章下面的参考文献。
 
 6、[Generics Manifesto](https://github.com/apple/swift/blob/main/docs/GenericsManifesto.md "Generics Manifesto") -- 来自 Github：Apple/Swift
 
@@ -282,13 +283,13 @@ echo "SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to comp
 
 地址：https://color.adobe.com/zh/create/color-wheel
 
-来自 Adobe 的调色盘网站，可以选择不同的色彩规则，例如：类比、分割辅色、三元色等等方案来生成配色，也可以通过导入照片来提取颜色，并且可以通过辅助工具例如对比度检查器来，确认文字和图案在底色上的预览情况。另外，你也可以通过 Adobe 的「探索」和「趋势」社区来学习如何搭配颜色，或者是寻找配色灵感。
+来自 Adobe 的调色盘网站，可以选择不同的色彩规则，例如：类比、分割辅色、三元色等等方案来生成配色，也可以通过导入照片来提取颜色，并且可以通过辅助工具例如对比度检查器来确认文字和图案在底色上的预览情况。另外，你也可以通过 Adobe 的「探索」和「趋势」社区来学习如何搭配颜色，或者是寻找配色灵感。
 
 ### Awesome-tips
 
 地址：https://awesome-tips.gitbook.io/ios/
 
-来自知识小集整理的 iOS 开发 tip，已经整合成了 gitbook。虽然时间稍稍有点久了，但其中的文章都比较优质，在遇到的问题的时候可以翻阅一下，讲不定会有新的收获。
+来自知识小集整理的 iOS 开发 tips，已经整合成了 gitbook。虽然时间稍稍有点久了，但其中的文章都比较优质，在遇到的问题的时候可以翻阅一下，讲不定会有新的收获。
 
 ## 工具推荐
 
@@ -298,14 +299,14 @@ echo "SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to comp
 
 **地址**：https://ohmystarapp.com/
 
-**软件状态**：普通版免费，Pro版收费
+**软件状态**：普通版免费，Pro 版收费
 
 **软件介绍**：
 
 直接引用官方自己介绍的话吧：
 > The best way to organise your GitHub Stars. Beautiful and efficient way to manage, explore and share your Github Stars.
 
-其中Pro版增加的功能是设备间同步，不过软件本身也支持数据的导入导出，大家根据自己的情况进行选择。
+其中 Pro 版增加的功能是设备间同步，不过软件本身也支持数据的导入导出，大家根据自己的情况进行选择。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210828101929.png)
 
