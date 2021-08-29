@@ -43,7 +43,11 @@ zhangferry：你具有多年面试官的经历，能简单总结下你认为的�
 >
 > 回到正题，我们从简历和面试的实际情况来看下有哪些是被鼓励的：
 >
+<<<<<<< HEAD
 >（1）项目经历（这里不是指写了哪些 APP）比较匹配。比如团队目前的重点在与包大小治理，如果你的简历中有相关实践并且做的比较深入，那这就是加分项。
+=======
+>（1）项目经历（这里不是指写了哪些APP）比较匹配。比如团队目前的重点在于包大小治理，如果你的简历中有相关实践并且做的比较深入，那这就是加分项。
+>>>>>>> docs: modify
 >
 >（2）令人耳目一新的技术。有些技术比较前沿或者并未广泛被大家所熟知，在这个领域候选人有较深入的研究。（这表明候选人已经找到了第二曲线）
 >
@@ -149,7 +153,7 @@ OC 使用方法
 [UIApplication.sharedApplication clearLaunchScreenCache];
 ```
 
-参考：[如何清除 iOS APP 的启动屏幕缓存](https://mp.weixin.qq.com/s/1esgRgu1iqFwB1Wv8-GlEQ)
+参考：[如何清除 iOS APP 的启动屏幕缓存](https://mp.weixin.qq.com/s/1esgRgu1iqFwB1Wv8-GlEQ "如何清除 iOS APP 的启动屏幕缓存")
 
 ### 优化 SwiftLint 执行
 
@@ -242,33 +246,37 @@ echo "SwiftLint took $(($DIFF / 60)) minutes and $(($DIFF % 60)) seconds to comp
 
 使用 GCD 的时候，我们一定要注意死锁问题，不要使用 `sync 函数` 往 `当前 serialQueue` 中添加 task，否则会卡住当前 serialQueue，产生死锁。
 
-
-
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[FBY展菲](https://github.com/fanbaoying)
+### Swift 泛型
 
-本期主题：`Swift 泛型`
+1、[Swift 进阶： 泛型](https://mp.weixin.qq.com/s/WOPbESx7YIAUes_1y3wyMw "Swift 进阶： 泛型") -- 来自公众号：Swift社区
 
-1、[Swift 进阶： 泛型](https://mp.weixin.qq.com/s/WOPbESx7YIAUes_1y3wyMw) -- 来自公众号：Swift社区
-
-泛型是 Swift 最强大的特性之一，很多 Swift 标准库是基于泛型代码构建的。你可以创建一个容纳  Int 值的数组，或者容纳 String 值的数组，甚至容纳任何 Swift 可以创建的其他类型的数组。同样，你可以创建一个存储任何指定类型值的字典，而且类型没有限制。
+[@FBY展菲](https://github.com/fanbaoying)：泛型是 Swift 最强大的特性之一，很多 Swift 标准库是基于泛型代码构建的。你可以创建一个容纳  Int 值的数组，或者容纳 String 值的数组，甚至容纳任何 Swift 可以创建的其他类型的数组。同样，你可以创建一个存储任何指定类型值的字典，而且类型没有限制。
 
 2、[Swift 泛型解析](https://juejin.cn/post/7000916678150193159/ "Swift 泛型解析") -- 来自掘金：我是熊大
 
+<<<<<<< HEAD
 本文通俗易懂的解析了什么是泛型，泛型的应用场景，泛型和其他 Swift 特性摩擦出的火花，最后对泛型进行了总结。
+=======
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文通俗易懂的解析了什么是泛型，泛型的应用场景，泛型和其他Swift特性摩擦出的火花，最后对泛型进行了总结。
+>>>>>>> docs: modify
 
 3、[WWDC2018 - Swift 泛型 Swift Generics](https://juejin.cn/post/6844903623185399822/ "WWDC2018 - Swift 泛型 Swift Generics") -- 来自掘金：西野圭吾
 
-本文回顾了 Swift 中对于泛型支持的历史变更，可以了解下泛型不同版本的历史以及特性。
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文回顾了 Swift 中对于泛型支持的历史变更，可以了解下泛型不同版本的历史以及特性。
 
 4、[Swift 性能优化(2)——协议与泛型的实现](http://chuquan.me/2020/02/19/swift-performance-protocol-type-generic-type/ "Swift 性能优化(2)——协议与泛型的实现") -- 来自博客：楚权的世界
 
-本文探讨了协议和泛型的底层实现原理，文中涉及到编译器对于 Swift 的性能优化，十分推荐阅读。
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文探讨了协议和泛型的底层实现原理，文中涉及到编译器对于 Swift 的性能优化，十分推荐阅读。
 
 5、[Swift 泛型底层实现原理](http://chuquan.me/2020/04/20/implementing-swift-generic/ "Swift 泛型底层实现原理") -- 来自博客：楚权的世界
 
+<<<<<<< HEAD
 本文介绍了 Swift 相关的底层原理，干货较多。例如 VWT 的作用、什么是 Type Metadata、Metadata Pattern 等等。如果有些概念不是很清楚的话可以阅读文章下面的参考文献。
+=======
+[@皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)：本文介绍了swift相关的底层原理，干货较多。例如VWT的作用、什么是Type Metadata、Metadata Pattern等等。如果有些概念不是很清楚的话可以阅读文章下面的参考文献。
+>>>>>>> docs: modify
 
 6、[Generics Manifesto](https://github.com/apple/swift/blob/main/docs/GenericsManifesto.md "Generics Manifesto") -- 来自 Github：Apple/Swift
 

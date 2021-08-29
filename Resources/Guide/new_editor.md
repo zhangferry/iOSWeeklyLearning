@@ -36,7 +36,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 | 夏天       | 夏天           | iOS开发老兵，游荡在各种博客之间，对底层和性能优化比较感兴趣  | 公众号：iOS成长指北 掘金：https://juejin.cn/user/3298190611456638 |
 | 展菲       | 展菲           | espressif AE 团队，智能家居研发，擅长蓝牙、Wi-Fi、嵌入式     | 公众号：网罗开发、Swift社区，掘金：https://juejin.cn/user/3192637497025335 |
 | 窦术尧     | 反向抽烟       | 网易，研一在读                                               | https://blog.csdn.net/opooc                                  |
-| 师大小海腾 | 师大小海腾     | BabyBus                                                      | https://juejin.cn/user/782508012091645                       |
+| 师大小海腾 | 师大小海腾     | BabyBus                                                      | https://juejin.cn/user/782508012091645/posts |
 | 邓竹立     | 皮拉夫大王在此 | 58同城无线团队对底层Mach-O和性能优化比较感兴趣               | 公众号：皮拉夫大王在此，简书：https://www.jianshu.com/u/739b677928f7 掘金：https://juejin.cn/user/281104094332653 |
 | 冯士魁     | 我是熊大       | 《今日水印相机》，目前负责海外音视频社交项目                 | 掘金：https://juejin.cn/user/1151943916921885/posts          |
 | Mim0sa     | Mim0sa         | 没考上研所以家里蹲，WWDC 2017 Scholarship Winner，对界面交互体验这方面比较感兴趣 | 掘金：https://juejin.cn/user/1433418892590136                |
