@@ -776,3 +776,31 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 
 [@zhangferry](zhangferry.com)：对于概念的理解官方文档还是非常有必要看的。Swift 里的闭包跟 C/OC 中的 Block，其他语言中的 Lambda 含义是类似的。Swift 与 OC 混编时，闭包与 Block 是完全兼容的。但就含义来说两者仍有区别，Block 更多强调的是匿名代码块，闭包则是除这之外还有真正的一级对象的含义。
 
+***
+### Swift 泛型
+
+1、[Swift 进阶： 泛型](https://mp.weixin.qq.com/s/WOPbESx7YIAUes_1y3wyMw "Swift 进阶： 泛型") -- 来自公众号：Swift社区
+
+[@FBY展菲](https://github.com/fanbaoying)：泛型是 Swift 最强大的特性之一，很多 Swift 标准库是基于泛型代码构建的。你可以创建一个容纳  Int 值的数组，或者容纳 String 值的数组，甚至容纳任何 Swift 可以创建的其他类型的数组。同样，你可以创建一个存储任何指定类型值的字典，而且类型没有限制。
+
+2、[Swift 泛型解析](https://juejin.cn/post/7000916678150193159/ "Swift 泛型解析") -- 来自掘金：我是熊大
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文通俗易懂的解析了什么是泛型，泛型的应用场景，泛型和其他 Swift 特性摩擦出的火花，最后对泛型进行了总结。
+
+3、[WWDC2018 - Swift 泛型 Swift Generics](https://juejin.cn/post/6844903623185399822/ "WWDC2018 - Swift 泛型 Swift Generics") -- 来自掘金：西野圭吾
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文回顾了 Swift 中对于泛型支持的历史变更，可以了解下泛型不同版本的历史以及特性。
+
+4、[Swift 性能优化(2)——协议与泛型的实现](http://chuquan.me/2020/02/19/swift-performance-protocol-type-generic-type/ "Swift 性能优化(2)——协议与泛型的实现") -- 来自博客：楚权的世界
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文探讨了协议和泛型的底层实现原理，文中涉及到编译器对于 Swift 的性能优化，十分推荐阅读。
+
+5、[Swift 泛型底层实现原理](http://chuquan.me/2020/04/20/implementing-swift-generic/ "Swift 泛型底层实现原理") -- 来自博客：楚权的世界
+
+[@皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)：本文介绍了 Swift 相关的底层原理，干货较多。例如 VWT 的作用、什么是 Type Metadata、Metadata Pattern 等等。如果有些概念不是很清楚的话可以阅读文章下面的参考文献。
+
+6、[Generics Manifesto](https://github.com/apple/swift/blob/main/docs/GenericsManifesto.md "Generics Manifesto") -- 来自 Github：Apple/Swift
+
+[@zhangferry](https://zhangferry.com)：[四娘](https://kemchenj.github.io/)对这篇官方说明进行了翻译，也可以直接阅读翻译版：[【译】Swift 泛型宣言](https://kemchenj.github.io/2017-11-26/?highlight=%E6%B3%9B%E5%9E%8B "[译]Swift 泛型宣言")。这份文档介绍了如何建立一个完善的泛型系统，以及 Swift 语言在发展过程中，不断补充的那些泛型功能。
+
+
