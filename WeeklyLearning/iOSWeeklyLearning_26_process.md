@@ -42,7 +42,7 @@
 
 > 音视频开发入门会更难一些，需要有图形图像学的基础知识；有时需要编写C\C++代码，很多第三方的音视频库都是C\C++写的，比如常用的libjpeg-turbo、lame；同时要熟悉CMake工具进行编译等。
 
-> 赠送送给大家一个我写的专栏：[《GPUImage By Metal》](https://xiaozhuanlan.com/GPUImage/present/42a8fba462217d3717c54d707db55ae7b49d86ce)
+> 赠送给大家一个我写的专栏：[《GPUImage By Metal》](https://xiaozhuanlan.com/GPUImage/present/42a8fba462217d3717c54d707db55ae7b49d86ce)
 
 > 推荐学习路线:
 > 
