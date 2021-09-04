@@ -144,15 +144,15 @@ NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、
 
 4、[初识RxSwift及使用教程](https://developer.aliyun.com/article/233478?spm=a2c6h.13262185.0.0.3c6263e6j04OZD "初识RxSwift及使用教程")  -- 来自：韩俊强的博客
 
-[@皮拉夫大王]RxSwift是Swift函数响应式编程的一个开源库。初次接触的同学可能会提问为什么要用RxSwift。因此可以看看这篇文章。作为初学者，通过阅读这篇文章感觉RxSwift使逻辑离散的代码变的聚合，逻辑更加清晰。当然，RxSwift不止于此，纸上得来终觉浅，更多的优势可能只有深入使用才会有所体会。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift是Swift函数响应式编程的一个开源库。初次接触的同学可能会提问为什么要用RxSwift。因此可以看看这篇文章。作为初学者，通过阅读这篇文章感觉RxSwift使逻辑离散的代码变的聚合，逻辑更加清晰。当然，RxSwift不止于此，纸上得来终觉浅，更多的优势可能只有深入使用才会有所体会。
 
 5、[RxSwift使用教程大全](https://developer.aliyun.com/article/233477?spm=a2c6h.13262185.0.0.3c6263e6hxn23r "RxSwift使用教程大全") -- 来自：韩俊强的博客
 
-[@皮拉夫大王]RxSwift的教程大全，罗列了比较多的RxSwift使用方法。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift的教程大全，罗列了比较多的RxSwift使用方法。
 
 [Combine - 介绍、核心概念](https://zhuanlan.zhihu.com/p/154621268 "Combine - 介绍、核心概念") -- 来自知乎：Talaxy
 
-[@皮拉夫大王]提到响应式编程就不得不说Combine。这篇文章介绍了Combine 的相关概念和用法。包括发布者-订阅者的生命周期、发布者订阅者操作者的概念等等。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：提到响应式编程就不得不说Combine。这篇文章介绍了Combine 的相关概念和用法。包括发布者-订阅者的生命周期、发布者订阅者操作者的概念等等。
 
 
 ## 学习资料
