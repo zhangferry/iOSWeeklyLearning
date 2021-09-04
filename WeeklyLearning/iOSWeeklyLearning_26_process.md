@@ -103,7 +103,6 @@ Apple 使用了 isa-swizzling 方案来实现 KVO。
 willChangeValueForKey: 和 didChangeValueForKey: 触发监听方法的时机：
 
 * didChangeValueForKey: 方法会直接触发监听方法
-
 * `NSKeyValueObservingOptionPrior` 是分别在值改变前后触发监听方法，即一次修改有两次触发。而这两次触发分别在 willChangeValueForKey: 和 didChangeValueForKey: 的时候进行的。如果注册方法中 options 传入 NSKeyValueObservingOptionPrior，那么可以通过只调用 willChangeValueForKey: 来触发改变前的那次 KVO，可以用于在属性值即将更改前做一些操作。
 
 **移除：**
@@ -115,9 +114,7 @@ willChangeValueForKey: 和 didChangeValueForKey: 触发监听方法的时机：
 NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、_isKVOA 这三个方法（可以通过 class_copyMethodList 获得），其中：
 
 * class：返回父类的 class 对象，目的是为了不让外界知道 KVO 动态生成类的存在，隐藏 KVO 实现
-
 * dealloc：释放 KVO 使用过程中产生的东西
-
 * _isKVOA：用来标志它是一个 KVO 的类
 
 参考：[iOS - 关于 KVO 的一些总结](https://juejin.cn/post/6844903972528979976 "iOS - 关于 KVO 的一些总结")
