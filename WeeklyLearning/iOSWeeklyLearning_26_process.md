@@ -42,7 +42,7 @@
 
 > 音视频开发入门会更难一些，需要有图形图像学的基础知识；有时需要编写C\C++代码，很多第三方的音视频库都是C\C++写的，比如常用的libjpeg-turbo、lame；同时要熟悉CMake工具进行编译等。
 
-> 赠送送给大家一个我写的专栏：[《GPUImage By Metal》](https://xiaozhuanlan.com/GPUImage/present/42a8fba462217d3717c54d707db55ae7b49d86ce)
+> 赠送给大家一个我写的专栏：[《GPUImage By Metal》](https://xiaozhuanlan.com/GPUImage/present/42a8fba462217d3717c54d707db55ae7b49d86ce)
 
 > 推荐学习路线:
 > 
@@ -68,7 +68,7 @@
 
 > 1、希望大家多多关注 SpeedySwift 开源项目：https://github.com/Tliens/SpeedySwift ，觉得 OK 的话给我个 star 鼓励一下。
 
-> 2、寻找和我一起并肩作战的小伙伴，各个岗位都有需求，简历可以投递到 tliens.jp@gmail.com，我的微信：bear0000001。
+> 2、北京连趣科技，寻找一起并肩作战的小伙伴，各个岗位都有需求，简历可以投递到 tliens.jp@gmail.com，我的微信：bear0000001。
 
 ## 开发Tips
 
