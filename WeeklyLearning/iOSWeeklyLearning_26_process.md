@@ -26,7 +26,18 @@
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
+1、[RxSwift 中文文档](https://beeth0ven.github.io/RxSwift-Chinese-Documentation/ "RxSwift 中文文档") -- 来自RxSwift 中文文档
 
+[@我是熊大](https://juejin.cn/user/1151943916921885)：其实RxSwift的中文文档完善度很高，其目的就是帮助iOS开发人员快速上手RxSwift，其中不仅讲了核心成员使用，还附带了精选的demo以及生态架构的相关文章。
+
+2、[RxSwift 核心实现原理](http://chuquan.me/2020/08/24/rxswift-core-implement/ "RxSwift 核心实现原理") -- 来自博客：楚权的世界
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：泛型和闭包，让RxSwift诞生，这篇文章带你还原RxSwift的设计现场，深入浅出，帮助你更深入的了解RxSwift的原理。
+
+
+3、[开始使用Combine框架](https://beeth0ven.github.io/RxSwift-Chinese-Documentation/ "开始使用Combine框架") -- 来自博客：avanderlee
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：WWDC2019苹果也提出了函数响应式编程框架，侧面展示了函数响应式编程未来的地位，本文作者就带你感受下Combine的魅力。
 
 
 ## 学习资料
