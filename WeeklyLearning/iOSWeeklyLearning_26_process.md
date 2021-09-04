@@ -150,7 +150,7 @@ NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、
 
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift的教程大全，罗列了比较多的RxSwift使用方法。
 
-[Combine - 介绍、核心概念](https://zhuanlan.zhihu.com/p/154621268 "Combine - 介绍、核心概念") -- 来自知乎：Talaxy
+6、[Combine - 介绍、核心概念](https://zhuanlan.zhihu.com/p/154621268 "Combine - 介绍、核心概念") -- 来自知乎：Talaxy
 
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：提到响应式编程就不得不说Combine。这篇文章介绍了Combine 的相关概念和用法。包括发布者-订阅者的生命周期、发布者订阅者操作者的概念等等。
 
