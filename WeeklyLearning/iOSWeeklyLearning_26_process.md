@@ -91,11 +91,11 @@ Apple 使用了 isa-swizzling 方案来实现 KVO。
 
 **注册：**
 
-当我们调用 `addObserver:forKeyPath:options:context:` 方法，为被观察对象 a 添加 KVO 监听时，系统会在运行时动态创建 a 对象所属类 A 的子类 `NSKVONotifying_A`，并且让 a 对象的 isa 指向这个全新的子类，同时重写原类 A 的被观察属性的 setter 方法来达到可以通知所有观察者对象的目的。
+当我们调用 `addObserver:forKeyPath:options:context:` 方法，为 **被观察对象** a 添加 KVO 监听时，系统会在运行时动态创建 a 对象所属类 A 的子类 `NSKVONotifying_A`，并且让 a 对象的 isa 指向这个子类，同时重写父类 A 的 **被观察属性** 的 setter 方法来达到可以通知所有 **观察者对象** 的目的。
 
 这个子类的 isa 指针指向它自己的 meta-class 对象，而不是原类的 meta-class 对象。
 
-重写的 setter 方法的 SEL 对应的 IMP 为 Foundation 中的 `_NSSetXXXValueAndNotify` 函数（XXX 为 Key 的数据类型）。因此，当被观察对象的属性发生改变时，会调用 _NSSetXXXValueAndNotify 函数，这个函数中会调用：
+重写的 setter 方法的 SEL 对应的 IMP 为 Foundation 中的 `_NSSetXXXValueAndNotify` 函数（XXX 为 Key 的数据类型）。因此，当 **被观察对象** 的属性发生改变时，会调用 _NSSetXXXValueAndNotify 函数，这个函数中会调用：
 
 * `willChangeValueForKey:` 方法
 *  父类 A 的 setter 方法
@@ -103,7 +103,7 @@ Apple 使用了 isa-swizzling 方案来实现 KVO。
 
 **监听：**
 
-而 willChangeValueForKey: 和 didChangeValueForKey: 方法内部会触发 observer 的监听方法：`observeValueForKeyPath:ofObject:change:context:`，以此完成 KVO 的监听。
+而 willChangeValueForKey: 和 didChangeValueForKey: 方法内部会触发 **observer** 的监听方法：`observeValueForKeyPath:ofObject:change:context:`，以此完成 KVO 的监听。
 
 willChangeValueForKey: 和 didChangeValueForKey: 触发监听方法的时机：
 
