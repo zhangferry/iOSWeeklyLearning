@@ -103,7 +103,7 @@ Apple 使用了 isa-swizzling 方案来实现 KVO。
 
 **监听：**
 
-而 willChangeValueForKey: 和 didChangeValueForKey: 方法内部会触发 **observer** 的监听方法：`observeValueForKeyPath:ofObject:change:context:`，以此完成 KVO 的监听。
+而 willChangeValueForKey: 和 didChangeValueForKey: 方法内部会触发 **观察者对象** 的监听方法：`observeValueForKeyPath:ofObject:change:context:`，以此完成 KVO 的监听。
 
 willChangeValueForKey: 和 didChangeValueForKey: 触发监听方法的时机：
 
