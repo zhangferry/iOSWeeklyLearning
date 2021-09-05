@@ -804,3 +804,31 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 [@zhangferry](https://zhangferry.com)：[四娘](https://kemchenj.github.io/)对这篇官方说明进行了翻译，也可以直接阅读翻译版：[【译】Swift 泛型宣言](https://kemchenj.github.io/2017-11-26/?highlight=%E6%B3%9B%E5%9E%8B "[译]Swift 泛型宣言")。这份文档介绍了如何建立一个完善的泛型系统，以及 Swift 语言在发展过程中，不断补充的那些泛型功能。
 
 
+***
+### RxSwift
+
+1、[RxSwift 中文文档](https://beeth0ven.github.io/RxSwift-Chinese-Documentation/ "RxSwift 中文文档") -- 来自RxSwift 中文文档
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：其实 RxSwift 的中文文档完善度很高，其目的就是帮助 iOS 开发人员快速上手 RxSwift，其中不仅讲了核心成员使用，还附带了精选的 demo 以及生态架构的相关文章。
+
+2、[RxSwift 核心实现原理](http://chuquan.me/2020/08/24/rxswift-core-implement/ "RxSwift 核心实现原理") -- 来自博客：楚权的世界
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：泛型和闭包，让 RxSwift 诞生，这篇文章带你还原 RxSwift 的设计现场，深入浅出，帮助你更深入的了解RxSwift 的原理。
+
+3、[初识RxSwift及使用教程](https://developer.aliyun.com/article/233478?spm=a2c6h.13262185.0.0.3c6263e6j04OZD "初识RxSwift及使用教程")  -- 来自：韩俊强的博客
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift 是 Swift 函数响应式编程的一个开源库。初次接触的同学可能会提问为什么要用 RxSwift。因此可以看看这篇文章。作为初学者，通过阅读这篇文章感觉 RxSwift 使逻辑离散的代码变的聚合，逻辑更加清晰。当然，RxSwift 不止于此，纸上得来终觉浅，更多的优势可能只有深入使用才会有所体会。
+
+4、[RxSwift使用教程大全](https://developer.aliyun.com/article/233477?spm=a2c6h.13262185.0.0.3c6263e6hxn23r "RxSwift使用教程大全") -- 来自：韩俊强的博客
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift 的教程大全，罗列了比较多的 RxSwift 使用方法。
+
+5、[使用 RxSwift 进行响应式编程](https://academy.realm.io/cn/posts/altconf-scott-gardner-reactive-programming-with-rxswift/ "使用 RxSwift 进行响应式编程") -- 来自：AltConf
+
+[@zhangferry](https://zhangferry.com)：这是 [AltConf 2016](http://altconf.com/) 中的一期讲座内容，整理翻译成了中文。虽然是2016年的内容，但RxSwift的基本概念是不会改变的，这篇内容 Scott Gardner 将带大家走入到响应式编程的世界当中，并告诉大家一个简单的方法来开始学习 RxSwift。
+
+6、[RxSwift vs PromiseKit](https://medium.com/@DianQK/rxswift-vs-promisekit-5c617fc1b789 "RxSwift vs PromiseKit") -- 来自：靛青DKQing
+
+[@zhangferry](https://zhangferry.com)：如果仅是为了处理回调地狱就选择引入 RxSwift，就有些大材小用了，处理回调地狱用 PromiseKit 就可以。RxSwift 里的回调处理只是附加功能，其真正的思想是响应式，PromiseKit 非响应式框架。**响应式是一种面向数据流和变化传播的编程范式**，不只是异步的网络请求，像是点击行为，文本框不同的输入都是数据流的一种形式，概念的理解在学习响应式编程中尤为重要。文中通过一个简单的例子，来说明 PromiseKit 不具备流的特性。
+
+

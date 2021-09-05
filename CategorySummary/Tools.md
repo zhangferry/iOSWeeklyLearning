@@ -692,3 +692,18 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210828101929.png)
 
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### Wechatsync
+
+**地址**：https://www.wechatsync.com/
+
+**软件状态**：免费，[开源](https://github.com/wechatsync/Wechatsync)
+
+**软件介绍**：
+
+作为号主通常会将文章发布到多个平台，每个平台都重复地登录、复制、粘贴是一件很麻烦的事。Wechatsync就是这样一款解脱重复工作的神器。它是一款 Chrome 浏览器插件，支持多个平台的文章发布，这需要我们提前登录各个平台获得授权。它会自动识别公众号文章，弹出「同步该文章」按钮，然后点击就可以同步文章到我们授权的平台。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210904171532.png)
+

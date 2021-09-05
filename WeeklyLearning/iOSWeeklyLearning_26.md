@@ -57,7 +57,7 @@ zhangferry：在你看来要做独立开发需要具备哪些重要技能呢？
 > 
 > 4、李明杰老师今年有一个FFmpeg的课程。
 > 
-> 我在小专栏开了一个介绍音视频技术的专栏：[GPUImage By Metal](https://xiaozhuanlan.com/GPUImage "GPUImage By Metal")，大家如果对这类知识感兴趣的话欢迎订阅。另外再送大家一些免费领取资格，名额有限只有十个，[点击这里领取](https://xiaozhuanlan.com/GPUImage/present/42a8fba462217d3717c54d707db55ae7b49d86ce "GPUImage By Metal 专栏领取链接")。（因外链无法跳转，专栏领取链接在下方参考资料中）
+> 我在小专栏开了一个介绍音视频技术的专栏：[GPUImage By Metal](https://xiaozhuanlan.com/GPUImage "GPUImage By Metal")，大家如果对这类知识感兴趣的话欢迎订阅。另外再送大家一些免费领取资格，名额有限只有十个，[点击这里领取](https://xiaozhuanlan.com/GPUImage/present/42a8fba462217d3717c54d707db55ae7b49d86ce "GPUImage By Metal 专栏领取链接")。（公众号外链无法跳转，专栏领取链接在下方参考资料中）
 
 5、如何保持学习的热情，能否分享一些你的学习方法。
 
@@ -83,19 +83,27 @@ zhangferry：在你看来要做独立开发需要具备哪些重要技能呢？
 
 在之前的分享中，我们介绍了[函数节流(Throttle)和防抖(Debounce)解析及其OC实现](https://mp.weixin.qq.com/s/h1MYGTYtYo9pcHmqw6tHBw)。部分读者会去纠结节流和防抖的概念以至于执拗于其中的区别，想在节流和防抖之间找到一个交接点，通过这个交接点进行区分，其究竟是节流(**Throttle**)还是防抖(**Debounce**)。
 
-容易让人理解混乱的还有节流和防抖中的 **Leading** 和 **Trailing** 模式，这里我们试图通过更直白的言论来解释这两个概念的区别。
+容易让人理解混乱的还有节流和防抖中的 **Leading** 和 **Trailing** 模式，这里我们试图通过更直白的语言来解释这两个概念的区别。
 
 #### 概念解释
 
 以下是正常模式，当我们移动发生位移修改时，执行函数回调。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_gif/n0eUfo2l3X5ODhFeroFaB6arodlOiakssOncT2iboHvh3LUUKneu5Y1ibyko8u68xLiabPEko4icfQXTG4z5GKelhJw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/callback.gif)
 
 这个执行明显太频繁了，所以需要有一种方法来减少执行次数，节流和防抖就是这样的方法。
 
-当我们进行节流时，就是期待在一定周期内，比如设置 200ms ，就是**每** 200ms 我们只会执行一次函数回调。但方法的执行是瞬时的，200ms 对应的是一个时间段，为了更精确的表示事件回调是在这 200ms 的哪个时间点触发的，就引入了 Leading 和 Trailing 模式。Leading模式表示在这 200ms 的第 0ms 执行，Trailing 模式表示是在这200ms 的最后时间点执行。这个可以简单理解为定时器模式，每隔一段时间取一次值。
+**节流**：在一定周期内，比如 200ms ，**每** 200ms 只会执行一次函数回调。
 
-而当我们进行防抖时，期待是当用户进行某种高频操作时，以图中的拖拽为例，当我们在一定的周期内，即设置的 200ms，任意两个**相邻**事件间隔超过 200ms，我们会执行一次函数调用。注意这里是判定两个相邻事件的时间间隔，如果相邻事件不足200ms，会 cancel 原来的计时重新计算，这是与防抖的区别之处。该行为仍对应于一个时间段，其存在开始和结束两个时间点，防抖里的 Leading 模式表示先触发行为再等待，Trailing 模式表示先等待直到满足规则触发行为。
+**防抖**：在一定周期内，比如 200ms，任意两个**相邻**事件间隔超过 200ms，才会执行一次函数调用。
+
+注意上面两个方法都是把原本密集的行为进行了分段处理，但分段就分头和尾。比如每 200ms 触发一次，是第 0ms 还是第 200ms？相邻间隔超过 200ms，第一个事件算不算有效事件呢？这就引来了 Leading 和 Trailing，节流和防抖都有 Leading 和 Trailing 两种模式。
+
+**Leading**：在时间段的开始触发。
+
+**Trailing**：在时间段的结尾触发。
+
+> 备注：leading 和 trailing 是更精确的概念区分，有些框架里并没有显性声明，只是固定为一个较通用的模式。比如 RxSwift， `throttle` 只有 leading 模式，`debounce` 只有 trailing 模式。
 
 #### 典型应用场景
 
@@ -105,23 +113,19 @@ zhangferry：在你看来要做独立开发需要具备哪些重要技能呢？
 
 而模糊查询则，用户在输入过程中我们每隔 200ms 进行一次模糊匹配避免用户输入过程中查询列表为空，这就是 节流。
 
-> 备注：有些框架里并没有 leading 和 trailing 的区分，比如 RxSwift，但其会对应一个固定行为，关键词 `throttle` 就是 leading 模式，`debounce` 就是 trailing 模式。
-
 #### 拓展
 
 如果你项目中有存在这样的高频调用，可以尝试使用该理念进行优化。
 
-这些文章[彻底弄懂函数防抖和函数节流](https://segmentfault.com/a/1190000018445196 "彻底弄懂函数防抖和函数节流")，[函数防抖与函数节流](https://zhuanlan.zhihu.com/p/38313717 "函数防抖与函数节流")和 [Objective-C Message Throttle and Debounce](http://yulingtianxia.com/blog/2017/11/05/Objective-C-Message-Throttle-and-Debounce/ "Objective-C Message Throttle and Debounce") 都会对你理解有所帮助。
+这些文章：[彻底弄懂函数防抖和函数节流](https://segmentfault.com/a/1190000018445196 "彻底弄懂函数防抖和函数节流")，[函数防抖与函数节流](https://zhuanlan.zhihu.com/p/38313717 "函数防抖与函数节流")和 [Objective-C Message Throttle and Debounce](http://yulingtianxia.com/blog/2017/11/05/Objective-C-Message-Throttle-and-Debounce/ "Objective-C Message Throttle and Debounce") 都会对你理解有所帮助。
 
 ### 关于 TestFlight 外部测试
 
-TestFlight 分为内部和外部测试两种。
+TestFlight 分为内部和外部测试两种。内部测试需要通过邮件邀请制，对方同意邀请才可以参与到内部测试流程，最多可邀请 100 人。每次上传应用到 `AppStore Connect`，内部测试人员就会自动收到测试邮件的通知。
 
-内部测试需要通过邮件邀请制，对方同意邀请才可以参与到内部测试流程，最多可邀请100人。每次上传应用到AppStore Connect，内部测试人员就会自动收到测试邮件的通知。
+外部测试可以通过邮件邀请也可以通过公开链接的形式直接参与测试，链接生成之后就固定不变了，其总是指向当前最新版本。外部测试最多可邀请 10000 人。
 
-外部测试可以通过邮件邀请也可以通过公开链接的形式直接参与测试，链接生成之后就固定不变了，其总是指向当前最新版本。外部测试最多可邀请10000人。
-
-与内测不同的是，外测每个版本的首次提交都需要经过苹果的审核。比如应用新版本为 1.0.0，首次提交对应的 build 号为 100，这个 100 的版本无法直接发布到外部测试，需要等待 TestFlight 团队的审核通过。注意这个审核不同于上线审核，AppStore 和 TestFlight 也是两个不同的团队。外测审核条件较宽泛，一般24小时之内会通过。通过之后点击公开连接或者邮件通知就可以下载 100 版本包。后面同属 1.0.0 的其他 build 号版本，无需审核，但需要每次手动发布。
+与内测不同的是，外测每个版本的首次提交都需要经过苹果的审核。比如应用新版本为 1.0.0，首次提交对应的 build 号为 100，这个 100 的版本无法直接发布到外部测试，需要等待 TestFlight 团队的审核通过。注意这个审核不同于上线审核，AppStore 和 TestFlight 也是两个不同的团队。外测审核条件较宽泛，一般24小时之内会通过。通过之后点击公开连接或者邮件通知就可以下载 100 版本包。后面同属 1.0.0 的其他 build 号版本，无需审核，但需要每次手动发布。（Apple 帮助文档里有提，后续版本还会有基本审核，但遇到的场景都是可以直接发布的。）
 
 采用公开链接的形式是无法看到测试者的信息的，只能查看对应版本的安装次数和崩溃测试。
 
@@ -188,7 +192,7 @@ NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、
 
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift 的教程大全，罗列了比较多的 RxSwift 使用方法。
 
-5、[使用 RxSwift 进行响应式编程](http://t.swift.gg/d/2-rxswift) -- 来自：AltConf
+5、[使用 RxSwift 进行响应式编程](https://academy.realm.io/cn/posts/altconf-scott-gardner-reactive-programming-with-rxswift/ "使用 RxSwift 进行响应式编程") -- 来自：AltConf
 
 [@zhangferry](https://zhangferry.com)：这是 [AltConf 2016](http://altconf.com/) 中的一期讲座内容，整理翻译成了中文。虽然是2016年的内容，但RxSwift的基本概念是不会改变的，这篇内容 Scott Gardner 将带大家走入到响应式编程的世界当中，并告诉大家一个简单的方法来开始学习 RxSwift。
 
@@ -199,7 +203,7 @@ NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、
 
 ## 学习资料
 
-整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)、[zhangferry](https://zhangferry.com)
+整理编辑：[zhangferry](https://zhangferry.com)
 
 ### RxSwift 学习教程
 
