@@ -5,10 +5,10 @@
 ### 本期概要
 
 > * 话题：跟熊大聊一下独立开发和音视频开发。
-> * Tips：关于 TestFlight 外部测试的一些介绍。
+> * Tips：对节流和防抖的再讨论；关于 TestFlight 外部测试的一些介绍。
 > * 面试模块：本期解析 KVO 的实现原理。
 > * 优秀博客：收录了一些 RxSwift 相关的文章。
-> * 学习资料：
+> * 学习资料：靛青早期写的 RxSwift 学习教程。
 > * 开发工具：公众号文章同步工具 Wechatsync。
 
 ## 本期话题
@@ -57,7 +57,7 @@ zhangferry：在你看来要做独立开发需要具备哪些重要技能呢？
 > 
 > 4、李明杰老师今年有一个FFmpeg的课程。
 > 
-> 我在小专栏开了一个介绍音视频技术的专栏：[GPUImage By Metal](https://xiaozhuanlan.com/GPUImage)，大家如果对这类知识感兴趣的话欢迎订阅。另外再送大家一些免费领取资格，名额有限只有十个，[点击这里领取](https://xiaozhuanlan.com/GPUImage/present/42a8fba462217d3717c54d707db55ae7b49d86ce)。
+> 我在小专栏开了一个介绍音视频技术的专栏：[GPUImage By Metal](https://xiaozhuanlan.com/GPUImage "GPUImage By Metal")，大家如果对这类知识感兴趣的话欢迎订阅。另外再送大家一些免费领取资格，名额有限只有十个，[点击这里领取](https://xiaozhuanlan.com/GPUImage/present/42a8fba462217d3717c54d707db55ae7b49d86ce "GPUImage By Metal 专栏领取链接")。（因外链无法跳转，专栏领取链接在下方参考资料中）
 
 5、如何保持学习的热情，能否分享一些你的学习方法。
 
@@ -77,7 +77,39 @@ zhangferry：在你看来要做独立开发需要具备哪些重要技能呢？
 
 ## 开发Tips
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)、[zhangferry](https://zhangferry.com)
+
+### 节流、防抖再讨论
+
+在之前的分享中，我们介绍了[函数节流(Throttle)和防抖(Debounce)解析及其OC实现](https://mp.weixin.qq.com/s/h1MYGTYtYo9pcHmqw6tHBw)。部分读者会去纠结节流和防抖的概念以至于执拗于其中的区别，想在节流和防抖之间找到一个交接点，通过这个交接点进行区分，其究竟是节流(**Throttle**)还是防抖(**Debounce**)。
+
+容易让人理解混乱的还有节流和防抖中的 **Leading** 和 **Trailing** 模式，这里我们试图通过更直白的言论来解释这两个概念的区别。
+
+#### 概念解释
+
+以下是正常模式，当我们移动发生位移修改时，执行函数回调。
+
+![图片](https://mmbiz.qpic.cn/mmbiz_gif/n0eUfo2l3X5ODhFeroFaB6arodlOiakssOncT2iboHvh3LUUKneu5Y1ibyko8u68xLiabPEko4icfQXTG4z5GKelhJw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1)
+
+这个执行明显太频繁了，所以需要有一种方法来减少执行次数，节流和防抖就是这样的方法。
+
+当我们进行节流时，就是期待在一定周期内，比如设置 200ms ，就是**每** 200ms 我们只会执行一次函数回调。但方法的执行是瞬时的，200ms 对应的是一个时间段，为了更精确的表示事件回调是在这 200ms 的哪个时间点触发的，就引入了 Leading 和 Trailing 模式。Leading模式表示在这 200ms 的第 0ms 执行，Trailing 模式表示是在这200ms 的最后时间点执行。这个可以简单理解为定时器模式，每隔一段时间取一次值。
+
+而当我们进行防抖时，期待是当用户进行某种高频操作时，以图中的拖拽为例，当我们在一定的周期内，即设置的 200ms，任意两个**相邻**事件间隔超过 200ms，我们会执行一次函数调用。注意这里是判定两个相邻事件的时间间隔，如果相邻事件不足200ms，会 cancel 原来的计时重新计算，这是与防抖的区别之处。该行为仍对应于一个时间段，其存在开始和结束两个时间点，防抖里的 Leading 模式表示先触发行为再等待，Trailing 模式表示先等待直到满足规则触发行为。
+
+#### 典型应用场景
+
+通过对比文本输入校验和提供一个模糊查询功能来加深节流和防抖的理解。
+
+在校验输入文本是否符合某种校验规则，我们可以在用户停止输入的 200ms 后进行校验，期间无论用户如果输入 是增加还是删减都不影响，这就是防抖。
+
+而模糊查询则，用户在输入过程中我们每隔 200ms 进行一次模糊匹配避免用户输入过程中查询列表为空，这就是 节流。
+
+#### 拓展
+
+如果你项目中有存在这样的高频调用，可以尝试使用该理念进行优化。
+
+这些文章[彻底弄懂函数防抖和函数节流](https://segmentfault.com/a/1190000018445196 "彻底弄懂函数防抖和函数节流")，[函数防抖与函数节流](https://zhuanlan.zhihu.com/p/38313717 "函数防抖与函数节流")和 [Objective-C Message Throttle and Debounce](http://yulingtianxia.com/blog/2017/11/05/Objective-C-Message-Throttle-and-Debounce/ "Objective-C Message Throttle and Debounce") 都会对你理解有所帮助。
 
 ### 关于 TestFlight 外部测试
 
