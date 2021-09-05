@@ -101,7 +101,7 @@ Apple 使用了 isa-swizzling 方案来实现 KVO。
 
 **注册：**
 
-当我们调用 `addObserver:forKeyPath:options:context:` 方法，为 **被观察对象** a 添加 KVO 监听时，系统会在运行时动态创建 a 对象所属类 A 的子类 `NSKVONotifying_A`，并且让 a 对象的 isa 指向这个子类，同时重写父类 A 的 **被观察属性** 的 setter 方法来达到可以通知所有 **观察者对象** 的目的。
+当我们调用 `addObserver:forKeyPath:options:context:` 方法，为 **被观察对象** a 添加 KVO 监听时，系统会在运行时动态创建 a 对象所属类 A 的子类 `NSKVONotifying_A`，（如果是在Swift工程中，因为命名空间的存在，生成的类名会是`NSKVONotifying_ModuleName.A`） 并且让 a 对象的 isa 指向这个子类，同时重写父类 A 的 **被观察属性** 的 setter 方法来达到可以通知所有 **观察者对象** 的目的。
 
 这个子类的 isa 指针指向它自己的 meta-class 对象，而不是原类的 meta-class 对象。
 
@@ -122,15 +122,15 @@ willChangeValueForKey: 和 didChangeValueForKey: 触发监听方法的时机：
 
 **移除：**
 
-在移除 KVO 监听后，被观察对象的 isa 会指回原类 A，但是 NSKVONotifying_A 类并没有销毁，还保存在内存中。
+在移除 KVO 监听后，被观察对象的 isa 会指回原类 A，但是 NSKVONotifying_A 类并没有销毁，还保存在内存中，不销毁的原因想必大家也很容易理解，其实就是一层缓存，避免动态类的频繁创建/销毁。
 
 **重写方法：**
 
 NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、_isKVOA 这三个方法（可以通过 class_copyMethodList 获得），其中：
 
-* class：返回父类的 class 对象，目的是为了不让外界知道 KVO 动态生成类的存在，隐藏 KVO 实现
-* dealloc：释放 KVO 使用过程中产生的东西
-* _isKVOA：用来标志它是一个 KVO 的类
+* class：返回父类的 class 对象，目的是为了不让外界知道 KVO 动态生成类的存在，隐藏 KVO 实现（通过此处我们可以知道获取对象所属类的方式最好是使用class方法，而不是isa指针）；
+* dealloc：释放 KVO 使用过程中产生的东西；
+* _isKVOA：用来标志它是一个 KVO 的类。
 
 参考：[iOS - 关于 KVO 的一些总结](https://juejin.cn/post/6844903972528979976 "iOS - 关于 KVO 的一些总结")
 
