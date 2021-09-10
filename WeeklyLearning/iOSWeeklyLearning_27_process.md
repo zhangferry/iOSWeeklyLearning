@@ -37,7 +37,17 @@
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### 阮一峰的《C 语言入门教程》
 
+地址：https://wangdoc.com/clang
+
+阮一峰最近新写的《C 语言入门教程》，他对该教程做了一些介绍可以看[这里](https://mp.weixin.qq.com/s/BLNX0MtktumBvwV5tj2ZUQ)，这对想重拾 C 语言这一门手艺的读者来说一定是一个巨大的帮助。同时各位读者若发现错误和遗漏，欢迎大家到仓库提交补丁。
+
+### Github 漫游指南
+
+地址：http://github.phodal.com/
+
+如果你是一名 Github 新手的话，这本《Github 漫游指南》将会带你漫游 Github 的世界，带你了解 Github 到底是什么，他有什么用，该怎么去使用它。如果你是一名老手了，它也可以带你深入平时可能不会注意的细节，帮助你更加了解这个我们每天都在使用的工具。
 
 ## 工具推荐
 
