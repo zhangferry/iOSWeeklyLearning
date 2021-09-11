@@ -91,6 +91,17 @@ func isBrokenDevice() -> Bool {
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
 
+1、[深入浅出 Apple 响应式框架 Combine](https://www.infoq.cn/article/eaq01u5jevuvqfghlqbs "深入浅出 Apple 响应式框架 Combine") -- 来自InfoQ：青花瓷的平方
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文是Joseph Heck编写的教程的中文版本，适合新手阅读，学习Combine。
+
+2、[Combine debugging using operators in Swift](https://www.avanderlee.com/swift/combine-error-handling/ "Combine debugging using operators in Swift") -- 来自博客：avanderlee
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：使用RxSwift会产生大量的不可读堆栈信息，这也是开发人员放弃RxSwift的原因之一,在Combine中这一点依旧如此。但好在有一些提示和技巧可以改善，本文就介绍了几种方式。
+
+3、[Combine: Getting Started](https://www.raywenderlich.com/7864801-combine-getting-started#toc-anchor-011 "Combine: Getting Started")  -- 来自：raywenderlich
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：Swift Combine的硬核教程，作者利用UnsplashAPI带大家实现了一个简易的App，让我们学习了解如何使用 Combine 的发布者和订阅者来处理事件流、合并多个发布者等。
 
 
 ## 学习资料
