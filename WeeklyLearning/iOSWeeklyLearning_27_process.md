@@ -182,6 +182,19 @@ end
 
 [@我是熊大](https://juejin.cn/user/1151943916921885)：Swift Combine的硬核教程，作者利用UnsplashAPI带大家实现了一个简易的App，让我们学习了解如何使用 Combine 的发布者和订阅者来处理事件流、合并多个发布者等。
 
+4、[Combine - 介绍、核心概念](https://zhuanlan.zhihu.com/p/154621268 "Combine - 介绍、核心概念") -- 来自知乎：Talaxy
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：提到响应式编程就不得不说Combine。这篇文章介绍了Combine 的相关概念和用法。包括发布者-订阅者的生命周期、发布者订阅者操作者的概念等等。
+
+5、[Apple 官方异步编程框架：Swift Combine 应用](https://nemocdz.github.io/post/apple-官方异步编程框架swift-combine-应用/ "Apple 官方异步编程框架：Swift Combine 应用") -- 来自：Nemocdz's Blog
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：本文通过例子和代码介绍了Combine的用法，适合了解Combine相关概念和基础的同学阅读。
+
+
+6、[RxSwift to Combine Cheatsheet](https://github.com/CombineCommunity/rxswift-to-combine-cheatsheet "RxSwift to Combine Cheatsheet") -- 来自GitHub：CombineCommunity
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift 与 Combine 的对照关系，如果你想从RxSwift过渡到Combine，可以参考此文章。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
