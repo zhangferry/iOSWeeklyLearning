@@ -228,7 +228,22 @@ end
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+### XcodeProjects
+
+**地址**： https://github.com/DKalachniuk/XcodeProjects
+
+**软件状态**： 免费 
+
+**软件介绍**
+
+    日常开发过程中，经常在终端中执行pod install、pod update、或者clear derived data等操作，XcodeProjects工具执行这些操作，只需要点击两下就能完成，还能为自己的项目自定义command，很大程度的简化我们的操作步骤，节省开发时间
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/XcodeProjects.png)
+
+
 
 ## 关于我们
 
