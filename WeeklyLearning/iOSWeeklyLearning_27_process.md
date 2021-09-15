@@ -4,12 +4,12 @@
 
 ### 本期概要
 
-> * 话题：跟 RunsCode 聊聊编程和兴趣爱好，以及如何在 1min之内复原魔方😏。
+> * 话题：跟 RunsCode 聊聊编程和兴趣爱好，以及如何在 1min 之内复原魔方😏。
 > * Tips：iOS 识别虚拟定位调研；使用 App Store Connect API Key 解决 Fastlane 双重验证问题。
 > * 面试模块：KVC 取值和赋值过程的工作原理。
-> * 优秀博客：关于 Combine 的相关文章。
-> * 学习资料：
-> * 开发工具：
+> * 优秀博客：关于 Combine 的相关文章推荐。
+> * 学习资料：阮一峰最新发布的 C 语言入门教程，GitHub 漫游指南。
+> * 开发工具：Xcode 工程管理工具 XcodeProjects。
 
 ## 本期话题
 
@@ -21,12 +21,12 @@ zhangferry：简单介绍下自己吧。
 >
 > 小时候因为沉迷于电脑游戏，毕业后入坑做手游，后来机缘巧合之下结识 iOS，从此移情别恋了，跟 iOS 相爱相杀至今。
 
-zhangferry：你的学习范围比较广，安卓，Ruby，Applescript 都有写过，你是在什么场景下接触一门新语言的？学习一门新的语言，首先应该关注哪部分内容？
+zhangferry：你的学习范围比较广，安卓、Ruby、Applescript 都有写过，你是在什么场景下接触一门新语言的？学习一门新的语言，首先应该关注哪部分内容？
 
-> 因为之前做的 cpp 游戏要做移动端跨平台移植对接移动支付 SDK，被迫学了 Android 和 iOS，但是还是被iOS 的纯粹给吸引了。后来在15年搞 iOS 的过程中来了一个 CSDN 当时前十的大神当我们领导，开拓视野学习Swift 和 Ruby，因为他说 Swift 借鉴了很多 Ruby 的特性，再加上 CocoaPods 也是 Ruby 写的，也就稍稍学习了一下。AppleScript 也是这个 CSDN 大神提醒的搞 Mac 自动化，后来也是一发不可收拾。
+> 因为之前做的 cpp 游戏要做移动端跨平台移植对接移动支付 SDK，被迫学了 Android 和 iOS，但是还是被 iOS 的纯粹给吸引了。后来在 15 年搞 iOS 的过程中来了一个 CSDN 当时前十的大神当我们领导，开拓视野学习 Swift 和 Ruby，因为他说 Swift 借鉴了很多 Ruby 的特性，再加上 CocoaPods 也是 Ruby 写的，也就稍稍学习了一下。AppleScript 也是这个 CSDN 大神提醒的搞 Mac 自动化，后来也是一发不可收拾。
 >
 > 这些语言对我而言他们共性是让我写起来很开心，就像那种小孩子看到好吃的那种感觉（主要说 Swift 和 Ruby）
-> 其实学语言都是有针对的学习，不同的语言都是有自己擅长的领域，比如说我要用 Ruby 写一个iOS App，这就有点过分了，相比 OC/Swift 这就不是很适合了，虽说有点过分，但是真的有人这么干了，可以了解下 [RubyMotion](http://www.rubymotion.com/ "RubyMotion")，真是极客啊。
+> 其实学语言都是有针对的学习，不同的语言都是有自己擅长的领域，比如说我要用 Ruby 写一个 iOS App，这就有点过分了，相比 OC/Swift 这就不是很适合了，虽说有点过分，但是真的有人这么干了，可以了解下 [RubyMotion](http://www.rubymotion.com/ "RubyMotion")，真是极客啊。
 >
 > 个人觉得学习一门新语言除了一开始掌握基本的词法语法之外，慢慢的你就会发现这个语言跟你有没有共鸣，你就会发现你的思路跟它的处理逻辑是不是很契合，就像大家都喜欢脚本 Python 我却更喜欢 Ruby，这主要是Ruby 的处理逻辑跟我很契合，就是同样的展示你用德玛习惯，我却用吕布更加习惯。
 
@@ -64,11 +64,11 @@ zhangferry：说一个最近的思想感悟吧。
 
 #### 前言
 
-最近业务开发中，有遇到我们的项目 app 定位被篡改的情况，在 `android` 端表现的尤为明显。为了防止这种黑产使用虚拟定位薅羊毛，`iOS` 也不得不进行虚拟定位的规避。
+最近业务开发中，有遇到我们的项目 App 定位被篡改的情况，在 `Android` 端表现的尤为明显。为了防止这种黑产使用虚拟定位薅羊毛，`iOS` 也不得不进行虚拟定位的规避。
 
 #### 第一种：使用越狱手机
 
-一般 app 用户存在使用越狱苹果手机的情况，一般可以推断用户的行为存在薅羊毛的嫌疑（也有 app 被竞品公司做逆向分析的可能），因为买一部越狱的手机比买一部正常的手机有难度，且在系统升级和 `appstore` 的使用上，均不如正常手机，本人曾经浅浅的接触皮毛知识通过越狱 `iPhone5s` 进行的 app 逆向。
+一般 App 用户存在使用越狱苹果手机的情况，一般可以推断用户的行为存在薅羊毛的嫌疑（也有 App 被竞品公司做逆向分析的可能），因为买一部越狱的手机比买一部正常的手机有难度，且在系统升级和 `Appstore` 的使用上，均不如正常手机，本人曾经浅浅的接触皮毛知识通过越狱 `iPhone5s` 进行的 App 逆向。
 
 **代码实现**
 
@@ -99,7 +99,7 @@ func isBrokenDevice() -> Bool {
 
 对于使用虚拟定位的场景，大多应该是司机或对接人员打卡了。而在这种场景下，就可能催生了一批专门以使用虚拟定位进行打卡薅羊毛的黑产。对于苹果手机，目前而言，能够很可以的实现的，当数爱思助手的虚拟定位功能了。
 
-**使用步骤：** 下载爱思助手 mac 客户端，连接苹果手机，工具箱中点击虚拟定位，即可在地图上选定位，然后点击修改虚拟定位即可实现修改地图的定位信息。
+**使用步骤：** 下载爱思助手 Mac 客户端，连接苹果手机，工具箱中点击虚拟定位，即可在地图上选定位，然后点击修改虚拟定位即可实现修改地图的定位信息。
 
 **原理：** 在未越狱的设备上通过电脑和手机进行 `USB` 连接，电脑通过特殊协议向手机上的 `DTSimulateLocation` 服务发送模拟的坐标数据来实现虚假定位，目前 `Xcode` 上内置位置模拟就是借助这个技术来实现的。
 
@@ -112,19 +112,19 @@ func isBrokenDevice() -> Bool {
 三、具体识别流程
 
 * 通过获取公网 `ip`，大概再通过接口根据 `ip` 地址可获取大概的位置，但误差范围有点大。
-* 通过 `Wi-Fi` 热点来读取 `app` 位置
+* 通过 `Wi-Fi` 热点来读取 `App` 位置
 * 利用 `CLCircularRegion` 设定区域中心的指定经纬度和可设定半径范围，进行监听。
 * 通过 `IBeacon` 技术，使用 `CoreBluetooth` 框架下的 `CBPeripheralManager` 建立一个蓝牙基站。这种定位直接是端对端的直接定位，省去了 `GPS` 的卫星和蜂窝数据的基站通信。
 
-四、iOS防黑产虚假定位检测技术 文章的末尾附的解法本人有尝试过，一层一层通过 kvc 读取 CLLocation 的 _internal 的 fLocation，只能读取到到此。
+四、[iOS 防黑产虚假定位检测技术](https://cloud.tencent.com/developer/article/1800531 iOS 防黑产虚假定位检测技术) 文章的末尾附的解法本人有尝试过，一层一层通过 KVC 读取 CLLocation 的 _internal 的 fLocation，只能读取到此。
 
 参考：[iOS 识别虚拟定位调研](https://mp.weixin.qq.com/s/ZbZ4pFzzyfrQifmLewrxsw "iOS 识别虚拟定位调研")
 
 ### Fastlane 使用 App Store Connect API Key 解决双重验证问题
 
-现在申请的 AppleId 都是要求必须要有双重验证的，这在处理 CI 问题时通常会引来麻烦，之前的解决方案使用`FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD` 和 `FASTLANE_SESSION`，但 `FASTLANE_SESSION` 具有时效性，每过一个月就需要更新一次，也不是长期方案。Fastlane 在 2.160.0 版本开始支持 Apple 的 App Store Connect API 功能，该功能由苹果提供，用于处理登录 App Store Connect 的授权问题。使用方法如下：
+现在申请的 AppleId 都是要求必须要有双重验证的，这在处理 CI 问题时通常会引来麻烦，之前的解决方案使用 `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD` 和 `FASTLANE_SESSION`，但 `FASTLANE_SESSION` 具有时效性，每过一个月就需要更新一次，也不是长期方案。Fastlane 在 2.160.0 版本开始支持 Apple 的 App Store Connect API 功能，该功能由苹果提供，用于处理登录 App Store Connect 的授权问题。使用方法如下：
 
-1、在[这里](https://appstoreconnect.apple.com/access/shared-secret)创建共享秘钥。
+1、在 [这里](https://appstoreconnect.apple.com/access/shared-secret) 创建共享秘钥。
 
 请求权限：
 
@@ -138,7 +138,7 @@ func isBrokenDevice() -> Bool {
 
 2、fastfile 的配置。
 
-可以直接用`app_store_connect_api_key`对象配置，也可以写成 json 供多个 `lane` 共享，这里推荐使用 json 形式管理，新建一个json文件，配置如下内容：
+可以直接用 `app_store_connect_api_key` 对象配置，也可以写成 json 供多个 `lane` 共享，这里推荐使用 json 形式管理，新建一个json文件，配置如下内容：
 
 ```json
 {
@@ -150,7 +150,7 @@ func isBrokenDevice() -> Bool {
 }
 ```
 
-前面三项都是对秘钥文件的描述，可以根据自己的项目进行修改。这里需主要`key`的内容，原始`.p8`文件是带换行的，转成字符串时用`\n`表示换行。注意这里的值为`key`，官网写法是`key_content`，这是官网的错误，我开始也被坑了，已经有人提出了 [issues 19341](https://github.com/fastlane/fastlane/issues/19341 "issues 19341")。
+前面三项都是对秘钥文件的描述，可以根据自己的项目进行修改。这里需注意 `key` 的内容，原始 `.p8` 文件是带换行的，转成字符串时用 `\n` 表示换行。注意这里的值为 `key`，官网写法是 `key_content`，这是官网的错误，我开始也被坑了，已经有人提出了 [issues 19341](https://github.com/fastlane/fastlane/issues/19341 "issues 19341")。
 
 基本所有需要登录 app conenct 的命令都包含 api_key_path 这个参数，传入 json 文件路径即可：
 
@@ -183,44 +183,43 @@ end
 * ⑤ 如果取到的值是一个对象指针，即获取的是对象，则直接将对象返回。
 	* 如果取到的值是一个 `NSNumber` 支持的数据类型，则将其存储在 `NSNumber` 实例并返回。
 	* 如果取到的值不是一个 `NSNumber` 支持的数据类型，则转换为 `NSValue` 对象, 然后返回。
-* ⑥ 调用 `valueForUndefinedKey:` 方法，该方法抛出异常 `NSUnknownKeyException`，程序 `Crash`。这是默认实现，我们可以重写该方法根据特定 `key` 做一些特殊处理。
+* ⑥ 调用 `valueForUndefinedKey:` 方法，该方法抛出异常 `NSUnknownKeyException`，程序 `Crash`。这是默认实现，我们可以重写该方法对特定 `key` 做一些特殊处理。
 
 **Setter**
 
-以下是 `setValue:forKey:` 方法的默认实现，给定 `key` 和 `value` 作为输入参数，尝试将 `KVC` 调用方的属性名为 `key` 的值设置为 `value`，执行以下过程。
+以下是 `setValue:forKey:` 方法的默认实现，给定 `key` 和 `value` 作为输入参数，尝试将 `KVC` 调用方 `key` 的值设置为 `value`，执行以下过程。
 * ① 按照 `set<Key>:`、`_set<Key>:` 顺序查找方法。
 	<br>如果找到就调用并将 `value` 传进去（根据需要进行数据类型转换），否则执行 ②。
 * ② 查看消息接收者类的 `+accessInstanceVariablesDirectly` 方法的返回值（默认返回 `YES`）。如果返回 `YES`，就按照 `_<key>`、`_is<Key>`、`<key>`、`is<Key>` 顺序查找成员变量（同 Getter）。如果找到就将 `value` 赋值给它（根据需要进行数据类型转换），否则执行 ③。如果 `+accessInstanceVariablesDirectly` 方法返回 `NO` 也执行 ③。
-* ③ 调用 `setValue:forUndefinedKey:` 方法，该方法抛出异常 `NSUnknownKeyException`，程序 `Crash`。这是默认实现，我们可以重写该方法根据特定 `key` 做一些特殊处理。
+* ③ 调用 `setValue:forUndefinedKey:` 方法，该方法抛出异常 `NSUnknownKeyException`，程序 `Crash`。这是默认实现，我们可以重写该方法对特定 `key` 做一些特殊处理。
 
 ## 优秀博客
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
-1、[深入浅出 Apple 响应式框架 Combine](https://www.infoq.cn/article/eaq01u5jevuvqfghlqbs "深入浅出 Apple 响应式框架 Combine") -- 来自InfoQ：青花瓷的平方
+1、[深入浅出 Apple 响应式框架 Combine](https://www.infoq.cn/article/eaq01u5jevuvqfghlqbs "深入浅出 Apple 响应式框架 Combine") -- 来自 InfoQ：青花瓷的平方
 
-[@我是熊大](https://juejin.cn/user/1151943916921885)：本文是Joseph Heck编写的教程的中文版本，适合新手阅读，学习Combine。
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文是 Joseph Heck 编写的教程的中文版本，适合新手阅读，学习 Combine。
 
 2、[Combine debugging using operators in Swift](https://www.avanderlee.com/swift/combine-error-handling/ "Combine debugging using operators in Swift") -- 来自博客：avanderlee
 
-[@我是熊大](https://juejin.cn/user/1151943916921885)：使用RxSwift会产生大量的不可读堆栈信息，这也是开发人员放弃RxSwift的原因之一,在Combine中这一点依旧如此。但好在有一些提示和技巧可以改善，本文就介绍了几种方式。
+[@我是熊大](https://juejin.cn/user/1151943916921885)：使用 RxSwift 会产生大量的不可读堆栈信息，这也是开发人员放弃 RxSwift 的原因之一，在 Combine 中这一点依旧如此。但好在有一些提示和技巧可以改善，本文就介绍了几种方式。
 
 3、[Combine: Getting Started](https://www.raywenderlich.com/7864801-combine-getting-started#toc-anchor-011 "Combine: Getting Started")  -- 来自：raywenderlich
 
-[@我是熊大](https://juejin.cn/user/1151943916921885)：Swift Combine的硬核教程，作者利用UnsplashAPI带大家实现了一个简易的App，让我们学习了解如何使用 Combine 的发布者和订阅者来处理事件流、合并多个发布者等。
+[@我是熊大](https://juejin.cn/user/1151943916921885)：Swift Combine 的硬核教程，作者利用 UnsplashAPI 带大家实现了一个简易的 App，让我们学习了解如何使用 Combine 的发布者和订阅者来处理事件流、合并多个发布者等。
 
 4、[Combine - 介绍、核心概念](https://zhuanlan.zhihu.com/p/154621268 "Combine - 介绍、核心概念") -- 来自知乎：Talaxy
 
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：提到响应式编程就不得不说Combine。这篇文章介绍了Combine 的相关概念和用法。包括发布者-订阅者的生命周期、发布者订阅者操作者的概念等等。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：提到响应式编程就不得不说 Combine。这篇文章介绍了Combine 的相关概念和用法。包括发布者-订阅者的生命周期、发布者订阅者操作者的概念等等。
 
 5、[Apple 官方异步编程框架：Swift Combine 应用](https://nemocdz.github.io/post/apple-官方异步编程框架swift-combine-应用/ "Apple 官方异步编程框架：Swift Combine 应用") -- 来自：Nemocdz's Blog
 
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：本文通过例子和代码介绍了Combine的用法，适合了解Combine相关概念和基础的同学阅读。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：本文通过例子和代码介绍了 Combine 的用法，适合了解 Combine 相关概念和基础的同学阅读。
 
+6、[RxSwift to Combine Cheatsheet](https://github.com/CombineCommunity/rxswift-to-combine-cheatsheet "RxSwift to Combine Cheatsheet") -- 来自 GitHub：CombineCommunity
 
-6、[RxSwift to Combine Cheatsheet](https://github.com/CombineCommunity/rxswift-to-combine-cheatsheet "RxSwift to Combine Cheatsheet") -- 来自GitHub：CombineCommunity
-
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift 与 Combine 的对照关系，如果你想从RxSwift过渡到Combine，可以参考此文章。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift 与 Combine 的对照关系，如果你想从 RxSwift 过渡到 Combine，可以参考此文章。
 
 ## 学习资料
 
@@ -230,7 +229,7 @@ end
 
 地址：https://wangdoc.com/clang
 
-阮一峰最近新写的《C 语言入门教程》，他对该教程做了一些介绍可以看[这里](https://mp.weixin.qq.com/s/BLNX0MtktumBvwV5tj2ZUQ)，这对想重拾 C 语言这一门手艺的读者来说一定是一个巨大的帮助。同时各位读者若发现错误和遗漏，欢迎大家到仓库提交补丁。
+阮一峰最近新写的《C 语言入门教程》，他对该教程做了一些介绍可以看 [这里](https://mp.weixin.qq.com/s/BLNX0MtktumBvwV5tj2ZUQ)，这对想重拾 C 语言这一门手艺的读者来说一定是一个巨大的帮助。同时各位读者若发现错误和遗漏，欢迎大家到仓库提交补丁。
 
 ### Github 漫游指南
 
@@ -251,7 +250,7 @@ end
 
 **软件介绍**
 
-日常开发过程中，经常在终端中执行pod install、pod update、或者clear derived data等操作，XcodeProjects工具执行这些操作，只需要点击两下就能完成，还能为自己的项目自定义command，很大程度的简化我们的操作步骤，节省开发时间
+日常开发过程中，经常在终端中执行 pod install、pod update、或者 clear derived data 等操作，XcodeProjects 工具执行这些操作，只需要点击两下就能完成，还能为自己的项目自定义 command，很大程度的简化我们的操作步骤，节省开发时间。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/XcodeProjects.png)
 
