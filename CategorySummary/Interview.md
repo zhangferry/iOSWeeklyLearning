@@ -836,3 +836,33 @@ NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、
 
 参考：[iOS - 关于 KVO 的一些总结](https://juejin.cn/post/6844903972528979976 "iOS - 关于 KVO 的一些总结")
 
+***
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+本期面试解析讲解的知识点是 **KVC 取值和赋值过程的工作原理**。
+
+**Getter**
+
+以下是 `valueForKey:` 方法的默认实现，给定一个 `key` 作为输入参数，在消息接收者类中操作，执行以下过程。
+* ① 按照 `get<Key>`、`<key>`、`is<Key>`、`_<key>` 顺序查找方法。
+	<br>如果找到就调用取值并执行 ⑤，否则执行 ②；
+* ② 查找 `countOf<Key>`、`objectIn<Key>AtIndex:`、`<key>AtIndexes:` 命名的方法。
+	<br>如果找到第一个和后面两个中的至少一个，则创建一个能够响应所有 `NSArray` 的方法的集合代理对象（类型为 `NSKeyValueArray`，继承自 `NSArray`），并返回该对象。否则执行 ③；
+    * 代理对象随后将其接收到的任何 `NSArray` 消息转换为 `countOf<Key>`、`objectIn<Key>AtIndex:`、`<Key>AtIndexes:` 消息的组合，并将其发送给 `KVC` 调用方。如果原始对象还实现了一个名为 `get<Key>:range:` 的可选方法，则代理对象也会在适当时使用该方法。
+* ③ 查找 `countOf<Key>`、`enumeratorOf<Key>`、`memberOf<Key>:` 命名的方法。
+	<br>如果三个方法都找到，则创建一个能够响应所有 `NSSet` 的方法的集合代理对象（类型为 `NSKeyValueSet`，继承自 `NSSet`），并返回该对象。否则执行④；
+    * 代理对象随后将其接收到的任何 `NSSet` 消息转换为 `countOf<Key>`、`enumeratorOf<Key>`、`memberOf<Key>:` 消息的组合，并将其发送给 `KVC` 调用方。
+* ④ 查看消息接收者类的 `+accessInstanceVariablesDirectly` 方法的返回值（默认返回 `YES`）。如果返回 `YES`，就按照 `_<key>`、`_is<Key>`、`<key>`、`is<Key>` 顺序查找成员变量。如果找到就直接取值并执行 ⑤，否则执行 ⑥。如果 `+accessInstanceVariablesDirectly` 方法返回 `NO` 也执行 ⑥。
+* ⑤ 如果取到的值是一个对象指针，即获取的是对象，则直接将对象返回。
+	* 如果取到的值是一个 `NSNumber` 支持的数据类型，则将其存储在 `NSNumber` 实例并返回。
+	* 如果取到的值不是一个 `NSNumber` 支持的数据类型，则转换为 `NSValue` 对象, 然后返回。
+* ⑥ 调用 `valueForUndefinedKey:` 方法，该方法抛出异常 `NSUnknownKeyException`，程序 `Crash`。这是默认实现，我们可以重写该方法对特定 `key` 做一些特殊处理。
+
+**Setter**
+
+以下是 `setValue:forKey:` 方法的默认实现，给定 `key` 和 `value` 作为输入参数，尝试将 `KVC` 调用方 `key` 的值设置为 `value`，执行以下过程。
+* ① 按照 `set<Key>:`、`_set<Key>:` 顺序查找方法。
+	<br>如果找到就调用并将 `value` 传进去（根据需要进行数据类型转换），否则执行 ②。
+* ② 查看消息接收者类的 `+accessInstanceVariablesDirectly` 方法的返回值（默认返回 `YES`）。如果返回 `YES`，就按照 `_<key>`、`_is<Key>`、`<key>`、`is<Key>` 顺序查找成员变量（同 Getter）。如果找到就将 `value` 赋值给它（根据需要进行数据类型转换），否则执行 ③。如果 `+accessInstanceVariablesDirectly` 方法返回 `NO` 也执行 ③。
+* ③ 调用 `setValue:forUndefinedKey:` 方法，该方法抛出异常 `NSUnknownKeyException`，程序 `Crash`。这是默认实现，我们可以重写该方法对特定 `key` 做一些特殊处理。
+

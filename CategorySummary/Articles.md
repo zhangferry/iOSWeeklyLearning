@@ -832,3 +832,30 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 [@zhangferry](https://zhangferry.com)：如果仅是为了处理回调地狱就选择引入 RxSwift，就有些大材小用了，处理回调地狱用 PromiseKit 就可以。RxSwift 里的回调处理只是附加功能，其真正的思想是响应式，PromiseKit 非响应式框架。**响应式是一种面向数据流和变化传播的编程范式**，不只是异步的网络请求，像是点击行为，文本框不同的输入都是数据流的一种形式，概念的理解在学习响应式编程中尤为重要。文中通过一个简单的例子，来说明 PromiseKit 不具备流的特性。
 
 
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+
+1、[深入浅出 Apple 响应式框架 Combine](https://www.infoq.cn/article/eaq01u5jevuvqfghlqbs "深入浅出 Apple 响应式框架 Combine") -- 来自 InfoQ：青花瓷的平方
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：本文是 Joseph Heck 编写的教程的中文版本，适合新手阅读，学习 Combine。
+
+2、[Combine debugging using operators in Swift](https://www.avanderlee.com/swift/combine-error-handling/ "Combine debugging using operators in Swift") -- 来自博客：avanderlee
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：使用 RxSwift 会产生大量的不可读堆栈信息，这也是开发人员放弃 RxSwift 的原因之一，在 Combine 中这一点依旧如此。但好在有一些提示和技巧可以改善，本文就介绍了几种方式。
+
+3、[Combine: Getting Started](https://www.raywenderlich.com/7864801-combine-getting-started#toc-anchor-011 "Combine: Getting Started")  -- 来自：raywenderlich
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：Swift Combine 的硬核教程，作者利用 UnsplashAPI 带大家实现了一个简易的 App，让我们学习了解如何使用 Combine 的发布者和订阅者来处理事件流、合并多个发布者等。
+
+4、[Combine - 介绍、核心概念](https://zhuanlan.zhihu.com/p/154621268 "Combine - 介绍、核心概念") -- 来自知乎：Talaxy
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：提到响应式编程就不得不说 Combine。这篇文章介绍了Combine 的相关概念和用法。包括发布者-订阅者的生命周期、发布者订阅者操作者的概念等等。
+
+5、[Apple 官方异步编程框架：Swift Combine 应用](https://nemocdz.github.io/post/apple-官方异步编程框架swift-combine-应用/ "Apple 官方异步编程框架：Swift Combine 应用") -- 来自：Nemocdz's Blog
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：本文通过例子和代码介绍了 Combine 的用法，适合了解 Combine 相关概念和基础的同学阅读。
+
+6、[RxSwift to Combine Cheatsheet](https://github.com/CombineCommunity/rxswift-to-combine-cheatsheet "RxSwift to Combine Cheatsheet") -- 来自 GitHub：CombineCommunity
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift 与 Combine 的对照关系，如果你想从 RxSwift 过渡到 Combine，可以参考此文章。
+
