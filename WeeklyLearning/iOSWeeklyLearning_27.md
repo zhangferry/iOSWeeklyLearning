@@ -5,7 +5,6 @@
 ### 本期概要
 
 > * 话题：跟 RunsCode 聊聊编程和兴趣爱好，以及如何在 1min 之内复原魔方😏。
->
 > * Tips：iOS 识别虚拟定位调研；使用 App Store Connect API Key 解决 Fastlane 双重验证问题。
 > * 面试模块：KVC 取值和赋值过程的工作原理。
 > * 优秀博客：关于 Combine 的相关文章推荐。
@@ -157,7 +156,7 @@ func isBrokenDevice() -> Bool {
 
 前面三项都是对秘钥文件的描述，可以根据自己的项目进行修改。这里需注意 `key` 的内容，原始 `.p8` 文件是带换行的，转成字符串时用 `\n` 表示换行。注意这里的值为 `key`，官网写法是 `key_content`，这是官网的错误，我开始也被坑了，已经有人提出了 [issues 19341](https://github.com/fastlane/fastlane/issues/19341 "issues 19341")。
 
-基本所有需要登录 app conenct 的命令都包含 api_key_path 这个参数，传入 json 文件路径即可：
+基本所有需要登录 App Store Conenct 的命令都包含 api_key_path 这个参数，传入 json 文件路径即可：
 
 ```json
 lane :release do
