@@ -4,7 +4,7 @@
 
 ### 本期概要
 
-> * 话题：
+> * 话题：跟彭飞聊一下职业选择和如何提高学习兴趣。
 > * Tips：
 > * 面试模块：
 > * 优秀博客：
@@ -49,9 +49,57 @@ zhangferry：说一下最近的思想感悟吧。
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [zhangferry](https://zhangferry.com)
 
+### 缓动函数
 
+很多动画为了效果更加自然，通常都不是线性变化的，而是先慢后快，或者先慢后快再慢的速度进行的。在 iOS 开发里会用 `UIView.AnimationOptions`这个枚举值进行描述，它有这几个值：
+
+```swift
+public struct AnimationOptions : OptionSet {
+	public static var curveEaseInOut: UIView.AnimationOptions { get } // default
+	public static var curveEaseIn: UIView.AnimationOptions { get }
+	public static var curveEaseOut: UIView.AnimationOptions { get }
+	public static var curveLinear: UIView.AnimationOptions { get }
+}
+```
+
+ease 表示减缓，所以 easeInOut 表示，进入和完成都是减缓的，则中间就是快速的，就是表示先慢后快再慢。那这个先慢后快，或者先快后慢的过程具体是如何描述的呢？这里就引入了缓动函数，缓动函数就是描述这一快慢过程的函数，其对应三种状态：easeIn、easeOut、easeInOut。
+
+缓动函数并非特定的某一个函数，它有不同的拟合方式，不同形式的拟合效果可以参看[下图](https://easings.net/)：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210920125221.png)
+
+缓动函数名例如 easeInSine 后面的 Sine 就是拟合类型，其对应的就是三角函数拟合。常见的还有二次函数Quad，三次函数Cubic等。以上函数有对应的 [TypeScript 源码](https://github.com/ai/easings.net/blob/33774b5880a787e467d6f4f65000608d17b577e2/src/easings/easingsFunctions.ts "easingsFunctions.ts")，有了具体的计算规则，我们就可以将缓动效果应用到颜色渐变等各个方面。以下是三角函数和二次函数拟合的Swift版本：
+
+```swift
+struct EasingsFunctions {
+    /// sine
+    static func easeInSine(_ x: CGFloat) -> CGFloat {
+        return 1 - cos((x * CGFloat.pi) / 2)
+    }
+    static func easeOutSine(_ x: CGFloat) -> CGFloat {
+        return sin((x * CGFloat.pi) / 2)
+    }
+    static func easeInOutSine(_ x: CGFloat) -> CGFloat {
+        return -(cos(CGFloat.pi * x) - 1) / 2
+    }
+    /// quad
+    static func easeInQuad(_ x: CGFloat) -> CGFloat {
+        return x * x
+    }
+    static func easeOutQuad(_ x: CGFloat) -> CGFloat {
+        return 1 - (1 - x) * (1 - x)
+    }
+    static func easeInOutQuad(_ x: CGFloat) -> CGFloat {
+        if x < 0.5 {
+           return 2 * x * x
+        } else {
+           return 1 - pow(-2 * x + 2, 2) / 2
+        }
+    }
+}
+```
 
 ## 面试解析
 
