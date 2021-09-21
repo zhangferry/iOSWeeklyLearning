@@ -33,7 +33,7 @@
 1、[面向协议编程与 Cocoa 的邂逅 (上)](https://onevcat.com/2016/11/pop-cocoa-1/  "面向协议编程与 Cocoa 的邂逅 (上)") -- 来自：OneV's Den
 
 
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章先通过引入例子介绍OOP的核心思想：封装、继承。“Cross-Cutting Concerns”以及OOP中多继承的菱形缺陷问题、动态派发的安全问题是OOP的三大困境。面向协议编程可以除菱形问题外的其他问题。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章先通过引入例子介绍OOP的核心思想：封装、继承。随后介绍OOP中“Cross-Cutting Concerns”、多继承的菱形缺陷问题、动态派发的安全问题这三大困境。面向协议编程可以解决除菱形问题外的其他问题。
 
 
 
