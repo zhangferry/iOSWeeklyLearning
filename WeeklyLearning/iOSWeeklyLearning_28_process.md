@@ -30,7 +30,24 @@
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
+1、[面向协议编程与 Cocoa 的邂逅 (上)](https://onevcat.com/2016/11/pop-cocoa-1/  "面向协议编程与 Cocoa 的邂逅 (上)") -- 来自：OneV's Den
 
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章先通过引入例子介绍OOP的核心思想：封装、继承。随后介绍OOP中“Cross-Cutting Concerns”、多继承的菱形缺陷问题、动态派发的安全问题这三大困境。面向协议编程可以解决除菱形问题外的其他问题。
+
+
+
+2、[Swift Protocol 详解 - 协议&面向协议编程](https://juejin.cn/post/6844903502817263630 "Swift Protocol 详解 - 协议&面向协议编程") -- 来自掘金：RickeyBoy
+
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章概念性的东西较多，本文先介绍了协议的基本使用方法，主要介绍耦合相关的概念，例如耦合的5个级别、耦合带来的问题、依赖翻转和协议解耦等。
+
+
+
+3、[如果你还在用子类（Subclassing），那就不对了](https://www.jianshu.com/p/80bd6633ec7c?utm_campaign=hugo&utm_medium=reader_share&utm_content=note "如果你还在用子类（Subclassing），那就不对了") -- 来自简书：97c49dfd1f9f 
+
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：  本文主要介绍了面向协议、面向对象、函数式编程的优缺点。OC->Swift不仅仅是语法上的变化，想想大家项目中的xxxBasexxx.m，如果用Swift开发需要避免再出现此类情况。
 
 
 ## 学习资料
