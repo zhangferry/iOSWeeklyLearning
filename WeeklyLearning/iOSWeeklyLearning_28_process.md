@@ -44,7 +44,7 @@
 
 
 
-3、[如果你还在用子类（Subclassing），那就不对了](http://www.cocoachina.com/articles/12881 "如果你还在用子类（Subclassing），那就不对了") -- 来自简书：97c49dfd1f9f 
+3、[如果你还在用子类（Subclassing），那就不对了](https://www.jianshu.com/p/80bd6633ec7c?utm_campaign=hugo&utm_medium=reader_share&utm_content=note "如果你还在用子类（Subclassing），那就不对了") -- 来自简书：97c49dfd1f9f 
 
 
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：不要被文章的题目所迷惑，事情没有绝对的。  本文主要介绍了面向协议、面向对象、函数式编程的优缺点。OC->Swift不仅仅是语法上的变化，想想大家项目中的xxxBasexxx.m，如果用Swift开发需要避免再出现此类情况。
