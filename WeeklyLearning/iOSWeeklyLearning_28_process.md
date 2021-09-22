@@ -111,7 +111,7 @@ struct EasingsFunctions {
 
 “消息机制派发” 是 Objective-C 的消息派发方式，其 “动态绑定” 机制让所要调用的方法在运行时才确定，支持开发者使用 “method-swizzling”、“isa-swizzling” 等黑魔法来在运行时改变调用方法的行为。除此之外，还有 “直接派发”、“函数表派发” 等消息派发方式，这些方式在 Swift 中均有应用，不属于该篇的范畴就不展开了，并不是我不会😁。
 
-“消息” 这个词好像不常说，更多的是称之为 “方法”。其实，给某个对象 “发送消息” 就相当于在该对象上“ 调用方法”。消息由 `接收者`、`选择子` 及 `参数` 构成。在 OC 中，给对象发送消息的语法为：
+“消息” 这个词好像不常说，更多的是称之为 “方法”。其实，给某个对象 “发送消息” 就相当于在该对象上“ 调用方法”。消息由 `接收者`、`选择子` 及 `参数` 构成。在 Objective-C 中，给对象发送消息的语法为：
 
 ```objectivec
 id returnValue = [someObject message:parameter];
@@ -144,13 +144,28 @@ objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方�
 
 **消息发送**
 
-
+* 判断 receiver 是否为 nil，是的话直接 return，这就是为什么给 nil 发送消息却不会 Crash 的原因。
+* 去 receiverClass 以及逐级遍历的 superclass 的 cache_t 和 class_rw_t 中查找 IMP，找到就调用。如果遍历到 rootClass 还没有找到的话，则进入 `动态方法解析` 阶段。
+* 该阶段还涉及到 `initialize 消息的发送`、`cache_t 添加、扩容 ` 等流程。
 
 **动态方法解析**
 
+* 根据 receiverClass 类型是 class / meta-class 来查找 receiverClass / receiverClass->ISA() 是否实现了以下方法，是的话就调用。（NSObject 类中有默认实现）
 
+  ```objectivec
+  + (BOOL)resolveInstanceMethod:(SEL)sel;
+  + (BOOL)resolveClassMethod:(SEL)sel;
+  ```
+
+  我们可以重写以上方法，并通过 `class_addMethod` 函数动态添加 IMP。
+
+* 该阶段结束后，会再次进入一次 `消息发送` 流程，从 “去 receiverClass 的 cache_t  中查找方法” 这一步开始执行，如果我们在该阶段为 `未知消息` 添加了 IMP，那么这次肯定会找到并调用。
+
+* 如果该阶段没有处理 `未知消息`，则进入 `消息转发` 阶段。
 
 **消息转发**
+
+
 
 
 
