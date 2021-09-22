@@ -143,7 +143,24 @@ struct EasingsFunctions {
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+### XcodesApp
+
+**地址**： https://github.com/RobotsAndPencils/XcodesApp
+
+**软件状态**： 免费，开源
+
+**软件介绍**
+
+Xcode多版本切换工具，支持下载不同版本的Xcode，动态切换指定版本
+
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/xcodes.png)
+
+
+ 
 
 ## 关于我们
 
