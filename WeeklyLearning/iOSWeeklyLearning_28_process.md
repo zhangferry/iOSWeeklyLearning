@@ -167,13 +167,10 @@ struct EasingsFunctions {
 
 **软件介绍**
 
-Xcode多版本切换工具，支持下载不同版本的Xcode，动态切换指定版本
-
+AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐槽，如果你也经历过这些事情可以试下 Xcodes。Xcodes 是一个 Xcode下载管理器，支持下载不同版本的 Xcode，还可以切换默认版本。如果你喜欢命令行，还可以使用其[命令行版本](https://github.com/RobotsAndPencils/xcodes "xcodes")进行安装。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/xcodes.png)
 
-
- 
 
 ## 关于我们
 
