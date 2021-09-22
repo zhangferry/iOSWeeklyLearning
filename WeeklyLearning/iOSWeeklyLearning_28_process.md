@@ -114,10 +114,10 @@ struct EasingsFunctions {
 “消息” 这个词好像不常说，更多的是称之为 “方法”。其实，给某个对象 “发送消息” 就相当于在该对象上“ 调用方法”。消息由 `接收者`、`选择子` 及 `参数` 构成。在 OC 中，给对象发送消息的语法为：
 
 ```objectivec
-id returnValue = [someObject messageName:parameter];
+id returnValue = [someObject message:parameter];
 ```
 
-在这里，someObject 叫做 `接收者`，messageName 叫做 `选择子`，选择子与参数合起来称为 `消息`。编译器看到此消息后，会将其转换为一条标准的 C 语言函数调用，所调用的函数为消息机制的核心函数 `objc_msgSend`：
+在这里，someObject 叫做 `接收者`，message 叫做 `选择子`，`选择子` 与 `参数` 合起来称为 `消息`。编译器看到此消息后，会将其转换为一条标准的 C 语言函数调用，所调用的函数为消息机制的核心函数 `objc_msgSend`：
 
 ```objectivec
 void objc_msgSend(id self, SEL _cmd, ...)
