@@ -6,10 +6,10 @@
 
 > * 话题：跟彭飞聊一下职业选择和如何提高学习兴趣。
 > * Tips：介绍缓动函数相关的一些内容。
-> * 面试模块：Objective-C 的消息机制。
+> * 面试模块：Objective-C 的消息机制（上）。
 > * 优秀博客：整理了几篇 Swift 协议相关的优秀文章。
-> * 学习资料：两个高质量的学习仓库，用涂鸦绘画的形式讲解编程知识和 raywenderlich 出品的Swift编码指南。
-> * 开发工具：Xcode下载管理工具XcodesApp。
+> * 学习资料：两个高质量的学习仓库，用涂鸦绘画的形式讲解编程知识和 raywenderlich 出品的 Swift 编码指南。
+> * 开发工具：Xcode 下载管理工具 XcodesApp。
 
 ## 本期话题
 
@@ -23,7 +23,7 @@ zhangferry：你之前在传统企业也工作过，传统企业跟互联网公�
 
 > 就拿我之前的公司而言，最大的不同就是对开发过程的重视，对技术的重视程度不同。
 >
-> 虽然我之前带的传统行业，就这家公司而言，员工也是不少，但是对于开发部门来说，完全就是个小作坊。没有合理的生产流程，只注重生产出产品（其实也不是很注重）。一个人负责的东西很杂，测试离职后就只能自测，甚至有一个星期被迫下店当了店员（一生黑）。其实我之前早就想要离开那里，可是碍于疫情只能多留了一年。
+> 虽然我之前待的传统行业，就这家公司而言，员工也是不少，但是对于开发部门来说，完全就是个小作坊。没有合理的生产流程，只注重生产出产品（其实也不是很注重）。一个人负责的东西很杂，测试离职后就只能自测，甚至有一个星期被迫下店当了店员（一生黑）。其实我之前早就想要离开那里，可是碍于疫情只能多留了一年。
 >
 > 现在在这家公司，最大的感受就是流程规范了许多，公司重视技术，有定期的技术分享，生产流程也规范了许多，也有内部的自动化平台，目前也有机会参与公司的自动化流程构建优化（脚本自动化打包等），感觉在这里可以接触到学习到很多东西。
 
@@ -31,13 +31,13 @@ zhangferry：感觉你兴趣范围挺广的，逆向、算法，这些由兴趣�
 
 > 也可以说是一种有目标，也是为了成功的成就感。
 >
->在我看清了前司要离开却迫于疫情留下后，我就知道要为以后做打算了，我于是每天开始刷算法题，每个模块有目的性的做下来，然后参照题解，分析自己的时空复杂度是否有优化空间。在换工作前做了300余道算法题，刷算法的同时感受到了算法思维的重要性。
+>在我看清了前司要离开却迫于疫情留下后，我就知道要为以后做打算了，于是我每天开始刷算法题，每个模块有目的性的做下来，然后参照题解，分析自己的时空复杂度是否有优化空间。在换工作前做了300 余道算法题，刷算法的同时感受到了算法思维的重要性。
 >
 >逆向的学习也是机缘巧合，当时我的好基友有一款付费办公软件找我，希望我能破解。当时我就决定去学习这部分的知识。学了一段时间，也买了 Hopper 作为分析工具，帮基友破解掉了里面的内购付费功能。为了简化部分重复的工作，抽了一段时间学习写 Shell 脚本（也稍微了解了 Python，以后会详细学习），然后自写了一套重签名脚本。软件破解成功以后我真的是满满的成就感。
 
 zhangferry：有了学习动力还需要一些学习方法，分享一些你的学习方法吧。
 
-> 我认为最重要的是要有目的性，当初我决定要跳槽后，基本上能抽的空闲时间都抽出来了，地铁上刷MJ的视频，回去以后打开 Leetcode 刷题，每天制定学习的时长，时间不到不能进行娱乐活动。然后只玩休闲类益智类游戏，保证不会在游戏上花掉太多时间。像现在的话，我虽然已经没有跳槽的目的性，不过最近 *OS internals part3 译本已经出来了，我也购入了一本，当前目标就是先读完这本书。虽然里面也很多陌生的概念，也磕磕绊绊的看了一百余页。所以对我而言，目的性是我学习的最大动力。
+> 我认为最重要的是要有目的性，当初我决定要跳槽后，基本上能抽的空闲时间都抽出来了，地铁上刷 MJ 的视频，回去以后打开 Leetcode 刷题，每天制定学习的时长，时间不到不能进行娱乐活动。然后只玩休闲类益智类游戏，保证不会在游戏上花掉太多时间。像现在的话，我虽然已经没有跳槽的目的性，不过最近 *OS internals part3 译本已经出来了，我也购入了一本，当前目标就是先读完这本书。虽然里面有很多陌生的概念，也磕磕绊绊的看了一百余页。所以对我而言，目的性是我学习的最大动力。
 
 zhangferry：说一下最近的思想感悟吧。
 
@@ -53,7 +53,7 @@ zhangferry：说一下最近的思想感悟吧。
 
 ### 缓动函数
 
-很多动画为了效果更加自然，通常都不是线性变化的，而是先慢后快，或者先慢后快再慢的速度进行的。在 iOS 开发里会用 `UIView.AnimationOptions`这个枚举值进行描述，它有这几个值：
+很多动画为了效果更加自然，通常都不是线性变化的，而是先慢后快，或者先慢后快再慢的速度进行的。在 iOS 开发里会用 `UIView.AnimationOptions` 这个枚举值进行描述，它有这几个值：
 
 ```swift
 public struct AnimationOptions : OptionSet {
@@ -70,7 +70,7 @@ ease 表示减缓，所以 easeInOut 表示，进入和完成都是减缓的，�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210920125221.png)
 
-缓动函数名例如 easeInSine 后面的 Sine 就是拟合类型，其对应的就是三角函数拟合。常见的还有二次函数Quad，三次函数Cubic等。以上函数有对应的 [TypeScript 源码](https://github.com/ai/easings.net/blob/33774b5880a787e467d6f4f65000608d17b577e2/src/easings/easingsFunctions.ts "easingsFunctions.ts")，有了具体的计算规则，我们就可以将缓动效果应用到颜色渐变等各个方面。以下是三角函数和二次函数拟合的Swift版本：
+缓动函数名例如 easeInSine 后面的 Sine 就是拟合类型，其对应的就是三角函数拟合。常见的还有二次函数 Quad，三次函数 Cubic 等。以上函数有对应的 [TypeScript 源码](https://github.com/ai/easings.net/blob/33774b5880a787e467d6f4f65000608d17b577e2/src/easings/easingsFunctions.ts "easingsFunctions.ts")，有了具体的计算规则，我们就可以将缓动效果应用到颜色渐变等各个方面。以下是三角函数和二次函数拟合的 Swift 版本：
 
 ```swift
 struct EasingsFunctions {
@@ -105,13 +105,13 @@ struct EasingsFunctions {
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
-本期面试解析讲解的知识点是 Objective-C 的消息机制。为了避免篇幅过长这里不会展开太细，而且太细的笔者我也不会😅，网上相关的优秀文章数不胜数，如果大家看完还有疑惑🤔一定要去一探究竟🐛。
+本期面试解析讲解的知识点是 Objective-C 的消息机制（上）。为了避免篇幅过长这里不会展开太细，而且太细的笔者我也不会😅，网上相关的优秀文章数不胜数，如果大家看完还有疑惑🤔一定要去探个究竟🐛。
 
 **消息机制派发**
 
-“消息机制派发” 是 Objective-C 的消息派发方式，其 “动态绑定” 机制让所要调用的方法在运行时才确定，支持开发者使用 “method-swizzling”、“isa-swizzling” 等黑魔法来在运行时改变调用方法的行为。除此之外，还有 “直接派发”、“函数表派发” 等消息派发方式，这些方式在 Swift 中均有应用，不属于该篇的范畴就不展开了，并不是我不会😁。
+“消息机制派发” 是 Objective-C 的消息派发方式，其 “动态绑定” 机制让所要调用的方法在运行时才确定，支持开发者使用 “method-swizzling”、“isa-swizzling” 等黑魔法来在运行时改变调用方法的行为。除此之外，还有 “直接派发”、“函数表派发” 等消息派发方式，这些方式在 Swift 中均有应用。
 
-“消息” 这个词好像不常说，更多的是称之为 “方法”。其实，给某个对象 “发送消息” 就相当于在该对象上“ 调用方法”。消息由 `接收者`、`选择子` 及 `参数` 构成。在 Objective-C 中，给对象发送消息的语法为：
+“消息” 这个词好像不常说，更多的是称之为 “方法”。其实，给某个对象 “发送消息” 就相当于在该对象上“ 调用方法”。完整的消息派发由 `接收者`、`选择子` 及 `参数` 构成。在 Objective-C 中，给对象发送消息的语法为：
 
 ```objectivec
 id returnValue = [someObject message:parameter];
@@ -125,7 +125,7 @@ void objc_msgSend(id self, SEL _cmd, ...)
 
 该函数参数个数可变，能接受两个或两个以上参数。前面两个参数 `self 消息接收者` 和 `_cmd 选择子` 即为 Objective-C 方法的两个隐式参数，后续参数就是消息中的那些参数（也就是方法显式参数）。
 
-Objective-C 中的方法调用在编译后会转换成该函数调用，比如以上方法调用后转换为：
+Objective-C 中的方法调用在编译后会转换成该函数调用，比如以上方法调用会转换为：
 
 ```objectivec
 id returnValue = objc_msgSend(someObject, @selector(message:), parameter);
@@ -140,30 +140,19 @@ id returnValue = objc_msgSend(someObject, @selector(message:), parameter);
 
 在讲了一大段废话之后（废话居然占了这么大篇幅 wtm），该步入重点了，objc_msgSend 函数的执行流程是什么样的？
 
-objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方法解析`、`消息转发`。而有些地方又将 `动态方法解析` 阶段归并到 `消息转发` 阶段中，从而将其分为了 `消息发送` 和 `消息转发` 两大阶段，比如《Effective Objective-C 2.0》。好吧，其实我也不知道那种是通常😅。
+objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方法解析`、`消息转发`。而有些地方又将 `动态方法解析` 阶段归并到 `消息转发` 阶段中，从而将其分为了 `消息发送` 和 `消息转发` 两大阶段，比如《Effective Objective-C 2.0》。好吧，其实我也不知道哪种是通常😅。
 
 **消息发送**
 
 * 判断 receiver 是否为 nil，是的话直接 return，这就是为什么给 nil 发送消息却不会 Crash 的原因。
-* 去 receiverClass 以及逐级遍历的 superclass 的 cache_t 和 class_rw_t 中查找 IMP，找到就调用。如果遍历到 rootClass 还没有找到的话，则进入 `动态方法解析` 阶段。
+* 去 receiverClass 以及逐级遍历的 superclass 中的 cache_t 和 class_rw_t 中查找 IMP，找到就调用。如果遍历到 rootClass 还没有找到的话，则进入 `动态方法解析` 阶段。
 * 该阶段还涉及到 `initialize 消息的发送`、`cache_t 添加、扩容 ` 等流程。
 
 **动态方法解析**
 
-* 根据 receiverClass 类型是 class / meta-class 来查找 receiverClass / receiverClass->ISA() 是否实现了以下方法，是的话就调用。（NSObject 类中有默认实现）
-
-  ```objectivec
-  + (BOOL)resolveInstanceMethod:(SEL)sel;
-  + (BOOL)resolveClassMethod:(SEL)sel;
-  ```
-
-  我们可以重写以上方法，并通过 `class_addMethod` 函数动态添加 IMP。
-
-* 该阶段结束后，会再次进入一次 `消息发送` 流程，从 “去 receiverClass 的 cache_t  中查找方法” 这一步开始执行，如果我们在该阶段为 `未知消息` 添加了 IMP，那么这次肯定会找到并调用。
-
-* 如果该阶段没有处理 `未知消息`，则进入 `消息转发` 阶段。
-
 **消息转发**
+
+由于篇幅原因，剩下的内容我们下期再见吧👋。
 
 
 
@@ -171,14 +160,13 @@ objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方�
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
-
 1、[Swift 协议](https://swift.bootcss.com/02_language_guide/21_Protocols  "Swift 协议") -- 来自：Swift 编程语言中文教程
 
-[@我是熊大](https://juejin.cn/user/1151943916921885)：在学习面向协议编程前，先了解swift中的协议该如何使用。
+[@我是熊大](https://juejin.cn/user/1151943916921885)：在学习面向协议编程前，先了解 Swift 中的协议该如何使用。
 
 2、[面向协议编程与 Cocoa 的邂逅 (上)](https://onevcat.com/2016/11/pop-cocoa-1/  "面向协议编程与 Cocoa 的邂逅 (上)") -- 来自：OneV's Den
 
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章先通过引入例子介绍OOP的核心思想：封装、继承。随后介绍OOP中“Cross-Cutting Concerns”、多继承的菱形缺陷问题、动态派发的安全问题这三大困境。面向协议编程可以解决除菱形问题外的其他问题。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章先通过引入例子介绍 OOP 的核心思想：封装、继承。随后介绍 OOP 中 “Cross-Cutting Concerns”、多继承的菱形缺陷问题、动态派发的安全问题这三大困境。面向协议编程可以解决除菱形问题外的其他问题。
 
 3、[面向协议编程与 Cocoa 的邂逅 (下)](https://onevcat.com/2016/12/pop-cocoa-2/  "面向协议编程与 Cocoa 的邂逅 (下)") -- 来自：OneV's Den
 
@@ -186,13 +174,11 @@ objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方�
 
 4、[Swift Protocol 详解 - 协议&面向协议编程](https://juejin.cn/post/6844903502817263630 "Swift Protocol 详解 - 协议&面向协议编程") -- 来自掘金：RickeyBoy
 
-
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章概念性的东西较多，本文先介绍了协议的基本使用方法，主要介绍耦合相关的概念，例如耦合的5个级别、耦合带来的问题、依赖翻转和协议解耦等。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章概念性的东西较多，本文先介绍了协议的基本使用方法，主要介绍耦合相关的概念，例如耦合的 5 个级别、耦合带来的问题、依赖翻转和协议解耦等。
 
 5、[如果你还在用子类（Subclassing），那就不对了](https://www.jianshu.com/p/80bd6633ec7c?utm_campaign=hugo&utm_medium=reader_share&utm_content=note "如果你还在用子类（Subclassing），那就不对了") -- 来自简书：97c49dfd1f9f 
 
-
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：  本文主要介绍了面向协议、面向对象、函数式编程的优缺点。OC->Swift不仅仅是语法上的变化，想想大家项目中的xxxBasexxx.m，如果用Swift开发需要避免再出现此类情况。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：本文主要介绍了面向协议、面向对象、函数式编程的优缺点。OC->Swift 不仅仅是语法上的变化，想想大家项目中的 xxxBasexxx.m，如果用 Swift开发需要避免再出现此类情况。
 
 6、[Swift 中的面向协议编程：是否优于面向对象编程？](https://swift.gg/2018/12/03/pop-vs-oop/  "Swift 中的面向协议编程：是否优于面向对象编程？") -- 来自：SwiftGG
 
@@ -227,7 +213,7 @@ objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方�
 
 **软件介绍**
 
-AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐槽，如果你也经历过这些事情可以试下 Xcodes。Xcodes 是一个 Xcode下载管理器，支持下载不同版本的 Xcode，还可以切换默认版本。如果你喜欢命令行，还可以使用其[命令行版本](https://github.com/RobotsAndPencils/xcodes "xcodes")进行安装。
+AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐槽，如果你也经历过这些事情可以试下 Xcodes。Xcodes 是一个 Xcode 下载管理器，支持下载不同版本的 Xcode，还可以切换默认版本。如果你喜欢命令行，还可以使用其[命令行版本](https://github.com/RobotsAndPencils/xcodes "xcodes")进行安装。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/xcodes.png)
 
