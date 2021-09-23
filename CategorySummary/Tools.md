@@ -725,3 +725,20 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 
 
+***
+
+整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
+
+### XcodesApp
+
+**地址**： https://github.com/RobotsAndPencils/XcodesApp
+
+**软件状态**： 免费，开源
+
+**软件介绍**
+
+AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐槽，如果你也经历过这些事情可以试下 Xcodes。Xcodes 是一个 Xcode 下载管理器，支持下载不同版本的 Xcode，还可以切换默认版本。如果你喜欢命令行，还可以使用其[命令行版本](https://github.com/RobotsAndPencils/xcodes "xcodes")进行安装。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/xcodes.png)
+
+

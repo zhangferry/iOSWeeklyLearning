@@ -431,3 +431,18 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 如果你是一名 Github 新手的话，这本《Github 漫游指南》将会带你漫游 Github 的世界，带你了解 Github 到底是什么，他有什么用，该怎么去使用它。如果你是一名老手了，它也可以带你深入平时可能不会注意的细节，帮助你更加了解这个我们每天都在使用的工具。
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### a-picture-is-worth-a-1000-words
+
+地址：https://github.com/girliemac/a-picture-is-worth-a-1000-words
+
+把复杂知识放进简单涂鸦！该仓库中用可爱的涂鸦绘制了包涵数据结构、算法、机器学习入门、web 基础开发的一些知识，画风可爱，简单易懂。但要下载的时候要注意一下，涂鸦图片很大。
+
+### raywenderlich/swift-style-guide
+
+地址：https://github.com/raywenderlich/swift-style-guide
+
+来自 raywenderlich 的 Swift 代码风格指南，其风格的重点在于印刷和网页版的可读性，这个风格指南是为了保持他们的书籍、教程和入门套件中的代码的优雅和一致性。可以供大家有特别需要时参考和借鉴。
+

@@ -866,3 +866,55 @@ NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、
 * ② 查看消息接收者类的 `+accessInstanceVariablesDirectly` 方法的返回值（默认返回 `YES`）。如果返回 `YES`，就按照 `_<key>`、`_is<Key>`、`<key>`、`is<Key>` 顺序查找成员变量（同 Getter）。如果找到就将 `value` 赋值给它（根据需要进行数据类型转换），否则执行 ③。如果 `+accessInstanceVariablesDirectly` 方法返回 `NO` 也执行 ③。
 * ③ 调用 `setValue:forUndefinedKey:` 方法，该方法抛出异常 `NSUnknownKeyException`，程序 `Crash`。这是默认实现，我们可以重写该方法对特定 `key` 做一些特殊处理。
 
+***
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+本期面试解析讲解的知识点是 Objective-C 的消息机制（上）。为了避免篇幅过长这里不会展开太细，而且太细的笔者我也不会😅，网上相关的优秀文章数不胜数，如果大家看完还有疑惑🤔一定要去探个究竟🐛。
+
+**消息机制派发**
+
+“消息机制派发” 是 Objective-C 的消息派发方式，其 “动态绑定” 机制让所要调用的方法在运行时才确定，支持开发者使用 “method-swizzling”、“isa-swizzling” 等黑魔法来在运行时改变调用方法的行为。除此之外，还有 “直接派发”、“函数表派发” 等消息派发方式，这些方式在 Swift 中均有应用。
+
+“消息” 这个词好像不常说，更多的是称之为 “方法”。其实，给某个对象 “发送消息” 就相当于在该对象上“ 调用方法”。完整的消息派发由 `接收者`、`选择子` 及 `参数` 构成。在 Objective-C 中，给对象发送消息的语法为：
+
+```objectivec
+id returnValue = [someObject message:parameter];
+```
+
+在这里，someObject 叫做 `接收者`，message 叫做 `选择子`，`选择子` 与 `参数` 合起来称为 `消息`。编译器看到此消息后，会将其转换为一条标准的 C 语言函数调用，所调用的函数为消息机制的核心函数 `objc_msgSend`：
+
+```objectivec
+void objc_msgSend(id self, SEL _cmd, ...)
+```
+
+该函数参数个数可变，能接受两个或两个以上参数。前面两个参数 `self 消息接收者` 和 `_cmd 选择子` 即为 Objective-C 方法的两个隐式参数，后续参数就是消息中的那些参数（也就是方法显式参数）。
+
+Objective-C 中的方法调用在编译后会转换成该函数调用，比如以上方法调用会转换为：
+
+```objectivec
+id returnValue = objc_msgSend(someObject, @selector(message:), parameter);
+```
+
+> 除了 objc_msgSend，还有其它函数负责处理边界情况：
+>
+> * objc_msgSend_stret：待发送的消息返回的是结构体
+> * objc_msgSend_fpret：待发送的消息返回的是浮点数
+> * objc_msgSendSuper：给父类发消息
+> * ......
+
+在讲了一大段废话之后（废话居然占了这么大篇幅 wtm），该步入重点了，objc_msgSend 函数的执行流程是什么样的？
+
+objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方法解析`、`消息转发`。而有些地方又将 `动态方法解析` 阶段归并到 `消息转发` 阶段中，从而将其分为了 `消息发送` 和 `消息转发` 两大阶段，比如《Effective Objective-C 2.0》。好吧，其实我也不知道哪种是通常😅。
+
+**消息发送**
+
+* 判断 receiver 是否为 nil，是的话直接 return，这就是为什么给 nil 发送消息却不会 Crash 的原因。
+* 去 receiverClass 以及逐级遍历的 superclass 中的 cache_t 和 class_rw_t 中查找 IMP，找到就调用。如果遍历到 rootClass 还没有找到的话，则进入 `动态方法解析` 阶段。
+* 该阶段还涉及到 `initialize 消息的发送`、`cache_t 缓存添加、扩容 ` 等流程。
+
+**动态方法解析**
+
+**消息转发**
+
+由于篇幅原因，剩下的内容我们下期再见吧👋。
+

@@ -859,3 +859,30 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：RxSwift 与 Combine 的对照关系，如果你想从 RxSwift 过渡到 Combine，可以参考此文章。
 
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+
+1、[Swift 协议](https://swift.bootcss.com/02_language_guide/21_Protocols  "Swift 协议") -- 来自：Swift 编程语言中文教程
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：在学习面向协议编程前，先了解 Swift 中的协议该如何使用。
+
+2、[面向协议编程与 Cocoa 的邂逅 (上)](https://onevcat.com/2016/11/pop-cocoa-1/  "面向协议编程与 Cocoa 的邂逅 (上)") -- 来自：OneV's Den
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章先通过引入例子介绍 OOP 的核心思想：封装、继承。随后介绍 OOP 中 “Cross-Cutting Concerns”、多继承的菱形缺陷问题、动态派发的安全问题这三大困境。面向协议编程可以解决除菱形问题外的其他问题。
+
+3、[面向协议编程与 Cocoa 的邂逅 (下)](https://onevcat.com/2016/12/pop-cocoa-2/  "面向协议编程与 Cocoa 的邂逅 (下)") -- 来自：OneV's Den
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：作者使用协议演示了基于 Protocol 的网络请求，然后又回答了工作中的使用场景，正如作者所言："通过面向协议的编程，我们可以从传统的继承上解放出来，用一种更灵活的方式，搭积木一样对程序进行组装"。
+
+4、[Swift Protocol 详解 - 协议&面向协议编程](https://juejin.cn/post/6844903502817263630 "Swift Protocol 详解 - 协议&面向协议编程") -- 来自掘金：RickeyBoy
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章概念性的东西较多，本文先介绍了协议的基本使用方法，主要介绍耦合相关的概念，例如耦合的 5 个级别、耦合带来的问题、依赖翻转和协议解耦等。
+
+5、[如果你还在用子类（Subclassing），那就不对了](https://www.jianshu.com/p/80bd6633ec7c?utm_campaign=hugo&utm_medium=reader_share&utm_content=note "如果你还在用子类（Subclassing），那就不对了") -- 来自简书：97c49dfd1f9f 
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：本文主要介绍了面向协议、面向对象、函数式编程的优缺点。OC->Swift 不仅仅是语法上的变化，想想大家项目中的 xxxBasexxx.m，如果用 Swift开发需要避免再出现此类情况。
+
+6、[Swift 中的面向协议编程：是否优于面向对象编程？](https://swift.gg/2018/12/03/pop-vs-oop/  "Swift 中的面向协议编程：是否优于面向对象编程？") -- 来自：SwiftGG
+
+[@我是熊大](https://juejin.cn/user/1151943916921885)：引用作者的一句话：”30 年的开发经验，让我能够平心静气地说，你应该了解协议和 POP。开始设计并书写你自己的 POP 代码吧“。
+
