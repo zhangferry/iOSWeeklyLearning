@@ -146,7 +146,7 @@ objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方�
 
 * 判断 receiver 是否为 nil，是的话直接 return，这就是为什么给 nil 发送消息却不会 Crash 的原因。
 * 去 receiverClass 以及逐级遍历的 superclass 中的 cache_t 和 class_rw_t 中查找 IMP，找到就调用。如果遍历到 rootClass 还没有找到的话，则进入 `动态方法解析` 阶段。
-* 该阶段还涉及到 `initialize 消息的发送`、`cache_t 添加、扩容 ` 等流程。
+* 该阶段还涉及到 `initialize 消息的发送`、`cache_t 缓存添加、扩容 ` 等流程。
 
 **动态方法解析**
 
