@@ -66,7 +66,7 @@ public struct AnimationOptions : OptionSet {
 
 ease 表示减缓，所以 easeInOut 表示，进入和完成都是减缓的，则中间就是快速的，就是表示先慢后快再慢。那这个先慢后快，或者先快后慢的过程具体是如何描述的呢？这里就引入了缓动函数，缓动函数就是描述这一快慢过程的函数，其对应三种状态：easeIn、easeOut、easeInOut。
 
-缓动函数并非特定的某一个函数，它有不同的拟合方式，不同形式的拟合效果可以参看[下图](https://easings.net/ “easings.net”)：
+缓动函数并非特定的某一个函数，它有不同的拟合方式，不同形式的拟合效果可以参看[下图](https://easings.net/ "easings.net")：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210920125221.png)
 
