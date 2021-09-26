@@ -44,8 +44,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 | 何天从     | iHTCboy        | 坐标广州，iOS 自动化方向，目前从事游戏 SDK 开发五年啦~       | https://ihtcboy.com/                                  |
 | CoderStar     | CoderStar        | 坐标北京，大前端开发方向，对前端、后端都有一定涉猎，目前主要工作与iOS相关，喜欢分享干货博文     | 公众号：CoderStar； 掘金：https://juejin.cn/user/588993964541288/posts      |
 | RunsCode     | RunsCode        | 坐标杭州，主要iOS，对前后端、游戏均有涉猎     | https://github.com/RunsCode      |
-｜徐杨          ｜东坡肘子         ｜坐标大连，业余iOS开发者                     ｜公共号：肘子的Swift记事本。 博客 https://www.fatbobman.com   |
-
+| 徐杨          | 东坡肘子         | 坐标大连，业余iOS开发者                     | 公共号：肘子的Swift记事本。 博客 https://www.fatbobman.com   |
 
 
 ## 协作形式
