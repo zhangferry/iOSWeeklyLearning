@@ -37,7 +37,11 @@
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### gitmoji
 
+地址：https://gitmoji.js.org/
+
+Gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一个标准化的 emoji 备忘单📋，当你在在提交信息时，使用 emoji 来描述成了一种简单的方式来识别提交的目的和意图🍰，因为维护者只需要看一眼所使用的 emoji 就能明白🧐。由于有很多的 emoji，所以这里创建一份指南来让使用 emoji 变得轻松、易懂、一致🥳。
 
 ## 工具推荐
 
