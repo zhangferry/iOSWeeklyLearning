@@ -45,7 +45,22 @@ Gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### SCADE
+
+**地址**：https://www.scade.io/
+
+**软件状态** 
+- SCADE Community：免费
+- SCADE Professional：$29 per month / user
+
+**软件介绍**：
+Native App Development with Swift for iOS and Android.
+Cross Platform Native Development - Native Code, Controls and Use of all OS specific Functionality combined with the Power of Swift.
+
+
+![SCADE](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/SCD_Auora1-1-1-1240x791.png)
 
 ## 关于我们
 
