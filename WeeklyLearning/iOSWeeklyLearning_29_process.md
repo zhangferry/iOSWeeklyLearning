@@ -19,7 +19,105 @@
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
 
+### 低电量模式
 
+从 iOS 9 开始，Apple 为 iPhone 添加了低电量模式（**Low Power Mode** ）。用户可以在可以在**设置**>**电池**启用低电量模式。在低电量模式下，iOS 通过制定某些节能措施来延长电池寿命，包括但不限于以下措施：
+
+* 降低 CPU 和 GPU 性能，降低屏幕刷新率
+* 包括联网在内的主动或后台活动都将被暂停
+* 降低屏幕亮度
+* 减少设备的自动锁定时间
+* 邮件无法自动获取，陀螺仪及指南针等动态效果将被减弱，动态屏保将会失效
+* 对于支持 5 G 的 iPhone 设备来说，其 5G 能力将被限制，除非你在观看流媒体
+
+上述节能措施是否会影响到你的应用程序，如果有的话，你可能需要针对低电量模式来适当采取某些措施。
+
+#### lowPowerModeEnabled
+
+我们可以通过 **NSProcessInfo** 来获取我们想要的进程信息。这个**线程安全**的单例类可以为开发人员提供与当前进程相关的各种的信息。
+
+一个值得注意的是，NSProcessInfo 将尝试将环境变量和命令行参数解释为 Unicode，以 UTF-8 字符串返回。如果该进程无法成功转换为 Unicode 或随后的 C 字符串转换失败的话 —— 该进程将被**忽略**。
+
+当然，我们还是需要关注于低电量模式的标志，一个表示设备是否启用了低电量模式的布尔值 —— `lowPowerModeEnabled`。
+
+**Objective-C**
+
+```objective-c
+if ([[NSProcessInfo processInfo] isLowPowerModeEnabled]) {
+    // 当前用户启用低电量模式
+} else {
+    // 当前用户未启用低电量模式
+}
+```
+
+**Swift**
+
+```swift
+if NSProcessInfo.processInfo().lowPowerModeEnabled {
+    // 当前用户启用低电量模式
+} else {
+    // 当前用户未启用低电量模式
+}
+```
+
+#### NSProcessInfoPowerStateDidChangeNotification
+
+为了更好的响应电量模式的切换——**当电池充电到80%时将退出低电量模式**，Apple 为我们提供了一个全局的通知`NSProcessInfoPowerStateDidChangeNotification`。
+
+**Objective-C**
+
+```objective-c
+[[NSNotificationCenter defaultCenter] addObserver:self
+   selector: @selector(yourMethodName:)
+   name: NSProcessInfoPowerStateDidChangeNotification
+   object: nil];
+
+- (void) yourMethodName:(NSNotification *)note {
+  if ([[NSProcessInfo processInfo] isLowPowerModeEnabled]) {
+    // 当前用户启用低电量模式
+    // 在这里减少动画、降低帧频、停止位置更新、禁用同步和备份等。
+  } else {
+    // 当前用户未启用低电量模式
+    // 在这里恢复禁止的操作
+  }
+}
+
+```
+
+**Swift**
+
+```swift
+NSNotificationCenter.defaultCenter().addObserver(
+    self,
+    selector: “yourMethodName:”,
+    name: NSProcessInfoPowerStateDidChangeNotification,
+    object: nil
+)
+
+func yourMethodName:(note:NSNotification) {  
+    if(NSProcessInfo.processInfo().isLowPowerModeEnabled) {  
+      // 当前用户启用低电量模式
+      // 在这里减少动画、降低帧频、停止位置更新、禁用同步和备份等。 
+    } else {  
+      // 当前用户未启用低电量模式
+      // 在这里恢复禁止的操作
+    }  
+}
+```
+
+#### 总结
+
+通过遵守 **iOS 应用程序能效指南** 推荐的方式，为平台的整体能效和用户体验做出改变。
+
+### 参考资料 辛苦移步了
+
+[在 iPhone 上启用低电量模式将丢失 15 项功能](https://igamesnews.com/mobile/15-functions-you-will-lose-by-activating-low-power-mode-on-iphone/)
+
+[iOS 应用程序能效指南](https://developer.apple.com/library/watchos/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html)
+
+[响应 iPhone 设备的低电量模式](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/LowPowerMode.html#//apple_ref/doc/uid/TP40015243-CH31-SW1)
+
+[WWDC 2015 Session 707 Achieving All-day Battery Life](https://developer.apple.com/videos/play/wwdc2015/707)
 
 ## 面试解析
 
