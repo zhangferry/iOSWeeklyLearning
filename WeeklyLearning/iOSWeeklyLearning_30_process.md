@@ -41,7 +41,20 @@
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### wakapi
+
+**地址**：https://wakapi.dev/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+Keep Track of Your Coding Time!
+Wakapi is an open-source tool that helps you keep track of the time you have spent coding on different projects in different programming languages and more. Ideal for statistics freaks and anyone else.
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/screenshot.png)
 
 ## 关于我们
 
