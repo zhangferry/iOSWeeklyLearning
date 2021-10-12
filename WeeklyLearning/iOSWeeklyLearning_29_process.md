@@ -126,10 +126,18 @@ func yourMethodName:(note:NSNotification) {
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
 
+3、[https://juejin.cn/post/7012541709561102367](https://juejin.cn/post/7012541709561102367 "写更好的 Swift 代码：技巧拾遗") -- 来自掘金：OldBirds
 
+
+[@东坡肘子](https://www.fatbobman.com)：作者在文章中介绍了如何几个很实用的Swift使用技巧，包括：通过前缀避免命名冲突、快速交换值、@discardableresult、访问控制等，对日常的开发很有帮助。
+
+4、[https://juejin.cn/post/7017605307593392159](https://juejin.cn/post/7017605307593392159 "Swift：where关键词使用") -- 来自掘金：season_zhu
+
+
+[@东坡肘子](https://www.fatbobman.com)：本文介绍了where在Swift中的几个使用场景，除了应用于for循环外，还包括泛型约束、指明类型等。有助于更好的理解在不同上下文中的where用法。
 
 ## 学习资料
 
