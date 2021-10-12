@@ -126,7 +126,7 @@ func yourMethodName:(note:NSNotification) {
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://github.com/Tliens)、[东坡肘子](https://www.fatbobman.com)
 
 1、[【iOS】Swift Tips - （一）](https://juejin.cn/post/6973623744119963679 "【iOS】Swift Tips - （一）") -- 来自掘金：Layer
 
@@ -147,6 +147,14 @@ func yourMethodName:(note:NSNotification) {
 4、[https://juejin.cn/post/7017605307593392159](https://juejin.cn/post/7017605307593392159 "Swift：where关键词使用") -- 来自掘金：season_zhu
 
 [@东坡肘子](https://www.fatbobman.com)：本文介绍了where在Swift中的几个使用场景，除了应用于for循环外，还包括泛型约束、指明类型等。有助于更好的理解在不同上下文中的where用法。
+
+5、[Swift - 使用Color Literal实现代码中颜色的智能提示（Xcode自带功能）](https://www.hangge.com/blog/cache/detail_1902.html "Swift - 使用Color Literal实现代码中颜色的智能提示（Xcode自带功能）") -- 来自航歌
+
+[@我是熊大](https://github.com/Tliens)：Color Literal让颜色赋值可视化。
+
+6、[【译】使用Swift自定义运算符重载](https://juejin.cn/post/6844903926232252424 "【译】使用Swift自定义运算符重载") -- 来自掘金：shankss
+
+[@我是熊大](https://github.com/Tliens)：有没有想过 “+”，“-”，“??”底层是怎么实现的？想不想自己也实现一个特有的运算符，如：“-->”，这篇文章带你一起探究。
 
 ## 学习资料
 
