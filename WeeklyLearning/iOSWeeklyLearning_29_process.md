@@ -128,6 +128,13 @@ func yourMethodName:(note:NSNotification) {
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
+1、[https://juejin.cn/post/6973623744119963679](https://juejin.cn/post/6973623744119963679 "【iOS】Swift Tips - （一") -- 来自掘金：Layer
+
+
+文章是作者的学习笔记，作者将objccn.io/ 的内容整理出来，一共6篇，适合在地铁上阅读。在这篇文章中主要介绍了柯里化、多元组、操作符等写法和用途。
+
+2、
+
 
 
 
