@@ -133,7 +133,11 @@ func yourMethodName:(note:NSNotification) {
 
 文章是作者的学习笔记，作者将objccn.io/ 的内容整理出来，一共6篇，适合在地铁上阅读。在这篇文章中主要介绍了柯里化、多元组、操作符等写法和用途。
 
-2、
+
+2、[https://zhuanlan.zhihu.com/p/43119391](https://zhuanlan.zhihu.com/p/43119391 "十个技巧让你成为更加优秀的 Swift 工程师") -- 来自知乎：Summer
+
+
+学习Swift不光要能写Swift代码，更要优雅地使用Swift，这也是本期博客主题的目的。这篇文章介绍了巧用扩展、泛型、计算属性等优化代码，在初学者看来是比较有意思的。
 
 
 
