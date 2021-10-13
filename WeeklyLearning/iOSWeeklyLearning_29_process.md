@@ -140,11 +140,11 @@ func yourMethodName:(note:NSNotification) {
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：学习Swift不光要能写Swift代码，更要优雅地使用Swift，这也是本期博客主题的目的。这篇文章介绍了巧用扩展、泛型、计算属性等优化代码，在初学者看来是比较有意思的。
 
 
-3、[https://juejin.cn/post/7012541709561102367](https://juejin.cn/post/7012541709561102367 "写更好的 Swift 代码：技巧拾遗") -- 来自掘金：OldBirds
+3、[写更好的 Swift 代码：技巧拾遗](https://juejin.cn/post/7012541709561102367 "写更好的 Swift 代码：技巧拾遗") -- 来自掘金：OldBirds
 
 [@东坡肘子](https://www.fatbobman.com)：作者在文章中介绍了几个很实用的Swift使用技巧，包括：通过前缀避免命名冲突、快速交换值、@discardableresult、访问控制等，对日常的开发很有帮助。
 
-4、[https://juejin.cn/post/7017605307593392159](https://juejin.cn/post/7017605307593392159 "Swift：where关键词使用") -- 来自掘金：season_zhu
+4、[Swift：where关键词使用](https://juejin.cn/post/7017605307593392159 "Swift：where关键词使用") -- 来自掘金：season_zhu
 
 [@东坡肘子](https://www.fatbobman.com)：本文介绍了where在Swift中的几个使用场景，除了应用于for循环外，还包括泛型约束、指明类型等。有助于更好的理解在不同上下文中的where用法。
 
