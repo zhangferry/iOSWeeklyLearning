@@ -130,6 +130,15 @@
       "contributions": [
         "blog"
       ]
+    },
+    {
+      "login": "fatbobman",
+      "name": "东坡肘子",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55673881?v=4",
+      "profile": "http://www.fatbobman.com",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
