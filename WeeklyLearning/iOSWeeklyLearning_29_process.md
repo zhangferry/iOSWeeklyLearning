@@ -4,20 +4,19 @@
 
 ### 本期概要
 
-> * 话题：
-> * Tips：
+> * Tips：关于低电量模式的一些介绍。
 > * 面试模块：
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 优秀博客：整理了几篇 Swift Tips 的文章。
+> * 学习资料：Gitmoji：一个 GitHub 提交信息的 emoji 指南😎。
+> * 开发工具：能够使用Swift开发安卓应用的工具：SCADE；可视化解析 `.ndjson` 文件的工具：Privacy-Insight。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：本期访谈内容独立成篇了，大家可以查看本期公众号推送的次条。
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
 ### 低电量模式
 
@@ -40,18 +39,6 @@
 
 当然，我们还是需要关注于低电量模式的标志，一个表示设备是否启用了低电量模式的布尔值 —— `lowPowerModeEnabled`。
 
-**Objective-C**
-
-```objective-c
-if ([[NSProcessInfo processInfo] isLowPowerModeEnabled]) {
-    // 当前用户启用低电量模式
-} else {
-    // 当前用户未启用低电量模式
-}
-```
-
-**Swift**
-
 ```swift
 if NSProcessInfo.processInfo().lowPowerModeEnabled {
     // 当前用户启用低电量模式
@@ -64,32 +51,10 @@ if NSProcessInfo.processInfo().lowPowerModeEnabled {
 
 为了更好的响应电量模式的切换——**当电池充电到80%时将退出低电量模式**，Apple 为我们提供了一个全局的通知`NSProcessInfoPowerStateDidChangeNotification`。
 
-**Objective-C**
-
-```objective-c
-[[NSNotificationCenter defaultCenter] addObserver:self
-   selector: @selector(yourMethodName:)
-   name: NSProcessInfoPowerStateDidChangeNotification
-   object: nil];
-
-- (void) yourMethodName:(NSNotification *)note {
-  if ([[NSProcessInfo processInfo] isLowPowerModeEnabled]) {
-    // 当前用户启用低电量模式
-    // 在这里减少动画、降低帧频、停止位置更新、禁用同步和备份等。
-  } else {
-    // 当前用户未启用低电量模式
-    // 在这里恢复禁止的操作
-  }
-}
-
-```
-
-**Swift**
-
 ```swift
 NSNotificationCenter.defaultCenter().addObserver(
     self,
-    selector: “yourMethodName:”,
+    selector: "yourMethodName:",
     name: NSProcessInfoPowerStateDidChangeNotification,
     object: nil
 )
@@ -136,9 +101,7 @@ func yourMethodName:(note:NSNotification) {
 
 2、[十个技巧让你成为更加优秀的 Swift 工程师](https://zhuanlan.zhihu.com/p/43119391 "十个技巧让你成为更加优秀的 Swift 工程师") -- 来自知乎：Summer
 
-
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：学习Swift不光要能写Swift代码，更要优雅地使用Swift，这也是本期博客主题的目的。这篇文章介绍了巧用扩展、泛型、计算属性等优化代码，在初学者看来是比较有意思的。
-
 
 3、[写更好的 Swift 代码：技巧拾遗](https://juejin.cn/post/7012541709561102367 "写更好的 Swift 代码：技巧拾遗") -- 来自掘金：OldBirds
 
@@ -168,7 +131,7 @@ Gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 
 ## 工具推荐
 
-整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18) 、[zhangferry](zhangferry.com)
 
 ### SCADE
 
@@ -182,8 +145,27 @@ Gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 Native App Development with Swift for iOS and Android.
 Cross Platform Native Development - Native Code, Controls and Use of all OS specific Functionality combined with the Power of Swift.
 
-
 ![SCADE](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/SCD_Auora1-1-1-1240x791.png)
+
+### Privacy-Insight
+
+**地址**：https://github.com/Co2333/Privacy-Insight/releases
+
+**软件状态** ：免费，开源
+
+**软件介绍**：
+
+解析 iOS 15 下格式为 `.ndjson` 的系统隐私报告，用 SwiftUI 写成。
+
+隐私日志的生成为设置 -> 隐私 -> 打开记录 App 活动，等待一段时间之后点击下面的存储 App 活动按钮，即可收集这一段时间的隐私日志。存储会生成一个 `.ndjson` 格式的文件，导出使用 Privacy-Insight 打开即可查看。
+
+以下为我使用 1 天的隐私请求记录：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/4301634041484_.pic_hd.jpg)
+
+微信和今日头条的隐私权限获取频率均非常高，我是肯定没有那么频繁通过微信访问相册的。对于微信频繁获取相册权限的问题最近也在热议，希望不仅是微信，各个主流 App 都应该对于隐私问题予以重视。
+
+相对有效的保护隐私的方案是，关闭对应App的「后台刷新」，非必要情况下关闭蓝牙、定位等权限，并将相册调用权限改为「选中的照片」。
 
 ## 关于我们
 
@@ -191,12 +173,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第二十八期](https://mp.weixin.qq.com/s/dKOkF_P5JvQnDLq09DOzaQ)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第二十七期](https://mp.weixin.qq.com/s/WvctY6OG1joJez2g6owroA)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第二十六期](https://mp.weixin.qq.com/s/PnUZLoyKr8i_smi0H-pQgQ)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第二十五期](https://mp.weixin.qq.com/s/LLwiEmezRkXHVk66A6GDlQ)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
