@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第二十七期
+# iOS摸鱼周报 第二十九期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
 
@@ -142,6 +142,7 @@ Gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 - SCADE Professional：$29 per month / user
 
 **软件介绍**：
+
 Native App Development with Swift for iOS and Android.
 Cross Platform Native Development - Native Code, Controls and Use of all OS specific Functionality combined with the Power of Swift.
 
