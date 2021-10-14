@@ -742,3 +742,45 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/xcodes.png)
 
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18) 、[zhangferry](zhangferry.com)
+
+### SCADE
+
+**地址**：https://www.scade.io/
+
+**软件状态** 
+- SCADE Community：免费
+- SCADE Professional：$29 per month / user
+
+**软件介绍**：
+
+利用 `SCADE` 我们可以使用 Swift 语言进行跨端原生开发。其描述特点如下：
+- 跨平台：使用相同的源代码为 iOS 和 Android 开发
+- 原生功能：不受限制地使用所有 iOS 和 Android 功能
+- 无与伦比的速度：Swift 被编译为本机二进制代码以获得无与伦比的应用程序性能
+- Swift 框架：在 iOS 和 Android 上使用流行的 Swift 框架，如 Swift Foundation，无需更改代码
+- ...
+
+![SCADE](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/SCD_Auora1-1-1-1240x791.png)
+
+### Privacy-Insight
+
+**地址**：https://github.com/Co2333/Privacy-Insight/releases
+
+**软件状态** ：免费，开源
+
+**软件介绍**：
+
+解析 iOS 15 下格式为 `.ndjson` 的系统隐私报告，用 SwiftUI 写成。
+
+隐私日志的生成为设置 -> 隐私 -> 打开记录 App 活动，等待一段时间之后点击下面的存储 App 活动按钮，即可收集这一段时间的隐私日志。存储会生成一个 `.ndjson` 格式的文件，导出使用 Privacy-Insight 打开即可查看。
+
+以下为我使用 1 天的隐私请求记录：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/4301634041484_.pic_hd.jpg)
+
+微信和今日头条的隐私权限获取频率均非常高，我是肯定没有那么频繁通过微信访问相册的。对于微信频繁获取相册权限的问题最近也在热议，希望不仅是微信，各个主流 App 都应该对于用户隐私问题予以重视。
+
+作为使用者相对有效的保护隐私的方案是，关闭对应 App 的「后台刷新」，非必要情况下关闭蓝牙、定位等权限，并将相册调用权限改为「选中的照片」。
+

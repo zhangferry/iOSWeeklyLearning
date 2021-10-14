@@ -918,3 +918,70 @@ objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方�
 
 由于篇幅原因，剩下的内容我们下期再见吧👋。
 
+***
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+本期面试解析讲解的知识点是 Objective-C 的消息机制（下）。在上一期摸鱼周报中我们讲解了 objc_msgSend 执行流程的第一大阶段 `消息发送`，那么这一期我们就来聊聊后两大阶段 `动态方法解析` 与 `消息转发`。
+
+**动态方法解析**
+
+如果 `消息发送` 阶段未能处理未知消息，那么就会进行一次 `动态方法解析`。我们可以在该阶段通过动态添加方法实现，来处理未知消息。`动态方法解析` 后，会再次进入 `消息发送` 阶段，从 “去 receiverClass 的 method cache 中查找 IMP” 这一步开始执行。
+
+具体来说，在该阶段，Runtime 会根据 receiverClass 的类型是 class/meta-class 来调用以下方法：
+
+```objectivec
++ (BOOL)resolveInstanceMethod:(SEL)sel;
++ (BOOL)resolveClassMethod:(SEL)sel;
+```
+
+我们可以重写以上方法，并通过 `class_addMethod` 函数来动态添加方法实现。需要注意的一点是，实例方法存储在类对象中，类方法存储在元类对象中，因此这里要注意传参。
+
+```c
+BOOL class_addMethod(Class cls, SEL name, IMP imp, const char *types)
+```
+
+如果我们在该阶段正确地处理了未知消息，那么再次进入到 `消息发送` 阶段肯定能找到 IMP 并调用，否则将进入 `消息转发` 阶段。
+
+**消息转发**
+
+`消息转发` 又分为 Fast 和 Normal 两个阶段，顾名思义 Fast 更快。
+
+1. Fast：找一个备用接收者，尝试将未知消息转发给备用接收者去处理。
+
+具体来说，就是给 receiver 发送一条如下消息，注意有类方法和实例方法之分。
+
+```objectivec
++/- (id)forwordingTargetForSelector:(SEL)selector;
+```
+
+如果我们重写了以上方法，并正确返回了一个 != receiver 的对象（备用接收者），那么 Runtime 就会通过 objc_msgSend 给备用接收者发送当前的未知消息，开启新的消息执行流程。
+
+如果该阶段还是没能处理未知消息，就进入 Normal。需要注意，在 Fast 阶段无法修改未知消息的内容，如果需要，请在 Normal 阶段去处理。
+
+2. Normal：启动完整的消息转发，将消息有关的全部细节都封装到一个 NSInvocation 实例中，再给接收者最后一次机会去处理未知消息。
+
+具体来说，Runtime 会先通过调用以下方法来获取适合未知消息的方法签名。
+
+```objectivec
++/- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector;
+```
+
+然后根据这个方法签名，创建一个封装了未知消息的全部内容（target、selector、arguments）的 NSInvocation 实例，然后调用以下方法并将该 NSInvocation 实例作为参数传入。
+
+```objectivec
++/- (void)forwardInvocation:(NSInvocation *)invocation;
+```
+
+我们可以重写以上方法来处理未知消息。在 `forwardInvocation:` 方法中，我们可以直接将未知消息转发给其它对象（代价太大，不如在 Fast 处理），或者改变未知消息的内容再转发给其它对象，甚至可以定义任何逻辑。
+
+如果到了 Normal 还是没能处理未知消息，如果是没有返回方法签名，那么将调用 `doesNotRecognizeSelector:`；如果是没有重写 `forwardInvocation:`，将调用 NSObject 的 `forwardInvocation:` 的默认实现，而该方法的默认实现也是调用 `doesNotRecognizeSelector:`，表明未知消息最终未能得到处理，以 Crash 程序结束 objc_msgSend 的全部流程。
+
+**一些注意点**
+
+* 重写以上方法时，不应由本类处理的未知消息，应该调用父类的实现，这样继承体系中的每个类都有机会处理未知消息，直至 NSObject。
+* 以上几个阶段均有机会处理消息，但处理消息的时间越早，性能就越高。
+  - 最好在 `动态方法解析` 阶段就处理完，这样 Runtime 就可以将此方法缓存，稍后这个对象再接收到同一消息时就无须再启动 `动态方法解析` 与 `消息转发` 流程。
+  - 如果在 `消息转发` 阶段只是单纯想将消息转发给备用接收者，那么最好在 Fast 阶段就完成。否则还得创建并处理 NSInvocation 实例。
+* `respondsToSelector:`  会触发 `动态方法解析`，但不会触发 `消息转发`。
+
+

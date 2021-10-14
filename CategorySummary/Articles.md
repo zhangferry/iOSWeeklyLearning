@@ -886,3 +886,31 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 
 [@我是熊大](https://juejin.cn/user/1151943916921885)：引用作者的一句话：”30 年的开发经验，让我能够平心静气地说，你应该了解协议和 POP。开始设计并书写你自己的 POP 代码吧“。
 
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://github.com/Tliens)、[东坡肘子](https://www.fatbobman.com)
+
+1、[【iOS】Swift Tips - （一）](https://juejin.cn/post/6973623744119963679 "【iOS】Swift Tips - （一）") -- 来自掘金：Layer
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章是作者的学习笔记，作者将 objccn.io/ 的内容整理出来，一共 6 篇，适合在地铁上阅读。在这篇文章中主要介绍了柯里化、多元组、操作符等写法和用途。
+
+
+2、[十个技巧让你成为更加优秀的 Swift 工程师](https://zhuanlan.zhihu.com/p/43119391 "十个技巧让你成为更加优秀的 Swift 工程师") -- 来自知乎：Summer
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：学习 Swift 不光要能写 Swift 代码，更要优雅地使用 Swift，这也是本期博客主题的目的。这篇文章介绍了巧用扩展、泛型、计算属性等优化代码，在初学者看来是比较有意思的。
+
+3、[写更好的 Swift 代码：技巧拾遗](https://juejin.cn/post/7012541709561102367 "写更好的 Swift 代码：技巧拾遗") -- 来自掘金：OldBirds
+
+[@东坡肘子](https://www.fatbobman.com)：作者在文章中介绍了几个很实用的 Swift 使用技巧，包括：通过前缀避免命名冲突、快速交换值、@discardableresult、访问控制等，对日常的开发很有帮助。
+
+4、[Swift：where关键词使用](https://juejin.cn/post/7017605307593392159 "Swift：where关键词使用") -- 来自掘金：season_zhu
+
+[@东坡肘子](https://www.fatbobman.com)：本文介绍了 where 在 Swift 中的几个使用场景，除了应用于 for 循环外，还包括泛型约束、指明类型等。有助于更好的理解在不同上下文中的 where 用法。
+
+5、[Swift - 使用Color Literal实现代码中颜色的智能提示（Xcode自带功能）](https://www.hangge.com/blog/cache/detail_1902.html "Swift - 使用Color Literal实现代码中颜色的智能提示（Xcode自带功能）") -- 来自航歌
+
+[@我是熊大](https://github.com/Tliens)：Color Literal 让颜色赋值可视化。
+
+6、[【译】使用Swift自定义运算符重载](https://juejin.cn/post/6844903926232252424 "【译】使用Swift自定义运算符重载") -- 来自掘金：shankss
+
+[@我是熊大](https://github.com/Tliens)：有没有想过 “+”，“-”，“??” 底层是怎么实现的？想不想自己也实现一个特有的运算符，如：“-->”，这篇文章带你一起探究。
+
