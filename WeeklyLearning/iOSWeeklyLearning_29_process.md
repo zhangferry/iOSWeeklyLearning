@@ -56,9 +56,13 @@ Gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 - SCADE Professional：$29 per month / user
 
 **软件介绍**：
-Native App Development with Swift for iOS and Android.
-Cross Platform Native Development - Native Code, Controls and Use of all OS specific Functionality combined with the Power of Swift.
 
+利用`SCADE`我们可以使用 Swift 语言进行跨端原生开发。其描述特点如下
+- 跨平台：使用相同的源代码为 Android 和 iOS 开发
+- 原生功能：不受限制地使用所有 iOS 和 Android 功能
+- 无与伦比的速度：Swift 被编译为本机二进制代码以获得无与伦比的应用程序性能
+- Swift 框架：在 Android 和 iOS 上使用流行的 Swift 框架，如 Swift Foundation，无需更改代码
+- ...
 
 ![SCADE](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/SCD_Auora1-1-1-1240x791.png)
 
