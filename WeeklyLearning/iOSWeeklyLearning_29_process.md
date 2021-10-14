@@ -206,7 +206,6 @@ Gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 
 **软件介绍**：
 
-<<<<<<< HEAD
 利用`SCADE`我们可以使用 Swift 语言进行跨端原生开发。其描述特点如下
 - 跨平台：使用相同的源代码为 Android 和 iOS 开发
 - 原生功能：不受限制地使用所有 iOS 和 Android 功能
@@ -214,8 +213,6 @@ Gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 - Swift 框架：在 Android 和 iOS 上使用流行的 Swift 框架，如 Swift Foundation，无需更改代码
 - ...
 
-=======
->>>>>>> 34a8b132c3ecd2ee6b4f3c80693345d07eb3cb91
 ![SCADE](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/SCD_Auora1-1-1-1240x791.png)
 
 ### Privacy-Insight
