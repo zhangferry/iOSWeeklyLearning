@@ -138,7 +138,7 @@ BOOL class_addMethod(Class cls, SEL name, IMP imp, const char *types)
 
 我们可以重写以上方法来处理未知消息。在 `forwardInvocation:` 方法中，我们可以直接将未知消息转发给其它对象（代价太大，不如在 Fast 处理），或者改变未知消息的内容再转发给其它对象，甚至可以定义任何逻辑。
 
-如果到了 Normal 还是没能处理未知消息（没有返回方法签名 or 没有重写 `forwardInvocation:`），将调用 `forwardInvocation:` 的默认实现，而该方法的默认实现就是调用 `doesNotRecognizeSelector:`，表明未知消息最终未能得到处理，以 Crash 程序结束 objc_msgSend 的全部流程。
+如果到了 Normal 还是没能处理未知消息，如果是没有返回方法签名，那么将调用 `doesNotRecognizeSelector:`；如果是没有重写 `forwardInvocation:`，将调用 NSObject 的 `forwardInvocation:` 的默认实现，而该方法的默认实现也是调用 `doesNotRecognizeSelector:`，表明未知消息最终未能得到处理，以 Crash 程序结束 objc_msgSend 的全部流程。
 
 **一些注意点**
 
