@@ -28,9 +28,15 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
+1、[或许你并不需要重写 init(from:) 方法](https://kemchenj.github.io/2018-07-09/ "或许你并不需要重写 init(from:) 方法") -- 来自：kemchenj
 
+[@东坡肘子](https://www.fatbobman.com)：Codable 作为 Swift 的特性之一也是很注重安全，也很严谨，这就导致了它在实际使用时总会有这样那样的磕磕绊绊，我们不得不重写 init 方法去让它跟外部环境融洽地共存。本文介绍了一种通过重载decodeIfPresent方法以实现应对特殊类型的思路。从某种程度上来说，作者认为这甚至是比 Objective-C 的消息机制更加灵活的一种函数声明机制，而且它的影响范围是有限的，不容易对外部模块造成破坏（别声明为 open 或者 public 就没问题）。
+
+2、[使用 Property Wrapper 为 Codable 解码设定默认值](https://onevcat.com/2020/11/codable-default/ "使用 Property Wrapper 为 Codable 解码设定默认值") -- 来自：onevcat
+
+[@东坡肘子](https://www.fatbobman.com)：本文介绍了一个使用 Swift Codable 解码时难以设置默认值问题，并利用 Property Wrapper 给出了一种相对优雅的解决方式，来在 key 不存在时或者解码失败时，为某个属性设置默认值。这为编解码系统提供了更好的稳定性和可扩展性。最后，对 enum 类型在某些情况下是否胜任进行了简单讨论。
 
 
 ## 学习资料
