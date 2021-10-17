@@ -46,7 +46,13 @@
 
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7):文章开头先介绍了什么是json。正文主要篇幅在介绍SwiftyJSON和YYModel的实现方案。文章最后引出了HandyJSON，HandyJSON是基于借助metadata结构来实现json 转 model的。在这里额外提一句，如何推断metadata的结构，可以参考[GenMeta.cpp ](https://github.com/apple/swift/blob/main/lib/IRGen/GenMeta.cpp "GenMeta.cpp ")中每个结构的layout 函数
 
+5、[Swift中Json转Model的便捷方式](https://juejin.cn/post/7019910939340193805/ "Swift中Json转Model的便捷方式") -- 来自掘金：我是熊大
 
+[@我是熊大](https://github.com/Tliens):本文介绍json、model、data、dict相互转换的小技巧和代码段，适合在实际工作中使用。
+
+6、[Swift 码了个 JSON 解析器(一)](https://zhuanlan.zhihu.com/p/364032254 "Swift 码了个 JSON 解析器(一)") -- 来自掘金：我是熊大
+
+[@我是熊大](https://github.com/Tliens):正如作者所言，码了个 JSON 解析器,感兴趣的可以看一下。
 
 ## 学习资料
 
