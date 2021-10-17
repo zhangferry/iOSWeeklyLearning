@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第二十七期
+# iOS摸鱼周报 第三十期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
 
@@ -37,6 +37,15 @@
 2、[使用 Property Wrapper 为 Codable 解码设定默认值](https://onevcat.com/2020/11/codable-default/ "使用 Property Wrapper 为 Codable 解码设定默认值") -- 来自：onevcat
 
 [@东坡肘子](https://www.fatbobman.com)：本文介绍了一个使用 Swift Codable 解码时难以设置默认值问题，并利用 Property Wrapper 给出了一种相对优雅的解决方式，来在 key 不存在时或者解码失败时，为某个属性设置默认值。这为编解码系统提供了更好的稳定性和可扩展性。最后，对 enum 类型在某些情况下是否胜任进行了简单讨论。
+
+3、[2021 年了，Swift 的 JSON-Model 转换还能有什么新花样](https://zhuanlan.zhihu.com/p/351928579?ivk_sa=1024320u  “2021 年了，Swift 的 JSON-Model 转换还能有什么新花样”) -- 来自知乎：非著名程序员，作者明林清
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7):本文主要介绍ExCodable的特性和使用方法。在文章开头先介绍了常见的json转模型的几种方式，并这些方式各自的优缺点进行了总结，随后引出ExCodable的特性及使用方法。
+
+4、[json 解析有什么可说道的](https://mp.weixin.qq.com/s/_jFHgAP0vKx1Cv9XGkh_DA "json 解析有什么可说道的") -- 来自公众号：码农哈皮
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7):文章开头先介绍了什么是json。正文主要篇幅在介绍SwiftyJSON和YYModel的实现方案。文章最后引出了HandyJSON，HandyJSON是基于借助metadata结构来实现json 转 model的。在这里额外提一句，如何推断metadata的结构，可以参考[GenMeta.cpp ](https://github.com/apple/swift/blob/main/lib/IRGen/GenMeta.cpp "GenMeta.cpp ")中每个结构的layout 函数
+
 
 
 ## 学习资料
