@@ -50,7 +50,7 @@
 
 [@我是熊大](https://github.com/Tliens):本文介绍json、model、data、dict相互转换的小技巧和代码段，适合在实际工作中使用。
 
-6、[Swift 码了个 JSON 解析器(一)](https://zhuanlan.zhihu.com/p/364032254 "Swift 码了个 JSON 解析器(一)") -- 来自掘金：我是熊大
+6、[Swift 码了个 JSON 解析器(一)](https://zhuanlan.zhihu.com/p/364032254 "Swift 码了个 JSON 解析器(一)") -- 来自知乎：OldBirds
 
 [@我是熊大](https://github.com/Tliens):正如作者所言，码了个 JSON 解析器,感兴趣的可以看一下。
 
