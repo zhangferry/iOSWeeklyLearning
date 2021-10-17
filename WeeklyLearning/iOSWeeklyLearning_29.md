@@ -12,7 +12,7 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：本期访谈内容独立成篇了，大家可以查看本期公众号推送的次条。或者访问这个链接：
+[@zhangferry](https://zhangferry.com)：本期访谈内容独立成篇了，大家可以查看本期公众号推送的次条，或者访问这个链接[人物访谈--微软Offer之路](https://zhangferry.com/2021/10/14/weekly_interview_zhanganyu/ "人物访谈--微软Offer之路")
 
 本期摸鱼周报迎来一位新伙伴：东坡肘子。肘子之前因为身体原因修养过一段时间，也因为身体的原因需要做健康记录，但并没有找到满意的记录方式，于是决定自己开发，由此结缘 iOS 做起了独立开发。之后我们还会对他进行一次访谈，带大家了解他的更多故事，大家也可以关注他的博客：*肘子的 Swift 记事本 https://www.fatbobman.com/*。
 
