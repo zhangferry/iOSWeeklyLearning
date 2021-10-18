@@ -37,7 +37,19 @@
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Xcode Build Settings
 
+地址：https://xcodebuildsettings.com/
+
+顾名思义，这个网站的作用是展示 Xcode 所有的 Build Settings。你可以在这里按分类查看所有的设置项，搜索你想要的设置项，或查询某个设置项的值类型及其默认值。对于常常要和 Build Settings 打交道的开发者来说，这个网站很实用。
+
+### Data-Science-For-Beginners
+
+地址：https://github.com/microsoft/Data-Science-For-Beginners
+
+来自 Microsoft 的 Data Science 基础课程，为期 10 周，有 20 节课。这是一个基于项目的课程，配套 40 多个小测试，通过该课程你可以学习到关于数据科学的基础知识。每节课程还有精美的插画配图，有兴趣学习 Data Science 的朋友可以尝试一下。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Data-Science-For-Beginners.png)
 
 ## 工具推荐
 
