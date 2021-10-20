@@ -17,8 +17,92 @@
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+### WKWebView 几个不常用的特性
 
+整理编辑：[FBY展菲](https://github.com/fanbaoying)
+
+**1. 截获 Web URL**
+
+通过实现 `WKNavigationDelegate` 协议的 `definePolicyFor` 函数，我们可以在导航期间截获 URL。以下代码段显示了如何完成此操作：
+
+```swift
+func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+  let urlString = navigationAction.request.url?.absoluteString ?? ""
+  let pattern = "interceptSomeUrlPattern"
+  if urlString.contains(pattern){
+     var splitPath = urlString.components(separatedBy: pattern)
+  }
+}
+```
+
+**2. 使用 WKWebView 进行身份验证**
+
+当 WKWebView 中的 URL 需要用户授权时，您需要实现以下方法：
+
+```swift
+func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        
+        let authenticationMethod = challenge.protectionSpace.authenticationMethod
+        if authenticationMethod == NSURLAuthenticationMethodDefault || authenticationMethod == NSURLAuthenticationMethodHTTPBasic || authenticationMethod == NSURLAuthenticationMethodHTTPDigest {
+            //Do you stuff
+        }
+        completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, credential)
+}
+```
+
+收到身份验证质询后，您可以确定所需的身份验证类型（用户凭据或证书），并相应地使用提示或预定义凭据来处理条件。
+
+**3. 多个 WKWebView 共享 Cookie**
+
+WKWebView 的每个实例都有其自己的 cookie 存储。为了在 WKWebView 的多个实例之间共享 cookie，我们需要使用 WKHTTPCookieStore，如下所示：
+
+```swift
+let cookies = HTTPCookieStorage.shared.cookies ?? []
+for (cookie) in cookies {
+   webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
+}
+```
+
+**4. 获取加载进度**
+
+WKWebView 的其他功能非常普遍，例如显示正在加载的 URL 的进度更新。
+
+可以通过侦听以下方法的 estimatedProgress 的 keyPath 值来更新 ProgressViews：
+
+```swift
+override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
+```
+
+**5. 配置 URL 操作**
+
+使用 decisionPolicyFor 函数，您不仅可以通过电话，facetime 和邮件等操作来控制外部导航，还可以选择限制某些 URL 的打开。以下代码展示了每种情况：
+
+```swift
+func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+
+guard let url = navigationAction.request.url else {
+            decisionHandler(.allow)
+            return
+        }
+
+ if ["tel", "sms", "mailto"].contains(url.scheme) && UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            decisionHandler(.cancel)
+        } else {
+            if let host = navigationAction.request.url?.host {
+               if host == "www.notsafeforwork.com" {
+                  decisionHandler(.cancel)
+               }
+               else{
+                   decisionHandler(.allow)
+               }
+            }
+        }
+  }
+}
+```
+
+参考：[WKWebView 几个不常用的特性](https://mp.weixin.qq.com/s/FFZMz9Yc2Bm6-gAnCBsUZw)
 
 
 ## 面试解析
