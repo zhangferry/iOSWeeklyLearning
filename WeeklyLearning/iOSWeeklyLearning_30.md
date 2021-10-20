@@ -4,8 +4,8 @@
 
 ### 本期概要
 
-> * Tips：分享 WKWebView 几个不常用的特性
-> * 面试模块：
+> * Tips：分享 WKWebView 几个不常用的特性。
+> * 面试模块：一道 Tagged Pointer  相关题目。 
 > * 优秀博客：本期博客整理了 Codable 在一些特殊场景的处理方式，Swift 处理 JSON 解析时的一些技术细节。
 > * 学习资料：Xcode Build Settings 的参数说明网站；来自 Microsoft 的 Data Science 基础课程。
 > * 开发工具：免费且开源的 Coding 时间追踪工具：wakapi。
@@ -103,6 +103,40 @@ guard let url = navigationAction.request.url else {
 ## 面试解析
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+Q：以下两段代码的执行情况分别如何？
+
+```objectivec
+  dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+  for (int i = 0; i < 1000; i++) {
+      dispatch_async(queue, ^{
+          self.name = [NSString stringWithFormat:@"abcdefghij"];
+      });
+  }
+```
+
+```objectivec
+  dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+  for (int i = 0; i < 1000; i++) {
+      dispatch_async(queue, ^{
+          self.name = [NSString stringWithFormat:@"abcdefghi"];
+      });
+  }
+```
+
+* 第一段代码，self.name 是 __NSCFString 类型，存储在堆，需要维护引用计数，其 setter 方法实现为先 release 旧值，再 retain/copy 新值。这里异步并发执行 setter 就可能会有多条线程同时 release 旧值，过度释放对象，导致 Crash。
+* 第二段代码，由于指针足够存储数据，字符串的值就直接通过 Tagged Pointer 存储在了指针上，self.name 是 NSTaggedPointerString 类型。在 objc_release 函数中会判断指针是不是 Tagged Pointer，是的话就不对对象进行 release 操作，更不会过度释放而导致 Crash 了。
+
+```c
+__attribute__((aligned(16), flatten, noinline))
+void 
+objc_release(id obj)
+{
+    if (!obj) return;
+    if (obj->isTaggedPointer()) return;
+    return obj->release();
+}
+```
 
 
 ## 优秀博客
