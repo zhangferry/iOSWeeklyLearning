@@ -50,7 +50,7 @@ func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChalle
 
 **3. 多个 WKWebView 共享 Cookie**
 
-WKWebView 的每个实例都有其自己的 cookie 存储。为了在 WKWebView 的多个实例之间共享 cookie，我们需要使用 WKHTTPCookieStore，如下所示：
+WKWebView 的每个实例都有其自己的 cookie 存储。为了在 WKWebView 的多个实例之间共享 cookie，我们需要使用 `WKHTTPCookieStore`，如下所示：
 
 ```swift
 let cookies = HTTPCookieStorage.shared.cookies ?? []
@@ -63,7 +63,7 @@ for (cookie) in cookies {
 
 WKWebView 的其他功能非常普遍，例如显示正在加载的 URL 的进度更新。
 
-可以通过监听以下方法的 estimatedProgress 的 keyPath 值来更新 ProgressViews：
+可以通过监听以下方法的 `estimatedProgress` 的 keyPath 值来更新 ProgressViews：
 
 ```swift
 override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
@@ -123,8 +123,10 @@ Q：以下两段代码的执行情况分别如何？
   }
 ```
 
-* 第一段代码，self.name 是 __NSCFString 类型，存储在堆，需要维护引用计数，其 setter 方法实现为先 release 旧值，再 retain/copy 新值。这里异步并发执行 setter 就可能会有多条线程同时 release 旧值，过度释放对象，导致 Crash。
-* 第二段代码，由于指针足够存储数据，字符串的值就直接通过 Tagged Pointer 存储在了指针上，self.name 是 NSTaggedPointerString 类型。在 objc_release 函数中会判断指针是不是 Tagged Pointer，是的话就不对对象进行 release 操作，更不会过度释放而导致 Crash 了。
+* 第一段代码，self.name 是 `__NSCFString` 类型，存储在堆，需要维护引用计数，其 setter 方法实现为先 release 旧值，再 retain/copy 新值。这里异步并发执行 setter 就可能会有多条线程同时 release 旧值，过度释放对象，导致 Crash。
+* 第二段代码，由于指针足够存储数据，字符串的值就直接通过 `Tagged Pointer` 存储在了指针上，self.name 是 `NSTaggedPointerString` 类型。在 `objc_release` 函数中会判断指针是不是 `Tagged Pointer`，是的话就不对对象进行 release 操作，更不会过度释放而导致 Crash 了。
+
+这里是 release 的实现：
 
 ```c
 __attribute__((aligned(16), flatten, noinline))
@@ -196,7 +198,7 @@ objc_release(id obj)
 
 **软件介绍**：
 
-`Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，值得一玩。
+`Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支付 Xcode，值得一玩。
 
 ![wakapi](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/screenshot.png)
 
