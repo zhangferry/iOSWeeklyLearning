@@ -985,3 +985,43 @@ BOOL class_addMethod(Class cls, SEL name, IMP imp, const char *types)
 * `respondsToSelector:`  会触发 `动态方法解析`，但不会触发 `消息转发`。
 
 
+***
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+Q：以下两段代码的执行情况分别如何？
+
+```objectivec
+  dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+  for (int i = 0; i < 1000; i++) {
+      dispatch_async(queue, ^{
+          self.name = [NSString stringWithFormat:@"abcdefghij"];
+      });
+  }
+```
+
+```objectivec
+  dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+  for (int i = 0; i < 1000; i++) {
+      dispatch_async(queue, ^{
+          self.name = [NSString stringWithFormat:@"abcdefghi"];
+      });
+  }
+```
+
+* 第一段代码，self.name 是 `__NSCFString` 类型，存储在堆，需要维护引用计数，其 setter 方法实现为先 release 旧值，再 retain/copy 新值。这里异步并发执行 setter 就可能会有多条线程同时 release 旧值，过度释放对象，导致 Crash。
+* 第二段代码，由于指针足够存储数据，字符串的值就直接通过 `Tagged Pointer` 存储在了指针上，self.name 是 `NSTaggedPointerString` 类型。在 `objc_release` 函数中会判断指针是不是 `Tagged Pointer`，是的话就不对对象进行 release 操作，更不会过度释放而导致 Crash 了。
+
+这里是 release 的实现：
+
+```c
+__attribute__((aligned(16), flatten, noinline))
+void 
+objc_release(id obj)
+{
+    if (!obj) return;
+    if (obj->isTaggedPointer()) return;
+    return obj->release();
+}
+```
+
+
