@@ -197,10 +197,9 @@ objc_release(id obj)
 
 **软件介绍**：
 
-Keep Track of Your Coding Time!
-Wakapi is an open-source tool that helps you keep track of the time you have spent coding on different projects in different programming languages and more. Ideal for statistics freaks and anyone else.
+`Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，值得一玩。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/screenshot.png)
+![wakapi](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/screenshot.png)
 
 ## 关于我们
 
