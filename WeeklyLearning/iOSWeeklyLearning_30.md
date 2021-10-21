@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * Tips：分享 WKWebView 几个不常用的特性。
-> * 面试模块：一道 Tagged Pointer  相关题目。 
+> * 面试模块：一道 Tagged Pointer 相关题目。 
 > * 优秀博客：本期博客整理了 Codable 在一些特殊场景的处理方式，Swift 处理 JSON 解析时的一些技术细节。
 > * 学习资料：Xcode Build Settings 的参数说明网站；来自 Microsoft 的 Data Science 基础课程。
 > * 开发工具：免费且开源的 Coding 时间追踪工具：wakapi。
@@ -22,30 +22,31 @@
 
 ```swift
 func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-  let urlString = navigationAction.request.url?.absoluteString ?? ""
-  let pattern = "interceptSomeUrlPattern"
-  if urlString.contains(pattern){
-     var splitPath = urlString.components(separatedBy: pattern)
-  }
+  
+    let urlString = navigationAction.request.url?.absoluteString ?? ""
+    let pattern = "interceptSomeUrlPattern"
+    if urlString.contains(pattern){
+        var splitPath = urlString.components(separatedBy: pattern)
+    }
 }
 ```
 
 **2. 使用 WKWebView 进行身份验证**
 
-当 WKWebView 中的 URL 需要用户授权时，您需要实现以下方法：
+当 WKWebView 中的 URL 需要用户授权时，我们需要实现以下方法：
 
 ```swift
 func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         
-        let authenticationMethod = challenge.protectionSpace.authenticationMethod
-        if authenticationMethod == NSURLAuthenticationMethodDefault || authenticationMethod == NSURLAuthenticationMethodHTTPBasic || authenticationMethod == NSURLAuthenticationMethodHTTPDigest {
-            //Do you stuff
-        }
-        completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, credential)
+    let authenticationMethod = challenge.protectionSpace.authenticationMethod
+    if authenticationMethod == NSURLAuthenticationMethodDefault || authenticationMethod == NSURLAuthenticationMethodHTTPBasic || authenticationMethod == NSURLAuthenticationMethodHTTPDigest {
+        //Do you stuff
+    }
+    completionHandler(NSURLSessionAuthChallengeDisposition.UseCredential, credential)
 }
 ```
 
-收到身份验证质询后，您可以确定所需的身份验证类型（用户凭据或证书），并相应地使用提示或预定义凭据来处理条件。
+收到身份验证质询后，我们可以确定所需的身份验证类型（用户凭据或证书），并相应地使用提示或预定义凭据来处理条件。
 
 **3. 多个 WKWebView 共享 Cookie**
 
@@ -54,7 +55,7 @@ WKWebView 的每个实例都有其自己的 cookie 存储。为了在 WKWebView 
 ```swift
 let cookies = HTTPCookieStorage.shared.cookies ?? []
 for (cookie) in cookies {
-   webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
+    webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie)
 }
 ```
 
@@ -62,7 +63,7 @@ for (cookie) in cookies {
 
 WKWebView 的其他功能非常普遍，例如显示正在加载的 URL 的进度更新。
 
-可以通过侦听以下方法的 estimatedProgress 的 keyPath 值来更新 ProgressViews：
+可以通过监听以下方法的 estimatedProgress 的 keyPath 值来更新 ProgressViews：
 
 ```swift
 override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
@@ -70,30 +71,28 @@ override func observeValue(forKeyPath keyPath: String?, of object: Any?, change:
 
 **5. 配置 URL 操作**
 
-使用 decisionPolicyFor 函数，您不仅可以通过电话，facetime 和邮件等操作来控制外部导航，还可以选择限制某些 URL 的打开。以下代码展示了每种情况：
+使用 decisionPolicyFor 函数，我们不仅可以通过电话，Facetime 和邮件等操作来控制外部导航，还可以选择限制某些 URL 的打开。以下代码展示了每种情况：
 
 ```swift
 func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 
-guard let url = navigationAction.request.url else {
-            decisionHandler(.allow)
-            return
-        }
+    guard let url = navigationAction.request.url else {
+        decisionHandler(.allow)
+        return
+    }
 
- if ["tel", "sms", "mailto"].contains(url.scheme) && UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            decisionHandler(.cancel)
-        } else {
-            if let host = navigationAction.request.url?.host {
-               if host == "www.notsafeforwork.com" {
-                  decisionHandler(.cancel)
-               }
-               else{
-                   decisionHandler(.allow)
-               }
+    if ["tel", "sms", "mailto"].contains(url.scheme) && UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        decisionHandler(.cancel)
+    } else {
+        if let host = navigationAction.request.url?.host {
+            if host == "www.notsafeforwork.com" {
+                decisionHandler(.cancel)
+            } else{
+                decisionHandler(.allow)
             }
         }
-  }
+    }
 }
 ```
 
@@ -153,11 +152,11 @@ objc_release(id obj)
 
 3、[2021 年了，Swift 的 JSON-Model 转换还能有什么新花样](https://zhuanlan.zhihu.com/p/351928579?ivk_sa=1024320u "2021 年了，Swift 的 JSON-Model 转换还能有什么新花样") -- 来自知乎：非著名程序员，作者 明林清
 
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：本文主要介绍 `ExCodable` 的特性和使用方法。在文章开头先介绍了常见的 json 转模型的几种方式，并对这些方式各自的优缺点进行了总结，随后引出 `ExCodable` 的特性及使用方法。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：本文主要介绍 `ExCodable` 的特性和使用方法。在文章开头先介绍了常见的 JSON 转模型的几种方式，并对这些方式各自的优缺点进行了总结，随后引出 `ExCodable` 的特性及使用方法。
 
 4、[json 解析有什么可说道的](https://mp.weixin.qq.com/s/_jFHgAP0vKx1Cv9XGkh_DA "json 解析有什么可说道的") -- 来自公众号：码农哈皮
 
-[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章开头先介绍了什么是 JSON。正文主要篇幅在介绍 SwiftyJSON 和 YYModel 的实现方案。文章最后引出了 HandyJSON，HandyJSON 是基于借助 `metadata` 结构来实现 JSON 转 Model 的。在这里额外提一句，如何推断 `metadata` 的结构，可以参考[GenMeta.cpp ](https://github.com/apple/swift/blob/main/lib/IRGen/GenMeta.cpp "GenMeta.cpp ")中每个结构的 layout 函数
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章开头先介绍了什么是 JSON。正文主要篇幅在介绍 SwiftyJSON 和 YYModel 的实现方案。文章最后引出了 HandyJSON，HandyJSON 是基于借助 `metadata` 结构来实现 JSON 转 Model 的。在这里额外提一句，如何推断 `metadata` 的结构，可以参考 [GenMeta.cpp](https://github.com/apple/swift/blob/main/lib/IRGen/GenMeta.cpp "GenMeta.cpp ") 中每个结构的 layout 函数。
 
 5、[Swift中Json转Model的便捷方式](https://juejin.cn/post/7019910939340193805/ "Swift中Json转Model的便捷方式") -- 来自掘金：我是熊大
 
@@ -165,7 +164,7 @@ objc_release(id obj)
 
 6、[Swift 码了个 JSON 解析器(一)](https://zhuanlan.zhihu.com/p/364032254 "Swift 码了个 JSON 解析器(一)") -- 来自知乎：OldBirds
 
-[@我是熊大](https://github.com/Tliens)：正如作者所言，码了个 JSON 解析器,感兴趣的可以看一下。
+[@我是熊大](https://github.com/Tliens)：正如作者所言，码了个 JSON 解析器，感兴趣的可以看一下。
 
 ## 学习资料
 
