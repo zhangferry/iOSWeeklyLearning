@@ -455,3 +455,20 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一个标准化的 emoji 备忘单📋，当你在提交信息时，使用 emoji 来描述成了一种简单的方式来识别提交的目的和意图🍰，因为维护者只需要看一眼所使用的 emoji 就能明白🧐。由于有很多的 emoji，所以这里创建了一份指南来让使用 emoji 变得轻松、易懂、一致🥳。
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Xcode Build Settings
+
+地址：https://xcodebuildsettings.com/
+
+顾名思义，这个网站的作用是展示 Xcode 所有的 Build Settings。你可以在这里按分类查看所有的设置项，搜索你想要的设置项，或查询某个设置项的值类型及其默认值。对于常常要和 Build Settings 打交道的开发者来说，这个网站很实用。
+
+### Data-Science-For-Beginners
+
+地址：https://github.com/microsoft/Data-Science-For-Beginners
+
+来自 Microsoft 的 Data Science 基础课程，为期 10 周，有 20 节课。这是一个基于项目的课程，配套 40 多个小测试，通过该课程你可以学习到关于数据科学的基础知识。每节课程还有精美的插画配图，有兴趣学习 Data Science 的朋友可以尝试一下。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Data-Science-For-Beginners.png)
+

@@ -784,3 +784,18 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 作为使用者相对有效的保护隐私的方案是，关闭对应 App 的「后台刷新」，非必要情况下关闭蓝牙、定位等权限，并将相册调用权限改为「选中的照片」。
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### wakapi
+
+**地址**：https://wakapi.dev/
+
+**软件状态**：免费，[开源](https://github.com/muety/wakapi)
+
+**软件介绍**：
+
+`Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支付 Xcode，值得一玩。
+
+![wakapi](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/screenshot.png)
+
