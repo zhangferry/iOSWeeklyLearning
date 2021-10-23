@@ -28,10 +28,15 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
+1、[Swift的高级中间语言：SIL](https://www.jianshu.com/p/c2880460c6cd "Swift的高级中间语言：SIL") -- 来自简书：sea_biscute
 
+[@东坡肘子](https://www.fatbobman.com)：在LLVM的官方文档中对Swift的编译器设计描述如下： Swift编程语言是在LLVM上构建，并且使用LLVM IR和LLVM的后端去生成代码。但是Swift编译器还包含新的高级别的中间语言，称为SIL。SIL会对Swift进行较高级别的语义分析和优化。 本文将分析一下SIL设计的动机和SIL的应用，包括高级别的语义分析，诊断转换，去虚拟化，特化，引用计数优化，TBAA(Type Based Alias Analysis)等。并且会在某些流程中加入对SIL和LLVM IR对比。
 
+2、[一文看破Swift枚举本质](https://mp.weixin.qq.com/s/Gx7L_Ev0DV19mLYMnH-R1Q "一文看破Swift枚举本质") -- 来自：狐友技术团队
+
+[@东坡肘子](https://www.fatbobman.com)：SIL在实际工作中的应用举例。通过分析内存布局、查看SIL源码等方式来探索一下枚举的底层到底是什么样子的。在Swift中枚举不仅仅只是一个用来区分类型的常量了，枚举的功能被大大的加强。枚举可以设置原始值，添加关联值，甚至可以添加计算属性(不能添加存储属性)，定义方法，实现协议，其功能仅次于一个class对象了，那么Swift的枚举到底是怎样实现这些功能的呢？
 
 ## 学习资料
 
