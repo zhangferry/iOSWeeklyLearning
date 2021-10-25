@@ -28,6 +28,8 @@
 
 ## 优秀博客
 
+SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SILGen**生成并由**IRGen**转为LLVM IR ，SIL会对Swift进行较高级别的语义分析和优化。我们看到的@开头修饰的代码基本都属于SIL范畴。
+
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
 1、[Swift的高级中间语言：SIL](https://www.jianshu.com/p/c2880460c6cd "Swift的高级中间语言：SIL") -- 来自简书：sea_biscute
@@ -37,6 +39,15 @@
 2、[一文看破Swift枚举本质](https://mp.weixin.qq.com/s/Gx7L_Ev0DV19mLYMnH-R1Q "一文看破Swift枚举本质") -- 来自：狐友技术团队
 
 [@东坡肘子](https://www.fatbobman.com)：SIL在实际工作中的应用举例。通过分析内存布局、查看SIL源码等方式来探索一下枚举的底层到底是什么样子的。在Swift中枚举不仅仅只是一个用来区分类型的常量了，枚举的功能被大大的加强。枚举可以设置原始值，添加关联值，甚至可以添加计算属性(不能添加存储属性)，定义方法，实现协议，其功能仅次于一个class对象了，那么Swift的枚举到底是怎样实现这些功能的呢？
+
+
+3、[Swift Intermediate Language 初探](https://zhuanlan.zhihu.com/p/101898915 "Swift Intermediate Language 初探") -- 来自简书：sea_biscute
+
+@[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王") 文章简单介绍了SIL以及SIL在LLVM架构中的位置。正文部分作者通过SIL分析来解释extension 中protocol 函数和对象中的protocol 函数调用选择的问题。
+
+4、[Swift编译器中间码SIL](https://woshiccm.github.io/posts/Swift%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E9%97%B4%E7%A0%81SIL/ "Swift编译器中间码SIL") -- 来自博客：roy's blog
+
+@[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王") 。作者首先介绍了SIL的设计初衷以及与LLVM IR的区别。文中还介绍了SSA（ static single-assignment）中“代”的概念以及SSA的益处。SIL是命名函数的集合，SIL源文件为Module，通过Module可以遍历Module中的函数。
 
 ## 学习资料
 
