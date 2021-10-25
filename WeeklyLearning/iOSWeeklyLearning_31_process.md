@@ -43,11 +43,11 @@ SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SIL
 
 3、[Swift Intermediate Language 初探](https://zhuanlan.zhihu.com/p/101898915 "Swift Intermediate Language 初探") -- 来自简书：sea_biscute
 
-@[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王”) 文章简单介绍了SIL以及SIL在LLVM架构中的位置。正文部分作者通过SIL分析来解释extension 中protocol 函数和对象中的protocol 函数调用选择的问题。
+@[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王") 文章简单介绍了SIL以及SIL在LLVM架构中的位置。正文部分作者通过SIL分析来解释extension 中protocol 函数和对象中的protocol 函数调用选择的问题。
 
 4、[Swift编译器中间码SIL](https://woshiccm.github.io/posts/Swift%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E9%97%B4%E7%A0%81SIL/ "Swift编译器中间码SIL") -- 来自博客：roy's blog
 
-@[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王”) 。作者首先介绍了SIL的设计初衷以及与LLVM IR的区别。文中还介绍了SSA（ static single-assignment）中“代”的概念以及SSA的益处。SIL是命名函数的集合，SIL源文件为Module，通过Module可以遍历Module中的函数。
+@[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王") 。作者首先介绍了SIL的设计初衷以及与LLVM IR的区别。文中还介绍了SSA（ static single-assignment）中“代”的概念以及SSA的益处。SIL是命名函数的集合，SIL源文件为Module，通过Module可以遍历Module中的函数。
 
 ## 学习资料
 
