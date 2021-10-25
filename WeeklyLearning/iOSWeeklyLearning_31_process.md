@@ -28,7 +28,7 @@
 
 ## 优秀博客
 
-SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SILGen**生成并由**IRGen**转为LLVM ，SIL会对Swift进行较高级别的语义分析和优化。我们看到的@开头修饰的代码基本都属于SIL范畴。
+SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SILGen**生成并由**IRGen**转为LLVM IR ，SIL会对Swift进行较高级别的语义分析和优化。我们看到的@开头修饰的代码基本都属于SIL范畴。
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
