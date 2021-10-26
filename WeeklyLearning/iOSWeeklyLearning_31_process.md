@@ -71,6 +71,10 @@ SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SIL
 
 @[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王") 。作者首先介绍了SIL的设计初衷以及与LLVM IR的区别。文中还介绍了SSA（ static single-assignment）中“代”的概念以及SSA的益处。SIL是命名函数的集合，SIL源文件为Module，通过Module可以遍历Module中的函数。
 
+5、[Swift Intermediate Language —— A high level IR to complement LLVM](https://llvm.org/devmtg/2015-10/slides/GroffLattner-SILHighLevelIR.pdf "Swift Intermediate Language —— A high level IR to complement LLVM") -- 来自：Joe Groff 和 Chris Lattner
+
+[@我是熊大](https://github.com/Tliens)：在LLVM开发人员会议上 Groff 和 Chris Lattner通过简报的方式对 Swift Intermediate Language 进行了详细的介绍。内容包括：为什么要使用 SIL、SIL的设计逻辑、Swift对SIL的使用等内容。尽管简报为英文，但主要以代码和图表为主，对了解SIL的设计动机和设计原理有很大的帮助。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
