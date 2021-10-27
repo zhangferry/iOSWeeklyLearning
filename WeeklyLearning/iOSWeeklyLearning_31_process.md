@@ -5,11 +5,11 @@
 ### 本期概要
 
 > * 话题：
-> * Tips：
+> * Tips：优化 Xcode 增量编译的几个小技巧。
 > * 面试模块：一道 RunLoop 相关题目。
-> * 优秀博客：
+> * 优秀博客：本期博客主题是 Swift 的高级中间语言：SIL。
 > * 学习资料：
-> * 开发工具：
+> * 开发工具：一个终端命令补全工具：fig。
 
 ## 本期话题
 
@@ -17,9 +17,80 @@
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+### Xcode 增量编译优化
 
+整理编辑：[zhangferry](https://zhangferry.com)
 
+相对于全量编译，增量编译才是平常开发使用最多的场景，所以这方面提升所带来的好处往往更可观。
+
+参考苹果文档 [Improving the Speed of Incremental Builds](https://developer.apple.com/documentation/xcode/improving-the-speed-of-incremental-builds "Improving the Speed of Incremental Builds") ，我们可以从这几个方面入手优化增量编译。
+
+在开始优化之前更重要的是对编译时间的测量，有衡量指标才能准确分析出我们的优化效果。时间测量可以通过 Xcode 的 `Product > Perform Action > Build With Timing Summary`，然后在编译日志的底部查看各阶段耗时统计。苹果给出了四条优化建议：
+
+#### 声明脚本构建阶段脚本和构建规则的 Inputs 和 Outputs
+
+New Build System 每次编译准备执行 Build Phase 中的脚本时，会根据 inputs 和 outputs 的状态来确定是否执行该脚本。以下情况会执行脚本：
+
+* 没有input文件
+* 没有output文件
+* input文件发生变化
+* output丢失
+
+最近遇到一个问题刚好跟这有关，该问题导致增量编译时间很长，耗时主要集中在 CompileAsseetCatalog 阶段。
+
+正常 CocoaPods 在处理资源 Copy 的时候是带有 input 和 output 的，用于减少该步骤不必要的执行，如下图：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211027225406.png)
+
+我们项目中有很多私有库，里面引用图片使用了 `Assets.xcassets` 的形式（未封装 Bundle），这导致一个编译错误：
+
+```
+Targets which have multiple asset catalogs that aren't in the same build phase may produce an error regarding a "duplicate output file"
+```
+
+这个错误正是 New Build System 带来的，[Build System Release Notes for Xcode 10](https://developer.apple.com/documentation/xcode-release-notes/build-system-release-notes-for-xcode-10 "Build System Release Notes for Xcode 10") 里有说明：
+
+> Targets which have multiple asset catalogs that aren't in the same build phase may produce an error regarding a "duplicate output file". (39810274)
+>
+> Workaround: Ensure that all asset catalogs are processed by the same build phase in the target.
+
+还给出了临时的解决方案，就是将所有 asset catalogs 在同一个构建过程处理。对应到 CocoaPods 就是在 Podfile 里添加下面这句：
+
+```ruby
+install! 'cocoapods', :disable_input_output_paths => true
+```
+
+该设置会关闭资源 Copy 里的 input 和 output，如上面所说，没有 input 和 output，每次都会执行资源的 Copy。因为 Pod 里的`Assets.scassets` 最终会和主项目的 `Assets.scassets `  合到一起编译成 car 文件，所以每次主项目都要等 Pods 的 Copy 完再编译，即使资源文件没有任何变更，这就导致了增量时长的增加。
+
+CocoaPods 仓库里有一个 Issue 在讨论这个问题：[Issue #8122](https://github.com/CocoaPods/CocoaPods/issues/8122 "Issue #8122") 。但该回答下的方案均不适用，后来将私有库中资源引用的方式改为 Bundle，去掉 `disable_input_output_paths` 的设置，增量编译效果得到大幅提升：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/compile_optimize_timing.png)
+
+其中主要占用编译耗时的 CompileAssetCatalog 阶段直接没有了。
+
+#### 将自己的模块应用 Module Maps
+
+Module Maps 主要缩短的是头文件的引用问题，未 Module 化的时候，编译器会为每一个源文件预处理 `.h`头文件，Module 之后，不会再预处理，而是为对应的库单独建一个缓存，之后编译重用缓存内容。在制作仓库时只要需要确保 DEFINES_MODULE 为 Yes 就可以了，剩余的工作全都可以 Xcode 代劳。
+
+需要注意，要发挥 Module Maps的功能，还需要确保在头文件引用时增加库的名字，这样编译器才会知道你有 Module Map。
+
+推荐： `#import <FrameworkName/Header.h>` 
+
+不推荐：`#import <Header.h> ` 或者 `#import "Header.h"`
+
+#### 明确的项目依赖
+
+对于非必要的依赖进行移除，因为过时或多余的依赖关系可能会迫使 Xcode 在并行构建时变成顺序构建。
+
+通常当项目引入新的 Framework 时，Xcode 会自动添加对应依赖，这种是隐式的。比较推荐显示的依赖：在 Build Phases -> Dependencies -> 点加号。
+
+#### 重构 Target 以提高并发能力
+
+分析原有的构建流程，将一些额外的依赖去掉。这个改造成本稍微有点高，但某些情况下应该也能带来较大的提升。
+
+举个例子：当一个 Targets 依赖多个子 Targets 时，Xcode 必须等待所有子 Targets 完成才能继续编译当前 Targets。我们可以考虑分拆依赖关系，最大化利用 Xcode 的并发能力。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211027234051.png)
 
 ## 面试解析
 
@@ -102,12 +173,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第三十期](https://mp.weixin.qq.com/s/KNyIcOKGfY5Ok-oSQqLs6w)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第二十九期](https://mp.weixin.qq.com/s/TVBQgYuycelGBwTaCSfmxQ)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第二十八期](https://mp.weixin.qq.com/s/dKOkF_P5JvQnDLq09DOzaQ)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第二十七期](https://mp.weixin.qq.com/s/WvctY6OG1joJez2g6owroA)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
