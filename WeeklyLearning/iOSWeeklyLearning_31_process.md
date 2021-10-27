@@ -83,8 +83,19 @@ SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SIL
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
+### fig
+
+**地址**：https://fig.io/
+
+**软件状态**：免费，[开源](https://github.com/Coder-Star/autocomplete)
+
+**软件介绍**：
+
+`fig` 是一个开源的终端自动补全工具，支持数百个CLI工具，如`git`、`docker`、`npm`等等，并且可以无缝添加到你现有的终端，如`iTerm`、`Hyper`、`VSCode` 和 `macOS 终端`，支持我们自己自定义一些补全规则。
+
+![fig](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_2021-10-27_21-04-03.png)
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。

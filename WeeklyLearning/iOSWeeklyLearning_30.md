@@ -198,7 +198,7 @@ objc_release(id obj)
 
 **软件介绍**：
 
-`Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支付 Xcode，值得一玩。
+`Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支持 Xcode，值得一玩。
 
 ![wakapi](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/screenshot.png)
 
