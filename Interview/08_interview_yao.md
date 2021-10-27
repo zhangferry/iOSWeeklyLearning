@@ -1,3 +1,5 @@
+# 人物访谈|一位在校生的iOS之路
+
 本期访谈对象是摸鱼周报的主编之一：反向抽烟。他还在读研，因为名字里带个尧字，我们都叫他尧兄。尧兄有一个博客：https://blog.csdn.net/opooc，分享自己的学习记录，大家有兴趣可以看下。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG552_sea.jpeg)
