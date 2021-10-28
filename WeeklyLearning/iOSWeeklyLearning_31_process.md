@@ -4,16 +4,11 @@
 
 ### 本期概要
 
-> * 话题：
 > * Tips：优化 Xcode 增量编译的几个小技巧。
 > * 面试模块：一道 RunLoop 相关题目。
 > * 优秀博客：本期博客主题是 Swift 的高级中间语言：SIL。
-> * 学习资料：
+> * 学习资料：raywenderlich 新出的 Flutter 教程；一份认知者偏差手册。
 > * 开发工具：一个终端命令补全工具：fig。
-
-## 本期话题
-
-[@zhangferry](https://zhangferry.com)：
 
 ## 开发Tips
 
@@ -31,10 +26,10 @@
 
 New Build System 每次编译准备执行 Build Phase 中的脚本时，会根据 inputs 和 outputs 的状态来确定是否执行该脚本。以下情况会执行脚本：
 
-* 没有input文件
-* 没有output文件
-* input文件发生变化
-* output丢失
+* 没有 input 文件
+* 没有 output 文件
+* input 文件发生变化
+* output 丢失
 
 最近遇到一个问题刚好跟这有关，该问题导致增量编译时间很长，耗时主要集中在 CompileAsseetCatalog 阶段。
 
@@ -70,9 +65,9 @@ CocoaPods 仓库里有一个 Issue 在讨论这个问题：[Issue #8122](https:/
 
 #### 将自己的模块应用 Module Maps
 
-Module Maps 主要缩短的是头文件的引用问题，未 Module 化的时候，编译器会为每一个源文件预处理 `.h`头文件，Module 之后，不会再预处理，而是为对应的库单独建一个缓存，之后编译重用缓存内容。在制作仓库时只要需要确保 DEFINES_MODULE 为 Yes 就可以了，剩余的工作全都可以 Xcode 代劳。
+Module Maps 主要缩短的是头文件的引用问题，未 Module 化的时候，编译器会为每一个源文件预处理 `.h` 头文件，Module 之后，不会再预处理，而是为对应的库单独建一个缓存，之后编译重用缓存内容。在制作仓库时只要需要确保 DEFINES_MODULE 为 Yes 就可以了，剩余的工作全都可以 Xcode 代劳。
 
-需要注意，要发挥 Module Maps的功能，还需要确保在头文件引用时增加库的名字，这样编译器才会知道你有 Module Map。
+需要注意，要发挥 Module Maps 的功能，还需要确保在头文件引用时增加库的名字，这样编译器才会知道你有 Module Map。
 
 推荐： `#import <FrameworkName/Header.h>` 
 
@@ -88,7 +83,7 @@ Module Maps 主要缩短的是头文件的引用问题，未 Module 化的时候
 
 分析原有的构建流程，将一些额外的依赖去掉。这个改造成本稍微有点高，但某些情况下应该也能带来较大的提升。
 
-举个例子：当一个 Targets 依赖多个子 Targets 时，Xcode 必须等待所有子 Targets 完成才能继续编译当前 Targets。我们可以考虑分拆依赖关系，最大化利用 Xcode 的并发能力。
+举个例子：当一个 target 依赖多个子 targets 时，Xcode 必须等待所有子 targets 完成才能继续编译当前 target。我们可以考虑分拆依赖关系，最大化利用 Xcode 的并发能力。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211027234051.png)
 
@@ -121,30 +116,29 @@ dispatch_async(dispatch_get_global_queue(0, 0), ^{
 
 ## 优秀博客
 
-SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SILGen**生成并由**IRGen**转为LLVM IR ，SIL会对Swift进行较高级别的语义分析和优化。我们看到的@开头修饰的代码基本都属于SIL范畴。
+SIL：Swift Intermediate Language，SIL 是高级别的中间语言，SIL 由 **SILGen** 生成并由 **IRGen** 转为 LLVM IR ，SIL 会对 Swift 进行较高级别的语义分析和优化。我们看到的 @ 开头修饰的代码基本都属于 SIL 范畴。
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
 1、[Swift的高级中间语言：SIL](https://www.jianshu.com/p/c2880460c6cd "Swift的高级中间语言：SIL") -- 来自简书：sea_biscute
 
-[@东坡肘子](https://www.fatbobman.com)：在LLVM的官方文档中对Swift的编译器设计描述如下： Swift编程语言是在LLVM上构建，并且使用LLVM IR和LLVM的后端去生成代码。但是Swift编译器还包含新的高级别的中间语言，称为SIL。SIL会对Swift进行较高级别的语义分析和优化。 本文将分析一下SIL设计的动机和SIL的应用，包括高级别的语义分析，诊断转换，去虚拟化，特化，引用计数优化，TBAA(Type Based Alias Analysis)等。并且会在某些流程中加入对SIL和LLVM IR对比。
+[@东坡肘子](https://www.fatbobman.com)：在 LLVM 的官方文档中对 Swift 的编译器设计描述如下： Swift 编程语言是在 LLVM 上构建，并且使用 LLVM IR 和 LLVM 的后端去生成代码。但是 Swift 编译器还包含新的高级别的中间语言，称为 SIL。SIL 会对 Swift 进行较高级别的语义分析和优化。 本文将分析一下 SIL 设计的动机和 SIL 的应用，包括高级别的语义分析，诊断转换，去虚拟化，特化，引用计数优化，TBAA（Type Based Alias Analysis）等。并且会在某些流程中加入对 SIL 和 LLVM IR 对比。
 
 2、[一文看破Swift枚举本质](https://mp.weixin.qq.com/s/Gx7L_Ev0DV19mLYMnH-R1Q "一文看破Swift枚举本质") -- 来自：狐友技术团队
 
-[@东坡肘子](https://www.fatbobman.com)：SIL在实际工作中的应用举例。通过分析内存布局、查看SIL源码等方式来探索一下枚举的底层到底是什么样子的。在Swift中枚举不仅仅只是一个用来区分类型的常量了，枚举的功能被大大的加强。枚举可以设置原始值，添加关联值，甚至可以添加计算属性(不能添加存储属性)，定义方法，实现协议，其功能仅次于一个class对象了，那么Swift的枚举到底是怎样实现这些功能的呢？
-
+[@东坡肘子](https://www.fatbobman.com)：SIL 在实际工作中的应用举例。通过分析内存布局、查看 SIL 源码等方式来探索一下枚举的底层到底是什么样子的。在 Swift 中枚举不仅仅只是一个用来区分类型的常量了，枚举的功能被大大的加强。枚举可以设置原始值，添加关联值，甚至可以添加计算属性（不能添加存储属性），定义方法，实现协议，其功能仅次于一个 Class 对象了，那么 Swift 的枚举到底是怎样实现这些功能的呢？
 
 3、[Swift Intermediate Language 初探](https://zhuanlan.zhihu.com/p/101898915 "Swift Intermediate Language 初探") -- 来自简书：sea_biscute
 
-@[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王") 文章简单介绍了SIL以及SIL在LLVM架构中的位置。正文部分作者通过SIL分析来解释extension 中protocol 函数和对象中的protocol 函数调用选择的问题。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章简单介绍了 SIL 以及 SIL 在 LLVM 架构中的位置。正文部分作者通过 SIL 分析来解释 extension 中 protocol 函数和对象中的 protocol 函数调用选择的问题。
 
 4、[Swift编译器中间码SIL](https://woshiccm.github.io/posts/Swift%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E9%97%B4%E7%A0%81SIL/ "Swift编译器中间码SIL") -- 来自博客：roy's blog
 
-@[皮拉夫大王](https://www.jianshu.com/u/739b677928f7 "皮拉夫大王") 。作者首先介绍了SIL的设计初衷以及与LLVM IR的区别。文中还介绍了SSA（ static single-assignment）中“代”的概念以及SSA的益处。SIL是命名函数的集合，SIL源文件为Module，通过Module可以遍历Module中的函数。
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：作者首先介绍了 SIL 的设计初衷以及与 LLVM IR 的区别。文中还介绍了 SSA（ static single-assignment）中“代”的概念以及 SSA 的益处。SIL 是命名函数的集合，SIL 源文件为 Module，通过 Module 可以遍历 Module 中的函数。
 
 5、[Swift Intermediate Language —— A high level IR to complement LLVM](https://llvm.org/devmtg/2015-10/slides/GroffLattner-SILHighLevelIR.pdf "Swift Intermediate Language —— A high level IR to complement LLVM") -- 来自：Joe Groff 和 Chris Lattner
 
-[@我是熊大](https://github.com/Tliens)：在LLVM开发人员会议上 Groff 和 Chris Lattner通过简报的方式对 Swift Intermediate Language 进行了详细的介绍。内容包括：为什么要使用 SIL、SIL的设计逻辑、Swift对SIL的使用等内容。尽管简报为英文，但主要以代码和图表为主，对了解SIL的设计动机和设计原理有很大的帮助。
+[@我是熊大](https://github.com/Tliens)：在 LLVM 开发人员会议上 Groff 和 Chris Lattner 通过简报的方式对 SIL 进行了详细的介绍。内容包括：为什么要使用 SIL、SIL 的设计逻辑、Swift 对 SIL 的使用等内容。尽管简报为英文，但主要以代码和图表为主，对了解 SIL 的设计动机和设计原理有很大的帮助。
 
 ## 学习资料
 
@@ -154,7 +148,7 @@ SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SIL
 
 地址：https://www.raywenderlich.com/books/flutter-apprentice
 
-raywenderlich 新出的 Flutter 教程，该网站的教程一直以简单易懂，清晰明了为特点，如果是想入门 Flutter 的话，这本书将会是不错的选择。另外该网站的 Swift Apprentice 也出了新的版本，有兴趣重温一下的小伙伴也可以阅读以下。
+raywenderlich 新出的 Flutter 教程，该网站的教程一直以简单易懂、清晰明了为特点，如果是想入门 Flutter 的话，这本书将会是不错的选择。另外该网站的 Swift Apprentice 也出了新的版本，有兴趣重温一下的小伙伴也可以阅读一下。
 
 ### 认知偏差知识手册
 
@@ -174,7 +168,7 @@ raywenderlich 新出的 Flutter 教程，该网站的教程一直以简单易懂
 
 **软件介绍**：
 
-`fig` 是一个开源的终端自动补全工具，支持数百个CLI工具，如`git`、`docker`、`npm`等等，并且可以无缝添加到你现有的终端，如`iTerm`、`Hyper`、`VSCode` 和 `macOS 终端`，支持我们自己自定义一些补全规则。
+`fig` 是一个开源的终端自动补全工具，支持数百个 CLI 工具，如 `git`、`docker`、`npm `等等，并且可以无缝添加到你现有的终端，如 `iTerm`、`Hyper`、`VSCode` 和 `macOS 终端`，支持我们自己自定义一些补全规则。
 
 ![fig](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_2021-10-27_21-04-03.png)
 ## 关于我们
