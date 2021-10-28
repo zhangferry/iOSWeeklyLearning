@@ -941,3 +941,28 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 
 [@我是熊大](https://github.com/Tliens)：正如作者所言，码了个 JSON 解析器，感兴趣的可以看一下。
 
+***
+SIL：Swift Intermediate Language，SIL 是高级别的中间语言，SIL 由 **SILGen** 生成并由 **IRGen** 转为 LLVM IR ，SIL 会对 Swift 进行较高级别的语义分析和优化。我们看到的 @ 开头修饰的代码基本都属于 SIL 范畴。
+
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
+
+1、[Swift的高级中间语言：SIL](https://www.jianshu.com/p/c2880460c6cd "Swift的高级中间语言：SIL") -- 来自简书：sea_biscute
+
+[@东坡肘子](https://www.fatbobman.com)：在 LLVM 的官方文档中对 Swift 的编译器设计描述如下： Swift 编程语言是在 LLVM 上构建，并且使用 LLVM IR 和 LLVM 的后端去生成代码。但是 Swift 编译器还包含新的高级别的中间语言，称为 SIL。SIL 会对 Swift 进行较高级别的语义分析和优化。 本文将分析一下 SIL 设计的动机和 SIL 的应用，包括高级别的语义分析，诊断转换，去虚拟化，特化，引用计数优化，TBAA（Type Based Alias Analysis）等。并且会在某些流程中加入对 SIL 和 LLVM IR 对比。
+
+2、[一文看破Swift枚举本质](https://mp.weixin.qq.com/s/Gx7L_Ev0DV19mLYMnH-R1Q "一文看破Swift枚举本质") -- 来自：狐友技术团队
+
+[@东坡肘子](https://www.fatbobman.com)：SIL 在实际工作中的应用举例。通过分析内存布局、查看 SIL 源码等方式来探索一下枚举的底层到底是什么样子的。在 Swift 中枚举不仅仅只是一个用来区分类型的常量了，枚举的功能被大大的加强。枚举可以设置原始值，添加关联值，甚至可以添加计算属性（不能添加存储属性），定义方法，实现协议，其功能仅次于一个 Class 对象了，那么 Swift 的枚举到底是怎样实现这些功能的呢？
+
+3、[Swift Intermediate Language 初探](https://zhuanlan.zhihu.com/p/101898915 "Swift Intermediate Language 初探") -- 来自简书：sea_biscute
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：文章简单介绍了 SIL 以及 SIL 在 LLVM 架构中的位置。正文部分作者通过 SIL 分析来解释 extension 中 protocol 函数和对象中的 protocol 函数调用选择的问题。
+
+4、[Swift编译器中间码SIL](https://woshiccm.github.io/posts/Swift%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E9%97%B4%E7%A0%81SIL/ "Swift编译器中间码SIL") -- 来自博客：roy's blog
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：作者首先介绍了 SIL 的设计初衷以及与 LLVM IR 的区别。文中还介绍了 SSA（ static single-assignment）中“代”的概念以及 SSA 的益处。SIL 是命名函数的集合，SIL 源文件为 Module，通过 Module 可以遍历 Module 中的函数。
+
+5、[Swift Intermediate Language —— A high level IR to complement LLVM](https://llvm.org/devmtg/2015-10/slides/GroffLattner-SILHighLevelIR.pdf "Swift Intermediate Language —— A high level IR to complement LLVM") -- 来自：Joe Groff 和 Chris Lattner
+
+[@我是熊大](https://github.com/Tliens)：在 LLVM 开发人员会议上 Groff 和 Chris Lattner 通过简报的方式对 SIL 进行了详细的介绍。内容包括：为什么要使用 SIL、SIL 的设计逻辑、Swift 对 SIL 的使用等内容。尽管简报为英文，但主要以代码和图表为主，对了解 SIL 的设计动机和设计原理有很大的帮助。
+

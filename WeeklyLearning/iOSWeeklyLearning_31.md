@@ -4,11 +4,37 @@
 
 ### 本期概要
 
+> * 本期话题：关于 In-App Events 的一些介绍。
 > * Tips：优化 Xcode 增量编译的几个小技巧。
 > * 面试模块：一道 RunLoop 相关题目。
 > * 优秀博客：本期博客主题是 Swift 的高级中间语言：SIL。
 > * 学习资料：raywenderlich 新出的 Flutter 教程；一份认知者偏差手册。
 > * 开发工具：一个终端命令补全工具：fig。
+
+## 本期话题
+
+本期访谈内容准备有些晚了，暂停一期，下次一定😅。
+
+苹果官网经常会更新一些活动或者开发相关的一些资讯，我们打算定期做一些整理和筛选，以帮助大家了解相关信息。
+
+### In-App Events（App 内活动）
+
+整理编辑：[iHTCboy](https://ihtcboy.com/)
+
+App 内活动是指 App 和游戏内的时效性活动，例如游戏竞赛、电影首映和直播体验等。用户能够直接在 iOS 和 iPadOS 上的 App Store 中探索您的 App 内活动。无论您是想吸引新用户，还是向当前用户提供最新信息，或是与以前的用户重建联系，这项功能都能够助您以全新的方式展示您的活动并扩大其触及的用户群。
+
+苹果在 10 月 22 日开放后台，可以上传活动素材提交审核。需要注意的是，此功能目前是测试阶段，需要开发者接受此协议才生效。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG312.png)
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG313.png)
+
+2021 年 10 月 27 日起，在 iOS 15 以上设备的 App Store 上，用户可以看到 App 内活动。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG314.jpeg)
+
+
+详细，参见：https://developer.apple.com/cn/app-store/in-app-events/
 
 ## 开发Tips
 
@@ -37,7 +63,7 @@ New Build System 每次编译准备执行 Build Phase 中的脚本时，会根�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211027225406.png)
 
-我们项目中有很多私有库，里面引用图片使用了 `Assets.xcassets` 的形式（未封装 Bundle），这导致一个编译错误：
+我们项目中有很多私有库，里面引用图片使用了 `Assets.xcassets` 的形式（未封装 Bundle，静态库），这导致一个编译错误：
 
 ```
 Targets which have multiple asset catalogs that aren't in the same build phase may produce an error regarding a "duplicate output file"

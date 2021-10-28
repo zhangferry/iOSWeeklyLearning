@@ -795,7 +795,21 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 **软件介绍**：
 
-`Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支付 Xcode，值得一玩。
+`Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支持 Xcode，值得一玩。
 
 ![wakapi](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/screenshot.png)
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### fig
+
+**地址**：https://fig.io/
+
+**软件状态**：免费，[开源](https://github.com/Coder-Star/autocomplete)
+
+**软件介绍**：
+
+`fig` 是一个开源的终端自动补全工具，支持数百个 CLI 工具，如 `git`、`docker`、`npm `等等，并且可以无缝添加到你现有的终端，如 `iTerm`、`Hyper`、`VSCode` 和 `macOS 终端`，支持我们自己自定义一些补全规则。
+
+![fig](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_2021-10-27_21-04-03.png)
