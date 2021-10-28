@@ -16,11 +16,11 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-相对于全量编译，增量编译才是平常开发使用最多的场景，所以这方面提升所带来的好处往往更可观。
+相对于全量编译，增量编译才是平常开发使用最多的场景，所以这方面提升所带来的好处往往更可观。参考苹果文档 [Improving the Speed of Incremental Builds](https://developer.apple.com/documentation/xcode/improving-the-speed-of-incremental-builds "Improving the Speed of Incremental Builds") ，我们可以从多个方面入手优化增量编译。
 
-参考苹果文档 [Improving the Speed of Incremental Builds](https://developer.apple.com/documentation/xcode/improving-the-speed-of-incremental-builds "Improving the Speed of Incremental Builds") ，我们可以从这几个方面入手优化增量编译。
+在开始优化之前更重要的是对编译时间的测量，有衡量指标才能准确分析出我们的优化效果。时间测量可以通过 Xcode 的 `Product > Perform Action > Build With Timing Summary`，然后在编译日志的底部查看各阶段耗时统计。
 
-在开始优化之前更重要的是对编译时间的测量，有衡量指标才能准确分析出我们的优化效果。时间测量可以通过 Xcode 的 `Product > Perform Action > Build With Timing Summary`，然后在编译日志的底部查看各阶段耗时统计。苹果给出了四条优化建议：
+以下为优化建议：
 
 #### 声明脚本构建阶段脚本和构建规则的 Inputs 和 Outputs
 
@@ -33,7 +33,7 @@ New Build System 每次编译准备执行 Build Phase 中的脚本时，会根�
 
 最近遇到一个问题刚好跟这有关，该问题导致增量编译时间很长，耗时主要集中在 CompileAsseetCatalog 阶段。
 
-正常 CocoaPods 在处理资源 Copy 的时候是带有 input 和 output 的，用于减少该步骤不必要的执行，如下图：
+正常 CocoaPods 在处理资源 Copy 的时候是带有 input 和 output 的，用于减少资源的导入和编译行为，如下图：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211027225406.png)
 
@@ -49,7 +49,7 @@ Targets which have multiple asset catalogs that aren't in the same build phase m
 >
 > Workaround: Ensure that all asset catalogs are processed by the same build phase in the target.
 
-还给出了临时的解决方案，就是将所有 asset catalogs 在同一个构建过程处理。对应到 CocoaPods 就是在 Podfile 里添加下面这句：
+上面给出了临时的解决方案，就是将所有 asset catalogs 在同一个构建过程处理。对应到 CocoaPods 就是在 Podfile 里添加下面这句：
 
 ```ruby
 install! 'cocoapods', :disable_input_output_paths => true
