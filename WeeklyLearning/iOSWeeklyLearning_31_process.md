@@ -150,7 +150,17 @@ SIL：Swift Intermediate Language，SIL是高级别的中间语言，SIL由**SIL
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Flutter Apprentice from raywenderlich
 
+地址：https://www.raywenderlich.com/books/flutter-apprentice
+
+raywenderlich 新出的 Flutter 教程，该网站的教程一直以简单易懂，清晰明了为特点，如果是想入门 Flutter 的话，这本书将会是不错的选择。另外该网站的 Swift Apprentice 也出了新的版本，有兴趣重温一下的小伙伴也可以阅读以下。
+
+### 认知偏差知识手册
+
+地址：https://s75w5y7vut.feishu.cn/docs/doccn3BatnScBJe7wD7K3S5poFf
+
+一份心理学知识词条的普及手册，无关乎代码，但是对互联网工作者来说，阅读之后也许可以让你更加了解产品与用户之间的关系，能够提升产品的细节，用户的体验等等。
 
 ## 工具推荐
 
