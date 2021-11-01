@@ -51,6 +51,14 @@
 
 [@东坡肘子](https://www.fatbobman.com)：@discardableResult 属性可能很少被人熟知，但是对于想消除方法返回值未被使用的警告来说的话，该属性还是很有用的，只需要在对应方法前添加 @discardableResult 属性即可。但是，还是要考虑是否真的需要忽略该类警告，因为有些情况下及时处理返回结果可能是一种更好的解决方案。
 
+5、[“懒”点儿好](https://swift.gg/2016/03/25/being-lazy/ "“懒”点儿好") -- 来自SwiftGG
+
+[@我是熊大](https://github.com/Tliens)：这是一个优化的小技巧--使用lazy关键字，可以用于属性、闭包初始化等场景；不仅如此，就连let修饰的常量，默认也是lazy的，还有其他相关的lazy小技巧，推荐阅读。
+
+6、[访问控制](https://swiftgg.gitbook.io/swift/swift-jiao-cheng/26_access_control "访问控制") -- 来自SwiftGG
+
+[@我是熊大](https://github.com/Tliens)：在Swift中类、结构体、协议、属性、方法 默认访问级别都是internal，此外还有更多的访问级别需要我们了解，尤其是在做组件、模块时；学好关键字助你设计更好的代码。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
