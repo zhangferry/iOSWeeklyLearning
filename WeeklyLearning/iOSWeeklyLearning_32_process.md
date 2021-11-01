@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第三十二期
+# iOS 摸鱼周报 第三十二期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
 
@@ -15,16 +15,13 @@
 
 [@zhangferry](https://zhangferry.com)：
 
-## 开发Tips
+## 开发 Tips
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
-
-
 
 ## 面试解析
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
-
 
 ## 优秀博客
 
@@ -32,12 +29,11 @@
 
 本周博客主题：Swift 关键字
 
-在还没有学习Swift时，听过好几次部门内关于Swift的分享。依稀记得在分享会上听到了各种各样的新颖的概念，见到一些在OC中没有见过的关键字。希望本次主题能为OC的同学扫清一些学习Swift的障碍。
+在还没有学习 Swift 时，听过好几次部门内关于 Swift 的分享。依稀记得在分享会上听到了各种各样的新颖的概念，见到一些在 OC 中没有见过的关键字。希望本次主题能为 OC 的同学扫清一些学习 Swift 的障碍。
 
 1、[Swift-29个关键字，助力开发（万字长文）](https://juejin.cn/post/6844904112119611399 "Swift-29个关键字，助力开发（万字长文）") -- 来自掘金：SunshineBrother
 
 [@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：推荐新手阅读，对Swift比较熟悉的同学可以简单浏览校验下是否有不清楚的概念。文中有对应的示例代码，帮助大家理解。
-
 
 2、[Swift 的闭包为什么选用 in 关键字？](https://www.zhihu.com/question/53539254 "Swift 的闭包为什么选用 in 关键字？") -- 来自知乎
 
@@ -63,15 +59,26 @@
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
-
-
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### ipatool
+
+**地址**：https://github.com/majd/ipatool
+
+**软件状态**：免费，[开源](https://github.com/majd/ipatool)
+
+**软件介绍**：
+
+`ipatool`是一个允许你在 `App Store` 上搜索 iOS 应用程序并下载应用程序包的命令行工具。当然，这过程中需要你的账户以及密码，并且也只能下载账户过去已经下载过的应用程序。相对于使用`Apple Configurator 2`操作更加便捷一些。
+
+![ipatool](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/demo.gif)
+> 注意 gif 中的`ipa`命令实际使用中可能为`ipatool`
 
 ## 关于我们
 
-iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
+iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS 成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
