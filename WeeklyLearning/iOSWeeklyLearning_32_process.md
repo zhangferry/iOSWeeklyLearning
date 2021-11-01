@@ -28,8 +28,20 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
+本周博客主题：Swift 关键字
+
+在还没有学习Swift时，听过好几次部门内关于Swift的分享。依稀记得在分享会上听到了各种各样的新颖的概念，见到一些在OC中没有见过的关键字。希望本次主题能为OC的同学扫清一些学习Swift的障碍。
+
+1、[Swift-29个关键字，助力开发（万字长文）](https://juejin.cn/post/6844904112119611399 "Swift-29个关键字，助力开发（万字长文）") -- 来自掘金：SunshineBrother
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：推荐新手阅读，对Swift比较熟悉的同学可以简单浏览校验下是否有不清楚的概念。文中有对应的示例代码，帮助大家理解。
+
+
+2、[Swift 的闭包为什么选用 in 关键字？](https://www.zhihu.com/question/53539254 "Swift 的闭包为什么选用 in 关键字？") -- 来自知乎
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：Swift 闭包为什么用 in 可能很多同学都没有思考过。这个问题比较有意思，信息量也不是很密集，也比较轻松。该话题有人列出了苹果工程师对此的解释。
 
 
 
