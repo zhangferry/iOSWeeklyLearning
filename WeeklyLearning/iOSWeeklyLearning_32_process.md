@@ -59,6 +59,18 @@
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### OKR.com
+
+地址：https://www.okr.com/
+
+来自字节跳动的 OKR 学习网站。你可能或多或少听说过 OKR 这个概念，但没有深入了解过。OKR 是一套协助组织进行目标管理的工具和方法，它能帮助团队明确目标、聚焦重点。该网站会从 OKR 是什么开始，带你了解 OKR 理论的优缺点，价值在哪，或者适不适合你的个人或你的公司规划，你还能在网站上面找到许多关于 OKR 的资源。
+
+### Fucking SwiftUI
+
+地址：https://fuckingswiftui.com/
+
+Fucking SwiftUI 是一个关于 SwiftUI 的 Cheat Sheet。这上面有许多许多（关于技术的和无关技术的都有）关于 SwiftUI 的问答，类似"我该学 SwiftUI 么"、"SwiftUI 中 List 如何使用？"、"SwiftUI 会取代 UIKit 么？"等等问题，也有几乎所有 SwiftUI 控件的使用方式，希望能帮到大家。（如果你的浏览器不能打脏话可以使用这个链接：https://goshdarnswiftui.com/）
+
 ## 工具推荐
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
