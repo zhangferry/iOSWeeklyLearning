@@ -4,15 +4,26 @@
 
 ### 本期概要
 
+> * 话题：Mac 版 TestFlight 已经上线。
 > * Tips：介绍了关于中间层的一些概念，前后端之间的现状以及需要解决的问题等。
 > * 面试模块：能否向编译后的类增加实例变量？能否向运行时动态创建的类增加实例变量？为什么？
-> * 优秀博客：Swift 关键字。
+> * 博客主题：Swift 关键字。
 > * 学习资料：来自字节跳动的 OKR 学习网站；一个关于 SwiftUI 的 Cheat Sheet —— Fucking SwiftUI。
 > * 开发工具：一个允许你在 App Store 上搜索 iOS 应用程序并下载应用程序包的命令行工具 —— ipatool。
 
+## 本期话题
+
+### [使用 TestFlight 测试 Mac App](https://developer.apple.com/news/?id=0bemba6j "使用 TestFlight 测试 Mac App")
+
+现在，你可以邀请人们试用你的 Mac app 的 Beta 版，在发布前为您提供宝贵的反馈。通过 TestFlight ，你可以对多达 10000 名测试人员发出邀请。TestFlight 在 Mac 端的使用与移动端无异。
+
+安装地址：https://apps.apple.com/cn/app/testflight/id899247664。
+
+版本要求：最低 macOS 12.0 （Monterey）
+
 ## 开发 Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
 ### 关于中间层的一些概念
 
@@ -24,7 +35,7 @@
 
 #### 前后端交流的困境
 
-![](https://raw.githubusercontent.com/LoneyIsError/blog_images/main/orgin-server-side.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211104223956.png)
 
 由于前端直接与服务端进行对接，会导致以下问题：
 
@@ -75,7 +86,7 @@ BFF 理念中最重要的一点是 **服务自治**，谁用谁处理。通过�
 
 服务端可以限制只有中间层才能对后台进行访问，降低攻击的可能性。
 
-![](https://raw.githubusercontent.com/LoneyIsError/blog_images/main/BFF.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211104224017.png)
 
 #### 中间层的限制及滥用
 
@@ -91,13 +102,13 @@ BFF 理念中最重要的一点是 **服务自治**，谁用谁处理。通过�
 
 #### 参考资料
 
-[Pattern: Backends For Frontends](https://link.zhihu.com/?target=http%3A//samnewman.io/patterns/architectural/bff/)
+[Pattern: Backends For Frontends](https://link.zhihu.com/?target=http%3A//samnewman.io/patterns/architectural/bff/ "Pattern: Backends For Frontends")
 
-[The BFF Pattern (Backend for Frontend): An Introduction](https://blog.bitsrc.io/bff-pattern-backend-for-frontend-an-introduction-e4fa965128bf)
+[The BFF Pattern (Backend for Frontend): An Introduction](https://blog.bitsrc.io/bff-pattern-backend-for-frontend-an-introduction-e4fa965128bf "The BFF Pattern (Backend for Frontend): An Introduction")
 
-[Developer Experience First —— TWA 的理念与实践（附演讲视频）](https://zhuanlan.zhihu.com/p/32219319)
+[Developer Experience First —— TWA 的理念与实践（附演讲视频）](https://zhuanlan.zhihu.com/p/32219319 "Developer Experience First —— TWA 的理念与实践（附演讲视频）")
 
-[Serverless For Frontend 前世今生](https://zhuanlan.zhihu.com/p/77095720)
+[Serverless For Frontend 前世今生](https://zhuanlan.zhihu.com/p/77095720 "Serverless For Frontend 前世今生")
 
 ## 面试解析
 
@@ -188,12 +199,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第三十一期](https://mp.weixin.qq.com/s/DQpsOw90UsRg6A5WDyT_pg)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第三十期](https://mp.weixin.qq.com/s/KNyIcOKGfY5Ok-oSQqLs6w)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第二十九期](https://mp.weixin.qq.com/s/TVBQgYuycelGBwTaCSfmxQ)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第二十八期](https://mp.weixin.qq.com/s/dKOkF_P5JvQnDLq09DOzaQ)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
