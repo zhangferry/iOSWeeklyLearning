@@ -15,11 +15,11 @@
 
 ### [使用 TestFlight 测试 Mac App](https://developer.apple.com/news/?id=0bemba6j "使用 TestFlight 测试 Mac App")
 
-现在，你可以邀请人们试用你的 Mac app 的 Beta 版，在发布前为您提供宝贵的反馈。通过 TestFlight ，你可以对多达 10000 名测试人员发出邀请。TestFlight 在 Mac 端的使用与移动端无异。
+现在，你可以邀请用户试用你的 Mac app 的 Beta 版，在发布前为你提供宝贵的反馈。通过 TestFlight，你可以对多达 10000 名测试人员发出邀请。TestFlight 在 Mac 端的使用与移动端无异。
 
-安装地址：https://apps.apple.com/cn/app/testflight/id899247664。
+安装地址：https://apps.apple.com/cn/app/testflight/id899247664
 
-版本要求：最低 macOS 12.0 （Monterey）
+版本要求：最低 macOS 12.0（Monterey）
 
 ## 开发 Tips
 
