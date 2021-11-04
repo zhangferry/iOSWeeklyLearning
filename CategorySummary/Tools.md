@@ -813,3 +813,19 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 `fig` 是一个开源的终端自动补全工具，支持数百个 CLI 工具，如 `git`、`docker`、`npm `等等，并且可以无缝添加到你现有的终端，如 `iTerm`、`Hyper`、`VSCode` 和 `macOS 终端`，支持我们自己自定义一些补全规则。
 
 ![fig](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_2021-10-27_21-04-03.png)
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### ipatool
+
+**地址**：https://github.com/majd/ipatool
+
+**软件状态**：免费，[开源](https://github.com/majd/ipatool)
+
+**软件介绍**：
+
+`ipatool` 是一个允许你在 `App Store` 上搜索 iOS 应用程序并下载应用程序包的命令行工具。当然，这过程中需要你的账户以及密码，并且也只能下载账户过去已经下载过的应用程序。相对于使用 `Apple Configurator 2` 操作更加便捷一些。
+
+![ipatool](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/demo.gif)
+> 注意 gif 中的 `ipa` 命令实际使用中可能为 `ipatool`
+

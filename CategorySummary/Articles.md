@@ -966,3 +966,34 @@ SIL：Swift Intermediate Language，SIL 是高级别的中间语言，SIL 由 **
 
 [@我是熊大](https://github.com/Tliens)：在 LLVM 开发人员会议上 Groff 和 Chris Lattner 通过简报的方式对 SIL 进行了详细的介绍。内容包括：为什么要使用 SIL、SIL 的设计逻辑、Swift 对 SIL 的使用等内容。尽管简报为英文，但主要以代码和图表为主，对了解 SIL 的设计动机和设计原理有很大的帮助。
 
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
+
+本周博客主题：Swift 关键字
+
+在还没有学习 Swift 时，听过好几次部门内关于 Swift 的分享。依稀记得在分享会上听到了各种各样的新颖的概念，见到一些在 OC 中没有见过的关键字。希望本次主题能为 OC 的同学扫清一些学习 Swift 的障碍。
+
+1、[Swift-29个关键字，助力开发（万字长文）](https://juejin.cn/post/6844904112119611399 "Swift-29个关键字，助力开发（万字长文）") -- 来自掘金：SunshineBrother
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：推荐新手阅读，对 Swift 比较熟悉的同学可以简单浏览校验下是否有不清楚的概念。文中有对应的示例代码，帮助大家理解。
+
+2、[Swift 的闭包为什么选用 in 关键字？](https://www.zhihu.com/question/53539254 "Swift 的闭包为什么选用 in 关键字？") -- 来自知乎
+
+[@皮拉夫大王](https://www.jianshu.com/u/739b677928f7)：Swift 闭包为什么用 in 可能很多同学都没有思考过。这个问题比较有意思，信息量也不是很密集，也比较轻松。该话题有人列出了苹果工程师对此的解释。
+
+3、[细说 Swift 4.2 新特性：Dynamic Member Lookup](https://juejin.cn/post/6844903621306351624 "细说 Swift 4.2 新特性：Dynamic Member Lookup") -- 来自掘金：没故事的卓同学
+
+[@东坡肘子](https://www.fatbobman.com)：`@dynamicMemberLookup` 中文可以叫动态查找成员。在使用 `@dynamicMemberLookup` 标记了对象后（对象、结构体、枚举、protocol），实现了 `subscript(dynamicMember member: String)` 方法后我们就可以访问到对象不存在的属性。如果访问到的属性不存在，就会调用到实现的 `subscript(dynamicMember member: String)` 方法，key 作为 member 传入这个方法。
+
+4、[解析 Swift 中的 @discardableResult](https://xie.infoq.cn/article/fef30fd533cdff4278f0a85ff "解析 Swift 中的 @discardableResult") -- 来自：SwiftMic
+
+[@东坡肘子](https://www.fatbobman.com)：`@discardableResult` 属性可能很少被人熟知，但是对于想消除方法返回值未被使用的警告来说的话，该属性还是很有用的，只需要在对应方法前添加 `@discardableResult` 属性即可。但是，还是要考虑是否真的需要忽略该类警告，因为有些情况下及时处理返回结果可能是一种更好的解决方案。
+
+5、[“懒”点儿好](https://swift.gg/2016/03/25/being-lazy/ "“懒”点儿好") -- 来自：SwiftGG
+
+[@我是熊大](https://github.com/Tliens)：这是一个优化的小技巧--使用 lazy 关键字，可以用于属性、闭包初始化等场景；不仅如此，就连 let 修饰的常量，默认也是 lazy 的，还有其他相关的 lazy 小技巧，推荐阅读。
+
+6、[访问控制](https://swiftgg.gitbook.io/swift/swift-jiao-cheng/26_access_control "访问控制") -- 来自：SwiftGG
+
+[@我是熊大](https://github.com/Tliens)：在 Swift 中，类、结构体、协议、属性、方法默认访问级别都是 internal，此外还有更多的访问级别需要我们了解，尤其是在做组件、模块时；学好关键字助你设计更好的代码。
+
