@@ -6,7 +6,7 @@
 
 > * 话题：
 > * Tips：介绍了关于中间层的一些概念，前后端之间的现状以及需要解决的问题等
-> * 面试模块：
+> * 面试模块：能否向编译后的类增加实例变量？能否向运行时动态创建的类增加实例变量？为什么？
 > * 优秀博客：
 > * 学习资料：
 > * 开发工具：
@@ -107,6 +107,20 @@ BFF 理念中最重要的一点是 **服务自治**，谁用谁处理。通过�
 ## 面试解析
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+Q：能否向编译后的类增加实例变量？能否向运行时动态创建的类增加实例变量？为什么？
+
+A：
+
+* 不能向编译后的类增加实例变量。类的内存布局在编译时就已经确定，类的实例变量列表存储在 class_ro_t Struct 里，编译时就确定了内存大小无法修改，所以不能向编译后的类增加实例变量。
+* 能向运行时动态创建的类增加实例变量。运行时动态创建的类只是通过 alloc 分配了类的内存空间，没有对类进行内存布局，内存布局是在类初始化过程中完成的，所以能向运行时动态创建的类增加实例变量。
+
+```objectivec
+Class newClass = objc_allocateClassPair([NSObject class], "Person", 0);
+class_addIvar(newClass, "_age", 4, 1, @encode(int));
+class_addIvar(newClass, "_name", sizeof(NSString *), log2(sizeof(NSString *)), @encode(NSString *));
+objc_registerClassPair(newClass); // 要在类注册之前添加实例变量
+```
 
 ## 优秀博客
 
