@@ -30,7 +30,14 @@
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
+1、[使用Vision框架对图像进行分类](https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml "使用 Vision 框架裁剪和缩放照片") -- 来自：Apple
 
+
+[@我是熊大](https://github.com/Tliens)：本文演示了如何利用使用 Vision 和 Core ML 对图像进行识别并分类，本文有来自于Apple官方Demo。
+
+2、[识别视频流中的对象](https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture "识别视频流中的对象") -- 来自：Apple
+
+[@我是熊大](https://github.com/Tliens)：直接识别来自相机中的视频流，实时识别物体，本文有来自于Apple官方Demo。
 
 
 ## 学习资料
