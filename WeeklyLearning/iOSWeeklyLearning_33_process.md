@@ -51,7 +51,7 @@ os_signpost(.event, log: log, name: "Complex Event", "%{public}s", functionName)
 
 > The unified logging system considers dynamic strings and complex dynamic objects to be **private**, and does not collect them automatically. To ensure the privacy of users, it is recommended that log messages consist strictly of **static strings** and **numbers**. In situations where it is necessary to capture a dynamic string, you may **explicitly** declare the string public using the keyword **public**. For example, `%{public}s`.
 
-对于某些特定需求我们必须使用 String 附加参数的话，可以用 `%{public}s` 的形式添加参数。
+对于调试期间我们需要使用 String 附加参数的话，可以用 `%{public}s` 的形式格式化参数，以达到捕获动态字符串的目的。
 
 #### 测量函数耗时
 
