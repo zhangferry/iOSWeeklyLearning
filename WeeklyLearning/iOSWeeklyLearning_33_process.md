@@ -17,9 +17,61 @@
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+### 使用 os_signpost 标记函数执行和测量函数耗时
 
+整理编辑：[zhangferry](zhangferry.com)
 
+os_signpost 是 iOS12 开始支持的一个用于辅助开发调试的轻量工具，它跟 Instruments 的结合使用可以发挥很大作用。os_signpost API 较简单，其主要有两大功能：做标记、测量函数耗时。
+
+首先我们需要引入 os_signpost 并做一些初始化工作：
+
+```swift
+import os.signpost
+
+// test function
+func bindModel {
+  let log = OSLog(subsystem: "com.ferry.app", category: "SignLogTest")
+  let signpostID = OSSignpostID(log: log)
+  // ...
+}
+```
+
+其中 subsystem 用于标记应用，category 用于标记调试分类。
+
+后面试下它标记和测量函数的功能。
+
+#### 做标记
+
+```swift
+let functionName: String = #function
+os_signpost(.event, log: log, name: "Complex Event", "%{public}s", functionName)
+```
+
+注意这个 API 中的 `name` 和后面的 `format` 都是 StaticString 类型（format 是可选参数）。StaticString 与 String 的区别是前者的值是由编译时确认的，其初始化之后无法修改，即使是使用 var 创建。系统的日志库 OSLog 也是选择 StaticString 作为参数类型，这么做的目的一部分在于编译器可采取一定的优化，另一部分则是出于对隐私的考量。
+
+> The unified logging system considers dynamic strings and complex dynamic objects to be **private**, and does not collect them automatically. To ensure the privacy of users, it is recommended that log messages consist strictly of **static strings** and **numbers**. In situations where it is necessary to capture a dynamic string, you may **explicitly** declare the string public using the keyword **public**. For example, `%{public}s`.
+
+对于某些特定需求我们必须使用 String 附加参数的话，可以用 `%{public}s` 的形式添加参数。
+
+#### 测量函数耗时
+
+```swift
+os_signpost(.begin, log: log, name: "Complex calculations", signpostID: signpostID)
+/// Complex Event
+os_signpost(.end, log: log, name: "Complex calculations", signpostID: signpostID)
+```
+
+将需要测量的函数包裹在 begin 和 end 两个 os_signpost 函数之间即可。
+
+#### 使用
+
+打开 Instruments，选择创建 Blank 模板，点击右上角，添加"+"号，双击选择添加 os_signpost 和 Time Profiler 两个模板。运行应用直到触发标记函数时停止，我们展开os_signpost，找到我们创建的 SignLogTest，将其加到下方。调整 Time Profiler 的 Call Tree 之后就可以看到下图样式。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211107192353.png)
+
+event 事件被一个减号所标记，鼠标悬停可以看到标记的函数名，begin 和 end 表示那个耗时函数执行的开始和结束用一个区间块表示。
+
+其中 event 事件可以跟项目中的打点结合起来，例如应用内比较重要的几个事件之间发生了什么，他们之间的耗时是多少。
 
 ## 面试解析
 
