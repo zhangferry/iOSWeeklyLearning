@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 话题：
-> * Tips：
+> * Tips：使用 os_signpost 标记函数执行和测量函数耗时；混编｜将 Objective-C typedef NSString 作为 String 桥接到 Swift 中
 > * 面试模块：
 > * 优秀博客：
 > * 学习资料：
@@ -73,9 +73,79 @@ event 事件被一个减号所标记，鼠标悬停可以看到标记的函数�
 
 其中 event 事件可以跟项目中的打点结合起来，例如应用内比较重要的几个事件之间发生了什么，他们之间的耗时是多少。
 
-## 面试解析
+### 混编｜将 Objective-C typedef NSString 作为 String 桥接到 Swift 中
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+在 Objective-C 与 Swift 混编的过程中，我遇到了如下问题：
+
+我在 Objective-C Interface 中使用 typedef 为 NSString * 取了一个有意义的类型别名 TimerID，但 Generated Swift Interface 却不尽如人意。在方法参数中 TimerID 类型被转为了 String，而 TimerID 却还是 NSString 的类型别名。
+
+```swift
+// Objective-C Interface
+typedef NSString * TimerID;
+
+@interface Timer : NSObject
++ (void)cancelTimer:(TimerID)timerID NS_SWIFT_NAME(cancel(timerID:));
+
+@end
+
+// Generated Swift Interface
+public typealias TimerID = NSString
+
+open class Timer : NSObject {
+     open class func cancel(timerID: String)
+}
+```
+
+这在 Swift 中使用的时候就遇到了类型冲突问题。由于 TimerID 是 NSString 的类型别名，而 NSString 又不能隐式转换为 String。
+
+```swift
+// Use it in Swift
+let timerID: TimerID = ""
+Timer.cancel(timerID: timerID) // Error: 'TimerID' (aka 'NSString') is not implicitly convertible to 'String'; did you mean to use 'as' to explicitly convert? Insert ' as String'
+```
+
+可以通过以下方式解决该问题：
+
+1. 在 Swift 中放弃使用 TimerID 类型，全部用 String 类型
+2. 在 Swift 中使用到 TimerID 的地方显示转化为 String 类型
+
+```swift
+Timer.cancel(timerID: timerID as String)
+```
+
+但这些处理方式并不好。如果从根源上解决该问题，也就是在 Generate Swift Interface 阶段将 `typedef NSString *TimerID` 转换为 `typealias TimerID = String`，那就很棒。宏 `NS_SWIFT_BRIDGED_TYPEDEF` 就派上用场了。
+
+```swift
+// Objective-C Interface
+typedef NSString * TimerID NS_SWIFT_BRIDGED_TYPEDEF;
+
+@interface Timer : NSObject
++ (void)cancelTimer:(TimerID)timerID NS_SWIFT_NAME(cancel(timerID:));
+
+@end
+
+// Generated Swift Interface
+public typealias TimerID = String // change: NSString -> String
+
+open class Timer : NSObject {
+    open class func cancel(timerID: TimerID) // change:  String -> TimerID
+}
+```
+
+现在，我可以在 Swift 中愉快地使用 TimerID 类型啦！
+
+```swift
+let timerID: TimerID = ""
+Timer.cancel(timerID: timerID) 
+```
+
+除了 NSString，`NS_SWIFT_BRIDGED_TYPEDEF` 还可以用在 NSDate、NSArray 等其它 Objective-C 类型别名中。
+
+## 面试解析
+
+整理编辑：
 
 
 ## 优秀博客
