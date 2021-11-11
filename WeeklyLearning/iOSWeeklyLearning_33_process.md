@@ -175,7 +175,17 @@ Vision 是苹果在WWDC 2017推出的图像识别框架。与Core Image、AV Cap
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Vue Color Avatar
 
+地址：https://github.com/Codennnn/vue-color-avatar
+
+一个纯前端实现的头像生成网站，使用 Vite + Vue3 开发，是一款矢量风格头像的生成器，你可以搭配不同的素材组件，或者通过配置代码，来生成自己的个性化头像。
+
+### 浏览器的工作原理：新式网络浏览器幕后揭秘
+
+地址：https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/
+
+这是一篇全面介绍 WebKit 和 Gecko 内部操作的入门文章，是以色列开发人员塔利·加希尔大量研究的成果。在过去的几年中，她查阅了所有公开发布的关于浏览器内部机制的数据，并花了很多时间来研读网络浏览器的源代码。学习浏览器的内部工作原理将有助于您作出更明智的决策，并理解那些最佳开发实践的个中缘由。
 
 ## 工具推荐
 
