@@ -154,7 +154,7 @@ Timer.cancel(timerID: timerID)
 
 Vision 是苹果在WWDC 2017推出的图像识别框架。与Core Image、AV Capture相比，Vision 在耗电量、耗时、精确度上表现优异。
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
 1、[使用Vision框架对图像进行分类](https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml "使用 Vision 框架裁剪和缩放照片") -- 来自：Apple
 
