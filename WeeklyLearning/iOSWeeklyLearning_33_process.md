@@ -5,11 +5,11 @@
 ### 本期概要
 
 > * 话题：
-> * Tips：使用 os_signpost 标记函数执行和测量函数耗时；混编｜将 Objective-C typedef NSString 作为 String 桥接到 Swift 中
-> * 面试模块：
-> * 优秀博客：本期为大家整理了一些关于图像识别框架Vision的文章
-> * 学习资料：
-> * 开发工具：
+> * Tips：使用 os_signpost 标记函数执行和测量函数耗时；混编｜将 Objective-C typedef NSString 作为 String 桥接到 Swift 中。
+> * 面试模块：LeetCode - #1 Two Sum。
+> * 优秀博客：本期为大家整理了一些关于图像识别框架 Vision 的文章。
+> * 学习资料：Vue Color Avatar，一个纯前端实现的头像生成网站；一篇全面介绍 WebKit 和 Gecko 内部操作的入门文章。
+> * 开发工具：swiftenv。
 
 ## 本期话题
 
@@ -65,7 +65,7 @@ os_signpost(.end, log: log, name: "Complex calculations", signpostID: signpostID
 
 #### 使用
 
-打开 Instruments，选择创建 Blank 模板，点击右上角，添加"+"号，双击选择添加 os_signpost 和 Time Profiler 两个模板。运行应用直到触发标记函数时停止，我们展开os_signpost，找到我们创建的 SignLogTest，将其加到下方。调整 Time Profiler 的 Call Tree 之后就可以看到下图样式。
+打开 Instruments，选择创建 Blank 模板，点击右上角，添加 "+" 号，双击选择添加 os_signpost 和 Time Profiler 两个模板。运行应用直到触发标记函数时停止，我们展开 os_signpost，找到我们创建的 SignLogTest，将其加到下方。调整 Time Profiler 的 Call Tree 之后就可以看到下图样式。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211107192353.png)
 
@@ -147,17 +147,17 @@ Timer.cancel(timerID: timerID)
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
-现代开发⼯程师⾯试过程中，算法⾯试往往有⼀定程度的重要性。
+现代开发⼯程师在⾯试过程中，算法⾯试往往有⼀定程度的重要性。
 
 算法⾯试作为基本功之⼀，它包含了太多的逻辑思维，可以考察你思考问题的逻辑和解决问题的能⼒。完全类似的业务选手只能靠`挖掘`，但当⼀个⼈逻辑思维和能⼒不错的情况下，其业务匹配及后期上⼿概率也会很⾼。 
 
 ⾯试算法题⽬在难度上（尤其是代码难度上）会略低⼀些，倾向于考察⼀些基础数据结构与算法，通过交流暴露更多的⾯试题细节。
 
-这也就是为什么现代算法⾯试中推崇**⼀题多解**，在实际算法⾯试中的出现原题的概率往往不⾼，随着与面试官交流且探讨让已知的面试题出现变化。
+这也就是为什么现代算法⾯试中推崇**⼀题多解**，在实际算法⾯试中出现原题的概率往往不⾼，随着与面试官交流且探讨让已知的面试题出现变化。
 
-下⾯我们以 [LeetCode](https://leetcode.com) 开篇 [TwoSum](https://leetcode.com/problems/two-sum/) 来简要说明。
+下⾯我们以 [LeetCode](https://leetcode.com) 开篇 [TwoSum](https://leetcode.com/problems/two-sum/ "LeetCode - #1 Two Sum") 来简要说明。
 
-> 默认读者有关于时间复杂度和空间复杂度的概念
+> 默认读者有关于时间复杂度和空间复杂度的概念。
 
 ### TwoSum
 
@@ -222,7 +222,7 @@ class Solution {
 
 #### 删减版两数之和
 
-给定⼀个整数数组 `nums` 和⼀个整数⽬标值 `target` ，请你在该数组中找出 和为⽬标值 target 的那**两个**整数，并返回它们的数组下标。
+给定⼀个整数数组 `nums` 和⼀个整数⽬标值 `target` ，请你在该数组中找出和为⽬标值 target 的那**两个**整数，并返回它们的数组下标。
 
 **示例 1：**
 
@@ -283,7 +283,7 @@ class Solution {
 
 ##### ...
 
-当然可能还有其他变种，如果你有什么想法也可以来丰富所有的示例
+当然可能还有其他变种，如果你有什么想法也可以来丰富所有的示例。
 
 ### 总结
 
@@ -296,22 +296,21 @@ class Solution {
 
 本期主题：Vision
 
-Vision 是苹果在WWDC 2017推出的图像识别框架。与Core Image、AV Capture相比，Vision 在耗电量、耗时、精确度上表现优异。
+Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV Capture 相比，Vision 在耗电量、耗时、精确度上表现优异。
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
-1、[使用Vision框架对图像进行分类](https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml "使用 Vision 框架裁剪和缩放照片") -- 来自：Apple
+1、[使用 Vision 框架对图像进行分类](https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml "使用 Vision 框架裁剪和缩放照片") -- 来自：Apple
 
-
-[@我是熊大](https://github.com/Tliens)：本文演示了如何使用 Vision 和 Core ML 对图像进行识别并分类，附Apple官方Demo。
+[@我是熊大](https://github.com/Tliens)：本文演示了如何使用 Vision 和 Core ML 对图像进行识别并分类，附 Apple 官方 Demo。
 
 2、[识别视频流中的对象](https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture "识别视频流中的对象") -- 来自：Apple
 
-[@我是熊大](https://github.com/Tliens)：直接识别来自相机中的视频流，实时识别物体，本文附Apple官方Demo。
+[@我是熊大](https://github.com/Tliens)：直接识别来自相机中的视频流，实时识别物体，本文附 Apple 官方 Demo。
 
 3、[Swift之Vision 图像识别框架](https://juejin.cn/post/6844903576821760014#heading-1 "Swift之Vision 图像识别框架") -- 来自掘金：RunTitan
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：Vision有很多应用场景，比如人脸检测、图像对比、二维码条形码检测、文字检测、目标跟踪等。每种使用场景文章都列举了代码样例。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：Vision 有很多应用场景，比如人脸检测、图像对比、二维码条形码检测、文字检测、目标跟踪等。每种使用场景文章都列举了代码样例。
 
 5、[用苹果官方 API 实现 iOS 备忘录的扫描文稿功能](https://www.fatbobman.com/posts/docScaner/ "用苹果官方 API 实现 iOS 备忘录的扫描文稿功能") -- 来自：东坡肘子
 
@@ -335,7 +334,7 @@ Vision 是苹果在WWDC 2017推出的图像识别框架。与Core Image、AV Cap
 
 地址：https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/
 
-这是一篇全面介绍 WebKit 和 Gecko 内部操作的入门文章，是以色列开发人员塔利·加希尔大量研究的成果。在过去的几年中，她查阅了所有公开发布的关于浏览器内部机制的数据，并花了很多时间来研读网络浏览器的源代码。学习浏览器的内部工作原理将有助于您作出更明智的决策，并理解那些最佳开发实践的个中缘由。
+这是一篇全面介绍 WebKit 和 Gecko 内部操作的入门文章，是以色列开发人员塔利·加希尔大量研究的成果。在过去的几年中，她查阅了所有公开发布的关于浏览器内部机制的数据，并花了很多时间来研读网络浏览器的源代码。学习浏览器的内部工作原理将有助于你作出更明智的决策，并理解那些最佳开发实践的个中缘由。
 
 ## 工具推荐
 
@@ -362,12 +361,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第三十二期](https://mp.weixin.qq.com/s/6CyL0B6Zkf6KXRrfocohoQ)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第三十一期](https://mp.weixin.qq.com/s/DQpsOw90UsRg6A5WDyT_pg)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第三十期](https://mp.weixin.qq.com/s/KNyIcOKGfY5Ok-oSQqLs6w)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第二十九期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
