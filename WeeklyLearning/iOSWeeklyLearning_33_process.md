@@ -150,6 +150,9 @@ Timer.cancel(timerID: timerID)
 
 ## 优秀博客
 
+本期主题：Vision
+Vision 是苹果在WWDC 2017推出的图像识别框架。与Core Image、AV Capture相比，Vision 在耗电量、耗时、精确度上表现优异。
+
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
 1、[使用Vision框架对图像进行分类](https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml "使用 Vision 框架裁剪和缩放照片") -- 来自：Apple
@@ -160,6 +163,10 @@ Timer.cancel(timerID: timerID)
 2、[识别视频流中的对象](https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture "识别视频流中的对象") -- 来自：Apple
 
 [@我是熊大](https://github.com/Tliens)：直接识别来自相机中的视频流，实时识别物体，本文附Apple官方Demo。
+
+3、[Swift之Vision 图像识别框架](https://juejin.cn/post/6844903576821760014#heading-1 "Swift之Vision 图像识别框架") -- 来自掘金：RunTitan
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：Vision有很多应用场景，比如人脸检测、图像对比、二维码条形码检测、文字检测、目标跟踪等。每种使用场景文章都列举了代码样例。
+
 
 
 ## 学习资料
