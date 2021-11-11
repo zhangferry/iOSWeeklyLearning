@@ -169,7 +169,13 @@ Vision 是苹果在WWDC 2017推出的图像识别框架。与Core Image、AV Cap
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：Vision有很多应用场景，比如人脸检测、图像对比、二维码条形码检测、文字检测、目标跟踪等。每种使用场景文章都列举了代码样例。
 
+5、[用苹果官方 API 实现 iOS 备忘录的扫描文稿功能](https://www.fatbobman.com/posts/docScaner/ "用苹果官方 API 实现 iOS 备忘录的扫描文稿功能") -- 来自：东坡肘子
 
+[@东坡肘子](https://www.fatbobman.com/)：本文将介绍如何通过 VisionKit、Vision、NaturalLanguage、CoreSpotlight 等系统框架实现与备忘录扫描文稿类似的功能。
+
+6、[理解 Vision 框架中的图片技术](https://juejin.cn/post/6844903869881778183 "理解 Vision 框架中的图片技术") -- 来自掘金：RickeyBoy
+
+[@东坡肘子](https://www.fatbobman.com/)：本文主要介绍了 Vision 框架在图像技术方面的一些酷炫功能，并一定程度上阐述了其原理。
 
 ## 学习资料
 
