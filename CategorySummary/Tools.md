@@ -829,3 +829,21 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 ![ipatool](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/demo.gif)
 > 注意 gif 中的 `ipa` 命令实际使用中可能为 `ipatool`
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### swiftenv
+
+**地址**：https://github.com/kylef/swiftenv
+
+**软件状态**：免费，[开源](https://github.com/kylef/swiftenv)
+
+**软件介绍**：
+
+`swiftenv` 允许您：
+* 更改每个用户的全局 Swift 版本。
+* 设置每个项目的 Swift 版本。
+* 允许您使用环境变量覆盖 Swift 版本。
+
+![swiftenv](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/swiftenv.png)
+

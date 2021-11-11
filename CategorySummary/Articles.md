@@ -997,3 +997,30 @@ SIL：Swift Intermediate Language，SIL 是高级别的中间语言，SIL 由 **
 
 [@我是熊大](https://github.com/Tliens)：在 Swift 中，类、结构体、协议、属性、方法默认访问级别都是 internal，此外还有更多的访问级别需要我们了解，尤其是在做组件、模块时；学好关键字助你设计更好的代码。
 
+***
+本期主题：Vision
+
+Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV Capture 相比，Vision 在耗电量、耗时、精确度上表现优异。
+
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
+
+1、[使用 Vision 框架对图像进行分类](https://developer.apple.com/documentation/vision/classifying_images_with_vision_and_core_ml "使用 Vision 框架裁剪和缩放照片") -- 来自：Apple
+
+[@我是熊大](https://github.com/Tliens)：本文演示了如何使用 Vision 和 Core ML 对图像进行识别并分类，附 Apple 官方 Demo。
+
+2、[识别视频流中的对象](https://developer.apple.com/documentation/vision/recognizing_objects_in_live_capture "识别视频流中的对象") -- 来自：Apple
+
+[@我是熊大](https://github.com/Tliens)：直接识别来自相机中的视频流，实时识别物体，本文附 Apple 官方 Demo。
+
+3、[Swift之Vision 图像识别框架](https://juejin.cn/post/6844903576821760014#heading-1 "Swift之Vision 图像识别框架") -- 来自掘金：RunTitan
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：Vision 有很多应用场景，比如人脸检测、图像对比、二维码条形码检测、文字检测、目标跟踪等。每种使用场景文章都列举了代码样例。
+
+5、[用苹果官方 API 实现 iOS 备忘录的扫描文稿功能](https://www.fatbobman.com/posts/docScaner/ "用苹果官方 API 实现 iOS 备忘录的扫描文稿功能") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：本文将介绍如何通过 VisionKit、Vision、NaturalLanguage、CoreSpotlight 等系统框架实现与备忘录扫描文稿类似的功能。
+
+6、[理解 Vision 框架中的图片技术](https://juejin.cn/post/6844903869881778183 "理解 Vision 框架中的图片技术") -- 来自掘金：RickeyBoy
+
+[@东坡肘子](https://www.fatbobman.com/)：本文主要介绍了 Vision 框架在图像技术方面的一些酷炫功能，并一定程度上阐述了其原理。
+

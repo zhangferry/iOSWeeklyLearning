@@ -502,3 +502,18 @@ raywenderlich 新出的 Flutter 教程，该网站的教程一直以简单易懂
 
 Fucking SwiftUI 是一个关于 SwiftUI 的 Cheat Sheet。这上面有许多许多（关于技术的和无关技术的都有）关于 SwiftUI 的问答，类似 "我该学 SwiftUI 么"、"SwiftUI 中 List 如何使用？"、"SwiftUI 会取代 UIKit 么？" 等等问题，也有几乎所有 SwiftUI 控件的使用方式，希望能帮到大家。（如果你的浏览器不能打脏话可以使用这个链接：https://goshdarnswiftui.com/）
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Vue Color Avatar
+
+地址：https://github.com/Codennnn/vue-color-avatar
+
+一个纯前端实现的头像生成网站，使用 Vite + Vue3 开发，是一款矢量风格头像的生成器，你可以搭配不同的素材组件，或者通过配置代码，来生成自己的个性化头像。
+
+### 浏览器的工作原理：新式网络浏览器幕后揭秘
+
+地址：https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/
+
+这是一篇全面介绍 WebKit 和 Gecko 内部操作的入门文章，是以色列开发人员塔利·加希尔大量研究的成果。在过去的几年中，她查阅了所有公开发布的关于浏览器内部机制的数据，并花了很多时间来研读网络浏览器的源代码。学习浏览器的内部工作原理将有助于你作出更明智的决策，并理解那些最佳开发实践的个中缘由。
+

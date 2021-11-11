@@ -45,7 +45,7 @@ def assemblyHeadText(title):
     today = f"date: {date}"
 
     cover = "cover: https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png"
-    tags = "tags:\n\t- iOS周报"
+    tags = "tags:\n\t- iOS摸鱼周报"
     comments = "comments: true"
     emptyline = "\n"
 
