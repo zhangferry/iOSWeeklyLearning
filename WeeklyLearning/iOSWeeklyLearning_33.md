@@ -4,7 +4,7 @@
 
 ### 本期概要
 
-> * 话题：
+> * 话题：感恩节和圣诞节期间 AppStore 将正常接受审核。
 > * Tips：使用 os_signpost 标记函数执行和测量函数耗时；混编｜将 Objective-C typedef NSString 作为 String 桥接到 Swift 中。
 > * 面试模块：LeetCode - #1 Two Sum。
 > * 优秀博客：本期为大家整理了一些关于图像识别框架 Vision 的文章。
@@ -13,7 +13,9 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：苹果发布了年末两个重要假期关于 AppStore 审核的声明。往年圣诞节期间一般都是停止审核的，今年则会正常接受提交。但是在 11 月 24 号到  28 号（感恩节），和 12 月 23 号到 27 号（圣诞节）之间的提交审核流程会比较慢。如果可以错开排期的话尽量不要在这个时间段提审。
+
+信息来源：[Submissions now accepted through the holidays](https://developer.apple.com/news/?id=y4fgrhhe "Submissions now accepted through the holidays")
 
 ## 开发Tips
 
