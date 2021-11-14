@@ -41,9 +41,13 @@ Mimosa 是摸鱼周报的编辑之一，负责每期的学习资料整理。在�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/shuangx2.jpg)
 
-在 WWDC 期间的会场外，也会有很多的 tech talk 在附近举办（蹭 WWDC 热度），我误打误撞参加了一个 Realm 举办的 tech talk，一开始先是吹了一波 Realm，然后是邀请了一些从 Apple 离职的人来做对话，结果发现请到了 Chris Lattner（当时就职于特斯拉），大家伙那叫一个激动啊， 连下面的好多爷爷辈的听众都提了好几个问题（真的爷爷辈👨‍🦳，拄拐杖的，不开玩笑），只能感叹一下计算机技术这该死的魅力。另外 WWDC 的倒数第二天有个 Bash，算是一场露天音乐会，气氛很热烈！来的是 Fall Out Boy（代表作有"The Phoenix"，"Immortals"等，现场太顶了），大家在现场把酒言欢，给 WWDC 收了个尾。在 Bash 现场还和来自国内各大互联网公司的工程师们合影了，不知道各位看官有没有在照片里面的。
+在 WWDC 期间的会场外，也会有很多的 tech talk 在附近举办（蹭 WWDC 热度），我误打误撞参加了一个 Realm 举办的 tech talk。一开始先是吹了一波 Realm，然后是邀请了一些从 Apple 离职的人来做对话，结果发现请到了 Chris Lattner（当时就职于特斯拉）。大家伙那叫一个激动啊， 连下面的好多爷爷辈的听众都提了好几个问题（真的爷爷辈👨‍🦳，拄拐杖的，不开玩笑），只能感叹一下计算机技术这该死的魅力。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Photo.png)
+
+另外 WWDC 的倒数第二天有个 Bash，算是一场露天音乐会，气氛很热烈！来的是 Fall Out Boy（代表作有"The Phoenix"，"Immortals"等，现场太顶了），大家在现场把酒言欢，给 WWDC 收了个尾。在 Bash 现场还和来自国内各大互联网公司的工程师们合影了，不知道各位看官有没有在照片里面的。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Mimosa_WechatIMG270.jpeg)
 
 在 WWDC 玩的这几天拓宽了我看待技术的视野，把我从学校里教的那些知识里面拉了出来，在会场的内外，看到了更多与业界发展相关的东西，看到了计算机科学的广度和深度。我本科就读于魔都某不知名二本，且不是工科强校，所以我的学校计算机专业水平比起其他获得奖学金的同学的学校来说（我记得有中大、同济、新国大、中科大、港大等🙂）差的不是一点半点，无意贬低我的母校，但确实这次的经历让我觉得我能努力的地方原来还有这么多，我在学校所认识到的那些知识似乎只是计算机科学的冰山一角，突然在心中对一些东西产生了渴望，让我突然对未来感到期待和兴奋，在这些经历和感受一起冲击我心灵之后，我知道了一件事：我掉进代码这个陷阱里了🥰。
 
