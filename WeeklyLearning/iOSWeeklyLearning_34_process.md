@@ -38,7 +38,7 @@
 
 [@我是熊大](https://github.com/Tliens)：Kingfisher对标OC中的SDWebImage，作者是大名鼎鼎的王巍，本文是Kingfisher源码解析系列的总结，建议阅读。
 
-3、[iOS SnapKit架构之道](https://rimson.top/2019/09/04/ios-snapkit-1/ "iOS SnapKit架构之道") -- 来自博客：李坤
+3、[iOS SnapKit架构之道](https://rimson.top/2019/09/04/ios-snapkit-1/ "iOS SnapKit架构之道") -- 来自博客：Rimson
 
 [@我是熊大](https://github.com/Tliens)：SnapKit作为在Swift中的页面布局的地位，相当于OC中的Masonry，使用起来几乎一模一样，本文作者详细梳理了Snapkit布局的过程和原理。
 
