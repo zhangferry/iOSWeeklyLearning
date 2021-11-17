@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 话题：
-> * Tips：
+> * Tips：混编｜NS_SWIFT_NAME。
 > * 面试模块：
 > * 优秀博客：
 > * 学习资料：
@@ -20,6 +20,19 @@
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
 
 
+
+### 混编｜NS_SWIFT_NAME
+
+`NS_SWIFT_NAME` 宏用于在混编时为 Swift 重命名 Objective-C API，它可用在类、协议、枚举、属性、方法或函数、类型别名等等之中。通过 Apple 举的一些例子，我们可以学习到它的一些应用场景：
+
+* 重命名与 Swift 风格不符的 API，使其在 Swift 中有合适的名称
+* 重命名与类 A 相关联的类 B 或者枚举 C，使其作为内部类或枚举附属于类 A
+
+* 重命名 “命名去掉完整前缀后以数字开头的” 枚举的 case，改善所有 case 导入到 Swift 中的命名
+* 重命名 “命名不满足自动转换为构造器导入到 Swift 中的约定的” 工厂方法，使其作为构造器导入到 Swift 中
+* 在处理全局常量、变量，特别是在处理全局函数时，它的能力更加强大，能够极大程度地改变 API。比如可以将 `全局函数` 转变为 `静态方法`，或是 `实例⽅法`，甚至是 `实例属性`。如果你在 Objective-C 和 Swift 里都用过 Core Graphics 的话，你会深有体会。Apple 称其把 `NS_SWIFT_NAME` 用在了数百个全局函数上，将它们转换为方法、属性和构造器，以更加方便地在 Swift 中使用。
+
+你可以在 [iOS 混编｜为 Swift 重命名 Objective-C API](https://juejin.cn/post/7022302122867687454#heading-7) 中查看完整示例。
 
 ## 面试解析
 
