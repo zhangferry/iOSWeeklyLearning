@@ -32,7 +32,7 @@
 
 1、[Alamofire 的使用 - 基本用法](https://juejin.cn/post/6875140053635432462"Alamofire 的使用 - 基本用法") -- 来自掘金：Lebron
 
-[@我是熊大](https://github.com/Tliens)：AFNetWorking原作者写的，相比AFN更加完善，本文介绍了Alamofire基本用法，很全面，适合精读；作何还有一篇[高级用法](https://juejin.cn/post/6875140780680282125)。
+[@我是熊大](https://github.com/Tliens)：AFNetWorking原作者写的，相比AFN更加完善，本文介绍了Alamofire基本用法，很全面，适合精读；作者还有一篇[高级用法](https://juejin.cn/post/6875140780680282125)。
 
 2、[Kingfisher源码解析](https://juejin.cn/post/6844904015738699790 "Kingfisher源码解析") -- 来自掘金：李坤
 
