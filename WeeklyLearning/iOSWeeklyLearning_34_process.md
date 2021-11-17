@@ -30,7 +30,7 @@
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
-1、[Alamofire的基本用法](https://juejin.cn/post/6875140053635432462" Alamofire 的使用 - 基本用法") -- 来自掘金：Lebron
+1、[Alamofire的基本用法](https://juejin.cn/post/6875140053635432462 "Alamofire 的使用 - 基本用法") -- 来自掘金：Lebron
 
 [@我是熊大](https://github.com/Tliens)：Alamofire是AFNetWorking原作者写的，Swift版本相比AFN更加完善，本文介绍了Alamofire基本用法，很全面，适合精读；作者还有一篇[高级用法](https://juejin.cn/post/6875140780680282125)，欢迎阅读。
 
