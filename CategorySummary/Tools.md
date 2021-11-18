@@ -847,3 +847,18 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 ![swiftenv](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/swiftenv.png)
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### Mounty
+
+**地址**：https://mounty.app/
+
+**软件状态**：免费，[开源](https://mounty.app/)
+
+**软件介绍**：
+
+`Mounty` 是一个在 macOS 下以读写模式重新挂载写保护的 NTFS 卷的小工具，功能类似于 `NTFS For Mac`，最大也是最重要的区别是它是**免费**的。
+
+![mounty](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/example.png)
+

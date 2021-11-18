@@ -1024,3 +1024,26 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@东坡肘子](https://www.fatbobman.com/)：本文主要介绍了 Vision 框架在图像技术方面的一些酷炫功能，并一定程度上阐述了其原理。
 
+***
+整理编辑：[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com/)
+
+1、[Alamofire的基本用法](https://juejin.cn/post/6875140053635432462 "Alamofire 的使用 - 基本用法") -- 来自掘金：Lebron
+
+[@我是熊大](https://github.com/Tliens)：Alamofire 是 AFNetWorking 原作者写的，Swift 版本相比 AFN 更加完善，本文介绍了 Alamofire 基本用法，很全面，适合精读；作者还有一篇[高级用法](https://juejin.cn/post/6875140780680282125)，推荐阅读。
+
+2、[Kingfisher源码解析](https://juejin.cn/post/6844904015738699790 "Kingfisher源码解析") -- 来自掘金：李坤
+
+[@我是熊大](https://github.com/Tliens)：Kingfisher 对标 OC 中的 SDWebImage，作者是大名鼎鼎的王巍，本文是 Kingfisher 源码解析系列的总结，推荐阅读。
+
+3、[iOS SnapKit架构之道](https://rimson.top/2019/09/04/ios-snapkit-1/ "iOS SnapKit架构之道") -- 来自博客：Rimson
+
+[@我是熊大](https://github.com/Tliens)：SnapKit 作为在 Swift 中的页面布局的地位，相当于 OC 中的 Masonry，使用起来几乎一模一样，本文作者详细梳理了 Snapkit 布局的过程和原理。
+
+4、[第三方图表库Charts使用详解](https://www.hangge.com/blog/cache/detail_2116.html "第三方图表库Charts使用详解") -- 来自航歌：hangge
+
+[@东坡肘子](https://www.fatbobman.com/)：Charts 是一个功能强大的图表框架，使用 Swift 编写。是对 Android 上大名鼎鼎的图表库 MPAndroidChart 在苹果生态上的移植。hangge 通过大量的范例代码对 Charts 的使用进行了相近地说明。
+
+5、[访问 SwiftUI 内部的 UIKit 组件](https://mp.weixin.qq.com/s/xYKGs3FkrlI_9pq1cdnC5Q "访问 SwiftUI 内部的 UIKit 组件") -- 来自 Swift花园：猫克杯
+
+[@东坡肘子](https://www.fatbobman.com/)：抛开 SwiftUI 尚不完备的工具不说，SwiftUI 的确因其构建 UI 的便捷性给开发者带来了兴奋。有一个令人欣慰的事实是，许多 SwiftUI 组件实际上是基于 UIKit 构建的。本文将带你探索一个令人惊讶的 SwiftUI 库，它叫 Introspect 。利用它，开发者能够访问 SwiftUI 组件底层的 UIKit 视图。
+
