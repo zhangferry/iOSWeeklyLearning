@@ -60,7 +60,7 @@
 >      4
 >    /   \
 >   2     6
->  / \   / \  
+>  / \   / \ 
 > 1   3 5   7
 
 #### 输出
@@ -184,7 +184,7 @@ func postorderIteration(_ root: TreeNode?) {
 
 #### 颜色标记法
 
-传统的迭代由上述代码可知，比较繁琐，而且迭代过程中易错。参照 [颜色标记法-一种通用且简明的树遍历方法](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/) ，利用一个**兼具栈迭代方法的高效，又像递归方法一样简洁易懂的方法，更重要的是，这种方法对于前序、中序、后序遍历，能够写出完全一致的代码**。
+传统的迭代由上述代码可知，比较繁琐，而且迭代过程中易错。参照 [颜色标记法-一种通用且简明的树遍历方法](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/ "颜色标记法-一种通用且简明的树遍历方法") ，利用一个**兼具栈迭代方法的高效，又像递归方法一样简洁易懂的方法，更重要的是，这种方法对于前序、中序、后序遍历，能够写出完全一致的代码**。
 
 其核心方法如下：
 
@@ -194,7 +194,7 @@ func postorderIteration(_ root: TreeNode?) {
 
   >  // 前序 `中→左→右` 按照 `右→左→中`
   >  // 中序 `左→中→右` 按照 `右→中→左`
-  >   // 后序 `左→右→中` 按照 `中→右→左`
+  >  // 后序 `左→右→中` 按照 `中→右→左`
 
 * 结果数组中加入标记为 **1** 的节点的值
 
