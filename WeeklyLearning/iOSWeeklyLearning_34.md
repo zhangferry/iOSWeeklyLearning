@@ -35,12 +35,11 @@
 
 * 重命名与 Swift 风格不符的 API，使其在 Swift 中有合适的名称；
 * 将与类 A 相关联的类/枚举作为内部类/枚举附属于类 A；
-
 * 重命名 “命名去掉完整前缀后以数字开头的” 枚举的 case，改善所有 case 导入到 Swift 中的命名；
 * 重命名 “命名不满足自动转换为构造器导入到 Swift 中的约定的” 工厂方法，使其作为构造器导入到 Swift 中（不能用于协议中）；
 * 在处理全局常量、变量，特别是在处理全局函数时，它的能力更加强大，能够极大程度地改变 API。比如可以将 `全局函数` 转变为 `静态方法`，或是 `实例⽅法`，甚至是 `实例属性`。如果你在 Objective-C 和 Swift 里都用过 Core Graphics 的话，你会深有体会。Apple 称其把 `NS_SWIFT_NAME` 用在了数百个全局函数上，将它们转换为方法、属性和构造器，以更加方便地在 Swift 中使用。
 
-你可以在 [iOS 混编｜为 Swift 重命名 Objective-C API](https://juejin.cn/post/7022302122867687454#heading-7) 中查看上述示例。
+你可以在 [iOS 混编｜为 Swift 重命名 Objective-C API](https://juejin.cn/post/7022302122867687454 "iOS 混编｜为 Swift 重命名 Objective-C API") 中查看上述示例。
 
 ## 面试解析
 
@@ -57,11 +56,11 @@
 给定一个二叉树，返回他的 _**前序**_ _**中序**_ _**后序**_ 三种遍历
 
 > 输入: [4,2,6,1,3,5,7]
->      4
+>     4
 >    /   \
 >   2     6
 >  / \   / \ 
-> 1   3 5   7
+> 1  3 5  7
 
 #### 输出
 
@@ -80,6 +79,7 @@
 后序遍历：首先遍历左子树，然后遍历右子树，最后访问根节点（左->右->根）
 
 > 顺序：后序遍历左子树->后序遍历右子树->访问根节点
+>
 > 后续遍历: [1, 3, 2, 5, 7, 6, 4]
 
 二叉树的遍历方法一般有三种
@@ -102,7 +102,7 @@
 /// traversals 为输出的数组
 func preorder(_ node: TreeNode?) {
     guard let node = node else {
-      return
+        return
     }
     /// 前序遍历
     traversals.append(node.val) 
@@ -193,7 +193,9 @@ func postorderIteration(_ root: TreeNode?) {
 * 遇到未访问的节点，将节点标记为 **0**，然后根据三序排序的要求，按照特定的顺序入栈
 
   >  // 前序 `中→左→右` 按照 `右→左→中`
+  >
   >  // 中序 `左→中→右` 按照 `右→中→左`
+  > 
   >  // 后序 `左→右→中` 按照 `中→右→左`
 
 * 结果数组中加入标记为 **1** 的节点的值
@@ -216,7 +218,7 @@ func postorderIteration(_ root: TreeNode?) {
 //                statck.append((0, node?.right))
 //                statck.append((1, node))
 //                statck.append((0, node?.left))
-//                ///后序遍历
+                ///后序遍历
                 statck.append((1, node))
                 statck.append((0, node?.right))
                 statck.append((0, node?.left))
@@ -240,7 +242,7 @@ func postorderIteration(_ root: TreeNode?) {
 
 1、[Alamofire的基本用法](https://juejin.cn/post/6875140053635432462 "Alamofire 的使用 - 基本用法") -- 来自掘金：Lebron
 
-[@我是熊大](https://github.com/Tliens)：Alamofire 是 AFNetWorking 原作者写的，Swift 版本相比 AFN 更加完善，本文介绍了 Alamofire 基本用法，很全面，适合精读；作者还有一篇[高级用法](https://juejin.cn/post/6875140780680282125)，推荐阅读。
+[@我是熊大](https://github.com/Tliens)：Alamofire 是 AFNetWorking 原作者写的，Swift 版本相比 AFN 更加完善，本文介绍了 Alamofire 基本用法，很全面，适合精读；作者还有一篇[高级用法](https://juejin.cn/post/6875140780680282125 "Alamofire 高级用法")，推荐阅读。
 
 2、[Kingfisher源码解析](https://juejin.cn/post/6844904015738699790 "Kingfisher源码解析") -- 来自掘金：李坤
 
@@ -248,11 +250,11 @@ func postorderIteration(_ root: TreeNode?) {
 
 3、[iOS SnapKit架构之道](https://rimson.top/2019/09/04/ios-snapkit-1/ "iOS SnapKit架构之道") -- 来自博客：Rimson
 
-[@我是熊大](https://github.com/Tliens)：SnapKit 作为在 Swift 中的页面布局的地位，相当于 OC 中的 Masonry，使用起来几乎一模一样，本文作者详细梳理了 Snapkit 布局的过程和原理。
+[@我是熊大](https://github.com/Tliens)：SnapKit 在 Swift 中的页面布局的地位，相当于 OC 中的 Masonry，使用起来几乎一模一样，本文作者详细梳理了 Snapkit 布局的过程和原理。
 
 4、[第三方图表库Charts使用详解](https://www.hangge.com/blog/cache/detail_2116.html "第三方图表库Charts使用详解") -- 来自航歌：hangge
 
-[@东坡肘子](https://www.fatbobman.com/)：Charts 是一个功能强大的图表框架，使用 Swift 编写。是对 Android 上大名鼎鼎的图表库 MPAndroidChart 在苹果生态上的移植。hangge 通过大量的范例代码对 Charts 的使用进行了相近地说明。
+[@东坡肘子](https://www.fatbobman.com/)：Charts 是一个功能强大的图表框架，使用 Swift 编写。是对 Android 上大名鼎鼎的图表库 MPAndroidChart 在苹果生态上的移植。作者 hangge 通过大量的范例代码对 Charts 的使用进行了相近地说明。
 
 5、[访问 SwiftUI 内部的 UIKit 组件](https://mp.weixin.qq.com/s/xYKGs3FkrlI_9pq1cdnC5Q "访问 SwiftUI 内部的 UIKit 组件") -- 来自 Swift花园：猫克杯
 
