@@ -36,8 +36,195 @@
 
 ## 面试解析
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638) 
 
+**树**作为最常见的数据数据结构之一，在算法中有举足轻重的地位。
+
+理解树有助于我们理解很多其他的数据结构，例如**图**，**栈**等。也有助于我们理解一些算法类型，例如，**回溯算法**和**动态规划**。当然在练习关于树的解题过程中，也能够加深我们对**深度优先**及**广度优先**算法的理解。
+
+今天我们以二叉树的**三序遍历**为题，来开启我们二叉树的学习。
+
+### 题目
+
+给定一个二叉树，返回他的 _**前序**_ _**中序**_ _**后序**_ 三种遍历
+
+> 输入: [4,2,6,1,3,5,7]
+>      4
+>    /   \
+>   2     6
+>  / \   / \  
+> 1   3 5   7
+
+#### 输出
+
+前序遍历：首先访问根结点，然后遍历左子树，最后遍历右子树（根->左->右）
+
+> 顺序：访问根节点->前序遍历左子树->前序遍历右子树
+>
+> 前序遍历: [4, 2, 1, 3, 6, 5, 7]
+
+中序遍历：首先遍历左子树，然后访问根节点，最后遍历右子树（左->根->右）
+
+> 顺序：中序遍历左子树->访问根节点->中序遍历右子树
+>
+> 中序遍历: [1, 2, 3, 4, 5, 6, 7]
+
+后序遍历：首先遍历左子树，然后遍历右子树，最后访问根节点（左->右->根）
+
+> 顺序：后序遍历左子树->后序遍历右子树->访问根节点
+> 后续遍历: [1, 3, 2, 5, 7, 6, 4]
+
+二叉树的遍历方法一般有三种
+
+* 递归
+* 迭代（常规迭代加**颜色标记法**）
+* 莫里斯遍历（今天暂时不涉及）
+
+### 递归
+
+在树的深度优先遍历中（包括前序、中序、后序遍历），递归方法最为直观易懂，但考虑到效率，我们通常不推荐使用递归。
+
+递归步骤一般需要遵循以下三种：
+
+1. 确定递归的参数以及返回值
+2. 确定递归的终止条件**递归算法一定有终止条件**，避免死循环。
+3. 确定单次递归的逻辑
+
+```swift
+/// traversals 为输出的数组
+func preorder(_ node: TreeNode?) {
+  guard  let node = node else {
+    return
+  }
+  /// 前序遍历
+  traversals.append(node.val) 
+  preorder(node.left)
+  preorder(node.right)
+  /// 中序遍历
+  preorder(node.left)
+  traversals.append(node.val) 
+  preorder(node.right)
+  /// 后序遍历
+  preorder(node.left)
+  preorder(node.right)
+  traversals.append(node.val) 
+}
+```
+
+#### 迭代
+
+二叉树的迭代步骤一般是将节点加入到一个 `栈` 中，然后通过访问栈头/栈尾，根据遍历顺序访问所有的符合的节点。
+
+##### 前序遍历
+
+```swift
+func preorderIteration(_ root: TreeNode?) {
+  var st:[TreeNode?] = [root]
+  while !st.isEmpty {
+    let node = st.removeFirst()
+    if node != nil {
+      traversals.append(node!.val)
+    }else {
+      continue
+    }
+    st.insert(node?.right, at: 0)
+    st.insert(node?.left, at: 0)
+  }
+}
+```
+
+##### 中序遍历
+
+```swift
+func inorderIteration(_ root: TreeNode?) {
+    var st:[TreeNode?] = []
+    var cur:TreeNode? = root
+    while cur != nil || !st.isEmpty {
+        if cur != nil {
+            st.insert(cur, at: 0)
+            cur = cur?.left
+        }else {
+            cur = st.removeFirst()
+            traversals.append(cur!.val)
+            cur = cur?.right
+        }
+    }
+}
+```
+
+##### 后序遍历
+
+后序遍历其遍历步骤是 `左→右→中`，但是这个代码实现起来不简单。 所以我们可以先访问依次访问 `中→右→左`的节点，最后将得到结果进行`reversed`，其结果最终变成 `左→右→中` 。
+
+```swift
+func postorderIteration(_ root: TreeNode?) {
+    var st:[TreeNode?] = [root]
+    while !st.isEmpty {
+        let node = st.removeFirst()
+        if node != nil {
+            print(node!.val)
+            traversals.append(node!.val)
+        }else {
+            continue
+        }
+        st.insert(node?.left, at: 0)
+        st.insert(node?.right, at: 0)
+    }
+    traversals = traversals.reversed()
+}
+```
+
+#### 颜色标记法
+
+传统的迭代有上述代码可知，比较繁琐，而且迭代过程中易错。参照 [颜色标记法-一种通用且简明的树遍历方法](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/) ，利用一个**兼具栈迭代方法的高效，又像递归方法一样简洁易懂的方法，更重要的是，这种方法对于前序、中序、后序遍历，能够写出完全一致的代码**。
+
+其核心方法如下：
+
+* 标记节点的状态，已访问的节点标记为**1**，未访问的节点标记为 **0**
+
+* 遇到未访问的节点，将节点标记为**0**，然后根据三序排序的要求，按照特定的顺序入栈
+
+  >  //前序 `中→左→右` 按照`右→左→中`
+  >  //中序 `左→中→右` 按照`右→中→左`
+  >   //后序 `左→右→中` 按照`中→右→左`
+
+* 结果数组中加入标记为 **1** 的节点的值
+
+```swift
+    func tuple(_ root: TreeNode?) -> [Int] {
+        var traversals = [Int]()
+        var statck = [(0, root)]
+        while !statck.isEmpty {
+            let (isVisted, node) = statck.removeLast()
+            if node == nil {
+                continue
+            }
+            if isVisted == 0 {
+//                ///前序遍历
+//                statck.append((0, node?.right))
+//                statck.append((0, node?.left))
+//                statck.append((1, node))
+//                ///中序遍历
+//                statck.append((0, node?.right))
+//                statck.append((1, node))
+//                statck.append((0, node?.left))
+                ///后序遍历
+                statck.append((1, node))
+                statck.append((0, node?.right))
+                statck.append((0, node?.left))
+            } else {
+                traversals.append(node!.val)
+            }
+        }
+        return traversals
+    }
+```
+
+利用颜色标记法可以简单的理解迭代的方法，并写出模板代码。
+
+#### 莫里斯遍历
+
+作为兼具性能及低空间复杂度的**莫里斯遍历**，可以在线下讨论。
 
 ## 优秀博客
 
