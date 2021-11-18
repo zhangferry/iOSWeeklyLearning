@@ -73,7 +73,17 @@
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+### Mounty
+
+**地址**：https://mounty.app/
+
+**软件状态**：免费，[开源](https://mounty.app/)
+
+**软件介绍**：
+
+`mounty`是一个在 macOS 下以读写模式重新挂载写保护的 NTFS 卷的小工具，功能类似与`NTFS For Mac`，最大也是最重要的区别是它是**免费**的。
+
+![mounty](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/example.png)
 
 ## 关于我们
 
