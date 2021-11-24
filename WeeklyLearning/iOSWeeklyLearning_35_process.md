@@ -42,6 +42,17 @@
 
 [@东坡肘子](https://www.fatbobman.com/)：Publish 是一款专门为 Swift 开发者打造的静态网站生成器。它使用 Swift 语言构建整个网站，并支持主题、插件和其他大量的定制选项。本系列文章将通过三个篇幅分别介绍 Publish 的基本用法、主题定制以及插件开发。
 
+4、[Using Realm and Charts with Swift 3 in iOS 10](https://medium.com/@skipadu/using-realm-and-charts-with-swift-3-in-ios-10-40c42e3838c0#.2gyymwfh8 "Using Realm and Charts with Swift 3 in iOS 10") -- 来自：Sami Korpela
+
+[@我是熊大](https://github.com/Tliens)：一个十分强大并且是纯Swift的图表相关的开源框架 -- Charts。本文作者利用Swift中的轻量级数据库Realm和Charts，构建了一个Demo，篇幅较长，适合新手，但美中不足的是Swift3，我早期写过一篇Realm的业务代码：[如何降低Realm数据库的崩溃](https://juejin.cn/post/6844904143501557773)，有兴趣可以看一下。
+
+5、[今天我们来聊一聊WebSocket（iOS/Golang）](https://juejin.cn/post/6844904015738699790 "今天我们来聊一聊WebSocket（iOS/Golang）") -- 来自掘金：齐舞647
+
+[@我是熊大](https://github.com/Tliens)：Starscream swift中的7k+ star的socket开源库，本文作者利用GO和Starscream，模拟了客户端和服务端websocket的交互过程，建议对Socket感兴趣的阅读。
+
+6、[Hero Usage Guide](https://github.com/HeroTransitions/Hero/wiki/Usage-Guide "Hero Usage Guide") -- 来自：Hero官方
+
+[@我是熊大](https://github.com/Tliens)：Hero 是我用过的最好的转场动画，没有之一，20k+ star的成绩也表名了它在转场动画的地位；Hero应该能满足绝大部分需求，这是它的官方使用手册。
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
