@@ -50,7 +50,23 @@
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+## 工具推荐
+
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### PhotoSweeper
+
+**地址**：https://overmacs.com/
+
+**软件状态**：$9.99，可以试用
+
+**软件介绍**：
+
+`PhotoSweeper` 是一款快速而强大的重复照片清理器，旨在帮助您在 Mac 上查找和删除重复和相似的照片。
+
+我们可以考虑用在给应用瘦身时扫描相似图片资源场景下。
+
+![PhotoSweeper](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/PhotoSweeper_MacBook.jpeg)
 
 ## 关于我们
 
