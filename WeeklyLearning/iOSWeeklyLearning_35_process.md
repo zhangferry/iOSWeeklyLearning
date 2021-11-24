@@ -44,7 +44,7 @@
 
 4、[Using Realm and Charts with Swift 3 in iOS 10](https://medium.com/@skipadu/using-realm-and-charts-with-swift-3-in-ios-10-40c42e3838c0#.2gyymwfh8 "Using Realm and Charts with Swift 3 in iOS 10") -- 来自：Sami Korpela
 
-[@我是熊大](https://github.com/Tliens)：一个十分强大并且是纯Swift的图表相关的开源框架 -- Charts。本文作者利用Swift中的轻量级数据库Realm和Charts，构建了一个Demo，篇幅较长，适合新手，但美中不足的是Swift3，我早期写过一篇Realm的业务代码：[如何降低Realm数据库的崩溃](https://juejin.cn/post/6844904143501557773)，有兴趣可以看一下。
+[@我是熊大](https://github.com/Tliens)：一个十分强大并且是纯Swift的图表相关的开源框架 -- Charts。本文作者利用Swift中的轻量级数据库Realm和Charts，构建了一个Demo，篇幅较长，适合新手，但美中不足的是：Demo基于Swift3。此外我早期写过一篇关于Realm的实践代码的文章：[如何降低Realm数据库的崩溃](https://juejin.cn/post/6844904143501557773)，有兴趣可以看一下。
 
 5、[今天我们来聊一聊WebSocket（iOS/Golang）](https://juejin.cn/post/6844904015738699790 "今天我们来聊一聊WebSocket（iOS/Golang）") -- 来自掘金：齐舞647
 
