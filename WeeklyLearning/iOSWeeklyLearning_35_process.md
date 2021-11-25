@@ -57,7 +57,11 @@
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### 戴铭的 Swift 小册子
 
+地址：https://github.com/ming1016/SwiftPamphletApp
+
+戴老师用 Swift 写的、按照声明式UI、响应式编程范式开发的 Swift 小册子。你可以在这本小册子中查询到 Swift 的语法指南，同时还有 Combine、 Concurrency 和 SwiftUI 这些库的使用指南，你还可以在这追踪到一些知名仓库、开发者的 Github 动态和本仓库的 Issues。由于是开源的，你也可以自己调试学习或者是为项目作出贡献。
 
 ## 工具推荐
 
