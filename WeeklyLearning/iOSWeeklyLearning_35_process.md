@@ -6,10 +6,10 @@
 
 > * 话题：
 > * Tips：
-> * 面试模块：
+> * 面试模块：struct 和 class 的区别，值类型和引用类型的区别。
 > * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 学习资料：戴铭的 Swift 小册子。
+> * 开发工具：PhotoSweeper，一款快速而强大的重复照片清理器。
 
 ## 本期话题
 
@@ -25,34 +25,64 @@
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
+### struct 和 class 的区别，值类型和引用类型的区别
+
+**struct & class**
+
+在 Swift 中，其实 `class` 与 `struct` 之间的核心区别不是很多，有很多区别是值类型与引用类型这个区别隐形带来的天然的区别。
+
+- `class` 可以继承，`struct` 不能继承（当然 `struct` 可以利用 `protocol` 来实现类似继承的效果。）；受此影响的区别有：
+
+- - `struct` 中方法的派发方式全都是直接派发，而 `class` 中根据实际情况有多种派发方式，详情可看 [CoderStar｜Swift 派发机制](https://mp.weixin.qq.com/s?__biz=MzU4NjQ5NDYxNg==&mid=2247483768&idx=1&sn=0a6be7a9c5a374cbc5c5ba9a3c48020a&scene=21#wechat_redirec)；
+
+- `class` 需要自己定义构造函数，`struct` 默认生成；
+
+- `class` 是引用类型，`struct` 是值类型；受此影响的区别有：
+
+- - `struct` 改变其属性受修饰符 let 影响，不可改变，`class` 不受影响；
+  - `struct` 方法中需要修改自身属性时 (非 `init` 方法)，方法需要前缀修饰符 `mutating`；
+  - `struct` 因为是值类型的原因，所以自动线程安全，而且也不存在循环引用导致内存泄漏的风险；
+  - ...
+
+- ...
+
+**值类型 & 引用类型**
+
+- 存储方式及位置：大部分值类型存储在栈上，大部分引用类型存储在堆上；
+- 内存：值类型没有引用计数，也不会存在循环引用以及内存泄漏等问题；
+- 线程安全：值类型天然线程安全，而引用类型需要开发者通过加锁等方式来保证；
+- 拷贝方式：值类型拷贝的是内容，而引用类型拷贝的是指针，从一定意义上讲就是所谓的深拷贝及浅拷贝
+
+你可以在 [CoderStar｜从 SIL 角度看 Swift 中的值类型与引用类型](https://mp.weixin.qq.com/s/6bvZ1YIhf2WCNsdkukTlew) 中查看详细内容。
+
 
 ## 优秀博客
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
-1、[第三方日期处理库SwiftDate使用详解](https://www.hangge.com/blog/cache/detail_2222.html "第三方日期处理库SwiftDate使用详解") -- 来自航歌：hangge
+1、[第三方日期处理库SwiftDate使用详解](https://www.hangge.com/blog/cache/detail_2222.html "@hangge｜第三方日期处理库SwiftDate使用详解") -- 来自航歌：hangge
 
-[@东坡肘子](https://www.fatbobman.com/)：SwiftDate 是在所有苹果平台，甚至在 Linux 和 Swift 服务器端框架（如 Vapor 或 Kitura ）上操作和显示日期和时区的权威工具链。在 CocoaPods 上有超过300万的下载量。SwiftDate 功能强大，无论是简单的日期操作，还是复杂的业务逻辑都能满足。本文将对 SwiftDate 的使用方法做详尽说明。
+[@东坡肘子](https://www.fatbobman.com/)：SwiftDate 是在所有苹果平台，甚至在 Linux 和 Swift 服务器端框架（如 Vapor 或 Kitura ）上操作和显示日期和时区的权威工具链。在 CocoaPods 上有超过 300 万的下载量。SwiftDate 功能强大，无论是简单的日期操作，还是复杂的业务逻辑都能满足。本文将对 SwiftDate 的使用方法做详尽说明。
 
-2、[搞事情之 Vapor 初探](https://juejin.cn/post/6844903834659667981 "搞事情之 Vapor 初探") -- 来自掘金：PJHubs
+2、[搞事情之 Vapor 初探](https://juejin.cn/post/6844903834659667981 "@PJHubs｜搞事情之 Vapor 初探") -- 来自掘金：PJHubs
 
 [@东坡肘子](https://www.fatbobman.com/)：Vapor 是一个基于 Swift 语言的开源 Web 框架，可用于创建 RESTful API、网站和使用 WebSockets 的实时应用。在核心框架之外，Vapor 还提供了 ORM 、模板语言，以及用户身份验证和授权模块。本文主要记录了第一次上手 Vapor 所遇到的问题、思考和总结。
 
-3、[用 Publish 创建博客](https://www.fatbobman.com/tags/publish/ "用 Publish 创建博客") -- 来自肘子的Swift记事本：东坡肘子
+3、[用 Publish 创建博客](https://www.fatbobman.com/tags/publish/ "@东坡肘子｜用 Publish 创建博客") -- 来自肘子的Swift记事本：东坡肘子
 
 [@东坡肘子](https://www.fatbobman.com/)：Publish 是一款专门为 Swift 开发者打造的静态网站生成器。它使用 Swift 语言构建整个网站，并支持主题、插件和其他大量的定制选项。本系列文章将通过三个篇幅分别介绍 Publish 的基本用法、主题定制以及插件开发。
 
-4、[Using Realm and Charts with Swift 3 in iOS 10](https://medium.com/@skipadu/using-realm-and-charts-with-swift-3-in-ios-10-40c42e3838c0#.2gyymwfh8 "Using Realm and Charts with Swift 3 in iOS 10") -- 来自：Sami Korpela
+4、[Using Realm and Charts with Swift 3 in iOS 10](https://medium.com/@skipadu/using-realm-and-charts-with-swift-3-in-ios-10-40c42e3838c0#.2gyymwfh8 "@Sami Korpela｜Using Realm and Charts with Swift 3 in iOS 10") -- 来自：Sami Korpela
 
-[@我是熊大](https://github.com/Tliens)：一个十分强大并且是纯Swift的图表相关的开源框架 -- Charts。本文作者利用Swift中的轻量级数据库Realm和Charts，构建了一个Demo，篇幅较长，适合新手，但美中不足的是：Demo基于Swift3。此外我早期写过一篇关于Realm的实践代码的文章：[如何降低Realm数据库的崩溃](https://juejin.cn/post/6844904143501557773)，有兴趣可以看一下。
+[@我是熊大](https://github.com/Tliens)：一个十分强大并且是纯 Swift 的图表相关的开源框架 -- Charts。本文作者利用 Swift 中的轻量级数据库 Realm 和 Charts，构建了一个 Demo。篇幅较长，适合新手，但美中不足的是：Demo 基于 Swift 3。此外我早期写过一篇关于 Realm 的实践代码的文章：[如何降低Realm数据库的崩溃](https://juejin.cn/post/6844904143501557773 "@我是熊大｜如何降低Realm数据库的崩溃")，有兴趣可以看一下。
 
-5、[今天我们来聊一聊WebSocket（iOS/Golang）](https://juejin.cn/post/6844904015738699790 "今天我们来聊一聊WebSocket（iOS/Golang）") -- 来自掘金：齐舞647
+5、[今天我们来聊一聊WebSocket（iOS/Golang）](https://juejin.cn/post/6844904015738699790 "@齐舞647｜今天我们来聊一聊WebSocket（iOS/Golang）") -- 来自掘金：齐舞647
 
-[@我是熊大](https://github.com/Tliens)：Starscream swift中的7k+ star的socket开源库，本文作者利用GO和Starscream，模拟了客户端和服务端websocket的交互过程，建议对Socket感兴趣的阅读。
+[@我是熊大](https://github.com/Tliens)：Starscream swift 中的 7k+ star 的 socket 开源库，本文作者利用 GO 和 Starscream，模拟了客户端和服务端 websocket 的交互过程，建议对 Socket 感兴趣的阅读。
 
 6、[Hero Usage Guide](https://github.com/HeroTransitions/Hero/wiki/Usage-Guide "Hero Usage Guide") -- 来自：Hero官方
 
-[@我是熊大](https://github.com/Tliens)：Hero 是我用过的最好的转场动画，没有之一，20k+ star的成绩也表名了它在转场动画的地位；Hero应该能满足绝大部分需求，这是它的官方使用手册。
+[@我是熊大](https://github.com/Tliens)：Hero 是我用过的最好的转场动画，没有之一，20k+ star 的成绩也表名了它在转场动画的地位；Hero 应该能满足绝大部分需求，这是它的官方使用手册。
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -61,9 +91,7 @@
 
 地址：https://github.com/ming1016/SwiftPamphletApp
 
-戴老师用 Swift 写的、按照声明式UI、响应式编程范式开发的 Swift 小册子。你可以在这本小册子中查询到 Swift 的语法指南，同时还有 Combine、 Concurrency 和 SwiftUI 这些库的使用指南，你还可以在这追踪到一些知名仓库、开发者的 Github 动态和本仓库的 Issues。由于是开源的，你也可以自己调试学习或者是为项目作出贡献。
-
-## 工具推荐
+戴老师用 Swift 写的、按照声明式 UI、响应式编程范式开发的 Swift 小册子。你可以在这本小册子中查询到 Swift 的语法指南，同时还有 Combine、 Concurrency 和 SwiftUI 这些库的使用指南，你还可以在这追踪到一些知名仓库、开发者的 Github 动态和本仓库的 Issues。由于是开源的，你也可以自己调试学习或者是为项目作出贡献。
 
 ## 工具推荐
 
@@ -89,12 +117,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第三十四期](https://mp.weixin.qq.com/s/P0HjLDCIM3T-hAgQFjO1mg)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第三十三期](https://mp.weixin.qq.com/s/nznnGmBsqsrWcvZ4XFMttg)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第三十二期](https://mp.weixin.qq.com/s/6CyL0B6Zkf6KXRrfocohoQ)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第三十一期](https://mp.weixin.qq.com/s/DQpsOw90UsRg6A5WDyT_pg)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
