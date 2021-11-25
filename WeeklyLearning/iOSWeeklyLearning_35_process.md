@@ -25,7 +25,7 @@
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
-### struct 和 class 的区别，值类型和引用类型的区别
+### Swift 中 struct 和 class 的区别，值类型和引用类型的区别
 
 **struct & class**
 
