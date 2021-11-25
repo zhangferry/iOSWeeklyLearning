@@ -46,7 +46,7 @@ extension Set {
 
 当然为了简化记忆，我们可以总是使用 isEmpty 进行判空处理。
 
-因为涉及多个协议和具体类型，这里再一张表示这几个协议和类型之间的关系图。
+因为涉及多个协议和具体类型，这里放一张表示这几个协议和类型之间的关系图。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211126004620.png)
 
@@ -113,7 +113,8 @@ extension Set {
 
 6、[Hero Usage Guide](https://github.com/HeroTransitions/Hero/wiki/Usage-Guide "Hero Usage Guide") -- 来自：Hero官方
 
-[@我是熊大](https://github.com/Tliens)：Hero 是我用过的最好的转场动画，没有之一，20k+ star 的成绩也表名了它在转场动画的地位；Hero 应该能满足绝大部分需求，这是它的官方使用手册。
+[@我是熊大](https://github.com/Tliens)：Hero 是我用过的最好的转场动画，没有之一，20k+ star 的成绩也表明了它在转场动画的地位；Hero 应该能满足绝大部分需求，这是它的官方使用手册。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
