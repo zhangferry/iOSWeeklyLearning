@@ -4,22 +4,53 @@
 
 ### 本期概要
 
-> * 话题：
-> * Tips：
+> * Tips：count vs isEmpty
 > * 面试模块：Swift 中 struct 和 class 的区别，值类型和引用类型的区别。
-> * 优秀博客：
+> * 优秀博客：本期继续介绍几个优秀的 Swift 开源库。
 > * 学习资料：戴铭的 Swift 小册子。
 > * 开发工具：PhotoSweeper，一款快速而强大的重复照片清理器。
 
-## 本期话题
-
-[@zhangferry](https://zhangferry.com)：
-
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[zhangferry](zhangferry.com)
 
+### count vs isEmpty
 
+通常在判断一个字符串或者数组是否为空的时候有两种方式：`count == 0` 或者 `isEmpty`。我们可能会认为两者是一样的，`isEmpty` 内部实现就是 `count == 0`。但在 SwiftLint 的检验下，会强制要求我们使用使用 isEmpty 判空。由此可以判断出两者肯定还是存在不同的，今天就来分析下两者的区别。
+
+count 和 isEmpty 这两个属性来源于 `Collection`，count 表示数量，这个没啥特别的，需要注意的是isEmpty的实现。在标准库中，它的定义是这样的：
+
+```swift
+extension Collection {
+    var isEmpty: Bool { startIndex == endIndex }
+}
+```
+
+集合的首索引和尾索引相等，则表示为空，这里只有一个比较，复杂度为 O(1)。
+
+大部分集合类型都是走的该默认实现，但也有一些特定的集合类型会重写该方法，比如 `Set`：
+
+```swift
+extension Set {
+    var isEmpty: Bool { count == 0 }
+}
+```
+
+那为啥会出现两种不同的情况呢，我们再看 Collection 里对 count 的说明。
+
+> **Complexity**: O(1) if the collection conforms to `RandomAccessCollection`; otherwise, O(**n**), where **n** is the length of the collection.
+
+所以对于遵循了`RandomAccessCollection` 协议的类型，其count获取是 O(1) 复杂度，像是 Array；对于未遵循的类型，比如 String，其 count 复杂度就是 O(n)，但是isEmpty 却还是 O(1)。
+
+这里的 Set 还要再特殊一些，因为其没有实现 `RandomAccessCollection` 却还是用 count 的方式判定是否为空，这是因为 Set 的实现方式不同，其 count 的获取就是 O(1) 复杂度。
+
+当然为了简化记忆，我们可以总是使用 isEmpty 进行判空处理。
+
+因为涉及多个协议和具体类型，这里再一张表示这几个协议和类型之间的关系图。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211126004620.png)
+
+[图片来源](https://itwenty.me/2021/10/understanding-swifts-collection-protocols/ "图片来源")
 
 ## 面试解析
 
