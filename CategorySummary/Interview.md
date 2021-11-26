@@ -1230,11 +1230,11 @@ class Solution {
 给定一个二叉树，返回他的 _**前序**_ _**中序**_ _**后序**_ 三种遍历
 
 > 输入: [4,2,6,1,3,5,7]
->      4
+>     4
 >    /   \
 >   2     6
->  / \   / \  
-> 1   3 5   7
+>  / \   / \ 
+> 1  3 5  7
 
 #### 输出
 
@@ -1253,6 +1253,7 @@ class Solution {
 后序遍历：首先遍历左子树，然后遍历右子树，最后访问根节点（左->右->根）
 
 > 顺序：后序遍历左子树->后序遍历右子树->访问根节点
+>
 > 后续遍历: [1, 3, 2, 5, 7, 6, 4]
 
 二叉树的遍历方法一般有三种
@@ -1275,7 +1276,7 @@ class Solution {
 /// traversals 为输出的数组
 func preorder(_ node: TreeNode?) {
     guard let node = node else {
-      return
+        return
     }
     /// 前序遍历
     traversals.append(node.val) 
@@ -1357,7 +1358,7 @@ func postorderIteration(_ root: TreeNode?) {
 
 #### 颜色标记法
 
-传统的迭代由上述代码可知，比较繁琐，而且迭代过程中易错。参照 [颜色标记法-一种通用且简明的树遍历方法](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/) ，利用一个**兼具栈迭代方法的高效，又像递归方法一样简洁易懂的方法，更重要的是，这种方法对于前序、中序、后序遍历，能够写出完全一致的代码**。
+传统的迭代由上述代码可知，比较繁琐，而且迭代过程中易错。参照 [颜色标记法-一种通用且简明的树遍历方法](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/ "颜色标记法-一种通用且简明的树遍历方法") ，利用一个**兼具栈迭代方法的高效，又像递归方法一样简洁易懂的方法，更重要的是，这种方法对于前序、中序、后序遍历，能够写出完全一致的代码**。
 
 其核心方法如下：
 
@@ -1366,8 +1367,10 @@ func postorderIteration(_ root: TreeNode?) {
 * 遇到未访问的节点，将节点标记为 **0**，然后根据三序排序的要求，按照特定的顺序入栈
 
   >  // 前序 `中→左→右` 按照 `右→左→中`
+  >
   >  // 中序 `左→中→右` 按照 `右→中→左`
-  >   // 后序 `左→右→中` 按照 `中→右→左`
+  > 
+  >  // 后序 `左→右→中` 按照 `中→右→左`
 
 * 结果数组中加入标记为 **1** 的节点的值
 
@@ -1389,7 +1392,7 @@ func postorderIteration(_ root: TreeNode?) {
 //                statck.append((0, node?.right))
 //                statck.append((1, node))
 //                statck.append((0, node?.left))
-//                ///后序遍历
+                ///后序遍历
                 statck.append((1, node))
                 statck.append((0, node?.right))
                 statck.append((0, node?.left))
@@ -1406,4 +1409,38 @@ func postorderIteration(_ root: TreeNode?) {
 #### 莫里斯遍历
 
 作为兼具性能及低空间复杂度的**莫里斯遍历**，可以在线下讨论。
+
+***
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+### Swift 中 struct 和 class 的区别，值类型和引用类型的区别
+
+**struct & class**
+
+在 Swift 中，其实 `class` 与 `struct` 之间的核心区别不是很多，有很多区别是值类型与引用类型这个区别隐形带来的天然的区别。
+
+- `class` 可以继承，`struct` 不能继承（当然 `struct` 可以利用 `protocol` 来实现类似继承的效果。）；受此影响的区别有：
+
+- - `struct` 中方法的派发方式全都是直接派发，而 `class` 中根据实际情况有多种派发方式，详情可看 [CoderStar｜Swift 派发机制](https://mp.weixin.qq.com/s?__biz=MzU4NjQ5NDYxNg==&mid=2247483768&idx=1&sn=0a6be7a9c5a374cbc5c5ba9a3c48020a&scene=21#wechat_redirec)；
+
+- `class` 需要自己定义构造函数，`struct` 默认生成；
+
+- `class` 是引用类型，`struct` 是值类型；受此影响的区别有：
+
+- - `struct` 改变其属性受修饰符 let 影响，不可改变，`class` 不受影响；
+  - `struct` 方法中需要修改自身属性时 (非 `init` 方法)，方法需要前缀修饰符 `mutating`；
+  - `struct` 因为是值类型的原因，所以自动线程安全，而且也不存在循环引用导致内存泄漏的风险；
+  - ...
+
+- ...
+
+**值类型 & 引用类型**
+
+- 存储方式及位置：大部分值类型存储在栈上，大部分引用类型存储在堆上；
+- 内存：值类型没有引用计数，也不会存在循环引用以及内存泄漏等问题；
+- 线程安全：值类型天然线程安全，而引用类型需要开发者通过加锁等方式来保证；
+- 拷贝方式：值类型拷贝的是内容，而引用类型拷贝的是指针，从一定意义上讲就是所谓的深拷贝及浅拷贝
+
+你可以在 [CoderStar｜从 SIL 角度看 Swift 中的值类型与引用类型](https://mp.weixin.qq.com/s/6bvZ1YIhf2WCNsdkukTlew) 中查看详细内容。
+
 

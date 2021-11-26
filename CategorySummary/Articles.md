@@ -1029,7 +1029,7 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 1、[Alamofire的基本用法](https://juejin.cn/post/6875140053635432462 "Alamofire 的使用 - 基本用法") -- 来自掘金：Lebron
 
-[@我是熊大](https://github.com/Tliens)：Alamofire 是 AFNetWorking 原作者写的，Swift 版本相比 AFN 更加完善，本文介绍了 Alamofire 基本用法，很全面，适合精读；作者还有一篇[高级用法](https://juejin.cn/post/6875140780680282125)，推荐阅读。
+[@我是熊大](https://github.com/Tliens)：Alamofire 是 AFNetWorking 原作者写的，Swift 版本相比 AFN 更加完善，本文介绍了 Alamofire 基本用法，很全面，适合精读；作者还有一篇[高级用法](https://juejin.cn/post/6875140780680282125 "Alamofire 高级用法")，推荐阅读。
 
 2、[Kingfisher源码解析](https://juejin.cn/post/6844904015738699790 "Kingfisher源码解析") -- 来自掘金：李坤
 
@@ -1037,13 +1037,40 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 3、[iOS SnapKit架构之道](https://rimson.top/2019/09/04/ios-snapkit-1/ "iOS SnapKit架构之道") -- 来自博客：Rimson
 
-[@我是熊大](https://github.com/Tliens)：SnapKit 作为在 Swift 中的页面布局的地位，相当于 OC 中的 Masonry，使用起来几乎一模一样，本文作者详细梳理了 Snapkit 布局的过程和原理。
+[@我是熊大](https://github.com/Tliens)：SnapKit 在 Swift 中的页面布局的地位，相当于 OC 中的 Masonry，使用起来几乎一模一样，本文作者详细梳理了 Snapkit 布局的过程和原理。
 
 4、[第三方图表库Charts使用详解](https://www.hangge.com/blog/cache/detail_2116.html "第三方图表库Charts使用详解") -- 来自航歌：hangge
 
-[@东坡肘子](https://www.fatbobman.com/)：Charts 是一个功能强大的图表框架，使用 Swift 编写。是对 Android 上大名鼎鼎的图表库 MPAndroidChart 在苹果生态上的移植。hangge 通过大量的范例代码对 Charts 的使用进行了相近地说明。
+[@东坡肘子](https://www.fatbobman.com/)：Charts 是一个功能强大的图表框架，使用 Swift 编写。是对 Android 上大名鼎鼎的图表库 MPAndroidChart 在苹果生态上的移植。作者 hangge 通过大量的范例代码对 Charts 的使用进行了相近地说明。
 
 5、[访问 SwiftUI 内部的 UIKit 组件](https://mp.weixin.qq.com/s/xYKGs3FkrlI_9pq1cdnC5Q "访问 SwiftUI 内部的 UIKit 组件") -- 来自 Swift花园：猫克杯
 
 [@东坡肘子](https://www.fatbobman.com/)：抛开 SwiftUI 尚不完备的工具不说，SwiftUI 的确因其构建 UI 的便捷性给开发者带来了兴奋。有一个令人欣慰的事实是，许多 SwiftUI 组件实际上是基于 UIKit 构建的。本文将带你探索一个令人惊讶的 SwiftUI 库，它叫 Introspect 。利用它，开发者能够访问 SwiftUI 组件底层的 UIKit 视图。
+
+***
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
+
+1、[第三方日期处理库SwiftDate使用详解](https://www.hangge.com/blog/cache/detail_2222.html "@hangge｜第三方日期处理库SwiftDate使用详解") -- 来自航歌：hangge
+
+[@东坡肘子](https://www.fatbobman.com/)：SwiftDate 是在所有苹果平台，甚至在 Linux 和 Swift 服务器端框架（如 Vapor 或 Kitura ）上操作和显示日期和时区的权威工具链。在 CocoaPods 上有超过 300 万的下载量。SwiftDate 功能强大，无论是简单的日期操作，还是复杂的业务逻辑都能满足。本文将对 SwiftDate 的使用方法做详尽说明。
+
+2、[搞事情之 Vapor 初探](https://juejin.cn/post/6844903834659667981 "@PJHubs｜搞事情之 Vapor 初探") -- 来自掘金：PJHubs
+
+[@东坡肘子](https://www.fatbobman.com/)：Vapor 是一个基于 Swift 语言的开源 Web 框架，可用于创建 RESTful API、网站和使用 WebSockets 的实时应用。在核心框架之外，Vapor 还提供了 ORM 、模板语言，以及用户身份验证和授权模块。本文主要记录了第一次上手 Vapor 所遇到的问题、思考和总结。
+
+3、[用 Publish 创建博客](https://www.fatbobman.com/tags/publish/ "@东坡肘子｜用 Publish 创建博客") -- 来自肘子的Swift记事本：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：Publish 是一款专门为 Swift 开发者打造的静态网站生成器。它使用 Swift 语言构建整个网站，并支持主题、插件和其他大量的定制选项。本系列文章将通过三个篇幅分别介绍 Publish 的基本用法、主题定制以及插件开发。
+
+4、[Using Realm and Charts with Swift 3 in iOS 10](https://medium.com/@skipadu/using-realm-and-charts-with-swift-3-in-ios-10-40c42e3838c0#.2gyymwfh8 "@Sami Korpela｜Using Realm and Charts with Swift 3 in iOS 10") -- 来自：Sami Korpela
+
+[@我是熊大](https://github.com/Tliens)：一个十分强大并且是纯 Swift 的图表相关的开源框架 -- Charts。本文作者利用 Swift 中的轻量级数据库 Realm 和 Charts，构建了一个 Demo。篇幅较长，适合新手，但美中不足的是：Demo 基于 Swift 3。此外我早期写过一篇关于 Realm 的实践代码的文章：[如何降低Realm数据库的崩溃](https://juejin.cn/post/6844904143501557773 "@我是熊大｜如何降低Realm数据库的崩溃")，有兴趣可以看一下。
+
+5、[今天我们来聊一聊WebSocket（iOS/Golang）](https://juejin.cn/post/6844904062408720391 "@齐舞647｜今天我们来聊一聊WebSocket（iOS/Golang）") -- 来自掘金：齐舞647
+
+[@我是熊大](https://github.com/Tliens)：Starscream swift 中的 7k+ star 的 socket 开源库，本文作者利用 GO 和 Starscream，模拟了客户端和服务端 websocket 的交互过程，建议对 Socket 感兴趣的阅读。
+
+6、[Hero Usage Guide](https://github.com/HeroTransitions/Hero/wiki/Usage-Guide "Hero Usage Guide") -- 来自：Hero官方
+
+[@我是熊大](https://github.com/Tliens)：Hero 是我用过的最好的转场动画，没有之一，20k+ star 的成绩也表明了它在转场动画的地位；Hero 应该能满足绝大部分需求，这是它的官方使用手册。
 
