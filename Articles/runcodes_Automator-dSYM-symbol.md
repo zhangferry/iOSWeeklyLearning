@@ -1,4 +1,6 @@
-# Automator--快捷操作dSYM符号化
+# 使用 Automator 快捷操作 dSYM 符号化
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/automator-unsplash.jpg)
 
 ## 背景
 
@@ -22,7 +24,7 @@
 
 > 一开始第一周我写了个`Shell`，调试通过之后就没继续，就干其他大活了（这里有个有悲剧）
 > ......
-> 第二周的时候，不止怎的崩溃出奇的多（应该是合作方更新SDK之后导致的）
+> 第二周的时候，不知怎的崩溃出奇的多（应该是合作方更新SDK之后导致的）
 > 当时我正`Coding`热火朝天，`QA`和合作方夺命的`Call`
 > 我就去找那个当时写好的`shell`脚本，一通翻箱倒柜之后，我悟了，悲剧来了，找不到了
 > 呵呵，被自己强迫症日常清理垃行为给清理了（自己有个日常清理的垃圾的行为，无奈Mac配置就这样）
@@ -58,6 +60,43 @@ open $crash_log -a sublime
 ![automator script editor](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/automator_scipt_editor.png)
 
 脚本编辑器，`AppleScript`调试用。
+
+### 好玩的 AppleScript
+
+下面是一些好玩的 `AppleScript` 代码，唤起你的好奇心：
+
+```bash
+display dialog "你说假如地球没有了空气，我们会怎样...
+那么没有工程目录，后面该怎么办?" default answer "会死" buttons {"我知道了"} ¬
+	default button "我知道了" with title "Handsome ERROR"
+set theInput to text returned of the result
+--display dialog text returned of the result
+if theInput is equal to "会死" then
+	display dialog "没救了" with title "ERROR" buttons {"我知道了"} ¬
+		default button "我知道了"
+end if
+--忽略下面部分
+```
+
+```bash
+say "Hello world"
+
+display dialog "Hello World" with title "Alert"
+
+display notification "Hello World" with title "Notification"
+```
+
+或者直接在终端里面跑
+
+```bash
+osascript -e "display notification \"Hello World\" with title \"Notification\""
+```
+
+> `-- single comment`， `# single comment` 是单行注释
+>
+> `(* this mutli comment *)` 是多行注释
+>
+> `Markdown`问题`AppleScript`脚本里意外出现`<p data-line`这种代码忽略
 
 ### AppleScript 需要注意的问题
 
@@ -98,51 +137,18 @@ on join(the_array, the_delimiter)
 end join
 ```
 
-### 好玩的 AppleScript
-
-下面是一些好玩的 `AppleScript` 代码，唤起你的好奇心：
-
-```bash
-display dialog "你说假如地球没有了空气，我们会怎样...
-那么没有工程目录，后面该怎么办?" default answer "会死" buttons {"我知道了"} ¬
-	default button "我知道了" with title "Handsome ERROR"
-set theInput to text returned of the result
---display dialog text returned of the result
-if theInput is equal to "会死" then
-	display dialog "没救了" with title "ERROR" buttons {"我知道了"} ¬
-		default button "我知道了"
-end if
---忽略下面部分
-```
-
-```bash
-say "Hello world"
-
-display dialog "Hello World" with title "Alert"
-
-display notification "Hello World" with title "Notification"
-```
-
-或者直接在终端里面跑
-
-```bash
-osascript -e "display notification \"Hello World\" with title \"Notification\""
-```
-
-> `-- single comment`， `# single comment` 是单行注释
->
-> `(* this mutli comment *)` 是多行注释
->
-> `Markdown`问题`AppleScript`脚本里意外出现`<p data-line`这种代码忽略
-
 ## 实现过程
 
 ### 思路分析
 
 1、定位`dSYM`路径
+
 2、定位`xx.crash`件路径
+
 3、唤起终端，切入指定路径
+
 4、`symbolicatecrash`解析并重定向输入结果
+
 5、自动打开展示结果
 
 其实这前两步有个大坑：重复下载 dSYM 文件以及导出的 `xxx.crash` 文件路径会存在空格。在`AppleScript`调用`Shell`的时候路径有空格，会报错找不到对应的文件。
@@ -184,8 +190,11 @@ osascript -e "display notification \"Hello World\" with title \"Notification\""
 ### 工程创建
 
 1、选中dSYM文件 -> 右键 -> 服务 -> 创建服务
+
 2、弹出一个快捷操作的模板空工程，可以配置参数入口（因为第一步选中了，参数就不需要配置了）
-3、然后就可以拖拽你要的操作（类似于`storyboard`,`xib`操作）
+
+3、然后就可以拖拽你要的操作（类似于`storyboard`，`xib`操作）
+
 4、保存 -> 命名，就会自动存储到本机的`~/Libray/Services`目录
 
 _所有的快捷操作，工作流都会在这个目录，就是说你想用别人写好的最后安装的也是这个目录_
@@ -200,7 +209,7 @@ _所有的快捷操作，工作流都会在这个目录，就是说你想用别�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/automator_proj.png)
 
-**脚本交互**
+#### 脚本交互
 
 * `Shell` 调用 `AppleScript`可以用`osascript -e`
 * `AppleScript`调用`Shell`可以用`do shell script` & `do script`
