@@ -41,7 +41,18 @@
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+### 思源笔记
+
+**地址**：https://github.com/siyuan-note/siyuan
+
+**软件状态**：开源、免费
+
+**软件介绍**：
+
+思源笔记是一款本地优先的个人知识管理系统， 支持细粒度块级引用和 Markdown 所见即所得。
+
+![siyuan-note](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73697975616e2d6e6f74652f73697975616e40383438393339373430316366353032356561623834376466623236613466333839366265353336332f73637265656e73686f74732f66656174757265302e706e67.png)
+
 
 ## 关于我们
 
