@@ -28,10 +28,19 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
+1、[Swift 字符串性能问题](https://blog.jerrychu.top/2020/11/29/Swift字符串/ "Swift 字符串性能问题") -- 来自：JerryChu
 
+[@东坡肘子](https://www.fatbobman.com/)：本文的作者在处理一道 LeetCode 算法题时碰到了 Swift 字符串遍历超时的状况，通过分析 Array 同 String 之间遍历机制的不同，最终获得了优化 String 遍历效率的方法。
 
+2、[Swift 的字符串为什么这么难用？](https://juejin.cn/post/6844903962450067469 "Swift 的字符串为什么这么难用？") -- 来自掘金：四娘
+
+[@东坡肘子](https://www.fatbobman.com/)：在其它语言里一个语句就能解决的字符串操作在 Swift 中需要多个，但这些其实都是 Swift 有意而为之的设计。本文通过对 SE-0265 Offset-Based Access to Indices, Elements, and Slices 提案的讲解，让开发者了解 Swift 字符串背后的部分设计思路。
+
+3、[WWDC 2021 新 Formatter API：新老比较及如何自定义](https://www.fatbobman.com/posts/newFormatter/ "WWDC 2021 新 Formatter API：新老比较及如何自定义") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：在 Swift 中开发者通过使用 Formatter ，可以让很多常用类型的数据都转换成可格式化字符串。在WWDC 2021中，苹果推出了使用 Swift 编写的全新 Formatter API。本文通过介绍如何创建符合新 API 的 Formatter，让读者从另一个角度了解新 Formatter API 的设计机制；并对新旧两款 API 进行比较。
 
 ## 学习资料
 
