@@ -541,3 +541,18 @@ Fucking SwiftUI 是一个关于 SwiftUI 的 Cheat Sheet。这上面有许多许�
 
 戴老师用 Swift 写的、按照声明式 UI、响应式编程范式开发的 Swift 小册子。你可以在这本小册子中查询到 Swift 的语法指南，同时还有 Combine、 Concurrency 和 SwiftUI 这些库的使用指南，你还可以在这追踪到一些知名仓库、开发者的 Github 动态和本仓库的 Issues。由于是开源的，你也可以自己调试学习或者是为项目作出贡献。
 
+### 2021 黑五特惠
+
+地址：https://github.com/mRs-/Black-Friday-Deals
+
+这个仓库收集了今年黑五打折的开发类、效率类、工具类的软件，好多知名的不知名的软件都在打折，有需要的快冲！
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### 独立开发者经验分享
+
+**地址**：https://github.com/loonggg/DevMoneySharing
+
+全职独立开发者是一群相对比较自由的开发者，但自由的背后也有赚不到钱、产品没人用的焦虑，在这个仓库中你可以看到很多国内国外的独立开发者赚钱的经验。
+
