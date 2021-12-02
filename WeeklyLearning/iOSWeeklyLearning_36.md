@@ -4,7 +4,7 @@
 
 ### 本期概要
 
-> * 话题：
+> * 话题：Typora 开启收费模式，支持！
 > * Tips：混编｜为 Objective-C 添加枚举宏，改善混编体验。
 > * 面试模块：事件传递及响应链。
 > * 优秀博客：几篇关于 Swift 字符串的优秀博客。
@@ -13,7 +13,25 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：软件本身做的很好，是很轻巧的MD编辑软件，在这之前我试过很多款，最后还是这个陪我走的最久。软件收费真无可厚非，一般都是付费软件才能提供更优质的服务。软件开发也都是需要挣钱的，更不用说，还是常用且质量很高的软件。
+
+知名 Markdown 编辑软件 Typora ，最近迎来了最新的 1.0 版本（正式版）。这次更新功能上没啥大变化，最大的变化是从之前的免费变为了付费。这个变化在官方 Github 的 [Issus](https://github.com/typora/typora-issues "typora-issue") 里早有说明：
+
+> Typora is a minimal markdown editor, providing new ways for reading and writing markdown. It is currently in beta.
+> Typora is commercial software (not open source), but is free during beta. Typora on GitHub supports collaboration between its developer, and its user community, providing a place to transparently report issues, collect feedback and discuss future direction. It also provides open source resources for user customization of themes.
+
+Typora 的口碑一直很好，在各类 Markdown 软件的推荐中基本都是排名首位。我也是 Typora 的重度用户，借助于 Typora 精巧的单栏设置，配合 Orangheart 主题，PicGo 图床插件，可以很方便的输出和排版每篇公众号文章。
+
+面对这次由免费转付费的事情，网上有不少文章都在宣传各种 Typroa 平替方案，却少有人站出来说应该支持开发者，多少有一点让人感觉遗憾。
+
+看下 Typora 的收费标准：89 元（可支付宝）、买断制（终身）、最多三台设备（可以重置）。这相比很多按年续订，动辄上百的产品，价格上算是良心了。
+
+说回付费本身，好的软件就应该是有收益的，有了收益作者能更专注地开发设计产品，更好的产品能给我们带来更多便利，最终还是回馈到用户自身，这是正向循环。单纯为爱发电的事也能持续，但肯定持续不久。所以如果你感觉它好，你喜欢它，那就支持一下吧。
+
+
+同时我也理解大家并非都是 Typora 重度用户，我找到了收费前的那个版本（v0.11.18）并做了保存，大家如果不小心安装了最新版还想继续白嫖的话可以在公众号后台回复：Typora，下载旧版本。
+
+再来说说 Typora 这个软件吧，其创建于 2014 年，作者 Abner Lee 还是一位国人，为人非常低调，但很有设计天赋。只找到其 2015 年在 Medium 里发的一篇介绍 Typora 设计原由的文章：[Introduce Typora — Why another markdown editor](https://medium.com/@LeeAbner/introduce-typora-why-another-markdown-editor-c86e679828d5 "Introduce Typora — Why another markdown editor") 。其对当时 Markdown 工具的分析可谓句句精准，在 Typora 之前的 Markdown 编辑器都是双栏的，而在这之后越来越多 Markdown 工具尝试单栏的编辑模式。好的产品就是能发现痛点，解决痛点。Abner Lee 一定程度做了不少创新，厉害，确实厉害。
 
 ## 开发Tips
 
