@@ -1,4 +1,4 @@
-# 使用 Automator 快捷操作 dSYM 符号化
+# 利用 Automator 快速符号化 Crash 文件
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/automator-unsplash.jpg)
 
@@ -14,7 +14,7 @@
 从上的步骤可以看出第一步不可省略。第二、三步完全可以干掉，流程越多越浪费时间。
 第四步也可以我们自己做，就可以优化成 QA 直接解析好 crash 文件然后给合作方。
 
-那么就提效了提效50%是不是，两个人的事情一个人搞定 （那么就可以卷点别的）
+那么就提效了提效 50% 是不是，两个人的事情一个人搞定 （那么就可以卷点别的）
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/automator_twodog.png)
 
