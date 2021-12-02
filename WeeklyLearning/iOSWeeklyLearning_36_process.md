@@ -42,6 +42,14 @@
 
 [@东坡肘子](https://www.fatbobman.com/)：在 Swift 中开发者通过使用 Formatter ，可以让很多常用类型的数据都转换成可格式化字符串。在WWDC 2021中，苹果推出了使用 Swift 编写的全新 Formatter API。本文通过介绍如何创建符合新 API 的 Formatter，让读者从另一个角度了解新 Formatter API 的设计机制；并对新旧两款 API 进行比较。
 
+4、[Swift 正则表达式完整教程](https://juejin.cn/post/6844903894066151431 "Swift 正则表达式完整教程") -- 来自掘金：SunshineBrother
+
+[@我是熊大](https://github.com/Tliens)：如何在Swift中使用正则表达式，本文做了详细描述，操作字符串时应该会用得到。
+
+5、[SwiftString](https://github.com/amayne/SwiftString "SwiftString") -- 来自：Github
+
+[@我是熊大](https://github.com/Tliens)：SwiftString 是一个轻量级的字符串扩展，功能丰富且强大，github star 1.6k+。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
