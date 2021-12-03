@@ -28,7 +28,7 @@ Typora 的口碑一直很好，在各类 Markdown 软件的推荐中基本都是
 
 Typora 的收费标准：89 元（可支付宝）、买断制（终身）、最多三台设备（可重置）。这相比很多按年续订，动辄上百的产品，价格上算是良心了，况且 Typora 已经免费 6 年了。
 
-说回付费本身，好的软件就应该是有收益的，有了收益作者能更专注地开发设计产品，更好的产品能给我们带来更多便利，最终还是回馈到用户自身，这是正向循环。单纯为爱发电的事也能持续，但肯定持续不久。所以如果你感觉它好，你喜欢它，那就支持一下吧。
+说回付费本身，好的软件就应该是有收益的，有了收益作者能更专注地设计开发产品，更好的产品能给我们带来更多便利，最终还是回馈到用户自身，这是正向循环。单纯为爱发电的事也能持续，但肯定持续不久。所以如果你感觉它好，你喜欢它，那就支持一下吧。
 
 
 同时我也理解大家并非都是 Typora 重度用户，我保存了收费前的那个版本（v0.11.18），大家如果不小心安装了最新版还想继续白嫖的话可以在公众号后台回复：Typora，下载旧版本。
@@ -50,9 +50,10 @@ Typora 的收费标准：89 元（可支付宝）、买断制（终身）、最�
 * `NS_TYPED_EXTENSIBLE_ENUM`。用于声明可扩展的类型常量枚举。与 `NS_TYPED_ENUM` 的区别是生成的 `struct` 多了一个忽略参数标签的构造器。
 * `NS_STRING_ENUM` / `NS_EXTENSIBLE_STRING_ENUM`。用于声明字符串常量枚举，建议弃用，使用 `NS_TYPED_ENUM` / `NS_TYPED_EXTENSIBLE_ENUM` 替代。在 Xcode 13 中，Apple 已经将原先使用 `NS_EXTENSIBLE_STRING_ENUM` 声明的 NSNotificationName 等常量类型改为使用 `NS_TYPED_EXTENSIBLE_ENUM` 来声明。
 
-可以看看：[@师大小海腾：iOS 混编｜为 Objective-C 添加枚举宏，改善混编体验](https://juejin.cn/post/6999460035508043807 "@师大小海腾：iOS 混编｜为 Objective-C 添加枚举宏，改善混编体验")
+可以看看：
 
-官方文档：[@Apple：Grouping Related Objective-C Constants](https://developer.apple.com/documentation/swift/objective-c_and_c_code_customization/grouping_related_objective-c_constants "@Apple：Grouping Related Objective-C Constants")
+* [@师大小海腾：iOS 混编｜为 Objective-C 添加枚举宏，改善混编体验](https://juejin.cn/post/6999460035508043807 "@师大小海腾：iOS 混编｜为 Objective-C 添加枚举宏，改善混编体验")
+* [@Apple：Grouping Related Objective-C Constants](https://developer.apple.com/documentation/swift/objective-c_and_c_code_customization/grouping_related_objective-c_constants "@Apple：Grouping Related Objective-C Constants")
 
 ## 面试解析
 
