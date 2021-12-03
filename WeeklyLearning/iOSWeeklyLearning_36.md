@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第三十五期
+# iOS摸鱼周报 第三十六期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
 
@@ -33,9 +33,9 @@ Typora 的收费标准：89 元（可支付宝）、买断制（终身）、最�
 
 同时我也理解大家并非都是 Typora 重度用户，我保存了收费前的那个版本（v0.11.18），大家如果不小心安装了最新版还想继续白嫖的话可以在公众号后台回复：Typora，下载旧版本。
 
-再来说说 Typora 这个软件吧，其创建于 2014 年，作者 Abner Lee 还是一位国人，为人非常低调。只找到其 2015 年在 Medium 里发的一篇介绍 Typora 设计原由的文章：[Introduce Typora — Why another markdown editor](https://medium.com/@LeeAbner/introduce-typora-why-another-markdown-editor-c86e679828d5 "Introduce Typora — Why another markdown editor") 。其对当时 Markdown 工具的分析可谓句句精准，在 Typora 之前的 Markdown 编辑器都是双栏的，而在这之后越来越多 Markdown 工具尝试单栏的编辑模式。好的产品就是能发现痛点，解决痛点，Abner Lee 不仅完美地解决了原有设计的痛点， 还很大程度做了不少创新，真的非常厉害。
+再来说说 Typora 这个软件吧，创建于 2014 年，作者 Abner Lee 还是一位国人，为人非常低调。只找到他 2015 年在 Medium 里发的一篇介绍为什么设计 Typora 的文章：[Introduce Typora — Why another markdown editor](https://medium.com/@LeeAbner/introduce-typora-why-another-markdown-editor-c86e679828d5 "Introduce Typora — Why another markdown editor")  。文中对当时 Markdown 工具的分析可谓句句精准，特别是当时主流双栏设计的种种问题。好的产品就是能发现痛点，解决痛点，Abner Lee 创新性的使用了单栏设计，让 Markdown 编辑变得简洁而高效。在这之后越来越多的 Markdown 工具也都开始使用单栏的编辑模式，算是改变了一个软件的设计规范。 
 
-希望以后 Typora 能越来越好！
+到如今已经 7 个年头了，利用 7 年时间打磨一款产品之后才进入付费阶段，这也是一种负责的态度吧。Typora 已经吸引了大批用户，我也是忠实粉丝之一，希望新的阶段它能越来越好！
 
 ## 开发Tips
 
