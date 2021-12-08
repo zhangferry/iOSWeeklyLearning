@@ -28,10 +28,19 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
+1、[适配 SwiftUI 的苹果语言识别封装库 —— SwiftSpeech](https://github.com/Cay-Zhang/SwiftSpeech "@cayZ：适配 SwiftUI 的苹果语言识别封装库 —— SwiftSpeech") -- 来自：cayZ
 
+[@东坡肘子](https://www.fatbobman.com/)：SwiftSpeech 是苹果语音框架的一个封装器，与 SwiftUI 和 Combine 深度集成。只需几行代码就能实现 UI 控制 + 语音识别功能。SwiftSpeech 的作者是一位国人，提供的范例代码很有中国特色。
 
+2、[适用于苹果生态的音频合成、处理分析平台 —— AudioKit](https://github.com/AudioKit/AudioKit "@AudioKit：适用于苹果生态的音频合成、处理分析平台 —— AudioKit") -- 来自：AudioKit
+
+[@东坡肘子](https://www.fatbobman.com/)：AudioKit 是一个由代码库、包、库、算法、应用程序、playgorunds、测试和脚本组成的整个音频开发生态系统，由音频程序员、应用程序开发人员、工程师、研究人员、科学家、音乐家、游戏玩家和编程新手组成的社区建立和使用。AudioKit 提供了丰富的文档和范例，拥有十分活跃的社区。
+
+3、[Swift 编写的相机系统 —— NextLevel](https://github.com/NextLevel/NextLevel "@NextLevel：Swift 编写的相机系统 —— NextLevel") -- 来自：NextLevel
+
+[@东坡肘子](https://www.fatbobman.com/)：NextLevel 最初是一个周末项目，现在已经发展成为一个由相机平台爱好者组成的开放社区。该软件为管理媒体录制、相机界面定制、手势交互定制和 iOS 上的图像流提供基础组件。同样的功能也可以在 Snapchat、Instagram 和 Vine 等应用中找到。NextLevel 提供了用于捕捉 ARKit 视频和照片的组件，并利用了 NextLevel 现有的记录功能和媒体管理。
 
 ## 学习资料
 
