@@ -13,7 +13,22 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@iHTCboy](https://ihtcboy.com)：
+
+12 月 8 号，苹果正式开放 AppStore 的 2 个重磅功能：
+
+* Custom product pages（自定义产品页）
+
+* Product page optimization（产品页优化）
+
+默认 App Store Connect 后台是没有这些功能，开发者需要通过 [Updated App Store Submission](https://developer.apple.com/app-store-connect/submission-update/) 页面接受苹果的内测协议后，才能使用这些功能。
+
+具体的功能介绍可以参考苹果文档：[Product Page Optimization](https://developer.apple.com/app-store/product-page-optimization/) 和 [Custom Product Pages](https://developer.apple.com/app-store/custom-product-pages/)。
+
+App Store Connect 后台的操作文档，可以参考：[配置自定产品页](https://help.apple.com/app-store-connect/#/dev3a2998d9f) 和 [产品页优化](https://help.apple.com/app-store-connect/#/dev6aa9d8d7b)。
+
+推荐有推广需求的开发者尝试使用，通过自定义产品页来突出 app 不同的功能和不同用户群体的喜好，通过测试不同图标、商店图和视频的效果，增加 App 的曝光量和提高用户下载意愿等。
+
 
 ## 开发Tips
 
