@@ -30,11 +30,64 @@ App Store Connect 后台的操作文档，可以参考：[配置自定产品页]
 推荐有推广需求的开发者尝试使用，通过自定义产品页来突出 app 不同的功能和不同用户群体的喜好，通过测试不同图标、商店图和视频的效果，增加 App 的曝光量和提高用户下载意愿等。
 
 
+
+
 ## 开发Tips
 
 整理编辑：
 
+### 启动流程
 
+我们对 App 的启动流程通常会关注比较多，而忽视设备的启动流程，这次来梳理一下设备的启动流程。设备的启动流程分两类：OS X 和 iOS 等 i系列设备，过程大致如下图所示：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211209222931.png)
+
+#### 开机
+
+按开机键，激活设备，此时硬件通电，CPU 就可以开始工作了。
+
+#### 启动引导
+
+启动引导即是引导至系统内核的加载。
+
+OS X 通过 EFI 进行引导，EFI 是相对 BIOS 的一种升级版设计，它有多种功能，像是引导加载器、驱动程序等。OS X 中的 `boot.efi` 就是一个引导加载器，由它激活 OS 的内核程序。
+
+i 系列设备没有采用 EFI 的方案，而使用了一种更加注重安全性的设计。i 系列设备内部有一个引导 ROM，这个 ROM 是设备本身的一部分。引导 ROM 会激活 LLB（Low Level Bootloader 底层加载器），LLB 这一步开始就有了签名校验。这一步完成之后会进入 iBoot 阶段。iBoot 是主要的引导加载器，由它来加载内核。
+
+（i 系列设备的升级其实还有一个 DFU 升级的流程，为了简化流程这里略过。）
+
+#### launchd
+
+Launchd 是用户态的第一个进程，由内核直接启动，其 pid=1，位于如下路径，该路径会被硬编码到内核中：
+
+```bash
+$ ll /sbin/launchd
+-rwxr-xr-x  1 root  wheel   857K Jan  1  2020 /sbin/launchd
+```
+
+launchd 的主要任务就是按照预定的设置加载其他启动需要的程序。这类预定的任务分为守护进程（daemon）和代理进程（agent）。
+
+launchd 不仅是负责这些启动必备进程，很多用户使用中的进程，像是我们点击应用图标所创建的进程也是由它处理的。
+
+#### 守护进程 & 代理进程
+
+守护进程是与用户登录无关的程序。代理进程是用户登录之后才加载的程序。
+
+iOS 没有用户登录的概念，所以只有守护进程。这些启动进程会被放到 plist 文件里：
+
+```
+/System/Library/LaunchDaemons #系统守护进程plist文件
+/System/Library/LaunchAgents  #系统代理进程plist文件
+/Library/LaunchDaemons #第三方守护进程plist文件
+/Library/LaunchAgents  #第三方代理进程plist文件
+~/Library/LaunchAgents #用户自由的代理程序plist文件,用户登录时启动
+```
+
+`Finder` 是 OS X 的代理程序，用于提供图形功能，配合 `Dock` 我们就能看到 Mac 的桌面了。
+
+在 iOS 上与之对应的就是 `SpringBoard`，它就是 iPhone 的桌面进程。
+
+到这一步就算是设备启动完成了！
 
 ## 面试解析
 
