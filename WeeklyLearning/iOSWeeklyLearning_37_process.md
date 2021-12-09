@@ -57,6 +57,14 @@ App Store Connect 后台的操作文档，可以参考：[配置自定产品页]
 
 [@东坡肘子](https://www.fatbobman.com/)：NextLevel 最初是一个周末项目，现在已经发展成为一个由相机平台爱好者组成的开放社区。该软件为管理媒体录制、相机界面定制、手势交互定制和 iOS 上的图像流提供基础组件。同样的功能也可以在 Snapchat、Instagram 和 Vine 等应用中找到。NextLevel 提供了用于捕捉 ARKit 视频和照片的组件，并利用了 NextLevel 现有的记录功能和媒体管理。
 
+4、[GPUImage2](https://github.com/BradLarson/GPUImage2 "") -- 来自：GitHub
+
+[@我是熊大](https://github.com/Tliens)：早在2016年，GPUImage就已经被大家知晓，各大图像处理软件，几乎都基于此开发，可以说是一个里程碑意义的开源库，后续作者又写了Swift版本GPUImage2（OpenGL ES）、GPUImage3（Metal）。
+
+5、[神笔马良——基于 Metal 的涂鸦框架](https://github.com/Harley-xk/MaLiang "神笔马良——基于 Metal 的涂鸦框架") -- 来自博客：Harley
+
+[@我是熊大](https://github.com/Tliens)：MaLiang 作者是中国人，一个全栈工程师；MaLiang可以用于开发画板类似的功能，同样也是基于Metal开发的，是一个有了4年沉淀的开源库，目前star 1.2k+。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
