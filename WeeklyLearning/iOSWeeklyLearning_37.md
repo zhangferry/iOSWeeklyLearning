@@ -18,7 +18,6 @@
 12 月 8 号，苹果正式开放 AppStore 的 2 个重磅功能：
 
 * Custom product pages（自定义产品页）
-
 * Product page optimization（产品页优化）
 
 默认 App Store Connect 后台是没有这些功能，开发者需要通过 [Updated App Store Submission](https://developer.apple.com/app-store-connect/submission-update/) 页面接受苹果的内测协议后，才能使用这些功能。
@@ -28,7 +27,6 @@
 App Store Connect 后台的操作文档，可以参考：[配置自定产品页](https://help.apple.com/app-store-connect/#/dev3a2998d9f) 和 [产品页优化](https://help.apple.com/app-store-connect/#/dev6aa9d8d7b)。
 
 推荐有推广需求的开发者尝试使用，通过自定义产品页来突出 app 不同的功能和不同用户群体的喜好，通过测试不同图标、商店图和视频的效果，增加 App 的曝光量和提高用户下载意愿等。
-
 
 
 
@@ -129,17 +127,12 @@ HTTP（超文本传输协议，HyperText Transfer Protocol）是互联网上应�
 为了消除  **HTTP/1.0** 标准中的歧义内容和提升性能，我们很快的就过渡到了 **HTTP/1.1** 标准，也是当前使用最为广泛的 HTTP 协议 ：
 
 * **默认支持长连接**：在 Header 中新增 `Connection` 参数，其值默认为 `Keep-Alive`。默认保持长连接，数据传输完成后保持 TCP 连接不断开，可以继续使用这个通道传输数据。
-
   > 默认的服务端的长连接时间是 30S。在 iOS 端的实践过程中会有概率出现下面的错误：
   >
   > > Error Domain=NSURLErrorDomain Code=-1005 "The network connection was lost.
-
 * **HTTP pipeline**：基于长连接的基础，在同一个 TCP 连接上可以传送多个 HTTP 请求和响应，减少了建立和关闭连接的消耗和延迟。管道化可以不等第一个请求响应继续发送后面的请求，但响应的顺序还是按照请求的顺序返回。
-
 * **缓存处理**：相较于 **HTTP/1.0**，**HTTP/1.1** 提供了更为丰富的缓存策略。在 **HTTP/1.0** 中主要是根据 Header 里的 `If-Modified-Since`、`Expires` 来做为判断缓存的标准，**HTTP/1.1** 则引入了诸如 `Entity tag`、`If-Unmodified-Since`、 `If-Match`、 `If-None-Match` 等缓存方式。并且还在 Header 中新增了 `Cache-control` 参数来管理缓存。
-
 * **断点传输**：相较于 **HTTP/1.0** 无法部分返回数据对象，**HTTP/1.1** 在 Header 中新增了两个参数来支持**请求响应分块**，客户端发请求时对应的是 `Range`，服务器端响应时对应的是 `Content-Range`。
-
 * **Host 头处理**： **HTTP/1.0** 认为每台服务器都指向了唯一的 IP 地址，请求消息中的 URL 中并没有主机的信息。在 **HTTP/1.1** 中新增了 Host 头域，能够使不同域名配置在同一个 IP 地址的服务器上。
 
 ### HTTP/2
@@ -147,7 +140,6 @@ HTTP（超文本传输协议，HyperText Transfer Protocol）是互联网上应�
 **SPDY 协议是 HTTP/2 协议的基础**。**HTTP/2** 最大的改进就是从**文本协议**转变为**二进制协议**。
 
 * **帧、消息、流和 TCP 连接**：**HTTP/2** 将一个 TCP 连接分为若干个流（`Stream`），每个流中可以传输若干消息（`Message`），每个消息由若干最小的二进制帧（`Frame`）组成。**HTTP/2** 中，每个用户的操作行为被分配了一个流编号（`stream ID`），这意味着用户与服务端之间创建了一个 TCP 通道；协议将每个请求分割为二进制的控制帧与数据帧部分，以便解析。
-
 * **多路复用**：基于二进制分帧，在同一域名下所有访问都是从同一个 TCP 连接中走，HTTP 消息被分解为独立的帧，无序发送，服务端根据标识符和首部将消息重新组装起来。
 * **请求优先级**：为了避免多路复用可能会导致关键请求被阻塞，即利用请求优先级完成高优先级请求先处理。
 * **HPACK 算法**：**HTTP/2** 引入了头部压缩算法。利用合适的压缩算法来处理消息头的数据。避免了重复 Header 的传输，减小了传输数据的大小。
