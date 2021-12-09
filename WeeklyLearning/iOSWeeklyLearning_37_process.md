@@ -61,7 +61,7 @@ App Store Connect 后台的操作文档，可以参考：[配置自定产品页]
 
 [@我是熊大](https://github.com/Tliens)：早在2016年，GPUImage就已经被大家知晓，各大图像处理软件，几乎都基于此开发，可以说是一个里程碑意义的开源库，后续作者又写了Swift版本GPUImage2（OpenGL ES）、GPUImage3（Metal）。
 
-5、[神笔马良——基于 Metal 的涂鸦框架](https://github.com/Harley-xk/MaLiang "神笔马良——基于 Metal 的涂鸦框架") -- 来自博客：Harley
+5、[神笔马良——基于 Metal 的涂鸦框架](https://me.harley-xk.studio/posts/201805072231 "神笔马良——基于 Metal 的涂鸦框架") -- 来自博客：Harley
 
 [@我是熊大](https://github.com/Tliens)：MaLiang 作者是中国人，一个全栈工程师；MaLiang可以用于开发画板类似的功能，同样也是基于Metal开发的，是一个有了4年沉淀的开源库，目前star 1.2k+。
 
