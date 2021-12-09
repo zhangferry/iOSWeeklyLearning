@@ -880,6 +880,8 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 ![PhotoSweeper](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/PhotoSweeper_MacBook.jpeg)
 
 ***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
 ### 思源笔记
 
 **地址**：https://github.com/siyuan-note/siyuan
@@ -893,3 +895,31 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 ![siyuan-note](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73697975616e2d6e6f74652f73697975616e40383438393339373430316366353032356561623834376466623236613466333839366265353336332f73637265656e73686f74732f66656174757265302e706e67.png)
 
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### myyearwithgit
+
+**地址**：https://github.com/Co2333/myyearwithgit
+
+**软件状态**：开源、免费
+
+**软件介绍**：
+
+看名字大家就知道这个是干啥的，还是配上老王的描述吧：
+> 本程序目前支持使用常见 Git 仓库托管提供商以及本地代码仓库进行分析。
+
+![myyearwithgit](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Screenshot.png)
+
+
+### 往期推荐
+
+[iOS摸鱼周报 第三十六期](https://mp.weixin.qq.com/s/K_JHs1EoEn222huWIoJRmA)
+
+[iOS摸鱼周报 第三十五期](https://mp.weixin.qq.com/s/fCEbYkAPlK0nm7UtLKFx5A)
+
+[iOS摸鱼周报 第三十四期](https://mp.weixin.qq.com/s/P0HjLDCIM3T-hAgQFjO1mg)
+
+[iOS摸鱼周报 第三十三期](https://mp.weixin.qq.com/s/nznnGmBsqsrWcvZ4XFMttg)
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)

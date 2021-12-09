@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第三十五期
+# iOS摸鱼周报 第三十七期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
 
@@ -36,7 +36,7 @@ App Store Connect 后台的操作文档，可以参考：[配置自定产品页]
 
 我们对 App 的启动流程通常会关注比较多，而忽视设备的启动流程，这次来梳理一下设备的启动流程。设备的启动流程分两类：OS X 和 iOS 等 i系列设备，过程大致如下图所示：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211209222931.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211209233126.png)
 
 #### 开机
 
@@ -79,7 +79,7 @@ iOS 没有用户登录的概念，所以只有守护进程。这些启动进程�
 ~/Library/LaunchAgents #用户自由的代理程序plist文件,用户登录时启动
 ```
 
-`Finder` 是 OS X 的代理程序，用于提供图形功能，配合 `Dock` 我们就能看到 Mac 的桌面了。
+`Finder` 是 OS X 的代理进程，用于提供图形功能，配合 `Dock` 我们就能看到 Mac 的桌面了。
 
 在 iOS 上与之对应的就是 `SpringBoard`，它就是 iPhone 的桌面进程。
 

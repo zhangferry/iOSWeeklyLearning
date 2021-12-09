@@ -1075,7 +1075,7 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 [@我是熊大](https://github.com/Tliens)：Hero 是我用过的最好的转场动画，没有之一，20k+ star 的成绩也表明了它在转场动画的地位；Hero 应该能满足绝大部分需求，这是它的官方使用手册。
 
 ***
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
+整理编辑：[东坡肘子](https://www.fatbobman.com)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
 1、[Swift 字符串性能问题](https://blog.jerrychu.top/2020/11/29/Swift字符串/ "@JerryChu：Swift 字符串性能问题") -- 来自：JerryChu
 
@@ -1096,4 +1096,27 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 5、[SwiftString](https://github.com/amayne/SwiftString "GitHub：SwiftString") -- 来自：GitHub
 
 [@我是熊大](https://github.com/Tliens)：SwiftString 是一个轻量级的字符串扩展，功能丰富且强大，GitHub star 1.6k+。
+
+***
+整理编辑：[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
+
+1、[适配 SwiftUI 的苹果语言识别封装库 —— SwiftSpeech](https://github.com/Cay-Zhang/SwiftSpeech "@cayZ：适配 SwiftUI 的苹果语言识别封装库 —— SwiftSpeech") -- 来自：cayZ
+
+[@东坡肘子](https://www.fatbobman.com/)：SwiftSpeech 是苹果语音框架的一个封装器，与 SwiftUI 和 Combine 深度集成。只需几行代码就能实现 UI 控制 + 语音识别功能。SwiftSpeech 的作者是一位国人，提供的范例代码很有中国特色。
+
+2、[适用于苹果生态的音频合成、处理分析平台 —— AudioKit](https://github.com/AudioKit/AudioKit "@AudioKit：适用于苹果生态的音频合成、处理分析平台 —— AudioKit") -- 来自：AudioKit
+
+[@东坡肘子](https://www.fatbobman.com/)：AudioKit 是一个由代码库、包、库、算法、应用程序、playgorunds、测试和脚本组成的整个音频开发生态系统，由音频程序员、应用程序开发人员、工程师、研究人员、科学家、音乐家、游戏玩家和编程新手组成的社区建立和使用。AudioKit 提供了丰富的文档和范例，拥有十分活跃的社区。
+
+3、[Swift 编写的相机系统 —— NextLevel](https://github.com/NextLevel/NextLevel "@NextLevel：Swift 编写的相机系统 —— NextLevel") -- 来自：NextLevel
+
+[@东坡肘子](https://www.fatbobman.com/)：NextLevel 最初是一个周末项目，现在已经发展成为一个由相机平台爱好者组成的开放社区。该软件为管理媒体录制、相机界面定制、手势交互定制和 iOS 上的图像流提供基础组件。同样的功能也可以在 Snapchat、Instagram 和 Vine 等应用中找到。NextLevel 提供了用于捕捉 ARKit 视频和照片的组件，并利用了 NextLevel 现有的记录功能和媒体管理。
+
+4、[GPUImage2](https://github.com/BradLarson/GPUImage2 "GPUImage2") -- 来自：GitHub
+
+[@我是熊大](https://github.com/Tliens)：早在 2016 年，GPUImage 就已经被大家知晓，各大图像处理软件，几乎都基于此开发，可以说是一个里程碑意义的开源库，后续作者又写了 Swift 版本 GPUImage2（OpenGL ES）、GPUImage3（Metal）。
+
+5、[神笔马良——基于 Metal 的涂鸦框架](https://me.harley-xk.studio/posts/201805072231 "@Harley：神笔马良——基于 Metal 的涂鸦框架") -- 来自博客：Harley
+
+[@我是熊大](https://github.com/Tliens)：MaLiang 作者是中国人，一个全栈工程师；MaLiang 可以用于开发画板类似的功能，同样也是基于 Metal 开发的，是一个有了 4 年沉淀的开源库，目前 star 1.2k+。
 
