@@ -69,11 +69,21 @@ App Store Connect 后台的操作文档，可以参考：[配置自定产品页]
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
-## 关于我们
+### myyearwithgit
 
-iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
+**地址**：https://github.com/Co2333/myyearwithgit
+
+**软件状态**：开源、免费
+
+**软件介绍**：
+
+看名字大家就知道这个是干啥的，还是配上老王的描述吧：
+> 本程序目前支持使用常见 Git 仓库托管提供商以及本地代码仓库进行分析。
+
+![myyearwithgit](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Screenshot.png)
+
 
 ### 往期推荐
 
