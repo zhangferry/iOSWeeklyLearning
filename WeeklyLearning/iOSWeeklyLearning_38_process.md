@@ -41,7 +41,20 @@
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+推荐人：[iOSleep](https://github.com/iOSleep)
+
+### Dropshelf
+
+**地址**：https://pilotmoon.com/dropshelf/
+
+**软件状态**：之前付费但是目前下架了，可以使用上面链接免费使用。
+
+**软件介绍**：
+
+Dropshelf是一款Mac OS下的拖拽效率应用。它提供了一个可以吸附在屏幕边缘的Dock，你可以拖拽任何东西「图片、文件、文字、链接...」暂存到Dock中，方便你在其他App中来使用。
+![Dropshelf](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/9964d0eee2c48e3d24ba63c09e25b10c_720w.jpeg)
 
 ## 关于我们
 
