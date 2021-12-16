@@ -17,7 +17,7 @@
 
 ### [Xcode 13.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-13_2-release-notes "Xcode 13.2")
 
-编译系统和 Swift 编译器有了一个新模式可以充分利用 CPU 核心，以达到优化 Swift 项目的效果。该模式可选，可以执行如下命令打开该模式：
+编译系统和 Swift 编译器有了一个新模式可以充分利用 CPU 核心，以达到优化 Swift 项目的效果。该模式可选，可以执行如下命令打开：
 
 ```bash
 defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
@@ -113,7 +113,9 @@ iOS 还有另一种机制是压缩内存（Compressed Memory），这也是一�
 
 ### dealloc 在哪个线程执行
 
-在回答这个问题前需要了解 `dealloc` 在什么时机调用，`dealloc` 是在对象最后一次 `release` 操作的时候进行调用的，我们可以查看 SideTable 管理引用计数对应的 `release` 源码：
+在回答这个问题前需要了解 `dealloc` 在什么时机调用，`dealloc` 是在对象最后一次 `release` 操作的时候进行调用的，对应的源码在 `rootRelease` 中，针对 `nonpointer` 和 SideTable 有两种释放的操作。
+
+ SideTable 管理的引用计数会调用 `sidetable_release`：
 
 ```c
 uintptr_t
@@ -144,6 +146,14 @@ objc_object::sidetable_release(bool performDealloc)
         ((void(*)(objc_object *, SEL))objc_msgSend)(this, @selector(dealloc));
     }
     return do_dealloc;
+}
+```
+
+对于 `nonpointer` 指针管理的引用计数，会修改 `extra_rc`值，需要释放时在`rootRelease`方法的底部还是会调用：
+
+```c
+if (do_dealloc  &&  performDealloc) {
+    ((void(*)(objc_object *, SEL))objc_msgSend)(this, @selector(dealloc));
 }
 ```
 

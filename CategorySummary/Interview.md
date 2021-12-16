@@ -1513,3 +1513,75 @@ HTTP（超文本传输协议，HyperText Transfer Protocol）是互联网上应�
 * **HPACK 算法**：**HTTP/2** 引入了头部压缩算法。利用合适的压缩算法来处理消息头的数据。避免了重复 Header 的传输，减小了传输数据的大小。
 * **服务端推送（Server Push）**：在 **HTTP/2**  中，服务器可以对客户端的一个请求发送多个响应。
 
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### dealloc 在哪个线程执行
+
+在回答这个问题前需要了解 `dealloc` 在什么时机调用，`dealloc` 是在对象最后一次 `release` 操作的时候进行调用的，我们可以查看 SideTable 管理引用计数对应的 `release` 源码：
+
+```c
+uintptr_t
+objc_object::sidetable_release(bool performDealloc)
+{
+#if SUPPORT_NONPOINTER_ISA
+    ASSERT(!isa.nonpointer);
+#endif
+    SideTable& table = SideTables()[this];
+
+    bool do_dealloc = false;
+
+    table.lock();
+    auto it = table.refcnts.try_emplace(this, SIDE_TABLE_DEALLOCATING);
+    auto &refcnt = it.first->second;
+    if (it.second) {
+        do_dealloc = true;
+    } else if (refcnt < SIDE_TABLE_DEALLOCATING) {
+        // SIDE_TABLE_WEAKLY_REFERENCED may be set. Don't change it.
+        do_dealloc = true;
+        refcnt |= SIDE_TABLE_DEALLOCATING;
+    } else if (! (refcnt & SIDE_TABLE_RC_PINNED)) {
+        refcnt -= SIDE_TABLE_RC_ONE;
+    }
+    table.unlock();
+    if (do_dealloc  &&  performDealloc) {
+      	// 可以释放的话，调用dealloc
+        ((void(*)(objc_object *, SEL))objc_msgSend)(this, @selector(dealloc));
+    }
+    return do_dealloc;
+}
+```
+
+这里可以看出 `dealloc` 的调用并没有设置线程，所以其执行会根据触发时所在的线程而定，就是说其即可以是子线程也可以是主线程。这个也可以很方便的验证。
+
+### NSString *str = @"123" 这里的 str 和  "123" 分别存储在哪个区域
+
+可以先做一下测试：
+
+```objectivec
+NSString *str1 = @"123"; // __NSCFConstantString
+NSLog(@"str1.class=%@, str1 = %p, *str1 = %p", str1.class, str1, &str1);
+// str1.class=__NSCFConstantString, str1 = 0x1046b8110, *str1 = 0x7ffeeb54dc50
+```
+
+这时的 str1 类型是 `__NSCFConstantString`，str1 的内容地址较短，它代表的是常量区，指向该常量区的指针 `0x7ffeeb54dc50` 是在栈区的。
+
+再看另外两种情况：
+
+```objectivec
+NSString *str2 = [NSString stringWithFormat:@"%@", @"123"];
+NSLog(@"str2.class=%@, str2 = %p, *str2 = %p", str2.class, str2, &str2);
+// str2.class=NSTaggedPointerString, str2 = 0xe7f1d0f8856c5253, *str2 = 0x7ffeeb54dc58
+        
+NSString *str3 = [NSString stringWithFormat:@"%@", @"iOS摸鱼周报"]; //
+NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
+// str3.class=__NSCFString, str3 = 0x600002ef8900, *str3 = 0x7ffeeb54dc30
+```
+
+这里的字符串类型为 `NSTaggedPointerString` 和 `__NSCFString`，他们的指针都是在栈区，这三个对象的指针还是连续的，内容部分，前者在指针里面，后者在堆区。（栈区地址比堆区地址更高）
+
+这里再回顾下内存的分区情况，大多数情况我们只需关注进程的虚拟内存就可以了：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216172748.png)
+
+

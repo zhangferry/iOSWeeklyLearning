@@ -1120,3 +1120,26 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@我是熊大](https://github.com/Tliens)：MaLiang 作者是中国人，一个全栈工程师；MaLiang 可以用于开发画板类似的功能，同样也是基于 Metal 开发的，是一个有了 4 年沉淀的开源库，目前 star 1.2k+。
 
+***
+整理编辑：[东坡肘子](https://www.fatbobman.com)、[我是熊大](https://juejin.cn/user/1151943916921885)
+
+1、[SwiftUI 视图的生命周期研究](https://www.fatbobman.com/posts/swiftUILifeCycle/ "@东坡肘子：SwiftUI 视图的生命周期研究") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：在 UIKit（AppKit）的世界中，通过框架提供的大量钩子（例如 viewDidLoad、viewWillLayoutSubviews 等），开发者可以将自己的意志注入视图控制器生命周期的各个节点之中，宛如神明。在 SwiftUI 中，系统收回了上述的权利，开发者基本丧失了对视图生命周期的掌控。不少 SwiftUI 开发者都碰到过视图生命周期的行为超出预期的状况（例如视图多次构造、onAppear 无从控制等）。本文将作者对 SwiftUI 视图、SwiftUI 视图生命周期的理解和研究做以介绍，供大家一起探讨。
+
+2、[探究视图树](https://mp.weixin.qq.com/s/JMxJqCoho-LGJcLrNt9ibQ "@Javier：探究视图树") -- 来自：Javier
+
+[@东坡肘子](https://www.fatbobman.com/)：大多 SwiftUI 的开发者都已经熟练掌握了如何从父视图向子视图传递数据的方法，但如何获取子视图的状态和变化对很多人仍然比较陌生。swiftui-lab 的 Javier 写了三篇文章详细介绍了如何通过 PreferenceKey、AnchorPreferences 等方式向上传递数据的手段。链接中提供的是 Swift 花园的中文译本。
+
+3、[SwiftUI 中的 Text 插值和本地化](https://onevcat.com/2021/03/swiftui-text-1/ "@onevcat：SwiftUI 中的 Text 插值和本地化") -- 来自：onevcat
+
+[@东坡肘子](https://www.fatbobman.com/)：Text 是 SwiftUI 中最简单和最常见的 View 了，相较 String，Text 提供了更加丰富的差值和本地化功能。本文不仅介绍了 Text 中关于差值和本地化的一些特色功能，并讲解了在 Text 中创建自定义差值的方法。
+
+4、[TCA - SwiftUI 的救星？(一)](https://onevcat.com/2021/12/tca-1/ "@onevcat：TCA - SwiftUI 的救星？(一)") -- 来自博客：onevcat
+
+[@我是熊大](https://github.com/Tliens)：SwiftUI 似乎可以真正走向前台，成为开发利器，本文是 TCA - SwiftUI 系列的第一篇文章。
+
+5、[SwiftUI Tab Bar](https://www.objc.io/blog/2020/02/25/swiftui-tab-bar/ "SwiftUI Tab Bar") -- 来自博客：objc.io
+
+[@我是熊大](https://github.com/Tliens)：当你信心满满的准备用 SwiftUI 开发 App 时，可能会被困在第一步：Tab Bar 样式怎么处理，本文将替你解惑。
+
