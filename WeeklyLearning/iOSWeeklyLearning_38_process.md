@@ -200,7 +200,7 @@ NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 
 4、[TCA - SwiftUI 的救星？(一)](https://onevcat.com/2021/12/tca-1/ "TCA - SwiftUI 的救星？(一)") -- 来自博客：王巍
 
-[@我是熊大](https://github.com/Tliens)：TCA - SwiftUI 的第一篇文章，SwiftUI似乎可以真正走向前台，成为开发利器。
+[@我是熊大](https://github.com/Tliens)：SwiftUI似乎可以真正走向前台，成为开发利器，本文是TCA - SwiftUI 系列的第一篇文章。
 
 5、[SwiftUI Tab Bar](https://www.objc.io/blog/2020/02/25/swiftui-tab-bar/ "SwiftUI Tab Bar") -- 来自博客：objc.io
 
