@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第三十五期
+# iOS摸鱼周报 第三十八期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
 
@@ -13,7 +13,24 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：12 月 13 号，Apple 发布了 Xcode 13.2 和 iOS 15.2 的正式版。其中有几项新功能值得关注。
+
+### [Xcode 13.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-13_2-release-notes "Xcode 13.2")
+
+编译系统和 Swift 编译器有了一个新模式可以充分利用 CPU 核心，以达到优化 Swift 项目的效果。该模式可选，可以执行如下命令打开该模式：
+
+```
+defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
+```
+
+### [iOS 15.2](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-15_2-release-notes "iOS 15.2")
+
+是关于 StoreKit 的新特性：
+
+* StoreKit 中展示退款请求的弹窗可以在Xcode中进行测试了。UIKit模式下可利用：[`beginRefundRequest(in:)`](https://developer.apple.com/documentation/storekit/transaction/3803220-beginrefundrequest) 或者 [`beginRefundRequest(for:in:)`](https://developer.apple.com/documentation/storekit/transaction/3803219-beginrefundrequest) ，SwiftUI 下可利用 `refundRequestSheet(for:isPresented:onDismiss:)` 作为视图修饰器。
+
+- StoreKit 中管理订阅的弹窗也可以在Xcode中进行测试了。 UIKit模式下课利用 [`showManageSubscriptions(in:)`](https://developer.apple.com/documentation/storekit/appstore/3803198-showmanagesubscriptions) ，SwiftUI 下可利用  `manageSubscriptionsSheet(isPresented:)` 作为视图修饰器完成。
+- 新的 [`SKTestSession.TimeRate`](https://developer.apple.com/documentation/storekittest/sktestsession/timerate) 值可用于 StoreKit Test 模块的自动化测试。
 
 ## 开发Tips
 
@@ -23,7 +40,77 @@
 
 ## 面试解析
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
+
+近期也在准备面试阶段，遇到几个比较有趣的面试题，这里记录一下：
+
+### dealloc 在哪个线程执行
+
+在回答这个问题前需要了解 `dealloc` 在什么时机调用，`dealloc` 是在对象最后一次 `release` 操作的时候进行调用的，我们可以查看 SideTable 管理引用计数对应的 `release` 源码：
+
+```c
+uintptr_t
+objc_object::sidetable_release(bool performDealloc)
+{
+#if SUPPORT_NONPOINTER_ISA
+    ASSERT(!isa.nonpointer);
+#endif
+    SideTable& table = SideTables()[this];
+
+    bool do_dealloc = false;
+
+    table.lock();
+    auto it = table.refcnts.try_emplace(this, SIDE_TABLE_DEALLOCATING);
+    auto &refcnt = it.first->second;
+    if (it.second) {
+        do_dealloc = true;
+    } else if (refcnt < SIDE_TABLE_DEALLOCATING) {
+        // SIDE_TABLE_WEAKLY_REFERENCED may be set. Don't change it.
+        do_dealloc = true;
+        refcnt |= SIDE_TABLE_DEALLOCATING;
+    } else if (! (refcnt & SIDE_TABLE_RC_PINNED)) {
+        refcnt -= SIDE_TABLE_RC_ONE;
+    }
+    table.unlock();
+    if (do_dealloc  &&  performDealloc) {
+      	// 可以释放的话，调用dealloc
+        ((void(*)(objc_object *, SEL))objc_msgSend)(this, @selector(dealloc));
+    }
+    return do_dealloc;
+}
+```
+
+这里可以看出 `dealloc` 的调用并没有设置线程，所以其执行会根据触发时所在的线程而定，就是说其即可以是子线程也可以是主线程。这个可以很方便的验证。
+
+### NSString *str = @"123" 这里的str和 "123" 分别存储在哪个区域
+
+可以先做一下测试：
+
+```objectivec
+NSString *str1 = @"123"; // __NSCFConstantString
+NSLog(@"str1.class=%@, str1 = %p, *str1 = %p", str1.class, str1, &str1);
+// str1.class=__NSCFConstantString, str1 = 0x1046b8110, *str1 = 0x7ffeeb54dc50
+```
+
+这时的 str1 类型是 `__NSCFConstantString`，str1 的内容地址较短，它代表的是常量区，指向该常量区的指针 `0x7ffeeb54dc50` 是在栈区的。
+
+再看另外两种情况：
+
+```objectivec
+NSString *str2 = [NSString stringWithFormat:@"%@", @"123"];
+NSLog(@"str2.class=%@, str2 = %p, *str2 = %p", str2.class, str2, &str2);
+// str2.class=NSTaggedPointerString, str2 = 0xe7f1d0f8856c5253, *str2 = 0x7ffeeb54dc58
+        
+NSString *str3 = [NSString stringWithFormat:@"%@", @"iOS摸鱼周报"]; //
+NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
+// str3.class=__NSCFString, str3 = 0x600002ef8900, *str3 = 0x7ffeeb54dc30
+```
+
+这里的字符串类型为 `NSTaggedPointerString` 和 `__NSCFString`，他们的指针都是在栈区，这三个对象的指针还是连续的，内容部分，前者在指针里面，后者在堆区。（栈区地址比堆区地址更高）
+
+这里再回顾下内存的分区情况，大多数情况我们只需关注进程的虚拟内存就可以了：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216172748.png)
 
 
 ## 优秀博客

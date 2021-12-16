@@ -1,6 +1,6 @@
 # 人物访谈 | 一位普通的 iOS 程序员
 
-夏天是摸鱼周报的一位主编，主要负责 Tips 部分的编写和审核。他曾参与[掘金翻译计划](https://github.com/xitu/gold-miner "掘金翻译计划")，翻译过很多篇优质博客内容，也翻译过像是 [iOS Crash Dump Analysis Book](https://github.com/faisalmemon/ios-crash-dump-analysis-book "iOS Crash Dump Analysis Book") 这一类的外文图书。今年拉他来聊一聊关于外文翻译和他个人的一些情况。
+夏天是摸鱼周报的一位主编，主要负责 Tips 部分的编写和审核。他曾参与[掘金翻译计划](https://github.com/xitu/gold-miner "掘金翻译计划")，翻译过很多篇优质博客内容，也翻译过像是 [iOS Crash Dump Analysis Book](https://github.com/faisalmemon/ios-crash-dump-analysis-book "iOS Crash Dump Analysis Book") 这一类的外文图书。今天拉他来聊一聊关于外文翻译和他个人的一些工作感悟。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/lewis-keegan-oB2aEeE8s4A-unsplash.jpg)
 
