@@ -198,7 +198,13 @@ NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 
 [@东坡肘子](https://www.fatbobman.com/)：Text 是 SwiftUI 中最简单和最常见的 View 了，相较 String，Text 提供了更加丰富的差值和本地化功能。本文不仅介绍了 Text 中关于差值和本地化的一些特色功能，并讲解了在Text中创建自定义差值的方法。
 
+4、[TCA - SwiftUI 的救星？(一)](https://onevcat.com/2021/12/tca-1/ "TCA - SwiftUI 的救星？(一)") -- 来自博客：王巍
 
+[@我是熊大](https://github.com/Tliens)：TCA - SwiftUI 的第一篇文章，SwiftUI似乎可以真正走向前台，成为开发利器。
+
+5、[SwiftUI Tab Bar](https://www.objc.io/blog/2020/02/25/swiftui-tab-bar/ "SwiftUI Tab Bar") -- 来自博客：objc.io
+
+[@我是熊大](https://github.com/Tliens)：当你信心满满的准备用SwiftUI开发App时，可能会被困在第一步：Tab Bar样式怎么处理，本文将替你解惑。
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
