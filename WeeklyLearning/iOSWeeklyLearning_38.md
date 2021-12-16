@@ -19,7 +19,7 @@
 
 编译系统和 Swift 编译器有了一个新模式可以充分利用 CPU 核心，以达到优化 Swift 项目的效果。该模式可选，可以执行如下命令打开该模式：
 
-```
+```bash
 defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 ```
 
@@ -46,7 +46,7 @@ defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 
 为了便于管理，虚拟内存被分割为大小固定的虚拟页（Virtual Page, VP）。程序加载过程中，虚拟内存由磁盘到内存的映射是以页为单位进行处理的。每次映射完成都会对应一个关联的物理内存地址，为了管理这个映射关系出现了页表条目（Page Table Entry）PTE 的一个数据表。这个页表条目里有一个标记位比特位，0 表示还未加载到内存，1 表示已经加载到内存。当访问到 0 就出产生缺页（Page Fault），之后会填充数据到内存，并修改这个标记位。
 
-这个 PTE 通常是位于高速缓存或者内存中的，因为即使是高速缓存它相对于 CPU 的读取速度仍然是很慢的。后来又引入了后备缓冲器（Translation Lookaside Buffer，TLB），这个缓存器位于 CPU 内部，其存储了 PTE 内容，虽然它的空间较小，但访问很快，由局部性原理说这个处理仍是非常值得的。
+这个 PTE 通常是位于高速缓存或者内存中的，但即使是高速缓存它相对于 CPU 的读取速度仍然是很慢的。后来又引入了后备缓冲器（Translation Lookaside Buffer，TLB），这个缓存器位于 CPU 内部，其存储了 PTE 内容。虽然它的存储空间较小，但因为在 CPU 内部访问很快，由局部性原理来说这个处理仍是非常值得的。
 
 汇总一下寻址流程如下图所示：
 
@@ -58,7 +58,7 @@ defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 
 ##### iOS 处理机制
 
-iOS 没有 Disk Swap 机制，因为其本身磁盘空间相对电脑是比较小的，而且频繁读取闪存会影响闪存寿命。基于此 iOS 设备可申请内存地址是有限度的，[Stack OverFlow](https://stackoverflow.com/questions/5887248/ios-app-maximum-memory-budget/15200855#15200855 "ios-app-maximum-memory-budget") 有人做过测试：
+iOS 没有 Disk Swap 机制，因为其本身磁盘空间相对电脑是比较小的，而且频繁读取闪存会影响闪存寿命。基于此 iOS 设备可申请内存地址是有限度的，关于各个设备所能允许申请的最大内存，[Stack OverFlow](https://stackoverflow.com/questions/5887248/ios-app-maximum-memory-budget/15200855#15200855 "ios-app-maximum-memory-budget") 有人做过测试：
 
 ```
 device: (crash amount/total amount/percentage of total)
@@ -81,7 +81,7 @@ iPhone 11: 2068/3844/54% (iOS 13.1.3)
 iPhone 11 Pro Max: 2067/3740/55% (iOS 13.2.3)
 ```
 
-以 iPhone 11 Pro Max 为例，应用可申请内存为 2067M，占系统内容的 55%，已经是很高了。但即使这样，仍会出现内存过高的情况，iOS 的处理是清理 + 压缩。
+以 iPhone 11 Pro Max 为例，应用可申请内存为 2067M，占系统内容的 55%，这已经是很高了。但即使这样，仍会出现内存过高的情况，iOS 系统的处理主要是清理 + 压缩这两个方案。
 
 **Clean Page & Dirty Page**
 
@@ -93,7 +93,7 @@ iOS 将内存页分为 Clean Page 和 Dirty Page，Clean Page 一般是固定内
 
 **Compressed Memory**
 
-iOS 还有另一种机制是压缩（Compressed Memory），这也是一种 Swap 机制。举个例子，某个 Dictionary 使用了 3 个 Page 的内存，如果一段时间没有被访问同时内存吃紧，则系统会尝试对它进行压缩从 3 个 Page 压缩为 1 个 Page 从而释放出 2 个 Page 的内存。但是如果之后需要对它进行访问，则它占用的 Page 又会变为 3 个。
+iOS 还有另一种机制是压缩内存（Compressed Memory），这也是一种 Swap 机制。举个例子，某个 Dictionary 使用了 3 个 Page 的内存，如果一段时间没有被访问同时内存吃紧，则系统会尝试对它进行压缩从 3 个 Page 压缩为 1 个 Page 从而释放出 2 个 Page 的内存。但是如果之后需要对它进行访问，则它占用的 Page 又会变为 3 个。
 
 这部分内存可以被 Instrument 统计到，对应的就是 VM Tracker 里的 Swapped Size：
 
