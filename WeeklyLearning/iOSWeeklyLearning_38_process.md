@@ -34,15 +34,84 @@ defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[zhangferry](zhangferry.com)
+
+### 内存相关的一些机制
+
+#### 虚拟内存寻址
+
+为了安全性，防止物理内存被篡写（还有其他很多优势），操作系统引入了虚拟内存机制，虚拟内存是对物理内存的映射，操作系统会为每个进程提供一个连续并且私有的虚拟内存空间。
+
+实际的数据读写首先要通过虚拟地址找到对应的物理地址，这个过程就是CPU寻址，CPU寻址由位于 CPU 的 MMU（Memory Management Unit 内存管理单元）负责。
+
+为了便于管理，虚拟内存被分割为大小固定的虚拟页（Virtual Page, VP）。程序加载过程中，虚拟内存由磁盘到内存的映射是以页为单位进行处理的。每次映射完成都会对应一个关联的物理内存地址，为了管理这个映射关系出现了页表条目（Page Table Entry）PTE 的一个数据表。这个页表条目里有一个标记位比特位，0 表示还未加载到内存，1 表示已经加载到内存。当访问到 0 就出产生缺页（Page Fault），之后会填充数据到内存，并修改这个标记位。
+
+这个 PTE 通常是位于高速缓存或者内存中的，因为即使是高速缓存它相对于 CPU 的读取速度仍然是很慢的。后来又引入了后备缓冲器（Translation Lookaside Buffer，TLB），这个缓存器位于 CPU 内部，其存储了PTE内容，虽然它的空间较小，但访问很快，由局部性原理说这个处理仍是非常值得的。
+
+汇总一下寻址流程如下图所示：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216194314.png)
+
+#### 内存不足的处理
+
+ 在 Linux 中虚拟内存空间是大于实际物理内存地址的，这就会出现一个状况，当内存物理地址不够用时会发生什么？实际操作系统会将物理内存中的部分内容迁移到磁盘中，然后腾出地方给申请内存方使用，这个过程叫 Swap Out。当又要使用那部分内存时会触发 Swap Int，再移出部分内存，将需要的内容映射到空缺内存空间里。这个机制的好处是可以使用更大的内存地址，但坏处也很明显就是 Swap 会造成较大性能损耗。
+
+##### iOS 处理机制
+
+iOS 没有 Disk Swap 机制，因为其本身磁盘空间相对电脑是比较小的，而且频繁读取闪存会影响闪存寿命。基于此 iOS 设备可申请内存地址是有限度的，[Stack OverFlow](https://stackoverflow.com/questions/5887248/ios-app-maximum-memory-budget/15200855#15200855 "ios-app-maximum-memory-budget") 有人做过测试：
+
+```
+device: (crash amount/total amount/percentage of total)
+
+iPhone5: 645MB/1024MB/62%
+iPhone5s: 646MB/1024MB/63%
+iPhone6: 645MB/1024MB/62% (iOS 8.x)
+iPhone6+: 645MB/1024MB/62% (iOS 8.x)
+iPhone6s: 1396MB/2048MB/68% (iOS 9.2)
+iPhone6s+: 1392MB/2048MB/68% (iOS 10.2.1)
+iPhoneSE: 1395MB/2048MB/69% (iOS 9.3)
+iPhone7: 1395/2048MB/68% (iOS 10.2)
+iPhone7+: 2040MB/3072MB/66% (iOS 10.2.1)
+iPhone8: 1364/1990MB/70% (iOS 12.1)
+iPhone X: 1392/2785/50% (iOS 11.2.1)
+iPhone XS: 2040/3754/54% (iOS 12.1)
+iPhone XS Max: 2039/3735/55% (iOS 12.1)
+iPhone XR: 1792/2813/63% (iOS 12.1)
+iPhone 11: 2068/3844/54% (iOS 13.1.3)
+iPhone 11 Pro Max: 2067/3740/55% (iOS 13.2.3)
+```
+
+以 iPhone 11 Pro Max 为例，应用可申请内存为 2067M，占系统内容的 55%，已经是很高了。但即使这样，仍会出现内存过高的情况，iOS 的处理是清理 + 压缩。
+
+**Clean Page & Dirty Page**
+
+iOS 将内存页分为 Clean Page 和 Dirty Page，Clean Page 一般是固定内容，可以被系统回收，需要时从磁盘再加载回来。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216191758.png)
+
+上图可以看出，写入数据前申请内存为 Clean 内存，使用的部分就变成了 Dirty 内存。
+
+**Compressed Memory**
+
+iOS 还有另一种机制是压缩（Compressed Memory），这也是一种 Swap 机制。举个例子，某个 Dictionary 使用了 3个 Page 的内存，如果一段时间没有被访问同时内存吃紧，则系统会尝试对它进行压缩从 3 个 Page 压缩为 1 个 Page 从而释放出 2 个 Page 的内存。但是如果之后需要对它进行访问，则它占用的 Page 又会变为 3 个。
+
+这部分内存可以被 Instrument 统计到，对应的就是 VM Tracker 里的 Swapped Size：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216193218.png)
 
 
+
+参考：
+
+[jonyfang-iOS 内存相关梳理](https://blog.jonyfang.com/2020/04/08/2020-04-08-about-ram/ "jonyfang-iOS 内存相关梳理")
+
+[Reducing Your App's Memory Use](https://developer.apple.com/documentation/metrickit/improving_your_app_s_performance/reducing_your_app_s_memory_use "Reducing Your App's Memory Use")
+
+《深入理解计算机系统》
 
 ## 面试解析
 
 整理编辑：[zhangferry](https://zhangferry.com)
-
-近期也在准备面试阶段，遇到几个比较有趣的面试题，这里记录一下：
 
 ### dealloc 在哪个线程执行
 
@@ -80,7 +149,7 @@ objc_object::sidetable_release(bool performDealloc)
 }
 ```
 
-这里可以看出 `dealloc` 的调用并没有设置线程，所以其执行会根据触发时所在的线程而定，就是说其即可以是子线程也可以是主线程。这个可以很方便的验证。
+这里可以看出 `dealloc` 的调用并没有设置线程，所以其执行会根据触发时所在的线程而定，就是说其即可以是子线程也可以是主线程。这个也可以很方便的验证。
 
 ### NSString *str = @"123" 这里的str和 "123" 分别存储在哪个区域
 
@@ -166,12 +235,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第三十七期](https://mp.weixin.qq.com/s/PwZ2nIHRo0GDsjMx7lSFLg)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第三十六期](https://mp.weixin.qq.com/s/K_JHs1EoEn222huWIoJRmA)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第三十五期](https://mp.weixin.qq.com/s/fCEbYkAPlK0nm7UtLKFx5A)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第三十四期](https://mp.weixin.qq.com/s/P0HjLDCIM3T-hAgQFjO1mg)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
