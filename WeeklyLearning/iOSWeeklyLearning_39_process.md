@@ -6,10 +6,10 @@
 
 > * 话题：
 > * Tips：
-> * 面试模块：
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 面试模块：HTTPS 证书有效性的验证过程。
+> * 优秀博客：Core Data、Realm、MMKV 这几个库相关的一些介绍。
+> * 学习资料：一个学习正则表达式的网站。
+> * 开发工具：一个安装 Xcode 的 CLI 工具 `xcinfo`，一款开源的 Markdown 编辑工具 Mark Text。
 
 ## 本期话题
 
@@ -103,9 +103,11 @@ HTTPS 的建立流程大概是这样的：
 
 ## 工具推荐
 
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
 ### xcinfo
 
-推荐人：faimin
+**推荐来源**：[faimin](https://github.com/faimin)
 
 **地址**：https://github.com/xcodereleases/xcinfo
 
@@ -118,8 +120,6 @@ HTTPS 的建立流程大概是这样的：
 ![xcinfo](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/inf.png)
 
 ### Mark Text
-
-整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
 **地址**：https://marktext.app/
 
@@ -139,12 +139,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第三十八期](https://mp.weixin.qq.com/s/a1aOOn1sFh5EaxISz5tAxA)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第三十七期](https://mp.weixin.qq.com/s/PwZ2nIHRo0GDsjMx7lSFLg)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第三十六期](https://mp.weixin.qq.com/s/K_JHs1EoEn222huWIoJRmA)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第三十五期](https://mp.weixin.qq.com/s/fCEbYkAPlK0nm7UtLKFx5A)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)

@@ -28,8 +28,8 @@ defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 是关于 StoreKit 的新特性：
 
 * StoreKit 中展示退款请求的弹窗可以在 Xcode 中进行测试了。UIKit 模式下可利用：[`beginRefundRequest(in:)`](https://developer.apple.com/documentation/storekit/transaction/3803220-beginrefundrequest) 或者 [`beginRefundRequest(for:in:)`](https://developer.apple.com/documentation/storekit/transaction/3803219-beginrefundrequest) ，SwiftUI 下可利用 `refundRequestSheet(for:isPresented:onDismiss:)` 作为视图修饰器。
-
 - StoreKit 中管理订阅的弹窗也可以在 Xcode 中进行测试了。 UIKit 模式下课利用 [`showManageSubscriptions(in:)`](https://developer.apple.com/documentation/storekit/appstore/3803198-showmanagesubscriptions) ，SwiftUI 下可利用  `manageSubscriptionsSheet(isPresented:)` 作为视图修饰器完成。
+
 - 新的 [`SKTestSession.TimeRate`](https://developer.apple.com/documentation/storekittest/sktestsession/timerate) 值可用于 StoreKit Test 模块的自动化测试。
 
 ## 开发Tips
@@ -99,8 +99,6 @@ iOS 还有另一种机制是压缩内存（Compressed Memory），这也是一�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216193218.png)
 
-
-
 参考：
 
 * [jonyfang-iOS 内存相关梳理](https://blog.jonyfang.com/2020/04/08/2020-04-08-about-ram/ "jonyfang-iOS 内存相关梳理")
@@ -142,7 +140,7 @@ objc_object::sidetable_release(bool performDealloc)
     }
     table.unlock();
     if (do_dealloc  &&  performDealloc) {
-      	// 可以释放的话，调用dealloc
+          // 可以释放的话，调用dealloc
         ((void(*)(objc_object *, SEL))objc_msgSend)(this, @selector(dealloc));
     }
     return do_dealloc;
@@ -177,7 +175,7 @@ NSLog(@"str1.class=%@, str1 = %p, *str1 = %p", str1.class, str1, &str1);
 NSString *str2 = [NSString stringWithFormat:@"%@", @"123"];
 NSLog(@"str2.class=%@, str2 = %p, *str2 = %p", str2.class, str2, &str2);
 // str2.class=NSTaggedPointerString, str2 = 0xe7f1d0f8856c5253, *str2 = 0x7ffeeb54dc58
-        
+
 NSString *str3 = [NSString stringWithFormat:@"%@", @"iOS摸鱼周报"]; //
 NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 // str3.class=__NSCFString, str3 = 0x600002ef8900, *str3 = 0x7ffeeb54dc30
@@ -188,7 +186,6 @@ NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 这里再回顾下内存的分区情况，大多数情况我们只需关注进程的虚拟内存就可以了：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216172748.png)
-
 
 ## 优秀博客
 
