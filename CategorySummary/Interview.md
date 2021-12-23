@@ -1518,7 +1518,9 @@ HTTP（超文本传输协议，HyperText Transfer Protocol）是互联网上应�
 
 ### dealloc 在哪个线程执行
 
-在回答这个问题前需要了解 `dealloc` 在什么时机调用，`dealloc` 是在对象最后一次 `release` 操作的时候进行调用的，我们可以查看 SideTable 管理引用计数对应的 `release` 源码：
+在回答这个问题前需要了解 `dealloc` 在什么时机调用，`dealloc` 是在对象最后一次 `release` 操作的时候进行调用的，对应的源码在 `rootRelease` 中，针对 `nonpointer` 和 SideTable 有两种释放的操作。
+
+ SideTable 管理的引用计数会调用 `sidetable_release`：
 
 ```c
 uintptr_t
@@ -1545,10 +1547,18 @@ objc_object::sidetable_release(bool performDealloc)
     }
     table.unlock();
     if (do_dealloc  &&  performDealloc) {
-      	// 可以释放的话，调用dealloc
+          // 可以释放的话，调用dealloc
         ((void(*)(objc_object *, SEL))objc_msgSend)(this, @selector(dealloc));
     }
     return do_dealloc;
+}
+```
+
+对于 `nonpointer` 指针管理的引用计数，会修改 `extra_rc`值，需要释放时在`rootRelease`方法的底部还是会调用：
+
+```c
+if (do_dealloc  &&  performDealloc) {
+    ((void(*)(objc_object *, SEL))objc_msgSend)(this, @selector(dealloc));
 }
 ```
 
@@ -1572,7 +1582,7 @@ NSLog(@"str1.class=%@, str1 = %p, *str1 = %p", str1.class, str1, &str1);
 NSString *str2 = [NSString stringWithFormat:@"%@", @"123"];
 NSLog(@"str2.class=%@, str2 = %p, *str2 = %p", str2.class, str2, &str2);
 // str2.class=NSTaggedPointerString, str2 = 0xe7f1d0f8856c5253, *str2 = 0x7ffeeb54dc58
-        
+
 NSString *str3 = [NSString stringWithFormat:@"%@", @"iOS摸鱼周报"]; //
 NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 // str3.class=__NSCFString, str3 = 0x600002ef8900, *str3 = 0x7ffeeb54dc30
@@ -1584,4 +1594,80 @@ NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216172748.png)
 
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### HTTPS 建立的过程中客户端是如何保证证书的合法性的？
+
+HTTPS 的建立流程大概是这样的：
+
+1、Client -> Server: 支持的协议和加密算法，随机数 A
+
+2、Server -> Client: 服务器证书，随机数 B
+
+3、Client -> Server: 验证证书有效性，随机数 C
+
+4、Server -> Client: 生成秘钥，SessionKey = f(A + B + C)
+
+5、使用 SessionKey 进行对称加密沟通
+
+其中第 3 步，就需要客户端验证证书的有效性。有效性的验证主要是利用证书的信任链和签名。
+
+#### 证书信任链
+
+我们以 `zhangferry.com`这个网站的 HTTPS 证书为例进行分析：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223165541.png)
+
+`zhangferry.com` 的证书里有一个 Issuer Name 的分段，这里表示的是它的签发者信息。其签发者名称是 *TrustAsia TLS RSA CA*，而我们可以通过上面的链式结构发现，其上层就是*TrustAsia TLS RSA CA*。再往上一层是 *DigiCert Global Root CA*，所以证书签发链就是：*DigiCert Global Root CA* -> *TrustAsia TLS RSA CA* -> *zhangferry.com*。
+
+其中 *DigiCert Global Root CA* 是根证书，它的签发者是它自己。根证书由特定机构颁发，被认为是可信的。我们的电脑在安装的时候都会预装一些 CA 根证书，查看钥匙串能够找到刚才的根证书：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223170915.png)
+
+如果能够验证签发链是没有篡改的，那就可以说明当前证书有效。
+
+#### 签发有效
+
+要验证 *DigiCert Global Root CA*（简称 A） 签发了 *TrustAsia TLS RSA CA*（简称 B） ，可以利用 RSA 的非对称性。这里分两步：签发、验证。
+
+签发：A 对 B 签发时，由 B 的内容生成一个 Hash 值，然后 A 使用它的私钥对这个 Hash 值进行加密，生成签名，放到 B 证书里。
+
+验证：使用 A 的公钥（操作系统内置在钥匙串中）对签名进行解密，得到签发时的 Hash 值 H1，然后单独对 B 内容进行 Hash 计算，得到 H2，如果 H1== H2，那么就说明证书没有被篡改过，验证通过。
+
+这些过程中使用到的对称加密算法和 Hash 算法都会在证书里说明。同理逐级验证，直到最终的证书节点，都没问题就算是证书验证通过了。流程如下：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223174908.png)
+
+图片来源：https://cheapsslsecurity.com/blog/digital-signature-vs-digital-certificate-the-difference-explained/
+
+### Hash 冲突的解决方案
+
+当两个不同的内容使用同一个 Hash 算法得到相同的结果，被称为发生了 Hash 冲突。Hash 冲突通常有两种解决方案：开放定址法、链地址法。
+
+#### 开放定址法
+
+开放定址法的思路是当地址已经被占用时，就再重新计算，直到生成一个不被占用地址。对应公式为：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223221219.png)
+
+其中 di 为增量序列，m 为散列表长度， i 为已发生的冲突次数。根据 di 序列的内容不同又分为不同的处理方案：
+
+di = 1, 2, 3...(m-1)，为线性数列，就是线性探测法。
+
+di = 1^2, 2^2, 3^2...k^2，为平方数列，就是平法探测法。
+
+di = 伪随机数列，就是伪随机数列探测法。
+
+#### 链地址法
+
+链地址法是用于解决开放定址法导致的数据聚集问题，它是采用一个链表将所有冲突的值一一记录下来。
+
+#### 其他方法
+
+再哈希法：设置多个哈希算法，如果冲突就更换算法，重新计算。
+
+建立公共溢出区：将哈希表和溢出数据分开存放，冲突内容填入溢出表中。
+
+参考：[wiki-散列表](https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8 "wiki-散列表")
 
