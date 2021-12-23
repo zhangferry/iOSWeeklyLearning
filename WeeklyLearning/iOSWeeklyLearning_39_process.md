@@ -4,16 +4,11 @@
 
 ### 本期概要
 
-> * 话题：
 > * Tips：
 > * 面试模块：HTTPS 证书有效性的验证过程。
 > * 优秀博客：Core Data、Realm、MMKV 这几个库相关的一些介绍。
 > * 学习资料：一个学习正则表达式的网站。
 > * 开发工具：一个安装 Xcode 的 CLI 工具 `xcinfo`，一款开源的 Markdown 编辑工具 Mark Text。
-
-## 本期话题
-
-[@zhangferry](https://zhangferry.com)：
 
 ## 开发Tips
 
@@ -94,6 +89,8 @@ di = 伪随机数列，就是伪随机数列探测法。
 再哈希法：设置多个哈希算法，如果冲突就更换算法，重新计算。
 
 建立公共溢出区：将哈希表和溢出数据分开存放，冲突内容填入溢出表中。
+
+参考：[wiki-散列表](https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8 "wiki-散列表")
 
 ## 优秀博客
 
