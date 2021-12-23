@@ -41,7 +41,35 @@
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+### xcinfo
+推荐人：faimin
+
+**地址**：https://github.com/xcodereleases/xcinfo
+
+**软件状态**：开源、免费
+
+**推荐语**：
+
+`Xcodes` 的另一种选择，方便我们直接从苹果官网下载 Xcode。 据称下载速度比 `Xcodes` 更快。
+
+![xcinfo](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/inf.png)
+
+### Mark Text
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+**地址**：https://marktext.app/
+
+**软件状态**：开源、免费
+
+**软件介绍**：
+
+一个简单而优雅的开源`markdown`编辑器，专注于速度和可用性，适用于`Linux`, `macOS`和 `Windows`。
+
+其和`Typora`一样，也是单窗的形式。
+
+![Mark Text](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/marktext.png)
+
+
 
 ## 关于我们
 
