@@ -23,7 +23,7 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-### HTTPS 建立的过程中客户端是如何保证证书的合法性的
+### HTTPS 建立的过程中客户端是如何保证证书的合法性的？
 
 HTTPS 的建立流程大概是这样的：
 
@@ -66,6 +66,34 @@ HTTPS 的建立流程大概是这样的：
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223174908.png)
 
 图片来源：https://cheapsslsecurity.com/blog/digital-signature-vs-digital-certificate-the-difference-explained/
+
+### Hash 冲突的解决方案
+
+当两个不同的内容使用同一个 Hash 算法得到相同的结果，被称为发生了 Hash 冲突。Hash 冲突通常有两种解决方案：开放定址法、链地址法。
+
+#### 开放定址法
+
+开放定址法的思路是当地址已经被占用时，就再重新计算，直到生成一个不被占用地址。对应公式为：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223221219.png)
+
+其中 di 为增量序列，m 为散列表长度， i 为已发生的冲突次数。根据 di 序列的内容不同又分为不同的处理方案：
+
+di = 1, 2, 3...(m-1)，为线性数列，就是线性探测法。
+
+di = 1^2, 2^2, 3^2...k^2，为平方数列，就是平法探测法。
+
+di = 伪随机数列，就是伪随机数列探测法。
+
+#### 链地址法
+
+链地址法是用于解决开放定址法导致的数据聚集问题，它是采用一个链表将所有冲突的值一一记录下来。
+
+#### 其他方法
+
+再哈希法：设置多个哈希算法，如果冲突就更换算法，重新计算。
+
+建立公共溢出区：将哈希表和溢出数据分开存放，冲突内容填入溢出表中。
 
 ## 优秀博客
 
