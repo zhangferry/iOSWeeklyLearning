@@ -29,7 +29,17 @@
 ## 优秀博客
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+1、[数据库的设计：深入理解 Realm 的多线程处理机制](https://academy.realm.io/cn/posts/threading-deep-dive/ "数据库的设计：深入理解 Realm 的多线程处理机制") -- 来自:Realm
 
+[@我是熊大](https://github.com/Tliens)：Realm 是一个跨平台的移动数据库引擎，性能优于 Core Data 和 FMDB；接口十分人性化，使用很方便。本文能快速加深你对Realm的理解，并学习到更多有用的技巧，篇幅较长，耐心读下来，定会有所收获。每当我在realm遇到问题时，本文几乎都能为我解惑。
+
+2、[如何降低Realm数据库的崩溃](https://juejin.cn/post/6844904143501557773 "如何降低Realm数据库的崩溃") -- 来自掘金：我是熊大
+
+[@我是熊大](https://github.com/Tliens)：Realm的崩溃，猝不及防，不仅仅是Realm，任何数据库导致的奔溃总是个难题，总有那么零星几个让人没有头绪的bug，本文总结了我在实际工作中遇到的问题和解决办法。
+
+3、[MMKV--基于 mmap 的 iOS 高性能通用 key-value 组件](https://cloud.tencent.com/developer/article/1066229 "MMKV--基于 mmap 的 iOS 高性能通用 key-value 组件") -- 来自掘金：我是熊大
+
+[@我是熊大](https://github.com/Tliens)：在开发中是否真的需要沉重的数据库？还是需要一个好用的NSUserDefaults。如果app中只是简单的存储，那么基于 mmap 内存映射的MMKV可能更适合你，他比NSUserDefaults快100倍。
 
 
 
