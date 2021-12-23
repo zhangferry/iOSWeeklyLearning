@@ -28,7 +28,7 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[我是熊大](https://juejin.cn/user/1151943916921885)、[东坡肘子](https://www.fatbobman.com)
 
 1、[数据库的设计：深入理解 Realm 的多线程处理机制](https://academy.realm.io/cn/posts/threading-deep-dive/ "数据库的设计：深入理解 Realm 的多线程处理机制") -- 来自:Realm
 
@@ -42,7 +42,13 @@
 
 [@我是熊大](https://github.com/Tliens)：在开发中是否真的需要沉重的数据库？还是需要一个好用的NSUserDefaults。如果app中只是简单的存储，那么基于 mmap 内存映射的MMKV可能更适合你，他比NSUserDefaults快100倍。
 
+4、[iOS 数据库比较：SQLite vs. Core Data vs. Realm](https://www.oschina.net/translate/ios-databases-sqllite-vs-core-data-vs-realm?cmp "iOS 数据库比较：SQLite vs. Core Data vs. Realm") -- 来自OSCHINA：由 我是菜鸟我骄傲、theDoctor 翻译
 
+[@东坡肘子](https://www.fatbobman.com/)：在iOS中，除了官方提供的 Core Data 外，还有很多其他的持久化方案可供选择。每种方案都有其各自的特点及适用场景。本文对 Core Data、SQLite 以及 Realm 进行了横向比较，并讨论了从 SQLite 或 Core Data 转换到 Realm 的路径及注意事项。
+
+5、[Core Data with CloudKit](https://www.fatbobman.com/posts/coreDataWithCloudKit-1/ "Core Data with CloudKit") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：Core Data with CloudKit 是苹果为 Core Data 推出的网络同步解决方案，通过将 Core Data 同 CloudKit 进行结合，仅需使用少量代码，便可实现在苹果生态内跨设备、跨平台的数据实时同步。本系列文章一共6篇，详细介绍了有关如何进行私有数据库同步、公共数据库同步以及在不同用户间共享数据等内容。
 
 ## 学习资料
 
