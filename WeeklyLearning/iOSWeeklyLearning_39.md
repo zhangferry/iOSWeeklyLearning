@@ -18,10 +18,32 @@
 
 宏 `NS_REFINED_FOR_SWIFT` 于 Xcode 7 引入，它可用于在 Swift 中隐藏 Objective-C API，以便在 Swift 中提供相同 API 的更好版本，同时仍然可以使用原始 Objective-C 实现。具体的应用场景有：
 
-- 你想在 Swift 中使用某个 Objective-C API 时，使用不同的方法声明，但要使用类似的底层实现。你还可以将 Objective-C 方法在 Swift 中变成属性，例如将 Objective-C 的 `+ (instancetype)sharedInstance;` 方法在 Swift 中的变为 `shared` 属性。
-- 你想在 Swift 中使用某个 Objective-C API 时，采用一些 Swift 的特有类型，比如元组。例如，将 Objective-C 的  `- (void)getRed:(nullable CGFloat *)red green:(nullable CGFloat *)green blue:(nullable CGFloat *)blue alpha:(nullable CGFloat *)alpha;` 方法在 Swift 中变为一个只读计算属性，其类型是一个包含 rgba 四个元素的元组 `var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)`，以更方便使用。
+- 你想在 Swift 中使用某个 Objective-C API 时，使用不同的方法声明，但要使用类似的底层实现。你还可以将 Objective-C 方法在 Swift 中变成属性，例如将 Objective-C 的
+  
+  ```objectivec
+  + (instancetype)sharedInstance;
+  ```
+  
+  方法在 Swift 中的变为 `shared` 属性。
+
+- 你想在 Swift 中使用某个 Objective-C API 时，采用一些 Swift 的特有类型，比如元组。例如，将 Objective-C 的  
+  
+  ```objectivec
+  - (void)getRed:(nullable CGFloat *)red green:(nullable CGFloat *)green blue:(nullable CGFloat *)blue alpha:(nullable CGFloat *)alpha;
+  ```
+  
+    方法在 Swift 中变为一个只读计算属性，其类型是一个包含 rgba 四个元素的元组 
+  
+  ```swift
+  var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+  ```
+  
+  以更方便使用。
+
 - 你想在 Swift 中使用某个 Objective-C API 时，重新排列、组合、重命名参数等等，以使该 API 与其它 Swift API 更匹配。 
+
 - 利用 Swift 支持默认参数值的优势，来减少导入到 Swift 中的一组 Objective-C API 数量。例如，SDWebImage 的 UIImageView (WebCache) 分类中扩展的方法，在导入到 Swift 中时，方法数量从 9 个减少到 5 个。
+
 - 解决 Swift 调用 Objective-C 的 API 时可能由于数据类型等不一致导致无法达到预期的问题。例如，Objective-C 里的方法采用了 C 风格的多参数类型；或者 Objective-C 方法返回 NSNotFound，在 Swift 中期望返回 nil 等等。
 
 `NS_REFINED_FOR_SWIFT` 可用于方法和属性。添加了 `NS_REFINED_FOR_SWIFT` 的 Objective-C API 在导入到 Swift 时，具体的 API 重命名规则如下：

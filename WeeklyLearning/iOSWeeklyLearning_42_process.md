@@ -1,6 +1,6 @@
-# iOS摸鱼周报 第四十期
+# iOS摸鱼周报 第四十二期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
