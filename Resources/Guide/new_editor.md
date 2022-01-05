@@ -45,6 +45,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 | CoderStar     | CoderStar        | 坐标北京，大前端开发方向，对前端、后端都有一定涉猎，目前主要工作与iOS相关，喜欢分享干货博文     | 公众号：CoderStar； 掘金：https://juejin.cn/user/588993964541288/posts      |
 | RunsCode     | RunsCode        | 坐标杭州，主要iOS，对前后端、游戏均有涉猎     | https://github.com/RunsCode      |
 | 徐杨          | 东坡肘子         | 坐标大连，业余iOS开发者                     | 公共号：肘子的Swift记事本。 博客 https://www.fatbobman.com   |
+| 李晨光       | hello world | 坐标成都，iOS开发， 对OC底层原理、性能优化、工程自动化比较感兴趣，目前在向swift转型 | https://juejin.cn/user/2999123453164605/posts
 
 
 ## 协作形式
