@@ -969,3 +969,18 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 ![Mark Text](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/marktext.png)
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### Tig
+
+**地址**：https://jonas.github.io/tig/
+
+**软件状态**：开源、免费
+
+**软件介绍**：
+
+`Tig` 是一个 `git` 资源库浏览器，采用 `ncurses` 开发，很适合习惯使用命令行进行`git`操作的小伙伴们。
+
+![Tig](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_20220106.png)
+

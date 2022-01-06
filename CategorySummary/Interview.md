@@ -1671,3 +1671,97 @@ di = 伪随机数列，就是伪随机数列探测法。
 
 参考：[wiki-散列表](https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8 "wiki-散列表")
 
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### dyld 2 和 dyld 3 有哪些区别
+
+dyld 是动态加载器，它主要用于动态库的链接和程序启动加载工作，它目前有两个主要版本：dyld 2 和 dyld 3。
+
+**dyld 2**
+
+[dyld2 ](https://github.com/opensource-apple/dyld/tree/master/src "dyld开源地址")从 iOS 3.1 开始引入，一直到 iOS12 被 dyld 3 全面代替。它经过了很多次版本迭代，我们现在常见的特性比如 ASLR，Code Sign，Shared Cache 等技术，都是在 dyld 2 中引入的。dyld 2 的执行流程是这样的：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220104235847.png)
+
+- 解析`mach-o`头文件，找到依赖库，依赖库又可能有别的依赖，这里会进行递归分析，直到获得所有 dylib 的完整图。这里数据庞大，需要进行大量的处理；
+- 映射所有`mach-o`文件，将它们放入地址空间；
+- 执行符号查找，若你的程序使用 `printf` 函数，将会查找`printf`是否在库系统中，然后我们找到它的地址，将它复制到你的程序中的函数指针上；
+- 进行 bind 和 rebase，修复内部和外部指针；
+- 运行一些初始化任务，像是 加载 category、load 方法等；
+- 执行main；
+
+**dyld 3**
+
+dyld 3 在 2017 年就被引入至 iOS 11，当时主要用来优化系统库。现在，在 iOS 13 中它也将用于启动第三方APP，完全替代 dyld 2。
+
+dyld 3 最大的特点就是引入了启动闭包，闭包里包含了启动所需要的缓存信息，而且这个闭包在进程外就完成了。在打开 APP 时，实际上已经有不少工作都完成了，这会使 dyld 的执行更快。
+
+最重要的特性就是启动闭包，闭包里包含了启动所需要的缓存信息，从而提高启动速度。下图是 dyld 2 和 dyld 3 的执行步骤对比：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220105001119.png)
+
+dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程外执行，以下进程创建时执行：
+
+* 前 3 步查找依赖和符号相对耗时，且涉及一些安全问题，所以将这些信息做成缓存闭包写入磁盘里，对应地址：`tmp/com.apple.dyld`。闭包会在重启手机/更新/下载 App 的首启等时机创建。
+
+* 进程启动时，读取闭包并验证闭包有效性。
+
+* 后面步骤同 dyld 2 
+
+[iOS 13中dyld 3的改进和优化](https://easeapi.com/blog/blog/83-ios13-dyld3.html "iOS 13中dyld 3的改进和优化")
+
+[iOS dyld 前世今生](https://www.yotrolz.com/posts/c2aae680/ "iOS dyld 前世今生")
+
+### 编译流程
+
+一般的编译器架构，比如 LLVM 采用的都是三段式，也即从源码到机器码需要经过三个步骤：
+
+前端 Frontend -> 优化器 Optimizer -> 后端 Backend
+
+这么设计的好处就是将编译职责进行分离，当新增语言或者新增CPU架构是只需修改前端和后端就行了。
+
+其中前端受语言影响，Objective-C 和 Swift 对应的前端分别是 clang 和 swiftc。下图整理了两种语言的编译流程：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/ios_compiler.png)
+
+#### 前端
+
+编译前端做的工作主要是：
+
+1、词法分析：将源码进行分割，生成一系列记号（token）。
+
+2、语法分析：扫描上一步生成的记号生成语法树，该分析过程采用上下文无关的语法分析手段。
+
+3、语义分析：语义分析分为静态语义分析和动态语义分析两种，编译期间确认的都是静态语义分析，动态语义需运行时期间才能确定。该步骤包括类型匹配和类型转换，会确认语法树中各表达式的类型。
+
+之后导出 IR 中间件供优化器使用。这一步 Swift 会比 Objc 多几个步骤，其中一个是 ClangImporter，这一步用于兼容 OC。它会导入 Clang Module，把 Objc 或者 C 的API 映射为 Swift API，导出结果能够被语义分析器使用。
+
+另外一个不同是 Swift 会有几个 SIL 相关的步骤（蓝色标注），SIL 是 Swift Intermediate Language 的缩写，意为 Swift 中间语言，它不同于 IR，而是特定于 Swift 的中间语言，适合用于对 Swift 源码进行分析和优化。它这里又分三个步骤：
+
+1、生成原始的 SIL
+
+2、进行一些数据流诊断，转成标准 SIL
+
+3、做一些特定于 Swift 的优化，包括 ARC、泛型等
+
+#### 优化器
+
+编译前端会生成统一的 IR (Intermediate Representation)文件传入到优化器，它是一种强类型的精简指令集，对目标指令进行了抽象。Xcode 中的Optimization Level 的几个优化等级，: `-O0` , `-O1` , `-O2` , `-O3` , `-Os`，即是这个步骤处理的。
+
+如果开启了 Bitcode，还会转成 Bitcode 格式，它是 IR 的二进制形式。
+
+#### 后端
+
+这个步骤相对简单会根据不同的 CPU 架构生成汇编和目标文件。
+
+#### 链接
+
+项目编译是以文件为单位的，跨文件调用方法只无法定位到调用地址的，链接的作用就是用于绑定这些符号。链接分为静态链接和动态链接两种：
+
+* 静态链接发生在编译期，在生成可执行程序之前会把各个.o文件和静态库进行一个链接。常用的静态链接器为 GNU 的 `ld`，LLVM4 里也有自己的链接器 `lld`。
+
+* 动态链接发生在运行时，用于链接动态库，它会在启动时找到依赖的动态库然后进行符号决议和地址重定向。动态链接其为 `dyld`。
+
+[Swift.org - Swift Compiler](https://www.swift.org/swift-compiler/#compiler-architecture "Swift.org - Swift Compiler")
+
