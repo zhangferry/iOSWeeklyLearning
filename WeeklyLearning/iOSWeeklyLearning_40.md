@@ -13,7 +13,7 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：2022 年第一期摸鱼周报，从本期开始我们会使用新的封面，新封面由设计师 朋友 Polaris 设计。这个场景表达的主题就是摸鱼，工作中的摸鱼不代表我们不尽职，而是我们对自由生活的向往。既要努力工作也要 Work Life Blance，2022年，加油！
+[@zhangferry](https://zhangferry.com)：2022 年第一期摸鱼周报，从本期开始我们会使用新的封面，新封面由设计师朋友 Polaris 设计。这个场景表达的主题就是摸鱼，工作中的摸鱼不代表我们不尽职，而是我们对自由生活的向往。既要努力工作也要 Work Life Blance，2022年，加油！
 
 ## 开发Tips
 
@@ -49,7 +49,7 @@ dyld 是动态加载器，它主要用于动态库的链接和程序启动加载
 
 **dyld 2**
 
-[dyld2 ](https://github.com/opensource-apple/dyld/tree/master/src "dyld开源地址")从 iOS 3.1开始引入，一直到 iOS12 被 dyld 3 全面代替。它经过了很多次版本迭代，我们现在常见的特性比如 ASLR，Code Sign，Shared Cache等技术，都是在 dyld 2 中引入的。dyld 2 的执行流程是这样的：
+[dyld2 ](https://github.com/opensource-apple/dyld/tree/master/src "dyld开源地址")从 iOS 3.1 开始引入，一直到 iOS12 被 dyld 3 全面代替。它经过了很多次版本迭代，我们现在常见的特性比如 ASLR，Code Sign，Shared Cache 等技术，都是在 dyld 2 中引入的。dyld 2 的执行流程是这样的：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220104235847.png)
 
@@ -78,9 +78,9 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 * 后面步骤同 dyld 2 
 
-[iOS 13中dyld 3的改进和优化](https://easeapi.com/blog/blog/83-ios13-dyld3.html)
+[iOS 13中dyld 3的改进和优化](https://easeapi.com/blog/blog/83-ios13-dyld3.html "iOS 13中dyld 3的改进和优化")
 
-[iOS dyld 前世今生](https://www.yotrolz.com/posts/c2aae680/)
+[iOS dyld 前世今生](https://www.yotrolz.com/posts/c2aae680/ "iOS dyld 前世今生")
 
 ### 编译流程
 
@@ -116,7 +116,7 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 #### 优化器
 
-编译前端会生成统一的 IR (Intermediate Representation)文件传入到优化器，它是一种强类型的精简指令及，对目标指令进行了抽象。Xcode 中的Optimization Level 的几个优化等级，: `-O0` , `-O1` , `-O2` , `-O3` , `-Os`，即是这个步骤处理的。
+编译前端会生成统一的 IR (Intermediate Representation)文件传入到优化器，它是一种强类型的精简指令集，对目标指令进行了抽象。Xcode 中的Optimization Level 的几个优化等级，: `-O0` , `-O1` , `-O2` , `-O3` , `-Os`，即是这个步骤处理的。
 
 如果开启了 Bitcode，还会转成 Bitcode 格式，它是 IR 的二进制形式。
 
@@ -166,7 +166,7 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 地址：https://github.com/chai2010/ugo-compiler-book
 
-µGo 是 Go 语言的真子集(不含标准库部分), 可以直接作为Go代码编译执行，作者尝试以实现 µGo 编译器为线索，以边学习边完善的自举方式实现一个玩具语言，目前还没写完，对编译器或者 Go 感兴趣的小伙伴可以关注一下。这里有一份作者写的[Go 编译器定制简介](https://chai2010.cn/ugo-compiler-book/talks/go-compiler-intro.html)供参考，同时作者还有[《Go语法树入门(出版名:Go语言定制指南)》](https://github.com/chai2010/go-ast-book)和[《Go语言高级编程》](https://github.com/chai2010/advanced-go-programming-book)等开源图书作品。
+µGo 是 Go 语言的真子集(不含标准库部分), 可以直接作为Go代码编译执行，作者尝试以实现 µGo 编译器为线索，以边学习边完善的自举方式实现一个玩具语言，目前还没写完，对编译器或者 Go 感兴趣的小伙伴可以关注一下。这里有一份作者写的[Go 编译器定制简介](https://chai2010.cn/ugo-compiler-book/talks/go-compiler-intro.html "Go 编译器定制简介")供参考，同时作者还有[《Go语法树入门(出版名:Go语言定制指南)》](https://github.com/chai2010/go-ast-book)和[《Go语言高级编程》](https://github.com/chai2010/advanced-go-programming-book)等开源图书作品。
 
 ## 工具推荐
 
@@ -197,7 +197,5 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 [iOS摸鱼周报 第三十七期](https://mp.weixin.qq.com/s/PwZ2nIHRo0GDsjMx7lSFLg)
 
 [iOS摸鱼周报 第三十六期](https://mp.weixin.qq.com/s/K_JHs1EoEn222huWIoJRmA)
-
-[iOS摸鱼周报 第三十五期](https://mp.weixin.qq.com/s/fCEbYkAPlK0nm7UtLKFx5A)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
