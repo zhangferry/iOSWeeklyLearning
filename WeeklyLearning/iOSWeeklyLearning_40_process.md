@@ -4,20 +4,40 @@
 
 ### 本期概要
 
-> * 话题：
-> * Tips：
-> * 面试模块：
-> * 优秀博客：
+> * 话题：新的一年使用新封面
+> * Tips：Swift 中的预编译
+> * 面试模块：dyld 2 和 dyld 3 的区别；编译流程
+> * 优秀博客：包依赖管理工具
 > * 学习资料：
 > * 开发工具：
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：从本期开始我们换了新的封面。
+[@zhangferry](https://zhangferry.com)：2022 年第一期摸鱼周报，从本期开始我们会使用新的封面，新封面由设计师 朋友 Polaris 设计。这个场景表达的主题就是摸鱼，工作中的摸鱼不代表我们不尽职，而是我们对自由生活的向往。既要努力工作也要 Work Life Blance，新的一年，加油！
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### Swift 中的预编译
+
+Clang 中有预编译宏的概念，在 Xcode 中其对应的是 Build Setting -> Apple Clang - Preprocessing 中的 Preprocessor Macros。这里可以根据不同的 Configuration 设置不同的预编译宏命令，其中 Debug 环境下的 DEBUG=1 就是内置的宏命令，我们通常使用的以下写法就是对应的这个配置：
+
+```objectivec
+#if DEBUG
+// debug action
+#end
+```
+
+如果需要新增 Configuration，比如 Stage，我们想要一个新的预编译宏比如 STAGE 表示它，如果这么做：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220106190930.png)
+
+在 Objective-C 的代码中是可行的，对于 Swift 代码则无效。这是因为 Swift 使用的编译器是 swiftc，它无法识别 clang 里定义的预编译宏。
+
+解决方案是利用 `SWIFT_ACTIVE_COMPILATION_CONDITIONS` 这个配置变量，它对应 Build Setting 里的 Active Compilation Conditions。做如下设置即可让 STAGE 宏供 Swift 代码使用：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220106192217.png)
 
 ## 面试解析
 
@@ -103,6 +123,14 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 #### 后端
 
 这个步骤相对简单会根据不同的 CPU 架构生成汇编和目标文件。
+
+#### 链接
+
+项目编译是以文件为单位的，跨文件调用方法只无法定位到调用地址的，链接的作用就是用于绑定这些符号。链接分为静态链接和动态链接两种：
+
+* 静态链接发生在编译期，在生成可执行程序之前会把各个.o文件和静态库进行一个链接。常用的静态链接器为 GNU 的 `ld`，LLVM4 里也有自己的链接器 `lld`。
+
+* 动态链接发生在运行时，用于链接动态库，它会在启动时找到依赖的动态库然后进行符号决议和地址重定向。动态链接其为 `dyld`。
 
 [Swift.org - Swift Compiler](https://www.swift.org/swift-compiler/#compiler-architecture "Swift.org - Swift Compiler")
 
