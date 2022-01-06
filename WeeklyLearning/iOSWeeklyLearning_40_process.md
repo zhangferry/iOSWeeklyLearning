@@ -76,7 +76,15 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 #### 前端
 
-编译前端做的工作主要是词法分析、语法分析、语义分析，然后导出IR中间件供优化器使用。这一步 Swift 会比 Objc 多几个步骤，其中一个是 ClangImporter，这一步用于兼容 OC。它会导入 Clang Module，把 Objc 或者 C 的API 映射为 Swift API，导出结果能够被语义分析器使用。
+编译前端做的工作主要是：
+
+1、词法分析：将源码进行分割，生成一系列记号（token）。
+
+2、语法分析：扫描上一步生成的记号生成语法树，该分析过程采用上下文无关的语法分析手段。
+
+3、语义分析：语义分析分为静态语义分析和动态语义分析两种，编译期间确认的都是静态语义分析，动态语义需运行时期间才能确定。该步骤包括类型匹配和类型转换，会确认语法树中各表达式的类型。
+
+之后导出 IR 中间件供优化器使用。这一步 Swift 会比 Objc 多几个步骤，其中一个是 ClangImporter，这一步用于兼容 OC。它会导入 Clang Module，把 Objc 或者 C 的API 映射为 Swift API，导出结果能够被语义分析器使用。
 
 另外一个不同是 Swift 会有几个 SIL 相关的步骤（蓝色标注），SIL 是 Swift Intermediate Language 的缩写，意为 Swift 中间语言，它不同于 IR，而是特定于 Swift 的中间语言，适合用于对 Swift 源码进行分析和优化。它这里又分三个步骤：
 
@@ -88,13 +96,15 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 #### 优化器
 
-优化器接收 IR 中间件会做进一步的优化，如果开启了 Bitcode，还会转成 Bitcode格式。Bitcode 是 IR 的二进制形式。
+编译前端会生成统一的 IR (Intermediate Representation)文件传入到优化器，它是一种强类型的精简指令及，对目标指令进行了抽象。Xcode 中的Optimization Level 的几个优化等级，: `-O0` , `-O1` , `-O2` , `-O3` , `-Os`，即是这个步骤处理的。
+
+如果开启了 Bitcode，还会转成 Bitcode 格式，它是 IR 的二进制形式。
 
 #### 后端
 
-经过汇编过程根据不同的 CPU 架构生成不同格式的目标文件。
+这个步骤相对简单会根据不同的 CPU 架构生成汇编和目标文件。
 
-[Swift.org - Swift Compiler](https://www.swift.org/swift-compiler/#compiler-architecture)
+[Swift.org - Swift Compiler](https://www.swift.org/swift-compiler/#compiler-architecture "Swift.org - Swift Compiler")
 
 ## 优秀博客
 
@@ -134,12 +144,14 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第三十九期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第三十八期](https://mp.weixin.qq.com/s/a1aOOn1sFh5EaxISz5tAxA)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第三十七期](https://mp.weixin.qq.com/s/PwZ2nIHRo0GDsjMx7lSFLg)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第三十六期](https://mp.weixin.qq.com/s/K_JHs1EoEn222huWIoJRmA)
+
+[iOS摸鱼周报 第三十五期](https://mp.weixin.qq.com/s/fCEbYkAPlK0nm7UtLKFx5A)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
