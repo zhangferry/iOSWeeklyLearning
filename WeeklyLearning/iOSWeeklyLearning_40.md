@@ -146,7 +146,7 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 [@东坡肘子](https://www.fatbobman.com/)：Swift Package Manager 是 Apple 为了弥补当前 iOS 开发中缺少官方组件库管理工具的产物。相较于其他组件管理控件，他的定义文件更加轻松易懂，使用起来也很 Magic，只需将源码放入对应的文件夹内，Xcode 就会自动生成工程文件，并生成编译目标产物所需要的相关配置。同时，SPM 与 Cocoapods 相互兼容，可以在特性上提供互补。本文除了介绍 Swift Package Manager 的现状、常见使用方法外，还阐述了作者对于 SPM 未来的一些思考。
 
-4、[解决swift package manager fetch慢的问题](https://juejin.cn/post/7007987863954391054 "解决swift package manager fetch慢的问题") -- 来自简书：chocoford
+4、[解决swift package manager fetch慢的问题](https://www.jianshu.com/p/953220424556 "解决swift package manager fetch慢的问题") -- 来自简书：chocoford
 
 [@东坡肘子](https://www.fatbobman.com/)：由于网络的某些限制，在 Xcode 中直接 fetch Github 上的 SPM 库并不容易。本文中给出了几种提高 fetch 成功率的解决方案。（编辑特别提示：Xcode 程序包中内置了终端、命令行工具等应用，任何在系统终端下的代理设定对其都不会产生作用。使用 SS + Proxifier 的方式可以实现让 Xcode 中的网络数据从指定代理通过）
 
