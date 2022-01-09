@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第四十一期
+# iOS摸鱼周报 第四十二期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
@@ -13,35 +13,31 @@
 
 ## 本期话题
 
-### In-App Events 数据分析可以查看了
-
-In-App Events 的展示效果数据可以在 App Store Connect 中的应用分析查看了。应用分析还包括事件的页面展示，提醒和通知数据，以及由你的 In-App Events 触发的下载和重新下载的数量。每个指标都可以根据区域、资源类型、设备等进行查看，这样你就可以了解 In-App Events 是如何影响应用的发展和成功的了。
-
-[Analytics now available for in-app events](https://developer.apple.com/news/?id=pa0x2dzk "Analytics now available for in-app events")
-
-### 线上直播沙龙-抖音iOS基础技术大揭秘
-
-**内容介绍**：如何保证抖音 App 的稳定性？如何给用户带来如丝般柔滑的流畅体验？如何在用户弱感知甚至无感知的情况下，推进抖音 App 的架构演进？如何利用容器等技术推进自动化测试？字节自研的 iOS 构建系统 JOJO 又是如何实现超级 App 构建效能提升 40% 的？本期字节跳动技术沙龙将以《抖音iOS基础技术大揭秘》为主题，为你全面揭开抖音 iOS 基础技术背后的技术能力！
-
-**沙龙时间**：2022年1月22日 14:00-17:25
-
-**报名地址**：[百格活动](https://www.bagevent.com/event/sales/i843tlja9we9xhc7ujim43jiaxn15sdl?code=0617daGa1vyXqC0aiPGa1cZLRM07daGm&state=STATE "线上直播沙龙-抖音iOS基础技术大揭秘")
+[@zhangferry](https://zhangferry.com)：
 
 ## 开发Tips
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
 
+
+
 ## 面试解析
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
 
 ## 优秀博客
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
 
+
+
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+
 
 ## 工具推荐
 
