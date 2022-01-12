@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 话题：
-> * Tips：
+> * Tips：在 Objective-C 中标记构造器为指定构造器。
 > * 面试模块：
 > * 优秀博客：
 > * 学习资料：
@@ -29,7 +29,76 @@ In-App Events 的展示效果数据可以在 App Store Connect 中的应用分�
 
 ## 开发 Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+### 在 Objective-C 中标记构造器为指定构造器
+
+这是一个开发 tip，一个编码规范，也是快手的一道面试真题。
+
+指定构造器模式有助于确保继承的构造器正确地初始化所有实例变量。指定构造器通常就是接收全部初始化参数的全能构造器；便利构造器通常为接收部分初始化参数的构造器，它们调用当前类的其它构造器，并为一些参数赋默认值。
+
+Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective-C 中，为了明确区分指定构造器和便利构造器，可以使用宏 `NS_DESIGNATED_INITIALIZER` 标记构造器为指定构造器，其它未添加该宏的构造器都成为了便利构造器。
+
+```objectivec
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+```
+
+使用这个宏会引入一些规则：
+
+1. 指定构造器的实现只能且必须`向上代理`到父类的一个指定构造器（with `[super init...]`）；
+2. 便利构造器的实现只能且必须`横向代理`到当前类的另一个构造器（with `[self init...]`），最终需要在当前类的指定构造器处终止链；
+3. 如果一个类提供了一个或多个指定构造器，它必须覆写其父类的所有指定构造器作为（退化为）该类的便利构造器，并让其满足条件 2。这样才能保证子类新增的实例变量得到正确的初始化。
+
+如果违反了以上任何规则，将会得到编译器的警告。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220112232618.png)
+
+简单来说，指定构造器必须总是`向上代理`，便利构造器必须总是`横向代理`。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220112232822.png)
+
+在 Objective-C 中，使用宏 `NS_DESIGNATED_INITIALIZER` 标记构造器为指定构造器，可以充分发挥编译器的特性帮我们找出初始化过程中可能存在的漏洞（通过警告），有助于确保继承的构造器正确地初始化所有实例变量，让构造过程更完整，增强代码的健壮性。
+
+示例代码：
+
+```objective-c
+@interface MyClass : NSObject
+- (instancetype)initWithTitle:(nullable NSString *)title subtitle:(nullable NSString *)subtitle NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithTitle:(nullable NSString *)title;
+- (instancetype)init;
+@end
+  
+@implementation MyClass
+  
+- (instancetype)initWithTitle:(nullable NSString *)title subtitle:(nullable NSString *)subtitle {
+    self = [super init]; // [规则1] 指定构造器只能向上代理到父类指定构造器，否则会得到编译器警告：Designated initializer should only invoke a designated initializer on 'super'
+    if (self) {
+        _title = [title copy];
+        _subtitle = [subtitle copy];
+    }
+    return self;
+}
+
+- (instancetype)initWithTitle:(nullable NSString *)title {
+/* 
+    return [super init]; 
+    [规则2] 当该类设定了指定构造器也就是使用了 NS_DESIGNATED_INITIALIZER 后，其它非指定构造器都变成了便利构造器。
+    便利构造器只能横向代理到该类的指定构造器，或者通过横向代理到其它便利构造器最后间接代理到该类的指定构造器。
+    这里调用 [super init] 的话会得到编译器警告：
+    	- Convenience initializer missing a 'self' call to another initializer
+    	- Convenience initializer should not invoke an initializer on 'super'
+ */
+    return [self initWithTitle:title subtitle:nil];
+}
+
+// [规则3] 如果子类提供了指定构造器，那么需要重写所有父类的指定构造器为子类的便利构造器，保证子类新增的实例变量能够被正确初始化，以让构造过程更完整。
+// 这里需要重写 -init，否则会得到编译器警告：Method override for the designated initializer of the superclass '-init' not found
+- (instancetype)init {
+    return [self initWithTitle:nil];
+}
+
+@end
+```
 
 ## 面试解析
 
