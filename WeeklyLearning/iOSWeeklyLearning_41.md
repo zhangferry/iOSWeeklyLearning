@@ -1,19 +1,19 @@
-1# iOS 摸鱼周报 第四十一期
+# iOS 摸鱼周报 第四十一期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 话题：
+> * 话题：In-App Events 数据分析上线了；线上沙龙：抖音 iOS 基础技术大揭秘。
 > * Tips：在 Objective-C 中标记构造器为指定构造器。
-> * 面试模块：
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 面试模块：如何检测内存泄露。
+> * 优秀博客：野指针的捕获与防护。
+> * 学习资料：一份可视化的 Web 技能列表。
+> * 开发工具：SwiftInfo 是一个 CLI 工具，用于提取、跟踪和分析对 Swift 应用程序有用的指标。
 
 ## 本期话题
 
-### In-App Events 数据分析可以查看了
+### In-App Events 数据分析功能上线了
 
 In-App Events 的展示效果数据可以在 App Store Connect 中的应用分析查看了。应用分析还包括事件的页面展示，提醒和通知数据，以及由你的 In-App Events 触发的下载和重新下载的数量。每个指标都可以根据区域、资源类型、设备等进行查看，这样你就可以了解 In-App Events 是如何影响应用的发展和成功的了。
 
@@ -25,7 +25,7 @@ In-App Events 的展示效果数据可以在 App Store Connect 中的应用分�
 
 **沙龙时间**：2022 年 1 月 22 日 14:00-17:25
 
-**报名地址**：[百格活动](https://www.bagevent.com/event/sales/i843tlja9we9xhc7ujim43jiaxn15sdl?code=0617daGa1vyXqC0aiPGa1cZLRM07daGm&state=STATE "线上直播沙龙-抖音iOS基础技术大揭秘")
+**报名地址**：[字节跳动技术 iOS 技术沙龙正式报名开启](https://mp.weixin.qq.com/s/yPTIOxJtl4BsjkDN0rXDdw)
 
 ## 开发 Tips
 
@@ -63,15 +63,15 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 示例代码：
 
-```objective-c
+```objectivec
 @interface MyClass : NSObject
 - (instancetype)initWithTitle:(nullable NSString *)title subtitle:(nullable NSString *)subtitle NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithTitle:(nullable NSString *)title;
 - (instancetype)init;
 @end
-  
+
 @implementation MyClass
-  
+
 - (instancetype)initWithTitle:(nullable NSString *)title subtitle:(nullable NSString *)subtitle {
     self = [super init]; // [规则1] 指定构造器只能向上代理到父类指定构造器，否则会得到编译器警告：Designated initializer should only invoke a designated initializer on 'super'
     if (self) {
@@ -87,8 +87,8 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
     [规则2] 当该类设定了指定构造器也就是使用了 NS_DESIGNATED_INITIALIZER 后，其它非指定构造器都变成了便利构造器。
     便利构造器只能横向代理到该类的指定构造器，或者通过横向代理到其它便利构造器最后间接代理到该类的指定构造器。
     这里调用 [super init] 的话会得到编译器警告：
-    	- Convenience initializer missing a 'self' call to another initializer
-    	- Convenience initializer should not invoke an initializer on 'super'
+        - Convenience initializer missing a 'self' call to another initializer
+        - Convenience initializer should not invoke an initializer on 'super'
  */
     return [self initWithTitle:title subtitle:nil];
 }
@@ -104,7 +104,7 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 ## 面试解析
 
-整理编辑：[张飞](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
 
 ### 如何检测内存泄露
 
@@ -218,23 +218,23 @@ struct BlockDescriptor {
 
 ```objectivec
 static NSIndexSet *_GetBlockStrongLayout(void *block) {
-	...
-	void (*dispose_helper)(void *src) = blockLiteral->descriptor->dispose_helper;
-	const size_t ptrSize = sizeof(void *);	
-	const size_t elements = (blockLiteral->descriptor->size + ptrSize - 1) / ptrSize;
-	
-	void *obj[elements];
-	void *detectors[elements];
-	
-	for (size_t i = 0; i < elements; ++i) {
-		FBBlockStrongRelationDetector *detector = [FBBlockStrongRelationDetector new];
-		obj[i] = detectors[i] = detector;
-	}
-	
-	@autoreleasepool {
-		dispose_helper(obj);
-	}
-	...
+    ...
+    void (*dispose_helper)(void *src) = blockLiteral->descriptor->dispose_helper;
+    const size_t ptrSize = sizeof(void *);    
+    const size_t elements = (blockLiteral->descriptor->size + ptrSize - 1) / ptrSize;
+
+    void *obj[elements];
+    void *detectors[elements];
+
+    for (size_t i = 0; i < elements; ++i) {
+        FBBlockStrongRelationDetector *detector = [FBBlockStrongRelationDetector new];
+        obj[i] = detectors[i] = detector;
+    }
+
+    @autoreleasepool {
+        dispose_helper(obj);
+    }
+    ...
 }
 ```
 
@@ -256,29 +256,28 @@ FBRetainCycleDetector 的检测方案明显更复杂、更耗时，所以几乎�
 
 整理编辑：[皮拉夫大王在此](https://juejin.cn/user/281104094332653)
 
-1、[大白健康系统--iOS APP运行时Crash自动修复系统](https://neyoufan.github.io/2017/01/13/ios/BayMax_HTSafetyGuard/)
+1、[大白健康系统--iOS APP运行时Crash自动修复系统](https://neyoufan.github.io/2017/01/13/ios/BayMax_HTSafetyGuard/ "大白健康系统--iOS APP运行时Crash自动修复系统")
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：整个文章是非常经典的，作者介绍通过method swizzling替换NSObject的allocWithZone方法和dealloc方法实现野指针拦截。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：整个文章是非常经典的，作者介绍通过 method swizzling 替换 NSObject 的`allocWithZone` 方法和 dealloc方法实现野指针拦截。
 
-2、[JJException](https://github.com/jezzmemo/JJException)
+2、[JJException](https://github.com/jezzmemo/JJException "JJException")
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：这个库需要自己指定探测哪些类对应的野指针。换句话说，就是我们自己指定10个类，那么这10个类的对象发生野指针时我们才能发现。如果在此之外，野指针监控不到。
 
-3、[iOS 野指针定位:野指针嗅探器](https://www.jianshu.com/p/9fd4dc046046)
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍了2个方案：（1）在开发阶段破坏内存，使野指针必现崩溃(野指针可能由于内存释放但未被写入导致崩溃不必现)。在free时，并不释放内存，保留内存，判断是否为objc对象，如果是objc对象则将对象setclass为自定义类，借助消息转发得到堆栈和类信息。监听系统内存警告，收到警告后释放。（2）hook objc的dealloc 方法，在dealloc时判断是否需要开启野指针探测，如果不需要则直接释放，否则将对象修改isa后保留并加入到内存池中，再次调用对象时会触发消息转发拦截到堆栈及对象类名信息。
+3、[iOS 野指针定位:野指针嗅探器](https://www.jianshu.com/p/9fd4dc046046 "iOS 野指针定位:野指针嗅探器")
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍了2个方案：（1）在开发阶段破坏内存，使野指针必现崩溃(野指针可能由于内存释放但未被写入导致崩溃不必现)。在free时，并不释放内存，保留内存，判断是否为objc对象，如果是 objc 对象则将对象 setclass 为自定义类，借助消息转发得到堆栈和类信息。监听系统内存警告，收到警告后释放。（2）hook objc 的 dealloc 方法，在dealloc时判断是否需要开启野指针探测，如果不需要则直接释放，否则将对象修改isa后保留并加入到内存池中，再次调用对象时会触发消息转发拦截到堆栈及对象类名信息。
 
-4、[iOS野指针定位总结](https://juejin.cn/post/6844903747538141191)
+4、[iOS野指针定位总结](https://juejin.cn/post/6844903747538141191 "iOS野指针定位总结")
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍方案如下：分类覆盖dealloc函数，并在dealloc 中重新设置isa并不释放obj，其中重新指向的isa是动态创建的。也就是说dealloc是10000个类，也会同步动态创建10000个类。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍方案如下：分类覆盖 dealloc 函数，并在 dealloc 中重新设置isa并不释放 obj，其中重新指向的 isa 是动态创建的。也就是说 dealloc 是10000个类，也会同步动态创建 10000 个类。
 
-5、[浅谈 iOS 中的 Crash 捕获与防护](http://shevakuilin.com/ios-crashprotection/)
+5、[浅谈 iOS 中的 Crash 捕获与防护](http://shevakuilin.com/ios-crashprotection/ "浅谈 iOS 中的 Crash 捕获与防护")
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：推荐阅读的文章，文章不仅仅介绍了野指针相关内容，还介绍了崩溃相关的基础知识。
 
-6、[xiejunyi'Blog](https://junyixie.github.io/categories/APM/)
+6、[xiejunyi'Blog](https://junyixie.github.io/categories/APM/ "xiejunyi'Blog")
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：坦白讲我并没有看完的文章，在做技术调研时发现的博客，文章内容比较深入并且能看出作者是有大量实战经验的开发者，因此推荐给大家。
-
 
 ## 学习资料
 
@@ -323,12 +322,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第四十期](https://mp.weixin.qq.com/s/y4229I_l8aLILR7WA7y01Q)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第三十九期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第三十八期](https://mp.weixin.qq.com/s/a1aOOn1sFh5EaxISz5tAxA)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第三十七期](https://mp.weixin.qq.com/s/PwZ2nIHRo0GDsjMx7lSFLg)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
