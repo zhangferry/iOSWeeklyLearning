@@ -1181,11 +1181,37 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@东坡肘子](https://www.fatbobman.com/)：Swift Package Manager 是 Apple 为了弥补当前 iOS 开发中缺少官方组件库管理工具的产物。相较于其他组件管理控件，他的定义文件更加轻松易懂，使用起来也很 Magic，只需将源码放入对应的文件夹内，Xcode 就会自动生成工程文件，并生成编译目标产物所需要的相关配置。同时，SPM 与 Cocoapods 相互兼容，可以在特性上提供互补。本文除了介绍 Swift Package Manager 的现状、常见使用方法外，还阐述了作者对于 SPM 未来的一些思考。
 
-4、[解决swift package manager fetch慢的问题](https://juejin.cn/post/7007987863954391054 "解决swift package manager fetch慢的问题") -- 来自简书：chocoford
+4、[解决swift package manager fetch慢的问题](https://www.jianshu.com/p/953220424556 "解决swift package manager fetch慢的问题") -- 来自简书：chocoford
 
 [@东坡肘子](https://www.fatbobman.com/)：由于网络的某些限制，在 Xcode 中直接 fetch Github 上的 SPM 库并不容易。本文中给出了几种提高 fetch 成功率的解决方案。（编辑特别提示：Xcode 程序包中内置了终端、命令行工具等应用，任何在系统终端下的代理设定对其都不会产生作用。使用 SS + Proxifier 的方式可以实现让 Xcode 中的网络数据从指定代理通过）
 
 5、[Swift Package Manager 添加资源文件](https://juejin.cn/post/6854573220784242702 "Swift Package Manager 添加资源文件") -- 来自掘金：moxacist
 
-[@东坡肘子](https://www.fatbobman.com/)：从  swift-tool-version 5.3 版本开始，Swift Package Manager 提供了在包中添加资源文件的能力。本文是 WWDC 2020 —— 【Swift 软件包资源和本地化】 专题演讲的中文整理。
+[@东坡肘子](https://www.fatbobman.com/)：从 swift-tool-version 5.3 版本开始，Swift Package Manager 提供了在包中添加资源文件的能力。本文是 WWDC 2020 —— 【Swift 软件包资源和本地化】 专题演讲的中文整理。
+
+***
+整理编辑：[皮拉夫大王在此](https://juejin.cn/user/281104094332653)
+
+1、[大白健康系统--iOS APP运行时Crash自动修复系统](https://neyoufan.github.io/2017/01/13/ios/BayMax_HTSafetyGuard/ "大白健康系统--iOS APP运行时Crash自动修复系统")
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：整个文章是非常经典的，作者介绍通过 method swizzling 替换 NSObject 的 `allocWithZone` 方法和 dealloc方法实现野指针拦截。
+
+2、[JJException](https://github.com/jezzmemo/JJException "JJException")
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：这个库需要自己指定探测哪些类对应的野指针。换句话说，就是我们自己指定 10 个类，那么这 10 个类的对象发生野指针时我们才能发现。如果在此之外，野指针监控不到。
+
+3、[iOS 野指针定位:野指针嗅探器](https://www.jianshu.com/p/9fd4dc046046 "iOS 野指针定位:野指针嗅探器")
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍了 2 个方案：（1）在开发阶段破坏内存，使野指针必现崩溃（野指针可能由于内存释放但未被写入导致崩溃不必现）。在 free 时，并不释放内存，保留内存，判断是否为 objc 对象，如果是 objc 对象则将对象 setclass 为自定义类，借助消息转发得到堆栈和类信息。监听系统内存警告，收到警告后释放。（2）hook objc 的 dealloc 方法，在 dealloc 时判断是否需要开启野指针探测，如果不需要则直接释放，否则将对象修改 isa 后保留并加入到内存池中，再次调用对象时会触发消息转发拦截到堆栈及对象类名信息。
+
+4、[iOS野指针定位总结](https://juejin.cn/post/6844903747538141191 "iOS野指针定位总结")
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍方案如下：分类覆盖 dealloc 函数，并在 dealloc 中重新设置 isa 并不释放 obj，其中重新指向的 isa 是动态创建的。也就是说 dealloc 是 10000 个类，也会同步动态创建 10000 个类。
+
+5、[浅谈 iOS 中的 Crash 捕获与防护](http://shevakuilin.com/ios-crashprotection/ "浅谈 iOS 中的 Crash 捕获与防护")
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：推荐阅读的文章，文章不仅仅介绍了野指针相关内容，还介绍了崩溃相关的基础知识。
+
+6、[xiejunyi'Blog](https://junyixie.github.io/categories/APM/ "xiejunyi'Blog")
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：坦白讲我并没有看完的文章，在做技术调研时发现的博客，文章内容比较深入并且能看出作者是有大量实战经验的开发者，因此推荐给大家。
 

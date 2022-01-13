@@ -593,7 +593,18 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 ### 《µGo语言实现——从头开发一个迷你Go语言编译器》
 
-地址：https://github.com/chai2010/ugo-compiler-book
+**地址**：https://github.com/chai2010/ugo-compiler-book
 
-µGo 是 Go 语言的真子集(不含标准库部分), 可以直接作为Go代码编译执行，作者尝试以实现 µGo 编译器为线索，以边学习边完善的自举方式实现一个玩具语言，目前还没写完，对编译器或者 Go 感兴趣的小伙伴可以关注一下。这里有一份作者写的[Go 编译器定制简介](https://chai2010.cn/ugo-compiler-book/talks/go-compiler-intro.html "Go 编译器定制简介")供参考，同时作者还有[《Go语法树入门(出版名:Go语言定制指南)》](https://github.com/chai2010/go-ast-book)和[《Go语言高级编程》](https://github.com/chai2010/advanced-go-programming-book)等开源图书作品。
+µGo 是 Go 语言的真子集（不含标准库部分）, 可以直接作为 Go 代码编译执行，作者尝试以实现 µGo 编译器为线索，以边学习边完善的自举方式实现一个玩具语言，目前还没写完，对编译器或者 Go 感兴趣的小伙伴可以关注一下。这里有一份作者写的 [Go 编译器定制简介](https://chai2010.cn/ugo-compiler-book/talks/go-compiler-intro.html "Go 编译器定制简介") 供参考，同时作者还有[《Go语法树入门(出版名:Go语言定制指南)》](https://github.com/chai2010/go-ast-book)和[《Go语言高级编程》](https://github.com/chai2010/advanced-go-programming-book)等开源图书作品。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Visual Web Skills
+
+**地址**：https://andreasbm.github.io/web-skills/
+
+这是一份可视化的 Web 技能列表，它对刚开始学习 Web 或已经工作多年并想学习新东西的人都很有用，你可以从中了解 Web 开发的大概路径和图谱，按顺序或者选择自己感兴趣的部分来看。除此之外最吸引人的是这个列表可视化的非常棒，每个图标符号都很大方美观形象，快来看一下！
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Web%20Skills.png)
 
