@@ -112,7 +112,7 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 1、[大白健康系统--iOS APP运行时Crash自动修复系统](https://neyoufan.github.io/2017/01/13/ios/BayMax_HTSafetyGuard/)
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：通过method swizzling替换NSObject的allocWithZone方法，添加标记，如果有标记才进入到野指针探测流程。整个文章是非常经典的，读者也可以仔细思考方案是否有值得优化的地方。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：整个文章是非常经典的，作者介绍通过method swizzling替换NSObject的allocWithZone方法和dealloc方法实现野指针拦截。
 
 2、[JJException](https://github.com/jezzmemo/JJException)
 
@@ -131,7 +131,7 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 6、[xiejunyi'Blog](https://junyixie.github.io/categories/APM/)
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：坦白讲我并没有看完的文章，在做技术调研时发现的博客，文章内容比较深入并且能看出作者是有大量实战经验的开发者，因此推荐大家阅读。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：坦白讲我并没有看完的文章，在做技术调研时发现的博客，文章内容比较深入并且能看出作者是有大量实战经验的开发者，因此推荐给大家。
 
 
 ## 学习资料
