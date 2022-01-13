@@ -104,7 +104,153 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 ## 面试解析
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[张飞](https://juejin.cn/user/782508012091645/posts)
+
+### 如何检测内存泄露
+
+检测内存泄露有多种方案，大体可以分为两类：工具和代码。
+
+#### 工具类
+
+工具类比较多：
+
+* Instruments 里的 Leaks
+
+* Memory Graph Debugger
+
+* Schems 里的 Memory Management
+
+* XCTest 中的 XCTMemoryMetric
+
+前两种方式比较常见，后两种内存泄露还需要借助于 Xcode 导出的 memgraph 文件，结合 `leaks`、`malloc_history` 等命令行工具进行分析。工具类检测方案都有一个缺点就是比较繁琐，开发阶段很容易遗漏，所以基于代码的自动化内存泄露检测方案更适合使用。
+
+#### 代码类
+
+代码类检测泄露方式有三个典型的库。
+
+**MLeaksFinder**
+
+地址：https://github.com/Tencent/MLeaksFinder
+
+它的基本原理是这样的，当一个 ViewController 被 pop 或 dismiss 之后，我们认为该 ViewController，包括它上面的子 ViewController，以及它的 View，View 的 subView 等等，都很快会被释放，如果某个 View 或者 ViewController 没释放，我们就认为该对象泄漏了。
+
+它是基于 Method Swizzled 方式，需要 Hook ViewController 的 `viewDidDisappear` ，`viewWillAppear` 等方法。所以仅适用于 Objective-C 项目。
+
+**LifetimeTracker**
+
+地址：https://github.com/krzysztofzablocki/LifetimeTracker
+
+LifetimeTracker 是使用 Swift 实现的，可以同时支持 OC 和 Swift 项目。它的原理是用一个协议表达监听泄露能力，我们提前设置监听入口和允许存在的对象个数。内部维护一个类似引用计数一样的数值，进入监听会进行一个 +1 操作，还会监听该对象的 `deinit` 方法，如果调用执行 `-1`。如果该「引用计数」大于我们设置的最大对象个数，就触发可视化的泄露警告。
+
+简化一些流程之后的代码：
+
+```swift
+internal func track(_ instance: Any, configuration: LifetimeConfiguration, file: String = #file) {
+    let instanceType = type(of: instance)
+    let configuration = configuration
+    configuration.instanceName = String(reflecting: instanceType)
+
+    func update(_ configuration: LifetimeConfiguration, with countDelta: Int) {
+        let groupName = configuration.groupName ?? Constants.Identifier.EntryGroup.none
+        let group = self.trackedGroups[groupName] ?? EntriesGroup(name: groupName)
+        group.updateEntry(configuration, with: countDelta)
+        // 检测当前计数是否大于最大引用数
+        if let entry = group.entries[configuration.instanceName], entry.count > entry.maxCount {
+            self.onLeakDetected?(entry, group)
+        }
+        self.trackedGroups[groupName] = group
+    }
+    // 开始检测，计数+1
+    update(configuration, with: +1)
+
+    onDealloc(of: instance) {
+        // 执行deinit，计数-1
+        update(configuration, with: -1)
+    }
+}
+```
+
+**FBRetainCycleDetector**
+
+地址：https://github.com/facebook/FBRetainCycleDetector
+
+上面两种方案都是粗略的检测，是 ViewController 或者 View 级别的，要想知道更具体的信息，到底哪里导致的循环应用就无能为力了。而 FBRetainCycleDetector 就是用于解决这类问题，因为需要借助 OC 的动态特性，所以该库无法在 Swift 项目中发挥作用。
+
+它的实现相对上面两个方案更复杂一些，大致原理是基于`DFS`算法，把整个对象之间的强引用关系当做图进行处理，查找其中的环，就找到了循环引用。
+
+核心是寻找对象之间的强引用关系，在 OC 语言中，强引用关系主要发生在这三种场景里，针对这三种场景也有不同的处理方案：
+
+**类的成员变量**
+
+通过`runtime`的`class_getIvarLayout`获取描述该类成员变量的布局信息，然后通过`ivar_getOffset`遍历获取成员变量在类结构中的偏移地址，然后获取强引用变量的集合。
+
+**关联对象**
+
+利用 fishhook hook `objc_setAssociatedObject` 和 `objc_removeAssociatedObjects` 这两个方法，对通过`OBJC_ASSOCIATION_RETAIN`和`OBJC_ASSOCIATION_RETAIN_NONATOMIC`策略进行关联的对象进行保存。
+
+**block持有**
+
+理解这个原理还需要再回顾下 block 的内存布局，FBRetainCycleDetector 对 block 结构体进行了等价的封装：
+
+```c
+struct BlockLiteral {
+    void *isa;
+    int flags;
+    int reserved;
+    void (*invoke)(void *, ...);
+    struct BlockDescriptor *descriptor;
+    // imported variables
+};
+
+struct BlockDescriptor {
+  unsigned long int reserved;                // NULL
+  unsigned long int size;
+  // optional helper functions
+  void (*copy_helper)(void *dst, void *src); // IFF (1<<25)
+  void (*dispose_helper)(void *src);         // IFF (1<<25)
+  const char *signature;                     // IFF (1<<30)
+};
+```
+
+在 `BlockLiteral` 结构体的 descriptor 字段之后的位置会存放 block 持有的对象，但是并非所有对象都是我们需要的，我们只需要处理强引用对象即可。而恰恰 block 的引用对象排列基于寻址长度对齐，较大地址放在前面，且强引用对象会排在弱引用之前，所以从 descriptor 之后的成员变量，可以按固定的指针长度依次取出对象。这之后的对象用 `FBBlockStrongRelationDetector` 封装，但这有可能会多取对象，比如 weak 类型的引用其实是不需要捕捉的。
+
+该库的做法是重写 `FBBlockStrongRelationDetector` 对象的 release 方法，仅设置标记位，然后外部调用它的 dispose 方法，这样其强引用对象都会调用 release，被调用这部分都是强引用对象。
+
+```objectivec
+static NSIndexSet *_GetBlockStrongLayout(void *block) {
+	...
+	void (*dispose_helper)(void *src) = blockLiteral->descriptor->dispose_helper;
+	const size_t ptrSize = sizeof(void *);	
+	const size_t elements = (blockLiteral->descriptor->size + ptrSize - 1) / ptrSize;
+	
+	void *obj[elements];
+	void *detectors[elements];
+	
+	for (size_t i = 0; i < elements; ++i) {
+		FBBlockStrongRelationDetector *detector = [FBBlockStrongRelationDetector new];
+		obj[i] = detectors[i] = detector;
+	}
+	
+	@autoreleasepool {
+		dispose_helper(obj);
+	}
+	...
+}
+```
+
+当拿到以上所有强引用关系时就可以利用 DFS 深度优先搜索遍历引用树，查找是否有环形引用了。
+
+FBRetainCycleDetector 的检测方案明显更复杂、更耗时，所以几乎不可能针对所有对象都进行检测，所以更好的方案是配合 MLeaksFinder 或者 facebook 自己的 [FBAllocationTracker](https://github.com/facebookarchive/FBAllocationTracker "FBAllocationTracker")，先找到潜在泄露对象，然后分析这些对象的强引用关系，查找是否存在循环引用。
+
+**其他方案**
+
+在资料查找过程中还发现了另一个库 [BlockStrongReferenceObject](https://github.com/tripleCC/Laboratory/tree/master/BlockStrongReferenceObject ""BlockStrongReferenceObject) ，它只检测 Block 导致的循环引用问题，跟 FBRetainCycleDetector 类似，也是要分析 block 内存布局。但不同的是，它可以完全根据内存布局，来定位到强引用对象，主要是依据 block 和 clang 源码进行分析得出，这里真的非常强👍🏻，如果对实现细节感兴趣可以阅读这篇文章：[聊聊循环引用的检测](https://triplecc.github.io/2019/08/15/%E8%81%8A%E8%81%8A%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8%E7%9A%84%E6%A3%80%E6%B5%8B/ "聊聊循环引用的检测")。
+
+参考：
+
+[检测和诊断 App 内存问题](https://mp.weixin.qq.com/s/E80VEIJma66fj7BZy1cCeQ)
+
+[draveness的源码分析 - FBRetainCycleDetector](https://github.com/draveness/analyze/tree/master/contents/FBRetainCycleDetector "draveness的源码分析 - FBRetainCycleDetector")
 
 ## 优秀博客
 
