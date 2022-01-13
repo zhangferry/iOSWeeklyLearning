@@ -15,7 +15,7 @@
 
 ### In-App Events 数据分析功能上线了
 
-In-App Events 的展示效果数据可以在 App Store Connect 中的应用分析查看了。应用分析还包括事件的页面展示，提醒和通知数据，以及由你的 In-App Events 触发的下载和重新下载的数量。每个指标都可以根据区域、资源类型、设备等进行查看，这样你就可以了解 In-App Events 是如何影响应用的发展和成功的了。
+In-App Events 的展示效果数据可以在 App Store Connect 中的 App 分析查看了。应用分析还包括事件的页面展示，提醒和通知数据，以及由你的 In-App Events 触发的下载和重新下载的数量。每个指标都可以根据区域、资源类型、设备等进行查看，这样你就可以了解 In-App Events 是如何影响应用的发展和成功的了。
 
 [Analytics now available for in-app events](https://developer.apple.com/news/?id=pa0x2dzk "Analytics now available for in-app events")
 
@@ -104,10 +104,10 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 参考：
 
-* [Apple｜Adopting Modern Objective-C —— Object Initialization](https://developer.apple.com/library/archive/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html#//apple_ref/doc/uid/TP40014150-CH1-SW8)
-* [Apple｜Concepts in Objective-C Programming —— Object Initialization](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Initialization/Initialization.html#//apple_ref/doc/uid/TP40010810-CH6)
-* [Apple｜Cocoa Core Competencies —— Multiple initializers](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MultipleInitializers.html)
-* [SwiftGG｜Swift 教程 - 类的继承和构造过程](https://swiftgg.gitbook.io/swift/swift-jiao-cheng/14_initialization#class-inheritance-and-initialization)
+* [Apple｜Adopting Modern Objective-C —— Object Initialization](https://developer.apple.com/library/archive/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html#//apple_ref/doc/uid/TP40014150-CH1-SW8 "Apple｜Adopting Modern Objective-C —— Object Initialization")
+* [Apple｜Concepts in Objective-C Programming —— Object Initialization](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Initialization/Initialization.html#//apple_ref/doc/uid/TP40010810-CH6 "Apple｜Concepts in Objective-C Programming —— Object Initialization")
+* [Apple｜Cocoa Core Competencies —— Multiple initializers](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MultipleInitializers.html "Apple｜Cocoa Core Competencies —— Multiple initializers")
+* [SwiftGG｜Swift 教程 - 类的继承和构造过程](https://swiftgg.gitbook.io/swift/swift-jiao-cheng/14_initialization#class-inheritance-and-initialization "SwiftGG｜Swift 教程 - 类的继承和构造过程")
 * [iOS: 聊聊 Designated Initializer（指定初始化函数）](http://www.cnblogs.com/smileEvday/p/designated_initializer.html "iOS: 聊聊 Designated Initializer（指定初始化函数）")
 
 ## 面试解析
@@ -116,7 +116,9 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 ### 如何检测内存泄露
 
-检测内存泄露有多种方案，大体可以分为两类：工具和代码。
+**内存泄漏**指的是程序中已动态分配的堆内存（程序员自己管理的空间）由于某些原因未能释放或无法释放的现象。该现象会造成系统内存的浪费，导致程序运行速度变慢甚至系统崩溃。
+
+在 ARC 模式下，导致内存泄露的主要原因是循环引用，其次是非 OC 对象的内存处理、野指针等。针对内存泄露的检测方案也基本从以上几种类型中入手，它们可以分为两类：工具类和代码类。
 
 #### 工具类
 
@@ -248,11 +250,11 @@ static NSIndexSet *_GetBlockStrongLayout(void *block) {
 
 当拿到以上所有强引用关系时就可以利用 DFS 深度优先搜索遍历引用树，查找是否有环形引用了。
 
-FBRetainCycleDetector 的检测方案明显更复杂、更耗时，所以几乎不可能针对所有对象都进行检测，所以更好的方案是配合 MLeaksFinder 或者 facebook 自己的 [FBAllocationTracker](https://github.com/facebookarchive/FBAllocationTracker "FBAllocationTracker")，先找到潜在泄露对象，然后分析这些对象的强引用关系，查找是否存在循环引用。
+`FBRetainCycleDetector` 的检测方案明显更复杂、更耗时，所以几乎不可能针对所有对象都进行检测，所以更好的方案是配合 MLeaksFinder 或者 facebook 自己的 [FBAllocationTracker](https://github.com/facebookarchive/FBAllocationTracker "FBAllocationTracker")，先找到潜在泄露对象，然后分析这些对象的强引用关系，查找是否存在循环引用。
 
 **其他方案**
 
-在资料查找过程中还发现了另一个库 [BlockStrongReferenceObject](https://github.com/tripleCC/Laboratory/tree/master/BlockStrongReferenceObject ""BlockStrongReferenceObject) ，它只检测 Block 导致的循环引用问题，跟 FBRetainCycleDetector 类似，也是要分析 block 内存布局。但不同的是，它可以完全根据内存布局，来定位到强引用对象，主要是依据 block 和 clang 源码进行分析得出，这里真的非常强👍🏻，如果对实现细节感兴趣可以阅读这篇文章：[聊聊循环引用的检测](https://triplecc.github.io/2019/08/15/%E8%81%8A%E8%81%8A%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8%E7%9A%84%E6%A3%80%E6%B5%8B/ "聊聊循环引用的检测")。
+在资料查找过程中还发现了另一个库 [BlockStrongReferenceObject](https://github.com/tripleCC/Laboratory/tree/master/BlockStrongReferenceObject "BlockStrongReferenceObject") ，它只检测 Block 导致的循环引用问题，跟 `FBRetainCycleDetector` 类似，也是要分析 block 内存布局。但不同的是，它可以完全根据内存布局，来定位到强引用对象。主要是依据 block 和 clang 源码进行分析得出，真的非常强👍🏻，如果对实现细节感兴趣可以阅读这篇文章：[聊聊循环引用的检测](https://triplecc.github.io/2019/08/15/%E8%81%8A%E8%81%8A%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8%E7%9A%84%E6%A3%80%E6%B5%8B/ "聊聊循环引用的检测")。
 
 参考：
 
