@@ -114,6 +114,14 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Visual Web Skills
+
+地址：https://andreasbm.github.io/web-skills/
+
+这是一份可视化的 Web 技能列表，它对刚开始学习 Web 或已经工作多年并想学习新东西的人都很有用，你可以从中了解 Web 开发的大概路径和图谱，按顺序或者选择自己感兴趣的部分来看。除此之外最吸引人的是这个列表可视化的非常棒，每个图标符号都很大方美观形象，快来看一下！
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Web%20Skills.png)
+
 ## 工具推荐
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
