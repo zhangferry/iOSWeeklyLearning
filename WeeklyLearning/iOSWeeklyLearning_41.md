@@ -33,7 +33,7 @@ In-App Events 的展示效果数据可以在 App Store Connect 中的应用分�
 
 ### 在 Objective-C 中标记构造器为指定构造器
 
-这是一个开发 tip，一个编码规范，也是快手的一道面试真题。
+这是一个开发 tip，一个编码规范，也是快手的一道面试题。
 
 指定构造器模式有助于确保继承的构造器正确地初始化所有实例变量。指定构造器通常为类中接收全部初始化参数的全能构造器，是类中最重要的构造器；便利构造器通常为接收部分初始化参数的构造器，它们调用当前类的其它构造器，并为一些参数赋默认值。便利构造器是类中比较次要的、辅助型的构造器。
 
@@ -49,17 +49,9 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 2. 便利构造器的实现只能且必须`横向代理`到当前类的另一个构造器（with `[self init...]`），最终需要在当前类的指定构造器处终止链；
 3. 如果一个类提供了一个或多个指定构造器，它必须覆写其父类的所有指定构造器作为（退化为）该类的便利构造器，并让其满足条件 2。这样才能保证子类新增的实例变量得到正确的初始化。
 
-如果违反了以上任何规则，将会得到编译器的警告。
+**如果违反了以上任何规则，将会得到编译器的警告。**
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220112232618.png)
-
-简单来说，指定构造器必须总是`向上代理`，便利构造器必须总是`横向代理`。
-
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220112232822.png)
-
-另外，在 Objective-C 中，你还必须覆写父类的所有指定构造器退化为子类的便利构造器，并且要遵循便利构造器的实现规则；而 Swift 则不用，因为 Swift 中的子类默认情况下不会继承父类的构造器，仅会在安全和适当的某些情况下被继承。Swift 的这种机制可以防止一个父类的简单构造器被一个更精细的子类继承，而在用来创建子类时的新实例时没有完全或错误被初始化。
-
-在 Objective-C 中，使用宏 `NS_DESIGNATED_INITIALIZER` 标记构造器为指定构造器，可以充分发挥编译器的特性帮我们找出初始化过程中可能存在的漏洞（通过警告），有助于确保继承的构造器正确地初始化所有实例变量，让构造过程更完整，增强代码的健壮性。
 
 示例代码：
 
@@ -101,6 +93,22 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 @end
 ```
+
+简单来说，指定构造器必须总是`向上代理`，便利构造器必须总是`横向代理`。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220112232822.png)
+
+另外，在 Objective-C 中，你还必须覆写父类的所有指定构造器退化为子类的便利构造器，并且要遵循便利构造器的实现规则；而 Swift 则不用，因为 Swift 中的子类默认情况下不会继承父类的构造器，仅会在安全和适当的某些情况下被继承。Swift 的这种机制可以防止一个父类的简单构造器被一个更精细的子类继承，而在用来创建子类时的新实例时没有完全或错误被初始化。
+
+在 Objective-C 中，使用宏 `NS_DESIGNATED_INITIALIZER` 标记构造器为指定构造器，可以充分发挥编译器的特性帮我们找出初始化过程中可能存在的漏洞（通过警告），有助于确保继承的构造器正确地初始化所有实例变量，让构造过程更完整，增强代码的健壮性。
+
+参考：
+
+* [Apple｜Adopting Modern Objective-C —— Object Initialization](https://developer.apple.com/library/archive/releasenotes/ObjectiveC/ModernizationObjC/AdoptingModernObjective-C/AdoptingModernObjective-C.html#//apple_ref/doc/uid/TP40014150-CH1-SW8)
+* [Apple｜Concepts in Objective-C Programming —— Object Initialization](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Initialization/Initialization.html#//apple_ref/doc/uid/TP40010810-CH6)
+* [Apple｜Cocoa Core Competencies —— Multiple initializers](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MultipleInitializers.html)
+* [SwiftGG｜Swift 教程 - 类的继承和构造过程](https://swiftgg.gitbook.io/swift/swift-jiao-cheng/14_initialization#class-inheritance-and-initialization)
+* [iOS: 聊聊 Designated Initializer（指定初始化函数）](http://www.cnblogs.com/smileEvday/p/designated_initializer.html "iOS: 聊聊 Designated Initializer（指定初始化函数）")
 
 ## 面试解析
 
@@ -176,19 +184,19 @@ internal func track(_ instance: Any, configuration: LifetimeConfiguration, file:
 
 上面两种方案都是粗略的检测，是 ViewController 或者 View 级别的，要想知道更具体的信息，到底哪里导致的循环应用就无能为力了。而 FBRetainCycleDetector 就是用于解决这类问题，因为需要借助 OC 的动态特性，所以该库无法在 Swift 项目中发挥作用。
 
-它的实现相对上面两个方案更复杂一些，大致原理是基于`DFS`算法，把整个对象之间的强引用关系当做图进行处理，查找其中的环，就找到了循环引用。
+它的实现相对上面两个方案更复杂一些，大致原理是基于 `DFS` 算法，把整个对象之间的强引用关系当做图进行处理，查找其中的环，就找到了循环引用。
 
 核心是寻找对象之间的强引用关系，在 OC 语言中，强引用关系主要发生在这三种场景里，针对这三种场景也有不同的处理方案：
 
 **类的成员变量**
 
-通过`runtime`的`class_getIvarLayout`获取描述该类成员变量的布局信息，然后通过`ivar_getOffset`遍历获取成员变量在类结构中的偏移地址，然后获取强引用变量的集合。
+通过 `runtime` 的 `class_getIvarLayout` 获取描述该类成员变量的布局信息，然后通过 `ivar_getOffset` 遍历获取成员变量在类结构中的偏移地址，然后获取强引用变量的集合。
 
 **关联对象**
 
-利用 fishhook hook `objc_setAssociatedObject` 和 `objc_removeAssociatedObjects` 这两个方法，对通过`OBJC_ASSOCIATION_RETAIN`和`OBJC_ASSOCIATION_RETAIN_NONATOMIC`策略进行关联的对象进行保存。
+利用 fishhook hook `objc_setAssociatedObject` 和 `objc_removeAssociatedObjects` 这两个方法，对通过 `OBJC_ASSOCIATION_RETAIN`和`OBJC_ASSOCIATION_RETAIN_NONATOMIC` 策略进行关联的对象进行保存。
 
-**block持有**
+**block 持有**
 
 理解这个原理还需要再回顾下 block 的内存布局，FBRetainCycleDetector 对 block 结构体进行了等价的封装：
 
@@ -258,18 +266,18 @@ FBRetainCycleDetector 的检测方案明显更复杂、更耗时，所以几乎�
 
 1、[大白健康系统--iOS APP运行时Crash自动修复系统](https://neyoufan.github.io/2017/01/13/ios/BayMax_HTSafetyGuard/ "大白健康系统--iOS APP运行时Crash自动修复系统")
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：整个文章是非常经典的，作者介绍通过 method swizzling 替换 NSObject 的`allocWithZone` 方法和 dealloc方法实现野指针拦截。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：整个文章是非常经典的，作者介绍通过 method swizzling 替换 NSObject 的 `allocWithZone` 方法和 dealloc方法实现野指针拦截。
 
 2、[JJException](https://github.com/jezzmemo/JJException "JJException")
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：这个库需要自己指定探测哪些类对应的野指针。换句话说，就是我们自己指定10个类，那么这10个类的对象发生野指针时我们才能发现。如果在此之外，野指针监控不到。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：这个库需要自己指定探测哪些类对应的野指针。换句话说，就是我们自己指定 10 个类，那么这 10 个类的对象发生野指针时我们才能发现。如果在此之外，野指针监控不到。
 
 3、[iOS 野指针定位:野指针嗅探器](https://www.jianshu.com/p/9fd4dc046046 "iOS 野指针定位:野指针嗅探器")
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍了2个方案：（1）在开发阶段破坏内存，使野指针必现崩溃(野指针可能由于内存释放但未被写入导致崩溃不必现)。在free时，并不释放内存，保留内存，判断是否为objc对象，如果是 objc 对象则将对象 setclass 为自定义类，借助消息转发得到堆栈和类信息。监听系统内存警告，收到警告后释放。（2）hook objc 的 dealloc 方法，在dealloc时判断是否需要开启野指针探测，如果不需要则直接释放，否则将对象修改isa后保留并加入到内存池中，再次调用对象时会触发消息转发拦截到堆栈及对象类名信息。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍了 2 个方案：（1）在开发阶段破坏内存，使野指针必现崩溃（野指针可能由于内存释放但未被写入导致崩溃不必现）。在 free 时，并不释放内存，保留内存，判断是否为 objc 对象，如果是 objc 对象则将对象 setclass 为自定义类，借助消息转发得到堆栈和类信息。监听系统内存警告，收到警告后释放。（2）hook objc 的 dealloc 方法，在 dealloc 时判断是否需要开启野指针探测，如果不需要则直接释放，否则将对象修改 isa 后保留并加入到内存池中，再次调用对象时会触发消息转发拦截到堆栈及对象类名信息。
 
 4、[iOS野指针定位总结](https://juejin.cn/post/6844903747538141191 "iOS野指针定位总结")
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍方案如下：分类覆盖 dealloc 函数，并在 dealloc 中重新设置isa并不释放 obj，其中重新指向的 isa 是动态创建的。也就是说 dealloc 是10000个类，也会同步动态创建 10000 个类。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：文章介绍方案如下：分类覆盖 dealloc 函数，并在 dealloc 中重新设置 isa 并不释放 obj，其中重新指向的 isa 是动态创建的。也就是说 dealloc 是 10000 个类，也会同步动态创建 10000 个类。
 
 5、[浅谈 iOS 中的 Crash 捕获与防护](http://shevakuilin.com/ios-crashprotection/ "浅谈 iOS 中的 Crash 捕获与防护")
 
@@ -285,7 +293,7 @@ FBRetainCycleDetector 的检测方案明显更复杂、更耗时，所以几乎�
 
 ### Visual Web Skills
 
-地址：https://andreasbm.github.io/web-skills/
+**地址**：https://andreasbm.github.io/web-skills/
 
 这是一份可视化的 Web 技能列表，它对刚开始学习 Web 或已经工作多年并想学习新东西的人都很有用，你可以从中了解 Web 开发的大概路径和图谱，按顺序或者选择自己感兴趣的部分来看。除此之外最吸引人的是这个列表可视化的非常棒，每个图标符号都很大方美观形象，快来看一下！
 
@@ -303,7 +311,7 @@ FBRetainCycleDetector 的检测方案明显更复杂、更耗时，所以几乎�
 
 **软件介绍**：
 
-`SwiftInfo` 是一个 `CLI` 工具，用于提取、跟踪和分析对 `Swift` 应用程序有用的指标。除了该工具附带的默认跟踪选项外，还支持自定义编写`.Swift`脚本来实现额外的功能。
+`SwiftInfo` 是一个 `CLI` 工具，用于提取、跟踪和分析对 `Swift` 应用程序有用的指标。除了该工具附带的默认跟踪选项外，还支持自定义编写 `.Swift` 脚本来实现额外的功能。
 
 默认支持的工具包括：
 
