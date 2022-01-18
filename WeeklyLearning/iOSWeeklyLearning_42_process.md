@@ -38,7 +38,7 @@
 
 [@我是熊大](https://github.com/Tliens)：工作不卷，生活要开心，收入稳中有升。
 
-3、[下一个五年计划起航 ！](https://juejin.cn/post/7036284707067133982 "下一个五年计划起航 ！") -- 来自博客：halfrost
+3、[下一个五年计划起航 ！](https://halfrost.com/halfrost_2020/ "下一个五年计划起航 ！") -- 来自博客：halfrost
 
 [@我是熊大](https://github.com/Tliens)：霜神是前阿里巴巴资深后端工程师，iOS 开发届的大佬级别人物，这是2020的年终总结，来的更晚一些。
 
