@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第四十二期
+# iOS 摸鱼周报 第四十二期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
@@ -15,22 +15,19 @@
 
 [@zhangferry](https://zhangferry.com)：
 
-## 开发Tips
+## 开发 Tips
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
-
-
 
 ## 面试解析
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
-
 ## 优秀博客
 
 整理编辑：[我是熊大](https://juejin.cn/user/1151943916921885)
 
-1、[2021 年终总结](https://onevcat.com/2021/12/2021-final/ "2021 年终总结") -- 来自博客：王巍 (onevcat) 
+1、[2021 年终总结](https://onevcat.com/2021/12/2021-final/ "2021 年终总结") -- 来自博客：王巍 (onevcat)
 
 [@我是熊大](https://github.com/Tliens)：王巍，拥有知名开源库Kingfisher，创办了网站[ObjC CN](https://objccn.io/)，是iOS开发者重点关注对象。
 
@@ -50,20 +47,31 @@
 
 [@我是熊大](https://github.com/Tliens)：作者是京东的一位前端开发，读书爱好者，一年的读书清单有87本之多。
 
-
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
-
-
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### 摸鱼单词
+
+**地址**：https://apps.apple.com/cn/app/id1488909953?mt=12
+
+**软件状态**：免费
+
+**软件介绍**：
+
+软件作者自述：电脑大部分使用场景是用来办公，如果在办公之余可以背背单词就很好啦，于是就有了摸鱼单词。专注于利用碎片时间学习记忆英语单词。
+
+> 和《摸鱼周报》相得益彰，作者也是一直在维护这个软件。
+
+![摸鱼单词](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_2022-01-18_20-46-39%E7%9A%84%E5%89%AF%E6%9C%AC.png)
 
 ## 关于我们
 
-iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
+iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS 成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
