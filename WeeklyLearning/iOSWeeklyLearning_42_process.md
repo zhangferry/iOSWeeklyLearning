@@ -30,7 +30,7 @@
 
 整理编辑：[我是熊大](https://juejin.cn/user/1151943916921885)
 
-1、[2021 年终总结](https://onevcat.com/2021/12/2021-final/"@SunshineBrother：2021 年终总结") -- 来自博客：王巍 (onevcat) 
+1、[2021 年终总结](https://onevcat.com/2021/12/2021-final/ "2021 年终总结") -- 来自博客：王巍 (onevcat) 
 
 [@我是熊大](https://github.com/Tliens)：王巍，拥有知名开源库Kingfisher，创办了网站[ObjC CN](https://objccn.io/)，是iOS开发者重点关注对象。
 
