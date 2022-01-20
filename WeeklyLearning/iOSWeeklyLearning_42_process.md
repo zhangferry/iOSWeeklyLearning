@@ -101,8 +101,8 @@ Host * # 第一行说明对所有主机生效
 另外开局提到的,提示输入的密码,其实应该是登录服务器git用户的密码,而不是指的gitlab中的个人账号密码;
 因为git使用ssh目的仅仅是登录校验,而不用于访问数据,由于个人对server端了解的较少, 所以在这里也坑了很久, 希望了解的同学多多指教
 
-* [解决升级Openssh8.8后ssh-rsa算法密钥对校验失效问题 - Hello World](https://juejin.cn/post/7055116684335513631/)
-* [OpenSSH Release Notes](https://www.openssh.com/releasenotes.html)
+* [解决Openssh8.8后ssh-rsa算法密钥对校验失效问题](https://juejin.cn/post/7055116684335513631/ "解决Openssh8.8后ssh-rsa算法密钥对校验失效问题")
+* [OpenSSH Release Notes](https://www.openssh.com/releasenotes.html "OpenSSH Release Notes")
 
 ## 面试解析
 
