@@ -17,7 +17,92 @@
 
 ## 开发 Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### openssh8.8默认禁用ssh-rsa加密算法导致git验证失效
+
+问题源自于最近无意间在工作机上升级了openssh版本(后续才发现是版本问题), 导致所有基于ssh方式的git操作全部失效;
+
+git pull一直提示请输入密码, 在我输入了无数次个人gitlab密码仍然失败后,第一直觉是我的ssh密钥对出了问题, 重新生成并上传了新的公钥,还是同样的提示;
+
+使用 ssh -vT命令查看了详细的日志信息, 最终发现了问题所在.在解析日志之前, 这里先了解一下简化的ssh密钥登录的原理:
+
+我们都知道ssh是基于非对称加密的一种通信加密协议,常用于做登录校验, 
+
+一般支持两种方式: **口令登录和公钥登录**; 由于篇幅问题这里只介绍公钥的简化流程, 如果想了解探索过程以及git使用ssh的一些技巧,可以查看原文
+
+登录分为两部分:
+
+- 生成会话密钥
+  - 客户端和服务端互相发送ssh协议版本以及openssh版本, 并约定协议版本
+  - 客户端和服务端互相发送支持的加密算法并约定使用的算法类型
+  - 服务端生成非对称密钥,并将公钥以及公钥指纹发送到客户端
+  - 客户端和服务端分别使用DH算法计算出会话密钥,后续所有流程都会使用会话密钥加密传输
+- 验证阶段
+  - 如果是公钥登录, 则会将客户端将公钥指纹信息 使用上述的会话密钥加密发送到服务端
+  - 服务端拿到后解密, 并去authorized_keys中匹配对应的公钥, 生成一个随机数,使用该客户端公钥加密后发送到客户端
+  - 客户端使用自己的私钥解密,获取到随机数, 使用会话密钥对随机数加密,并做MD5生成摘要发送给服务端
+  - 服务器端对原始随机数也使用会话密钥加密后计算MD5, 对比两个值是否相等决定是否登录
+
+> 常说的ssh只是一种抽象的协议标准的, 实际开发中我们使用的是开源openssh库, 该库是对ssh这一抽象协议标准的实现
+
+以上是ssh协议登录校验的流程概要,我们了解到在验证阶段会用到客户端的公钥, openssh会判断公钥生成算法类型, 由于不再支持ssh-rsa, publickey方式失败后会尝试使用口令登录方式, 这也是一直提示我们输入密码的原因;.具体可以通过日志查看:
+
+这里针对日志做了简化, 部分内容做了注释, 你也可以对照自己的log日志查看更详细的过程
+```shell
+ssh -vT git@github.com
+
+# 日志如下
+# 版本信息
+OpenSSH_8.8p1, OpenSSL 1.1.1m  14 Dec 2021 
+# 读取配置文件
+debug1: Reading configuration data /Users/clownfish/.ssh/config
+debug1: Reading configuration data /usr/local/etc/ssh/ssh_config
+...
+# 查找身份文件, 成功返回0, 失败返回-1, 由于本地只有默认的id_ras 所以只有这一项返回0
+debug1: identity file /Users/clownfish/.ssh/id_rsa type 0
+debug1: identity file /Users/clownfish/.ssh/id_rsa-cert type -1
+...
+
+# 版本号
+debug1: Local version string SSH-2.0-OpenSSH_8.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+...
+# 查找到host
+debug1: Found key in /Users/clownfish/.ssh/known_hosts:5
+
+debug1: Will attempt key: /Users/clownfish/.ssh/id_rsa RSA SHA256:7KTOiN2jUDgc5SJm22GnEk5TpshjTBk/lU9stwJYx48
+... # Will attempt key 尝试其他类型密钥
+
+# 认证支持两种方式, 公钥和口令
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Offering public key: /Users/clownfish/.ssh/id_rsa RSA SHA256:7KTOiN2jUDgc5SJm22GnEk5TpshjTBk/lU9stwJYx48
+# 针对上文找到的public key 没有相互支持的签名算法
+debug1: send_pubkey_test: no mutual signature algorithm
+... # Trying private key 尝试其他私有key
+# 尝试口令登录
+debug1: Next authentication method: password
+... # 一直提示输入密码
+```
+
+找到关键字**no mutual signature supported**.去查了一下,发现是**openssh8.8版本问题不再支持ssh-rsa**, 
+openssh 8.8 release notes中说明默认会自动转换, 但是链接到版本较低的server时(从日志中可以看到我们server的版本是6.6),还是要手工处理
+
+那么解决办法也就有了,  要么重新生成其他算法的秘钥对上传, 要么修改配置再次开启支持, 这里只针对第二种
+在config中做如下配置:
+```
+Host * # 第一行说明对所有主机生效
+  PubkeyAcceptedKeyTypes=+ssh-rsa # 第二行是将ssh-rsa加会允许使用的范围, 没配置会提示no mutual signature supported.表示找不到匹配的签名算法
+  # HostKeyAlgorithms +ssh-rsa # 第三行是指定所有主机使用的都是ssh-rsa算法的key, 我个人测试可以不写,如果仍不生效可以打开测试
+```
+再次测试发现可以正常登录
+
+另外开局提到的,提示输入的密码,其实应该是登录服务器git用户的密码,而不是指的gitlab中的个人账号密码;
+因为git使用ssh目的仅仅是登录校验,而不用于访问数据,由于个人对server端了解的较少, 所以在这里也坑了很久, 希望了解的同学多多指教
+
+* [解决Openssh8.8后ssh-rsa算法密钥对校验失效问题](https://juejin.cn/post/7055116684335513631/ "解决Openssh8.8后ssh-rsa算法密钥对校验失效问题")
+* [OpenSSH Release Notes](https://www.openssh.com/releasenotes.html "OpenSSH Release Notes")
 
 ## 面试解析
 
