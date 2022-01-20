@@ -608,3 +608,18 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Web%20Skills.png)
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### 程序员考公指南
+
+**地址**：https://github.com/coder2gwy/coder2gwy
+
+互联网首份程序员考公指南，由 3 位已经进入体制内的前大厂程序员联合献上。程序员近几年内卷的程度有些加重了，不少人萌生了回家当公务员的想法，这个仓库主要分享了他们上岸的一些经历和一些最佳实践，也有他们上岸之后的一些感想和感悟。
+
+### Vim 从入门到精通（中文）
+
+**地址**：https://github.com/wsdjeg/vim-galore-zh_cn
+
+许多程序员可能了解过一点点 Vim，但从没用过，也不知道具体是怎么用的以及有什么有点，为什么有这么多人用。该仓库会从 Vim 是什么开始，讲述 Vim 的哲学，并带你入门 Vim 的世界。同时仓库中也记录列举了大部分用法和规则，其作为一个速查表也是很好用的。
+

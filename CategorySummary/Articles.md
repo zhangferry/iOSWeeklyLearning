@@ -1215,3 +1215,26 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：坦白讲我并没有看完的文章，在做技术调研时发现的博客，文章内容比较深入并且能看出作者是有大量实战经验的开发者，因此推荐给大家。
 
+***
+整理编辑：[我是熊大](https://juejin.cn/user/1151943916921885)
+
+1、[2021 年终总结](https://onevcat.com/2021/12/2021-final/ "2021 年终总结") -- 来自博客：王巍 (onevcat)
+
+[@我是熊大](https://github.com/Tliens)：王巍，拥有知名开源库 Kingfisher，创办了网站 [ObjC CN](https://objccn.io/)，是 iOS 开发者重点关注对象。
+
+2、[大厂逃离后上岸人员的年终总结](https://juejin.cn/post/7047809990916046862 "大厂逃离后上岸人员的年终总结") -- 来自掘金：东方赞
+
+[@我是熊大](https://github.com/Tliens)：工作不卷，生活要开心，收入稳中有升。
+
+3、[下一个五年计划起航 ！](https://halfrost.com/halfrost_2020/ "下一个五年计划起航 ！") -- 来自博客：halfrost
+
+[@我是熊大](https://github.com/Tliens)：霜神是前阿里巴巴资深后端工程师，iOS 开发届的大佬级别人物，这是 2020 的年终总结，来的更晚一些。
+
+4、[【年度总结】2021年度总结](https://blog.yuusann.com/corpus/article/21021 "【年度总结】2021年度总结") -- 来自博客：郑宇琦
+
+[@我是熊大](https://github.com/Tliens)：郑宇琦，LinkedIn 高级研发工程师，曾就职于百度，作者过去一年的经历十分丰富，生活不止有 coding。
+
+5、[2020年我阅读了87本书，推荐这12本好书给你](https://mp.weixin.qq.com/s/f6_Sa_C4uU983UBaiMtJdQ "2020年我阅读了87本书，推荐这12本好书给你") -- 来自公众号： 千古壹号
+
+[@我是熊大](https://github.com/Tliens)：作者是京东的一位前端开发，读书爱好者，一年的读书清单有 87 本之多。
+

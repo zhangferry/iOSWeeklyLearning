@@ -44,7 +44,7 @@ def assemblyHeadText(title):
     date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     today = f"date: {date}"
 
-    cover = "cover: https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png"
+    cover = "cover: https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg"
     tags = "tags:\n\t- iOS摸鱼周报"
     comments = "comments: true"
     emptyline = "\n"
