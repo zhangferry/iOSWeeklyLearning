@@ -1,6 +1,6 @@
 # iOSWeeklyLearning
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## 周报介绍
@@ -98,6 +98,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://coder-star.github.io/"><img src="https://avatars.githubusercontent.com/u/29835618?v=4?s=100" width="100px;" alt=""/><br /><sub><b>CoderStar</b></sub></a><br /><a href="#blog-Coder-Star" title="Blogposts">📝</a></td>
     <td align="center"><a href="http://blog.csdn.net/qq_24761271"><img src="https://avatars.githubusercontent.com/u/25574478?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dev-wang</b></sub></a><br /><a href="#blog-RunsCode" title="Blogposts">📝</a></td>
     <td align="center"><a href="http://www.fatbobman.com"><img src="https://avatars.githubusercontent.com/u/55673881?v=4?s=100" width="100px;" alt=""/><br /><sub><b>东坡肘子</b></sub></a><br /><a href="#blog-fatbobman" title="Blogposts">📝</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/talka123456"><img src="https://avatars.githubusercontent.com/u/20468636?v=4?s=100" width="100px;" alt=""/><br /><sub><b>clownfish</b></sub></a><br /><a href="#blog-talka123456" title="Blogposts">📝</a></td>
   </tr>
 </table>
 

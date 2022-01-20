@@ -139,6 +139,15 @@
       "contributions": [
         "blog"
       ]
+    },
+    {
+      "login": "talka123456",
+      "name": "clownfish",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20468636?v=4",
+      "profile": "https://github.com/talka123456",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
