@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 话题：
-> * Tips：
+> * Tips：Fix iOS12 libswift_Concurrency.dylib crash bug 
 > * 面试模块：
 > * 优秀博客：
 > * 学习资料：
@@ -17,8 +17,69 @@
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
 
+### Fix iOS12 libswift_Concurrency.dylib crash bug 
+最近很多朋友都遇到了iOS12上libswift_Concurrency的crash问题, xcode 13.2 release notes中有提到是Clang编译器bug, 13.2.1 release notes说明已经修复, 但实际测试并没有.
+
+crash的具体原因是xcode编译器在低版本(12)上没有将libswift_Concurrency.dylib库剔除, 反而是将该库嵌入到ipa的Frameworks路径下, 导致动态链接时libswift_Concurrency被链接引发crash
+
+#### error分析过程:
+1. 通过报错信息Library not loaded: /usr/lib/swift/libswiftCore.dylib 分析是动态库没有加载, 提示是libswift_Concurrency.dylib引用了该库, 但是libswift_Concurrency只有在iOS15系统上才会存在, iOS12本该不链接这个库, 猜测是类似swift核心库嵌入的方式,内嵌在了ipa包中; 校验方式也很简答, 通过iOS12真机run一下, 崩溃后通过`image list`查看加载的镜像文件会找到libswift_Concurrency的路径是ipa/Frameworks下的, 通过解包ipa也证实了这一点
+
+2. 在按照xcode 13.2 release notes提供的方案, 将libswiftCore设置为weak并指定rpath后, crash信息变更, 此时error原因是`___chkstk_darwin`符号找不到; 根据error Referenced from 发现还是libswift_Concurrency引用的, 通过`nm -u xxxAppPath/Frameworks/libswift_Concurrency.dylib`查看所有未定义符号(类型为U), 其中确实包含了`___chkstk_darwin`, 13.2 release notes中提供的解决方案只是设置了系统库弱引用, 没有解决库版本差异导致的符号解析问题
+
+3. error 提示期望该符号应该在libSystem.B.dylib中, 但是通过找到libSystem.B.dylib并打印导出符号`nm -gAUj libSystem.B.dylib`  发现即使是高版本的动态库中也并没有该符号, 那么如何知道该符号在哪个库呢,  这里用了一个取巧的方式, run iOS13以上真机, 并设置symbol符号`___chkstk_darwin`, xcode会标记所有存在该符号的库, 经过第1&2步骤思考, 认为是在查找libswiftCore核心库时crash的可能性更大
+
+    > libSystem.B.dylib 路径在~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/目录下
+
+4. 如何校验呢, 通过xcode上iOS12 && iOS15两个不同版本的libswiftCore.dylib查看导出符号,可以发现, 12上的Core库不存在, 对比组15上是存在的, 所以基本可以断定symbol not found是这个原因造成的; 当然你也可以把其他几个库也采用相同的方式验证
+
+> 通过在 ~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/swift/libswiftCore.dylib 不同的version路径下找到不同系统对应的libswiftCore.dylib库, 然后用`nm -gUAj libswiftCore.dylib`可以获取过滤后的全局符号验证
+> 
+> 库的路径,可以通过linkmap或者运行demo打个断点, 通过LLDB的image list查看
+
+分析总结: 无论是根据xcode提供的解决方案亦或是error分析流程, 发现根源还是因为在iOS12上链接了libswift_Concurrency造成的,既然问题出在异步库, 解决方案也很明了,移除项目中的libswift_Concurrency.dylib库即可
+
+#### 解决方案
+##### 使用xcode13.1或者xcode13.3 Beta构建
+
+使用xcode13.1或者xcode13.3 Beta构建, 注意beta版构建的ipa无法上传到App Store
+该方法比较麻烦, 还要下载xcode版本, 耗时较多,如果有多版本xcode的可以使用该方法
+
+##### 添加Post-actions 脚本移除
+
+添加脚本,每次构建完成后移除嵌入的libswift_Concurrency.dylib
+添加流程: `Edit Scheme... -> Build -> Post-actions -> Click '+' to add New Run Script`, 脚本内容为`rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" || echo "libswift_Concurrency.dylib not exists"`
+
+  <img src="https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_43_tips_04.jpeg" style="zoom:50%;" />
+
+##### 降低/移除 使用libswift_Concurrency.dylib的三方库
+
+**查找使用concurrency的三方库, 降低到未引用Concurrency前的版本,后续等xcode修复后再升级**
+如果是通过cocoapods管理三方库, 只需要指定降级版本即可.
+但是需要解决一个问题,查找三方库中有哪些用到concurrency呢,
+
+如果是源码, 全局搜索相关的`await & async`关键字可以找到部分SDK, 但如果是二进制SDK或者是间接使用的, 则只能通过符号查找
+**查找思路:**
+
+1. 首先明确动态库的链接是依赖导出符号的, 即xxx库引用了target_xxx动态库时, xxx是通过调用target_xxx的导出符号(全局符号)实现的, 全局符号的标识是大写的类型, U表示当前库中未定义的符号, 即xxx需要链接其他库动态时的符号, 符号操作可以使用`llvm nm`命令
+2. 如何查看是否引用了指定动态库target_xxx的符号? 可以通过linkmap文件查找, 但是由于libswift_Concurrency有可能是被间接依赖的, 此时linkmap中不存在对这个库的符号记录, 所以没办法进行匹配, 换个思路, 通过获取libswift_Concurrency的所有符号进行匹配, libswift_Concurrency的路径可以通过上文提到的`image list`获取, 一般都是用的/usr/lib/swift下的
+2. 遍历所有的库, 查找里面用到的未定义符号(U), 和libswift_Concurrency的导出符号进行匹配, 重合则代表有调用关系
+
+​		为了节省校验工作量, 提供`findsymbols.sh`脚本完成查找, 构建前可以通过指定项目中SDK目录查找,或者也可以指定构建后.app包中的Frameworks查找
+
+**使用方法:**
+
+1. 下载后进行权限授权, `chmod 777 findsymbols.sh`
+2. 指定如下参数:
+	- -f: 指定单个二进制framework/.a库进行检查
+    - -p: 指定目录,检查目录下的所有framework/.a二进制SDK
+    - -o 输出目录, 默认是`~/Desktop/iOS12 Crash Result`
+
+* [如何检测哪些三方库用了libstdc++](https://www.jianshu.com/p/8de305624dfd?utm_campaign=hugo&utm_medium=reader_share&utm_content=note&utm_source=weixin-friends "如何检测哪些三方库用了libstdc++")
+* [After upgrading to Xcode 13.2.1, debugging with a lower version of the iOS device still crashes at launching](https://developer.apple.com/forums/thread/696960 "After upgrading to Xcode 13.2.1, debugging with a lower version of the iOS device still crashes at launching")
+* [findsymbols.sh](https://gist.github.com/71f8d3fade74903cae443a3b50c2807f.git "findsymbols.sh")
 
 
 ## 面试解析
