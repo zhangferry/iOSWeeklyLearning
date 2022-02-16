@@ -4,16 +4,18 @@
 
 ### 本期概要
 
-> * 话题：
+> * 话题：dyld4 开源了。
 > * Tips：Fix iOS12 libswift_Concurrency.dylib crash bug 
 > * 面试模块：
-> * 优秀博客：
+> * 优秀博客：Swift Protocol 进阶
 > * 学习资料：
 > * 开发工具：
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：Apple 最近开源了 [dyld4](https://github.com/apple-oss-distributions/dyld/ "dyld4") 的代码。通过阅读它的 Readme 文档，我们可以大致了解到dyld4的相对dyld3做的改进有哪些。dyld3 出于对启动速度的优化，增加了启动闭包。应用首启和发生变化时将一些启动数据创建为闭包存到本地，下次启动将不再重新解析数据，而是直接读取闭包内容。这种方法的理想情况是应用程序和系统应很少发生变化，因为如果这两者经常变化，即意味着闭包可能面临失效。为了因对这类场景，dyld4 采用了 Prebuilt + JustInTime 的双解析模式，Prebuild 对应的就是 dyld3 中的启动闭包场景，JustInTime 大致对应 dyld2 中的实时解析，JustInTime 过程是可以利用 Prebuild 的缓存的，所以性能也还可控。应用首启、包体或系统版本更新、普通启动，dyld4 将根据缓存有效与否选择合适的模式进行解析。所以 dyld4 的设计目标不是更快，而是更灵活。
+
+还有一点，细心的开发者还在 dyld4 源码里发现了 realityOS 及 realityOS_Sim 相关的代码注释。很大可能苹果的 VR/AR 设备已经准备差不多了，静待今年的 WWDC 吧。
 
 ## 开发Tips
 
