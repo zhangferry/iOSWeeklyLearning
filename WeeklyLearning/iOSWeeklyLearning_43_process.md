@@ -121,7 +121,31 @@ crash的具体原因是xcode编译器在低版本(12)上没有将libswift_Concur
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### Graphviz
+
+**地址**：http://www.graphviz.org/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+贝尔实验室开发的有向图/无向图自动布局应用, 支持dot脚本绘制结构图, 流程图等。
+
+![Graphviz](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220217174238.png)
+
+对产物`.gz`文件进行解析查看的途径。
+
+- 在线网站：[GraphvizOnline](http://dreampuf.github.io/GraphvizOnline)
+- vs 插件：`Graphviz (dot) language support for Visual Studio Code`
+
+
+结合`cocoapods-dependencies`插件，我们可以解析`podfile`文件来分析项目的`pod`库依赖，生成`.gz`文件。
+
+* 生成`.gz`文件：`pod dependencies --graphviz`
+* 生成依赖图：`pod dependencies --image`
+* 生成`.gz`文件及依赖图：`pod dependencies --graphviz --image`
 
 ## 关于我们
 
