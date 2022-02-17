@@ -8,14 +8,20 @@
 > * Tips：Fix iOS12 libswift_Concurrency.dylib crash bug 
 > * 面试模块：Synchronized 源码解读
 > * 优秀博客：Swift Protocol 进阶
-> * 学习资料：
+> * 学习资料：南大软件分析课程，iOS 开发学习图谱
 > * 开发工具：贝尔实验室开发的有向图/无向图自动布局应用，支持 dot 脚本绘制结构图，流程图等。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：Apple 最近开源了 [dyld4](https://github.com/apple-oss-distributions/dyld/ "dyld4") 的代码。通过阅读它的 Readme 文档，我们可以大致了解到 dyld4 相对 dyld3 做的改进有哪些。dyld3 出于对启动速度的优化，增加了启动闭包。应用首启和发生变化时将一些启动数据创建为闭包存到本地，下次启动将不再重新解析数据，而是直接读取闭包内容。这种方法的理想情况是应用程序和系统应很少发生变化，因为如果这两者经常变化，即意味着闭包可能面临失效。为了应对这类场景，dyld4 采用了 Prebuilt + JustInTime 的双解析模式，Prebuild 对应的就是 dyld3 中的启动闭包场景，JustInTime 大致对应 dyld2 中的实时解析，JustInTime 过程是可以利用 Prebuild 的缓存的，所以性能也还可控。应用首启、包体或系统版本更新、普通启动，dyld4 将根据缓存有效与否选择合适的模式进行解析。所以 dyld4 的设计目标不是更快，而是更灵活。
+[@zhangferry](https://zhangferry.com)：Apple 最近开源了 [dyld4](https://github.com/apple-oss-distributions/dyld/ "dyld4") 的代码。通过阅读它的 Readme 文档，我们可以大致了解到 dyld4 相对 dyld3 做的改进有哪些。dyld3 出于对启动速度的优化，增加了启动闭包。应用首启和发生变化时将一些启动数据创建为闭包存到本地，下次启动将不再重新解析数据，而是直接读取闭包内容。这种方法的理想情况是应用程序和系统应很少发生变化，因为如果这两者经常变化，即意味着闭包可能面临失效。为了应对这类场景，dyld4 采用了 Prebuilt + JustInTime 的双解析模式，Prebuild 对应的就是 dyld3 中的启动闭包场景，JustInTime 大致对应 dyld2 中的实时解析，JustInTime 过程是可以利用 Prebuild 的缓存的，所以性能也还可控。应用首启、包体或系统版本更新、普通启动，dyld4 将根据缓存有效与否选择合适的模式进行解析。
+
+dyld3 在不使用启动闭包的情况下会 fallback 到 dyld2，两套代码分别在两边，不利于行为的统一和维护，dyld4 做了逻辑统一（@鹅喵 补充）。所以 dyld4 的设计目标是更优的兼容性和逻辑统一。
 
 还有一点，细心的开发者还在 dyld4 源码里发现了 realityOS 及 realityOS_Sim 相关的代码注释。很大可能苹果的 VR/AR 设备已经准备差不多了，静待今年的 WWDC 吧。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220217221153.png)
+
+地址：[apple-oss-distributions/dyld](https://github.com/apple-oss-distributions/dyld/blob/5c9192436bb195e7a8fe61f22a229ee3d30d8222/common/MachOFile.cpp#L578 "apple-oss-distributions/dyld")
 
 ## 开发Tips
 
@@ -27,7 +33,7 @@
 crash 的具体原因是 Xcode 编译器在低版本（12）上没有将 libswift_Concurrency.dylib 库剔除，反而是将该库嵌入到 ipa 的 Frameworks 路径下，导致动态链接时 libswift_Concurrency 被链接引发 crash。
 
 #### error分析过程:
-1. 通过报错信息Library not loaded: /usr/lib/swift/libswiftCore.dylib 分析是动态库没有加载, 提示是libswift_Concurrency.dylib引用了该库, 但是libswift_Concurrency只有在iOS15系统上才会存在, iOS12本该不链接这个库, 猜测是类似swift核心库嵌入的方式,内嵌在了ipa包中; 校验方式也很简答, 通过iOS12真机run一下, 崩溃后通过`image list`查看加载的镜像文件会找到libswift_Concurrency的路径是ipa/Frameworks下的, 通过解包ipa也证实了这一点
+1. 通过报错信息 Library not loaded: /usr/lib/swift/libswiftCore.dylib 分析是动态库没有加载, 提示是libswift_Concurrency.dylib引用了该库, 但是libswift_Concurrency只有在iOS15系统上才会存在, iOS12本该不链接这个库, 猜测是类似swift核心库嵌入的方式,内嵌在了ipa包中; 校验方式也很简答, 通过iOS12真机run一下, 崩溃后通过`image list`查看加载的镜像文件会找到libswift_Concurrency的路径是ipa/Frameworks下的, 通过解包ipa也证实了这一点
 
 2. 在按照xcode 13.2 release notes提供的方案, 将libswiftCore设置为weak并指定rpath后, crash信息变更, 此时error原因是`___chkstk_darwin`符号找不到; 根据error Referenced from 发现还是libswift_Concurrency引用的, 通过`nm -u xxxAppPath/Frameworks/libswift_Concurrency.dylib`查看所有未定义符号(类型为U), 其中确实包含了`___chkstk_darwin`, 13.2 release notes中提供的解决方案只是设置了系统库弱引用, 没有解决库版本差异导致的符号解析问题
 
