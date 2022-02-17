@@ -69,7 +69,7 @@ $ nm -gAUj libSystem.B.dylib
 使用 xcode13.1 或者 xcode13.3 Beta 构建，注意 beta 版构建的 ipa 无法上传到 App Store。
 该方法比较麻烦，还要下载 xcode 版本，耗时较多，如果有多版本 xcode 的可以使用该方法。
 
-**方案二：添加 Post-actions 脚本移除 **
+**方案二：添加 Post-actions 脚本移除**
 
 添加  Post-actions 脚本，每次构建完成后移除嵌入的libswift_Concurrency.dylib。添加流程： Edit Scheme -> Build -> Post-actions -> Click '+' to add New Run Script。脚本内容为：
 
@@ -297,14 +297,14 @@ id2data 函数使用拉链法解决了哈希冲突问题（更多哈希冲突方
 //class B
 [_sharedLock lock];
 @synchronized (objectA) {
-NSLog(@"code in class B");
+		NSLog(@"code in class B");
 }
 [_sharedLock unlock];
 ```
 
 2. 精准的粒度控制
 
-通过源码可以看到, synchronized 相比其他锁只是多了查找过程，性能效率不会过低，之所以慢是更多的因为没有做好粒度控制，例如以下代码：
+通过源码可以看到，synchronized 相比其他锁只是多了查找过程，性能效率不会过低，之所以慢是更多的因为没有做好粒度控制，例如以下代码：
 
 ```objectivec
 @synchronized (sharedToken) {
@@ -355,7 +355,7 @@ NSLog(@"code in class B");
 
 **地址**：https://www.bilibili.com/video/BV1b7411K7P4
 
-南京大学《软件分析》课程系列，非常难得的高质量课程，可以通过[这里](https://pascal-group.bitbucket.io/teaching.html)获取所有课程的课件。
+南京大学《软件分析》课程系列，非常难得的高质量课程，可以通过[这里](https://pascal-group.bitbucket.io/teaching.html "软件分析课件")获取所有课程的课件。
 
 ### iOS 开发学习图谱
 
