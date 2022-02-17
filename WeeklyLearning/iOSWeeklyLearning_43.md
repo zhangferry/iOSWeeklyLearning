@@ -71,7 +71,7 @@ $ nm -gAUj libSystem.B.dylib
 
 **方案二：添加 Post-actions 脚本移除**
 
-添加  Post-actions 脚本，每次构建完成后移除嵌入的libswift_Concurrency.dylib。添加流程： Edit Scheme -> Build -> Post-actions -> Click '+' to add New Run Script。脚本内容为：
+添加  Post-actions 脚本，每次构建完成后移除嵌入的libswift_Concurrency.dylib。**该方式意味着在 iOS 15 之前的版本也无法使用 swift Concurrency**。添加流程： Edit Scheme -> Build -> Post-actions -> Click '+' to add New Run Script。脚本内容为：
 
 ```bash
 rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" || echo "libswift_Concurrency.dylib not exists"
