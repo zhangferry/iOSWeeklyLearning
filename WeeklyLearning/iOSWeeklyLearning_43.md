@@ -113,7 +113,7 @@ rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" 
 
 ### Synchronized 源码解读
 
-**Synchronized** 作为 Apple 提供的同步锁机制中的一种，以其便捷的使用性广为人知，作为面试中经常被考察的知识点，这里通过源码解读一下其实现原理。为了不陷入层层嵌套的源码逻辑中，我们可以带着几个面试题来解读：
+**Synchronized** 作为 Apple 提供的同步锁机制中的一种，以其便捷的使用性广为人知，作为面试中经常被考察的知识点，我们可以带着几个面试题来解读源码：
 
 1. `sychronized`  是如何与传入的对象关联上的？
 2. 是否会对传入的对象有强引用关系？
@@ -123,54 +123,10 @@ rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" 
 
 #### 查看 synchronized 源码所在
 
-通常查看底层调用有两种方式，通过 `clang` 查看编译后的 cpp 文件梳理，第二种是通过汇编断点梳理调用关系；这里采用第一种方式。
+通常查看底层调用有两种方式，通过 `clang` 查看编译后的 cpp 文件梳理，第二种是通过汇编断点梳理调用关系；这里采用第一种方式。命令为 `xcrun --sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-14.2 ViewController.m`
 
-代码示例如下：
 
-```objectivec
-// ViewController.m
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    @synchronized (self) {
-        int a = 10;
-    }
-}
-```
-编译该文件：
-```objectivec
-xcrun --sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-14.2 ViewController.m
-```
-
-获取 ViewController.cpp，找到  `xx_ViewController_viewDidLoad` 相关的函数，简化后代码如下：
-
-```c
-{
-    // 对象 
-    id _rethrow = 0;
-    id _sync_obj = (id)self;
-    // 同步入口
-   	objc_sync_enter(_sync_obj);
-    // 异常捕获
-    try {
-         struct _SYNC_EXIT {
-             _SYNC_EXIT(id arg) : sync_exit(arg) {}
-             ~_SYNC_EXIT() {
-                 objc_sync_exit(sync_exit);
-             }
-             id sync_exit;
-         }
-     // 初始化_SYNC_EXIT对象持有_sync_obj, 当调用析构函数时执行objc_sync_exit
-     _sync_exit(_sync_obj);
-     // 执行任务
-     int a = 10;
-     }
-     // 这里是异常相关的代码
-}
-```
-
-核心代码就是  `objc_sync_enter` 和 `objc_sync_exit` 其他是执行的任务以及异常捕获相关，拿到函数符号后可以通过 xcode 设置 symbol 符号断点获知该函数位于哪个系统库，这里直接说结论是在 libobjc 中，objc是开源的，全局搜索后定位到 objc/objc-sync 的文件中；
-
-由于篇幅太长，这里不引入所有源码解读，概述一下流程以及核心知识点：
+核心代码就是  `objc_sync_enter` 和 `objc_sync_exit` ，拿到函数符号后可以通过 xcode 设置 symbol 符号断点获知该函数位于哪个系统库，这里直接说结论是在 libobjc 中，objc是开源的，全局搜索后定位到 objc/objc-sync 的文件中；
 
 #### Synchronized 中重要的数据结构
 
@@ -205,15 +161,7 @@ static StripedMap<SyncList> sDataLists; // 哈希表，以关联的 obj 内存�
 
 #### 核心逻辑 id2data()
 
-通过源码可以获知 `objc_sync_enter` 和 `objc_sync_exit` 核心逻辑都是 id2data()，入参为作为 key 的对象，以及枚举值，枚举值的作用是区分是加锁还是解锁逻辑。
-
-id2data 函数使用拉链法解决了哈希冲突问题（更多哈希冲突方案查看 [摸鱼周报39期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ) ），这里使用的是 `SyncData` 链表结构。在查找缓存上支持了 **TLS 快速缓存** 以及 **SyncCache**  二级缓存和 `SyncDataLists` 全局查找三种方式：
-
-- TLS快速缓存只记录首次节点填充，使用 `fastCacheOccupied` 作为状态标识。
-
-- 如果没命中，则继续查找二级缓存 `SyncCache`,  调用链为 `fetch_cache -> _objc_fetch_pthread_data ->tls_get` 实际上仍然是通过线程 tls 私有数据存储的，该缓存存储了**所有属于当前线程**的 `SyncData` 对象。
-
-- `SyncDataLists` 则是全局表，**记录的是所有线程**使用的 `SyncData` 节点。
+通过源码可以获知 `objc_sync_enter` 和 `objc_sync_exit` 核心逻辑都是 id2data()，入参为作为 key 的对象，以及状态枚举值。
 
 **代码流程如下：**
 
@@ -222,12 +170,12 @@ id2data 函数使用拉链法解决了哈希冲突问题（更多哈希冲突方
     - 首先判断是否命中 TLS 快速缓存，对应代码 `SyncData *data = (SyncData *)tls_get_direct(SYNC_DATA_DIRECT_KEY);`
     - 未命中则判断是否命中二级缓存 `SyncCache`,  对应代码 `SyncCache *cache = fetch_cache(NO);`
     - 命中逻辑处理类似，都是使用 switch 根据入参决定处理加锁还是解锁，如果匹配到，则使用 `result` 指针记录
-    - 加锁，则将 lockCount ++, 记录 key object 对应的 `SyncData` 变量 lock 的加锁次数，再次存储回对应的缓存。
-    - 解锁，同样 lockCount--, 如果 ==0，表示当前线程中 object 关联的锁不再使用了，对应缓存中 `SyncData` 的 threadCount 减1，当前线程中 object 作为 key 的加锁代码块完全释放
+        - 加锁，则将 lockCount ++, 记录 key object 对应的 `SyncData` 变量 lock 的加锁次数，再次存储回对应的缓存。
+        - 解锁，同样 lockCount--, 如果 ==0，表示当前线程中 object 关联的锁不再使用了，对应缓存中 `SyncData` 的 threadCount 减1，当前线程中 object 作为 key 的加锁代码块完全释放
     
 - 如果两个缓存都没有命中，则会遍历全局表 `SyncDataLists`,  此时为了防止多线程影响查询，使用了  `SyncList`  结构中的 lock 加锁（注意区分和SyncData中lock的作用）。
 
-     查找到则说明存在一个 `SyncData` 对象供其他线程在使用，当前线程使用需要设置 threadCount + 1 表示新增一个线程，然后存储到上文的缓存中；对应的代码块为：
+     查找到则说明存在一个 `SyncData` 对象供其他线程在使用，当前线程使用需要设置 threadCount + 1 然后存储到上文的缓存中；对应的代码块为：
 
      ```cpp
      for (p = *listp; p != NULL; p = p->nextData) {goto done}
@@ -277,46 +225,13 @@ id2data 函数使用拉链法解决了哈希冲突问题（更多哈希冲突方
 
     答：是可递归的，因为 `SyncData` 内部是对 os_unfair_recursive_lock 的封装，os_unfair_recursive_lock 结构通过 os_unfair_lock 和 count 实现了可递归的功能，另外通过lockCount记录了重入次数
     
-> 需要记住的知识点包括存储数据结构以及如何解决哈希冲突，缓存查找方式等细节
 
+**知识点总结：**
 
-#### synchronized 使用注意事项
+- id2data 函数使用拉链法解决了哈希冲突问题（更多哈希冲突方案查看 [摸鱼周报39期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ) ），
 
-因为 `synchronize` 也一种锁，所以在使用上也需要注意死锁以及性能问题，例如：
-
-1. 尽量少或不使用 `self` 作为 key，避免外部在无意中造成死锁的可能，例如代码：
-
-```objectivec
-//class A
-@synchronized (self) {
-    [_sharedLock lock];
-    NSLog(@"code in class A");
-    [_sharedLock unlock];
-}
-    
-//class B
-[_sharedLock lock];
-@synchronized (objectA) {
-		NSLog(@"code in class B");
-}
-[_sharedLock unlock];
-```
-
-2. 精准的粒度控制
-
-通过源码可以看到，synchronized 相比其他锁只是多了查找过程，性能效率不会过低，之所以慢是更多的因为没有做好粒度控制，例如以下代码：
-
-```objectivec
-@synchronized (sharedToken) {
-    [arrA addObject:obj];
-}
-
-@synchronized (sharedToken) {
-    [arrB addObject:obj];
-}
-```
-
-应该使用不同的对象作为key，区分不同的加锁代码块。
+- 在查找缓存上支持了 **TLS 快速缓存** 以及 **SyncCache**  二级缓存和 `SyncDataLists` 全局查找三种方式：
+- `Sychronized` 使用注意事项，请参考 [正确使用多线程同步锁@synchronized()](https://link.juejin.cn/?target=https%3A%2F%2Fwww.jianshu.com%2Fp%2F2dc347464188 "[正确使用多线程同步锁@synchronized()")
 
 参考：
 
