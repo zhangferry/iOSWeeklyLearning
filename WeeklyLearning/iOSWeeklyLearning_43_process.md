@@ -22,64 +22,65 @@
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
 
 ### Fix iOS12 libswift_Concurrency.dylib crash bug 
-最近很多朋友都遇到了 iOS12 上 libswift_Concurrency 的 crash 问题，Xcode 13.2 release notes 中有提到是 Clang 编译器 bug，13.2.1 release notes 说明已经修复，但实际测试并没有.
+最近很多朋友都遇到了 iOS12 上 libswift_Concurrency 的 crash 问题，Xcode 13.2 release notes 中有提到是 Clang 编译器 bug，13.2.1 release notes 说明已经修复，但实际测试并没有。
 
-crash 的具体原因是 Xcode 编译器在低版本（12）上没有将 libswift_Concurrency.dylib 库剔除，反而是将该库嵌入到 ipa 的 Frameworks 路径下，导致动态链接时 libswift_Concurrency 被链接引发 crash。
+crash 的具体原因是 Xcode 编译器在低版本  iOS12 上没有将 libswift_Concurrency.dylib 库剔除，反而是将该库嵌入到 ipa 的 Frameworks 路径下，导致动态链接时 libswift_Concurrency 被链接引发 crash。
 
-#### error分析过程:
-1. 通过报错信息Library not loaded: /usr/lib/swift/libswiftCore.dylib 分析是动态库没有加载, 提示是libswift_Concurrency.dylib引用了该库, 但是libswift_Concurrency只有在iOS15系统上才会存在, iOS12本该不链接这个库, 猜测是类似swift核心库嵌入的方式,内嵌在了ipa包中; 校验方式也很简答, 通过iOS12真机run一下, 崩溃后通过`image list`查看加载的镜像文件会找到libswift_Concurrency的路径是ipa/Frameworks下的, 通过解包ipa也证实了这一点
+#### error 分析过程：
+1. 通过报错信息 Library not loaded: /usr/lib/swift/libswiftCore.dylib 分析是动态库没有加载，提示是 libswift_Concurrency.dylib 引用了该库，但是 libswift_Concurrency 只有在 iOS15 系统上才会存在， iOS12 本该不链接这个库，猜测是类似 swift 核心库嵌入的方式，内嵌在了 ipa 包中；校验方式也很简单，通过 iOS12 真机 run 一下， 崩溃后通过 `image list` 查看加载的镜像文件会找到 libswift_Concurrency 的路径是 ipa/Frameworks 下的，通过解包 ipa 也证实了这一点。
 
-2. 在按照xcode 13.2 release notes提供的方案, 将libswiftCore设置为weak并指定rpath后, crash信息变更, 此时error原因是`___chkstk_darwin`符号找不到; 根据error Referenced from 发现还是libswift_Concurrency引用的, 通过`nm -u xxxAppPath/Frameworks/libswift_Concurrency.dylib`查看所有未定义符号(类型为U), 其中确实包含了`___chkstk_darwin`, 13.2 release notes中提供的解决方案只是设置了系统库弱引用, 没有解决库版本差异导致的符号解析问题
+2. 在按照 xcode 13.2 release notes 提供的方案，将 libswiftCore 设置为 weak 并指定 rpath 后，crash 信息变更，此时 error 原因是 `___chkstk_darwin` 符号找不到；根据 error Referenced from 发现还是 libswift_Concurrency 引用的，通过 `nm -u xxxAppPath/Frameworks/libswift_Concurrency.dylib` 查看所有未定义符号（类型为 U ）， 其中确实包含了 `___chkstk_darwin`，13.2 release notes 中提供的解决方案只是设置了系统库弱引用，没有解决库版本差异导致的符号解析问题。
 
-3. error 提示期望该符号应该在libSystem.B.dylib中, 但是通过找到libSystem.B.dylib并打印导出符号`nm -gAUj libSystem.B.dylib`  发现即使是高版本的动态库中也并没有该符号, 那么如何知道该符号在哪个库呢,  这里用了一个取巧的方式, run iOS13以上真机, 并设置symbol符号`___chkstk_darwin`, xcode会标记所有存在该符号的库, 经过第1&2步骤思考, 认为是在查找libswiftCore核心库时crash的可能性更大
+3. error 提示期望该符号应该在 libSystem.B.dylib 中，但是通过找到 libSystem.B.dylib 并打印导出符号 `nm -gAUj libSystem.B.dylib`  发现即使是高版本的动态库中也并没有该符号，那么如何知道该符号在哪个库呢？这里用了一个取巧的方式，run iOS13 以上真机，并设置 symbol 符号 `___chkstk_darwin`， xcode 会标记所有存在该符号的库，经过第 1 & 2 步骤思考，认为是在查找 libswiftCore 核心库时 crash 的可能性更大。
 
-    > libSystem.B.dylib 路径在~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/目录下
+    > libSystem.B.dylib 路径在 ~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/ 目录下
 
-4. 如何校验呢, 通过xcode上iOS12 && iOS15两个不同版本的libswiftCore.dylib查看导出符号,可以发现, 12上的Core库不存在, 对比组15上是存在的, 所以基本可以断定symbol not found是这个原因造成的; 当然你也可以把其他几个库也采用相同的方式验证
+4. 如何校验呢，通过 xcode 上 iOS12 && iOS15 两个不同版本的 libswiftCore.dylib 查看导出符号，可以发现，12 上的 Core 库不存在，对比组 15 上是存在的，所以基本可以断定 symbol not found 是这个原因造成的；当然你也可以把其他几个库也采用相同的方式验证。
 
-> 通过在 ~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/swift/libswiftCore.dylib 不同的version路径下找到不同系统对应的libswiftCore.dylib库, 然后用`nm -gUAj libswiftCore.dylib`可以获取过滤后的全局符号验证
+> 通过在 ~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/swift/libswiftCore.dylib 不同的 version 路径下找到不同系统对应的 libswiftCore.dylib 库，然后用 `nm -gUAj libswiftCore.dylib` 可以获取过滤后的全局符号验证。
 > 
-> 库的路径,可以通过linkmap或者运行demo打个断点, 通过LLDB的image list查看
+> 库的路径，可以通过 linkmap 或者运行 demo 打个断点，通过LLDB的image list查看。
 
-分析总结: 无论是根据xcode提供的解决方案亦或是error分析流程, 发现根源还是因为在iOS12上链接了libswift_Concurrency造成的,既然问题出在异步库, 解决方案也很明了,移除项目中的libswift_Concurrency.dylib库即可
+分析总结：无论是根据 xcode 提供的解决方案亦或是 error 分析流程，发现根源还是因为在 iOS12 上链接了 libswift_Concurrency 造成的，既然问题出在异步库，解决方案也很明了，移除项目中的 libswift_Concurrency.dylib 库即可。
 
 #### 解决方案
-##### 使用xcode13.1或者xcode13.3 Beta构建
+##### 使用 xcode13.1 或者 xcode13.3 Beta 构建
 
-使用xcode13.1或者xcode13.3 Beta构建, 注意beta版构建的ipa无法上传到App Store
-该方法比较麻烦, 还要下载xcode版本, 耗时较多,如果有多版本xcode的可以使用该方法
+使用 xcode13.1 或者 xcode13.3 Beta 构建，注意 beta 版构建的 ipa 无法上传到 App Store。
+该方法比较麻烦，还要下载 xcode 版本，耗时较多，如果有多版本 xcode 的可以使用该方法。
 
-##### 添加Post-actions 脚本移除
+##### 添加 Post-actions 脚本移除
 
-添加脚本,每次构建完成后移除嵌入的libswift_Concurrency.dylib
-添加流程: `Edit Scheme... -> Build -> Post-actions -> Click '+' to add New Run Script`, 脚本内容为`rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" || echo "libswift_Concurrency.dylib not exists"`
+添加  Post-actions 脚本，每次构建完成后移除嵌入的libswift_Concurrency.dylib。
+添加流程： `Edit Scheme... -> Build -> Post-actions -> Click '+' to add New Run Script`, 脚本内容为 `rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" || echo "libswift_Concurrency.dylib not exists"`
 
   <img src="https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_43_tips_04.jpeg" style="zoom:50%;" />
 
-##### 降低/移除 使用libswift_Concurrency.dylib的三方库
+##### 降低或移除使用 libswift_Concurrency.dylib 的三方库
 
-**查找使用concurrency的三方库, 降低到未引用Concurrency前的版本,后续等xcode修复后再升级**
-如果是通过cocoapods管理三方库, 只需要指定降级版本即可.
-但是需要解决一个问题,查找三方库中有哪些用到concurrency呢,
+**查找使用 concurrency 的三方库，降低到未引用 libSwiftConcurrency 前的版本，后续等 xcode 修复后再升级**
+如果是通过 cocoapods 管理三方库，只需要指定降级版本即可。
+但是需要解决一个问题，如何查找三方库中有哪些用到 concurrency 呢？
 
-如果是源码, 全局搜索相关的`await & async`关键字可以找到部分SDK, 但如果是二进制SDK或者是间接使用的, 则只能通过符号查找
-**查找思路:**
+如果是源码，全局搜索相关的 `await & async` 关键字可以找到部分SDK，但如果是二进制 SDK 或者是间接使用的，则只能通过符号查找。
+**查找思路：**
 
-1. 首先明确动态库的链接是依赖导出符号的, 即xxx库引用了target_xxx动态库时, xxx是通过调用target_xxx的导出符号(全局符号)实现的, 全局符号的标识是大写的类型, U表示当前库中未定义的符号, 即xxx需要链接其他库动态时的符号, 符号操作可以使用`llvm nm`命令
-2. 如何查看是否引用了指定动态库target_xxx的符号? 可以通过linkmap文件查找, 但是由于libswift_Concurrency有可能是被间接依赖的, 此时linkmap中不存在对这个库的符号记录, 所以没办法进行匹配, 换个思路, 通过获取libswift_Concurrency的所有符号进行匹配, libswift_Concurrency的路径可以通过上文提到的`image list`获取, 一般都是用的/usr/lib/swift下的
-2. 遍历所有的库, 查找里面用到的未定义符号(U), 和libswift_Concurrency的导出符号进行匹配, 重合则代表有调用关系
+1. 首先明确动态库的链接是依赖导出符号的，即 xxx 库引用了 target_xxx 动态库时，xxx 是通过调用 target_xxx 的导出符号（全局符号）实现的，全局符号的标识是大写的类型，U 表示当前库中未定义的符号，即 xxx 需要链接其他库动态时的符号，符号操作可以使用 `llvm nm` 命令
 
-​		为了节省校验工作量, 提供`findsymbols.sh`脚本完成查找, 构建前可以通过指定项目中SDK目录查找,或者也可以指定构建后.app包中的Frameworks查找
+2. 如何查看是否引用了指定动态库 target_xxx 的符号？可以通过 linkmap 文件查找，但是由于 libswift_Concurrency 有可能是被间接依赖的，此时 linkmap 中不存在对这个库的符号记录，所以没办法进行匹配，换个思路，通过获取 libswift_Concurrency 的所有符号进行匹配，libswift_Concurrency 的路径可以通过上文提到的 `image list` 获取， 一般都是用的 /usr/lib/swift 下的。
+3. 遍历所有的库，查找里面用到的未定义符号（ U ）, 和 libswift_Concurrency 的导出符号进行匹配，重合则代表有调用关系。
 
-**使用方法:**
+为了节省校验工作量，提供 `findsymbols.sh` 脚本完成查找，构建前可以通过指定项目中 SDK 目录查找，或者也可以指定构建后 .app 包中的 Frameworks 查找。
 
-1. 下载后进行权限授权, `chmod 777 findsymbols.sh`
-2. 指定如下参数:
-	- -f: 指定单个二进制framework/.a库进行检查
-    - -p: 指定目录,检查目录下的所有framework/.a二进制SDK
-    - -o 输出目录, 默认是`~/Desktop/iOS12 Crash Result`
+**使用方法：**
 
-* [如何检测哪些三方库用了libstdc++](https://www.jianshu.com/p/8de305624dfd?utm_campaign=hugo&utm_medium=reader_share&utm_content=note&utm_source=weixin-friends "如何检测哪些三方库用了libstdc++")
+1. 下载后进行权限授权， `chmod 777 findsymbols.sh`
+2. 指定如下参数：
+	- -f：指定单个二进制 framework/.a 库进行检查
+    - -p：指定目录，检查目录下的所有 framework/.a 二进制 SDK
+    - -o： 输出目录，默认是 `~/Desktop/iOS12 Crash Result` 
+
+* [如何检测哪些三方库用了 libstdc++ ](https://www.jianshu.com/p/8de305624dfd?utm_campaign=hugo&utm_medium=reader_share&utm_content=note&utm_source=weixin-friends "如何检测哪些三方库用了 libstdc++ ")
 * [After upgrading to Xcode 13.2.1, debugging with a lower version of the iOS device still crashes at launching](https://developer.apple.com/forums/thread/696960 "After upgrading to Xcode 13.2.1, debugging with a lower version of the iOS device still crashes at launching")
 * [findsymbols.sh](https://gist.github.com/71f8d3fade74903cae443a3b50c2807f.git "findsymbols.sh")
 
@@ -90,32 +91,31 @@ crash 的具体原因是 Xcode 编译器在低版本（12）上没有将 libswif
 
 ### Synchronized 源码解读
 
-**Synchronized**作为Apple提供的同步锁机制中的一种, 以其便捷的使用性广为人知, 作为面试中经常被考察的知识点, 这里通过源码解读一下其实现原理
-为了不陷入层层嵌套的源码逻辑中, 我们可以带着几个面试题来解读
+**Synchronized** 作为 Apple 提供的同步锁机制中的一种，以其便捷的使用性广为人知，作为面试中经常被考察的知识点，这里通过源码解读一下其实现原理。
+为了不陷入层层嵌套的源码逻辑中，我们可以带着几个面试题来解读：
 
-1. `sychronized` 是如何与传入的对象关联上的
-2. 是否会对传入的对象有强引用关系
-3. 如果`synchronized`传入nil会有什么问题
-4. 当做key的对象在`synchronized`内部被释放会有什么问题
-5. `synchronized`是否是可重入的,即是否可以作为递归锁使用
+1. `sychronized`  是如何与传入的对象关联上的？
+2. 是否会对传入的对象有强引用关系？
+3. 如果 `synchronized` 传入 nil 会有什么问题？
+4. 当做key的对象在 `synchronized` 内部被释放会有什么问题？
+5. `synchronized` 是否是可重入的,即是否可以作为递归锁使用？
 
-#### 查看synchronized源码所在
+#### 查看 synchronized 源码所在
 
-通常查看底层调用有两种方式, 通过`clang`查看编译后的cpp文件梳理, 第二种是通过汇编断点梳理调用关系; 这里采用第一种方式,
+通常查看底层调用有两种方式，通过 `clang` 查看编译后的 cpp 文件梳理，第二种是通过汇编断点梳理调用关系；这里采用第一种方式。
 代码示例如下
 
 ```
-///ViewController.m
+// ViewController.m
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     @synchronized (self)
     {
         int a = 10;
     }
 }
 ```
-执行`xcrun --sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-14.2 ViewController.m`获取ViewController.cpp, 找到`xx_ViewController_viewDidLoad`相关的函数, 简化后代码如下:
+执行 `xcrun --sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-14.2 ViewController.m` 获取 ViewController.cpp，找到  `xx_ViewController_viewDidLoad` 相关的函数，简化后代码如下：
 
 ```cpp
 {
@@ -147,80 +147,80 @@ crash 的具体原因是 Xcode 编译器在低版本（12）上没有将 libswif
     }
 ```
 
-核心代码就是`objc_sync_enter`和`objc_sync_exit`其他是执行的任务以及异常捕获相关, 拿到函数符号后可以通过xcode设置symbol符号断点获知该函数位于哪个系统库,这里直接说结论是在libobjc中, objc是开源的, 全局搜索后定位到objc/objc-sync的文件中;
+核心代码就是  `objc_sync_enter` 和 `objc_sync_exit` 其他是执行的任务以及异常捕获相关，拿到函数符号后可以通过 xcode 设置 symbol 符号断点获知该函数位于哪个系统库，这里直接说结论是在 libobjc 中，objc是开源的，全局搜索后定位到 objc/objc-sync 的文件中；
 
-由于篇幅太长, 这里不引入所有源码解读, 概述一下流程以及核心知识点:
+由于篇幅太长，这里不引入所有源码解读，概述一下流程以及核心知识点：
 
-#### Synchronized重要数据结构
+#### Synchronized 重要数据结构
 
-核心数据结构有三个,`SyncData`和`SyncList`以及`sDataLists` ; 结构体成员变量注释如下:
+核心数据结构有三个，`SyncData` 和 `SyncList` 以及 `sDataLists`；结构体成员变量注释如下：
 
 ```
 typedef struct alignas(CacheLineSize) SyncData {
-    struct SyncData* nextData; // 指向下一个SyncData节点, 作用类似链表
-    DisguisedPtr<objc_object> object; // 绑定的作为key的对象
-    int32_t threadCount;  // number of THREADS using this block  使用当前obj作为key的线程数
-    recursive_mutex_t mutex; // 递归锁, 根据源码继承链其实是apple自己封装了os_unfair_lock实现的递归锁
+    struct SyncData* nextData; // 指向下一个 SyncData 节点，作用类似链表
+    DisguisedPtr<objc_object> object; // 绑定的作为 key 的对象
+    int32_t threadCount;  // number of THREADS using this block  使用当前 obj 作为 key 的线程数
+    recursive_mutex_t mutex; // 递归锁，根据源码继承链其实是 apple 自己封装了os_unfair_lock 实现的递归锁
 } SyncData;
 
-// SyncList作为表中的首节点存在, 存储着SyncData链表的头结点
+// SyncList 作为表中的首节点存在，存储着 SyncData 链表的头结点
 struct SyncList {
-    SyncData *data; // 指向的SyncData对象
-    spinlock_t lock; // 操作SyncList时防止多线程资源竞争的锁, 这里要和SyncData中的mutex区分开作用, SyncData中的mutex才是实际代码块加锁使用的
+    SyncData *data; // 指向的 SyncData 对象
+    spinlock_t lock; // 操作 SyncList 时防止多线程资源竞争的锁，这里要和 SyncData 中的 mutex 区分开作用，SyncData 中的 mutex 才是实际代码块加锁使用的
 
     constexpr SyncList() : data(nil), lock(fork_unsafe_lock) { }
 };
 
 // Use multiple parallel lists to decrease contention among unrelated objects.
-/ 两个宏定义, 方便调用
+/ 两个宏定义，方便调用
 #define LOCK_FOR_OBJ(obj) sDataLists[obj].lock
 #define LIST_FOR_OBJ(obj) sDataLists[obj].data /
-static StripedMap<SyncList> sDataLists; // 哈希表, 以关联的obj内存地址作为key, value是SyncList类型
+static StripedMap<SyncList> sDataLists; // 哈希表，以关联的 obj 内存地址作为 key，value是 SyncList 类型
 ```
 
-> `StripedMap`本质是个泛型哈希表, 是objc源码中经常使用的数据结构, 例如retain/release中的SideTables结构等
+> `StripedMap` 本质是个泛型哈希表，是 objc 源码中经常使用的数据结构，例如 retain/release 中的 SideTables 结构等。
 >
-> 一般以内存地址值作为key, 返回声明类型的value, iOS中存储容量是8 Mac中容量是64,可以通过源码查看
+> 一般以内存地址值作为 key，返回声明类型的 value，iOS中 存储容量是 8 Mac中 容量是 64 ，可以通过源码查看
 
-#### 核心逻辑id2data()
+#### 核心逻辑 id2data()
 
-通过源码可以获知`objc_sync_enter`和`objc_sync_exit`核心逻辑都是id2data(), 入参为作为key的对象, 以及枚举值,枚举值的作用是区分是加锁还是解锁逻辑;
+通过源码可以获知 `objc_sync_enter` 和 `objc_sync_exit` 核心逻辑都是 id2data()，入参为作为 key 的对象，以及枚举值，枚举值的作用是区分是加锁还是解锁逻辑。
 
-id2data函数使用拉链法解决了哈希冲突问题(更多哈希冲突方案查看[摸鱼周报39期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ)), 这里使用的是`SyncData`链表结构.在查找缓存上支持了**TLS 快速缓存**以及**SyncCache** 二级缓存和`SyncDataLists`全局查找三种方式:
+id2data 函数使用拉链法解决了哈希冲突问题（更多哈希冲突方案查看 [摸鱼周报39期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ) ），这里使用的是 `SyncData` 链表结构。在查找缓存上支持了 **TLS 快速缓存** 以及 **SyncCache**  二级缓存和 `SyncDataLists` 全局查找三种方式：
 
-- TLS快速缓存只记录首次节点填充, 使用`fastCacheOccupied`作为状态标识, 
+- TLS快速缓存只记录首次节点填充，使用 `fastCacheOccupied` 作为状态标识。
 
-- 如果没命中, 则继续查找二级缓存`SyncCache`,  调用链为`fetch_cache -> _objc_fetch_pthread_data ->tls_get`实际上仍然是通过线程tls私有数据存储的, 该缓存存储了**所有属于当前线程**的`SyncData`对象
+- 如果没命中，则继续查找二级缓存 `SyncCache`,  调用链为 `fetch_cache -> _objc_fetch_pthread_data ->tls_get` 实际上仍然是通过线程 tls 私有数据存储的，该缓存存储了**所有属于当前线程**的 `SyncData` 对象。
 
-- `SyncDataLists`则是全局表, **记录的是所有线程**使用的`SyncData`节点
+- `SyncDataLists` 则是全局表，**记录的是所有线程**使用的 `SyncData` 节点。
 
-**代码流程如下:**
+**代码流程如下：**
 
-- 通过关联的对象地址获取`SyncList`中存储的的`SyncData`和lock锁对象; 
-- 使用fastCacheOccupied标识 用来记录是否已经填充过快速缓存, 
-    - 首先判断是否命中TLS快速缓存,对应代码`SyncData *data = (SyncData *)tls_get_direct(SYNC_DATA_DIRECT_KEY);`
-    - 未命中则判断是否命中二级缓存`SyncCache`, 对应代码`SyncCache *cache = fetch_cache(NO);`
-    - 命中逻辑处理类似, 都是使用switch根据入参决定处理加锁还是解锁, 如果匹配到, 则使用`result`指针记录
-        - 加锁, 则将lockCount ++, 记录key object 对应的`SyncData`变量lock的加锁次数, 再次存储回对应的缓存
-        - 解锁, 同样lockCount--, 如果==0,表示当前线程中object关联的锁不再使用了, 对应缓存中`SyncData`的threadCount减1,当前线程中object作为key的加锁代码块完全释放
+- 通过关联的对象地址获取 `SyncList` 中存储的的 `SyncData` 和 lock 锁对象；
+- 使用 fastCacheOccupied 标识，用来记录是否已经填充过快速缓存。
+    - 首先判断是否命中 TLS 快速缓存，对应代码 `SyncData *data = (SyncData *)tls_get_direct(SYNC_DATA_DIRECT_KEY);`
+    - 未命中则判断是否命中二级缓存 `SyncCache`,  对应代码 `SyncCache *cache = fetch_cache(NO);`
+    - 命中逻辑处理类似，都是使用 switch 根据入参决定处理加锁还是解锁，如果匹配到，则使用 `result` 指针记录
+        - 加锁，则将 lockCount ++, 记录 key object 对应的 `SyncData` 变量 lock 的加锁次数，再次存储回对应的缓存。
+        - 解锁，同样 lockCount--, 如果 ==0，表示当前线程中 object 关联的锁不再使用了，对应缓存中 `SyncData` 的 threadCount 减1，当前线程中 object 作为 key 的加锁代码块完全释放
     
-- 如果两个缓存都没有命中, 则会遍历全局表`SyncDataLists`, 此时为了防止多线程影响查询, 使用了 `SyncList` 结构中的lock加锁(注意区分和SyncData中lock的作用),
+- 如果两个缓存都没有命中，则会遍历全局表 `SyncDataLists`,  此时为了防止多线程影响查询，使用了  `SyncList`  结构中的 lock 加锁（注意区分和SyncData中lock的作用）。
 
-     查找到则说明存在一个`SyncData`对象供其他线程在使用, 当前线程使用需要设置threadCount+1表示新增一个线程, 然后存储到上文的缓存中; 对应的代码块为
+     查找到则说明存在一个 `SyncData` 对象供其他线程在使用，当前线程使用需要设置 threadCount + 1 表示新增一个线程，然后存储到上文的缓存中；对应的代码块为：
 
      ```cpp
      for (p = *listp; p != NULL; p = p->nextData) {goto done}
      ```
 
-- 如果以上查找都未找到, 则会生成一个SyncData节点, 并通过`done`代码段填充到缓存中
+- 如果以上查找都未找到，则会生成一个 SyncData 节点, 并通过 `done` 代码段填充到缓存中。
 
-    - 如果存在未释放的`SyncData`,同时`theadCount == 0`则直接填充新的数据, 减少创建对象, 实现性能优化, 对应代码
+    - 如果存在未释放的 `SyncData`, 同时 `theadCount == 0` 则直接填充新的数据，减少创建对象，实现性能优化，对应代码：
 
         ```cpp
         if ( firstUnused != NULL ) {//...}
         ```
 
-    - 如果不存在, 则新建`SyncData`对象,**并采用头插法**插入到链表的头部, 对应代码逻辑
+    - 如果不存在，则新建 `SyncData` 对象，**并采用头插法**插入到链表的头部，对应代码逻辑
 
         ```cpp
         posix_memalign((void **)&result, alignof(SyncData), sizeof(SyncData));
@@ -228,42 +228,42 @@ id2data函数使用拉链法解决了哈希冲突问题(更多哈希冲突方案
         ```
         
 
-最终的存储数据结构如下图所示
+最终的存储数据结构如下图所示：
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_43_interview_02.png)
 
-当id2data()返回了`SyncData`对象后, `objc_sync_try_enter`会调用`data->mutex.tryLock();`尝试加锁, 其他线程再次执行时如果判断已经加锁, 则进行资源等待
+当 id2data() 返回了 `SyncData` 对象后，`objc_sync_try_enter` 会调用 `data->mutex.tryLock(); `尝试加锁，其他线程再次执行时如果判断已经加锁，则进行资源等待
 
-以上是对源码的解读, 需要对照着`libobjc`源码阅读会更好的理解.下面回到最初的几个问题,
+以上是对源码的解读，需要对照着 `libobjc` 源码阅读会更好的理解。下面回到最初的几个问题：
 
 1. 锁是如何与你传入 `@synchronized` 的对象关联上的
 
-    答: 由`SyncDataLits`可知是通过对象地址关联的, 所以任何存在内存地址的对象都可以作为synchronized的key使用
+    答： 由 `SyncDataLits` 可知是通过对象地址关联的，所以任何存在内存地址的对象都可以作为 synchronized的key 使用
 
 2. 是否会对关联的对象有强引用
 
-    答: 根据`StripedMap`里的代码可以没有强引用, 只是将内存地址值进行位计算然后作为key使用,并没有指针指向传入的对象
+    答：根据 `StripedMap` 里的代码可以没有强引用，只是将内存地址值进行位计算然后作为 key 使用，并没有指针指向传入的对象。
 
-3. 如果synchronize传入nil会有什么问题
+3. 如果 synchronize 传入 nil 会有什么问题
 
-    答: 通过`objc_sync_enter`源码发现, 传入nil 会调用`objc_sync_nil`, 而`BREAKPOINT_FUNCTION` 对该函数的定义为`asm()"")`即空汇编指令 不执行加锁, 代表该代码块并不是线程安全的
+    答：通过 `objc_sync_enter` 源码发现，传入 nil 会调用 `objc_sync_nil`, 而 `BREAKPOINT_FUNCTION` 对该函数的定义为 `asm()""` 即空汇编指令。不执行加锁，所以该代码块并不是线程安全的。
 
 4. 假如你传入 `@synchronized` 的对象在 `@synchronized` 的 block 里面被释放或者被赋值为 `nil` 将会怎么样
 
-    答: 通过`objc_sync_exit`发现被释放后, 不会做任何事, 导致锁也没有被释放,即一直处于锁定状态, 但是由于对象置为nil, 导致其他异步线程执行`objc_sync_enter`时传入的为nil, 代码块不再线程安全
+    答：通过 `objc_sync_exit` 发现被释放后，不会做任何事，导致锁也没有被释放，即一直处于锁定状态，但是由于对象置为nil，导致其他异步线程执行 `objc_sync_enter` 时传入的为 nil，代码块不再线程安全。
 
-5. `synchronized`是否是可重入的,即是否为递归锁 
+5. `synchronized` 是否是可重入的，即是否为递归锁 
 
-    答: 是可递归的, 因为`SyncData`内部是对os_unfair_recursive_lock的封装, os_unfair_recursive_lock结构通过os_unfair_lock和count实现了可递归的功能, 另外通过lockCount记录了重入次数
+    答：是可递归的，因为 `SyncData` 内部是对 os_unfair_recursive_lock 的封装，os_unfair_recursive_lock 结构通过 os_unfair_lock 和 count 实现了可递归的功能，另外通过lockCount记录了重入次数
     
-> 需要记住的知识点包括存储数据结构以及如何解决哈希冲突,缓存查找方式等细节
+> 需要记住的知识点包括存储数据结构以及如何解决哈希冲突，缓存查找方式等细节
 
 
 #### synchronized 使用注意事项
 
-因为`synchronize`也一种锁,所以在使用上也需要注意死锁以及性能问题, 例如:
+因为 `synchronize` 也一种锁，所以在使用上也需要注意死锁以及性能问题，例如：
 
-1. 尽量少或不使用`self`作为key, 避免外部在无意中造成死锁的可能, 例如代码
+1. 尽量少或不使用 `self` 作为 key，避免外部在无意中造成死锁的可能，例如代码：
 
 ```Object-c
     //class A
@@ -283,7 +283,7 @@ id2data函数使用拉链法解决了哈希冲突问题(更多哈希冲突方案
 
 2. 精准的粒度控制
 
-    通过源码可以看到, synchronized相比其他锁只是多了查找过程, 性能效率不会过低, 之所以慢是更多的因为没有做好粒度控制, 例如以下代码
+    通过源码可以看到, synchronized 相比其他锁只是多了查找过程，性能效率不会过低，之所以慢是更多的因为没有做好粒度控制，例如以下代码：
 
 ```OC
 @synchronized (sharedToken) {
