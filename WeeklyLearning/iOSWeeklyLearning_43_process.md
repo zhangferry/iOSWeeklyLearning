@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第四十二期
+# iOS摸鱼周报 第四十三期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
@@ -6,14 +6,14 @@
 
 > * 话题：dyld4 开源了。
 > * Tips：Fix iOS12 libswift_Concurrency.dylib crash bug 
-> * 面试模块：Synchronized源码解读
+> * 面试模块：Synchronized 源码解读
 > * 优秀博客：Swift Protocol 进阶
 > * 学习资料：
-> * 开发工具：
+> * 开发工具：贝尔实验室开发的有向图/无向图自动布局应用，支持 dot 脚本绘制结构图，流程图等。
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：Apple 最近开源了 [dyld4](https://github.com/apple-oss-distributions/dyld/ "dyld4") 的代码。通过阅读它的 Readme 文档，我们可以大致了解到dyld4的相对dyld3做的改进有哪些。dyld3 出于对启动速度的优化，增加了启动闭包。应用首启和发生变化时将一些启动数据创建为闭包存到本地，下次启动将不再重新解析数据，而是直接读取闭包内容。这种方法的理想情况是应用程序和系统应很少发生变化，因为如果这两者经常变化，即意味着闭包可能面临失效。为了因对这类场景，dyld4 采用了 Prebuilt + JustInTime 的双解析模式，Prebuild 对应的就是 dyld3 中的启动闭包场景，JustInTime 大致对应 dyld2 中的实时解析，JustInTime 过程是可以利用 Prebuild 的缓存的，所以性能也还可控。应用首启、包体或系统版本更新、普通启动，dyld4 将根据缓存有效与否选择合适的模式进行解析。所以 dyld4 的设计目标不是更快，而是更灵活。
+[@zhangferry](https://zhangferry.com)：Apple 最近开源了 [dyld4](https://github.com/apple-oss-distributions/dyld/ "dyld4") 的代码。通过阅读它的 Readme 文档，我们可以大致了解到 dyld4 相对 dyld3 做的改进有哪些。dyld3 出于对启动速度的优化，增加了启动闭包。应用首启和发生变化时将一些启动数据创建为闭包存到本地，下次启动将不再重新解析数据，而是直接读取闭包内容。这种方法的理想情况是应用程序和系统应很少发生变化，因为如果这两者经常变化，即意味着闭包可能面临失效。为了应对这类场景，dyld4 采用了 Prebuilt + JustInTime 的双解析模式，Prebuild 对应的就是 dyld3 中的启动闭包场景，JustInTime 大致对应 dyld2 中的实时解析，JustInTime 过程是可以利用 Prebuild 的缓存的，所以性能也还可控。应用首启、包体或系统版本更新、普通启动，dyld4 将根据缓存有效与否选择合适的模式进行解析。所以 dyld4 的设计目标不是更快，而是更灵活。
 
 还有一点，细心的开发者还在 dyld4 源码里发现了 realityOS 及 realityOS_Sim 相关的代码注释。很大可能苹果的 VR/AR 设备已经准备差不多了，静待今年的 WWDC 吧。
 
@@ -22,9 +22,9 @@
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
 
 ### Fix iOS12 libswift_Concurrency.dylib crash bug 
-最近很多朋友都遇到了iOS12上libswift_Concurrency的crash问题, xcode 13.2 release notes中有提到是Clang编译器bug, 13.2.1 release notes说明已经修复, 但实际测试并没有.
+最近很多朋友都遇到了 iOS12 上 libswift_Concurrency 的 crash 问题，Xcode 13.2 release notes 中有提到是 Clang 编译器 bug，13.2.1 release notes 说明已经修复，但实际测试并没有.
 
-crash的具体原因是xcode编译器在低版本(12)上没有将libswift_Concurrency.dylib库剔除, 反而是将该库嵌入到ipa的Frameworks路径下, 导致动态链接时libswift_Concurrency被链接引发crash
+crash 的具体原因是 Xcode 编译器在低版本（12）上没有将 libswift_Concurrency.dylib 库剔除，反而是将该库嵌入到 ipa 的 Frameworks 路径下，导致动态链接时 libswift_Concurrency 被链接引发 crash。
 
 #### error分析过程:
 1. 通过报错信息Library not loaded: /usr/lib/swift/libswiftCore.dylib 分析是动态库没有加载, 提示是libswift_Concurrency.dylib引用了该库, 但是libswift_Concurrency只有在iOS15系统上才会存在, iOS12本该不链接这个库, 猜测是类似swift核心库嵌入的方式,内嵌在了ipa包中; 校验方式也很简答, 通过iOS12真机run一下, 崩溃后通过`image list`查看加载的镜像文件会找到libswift_Concurrency的路径是ipa/Frameworks下的, 通过解包ipa也证实了这一点
@@ -344,7 +344,7 @@ id2data函数使用拉链法解决了哈希冲突问题(更多哈希冲突方案
 
 **软件介绍**：
 
-贝尔实验室开发的有向图/无向图自动布局应用, 支持dot脚本绘制结构图, 流程图等。
+贝尔实验室开发的有向图/无向图自动布局应用，支持 dot 脚本绘制结构图，流程图等。
 
 ![Graphviz](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220217174238.png)
 
@@ -366,12 +366,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第四十二期](https://mp.weixin.qq.com/s/ybANWeLNHPOTkr5_alha9g)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第四十一期](https://mp.weixin.qq.com/s/DNXrfZgx0JaXyvfVZ4sYVA)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第四十期](https://mp.weixin.qq.com/s/y4229I_l8aLILR7WA7y01Q)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第三十九期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
