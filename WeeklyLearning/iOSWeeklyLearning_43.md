@@ -170,8 +170,8 @@ static StripedMap<SyncList> sDataLists; // 哈希表，以关联的 obj 内存�
     - 首先判断是否命中 TLS 快速缓存，对应代码 `SyncData *data = (SyncData *)tls_get_direct(SYNC_DATA_DIRECT_KEY);`
     - 未命中则判断是否命中二级缓存 `SyncCache`,  对应代码 `SyncCache *cache = fetch_cache(NO);`
     - 命中逻辑处理类似，都是使用 switch 根据入参决定处理加锁还是解锁，如果匹配到，则使用 `result` 指针记录
-        - 加锁，则将 lockCount ++, 记录 key object 对应的 `SyncData` 变量 lock 的加锁次数，再次存储回对应的缓存。
-        - 解锁，同样 lockCount--, 如果 ==0，表示当前线程中 object 关联的锁不再使用了，对应缓存中 `SyncData` 的 threadCount 减1，当前线程中 object 作为 key 的加锁代码块完全释放
+        - 加锁，则将 lockCount ++，记录 key object 对应的 `SyncData` 变量 lock 的加锁次数，再次存储回对应的缓存。
+        - 解锁，同样 lockCount--，如果 ==0，表示当前线程中 object 关联的锁不再使用了，对应缓存中 `SyncData` 的 threadCount 减1，当前线程中 object 作为 key 的加锁代码块完全释放
     
 - 如果两个缓存都没有命中，则会遍历全局表 `SyncDataLists`,  此时为了防止多线程影响查询，使用了  `SyncList`  结构中的 lock 加锁（注意区分和SyncData中lock的作用）。
 
