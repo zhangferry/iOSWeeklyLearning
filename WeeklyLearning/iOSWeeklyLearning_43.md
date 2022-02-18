@@ -34,7 +34,7 @@ crash 的具体原因是 Xcode 编译器在低版本  iOS12 上没有将 libswif
 
 #### 问题分析
 
-通过报错信息 `Library not loaded: /usr/lib/swift/libswiftCore.dylib` 分析是动态库没有加载，提示是 libswift_Concurrency.dylib 引用了该库。但是 libswift_Concurrency 只有在 iOS15 系统上才会存在， iOS12 本不该链接这个库，猜测是类似 swift 核心库嵌入的方式，内嵌在了 ipa 包中。校验方式也很简单，通过 iOS12 真机 run 一下，崩溃后通过 `image list` 查看加载的镜像文件会找到 libswift_Concurrency 的路径是 ipa/Frameworks 下的，通过解包 ipa 也证实了这一点。
+通过报错信息 `Library not loaded: /usr/lib/swift/libswiftCore.dylib` 分析是动态库没有加载，提示是 libswift_Concurrency.dylib 引用了该库。iOS12 本不该链接这个库，崩溃后通过 `image list` 查看加载的镜像文件会找到 libswift_Concurrency 的路径是 ipa/Frameworks 下的，查询资料了解到是 xcode13.2 及其以上版本在做 Swift Concurrency 向前兼容时出现的 bug
 
 #### 问题定位
 
@@ -54,7 +54,7 @@ $ nm -gAUj libSystem.B.dylib
 
 > libSystem.B.dylib 路径在 ~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/ 目录下
 
-如何校验呢，通过 xcode 上 iOS12 && iOS15 两个不同版本的 libswiftCore.dylib 查看导出符号，可以发现，iOS12 上的 Core 库不存在，对比组 iOS15 上是存在的，所以基本可以断定 symbol not found 是这个原因造成的；当然你也可以把其他几个库也采用相同的方式验证。
+如何校验呢，通过 xcode 上 iOS12 && iOS13 两个不同版本的 libswiftCore.dylib 查看导出符号，可以发现，iOS12 上的 Core 库不存在，对比组 iOS13 上是存在的，所以基本可以断定 symbol not found 是这个原因造成的；当然你也可以把其他几个库也采用相同的方式验证。
 
 > 通过在 ~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/swift/libswiftCore.dylib 不同的 version 路径下找到不同系统对应的 libswiftCore.dylib 库，然后用 `nm -gUAj libswiftCore.dylib` 可以获取过滤后的全局符号验证。
 > 
@@ -71,7 +71,7 @@ $ nm -gAUj libSystem.B.dylib
 
 **方案二：添加 Post-actions 脚本移除**
 
-添加  Post-actions 脚本，每次构建完成后移除嵌入的libswift_Concurrency.dylib。添加流程： Edit Scheme -> Build -> Post-actions -> Click '+' to add New Run Script。脚本内容为：
+添加  Post-actions 脚本，每次构建完成后移除嵌入的libswift_Concurrency.dylib。同时配合 `-Wl,-weak-lswift_Concurrency -Wl,-rpath,/usr/lib/swift` 设置到`Other Linker Flags`。添加流程： Edit Scheme -> Build -> Post-actions -> Click '+' to add New Run Script。脚本内容为：
 
 ```bash
 rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" || echo "libswift_Concurrency.dylib not exists"
