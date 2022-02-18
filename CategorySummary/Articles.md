@@ -1234,7 +1234,30 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@我是熊大](https://github.com/Tliens)：郑宇琦，LinkedIn 高级研发工程师，曾就职于百度，作者过去一年的经历十分丰富，生活不止有 coding。
 
-5、[2020年我阅读了87本书，推荐这12本好书给你](https://mp.weixin.qq.com/s/f6_Sa_C4uU983UBaiMtJdQ "2020年我阅读了87本书，推荐这12本好书给你") -- 来自公众号： 千古壹号
+5、[2020年我阅读了87本书，推荐这12本好书给你](https://mp.weixin.qq.com/s/f6_Sa_C4uU983UBaiMtJdQ) -- 来自公众号： 千古壹号
 
 [@我是熊大](https://github.com/Tliens)：作者是京东的一位前端开发，读书爱好者，一年的读书清单有 87 本之多。
+
+***
+整理编辑：[东坡肘子](https://www.fatbobman.com)
+
+1、[在已实现协议要求方法的类型中如何调用协议中的默认实现](https://holyswift.app/conforming-to-a-protocol-and-using-default-function-implementation-at-the-same-time-in-swift "在已实现协议要求方法的类型中如何调用协议中的默认实现") -- 来自：Leonardo Maia Pugliese
+
+[@东坡肘子](https://www.fatbobman.com/)：能够提供默认实现是 Swift 协议功能的重要特性。本文介绍了在已实现协议要求方法的类型中继续调用协议的默认实现的三种方式。解决的思路可以给读者不小的启发。在每篇博文中附带介绍一副绘画作品也是该博客的特色之一。
+
+2、[通过 Swift 代码介绍 24 种设计模式](https://oldbird.run/design-patterns/ "通过 Swift 代码介绍 24 种设计模式") -- 来自：oldbird
+
+[@东坡肘子](https://www.fatbobman.com/)：设计模式是程序员必备的基础知识，但是没有点年份，掌握也不是这么容易，所以例子就非常重要。概念是抽象的，例子是具象的。具象的东西，记忆和理解都会容易些。该项目提供了 24 种设计模式的 Swift 实现范例，对于想学习设计模式并加深理解的朋友十分有帮助。
+
+3、[Combining protocols in Swift](https://www.swiftbysundell.com/articles/combining-protocols-in-swift/ "Combining protocols in Swift") -- 来自：Sundell
+
+[@东坡肘子](https://www.fatbobman.com/)：组合和扩展均为 Swift 协议的核心优势。本文介绍了如何为组合后的协议添加具有约束的扩展。几种方式各有利弊，充分掌握后可以更好地理解和发挥 Swift 面向协议编程的优势。
+
+4、[Swift Protocol 背后的故事](https://zxfcumtcs.github.io/2022/02/01/SwiftProtocol1/ "Swift Protocol 背后的故事") -- 来自： 赵雪峰
+
+[@东坡肘子](https://www.fatbobman.com/)：本文共分两篇。上篇中，以一个 Protocol 相关的编译错误为引，通过实例对 Type Erasure、Opaque Types 、Generics 以及 Phantom Types 做了较详细的讨论。下篇则主要讨论 Swift Protocol 实现机制，涉及 Type Metadata、Protocol 内存模型 Existential Container、Generics 的实现原理以及泛型特化等内容。
+
+5、[不透明类型](https://blog.mzying.com/index.php/archives/307/ "不透明类型") -- 来自：Mzying
+
+[@东坡肘子](https://www.fatbobman.com/)：不透明类型是指我们被告知对象的功能而不知道对象具体是什么类型。作者通过三个篇章详细介绍了 Swift 的不透明类型功能，包括：不透明类型解决的问题（上）、返回不透明类型（中）、不透明类型和协议类型之间的区别 （下）。
 

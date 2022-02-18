@@ -1965,7 +1965,7 @@ OOM 与其他 Crash 不同的一点是它的触发是通过 `SIGKILL` 信号进�
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220119232138.png)
 
-参考：[【腾讯开源】iOS爆内存问题解决方案-OOMDetector组件 - 掘金](https://juejin.cn/post/6844903550187733000)
+参考：[【腾讯开源】iOS爆内存问题解决方案-OOMDetector组件](https://juejin.cn/post/6844903550187733000 "【腾讯开源】iOS爆内存问题解决方案-OOMDetector组件")
 
 **Memory Graph**
 
@@ -1982,10 +1982,137 @@ OOM 与其他 Crash 不同的一点是它的触发是通过 `SIGKILL` 信号进�
 防劣化即防止出现 OOM 的一些手段，可以从以下方面入手：
 
 - 内存泄漏：关于内存泄漏的检测可以见[上期内容](https://mp.weixin.qq.com/s/DNXrfZgx0JaXyvfVZ4sYVA)。
-
 - autoreleasepool：在循环里产生大量临时对象，内存峰值会猛涨，甚至出现 OOM。适当的添加 autoreleasepool 能及时释放内存，降低峰值。
-
 - 大图压缩：可以降低图片采样率。
-
 - 前后台切换：后台更容易发生 OOM，因为后台可利用的内存更小，我们可以在进入后台时考虑释放一些内存。
+
+***
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### Synchronized 源码解读
+
+**Synchronized** 作为 Apple 提供的同步锁机制中的一种，以其便捷的使用性广为人知，作为面试中经常被考察的知识点，我们可以带着几个面试题来解读源码：
+
+1. `sychronized`  是如何与传入的对象关联上的？
+2. 是否会对传入的对象有强引用关系？
+3. 如果 `synchronized` 传入 nil 会有什么问题？
+4. 当做key的对象在 `synchronized` 内部被释放会有什么问题？
+5. `synchronized` 是否是可重入的,即是否可以作为递归锁使用？
+
+#### 查看 synchronized 源码所在
+
+通常查看底层调用有两种方式，通过 `clang` 查看编译后的 cpp 文件梳理，第二种是通过汇编断点梳理调用关系；这里采用第一种方式。命令为 `xcrun --sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-14.2 ViewController.m`
+
+
+核心代码就是  `objc_sync_enter` 和 `objc_sync_exit` ，拿到函数符号后可以通过 xcode 设置 symbol 符号断点获知该函数位于哪个系统库，这里直接说结论是在 libobjc 中，objc是开源的，全局搜索后定位到 objc/objc-sync 的文件中；
+
+#### Synchronized 中重要的数据结构
+
+核心数据结构有三个，`SyncData` 和 `SyncList` 以及 `sDataLists`；结构体成员变量注释如下：
+
+```c
+typedef struct alignas(CacheLineSize) SyncData {
+    struct SyncData* nextData; // 指向下一个 SyncData 节点，作用类似链表
+    DisguisedPtr<objc_object> object; // 绑定的作为 key 的对象
+    int32_t threadCount;  // number of THREADS using this block  使用当前 obj 作为 key 的线程数
+    recursive_mutex_t mutex; // 递归锁，根据源码继承链其实是 apple 自己封装了os_unfair_lock 实现的递归锁
+} SyncData;
+
+// SyncList 作为表中的首节点存在，存储着 SyncData 链表的头结点
+struct SyncList {
+    SyncData *data; // 指向的 SyncData 对象
+    spinlock_t lock; // 操作 SyncList 时防止多线程资源竞争的锁，这里要和 SyncData 中的 mutex 区分开作用，SyncData 中的 mutex 才是实际代码块加锁使用的
+
+    constexpr SyncList() : data(nil), lock(fork_unsafe_lock) { }
+};
+
+// Use multiple parallel lists to decrease contention among unrelated objects.
+/ 两个宏定义，方便调用
+#define LOCK_FOR_OBJ(obj) sDataLists[obj].lock
+#define LIST_FOR_OBJ(obj) sDataLists[obj].data /
+static StripedMap<SyncList> sDataLists; // 哈希表，以关联的 obj 内存地址作为 key，value是 SyncList 类型
+```
+
+> `StripedMap` 本质是个泛型哈希表，是 objc 源码中经常使用的数据结构，例如 retain/release 中的 SideTables 结构等。
+>
+> 一般以内存地址值作为 key，返回声明类型的 value，iOS中 存储容量是 8 Mac中 容量是 64 ，可以通过源码查看
+
+#### 核心逻辑 id2data()
+
+通过源码可以获知 `objc_sync_enter` 和 `objc_sync_exit` 核心逻辑都是 id2data()，入参为作为 key 的对象，以及状态枚举值。
+
+**代码流程如下：**
+
+- 通过关联的对象地址获取 `SyncList` 中存储的的 `SyncData` 和 lock 锁对象；
+- 使用 fastCacheOccupied 标识，用来记录是否已经填充过快速缓存。
+    - 首先判断是否命中 TLS 快速缓存，对应代码 `SyncData *data = (SyncData *)tls_get_direct(SYNC_DATA_DIRECT_KEY);`
+    - 未命中则判断是否命中二级缓存 `SyncCache`,  对应代码 `SyncCache *cache = fetch_cache(NO);`
+    - 命中逻辑处理类似，都是使用 switch 根据入参决定处理加锁还是解锁，如果匹配到，则使用 `result` 指针记录
+        - 加锁，则将 lockCount ++，记录 key object 对应的 `SyncData` 变量 lock 的加锁次数，再次存储回对应的缓存。
+        - 解锁，同样 lockCount--，如果 ==0，表示当前线程中 object 关联的锁不再使用了，对应缓存中 `SyncData` 的 threadCount 减1，当前线程中 object 作为 key 的加锁代码块完全释放
+    
+- 如果两个缓存都没有命中，则会遍历全局表 `SyncDataLists`,  此时为了防止多线程影响查询，使用了  `SyncList`  结构中的 lock 加锁（注意区分和SyncData中lock的作用）。
+
+     查找到则说明存在一个 `SyncData` 对象供其他线程在使用，当前线程使用需要设置 threadCount + 1 然后存储到上文的缓存中；对应的代码块为：
+
+     ```cpp
+     for (p = *listp; p != NULL; p = p->nextData) {goto done}
+     ```
+
+- 如果以上查找都未找到，则会生成一个 SyncData 节点, 并通过 `done` 代码段填充到缓存中。
+
+    - 如果存在未释放的 `SyncData`, 同时 `theadCount == 0` 则直接填充新的数据，减少创建对象，实现性能优化，对应代码：
+
+        ```cpp
+        if ( firstUnused != NULL ) {//...}
+        ```
+
+    - 如果不存在，则新建 `SyncData` 对象，**并采用头插法**插入到链表的头部，对应代码逻辑
+
+        ```cpp
+        posix_memalign((void **)&result, alignof(SyncData), sizeof(SyncData));
+        //....
+        ```
+        
+
+最终的存储数据结构如下图所示：
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_43_interview_02.png)
+
+当 id2data() 返回了 `SyncData` 对象后，`objc_sync_try_enter` 会调用 `data->mutex.tryLock(); `尝试加锁，其他线程再次执行时如果判断已经加锁，则进行资源等待
+
+以上是对源码的解读，需要对照着 `libobjc` 源码阅读会更好的理解。下面回到最初的几个问题：
+
+1. 锁是如何与你传入 `@synchronized` 的对象关联上的
+
+    答： 由 `SyncDataLits` 可知是通过对象地址关联的，所以任何存在内存地址的对象都可以作为 synchronized 的 key 使用
+
+2. 是否会对关联的对象有强引用
+
+    答：根据 `StripedMap` 里的代码可以没有强引用，只是将内存地址值进行位计算然后作为 key 使用，并没有指针指向传入的对象。
+
+3. 如果 synchronize 传入 nil 会有什么问题
+
+    答：通过 `objc_sync_enter` 源码发现，传入 nil 会调用 `objc_sync_nil`, 而 `BREAKPOINT_FUNCTION` 对该函数的定义为 `asm()""` 即空汇编指令。不执行加锁，所以该代码块并不是线程安全的。
+
+4. 假如你传入 `@synchronized` 的对象在 `@synchronized` 的 block 里面被释放或者被赋值为 `nil` 将会怎么样
+
+    答：通过 `objc_sync_exit` 发现被释放后，不会做任何事，导致锁也没有被释放，即一直处于锁定状态，但是由于对象置为nil，导致其他异步线程执行 `objc_sync_enter` 时传入的为 nil，代码块不再线程安全。
+
+5. `synchronized` 是否是可重入的，即是否为递归锁 
+
+    答：是可递归的，因为 `SyncData` 内部是对 os_unfair_recursive_lock 的封装，os_unfair_recursive_lock 结构通过 os_unfair_lock 和 count 实现了可递归的功能，另外通过lockCount记录了重入次数
+    
+
+**知识点总结：**
+
+- id2data 函数使用拉链法解决了哈希冲突问题（更多哈希冲突方案查看 [摸鱼周报39期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ) ），
+
+- 在查找缓存上支持了 **TLS 快速缓存** 以及 **SyncCache**  二级缓存和 `SyncDataLists` 全局查找三种方式：
+- `Sychronized` 使用注意事项，请参考 [正确使用多线程同步锁@synchronized()](https://link.juejin.cn/?target=https%3A%2F%2Fwww.jianshu.com%2Fp%2F2dc347464188 "[正确使用多线程同步锁@synchronized()")
+
+参考：
+
+* [关于 @synchronized，这儿比你想知道的还要多-杨萧玉](https://link.juejin.cn/?target=http%3A%2F%2Fyulingtianxia.com%2Fblog%2F2015%2F11%2F01%2FMore-than-you-want-to-know-about-synchronized%2F "关于 @synchronized，这儿比你想知道的还要多-杨萧玉")
+* [正确使用多线程同步锁@synchronized()](https://link.juejin.cn/?target=https%3A%2F%2Fwww.jianshu.com%2Fp%2F2dc347464188 "[正确使用多线程同步锁@synchronized()")
 
