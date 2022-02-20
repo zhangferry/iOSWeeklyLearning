@@ -13,13 +13,35 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：Apple 将在 iPhone 上推出 Tap to Pay 功能，即可以通过简单的操作行为 -- 轻触，完成在商户端的付款过程。该功能通过 NFC 实现，非常安全，支持 Apple Pay、非接触式信用卡、借记卡以及其他数子钱包，这意味着 iPhone 将具备类似 POS 的功能，客户可以直接在商户的 iPhone 上刷信用卡进行消费。该功能仅 iPhone XS 及之后的机型支持。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Apple_Apple-Pay_Payment_inline.jpg.large_2x.jpg)
+
+Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的支付平台。其他支付平台和应用程序将在今年晚些时候推出。
 
 ## 开发Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+整理编辑：[zhangferry](https://zhangferry.com)
 
+### 获取 Build Setting 对应的环境变量 Key
 
+Xcode 的 build setting 里有很多配置项，这些配置项都有对应的环境变量，当我们要用脚本自定义的话就需要知道对应的环境变量 Key是哪个才好设置。比如下面这个 Header Search Paths
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220220215645.png)
+
+其对应的 Key 是 `HEADER_SEARCH_PATHS`。那如何或者这个 Key 呢，除了网上查相关资料我们还可以通过 Xcode 获取。
+
+#### 方法一（有@CodeStar提供）
+
+选中该配置项，展开右部侧边栏，选中点击帮助按钮就能够看到这个配置的说明和对应的环境变量名称。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220220220200.png)
+
+#### 方法二
+
+选中该配置，按住 Option 键，双击该配置，会出现一个描述该选项的帮助卡片，这个内容与上面的帮助侧边栏内容一致。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220220220534.png)
 
 ## 面试解析
 

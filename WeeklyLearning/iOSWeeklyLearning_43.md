@@ -34,11 +34,11 @@ crash 的具体原因是 Xcode 编译器在低版本  iOS12 上没有将 libswif
 
 #### 问题分析
 
-通过报错信息 `Library not loaded: /usr/lib/swift/libswiftCore.dylib` 分析是动态库没有加载，提示是 libswift_Concurrency.dylib 引用了该库。iOS12 本不该链接这个库，崩溃后通过 `image list` 查看加载的镜像文件会找到 libswift_Concurrency 的路径是 ipa/Frameworks 下的，查询资料了解到是 xcode13.2 及其以上版本在做 Swift Concurrency 向前兼容时出现的 bug
+通过报错信息 `Library not loaded: /usr/lib/swift/libswiftCore.dylib` 分析是动态库没有加载，提示是 libswift_Concurrency.dylib 引用了该库。iOS12 本不该链接这个库，崩溃后通过 `image list` 查看加载的镜像文件会找到 libswift_Concurrency 的路径是 ipa/Frameworks 下的，查询资料了解到是 Xcode13.2 及其以上版本在做 Swift Concurrency 向前兼容时出现的 bug
 
 #### 问题定位
 
-在按照 xcode 13.2 release notes 提供的方案，将 libswiftCore 设置为 weak 并指定 rpath 后，crash 信息变更，此时 error 原因是 `___chkstk_darwin` 符号找不到；根据 error Referenced from 发现还是 libswift_Concurrency 引用的，通过：
+在按照 Xcode 13.2 release notes 提供的方案，将 libswiftCore 设置为 weak 并指定 rpath 后，crash 信息变更，此时 error 原因是 `___chkstk_darwin` 符号找不到；根据 error Referenced from 发现还是 libswift_Concurrency 引用的，通过：
 
 ```bash
 $ nm -u xxxAppPath/Frameworks/libswift_Concurrency.dylib
@@ -50,24 +50,24 @@ error 提示期望该符号应该在 libSystem.B.dylib 中，但是通过找到 
 ```bash
 $ nm -gAUj libSystem.B.dylib
 ```
-发现即使是高版本的动态库中也并没有该符号，那么如何知道该符号在哪个库呢？这里用了一个取巧的方式，run iOS13 以上真机，并设置 symbol 符号 `___chkstk_darwin`， xcode 会标记所有存在该符号的库，经过前面的思考，认为是在查找 libswiftCore 核心库时 crash 的可能性更大。
+发现即使是高版本的动态库中也并没有该符号，那么如何知道该符号在哪个库呢？这里用了一个取巧的方式，run iOS13 以上真机，并设置 symbol 符号 `___chkstk_darwin`， Xcode 会标记所有存在该符号的库，经过前面的思考，认为是在查找 libswiftCore 核心库时 crash 的可能性更大。
 
 > libSystem.B.dylib 路径在 ~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/ 目录下
 
-如何校验呢，通过 xcode 上 iOS12 && iOS13 两个不同版本的 libswiftCore.dylib 查看导出符号，可以发现，iOS12 上的 Core 库不存在，对比组 iOS13 上是存在的，所以基本可以断定 symbol not found 是这个原因造成的；当然你也可以把其他几个库也采用相同的方式验证。
+如何校验呢，通过 Xcode 上 iOS12 && iOS13 两个不同版本的 libswiftCore.dylib 查看导出符号，可以发现，iOS12 上的 Core 库不存在，对比组 iOS13 上是存在的，所以基本可以断定 symbol not found 是这个原因造成的；当然你也可以把其他几个库也采用相同的方式验证。
 
 > 通过在 ~/Library/Developer/Xcode/iOS DeviceSupport/xxversion/Symbols/usr/lib/swift/libswiftCore.dylib 不同的 version 路径下找到不同系统对应的 libswiftCore.dylib 库，然后用 `nm -gUAj libswiftCore.dylib` 可以获取过滤后的全局符号验证。
 > 
 > 库的路径，可以通过 linkmap 或者运行 demo 打个断点，通过LLDB的image list查看。
 
-分析总结：无论是根据 xcode 提供的解决方案亦或是 error 分析流程，发现根源还是因为在 iOS12 上链接了 libswift_Concurrency 造成的，既然问题出在异步库，解决方案也很明了，移除项目中的 libswift_Concurrency.dylib 库即可。
+分析总结：无论是根据 Xcode 提供的解决方案亦或是 error 分析流程，发现根源还是因为在 iOS12 上链接了 libswift_Concurrency 造成的，既然问题出在异步库，解决方案也很明了，移除项目中的 libswift_Concurrency.dylib 库即可。
 
 #### 解决方案
 
-**方案一：使用 xcode13.1 或者 xcode13.3 Beta 构建**
+**方案一：使用 Xcode13.1 或者 Xcode13.3 Beta 构建**
 
-使用 xcode13.1 或者 xcode13.3 Beta 构建，注意 beta 版构建的 ipa 无法上传到 App Store。
-该方法比较麻烦，还要下载 xcode 版本，耗时较多，如果有多版本 xcode 的可以使用该方法。
+使用 Xcode13.1 或者 Xcode13.3 Beta 构建，注意 beta 版构建的 ipa 无法上传到 App Store。
+该方法比较麻烦，还要下载 Xcode 版本，耗时较多，如果有多版本 Xcode 的可以使用该方法。
 
 **方案二：添加 Post-actions 脚本移除**
 
@@ -80,7 +80,7 @@ rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" 
 
 **方案三：降低或移除使用 libswift_Concurrency.dylib 的三方库**
 
-查找使用 concurrency 的三方库，降低到未引用 libSwiftConcurrency 前的版本，后续等 xcode 修复后再升级。如果是通过 cocoapods 管理三方库，只需要指定降级版本即可。但是需要解决一个问题，如何查找三方库中有哪些用到 concurrency 呢？
+查找使用 concurrency 的三方库，降低到未引用 libSwiftConcurrency 前的版本，后续等 Xcode 修复后再升级。如果是通过 cocoapods 管理三方库，只需要指定降级版本即可。但是需要解决一个问题，如何查找三方库中有哪些用到 concurrency 呢？
 
 如果是源码，全局搜索相关的 `await & async` 关键字可以找到部分 SDK，但如果是二进制 SDK 或者是间接使用的，则只能通过符号查找。
 
@@ -126,7 +126,7 @@ rm "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/libswift_Concurrency.dylib" 
 通常查看底层调用有两种方式，通过 `clang` 查看编译后的 cpp 文件梳理，第二种是通过汇编断点梳理调用关系；这里采用第一种方式。命令为 `xcrun --sdk iphoneos clang -arch arm64 -rewrite-objc -fobjc-arc -fobjc-runtime=ios-14.2 ViewController.m`
 
 
-核心代码就是  `objc_sync_enter` 和 `objc_sync_exit` ，拿到函数符号后可以通过 xcode 设置 symbol 符号断点获知该函数位于哪个系统库，这里直接说结论是在 libobjc 中，objc是开源的，全局搜索后定位到 objc/objc-sync 的文件中；
+核心代码就是  `objc_sync_enter` 和 `objc_sync_exit` ，拿到函数符号后可以通过 Xcode 设置 symbol 符号断点获知该函数位于哪个系统库，这里直接说结论是在 libobjc 中，objc是开源的，全局搜索后定位到 objc/objc-sync 的文件中；
 
 #### Synchronized 中重要的数据结构
 
