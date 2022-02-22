@@ -31,7 +31,7 @@ Xcode 的 build setting 里有很多配置项，这些配置项都有对应的�
 
 其对应的 Key 是 `HEADER_SEARCH_PATHS`。那如何或者这个 Key 呢，除了网上查相关资料我们还可以通过 Xcode 获取。
 
-#### 方法一（有@CodeStar提供）
+#### 方法一（由@CodeStar提供）
 
 选中该配置项，展开右部侧边栏，选中点击帮助按钮就能够看到这个配置的说明和对应的环境变量名称。
 
@@ -63,7 +63,22 @@ Xcode 的 build setting 里有很多配置项，这些配置项都有对应的�
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### EasyFind 
+
+**地址**：https://easyfind.en.softonic.com/mac
+
+**软件状态**：免费
+
+**软件介绍**：
+
+小而强大的文件搜索应用, 媲美`windows`下的`Everything`。
+
+![EasyFind](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/easyfind-easyfind.png)
+
+
 
 ## 关于我们
 
