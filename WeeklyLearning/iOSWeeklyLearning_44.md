@@ -44,7 +44,7 @@ Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的�
 - 2、一个意外的 API 调用返回 HTTP 401 并触发退出登录。
 - 3、`Keychain` 抛出了一个错误。
 
-我能够排除前两个潜在的原因，这要归功于我在自己重现该问题后观察到的一些微妙行为。
+我能够排除前两个怀疑的原因，这要归功于我在自己重现该问题后观察到的一些微妙行为。
 
 - 登录界面没有要求我选择地区 —— 这表明 `UserDefaults` 中的数据没有问题，因为我们的 "已显示地区选择 "偏好设置仍然生效。
 - 主用户界面没有显示，即使是短暂的也没有 —— 这表明没有尝试进行网络请求，所以 API 是问题原因可能还为时过早。
@@ -84,15 +84,15 @@ Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的�
 > 推特翻译：
 > 有趣的 iOS 15 优化。Duet 现在试图先发制人地 "预热" 第三方应用程序，在你点击一个应用程序图标前几分钟，通过 dyld 和预主静态初始化器运行它们。然后，该应用程序被暂停，随后的 "启动" 似乎更快。
 
-现在一切都说得通了。我们最初没有测试到它，因为我们很可能没有给 iOS 15 beta 版足够的时间来 "学习" 我们的使用习惯，所以这个问题只在现实世界的场景中再现，即设备认为我很快就要启动应用程序。我仍然不知道这种预测是如何形成的，但我只想把它归结为 "Siri 智能"，然后就到此为止了。
+现在一切都说得通了。我们最初没有测试到它，因为我们很可能没有给 iOS 15 beta 版足够的时间来 "学习" 我们的使用习惯，所以这个问题只在现实生活的场景中再现，即设备认为我很快就要启动应用程序。我仍然不知道这种预测是如何形成的，但我只想把它归结为 "Siri 智能"，然后就到此为止了。
 
 #### 结论
 
 从 iOS 15 开始，系统可能决定在用户实际尝试打开你的应用程序之前对其进行 "预热"，这可能会增加受保护的数据在你认为应该无法使用的时候的被访问概率。
 
-通过等待 `application(_:didFinishLaunchingWithOptions:)` 委托回调来保护自己，如果可能的话，留意 `UIApplication.isProtectedDataAvailable`（或对应委托的回调/通知）并相应处理。
+通过等待 `application(_:didFinishLaunchingWithOptions:)` 委托回调来避免App 受此影响，如果可以的话，留意 `UIApplication.isProtectedDataAvailable`（或对应委托的回调/通知）并相应处理。
 
-我们仍然发现了非常少的非致命问题，在 `application(_:didFinishLaunchingWithOptions:)` 中报告 `isProtectedDataAvailable`为 `false`，在我们可以推迟从钥匙串阅读的访问令牌之外，这将是一个大规模的任务，现在它不值得进行进一步调查。
+我们仍然发现了极少数的非致命问题，在 `application(_:didFinishLaunchingWithOptions:)` 中属性 `isProtectedDataAvailable` 值为 false，我们现在除了推迟从钥匙串读取数据之外，没有其它好方法，因为它是系统原因导致，不值得进行进一步研究。
 
 参考：[解决 iOS 15 上 APP 莫名其妙地退出登录 - Swift社区](https://mp.weixin.qq.com/s/_a5DddYgQHKREi5VoEeJyg)
 
@@ -119,16 +119,15 @@ Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的�
 
 > 笔者对这里也不是很理解，根据 `debug`  分析析构过程实际是优先调用了实例覆写的 `dealloc`  后，才依次处理 `superclass 的 dealloc`、 `cxx_destruct` 、`Associated`、`Weak Reference`、`Side Table`等结构的，最后执行 `free`，所以不应该发生结构破坏导致的 crash，希望有了解的同学指教一下
 
-笔者个人的理解是：Apple 做这种要求的原因是不想让子类影响父类的构造和析构过程。例如以下代码，子类通过覆写了 `Associated`方 法， 会影响到父类的 `dealloc` 过程。
+笔者个人的理解是：Apple 做这种要求的原因是不想让子类影响父类的构造和析构过程。例如以下代码，子类通过覆写了 `Associated`方法， 会影响到父类的 `dealloc` 过程。
 
-```objective-c
+```objectivec
 @interface HWObject : NSObject
 @property(nonatomic) NSString* info;
 @end
     
 @implementation HWObject
-- (void)dealloc
-{
+- (void)dealloc {
     self.info = nil;
 }
 - (void)setInfo:(NSString *)info {
@@ -214,7 +213,7 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 
 例如一个经常在子线程中使用的类，内部需要使用 `NSTimer` 定时器，定时器由于需要加到 NSRunloop 中，为了简单，这里加到了主线程， 而定时器有一个特殊性：**定时器的释放和创建必须在同一个线程**，所以释放也需要在主线程，示例代码如下（*以上代码仅作为示例代码，并非实际开发使用*）：
 
-```objective-c
+```objectivec
 - (void)dealloc {
 		[self invalidateTimer];
 }
