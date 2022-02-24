@@ -9,7 +9,7 @@
 > * 面试模块：Dealloc 使用注意事项及解析
 > * 优秀博客：ARM64 汇编入门及应用
 > * 学习资料：Github: How to Cook
-> * 开发工具：EasyFind
+> * 开发工具：文件搜索应用：EasyFind
 
 ## 本期话题
 
@@ -29,16 +29,16 @@ Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的�
 
 #### 复现问题
 
-在 iOS 15 公开推出后， 我们开始从用户端收到反馈报告：在打开我们的应用程序(Cookpad) 时他们被莫名其妙的反复退出到登录页。非常令人惊讶的是，这并不是我们在测试 iOS 15 beta 版的时候发现的问题。
+在 iOS 15 正式版推出后， 我们开始收到用户的反馈：在打开我们的App (Cookpad) 时，用户莫名其妙地被强制退出帐号并返回到登录页。非常令人惊讶的是，我们在测试 iOS 15 beta 版的时候并没有发现这个问题。
 
-我们没有视频，也没有具体的步骤来重现这个问题，所以我努力尝试以各种方式启动应用程序，希望能亲眼看到它。我试着重新安装应用程序，我试着在有网络连接和没有网络连接的情况下启动，我试着强制退出，经过 30 分钟的努力，我放弃了，我开始回复用户说我没找到具体问题。
+我们没有视频，也没有具体的步骤来重现这个问题，所以我努力尝试以各种方式启动应用程序，希望能亲手重现它。我试着重新安装应用程序，我试着在有网络连接和没有网络连接的情况下启动，我试着强制退出，经过 30 分钟的努力，我放弃了，我开始回复用户说我没找到具体问题。
 
 直到我再次解锁手机，没有做任何操作，就启动了 Cookpad，我发现 APP 就像我们的用户所反馈的那样，直接退出到了登录界面！
 
 在那之后，我无法准确的复现该问题，但似乎与暂停使用手机一段时间后再次使用它有关。
 
 #### 缩小问题范围
-我担心从 Xcode 重新安装应用程序可能会影响问题的复现，所以在这样做之前，是时候查看代码并试图缩小问题的范围。根据我们的实现，我想出了三个潜在的原因。
+我担心从 Xcode 重新安装应用程序可能会影响问题的复现，所以我首先检查代码并试图缩小问题的范围。根据我们的实现，我想出了三个怀疑的原因。
 
 - 1、`UserDefaults` 中的数据被清除。
 - 2、一个意外的 API 调用返回 HTTP 401 并触发退出登录。
@@ -119,7 +119,7 @@ Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的�
 
 > 笔者对这里也不是很理解，根据 `debug`  分析析构过程实际是优先调用了实例覆写的 `dealloc`  后，才依次处理 `superclass 的 dealloc`、 `cxx_destruct` 、`Associated`、`Weak Reference`、`Side Table`等结构的，最后执行 `free`，所以不应该发生结构破坏导致的 crash，希望有了解的同学指教一下
 
-笔者个人的理解是：Apple 做这种要求的原因是不想让子类影响父类的构造和析构过程。例如以下代码，子类通过覆写了 `Associated`方 法， 会影响到父类的 `dealloc` 过程
+笔者个人的理解是：Apple 做这种要求的原因是不想让子类影响父类的构造和析构过程。例如以下代码，子类通过覆写了 `Associated`方 法， 会影响到父类的 `dealloc` 过程。
 
 ```objective-c
 @interface HWObject : NSObject
@@ -180,11 +180,9 @@ static void object_cxxDestructFromClass(id obj, Class cls)
 }
 ```
 
-沿着 superClass 链通过 `lookupMethodInClassAndLoadCache `去查询 `SEL_cxx_destruct`函数，查找到调用， 
+沿着 superClass 链通过 `lookupMethodInClassAndLoadCache `去查询 `SEL_cxx_destruct`函数，查找到调用。`SEL_cxx_destruct` 是 `objc` 在初始化调用 `map_images` 时，在 `Sel_init` 中赋值的，值就是 `.cxx_destruct`。
 
-`SEL_cxx_destruct` 是 `objc` 在初始化调用 `map_images` 时，在 `Sel_init` 中赋值的，值就是 `.cxx_destruct`
-
-而 `cxx_destruct` 就是用于释放变量的，当类中新增了变量后，会自动插入该函数，这里可以通过 `LLDB watchpoint ` 监听实例的属性值变化， 然后查看堆栈信息验证
+而 `cxx_destruct` 就是用于释放变量的，当类中新增了变量后，会自动插入该函数，这里可以通过 `LLDB watchpoint ` 监听实例的属性值变化， 然后查看堆栈信息验证。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_44_interview_02.jpg)
 
@@ -255,7 +253,7 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 
 >  可以使用 `performSelector`代替 `GCD`实现， 确保线程操作先于 dealloc 完成。
 
-总结：面试中对于内存管理和 dealloc 相关的考察应该不会很复杂，建议熟读一次源码，了解 `dealloc` 的调用时机以及整个释放流程，然后理解注意事项，基本可以一次性解决 `dealloc` 的相关面试题
+总结：面试中对于内存管理和 dealloc 相关的考察应该不会很复杂，建议熟读一次源码，了解 `dealloc` 的调用时机以及整个释放流程，然后理解注意事项，基本可以一次性解决 `dealloc` 的相关面试题。
 
 * [为什么不能在init和dealloc函数中使用accessor方法](https://cloud.tencent.com/developer/article/1143323 "为什么不能在init和dealloc函数中使用accessor方法")
 * [ARC下，Dealloc还需要注意什么？](https://gitkong.github.io/2019/10/24/ARC%E4%B8%8B-Dealloc%E8%BF%98%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BB%80%E4%B9%88/ "ARC下，Dealloc还需要注意什么？")
