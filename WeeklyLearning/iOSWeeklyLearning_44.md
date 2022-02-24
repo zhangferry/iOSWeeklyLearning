@@ -233,6 +233,7 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 
 - (void)invalidateTimer {
     dispatch_async(dispatch_get_main_queue(), ^{
+        //  crash 位置
         if (self.timer) {
             NSLog(@"TestDeallocModel invalidateTimer:%p model:%p", self->_timer, self);
             [self.timer invalidate];
@@ -248,7 +249,7 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 }
 ```
 
-代码会在 line19 发生 crash， 报错为 `EXC_BAD_ACCESS`。原因很简单，因为 `dealloc`最终会调用 `free()`释放内存空间，而后 `GCD`再访问到 `self` 时已经是野指针，所以报错。
+代码会在`invalidateTimer::if (self.timer)` 处发生 crash， 报错为 `EXC_BAD_ACCESS`。原因很简单，因为 `dealloc`最终会调用 `free()`释放内存空间，而后 `GCD`再访问到 `self` 时已经是野指针，所以报错。
 
 >  可以使用 `performSelector`代替 `GCD`实现， 确保线程操作先于 dealloc 完成。
 
@@ -256,7 +257,7 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 
 * [为什么不能在init和dealloc函数中使用accessor方法](https://cloud.tencent.com/developer/article/1143323 "为什么不能在init和dealloc函数中使用accessor方法")
 * [ARC下，Dealloc还需要注意什么？](https://gitkong.github.io/2019/10/24/ARC%E4%B8%8B-Dealloc%E8%BF%98%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E4%BB%80%E4%B9%88/ "ARC下，Dealloc还需要注意什么？")
-* [Practical Memory Management](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW4 “Practical Memory Management”)
+* [Practical Memory Management](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW4 "Practical Memory Management")
 
 
 ## 优秀博客
