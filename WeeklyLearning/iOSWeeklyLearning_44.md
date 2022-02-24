@@ -19,6 +19,8 @@
 
 Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的支付平台。其他支付平台和应用程序将在今年晚些时候推出。
 
+[Apple empowers businesses to accept contactless payments through Tap to Pay on iPhone](https://www.apple.com/newsroom/2022/02/apple-unveils-contactless-payments-via-tap-to-pay-on-iphone/ "Apple empowers businesses to accept contactless payments through Tap to Pay on iPhone")
+
 ## 开发Tips
 
 整理编辑：[FBY展菲](https://github.com/fanbaoying)
@@ -57,7 +59,7 @@ Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的�
 1、启动应用程序
 2、简单使用
 3、强制退出应用
-4、锁定我的设备并将其放置约 30 分钟
+4、锁定我的设备并将其放置约  30 分钟
 5、解锁设备
 6、再次启动应用
 
