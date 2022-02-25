@@ -270,7 +270,7 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 >
 > **需要基础吗？**
 >
-> 我对汇编掌握的并不多，在阅读和学期过程期间发现那些需要思考和理解的东西作者们都介绍的很好。
+> 我对汇编掌握的并不多，在阅读和学期过程期间发现那些需要思考和理解的内容，作者们都介绍的很好。
 
 1、[[C in ASM(ARM64)]](https://zhuanlan.zhihu.com/p/31168062 "[C in ASM(ARM64)]") -- 来自知乎：知兵
 
