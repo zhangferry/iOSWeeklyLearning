@@ -41,7 +41,20 @@
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### nginxedit 
+
+**地址**：https://www.nginxedit.cn/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+`Nginx`在线配置生成工具，配置高性能，安全和稳定的`Nginx`服务器的最简单方法。
+
+![nginxedit](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Nginx%E5%9C%A8%E7%BA%BF%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.png)
 
 ## 关于我们
 
