@@ -237,9 +237,27 @@ class HeapObjectSideTableEntry {
 
 
 ## 优秀博客
+整理编辑：[@我是熊大](https://github.com/Tliens)
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+> 本期优秀博客的主题为：脚手架/CLI。在项目最开始的时候，脚手架工具，就帮你搭建好架子，会生成一些基本代码。脚手架的存在有利于团队统一架构风格，加速项目开发。
 
+1、[从0构建自己的脚手架/CLI知识体系](https://juejin.cn/post/6966119324478079007 "从0构建自己的脚手架/CLI知识体系") -- 来自掘金：IT老班长
+
+[@我是熊大](https://github.com/Tliens)：如何生成搭建脚手架呢？本文作者使用NodeJS，从0开始搭建了一个脚手架，每一步都很详细，介绍了热门脚手架工具库，没有NodeJS基础的也能看懂，非常适合作为新手篇入场学习。
+
+2、[iOS自动化工具Gckit CLI](https://seongbrave.github.io/gckit/guide/#%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E "iOS自动化工具Gckit CLI") -- 来自博客：SeongBrave
+
+[@我是熊大](https://github.com/Tliens)：在项目开发中，大家水平参差不齐，代码风格迥异，尤其是有新人加入团队时，适应期会比较长。那有没有可能让新同学也能像老同学一样，不仅快速进行开发，而且代码风格也近似呢？Gckit CLI 就是为此诞生的，大家在看完上篇文章后就可以对该库进行调整了，打造属于自己的自动化工具
+
+
+3、[Swift + RxSwift MVVM 模块化项目实践](https://juejin.cn/post/6844903821160742919 "Swift + RxSwift MVVM 模块化项目实践") -- 来自掘金：SeongBrave
+
+[@我是熊大](https://github.com/Tliens)：本文是Gckit作者的实践总结，主要讲解通过 CocoaPods 结合 Gckit-CLI 实现开发效率的最大化的一些项目实践。
+
+
+4、[iOS自动化方案附脚本](https://juejin.cn/post/6948239939809050638 "iOS自动化方案附脚本") -- 来自掘金：我是熊大
+
+[@我是熊大](https://github.com/Tliens)：不同的电脑开发环境不同，多人协作下，因环境不同会导致各种问题，比如cocoapods的版本不同，就会导致某些库无法下载，.lock文件频繁更新等。本文介绍了如何统一开发环境，以及自动化脚本的使用，可以把它放进你的脚手架工具中。文章最后提到了关于脚手架工具的遐想。
 
 
 
