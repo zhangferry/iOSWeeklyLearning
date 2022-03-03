@@ -21,7 +21,7 @@
 
 > We have taken a number of actions in response to the invasion. We have paused all product sales in Russia. Last week, we stopped all exports into our sales channel in the country. Apple Pay and other services have been limited. RT News and Sputnik News are no longer available for download from the App Store outside Russia. And we have disabled both traffic and live incidents in Apple Maps in Ukraine as a safety and precautionary measure for Ukrainian citizens.
 
-有很多人说应该支持国产手机了，但国产也是魔改的安卓系统，这虽没有苹果那样被牢牢掌控，也并非完全的安全。这几天不只是苹果，谷歌、推特、台积电、英特尔，甚至连开发社区 Github、开源库 React 都在抵制俄罗斯，「科技无国界」已经完全沦为谎言，这不禁令人惶恐。
+有很多人说应该支持国产手机了，但国产也是魔改的安卓系统，这虽没有像苹果那样被牢牢掌控，也并非完全的可控。这几天不只是苹果，谷歌、推特、台积电、英特尔，甚至连开发社区 Github、开源库 React 都在抵制俄罗斯，「科技无国界」已经完全沦为谎言，这不禁令人惶恐。
 
 现代战争是复杂的，它不只是枪炮还会伴随着各类舆论战、信息战，而信息战的主动权就掌握在拥有核心技术的一方。反观俄罗斯，类似的事情是不是也会发生在我们身上？由此事件引发的思考是，仅仅用言语冲了某个社区留言板是不够的，打破垄断，不断提高我们自己的核心技术能力才是王道。科技强国，吾辈当自强！
 
@@ -37,7 +37,7 @@ Xcode 的 build setting 里有很多配置项，这些配置项都有对应的�
 
 其对应的 Key 是 `HEADER_SEARCH_PATHS`。那如何或者这个 Key 呢，除了网上查相关资料我们还可以通过 Xcode 获取。
 
-**方法一（有@CodeStar提供）**
+**方法一（由@CodeStar提供）**
 
 选中该配置项，展开右部侧边栏，选中点击帮助按钮就能够看到这个配置的说明和对应的环境变量名称。
 
@@ -103,7 +103,7 @@ Xcode 的 build setting 里有很多配置项，这些配置项都有对应的�
 
 ### Swift 的 weak 是如何实现的？
 
-在 Swift 中，也是拥有 SideTable 的，`SideTable` 是针对有需要的对象而创建，系统会为目标对象分配一块新的内存来保存该对象额外的信息。
+在 Swift 中，也是拥有 `SideTable` 的，`SideTable` 是针对有需要的对象而创建，系统会为目标对象分配一块新的内存来保存该对象额外的信息。
 
 对象会有一个指向 `SideTable` 的指针，同时 `SideTable` 也有一个指回原对象的指针。在实现上为了不额外多占用内存，目前只有在创建弱引用时，会先把对象的引用计数放到新创建的 `SideTable` 去，再把空出来的空间存放 `SideTable` 的地址，会通过一个标志位来区分对象是否有 `SideTable`。
 
@@ -265,7 +265,7 @@ class HeapObjectSideTableEntry {
 ## 优秀博客
 整理编辑：[@我是熊大](https://github.com/Tliens)
 
-> 本期优秀博客的主题为：脚手架/CLI。在项目最开始的时候，脚手架工具，就帮你搭建好架子，会生成一些基本代码。脚手架的存在有利于团队统一架构风格，加速项目开发。
+> 本期优秀博客的主题为：脚手架/CLI。在项目最开始的时候，脚手架工具，就会帮你搭建好架子，并生成一些基本代码。脚手架的存在有利于团队统一架构风格，加速项目开发。
 
 1、[从0构建自己的脚手架/CLI知识体系](https://juejin.cn/post/6966119324478079007 "从0构建自己的脚手架/CLI知识体系") -- 来自掘金：IT老班长
 

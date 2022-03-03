@@ -2137,16 +2137,15 @@ static StripedMap<SyncList> sDataLists; // 哈希表，以关联的 obj 内存�
 
 > 笔者对这里也不是很理解，根据 `debug`  分析析构过程实际是优先调用了实例覆写的 `dealloc`  后，才依次处理 `superclass 的 dealloc`、 `cxx_destruct` 、`Associated`、`Weak Reference`、`Side Table`等结构的，最后执行 `free`，所以不应该发生结构破坏导致的 crash，希望有了解的同学指教一下
 
-笔者个人的理解是：Apple 做这种要求的原因是不想让子类影响父类的构造和析构过程。例如以下代码，子类通过覆写了 `Associated`方 法， 会影响到父类的 `dealloc` 过程。
+笔者个人的理解是：Apple 做这种要求的原因是不想让子类影响父类的构造和析构过程。例如以下代码，子类通过覆写了 `Associated`方法， 会影响到父类的 `dealloc` 过程。
 
-```objective-c
+```objectivec
 @interface HWObject : NSObject
 @property(nonatomic) NSString* info;
 @end
     
 @implementation HWObject
-- (void)dealloc
-{
+- (void)dealloc {
     self.info = nil;
 }
 - (void)setInfo:(NSString *)info {
@@ -2232,7 +2231,7 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 
 例如一个经常在子线程中使用的类，内部需要使用 `NSTimer` 定时器，定时器由于需要加到 NSRunloop 中，为了简单，这里加到了主线程， 而定时器有一个特殊性：**定时器的释放和创建必须在同一个线程**，所以释放也需要在主线程，示例代码如下（*以上代码仅作为示例代码，并非实际开发使用*）：
 
-```objective-c
+```objectivec
 - (void)dealloc {
 		[self invalidateTimer];
 }
