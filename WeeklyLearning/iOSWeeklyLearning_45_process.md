@@ -7,7 +7,7 @@
 > * 话题：苹果公司宣布暂停在俄销售产品并关闭部分功能
 > * Tips：在 SPM 集成 SwiftLint
 > * 面试模块：Swift 的 weak 是如何实现的？
-> * 优秀博客：
+> * 优秀博客：iOS项目中的脚手架/CLI介绍
 > * 学习资料：Swift 实现的设计模式
 > * 开发工具：nginxedit：Nginx 在线配置工具
 
