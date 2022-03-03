@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第四十二期
+# iOS摸鱼周报 第四十五期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
@@ -21,7 +21,9 @@
 
 > We have taken a number of actions in response to the invasion. We have paused all product sales in Russia. Last week, we stopped all exports into our sales channel in the country. Apple Pay and other services have been limited. RT News and Sputnik News are no longer available for download from the App Store outside Russia. And we have disabled both traffic and live incidents in Apple Maps in Ukraine as a safety and precautionary measure for Ukrainian citizens.
 
-有很多人说应该支持国产手机了，但国产也是魔改的安卓系统，这虽没有苹果那样被牢牢掌控，也并非完全的安全。现代战争就是会伴随着各类信息战，信息战的主动权就掌握在拥有核心技术的一方。由此事件引发的思考是，「科学无国界」很可能就是一句空话，我们因为政治观点去支持某一方也是不成熟的，真正有意义的还是应该提高自己核心技术的能力。
+有很多人说应该支持国产手机了，但国产也是魔改的安卓系统，这虽没有苹果那样被牢牢掌控，也并非完全的安全。这几天不只是苹果，谷歌、推特、台积电、英特尔，甚至连开发社区 Github、开源库 React 都在抵制俄罗斯，「科技无国界」已经完全沦为谎言，这不禁令人惶恐。
+
+现代战争是复杂的，它不只是枪炮还会伴随着各类舆论战、信息战，而信息战的主动权就掌握在拥有核心技术的一方。反观俄罗斯，类似的事情是不是也会发生在我们身上？由此事件引发的思考是，仅仅用言语冲了某个社区留言板是不够的，打破垄断，不断提高我们自己的核心技术能力才是王道。科技强国，吾辈当自强！
 
 ## 开发Tips
 
@@ -267,7 +269,7 @@ class HeapObjectSideTableEntry {
 
 1、[从0构建自己的脚手架/CLI知识体系](https://juejin.cn/post/6966119324478079007 "从0构建自己的脚手架/CLI知识体系") -- 来自掘金：IT老班长
 
-[@我是熊大](https://github.com/Tliens)：如何生成搭建脚手架呢？本文作者使用NodeJS，从0开始搭建了一个脚手架，每一步都很详细，介绍了热门脚手架工具库，没有NodeJS基础的也能看懂，非常适合作为新手篇入场学习。
+[@我是熊大](https://github.com/Tliens)：如何生成搭建脚手架呢？本文作者使用 NodeJS，从0开始搭建了一个脚手架，每一步都很详细，介绍了热门脚手架工具库，没有 NodeJS 基础的也能看懂，非常适合作为新手篇入场学习。
 
 2、[iOS自动化工具Gckit CLI](https://seongbrave.github.io/gckit/guide/#%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E "iOS自动化工具Gckit CLI") -- 来自博客：SeongBrave
 
@@ -276,14 +278,12 @@ class HeapObjectSideTableEntry {
 
 3、[Swift + RxSwift MVVM 模块化项目实践](https://juejin.cn/post/6844903821160742919 "Swift + RxSwift MVVM 模块化项目实践") -- 来自掘金：SeongBrave
 
-[@我是熊大](https://github.com/Tliens)：本文是Gckit作者的实践总结，主要讲解通过 CocoaPods 结合 Gckit-CLI 实现开发效率的最大化的一些项目实践。
+[@我是熊大](https://github.com/Tliens)：本文是 Gckit 作者的实践总结，主要讲解通过 CocoaPods 结合 Gckit-CLI 实现开发效率的最大化的一些项目实践。
 
 
 4、[iOS自动化方案附脚本](https://juejin.cn/post/6948239939809050638 "iOS自动化方案附脚本") -- 来自掘金：我是熊大
 
-[@我是熊大](https://github.com/Tliens)：不同的电脑开发环境不同，多人协作下，因环境不同会导致各种问题，比如cocoapods的版本不同，就会导致某些库无法下载，.lock文件频繁更新等。本文介绍了如何统一开发环境，以及自动化脚本的使用，可以把它放进你的脚手架工具中。文章最后提到了关于脚手架工具的遐想。
-
-
+[@我是熊大](https://github.com/Tliens)：不同的电脑开发环境不同，多人协作下，因环境不同会导致各种问题，比如 CocoaPods 的版本不同，就会导致某些库无法下载，.lock文件频繁更新等。本文介绍了如何统一开发环境，以及自动化脚本的使用，可以把它放进你的脚手架工具中。文章最后提到了关于脚手架工具的遐想。
 
 ## 学习资料
 
