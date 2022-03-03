@@ -4,22 +4,52 @@
 
 ### 本期概要
 
-> * 话题：
-> * Tips：
-> * 面试模块：
+> * 话题：苹果公司宣布暂停在俄销售产品并关闭部分功能
+> * Tips：在 SPM 集成 SwiftLint
+> * 面试模块：Swift 的 weak 是如何实现的？
 > * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 学习资料：Swift 实现的设计模式
+> * 开发工具：nginxedit：Nginx 在线配置工具
 
 ## 本期话题
 
 [@zhangferry](https://zhangferry.com)：
 
+### 苹果公司宣布暂停在俄销售产品并关闭部分功能
+
+根据 CNBC 的[报道](https://www.cnbc.com/2022/03/01/apple-halts-product-sales-in-russia-.html "Apple halts product sales in Russia")，苹果公司在3月1号表示，已停止在俄罗斯的产品销售。与此同时，属于俄官方媒体的两款应用被下架，该地区 Apple Pay 等功能受限。以下是苹果发言人的原话：
+
+> We have taken a number of actions in response to the invasion. We have paused all product sales in Russia. Last week, we stopped all exports into our sales channel in the country. Apple Pay and other services have been limited. RT News and Sputnik News are no longer available for download from the App Store outside Russia. And we have disabled both traffic and live incidents in Apple Maps in Ukraine as a safety and precautionary measure for Ukrainian citizens.
+
+有很多人说应该支持国产手机了，但国产也是魔改的安卓系统，这虽没有苹果那样被牢牢掌控，也并非完全的安全。现代战争就是会伴随着各类信息战，信息战的主动权就掌握在拥有核心技术的一方。由此事件引发的思考是，「科学无国界」很可能就是一句空话，我们因为政治观点去支持某一方也是不成熟的，真正有意义的还是应该提高自己核心技术的能力。
+
 ## 开发Tips
 
-整理编辑：[FBY展菲](https://github.com/fanbaoying)
+### 获取 Build Setting 对应的环境变量 Key
 
-### Swift 实用工具 — SwiftLint 
+整理编辑：[zhangferry](zhangferry.com)
+
+Xcode 的 build setting 里有很多配置项，这些配置项都有对应的环境变量，当我们要用脚本自定义的话就需要知道对应的环境变量 Key是哪个才好设置。比如下面这个 Header Search Paths
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220220215645.png)
+
+其对应的 Key 是 `HEADER_SEARCH_PATHS`。那如何或者这个 Key 呢，除了网上查相关资料我们还可以通过 Xcode 获取。
+
+**方法一（有@CodeStar提供）**
+
+选中该配置项，展开右部侧边栏，选中点击帮助按钮就能够看到这个配置的说明和对应的环境变量名称。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220220220200.png)
+
+**方法二**
+
+选中该配置，按住 Option 键，双击该配置，会出现一个描述该选项的帮助卡片，这个内容与上面的帮助侧边栏内容一致。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220220220534.png)
+
+### 在 SPM 集成 SwiftLint
+
+整理编辑：[FBY展菲](https://github.com/fanbaoying)
 
 #### SwiftLint 介绍
 
@@ -67,28 +97,27 @@
 
 
 ## 面试解析
-### Swift的weak是如何实现的？
+整理编辑：[JY](https://juejin.cn/user/1574156380931144)
 
-在Swift中,也是拥有SideTable的，`SideTable` 是针对有需要的对象而创建，系统会为目标对象分配一块新的内存来保存该对象额外的信息。
+### Swift 的 weak 是如何实现的？
+
+在 Swift 中，也是拥有 SideTable 的，`SideTable` 是针对有需要的对象而创建，系统会为目标对象分配一块新的内存来保存该对象额外的信息。
 
 对象会有一个指向 `SideTable` 的指针，同时 `SideTable` 也有一个指回原对象的指针。在实现上为了不额外多占用内存，目前只有在创建弱引用时，会先把对象的引用计数放到新创建的 `SideTable` 去，再把空出来的空间存放 `SideTable` 的地址，会通过一个标志位来区分对象是否有 `SideTable`。
 
 ```Swift 
-    class JYObject{
-        var age :Int = 18
-        var name:String = "JY"
-    }
-     
-      var t = JYObject()
-        
-      weak var t2 = t
-        
-      print("----")
+class JYObject {
+    var age :Int = 18
+    var name:String = "JY"
+}
+var t = JYObject()
+weak var t2 = t
+print("----")
 ```
 
-我们在`print`处打上断点，查看t2对象
+我们在`print`处打上断点，查看 t2 对象
 
-```C
+```
 (lldb) po t2
 ▿ Optional<JYObject>
   ▿ some : <JYObject: 0x6000001a9710>
@@ -105,25 +134,24 @@
 
 ```C++
 WeakReference *swift::swift_weakInit(WeakReference *ref, HeapObject *value) {
-  ref->nativeInit(value);
-  return ref;
+		ref->nativeInit(value);
+  	return ref;
 }
 
- void nativeInit(HeapObject *object) {
+void nativeInit(HeapObject *object) {
     auto side = object ? object->refCounts.formWeakReference() : nullptr;
     nativeValue.store(WeakReferenceBits(side), std::memory_order_relaxed);
-  }
+}
 
 template <>
-HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::formWeakReference()
-{
+HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::formWeakReference() {
     // 创建一个 Side Table
-  auto side = allocateSideTable(true);
-  if (side)
+  	auto side = allocateSideTable(true);
+  	if (side)
       // 增加一个弱引用
-    return side->incrementWeak();
-  else
-    return nullptr;
+    	return side->incrementWeak();
+  	else
+    	return nullptr;
 }
 ```
 
@@ -131,8 +159,7 @@ HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::formWeakReference()
 
 ```C++
 template <>
-HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::allocateSideTable(bool failIfDeiniting)
-{
+HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::allocateSideTable(bool failIfDeiniting) {
   //1.拿到原有的引用计数
   auto oldbits = refCounts.load(SWIFT_MEMORY_ORDER_CONSUME);
   
@@ -172,7 +199,7 @@ HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::allocateSideTable(bool 
     // 将原有的引用计数存储
     side->initRefCounts(oldbits);
      
-  } while (! refCounts.compare_exchange_weak(oldbits, newbits,
+  } while (!refCounts.compare_exchange_weak(oldbits, newbits,
                                              std::memory_order_release,
                                              std::memory_order_relaxed));
   return side;
@@ -182,7 +209,7 @@ HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::allocateSideTable(bool 
 > 总结一下上面所做的事情
 >
 > 1.拿到原有的引用计数
-> 2.通过HeapObject创建了一个HeapObjectSideTableEntry实例对象
+> 2.通过 HeapObject 创建了一个 HeapObjectSideTableEntry 实例对象
 > 3.将创建的实例对象地址给了`InlineRefCountBits`，也就是 RefCountBitsT。
 
 构造完 `Side Table` 以后，对象中的 `RefCountBitsT` 就不是原来的引用计数了，而是一个指向 `Side Table` 的指针，然而由于它们实际都是 `uint64_t`，因此需要一个方法来区分。区分的方法我们可以来看 `InlineRefCountBits` 的构造函数：
@@ -217,7 +244,7 @@ class HeapObjectSideTableEntry {
   { }
 ```
 
-我们来尝试还原一下 拿到弱引用计数 
+我们来尝试还原一下拿到弱引用计数 ：
 
 `0xc0000c00001f03dc`62位和63位清0得到 `HeapObjectSideTableEntry` 实例对象的地址`0xC00001F03DC`
 
@@ -230,10 +257,7 @@ class HeapObjectSideTableEntry {
 - `0x0000000000000002`就是弱引用计数
   这里弱引用为`2`的原因是因为`SideTableRefCountBits`初始化的时候从`1`开始
 
-
-`Side Table`的生命周期与对象是分离的，当强引用计数为 0 时，只有 `HeapObject` 被释放了，并没有释放`Side Table`，只有所有的 `weak` 引用者都被释放了或相关变量被置 `nil` 后，`Side Table` 才能得以释放
-
-整理编辑：[JY](https://juejin.cn/user/1574156380931144)
+`Side Table`的生命周期与对象是分离的，当强引用计数为 0 时，只有 `HeapObject` 被释放了，并没有释放`Side Table`，只有所有的 `weak` 引用者都被释放了或相关变量被置 `nil` 后，`Side Table` 才能得以释放。
 
 
 ## 优秀博客
@@ -271,6 +295,8 @@ class HeapObjectSideTableEntry {
 
 一份由 Swift 语言实现的设计模式教程。其中设计模式的举例清晰明了，代码也简洁易懂，大部分例子中有 UML 图来帮助理解，其中也会有一些对于不同设计模式之间区别与联系的总结和归纳，是很不错的学习设计模式的资源。
 
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220302215124.png)
+
 ## 工具推荐
 
 
@@ -294,12 +320,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第四十四期](https://mp.weixin.qq.com/s/q__-veuaUZAK6xGQFxzsEg)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第四十三期](https://mp.weixin.qq.com/s/Ktk5wCMPZQ5E-UASwHD7uw)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第四十二期](https://mp.weixin.qq.com/s/ybANWeLNHPOTkr5_alha9g)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第四十一期](https://mp.weixin.qq.com/s/DNXrfZgx0JaXyvfVZ4sYVA)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
