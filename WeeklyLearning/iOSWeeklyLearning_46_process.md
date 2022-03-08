@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第四十二期
+# iOS 摸鱼周报 第四十二期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
@@ -15,37 +15,41 @@
 
 [@zhangferry](https://zhangferry.com)：
 
-## 开发Tips
+## 开发 Tips
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
-
-
 
 ## 面试解析
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
-
 ## 优秀博客
 
 整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
-
-
-
 
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
-
-
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+本次推荐一系列关于 UI 调试的软件，包含电脑端以及 App 端两种类型；
+
+**电脑端**
+
+- [Reveal](https://revealapp.com/)：经典UI调试软件，但需要付费；
+- [Lookin](https://lookin.work/)：腾讯出品的一款免费好用的 iOS UI 调试软件；
+
+**App 端**
+
+- [FLEX](https://github.com/FLEXTool/FLEX)：FLEX (Flipboard Explorer) 是一套用于 iOS 开发的应用内调试工具；
+- [啄幕鸟iOS开发工具](https://github.com/alibaba/youku-sdk-tool-woodpecker)：阿里出品的一套用于 iOS 开发的应用内调试工具；
+
+> 其中 Reveal、Lookin、FLEX 都有对应的`Tweak`，有越狱设备的小伙伴可以玩一玩；
 
 ## 关于我们
 
-iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
+iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS 成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
