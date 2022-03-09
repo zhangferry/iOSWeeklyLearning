@@ -51,9 +51,9 @@
 
 [@东坡肘子](https://www.fatbobman.com/)：因为很难构建依赖和运行环境，对 SwiftUI 视图进行单元测试是十分困难的。Alexey Naumov 是著名的 SwiftUI 测试框架 ViewInspector 的作者，本文介绍了他在创建 ViewInspector 框架背后的故事，其中有关获取 SwiftUI 黑盒中秘密的思路和途径十分值得借鉴。
 
-6、[高级 SwiftUI 动画 1-4](https://mp.weixin.qq.com/s/5KinQfNtcovf_451UGwLQQ "高级 SwiftUI 动画") -- 来自：Javier 中文版：Swift 君
+6、[高级 SwiftUI 动画 1-5](https://mp.weixin.qq.com/s/5KinQfNtcovf_451UGwLQQ "高级 SwiftUI 动画") -- 来自：Javier 中文版：Swift 君
 
-[@东坡肘子](https://www.fatbobman.com/)：仅需少量的代码，SwiftUI 即可为开发者实现相当优秀的动画效果。但如果想创建更加炫酷、灵活、高效的动画则需要掌握更多的知识和高级技巧。本系列文章已持续更新 2 年之久（SwiftUI 诞生至今不到 3 年），详细讲解了各种有关 SwiftUI 高级动画的内容。英文版本目前已推出了五篇文章，目前中文版本已完成其中的四篇。
+[@东坡肘子](https://www.fatbobman.com/)：仅需少量的代码，SwiftUI 即可为开发者实现相当优秀的动画效果。但如果想创建更加炫酷、灵活、高效的动画则需要掌握更多的知识和高级技巧。本系列文章已持续更新 2 年之久（SwiftUI 诞生至今不到 3 年），详细讲解了各种有关 SwiftUI 高级动画的内容。。
 
 ## 学习资料
 
