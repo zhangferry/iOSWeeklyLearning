@@ -21,7 +21,7 @@
 
 > We have taken a number of actions in response to the invasion. We have paused all product sales in Russia. Last week, we stopped all exports into our sales channel in the country. Apple Pay and other services have been limited. RT News and Sputnik News are no longer available for download from the App Store outside Russia. And we have disabled both traffic and live incidents in Apple Maps in Ukraine as a safety and precautionary measure for Ukrainian citizens.
 
-有很多人说应该支持国产手机了，但国产也是魔改的安卓系统，这虽没有像苹果那样被牢牢掌控，也并非完全的可控。这几天不只是苹果，谷歌、推特、台积电、英特尔，甚至连开发社区 Github、开源库 React 都在抵制俄罗斯，「科技无国界」已经完全沦为谎言，这不禁令人惶恐。
+有很多人说应该支持国产手机了，但国产也是魔改的安卓系统，这虽没有像苹果那样被牢牢掌控，也并非完全的可控。这几天不只是苹果，谷歌、推特、台积电、英特尔，甚至连开发社区 Github、开源库 React 都在抵制俄罗斯，「科技无国界」已经完全沦为一句笑话，这不禁令人惶恐。
 
 现代战争是复杂的，它不只是枪炮还会伴随着各类舆论战、信息战，而信息战的主动权就掌握在拥有核心技术的一方。反观俄罗斯，类似的事情是不是也会发生在我们身上？由此事件引发的思考是，仅仅用言语冲了某个社区留言板是不够的，打破垄断，不断提高我们自己的核心技术能力才是王道。科技强国，吾辈当自强！
 
