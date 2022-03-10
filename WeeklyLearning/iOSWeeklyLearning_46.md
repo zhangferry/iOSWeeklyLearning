@@ -1,19 +1,31 @@
-# iOS 摸鱼周报 第四十二期
+# iOS 摸鱼周报 第四十六期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 话题：
-> * Tips：
+> * Tips：如何在SwiftUI中显示二维码；如何将 JSON 字典编码为 JSONEncoder 
 > * 面试模块：iOS 内存管理：Autorelease 细节速记
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 优秀博客：SwiftUI 进阶技巧
+> * 学习资料：KKBOX iOS/Mac OS X 基礎開發教材
+> * 开发工具：几款面向 iOS 开发的 UI 调试工具
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：苹果在北京时间的3月9号凌晨举行了春季发布会，本次发布会也是诚意满满，带来了很多惊喜。这最重要的就是 M1 Ultra 芯片，M1 Ultra 是两颗 M1 Max 的组合，但这也是不是简单的拼接，而是得益于M1 Max 的隐藏特性：突破性的晶粒到晶粒技术，然后使用了一个叫做 UltraFusion 的封装架构将两颗M1 Max 融合到一起，对于应用层来说它就是一颗完整的芯片。它拥有这些东西：
+
+* 20 核中央处理器：16 个高性能核心 + 4 个高能效核心，用于CPU密集操作。
+
+* 64 核图形处理器，用于图形密集任务。
+
+* 32 个神经网络核心，用于机器学习。
+
+* 10 个多媒体处理引擎，用于提升视频的编解码能力，对 H264/HEVC/ProRes/ProRes RAW 处理有硬件层面的加速。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/image-20220310224908485.png)
+
+当然这么强大的芯片要有一个产品使用，它就是 Mac Studio。这是一条新的产品线，它看上去像是 Mac Mini 「加厚」版，但得益于其强大的性能，它的定位确是工作站。到目前为止 Mac 端的产品线基本都用上 M1 了，除了 Mac Pro。Mac Pro 之前的定位也是工作站，从「垃圾桶」进化到「行李箱」，它作为苹果性能的最强代表不断经验着我们，但随着 M1 的到来，这两款产品都不香了，更不用说「行李箱」起售价就 47999。虽然 M1 Ultra 已经让我们大呼苹果不讲武德了，但发布会结尾特意提了一下 Mac Pro，这很有理由相信作为性能天花板的 Mac Pro 的下一代才是真正的大杀器。
 
 ## 开发 Tips
 
@@ -358,12 +370,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第四十四期](https://mp.weixin.qq.com/s/q__-veuaUZAK6xGQFxzsEg)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第四十三期](https://mp.weixin.qq.com/s/Ktk5wCMPZQ5E-UASwHD7uw)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第四十二期](https://mp.weixin.qq.com/s/ybANWeLNHPOTkr5_alha9g)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
