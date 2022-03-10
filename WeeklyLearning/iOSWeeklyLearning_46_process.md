@@ -6,7 +6,7 @@
 
 > * 话题：
 > * Tips：
-> * 面试模块：
+> * 面试模块：iOS 内存管理：Autorelease 细节速记
 > * 优秀博客：
 > * 学习资料：
 > * 开发工具：
@@ -21,7 +21,159 @@
 
 ## 面试解析
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### Autorelease 细节速记
+
+本文内容是基于 `Autorelease-818`版本源码来分析的， 如果你还未了解 `Autorelease`的原理，请先按照另一位编辑的文章学习 [AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ)。下面会介绍一些源码细节。
+
+#### AutoreleasePool 数据结构
+
+`AutoreleasePool`底层数据结构是基于 `AutoreleasePoolPage`, 本质上是个双向链表， 每一页的大小为 4K,可以在 `usr/include/mach/arm/vm_param.h`文件中查看 `PAGE_MIN_SIZE`的值，
+
+```cpp
+#define PAGE_MAX_SHIFT          14
+#define PAGE_MAX_SIZE           (1 << PAGE_MAX_SHIFT)
+
+#define PAGE_MIN_SHIFT          12
+#define PAGE_MIN_SIZE           (1 << PAGE_MIN_SHIFT)
+
+class AutoreleasePoolPage : private AutoreleasePoolPageData
+{
+    static size_t const SIZE =
+        // `PROTECT_AUTORELEASEPOOL`默认是定义为 0 的，
+    #if PROTECT_AUTORELEASEPOOL
+            PAGE_MAX_SIZE;  // must be multiple of vm page size 必须是 vm 页面大小的倍数 定义为1<<14 = 4096K,正好是虚拟页大小
+    #else
+            PAGE_MIN_SIZE;  // size and alignment, power of 2 大小和对齐， 2的指数倍
+    #endif
+}
+```
+
+#### 64 位系统下的存储优化
+
+在最新的 `818`版本代码中，`AutoreleasePoolPage::add()`中对连续添加的相同对象存储方式做了优化，使用 `LRU` 算法结合新的`AutoreleasePoolEntry` 对象来合并存储，简化后核心源码如下：
+
+```cpp
+struct AutoreleasePoolPageData
+    struct AutoreleasePoolEntry {
+            uintptr_t ptr: 48;  // 关联的 autorelease 的对象
+            uintptr_t count: 16; // 关联对象 push 的次数
+            static const uintptr_t maxCount = 65535; // 2^16 - 1 可以存储的最大次数
+        };
+	// ...其他变量
+}
+
+id *add(id obj)
+{
+      // .. 准备工作
+        for (uintptr_t offset = 0; offset < 4; offset++) {
+                        AutoreleasePoolEntry *offsetEntry = topEntry - offset;
+                        if (offsetEntry <= (AutoreleasePoolEntry*)begin() || *(id *)offsetEntry == POOL_BOUNDARY) {
+                            break;
+                        }
+                        if (offsetEntry->ptr == (uintptr_t)obj && offsetEntry->count < AutoreleasePoolEntry::maxCount) {
+                            if (offset > 0) {
+                                AutoreleasePoolEntry found = *offsetEntry;
+                                // 将offsetEntry + 1中
+                                memmove(offsetEntry, offsetEntry + 1, offset * sizeof(*offsetEntry));
+                                *topEntry = found;
+                            }
+                            topEntry->count++;
+                            ret = (id *)topEntry;  // need to reset ret
+                            goto done;
+                        }
+#endif
+        // 旧版本依次插入对象的存储方式
+    }
+```
+
+如果使用 `LRU` 算法, 则插入时从 `next`指针向上遍历最近的四个对象， 遍历中如果和当前对象匹配，则 `Entry` 实体记录的 `count`属性加一, 然后通过 `memmove`函数移动内存数据，将匹配的 `Entry`放到距离 `next`指针最近的位置，以实现 `LRU`的特征。如果只是单纯的合并存储，则只匹配 `next`指针相邻的`Entry`，未匹配到则插入
+
+> 是否开启合并和 `LRU`的环境变量为`OBJC_DISABLE_AUTORELEASE_COALESCING` & `OBJC_DISABLE_AUTORELEASE_COALESCING_LRU`
+>
+> 另外最好一起准备下缓存淘汰算法，因为如果面试中提到了 `LRU`，面试官很可能会延伸到缓存算法实现，比如 `LFU`、`LRU`。
+
+#### 和线程以及 Runloop 的关系
+
+`AutoreleasePool`和线程的直观关系：
+
+1. 数据结构中存储了和线程相关的成员变量 `thread`，
+
+2. 在实现方案中使用了 `TLS`线程相关技术用来存储状态数据。例如 `Hotpage`以及 `EMPTY_POOL_PLACEHOLDER`等状态值。
+
+3. `objc`初始化时调用了 `AutoreleasePoolPage::init()`，该函数内部通过 `pthread_key_init_np`注册了回调函数 `tls_dealloc`,在线程销毁时调用清理 `Autorelease`相关内容。大致流程为：`_pthread_exit` => `_pthread_tsd_cleanup` => `_pthread_tsd_cleanup_new` => `_pthread_tsd_cleanup_key` => `tls_dealloc`。相关源码可以在 `libpthread`中查看。
+
+    ```cpp
+    static void tls_dealloc(void *p) 
+        {
+            if (p == (void*)EMPTY_POOL_PLACEHOLDER) {
+                // No objects or pool pages to clean up here.
+                return;
+            }
+            // reinstate TLS value while we work
+            setHotPage((AutoreleasePoolPage *)p);
+    
+            if (AutoreleasePoolPage *page = coldPage()) {
+                if (!page->empty()) objc_autoreleasePoolPop(page->begin());  // pop all of the pools
+                if (slowpath(DebugMissingPools || DebugPoolAllocation)) {
+                    // pop() killed the pages already
+                } else {
+                    page->kill();  // free all of the pages
+                }
+            }
+            // clear TLS value so TLS destruction doesn't loop
+            setHotPage(nil);
+        }
+    ```
+
+    由以上流程可知，子线程处理 `Autorelease` 的时机一般有两种：线程销毁时 & 自定义 `pool`作用域退出时
+
+    在主线程中由于开启了 `Runloop`并且主动注册了两个回调，所以在每次 `Runloop`循环时都会去处理默认添加的 `AutoreleasePool`，该详细内容请参考文章  [AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ)，这也不做重复复述。
+
+#### Autorelease ARC环境下基于 tls 的返回值优化方案以及失效场景
+
+主要是通过嵌入 `objc_autoreleaseReturnValue` & `objc_retainAutoreleasedReturnValue`两个函数，基于 `tls`存储状态值实现优化。
+
+优化思路概括为：
+
+- `objc_autoreleaseReturnValue` 通过 `__builtin_return_address()`函数可以查找到函数返回后下一条指令的地址，判断是否为 `mov x29, x29`（arm64）进而决定是否进行优化，
+- 如果开启优化会设置 `tls`存储` 状态值 1 `并直接返回对象，否则放入自动释放池走普通逻辑
+- `objc_retainAutoreleasedReturnValue`调用`acceptOptimizedReturn`校验 `tls`中的值是否为 1，为 1 表示启动优化直接返回对象， 否则走未优化逻辑先 `retain` 再放入 自动释放池
+
+> 优化思路是基于 `tls`以及`__builtin_return_address()`实现的，以是否插入无实际效果的汇编指令 `mov x29, x29`作为优化标识。 另外查看源码时需要注意 `objc_retainAutoreleasedReturnValue`和`objc_retainAutoreleaseReturnValue`的区别
+
+ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破坏系统的优化逻辑，即 `for`或者`while`等场景。示例如下：
+
+```objective-c
+- (HWModel *)takeModel {
+//    for (HWModel *model in self.models) {}
+    HWModel *model = [HWModel new];
+    return model;
+}
+```
+
+如果打开注释代码，会导致返回的 `model`未优化，通过动态调试可以查看原因。
+
+注释 `for`代码后跳转用的 `b`指令，所以 `lr` 寄存器存储的是调用方调用 `takeModel`函数后的指令地址
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_45_interview_02.png)
+
+有 `for` 循环时，跳转到 `objc_autoreleaseReturnValue`的汇编指令是 `bl`。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_45_interview_01.png)
+
+`bl`表示执行完函数后继续执行后续指令，后续汇编指令目的主要是为了检测是否存在函数调用栈溢出操作，详细解释可以参考[Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/)。这造成我们上面提到的 `__builtin_return_address()`函数获取到的返回值下一条指令地址，并不是优化标识指令 `mov x29 x29`，而是检测代码指令，导致优化未开启。
+
+> 未开启优化的影响是多做一次 `retain`操作和两次 `autorelease`操作， 笔者未测试出五子棋前辈遇到的 `Autoreleas` 对象未释放的情况， 可能是后续 apple 已经优化过，如果读者有不同的结果，欢迎指教
+
+总结： 以上是笔者在搜集面试题时关于 `AutoreleasePool`的一些扩展内容，再次强调需要精读[AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ)，尤其需要掌握 `ARC` 下手动处理的几种场景。希望各位可以对 `Autorelease`面试题一网打尽。
+
+* [黑幕背后的Autorelease](https://blog.sunnyxx.com/2014/10/15/behind-autorelease/ "黑幕背后的Autorelease")
+* [AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ "AutoreleasePool")
+* [Revisit iOS Autorelease  一](http://satanwoo.github.io/2019/07/02/RevisitAutorelease/?nsukey=jw8uyyU1C%2BzqPgSpg5Kie0F9Bj4HNHiPMBkxPWPBuEs1ZyVoZwklMAJVkv0TeJgILqxLQOH2a0Di8DhFj5abLdtFE3p09pb3az4o9B7IY7rvyZHamZN1OIh5zBQZv1J%2FnHLc6QkiMW%2Fo2PY9fVAeVQN%2FQ5lBojKaT%2FXmKQuCTY5E1MoBK4Ir7Qi6un5pXxvKQutSkFhgEVUn%2FboyV6pdxQ%3D%3D "Revisit iOS Autorelease  一")
+* [Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/ "Revisit iOS Autorelease  二")
+* [[iOS13 一次Crash定位 - 被释放的NSURL.host](https://segmentfault.com/a/1190000020058030)](https://segmentfault.com/a/1190000020058030 "[iOS13 一次Crash定位 - 被释放的NSURL.host](https://segmentfault.com/a/1190000020058030)")
 
 ## 优秀博客
 
