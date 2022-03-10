@@ -4,7 +4,7 @@
 
 ### 本期概要
 
-> * 话题：
+> * 话题：苹果春节发布会
 > * Tips：如何在SwiftUI中显示二维码；如何将 JSON 字典编码为 JSONEncoder 
 > * 面试模块：iOS 内存管理：Autorelease 细节速记
 > * 优秀博客：SwiftUI 进阶技巧
@@ -13,7 +13,7 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：苹果在北京时间的3月9号凌晨举行了春季发布会，本次发布会也是诚意满满，带来了很多惊喜。这最重要的就是 M1 Ultra 芯片，M1 Ultra 是两颗 M1 Max 的组合，但这也是不是简单的拼接，而是得益于M1 Max 的隐藏特性：突破性的晶粒到晶粒技术，然后使用了一个叫做 UltraFusion 的封装架构将两颗M1 Max 融合到一起，对于应用层来说它就是一颗完整的芯片。它拥有这些东西：
+[@zhangferry](https://zhangferry.com)：苹果在北京时间的3月9号凌晨举行了春季发布会，本次发布会也是诚意满满，带来了很多惊喜。这最重要的就是 M1 Ultra 芯片，M1 Ultra 是两颗 M1 Max 的组合，但这也不是简单的拼接，而是得益于M1 Max 的隐藏特性：突破性的晶粒到晶粒技术，然后使用了一个叫做 UltraFusion 的封装架构将两颗 M1 Max 融合到一起，对于应用层来说它就是一颗完整的芯片。它拥有这些东西：
 
 * 20 核中央处理器：16 个高性能核心 + 4 个高能效核心，用于CPU密集操作。
 
@@ -25,7 +25,7 @@
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/image-20220310224908485.png)
 
-当然这么强大的芯片要有一个产品使用，它就是 Mac Studio。这是一条新的产品线，它看上去像是 Mac Mini 「加厚」版，但得益于其强大的性能，它的定位确是工作站。到目前为止 Mac 端的产品线基本都用上 M1 了，除了 Mac Pro。Mac Pro 之前的定位也是工作站，从「垃圾桶」进化到「行李箱」，它作为苹果性能的最强代表不断经验着我们，但随着 M1 的到来，这两款产品都不香了，更不用说「行李箱」起售价就 47999。虽然 M1 Ultra 已经让我们大呼苹果不讲武德了，但发布会结尾特意提了一下 Mac Pro，这很有理由相信作为性能天花板的 Mac Pro 的下一代才是真正的大杀器。
+当然这么强大的芯片要有一个产品使用，它就是 Mac Studio。这是一条新的产品线，它看上去像是 Mac Mini 「加厚」版，但得益于其强大的性能，它的定位确是工作站。到目前为止 Mac 端的产品线基本都用上 M1 了，除了 Mac Pro。Mac Pro 之前的定位也是工作站，从「垃圾桶」进化到「行李箱」，它作为苹果性能的最强代表不断惊艳着我们，但随着 M1 的到来，这两款产品都不香了，更不用说「行李箱」起售价就 47999。虽然 M1 Ultra 已经让我们大呼苹果不讲武德了，但发布会结尾特意提了一下 Mac Pro，这很有理由相信作为性能天花板的 Mac Pro 的下一代才是真正的大杀器。
 
 ## 开发 Tips
 
@@ -306,7 +306,7 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 * [AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ "AutoreleasePool")
 * [Revisit iOS Autorelease  一](http://satanwoo.github.io/2019/07/02/RevisitAutorelease/?nsukey=jw8uyyU1C%2BzqPgSpg5Kie0F9Bj4HNHiPMBkxPWPBuEs1ZyVoZwklMAJVkv0TeJgILqxLQOH2a0Di8DhFj5abLdtFE3p09pb3az4o9B7IY7rvyZHamZN1OIh5zBQZv1J%2FnHLc6QkiMW%2Fo2PY9fVAeVQN%2FQ5lBojKaT%2FXmKQuCTY5E1MoBK4Ir7Qi6un5pXxvKQutSkFhgEVUn%2FboyV6pdxQ%3D%3D "Revisit iOS Autorelease  一")
 * [Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/ "Revisit iOS Autorelease  二")
-* [[iOS13 一次Crash定位 - 被释放的NSURL.host](https://segmentfault.com/a/1190000020058030)](https://segmentfault.com/a/1190000020058030 "[iOS13 一次Crash定位 - 被释放的NSURL.host](https://segmentfault.com/a/1190000020058030)")
+* [iOS13 一次Crash定位 - 被释放的NSURL.host](https://segmentfault.com/a/1190000020058030 "iOS13 一次Crash定位 - 被释放的NSURL.host")
 
 ## 优秀博客
 
@@ -349,6 +349,8 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 一份来自台湾 KKBOX 的 iOS/Mac OS 开发部门编写的新人学习材料。这份学习材料不算是从 0 到 1 的入门材料，阅读这份教材需要一些简单的基础，教材主要是在你已经会一些简单 OC 代码的基础上帮助你深入探讨一些在代码中常见的小问题和小细节，也是对技术探索方向的一些指引和指导。教材中的描述语言非常亲切不生硬，就像是有一位同龄人在你旁边指导你的代码有什么问题一样，阅读体验非常不错，虽然内容略有陈旧，但也值得新手开发者阅读一下。
 
 ## 工具推荐
+
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
 本次推荐一系列关于 UI 调试的软件，包含电脑端以及 App 端两种类型；
 
