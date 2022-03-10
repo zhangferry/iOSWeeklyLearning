@@ -17,7 +17,128 @@
 
 ## 开发 Tips
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
+### 如何在 SwiftUI 中显示二维码 
+
+整理编辑：[FBY展菲](https://github.com/fanbaoying)
+
+使用 `CoreImage` 生成二维码图像。
+
+```swift
+import SwiftUI
+import CoreImage.CIFilterBuiltins
+ 
+struct QRView: View {
+    let qrCode: String
+    @State private var image: UIImage?
+ 
+    var body: some View {
+        ZStack {
+            if let image = image {
+                Image(uiImage: image)
+                    .resizable()
+                    .interpolation(.none)
+                    .frame(width: 210, height: 210)
+            }
+        }
+        .onAppear {
+            generateImage()
+        }
+    }
+ 
+    private func generateImage() {
+        guard image == nil else { return }
+ 
+        let context = CIContext()
+        let filter = CIFilter.qrCodeGenerator()
+        filter.message = Data(qrCode.utf8)
+ 
+        guard
+            let outputImage = filter.outputImage,
+            let cgImage = context.createCGImage(outputImage, from: outputImage.extent)
+        else { return }
+ 
+        self.image = UIImage(cgImage: cgimg)
+    }
+}
+```
+参考：[如何在 SwiftUI 中显示二维码 - Swift社区](https://mp.weixin.qq.com/s/qsc8ZCnrpeHu4hQoM_BTzg)
+
+### 如何将 JSON 字典编码为 JSONEncoder 
+
+整理编辑：[FBY展菲](https://github.com/fanbaoying)
+
+`JSONEncoder` 处理类型安全，因此我们需要为所有可能的类型声明枚举 `JSONValue`。我们还需要一个自定义 `initializer` 来从 JSON 字典中初始化 `JSONValue`。
+
+```swift
+import Foundation
+ 
+enum JSONValue {
+    case string(String)
+    case int(Int)
+    case double(Double)
+    case bool(Bool)
+    case object([String: JSONValue])
+    case array([JSONValue])
+}
+ 
+extension JSONValue: Encodable {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .string(let string): try container.encode(string)
+        case .int(let int): try container.encode(int)
+        case .double(let double): try container.encode(double)
+        case .bool(let bool): try container.encode(bool)
+        case .object(let object): try container.encode(object)
+        case .array(let array): try container.encode(array)
+        }
+    }
+}
+ 
+extension JSONValue {
+    init?(any: Any) {
+        if let value = any as? String {
+            self = .string(value)
+        } else if let value = any as? Int {
+            self = .int(value)
+        } else if let value = any as? Double {
+            self = .double(value)
+        } else if let value = any as? Bool {
+            self = .bool(value)
+        } else if let json = any as? [String: Any] {
+            var dict: [String: JSONValue] = [:]
+            for (key, value) in json {
+                dict[key] = JSONValue(any: value)
+            }
+            self = .object(dict)
+        } else if let jsonArray = any as? [Any] {
+            let array = jsonArray.compactMap { JSONValue(any: $0) }
+            self = .array(array)
+        } else {
+            return nil
+        }
+    }
+}
+ 
+var dict: [String: Any] = [
+    "anArray": [1, 2, 3],
+    "anObject": [
+        "key1": "value1",
+        "key2": "value2"
+    ],
+    "aString": "hello world",
+    "aDouble": 1.2,
+    "aBool": true,
+    "anInt": 12
+]
+ 
+let encoder = JSONEncoder()
+let value = JSONValue(any: dict)
+let data = try! encoder.encode(value)
+print(String(data: data, encoding: .utf8))
+```
+
+参考：[如何将 JSON 字典编码为 JSONEncoder - Swift社区](https://mp.weixin.qq.com/s/PI7s8cXxzErqOB0e9BHqvg)
 
 ## 面试解析
 
