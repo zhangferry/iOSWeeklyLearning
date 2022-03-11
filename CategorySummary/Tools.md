@@ -1070,3 +1070,36 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 
 
+***
+
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### nginxedit 
+
+**地址**：https://www.nginxedit.cn/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+`Nginx`在线配置生成工具，配置高性能，安全和稳定的`Nginx`服务器的最简单方法。
+
+![nginxedit](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Nginx%E5%9C%A8%E7%BA%BF%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.png)
+
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+本次推荐一系列关于 UI 调试的软件，包含电脑端以及 App 端两种类型；
+
+**电脑端**
+
+- [Reveal](https://revealapp.com/)：经典UI调试软件，但需要付费；
+- [Lookin](https://lookin.work/)：腾讯出品的一款免费好用的 iOS UI 调试软件；
+
+**App 端**
+
+- [FLEX](https://github.com/FLEXTool/FLEX)：FLEX (Flipboard Explorer) 是一套用于 iOS 开发的应用内调试工具；
+- [啄幕鸟iOS开发工具](https://github.com/alibaba/youku-sdk-tool-woodpecker)：阿里出品的一套用于 iOS 开发的应用内调试工具；
+
+> 其中 Reveal、Lookin、FLEX 都有对应的`Tweak`，有越狱设备的小伙伴可以玩一玩；
+

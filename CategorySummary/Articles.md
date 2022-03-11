@@ -1285,3 +1285,54 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：非常全面且深入的底层相关文章集合。有了前两篇文章的铺垫，可以阅读该系列文章做下拓展。另外作者还在 [深入iOS系统底层之crash解决方法](https://juejin.cn/post/6844903670404874254 "深入iOS系统底层之crash解决方法") 文章中一步步带领我们利用汇编代码排查野指针问题。作为初学者我们可以快速感受到收益。
 
+***整理编辑：[@我是熊大](https://github.com/Tliens)
+
+> 本期优秀博客的主题为：脚手架/CLI。在项目最开始的时候，脚手架工具，就会帮你搭建好架子，并生成一些基本代码。脚手架的存在有利于团队统一架构风格，加速项目开发。
+
+1、[从0构建自己的脚手架/CLI知识体系](https://juejin.cn/post/6966119324478079007 "从0构建自己的脚手架/CLI知识体系") -- 来自掘金：IT老班长
+
+[@我是熊大](https://github.com/Tliens)：如何生成搭建脚手架呢？本文作者使用 NodeJS，从0开始搭建了一个脚手架，每一步都很详细，介绍了热门脚手架工具库，没有 NodeJS 基础的也能看懂，非常适合作为新手篇入场学习。
+
+2、[iOS自动化工具Gckit CLI](https://seongbrave.github.io/gckit/guide/#%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E "iOS自动化工具Gckit CLI") -- 来自博客：SeongBrave
+
+[@我是熊大](https://github.com/Tliens)：在项目开发中，大家水平参差不齐，代码风格迥异，尤其是有新人加入团队时，适应期会比较长。那有没有可能让新同学也能像老同学一样，不仅快速进行开发，而且代码风格也近似呢？Gckit CLI 就是为此诞生的，大家在看完上篇文章后就可以对该库进行调整了，打造属于自己的自动化工具
+
+
+3、[Swift + RxSwift MVVM 模块化项目实践](https://juejin.cn/post/6844903821160742919 "Swift + RxSwift MVVM 模块化项目实践") -- 来自掘金：SeongBrave
+
+[@我是熊大](https://github.com/Tliens)：本文是 Gckit 作者的实践总结，主要讲解通过 CocoaPods 结合 Gckit-CLI 实现开发效率的最大化的一些项目实践。
+
+
+4、[iOS自动化方案附脚本](https://juejin.cn/post/6948239939809050638 "iOS自动化方案附脚本") -- 来自掘金：我是熊大
+
+[@我是熊大](https://github.com/Tliens)：不同的电脑开发环境不同，多人协作下，因环境不同会导致各种问题，比如 CocoaPods 的版本不同，就会导致某些库无法下载，.lock文件频繁更新等。本文介绍了如何统一开发环境，以及自动化脚本的使用，可以把它放进你的脚手架工具中。文章最后提到了关于脚手架工具的遐想。
+
+***
+> 转眼间 SwiftUI 已推出接近 3 年。越来越多的开发者尝试使用 SwiftUI 来构建其应用。本期介绍的博文将更多地涉及 SwiftUI 的进阶技巧，帮助开发者对 SwiftUI 有更加深入的认识和理解。
+
+整理编辑：[东坡肘子](https://www.fatbobman.com)
+
+1、[无法解释的 SwiftUI —— SwiftUI 的编程语言本质](https://wezzard.com/post/2022/03/unexplained-swiftui-the-programming-language-nature-of-swiftui-d20e "Unexplained SwiftUI - The Programming Language Nature of SwiftUI") -- 来自：WeZZard
+
+[@东坡肘子](https://www.fatbobman.com/)：作者 WeZZard 从一个十分新颖的角度来看待、分析 SwiftUI。通过一个斐波纳契数实例，来展示 SwiftUI 的图灵完整性，进而提出一个有趣的观点——SwiftUI 是一种编程语言，而不是 UI 框架。
+
+2、[SwiftUI 底层：可变视图](https://movingparts.io/variadic-views-in-swiftui "SwiftUI under the Hood: Variadic Views") -- 来自：The Moving Parts Team
+
+[@东坡肘子](https://www.fatbobman.com/)：本文介绍了一些 View 协议中尚未公开的 API。通过使用这些 API，开发者可以编写出更加强大、灵活，且与原生实现类似的容器，构建自己的布局逻辑。作者 Moving Parts 团队当前正在开发一个功能强大的 SwiftUI 组建库。
+
+3、[了解 SwiftUI 如何以及何时决定重绘视图](https://www.donnywals.com/understanding-how-and-when-swiftui-decides-to-redraw-views/ "Understanding how and when SwiftUI decides to redraw views") -- 来自：Donny Wals
+
+[@东坡肘子](https://www.fatbobman.com/)：作者通过观察和实践，尝试了解和总结 SwiftUI 中对视图重绘的规律。尽管该文没有给出内部实现的具体证明，但沿着作者的测试路径，读者依然可以从中获取到相当宝贵的经验。
+
+4、[了解 SwiftUI 的 onChange](https://www.fatbobman.com/posts/onChange/ "了解 SwiftUI 的 onChange") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：onChange 是从 SwiftUI 2.0 后提供的功能，可以将其作为另一种驱动视图重绘的手段。本文将对 onChange 的特点、用法、注意事项以及替代方案做以详细介绍。结合上文「了解 SwiftUI 如何以及何时决定重绘视图」以及「SwiftUI 视图的生命周期研究」一文，可以对视图的计算、布局、绘制有更深入的了解。
+
+5、[谁说我们不能对 SwiftUI 视图进行单元测试？](https://nalexn.github.io/swiftui-unit-testing/ "Who said we cannot unit test SwiftUI views?") -- 来自：Alexey Naumov
+
+[@东坡肘子](https://www.fatbobman.com/)：因为很难构建依赖和运行环境，对 SwiftUI 视图进行单元测试是十分困难的。Alexey Naumov 是著名的 SwiftUI 测试框架 ViewInspector 的作者，本文介绍了他在创建 ViewInspector 框架背后的故事，其中有关获取 SwiftUI 黑盒中秘密的思路和途径十分值得借鉴。
+
+6、[高级 SwiftUI 动画 1-5](https://mp.weixin.qq.com/s/5KinQfNtcovf_451UGwLQQ "高级 SwiftUI 动画") -- 来自：Javier 中文版：Swift 君
+
+[@东坡肘子](https://www.fatbobman.com/)：仅需少量的代码，SwiftUI 即可为开发者实现相当优秀的动画效果。但如果想创建更加炫酷、灵活、高效的动画则需要掌握更多的知识和高级技巧。本系列文章已持续更新 2 年之久（SwiftUI 诞生至今不到 3 年），详细讲解了各种有关 SwiftUI 高级动画的内容。
+

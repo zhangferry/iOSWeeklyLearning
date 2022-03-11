@@ -2277,3 +2277,321 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 * [Practical Memory Management](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW4 "Practical Memory Management")
 
 
+***整理编辑：[JY](https://juejin.cn/user/1574156380931144)
+
+### Swift 的 weak 是如何实现的？
+
+在 Swift 中，也是拥有 `SideTable` 的，`SideTable` 是针对有需要的对象而创建，系统会为目标对象分配一块新的内存来保存该对象额外的信息。
+
+对象会有一个指向 `SideTable` 的指针，同时 `SideTable` 也有一个指回原对象的指针。在实现上为了不额外多占用内存，目前只有在创建弱引用时，会先把对象的引用计数放到新创建的 `SideTable` 去，再把空出来的空间存放 `SideTable` 的地址，会通过一个标志位来区分对象是否有 `SideTable`。
+
+```Swift 
+class JYObject {
+    var age :Int = 18
+    var name:String = "JY"
+}
+var t = JYObject()
+weak var t2 = t
+print("----")
+```
+
+我们在`print`处打上断点，查看 t2 对象
+
+```
+(lldb) po t2
+▿ Optional<JYObject>
+  ▿ some : <JYObject: 0x6000001a9710>
+
+(lldb) x/8gx  0x6000001a9710
+0x6000001a9710: 0x0000000100491e18 0xc0000c00001f03dc
+0x6000001a9720: 0x0000000000000012 0x000000000000594a
+0x6000001a9730: 0xe200000000000000 0x0000000000000000
+0x6000001a9740: 0x00007efd22b59740 0x000000000000009c
+(lldb) 
+```
+
+通过查看汇编，定义了一个`weak`变量，编译器自动调用了`swift_weakInit`函数，这个函数是由`WeakReference`调用的。说明`weak`字段在编译器声明的过程当中自动生成了`WeakReference`对象。
+
+```C++
+WeakReference *swift::swift_weakInit(WeakReference *ref, HeapObject *value) {
+		ref->nativeInit(value);
+  	return ref;
+}
+
+void nativeInit(HeapObject *object) {
+    auto side = object ? object->refCounts.formWeakReference() : nullptr;
+    nativeValue.store(WeakReferenceBits(side), std::memory_order_relaxed);
+}
+
+template <>
+HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::formWeakReference() {
+    // 创建一个 Side Table
+  	auto side = allocateSideTable(true);
+  	if (side)
+      // 增加一个弱引用
+    	return side->incrementWeak();
+  	else
+    	return nullptr;
+}
+```
+
+我们来看一下`allocateSideTable`方法，是如何创建一个`Side Table`的
+
+```C++
+template <>
+HeapObjectSideTableEntry* RefCounts<InlineRefCountBits>::allocateSideTable(bool failIfDeiniting) {
+  //1.拿到原有的引用计数
+  auto oldbits = refCounts.load(SWIFT_MEMORY_ORDER_CONSUME);
+  
+  // 判断是否有SideTable，
+  if (oldbits.hasSideTable()) {
+    // Already have a side table. Return it.
+    return oldbits.getSideTable();
+  } 
+  else if (failIfDeiniting && oldbits.getIsDeiniting()) {
+    // Already past the start of deinit. Do nothing.
+    return nullptr;
+  }
+
+  // Preflight passed. Allocate a side table.
+  
+  // FIXME: custom side table allocator
+ 
+  //2.通过HeapObject创建了一个HeapObjectSideTableEntry实例对象
+  HeapObjectSideTableEntry *side = new HeapObjectSideTableEntry(getHeapObject());
+ 
+  //3.将创建的实例对象地址给了InlineRefCountBits，也就是 RefCountBitsT
+  auto newbits = InlineRefCountBits(side);
+  
+  do {
+    if (oldbits.hasSideTable()) {
+      // Already have a side table. Return it and delete ours.
+      // Read before delete to streamline barriers.
+      auto result = oldbits.getSideTable();
+      delete side;
+      return result;
+    }
+    else if (failIfDeiniting && oldbits.getIsDeiniting()) {
+      // Already past the start of deinit. Do nothing.
+      return nullptr;
+    }
+     
+    // 将原有的引用计数存储
+    side->initRefCounts(oldbits);
+     
+  } while (!refCounts.compare_exchange_weak(oldbits, newbits,
+                                             std::memory_order_release,
+                                             std::memory_order_relaxed));
+  return side;
+}
+```
+
+> 总结一下上面所做的事情
+>
+> 1.拿到原有的引用计数
+> 2.通过 HeapObject 创建了一个 HeapObjectSideTableEntry 实例对象
+> 3.将创建的实例对象地址给了`InlineRefCountBits`，也就是 RefCountBitsT。
+
+构造完 `Side Table` 以后，对象中的 `RefCountBitsT` 就不是原来的引用计数了，而是一个指向 `Side Table` 的指针，然而由于它们实际都是 `uint64_t`，因此需要一个方法来区分。区分的方法我们可以来看 `InlineRefCountBits` 的构造函数：
+
+```C++
+//弱引用
+LLVM_ATTRIBUTE_ALWAYS_INLINE
+  RefCountBitsT(HeapObjectSideTableEntry* side)
+    : bits((reinterpret_cast<BitsType>(side) >> Offsets::SideTableUnusedLowBits)
+           | (BitsType(1) << Offsets::UseSlowRCShift)
+           | (BitsType(1) << Offsets::SideTableMarkShift))
+  {
+    assert(refcountIsInline);
+  }
+```
+
+> 在弱引用方法中把创建出来的地址做了偏移操作然后存放到了内存当中。
+>
+> `SideTableUnusedLowBits` = 3，所以，在这个过程中，传进来的`side`往右移了 3 位，下面的两个是 62 位和 63 位标记成 1
+
+我们接着来看一下 ` HeapObjectSideTableEntry ` 的结构
+
+```C++
+class HeapObjectSideTableEntry {
+  // FIXME: does object need to be atomic?
+  std::atomic<HeapObject*> object;
+  SideTableRefCounts refCounts;
+
+  public:
+  HeapObjectSideTableEntry(HeapObject *newObject)
+    : object(newObject), refCounts()
+  { }
+```
+
+我们来尝试还原一下拿到弱引用计数 ：
+
+`0xc0000c00001f03dc`62位和63位清0得到 `HeapObjectSideTableEntry` 实例对象的地址`0xC00001F03DC`
+
+它既然是右移 3 位，那么我左移 3 位把它还原，`HeapObjectSideTableEntry`左移三位 得到`0x10062AFE0`
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220302155825.png)
+
+
+- `0x6000001a9710` 就是实例对象的地址
+- `0x0000000000000002`就是弱引用计数
+  这里弱引用为`2`的原因是因为`SideTableRefCountBits`初始化的时候从`1`开始
+
+`Side Table`的生命周期与对象是分离的，当强引用计数为 0 时，只有 `HeapObject` 被释放了，并没有释放`Side Table`，只有所有的 `weak` 引用者都被释放了或相关变量被置 `nil` 后，`Side Table` 才能得以释放。
+
+
+***
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### Autorelease 细节速记
+
+本文内容是基于 `Autorelease-818`版本源码来分析的， 如果你还未了解 `Autorelease`的原理，请先按照另一位编辑的文章学习 [AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ)。下面会介绍一些源码细节。
+
+#### AutoreleasePool 数据结构
+
+`AutoreleasePool`底层数据结构是基于 `AutoreleasePoolPage`, 本质上是个双向链表， 每一页的大小为 4K,可以在 `usr/include/mach/arm/vm_param.h`文件中查看 `PAGE_MIN_SIZE`的值，
+
+```cpp
+#define PAGE_MAX_SHIFT          14
+#define PAGE_MAX_SIZE           (1 << PAGE_MAX_SHIFT)
+
+#define PAGE_MIN_SHIFT          12
+#define PAGE_MIN_SIZE           (1 << PAGE_MIN_SHIFT)
+
+class AutoreleasePoolPage : private AutoreleasePoolPageData
+{
+    static size_t const SIZE =
+        // `PROTECT_AUTORELEASEPOOL`默认是定义为 0 的，
+    #if PROTECT_AUTORELEASEPOOL
+            PAGE_MAX_SIZE;  // must be multiple of vm page size 必须是 vm 页面大小的倍数 定义为1<<14 = 4096K,正好是虚拟页大小
+    #else
+            PAGE_MIN_SIZE;  // size and alignment, power of 2 大小和对齐， 2的指数倍
+    #endif
+}
+```
+
+#### 64 位系统下的存储优化
+
+在最新的 `818`版本代码中，`AutoreleasePoolPage::add()`中对连续添加的相同对象存储方式做了优化，使用 `LRU` 算法结合新的`AutoreleasePoolEntry` 对象来合并存储，简化后核心源码如下：
+
+```cpp
+struct AutoreleasePoolPageData
+    struct AutoreleasePoolEntry {
+            uintptr_t ptr: 48;  // 关联的 autorelease 的对象
+            uintptr_t count: 16; // 关联对象 push 的次数
+            static const uintptr_t maxCount = 65535; // 2^16 - 1 可以存储的最大次数
+        };
+	// ...其他变量
+}
+
+id *add(id obj)
+{
+      // .. 准备工作
+        for (uintptr_t offset = 0; offset < 4; offset++) {
+                        AutoreleasePoolEntry *offsetEntry = topEntry - offset;
+                        if (offsetEntry <= (AutoreleasePoolEntry*)begin() || *(id *)offsetEntry == POOL_BOUNDARY) {
+                            break;
+                        }
+                        if (offsetEntry->ptr == (uintptr_t)obj && offsetEntry->count < AutoreleasePoolEntry::maxCount) {
+                            if (offset > 0) {
+                                AutoreleasePoolEntry found = *offsetEntry;
+                                // 将offsetEntry + 1中
+                                memmove(offsetEntry, offsetEntry + 1, offset * sizeof(*offsetEntry));
+                                *topEntry = found;
+                            }
+                            topEntry->count++;
+                            ret = (id *)topEntry;  // need to reset ret
+                            goto done;
+                        }
+#endif
+        // 旧版本依次插入对象的存储方式
+    }
+```
+
+如果使用 `LRU` 算法, 则插入时从 `next`指针向上遍历最近的四个对象， 遍历中如果和当前对象匹配，则 `Entry` 实体记录的 `count`属性加一, 然后通过 `memmove`函数移动内存数据，将匹配的 `Entry`放到距离 `next`指针最近的位置，以实现 `LRU`的特征。如果只是单纯的合并存储，则只匹配 `next`指针相邻的`Entry`，未匹配到则插入
+
+> 是否开启合并和 `LRU`的环境变量为`OBJC_DISABLE_AUTORELEASE_COALESCING` & `OBJC_DISABLE_AUTORELEASE_COALESCING_LRU`
+>
+> 另外最好一起准备下缓存淘汰算法，因为如果面试中提到了 `LRU`，面试官很可能会延伸到缓存算法实现，比如 `LFU`、`LRU`。
+
+#### 和线程以及 Runloop 的关系
+
+`AutoreleasePool`和线程的直观关系：
+
+1. 数据结构中存储了和线程相关的成员变量 `thread`，
+
+2. 在实现方案中使用了 `TLS`线程相关技术用来存储状态数据。例如 `Hotpage`以及 `EMPTY_POOL_PLACEHOLDER`等状态值。
+
+3. `objc`初始化时调用了 `AutoreleasePoolPage::init()`，该函数内部通过 `pthread_key_init_np`注册了回调函数 `tls_dealloc`,在线程销毁时调用清理 `Autorelease`相关内容。大致流程为：`_pthread_exit` => `_pthread_tsd_cleanup` => `_pthread_tsd_cleanup_new` => `_pthread_tsd_cleanup_key` => `tls_dealloc`。相关源码可以在 `libpthread`中查看。
+
+    ```cpp
+    static void tls_dealloc(void *p) 
+        {
+            if (p == (void*)EMPTY_POOL_PLACEHOLDER) {
+                // No objects or pool pages to clean up here.
+                return;
+            }
+            // reinstate TLS value while we work
+            setHotPage((AutoreleasePoolPage *)p);
+    
+            if (AutoreleasePoolPage *page = coldPage()) {
+                if (!page->empty()) objc_autoreleasePoolPop(page->begin());  // pop all of the pools
+                if (slowpath(DebugMissingPools || DebugPoolAllocation)) {
+                    // pop() killed the pages already
+                } else {
+                    page->kill();  // free all of the pages
+                }
+            }
+            // clear TLS value so TLS destruction doesn't loop
+            setHotPage(nil);
+        }
+    ```
+
+    由以上流程可知，子线程处理 `Autorelease` 的时机一般有两种：线程销毁时 & 自定义 `pool`作用域退出时
+
+    在主线程中由于开启了 `Runloop`并且主动注册了两个回调，所以在每次 `Runloop`循环时都会去处理默认添加的 `AutoreleasePool`，该详细内容请参考文章  [AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ)，这也不做重复复述。
+
+#### Autorelease ARC环境下基于 tls 的返回值优化方案以及失效场景
+
+主要是通过嵌入 `objc_autoreleaseReturnValue` & `objc_retainAutoreleasedReturnValue`两个函数，基于 `tls`存储状态值实现优化。
+
+优化思路概括为：
+
+- `objc_autoreleaseReturnValue` 通过 `__builtin_return_address()`函数可以查找到函数返回后下一条指令的地址，判断是否为 `mov x29, x29`（arm64）进而决定是否进行优化，
+- 如果开启优化会设置 `tls`存储` 状态值 1 `并直接返回对象，否则放入自动释放池走普通逻辑
+- `objc_retainAutoreleasedReturnValue`调用`acceptOptimizedReturn`校验 `tls`中的值是否为 1，为 1 表示启动优化直接返回对象， 否则走未优化逻辑先 `retain` 再放入 自动释放池
+
+> 优化思路是基于 `tls`以及`__builtin_return_address()`实现的，以是否插入无实际效果的汇编指令 `mov x29, x29`作为优化标识。 另外查看源码时需要注意 `objc_retainAutoreleasedReturnValue`和`objc_retainAutoreleaseReturnValue`的区别
+
+ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破坏系统的优化逻辑，即 `for`或者`while`等场景。示例如下：
+
+```objective-c
+- (HWModel *)takeModel {
+//    for (HWModel *model in self.models) {}
+    HWModel *model = [HWModel new];
+    return model;
+}
+```
+
+如果打开注释代码，会导致返回的 `model`未优化，通过动态调试可以查看原因。
+
+注释 `for`代码后跳转用的 `b`指令，所以 `lr` 寄存器存储的是调用方调用 `takeModel`函数后的指令地址
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_45_interview_02.png)
+
+有 `for` 循环时，跳转到 `objc_autoreleaseReturnValue`的汇编指令是 `bl`。
+
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_45_interview_01.png)
+
+`bl`表示执行完函数后继续执行后续指令，后续汇编指令目的主要是为了检测是否存在函数调用栈溢出操作，详细解释可以参考[Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/)。这造成我们上面提到的 `__builtin_return_address()`函数获取到的返回值下一条指令地址，并不是优化标识指令 `mov x29 x29`，而是检测代码指令，导致优化未开启。
+
+> 未开启优化的影响是多做一次 `retain`操作和两次 `autorelease`操作， 笔者未测试出五子棋前辈遇到的 `Autoreleas` 对象未释放的情况， 可能是后续 apple 已经优化过，如果读者有不同的结果，欢迎指教
+
+总结： 以上是笔者在搜集面试题时关于 `AutoreleasePool`的一些扩展内容，再次强调需要精读[AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ)，尤其需要掌握 `ARC` 下手动处理的几种场景。希望各位可以对 `Autorelease`面试题一网打尽。
+
+* [黑幕背后的Autorelease](https://blog.sunnyxx.com/2014/10/15/behind-autorelease/ "黑幕背后的Autorelease")
+* [AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ "AutoreleasePool")
+* [Revisit iOS Autorelease  一](http://satanwoo.github.io/2019/07/02/RevisitAutorelease/?nsukey=jw8uyyU1C%2BzqPgSpg5Kie0F9Bj4HNHiPMBkxPWPBuEs1ZyVoZwklMAJVkv0TeJgILqxLQOH2a0Di8DhFj5abLdtFE3p09pb3az4o9B7IY7rvyZHamZN1OIh5zBQZv1J%2FnHLc6QkiMW%2Fo2PY9fVAeVQN%2FQ5lBojKaT%2FXmKQuCTY5E1MoBK4Ir7Qi6un5pXxvKQutSkFhgEVUn%2FboyV6pdxQ%3D%3D "Revisit iOS Autorelease  一")
+* [Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/ "Revisit iOS Autorelease  二")
+* [iOS13 一次Crash定位 - 被释放的NSURL.host](https://segmentfault.com/a/1190000020058030 "iOS13 一次Crash定位 - 被释放的NSURL.host")
+

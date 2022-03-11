@@ -152,6 +152,10 @@ print(String(data: data, encoding: .utf8))
 
 参考：[如何将 JSON 字典编码为 JSONEncoder - Swift社区](https://mp.weixin.qq.com/s/PI7s8cXxzErqOB0e9BHqvg)
 
+[@zhangferry ](zhangferry.com)补充：该方案主要考虑的是 `Encodable` 功能，如果增加对 `Decodable` 的支持，就能实现完整的 `Codable` 功能。我们可以给这个数据类型命名为 `AnyCodable`，这样对于某一不确定格式的字段（例如复合型的 Dictionary）就可以无缝支持 `Codable` 了。
+
+参考：[Github-AnyCodable](https://github.com/Flight-School/AnyCodable "AnyCodable")
+
 ## 面试解析
 
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
@@ -201,24 +205,23 @@ id *add(id obj)
 {
       // .. 准备工作
         for (uintptr_t offset = 0; offset < 4; offset++) {
-                        AutoreleasePoolEntry *offsetEntry = topEntry - offset;
-                        if (offsetEntry <= (AutoreleasePoolEntry*)begin() || *(id *)offsetEntry == POOL_BOUNDARY) {
-                            break;
-                        }
-                        if (offsetEntry->ptr == (uintptr_t)obj && offsetEntry->count < AutoreleasePoolEntry::maxCount) {
-                            if (offset > 0) {
-                                AutoreleasePoolEntry found = *offsetEntry;
-                                // 将offsetEntry + 1中
-                                memmove(offsetEntry, offsetEntry + 1, offset * sizeof(*offsetEntry));
-                                *topEntry = found;
-                            }
-                            topEntry->count++;
-                            ret = (id *)topEntry;  // need to reset ret
-                            goto done;
-                        }
-#endif
+             AutoreleasePoolEntry *offsetEntry = topEntry - offset;
+             if (offsetEntry <= (AutoreleasePoolEntry*)begin() || *(id *)offsetEntry == POOL_BOUNDARY) {
+                 break;
+             }
+             if (offsetEntry->ptr == (uintptr_t)obj && offsetEntry->count < AutoreleasePoolEntry::maxCount) {
+                  if (offset > 0) {
+                       AutoreleasePoolEntry found = *offsetEntry;
+                       // 将offsetEntry + 1中
+                       memmove(offsetEntry, offsetEntry + 1, offset * sizeof(*offsetEntry));
+                       *topEntry = found;
+                  }
+                  topEntry->count++;
+                  ret = (id *)topEntry;  // need to reset ret
+                  goto done;
+             }
         // 旧版本依次插入对象的存储方式
-    }
+}
 ```
 
 如果使用 `LRU` 算法, 则插入时从 `next`指针向上遍历最近的四个对象， 遍历中如果和当前对象匹配，则 `Entry` 实体记录的 `count`属性加一, 然后通过 `memmove`函数移动内存数据，将匹配的 `Entry`放到距离 `next`指针最近的位置，以实现 `LRU`的特征。如果只是单纯的合并存储，则只匹配 `next`指针相邻的`Entry`，未匹配到则插入
@@ -239,25 +242,25 @@ id *add(id obj)
 
     ```cpp
     static void tls_dealloc(void *p) 
-        {
-            if (p == (void*)EMPTY_POOL_PLACEHOLDER) {
-                // No objects or pool pages to clean up here.
-                return;
-            }
-            // reinstate TLS value while we work
-            setHotPage((AutoreleasePoolPage *)p);
-    
-            if (AutoreleasePoolPage *page = coldPage()) {
-                if (!page->empty()) objc_autoreleasePoolPop(page->begin());  // pop all of the pools
-                if (slowpath(DebugMissingPools || DebugPoolAllocation)) {
-                    // pop() killed the pages already
-                } else {
-                    page->kill();  // free all of the pages
-                }
-            }
-            // clear TLS value so TLS destruction doesn't loop
-            setHotPage(nil);
+    {
+        if (p == (void*)EMPTY_POOL_PLACEHOLDER) {
+            // No objects or pool pages to clean up here.
+            return;
         }
+        // reinstate TLS value while we work
+        setHotPage((AutoreleasePoolPage *)p);
+    
+        if (AutoreleasePoolPage *page = coldPage()) {
+            if (!page->empty()) objc_autoreleasePoolPop(page->begin());  // pop all of the pools
+            if (slowpath(DebugMissingPools || DebugPoolAllocation)) {
+                // pop() killed the pages already
+            } else {
+                page->kill();  // free all of the pages
+            }
+        }
+        // clear TLS value so TLS destruction doesn't loop
+        setHotPage(nil);
+    }
     ```
 
     由以上流程可知，子线程处理 `Autorelease` 的时机一般有两种：线程销毁时 & 自定义 `pool`作用域退出时
@@ -298,7 +301,7 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 
 `bl`表示执行完函数后继续执行后续指令，后续汇编指令目的主要是为了检测是否存在函数调用栈溢出操作，详细解释可以参考[Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/)。这造成我们上面提到的 `__builtin_return_address()`函数获取到的返回值下一条指令地址，并不是优化标识指令 `mov x29 x29`，而是检测代码指令，导致优化未开启。
 
-> 未开启优化的影响是多做一次 `retain`操作和两次 `autorelease`操作， 笔者未测试出五子棋前辈遇到的 `Autoreleas` 对象未释放的情况， 可能是后续 apple 已经优化过，如果读者有不同的结果，欢迎指教
+> 未开启优化的影响是多做一次 `retain`操作和两次 `autorelease`操作， 笔者未测试出五子棋前辈遇到的 `Autorelease` 对象未释放的情况， 可能是后续 apple 已经优化过，如果读者有不同的结果，欢迎指教
 
 总结： 以上是笔者在搜集面试题时关于 `AutoreleasePool`的一些扩展内容，再次强调需要精读[AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ)，尤其需要掌握 `ARC` 下手动处理的几种场景。希望各位可以对 `Autorelease`面试题一网打尽。
 
@@ -316,11 +319,11 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 
 1、[无法解释的 SwiftUI —— SwiftUI 的编程语言本质](https://wezzard.com/post/2022/03/unexplained-swiftui-the-programming-language-nature-of-swiftui-d20e "Unexplained SwiftUI - The Programming Language Nature of SwiftUI") -- 来自：WeZZard
 
-[@东坡肘子](https://www.fatbobman.com/)：作者 WeZZard 从一个十分新颖的角度来看待、分析 SwiftUI。通过一个斐波纳契数实例，来展示 SwiftUI 的图灵完整性，进而提出一个有趣的观点——SwiftUI 是一种编程语言，而不是 UI 框架。
+[@东坡肘子](https://www.fatbobman.com/)：作者 WeZZard 从一个十分新颖的角度来看待、分析 SwiftUI。通过一个斐波纳契数示例，来展示 SwiftUI 的图灵完整性，进而提出一个有趣的观点——SwiftUI 是一种编程语言，而不是 UI 框架。
 
 2、[SwiftUI 底层：可变视图](https://movingparts.io/variadic-views-in-swiftui "SwiftUI under the Hood: Variadic Views") -- 来自：The Moving Parts Team
 
-[@东坡肘子](https://www.fatbobman.com/)：本文介绍了一些 View 协议中尚未公开的 API。通过使用这些 API，开发者可以编写出更加强大、灵活，且与原生实现类似的容器，构建自己的布局逻辑。作者 Moving Parts 团队当前正在开发一个功能强大的 SwiftUI 组建库。
+[@东坡肘子](https://www.fatbobman.com/)：本文介绍了一些 View 协议中尚未公开的 API。通过使用这些 API，开发者可以编写出更加强大、灵活，且与原生实现类似的容器，构建自己的布局逻辑。作者 Moving Parts 团队当前正在开发一个功能强大的 SwiftUI 组件库。
 
 3、[了解 SwiftUI 如何以及何时决定重绘视图](https://www.donnywals.com/understanding-how-and-when-swiftui-decides-to-redraw-views/ "Understanding how and when SwiftUI decides to redraw views") -- 来自：Donny Wals
 
