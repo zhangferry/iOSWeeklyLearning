@@ -46,7 +46,7 @@
 
 - 分发文件大
 
-- 静态库默认仅将有用到的类文件 `link` 到 `Mach-O` 中 （已类文件为最小链接单位）
+- 静态库默认仅将有用到的类文件 `link` 到 `Mach-O` 中 （以类文件为最小链接单位）
 
 - ipa 包小（为了APP瘦身，尽量将代码放静态库中）
 
@@ -83,7 +83,7 @@
 
 - 需要签名且需要验证签名
 	- 会检查 `framework` 的签名，签名中必须包含 `TeamIdentifier`，并且 `framework` 和 host App 的 `TeamIdentifier` 必须一致
-	- Xcode重签命，保证动态库签名一致性
+	- Xcode重签名，保证动态库签名一致性
 
 - 需要导出符号
 
@@ -104,7 +104,7 @@
 - 动态库不包含 `bitcode` 时，引用动态库的目标部署时可以包含 `bitcode`
 
 - `CocoaPods` 从 `v0.36.0` 开始，可添加关键字 `use_frameworks!` 编译成类似 `Embedded Framework` 的结构（可以称之为 `umbrella framework`）
-	- 缺点：默认把项目的依赖全部改为动态库（可是使用 `use_modular_headers!`，也可以在 `podsepc` 添加 `s.static_framework = true` 规避）
+	- 缺点：默认把项目的依赖全部改为动态库（可使用 `use_modular_headers!`，也可以在 `podsepc` 添加 `s.static_framework = true` 规避）
 	- `CocoaPods` 执行脚本把动态库嵌入到 `.app` 的 `Framework` 目录下（相当于在 `Embedded Binaries` 加入动态库）
 
 ## 优秀博客
@@ -163,13 +163,13 @@
 
 [@zhangferry](zhangferry.com)：Figma 决定遵守美国制裁名单，并停封所有遭制裁的企业账号，其中就包括大疆。与此同时，国内de 设计协作平台蓝湖旗下的 MasterGo 推出一键导入 Figma 素材功能。
 
-3、[如何打造良好的分享氛围 ]()-- 来自公众号：hockor
+3、[领导，我想改善团队的分享氛围](https://mp.weixin.qq.com/s/qfWtn2E3UhssjcbTAqQUEg)-- 来自公众号：hockor
 
 [@zhangferry](zhangferry.com)：大多数人都会在工作中遇到技术分享这个事情，作为TL应该如何打造良好的分享氛围呢？首先明确良好的分享氛围是有很大好处的，比如提升团队的技术视野、发现团队牛人、提升团队战斗力、扩大团队影响力等。分享形式较普遍的定期举行技术分享会，任何的分享行为都应该被鼓励。“分享本身是一种精神上自我实现的行为，所以无论分享内容如何，至少这种行为是慷慨的，我们应该及时的、积极的反馈，去鼓励他们往前更进一步”。
 
 同时作为分享的参与者，我们应该抱着探索者的积极的心态去听，有参与感的学习形式是非常高效的。
 
-4、[Usage statistics of content languages for websites](https://w3techs.com/technologies/overview/content_language) -- 来自网站：W3Techs
+4、[Usage statistics of content languages for websites](https://w3techs.com/technologies/overview/content_language "Usage statistics of content languages for websites") -- 来自网站：W3Techs
 
 [@zhangferry](zhangferry.com)：当前世界上的网站按语言划分的话，英语最多，这个毋庸置疑。但第二多的竟然是俄语，更令人意外的是，作为使用人口非常多的汉语，其网站数量占比竟然排到了第10位。我能想到的原因是，俄语地区互联网发展比较早，催生了很多网站；汉语虽然使用人数多，但是相对集中，国内互联网的发展比较晚，近几年移动互联网浪潮催生了很多App，但网站的创建则很少。
 
@@ -211,7 +211,7 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-iOS摸鱼周报 第四十六期
+[iOS摸鱼周报 第四十六期](https://mp.weixin.qq.com/s/8Wpfk9yxpjwaDXN7iXIcvQ)
 
 [iOS摸鱼周报 第四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw)
 
