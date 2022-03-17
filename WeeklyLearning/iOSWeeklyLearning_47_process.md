@@ -69,6 +69,8 @@
 
 一本 Rust 书籍，有简体和繁体版（英文版和日文版正在撰写中），内容包括算法分析，基本数据结构和算法，外加一些实战，共有九章。包含了大家常用的常见的数据结构的实现和讲解，配有详实的代码和清晰简明的图解。
 
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/%E6%88%AA%E5%B1%8F2022-03-17%20%E4%B8%8B%E5%8D%886.37.13.png)
+
 ## 工具推荐
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
