@@ -4,7 +4,7 @@
 
 ### 本期概要
 
-> * 话题：
+> * 话题：苹果多个产品线的更新。
 > * Tips：
 > * 面试模块：
 > * 优秀博客：
@@ -13,7 +13,30 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：
+[@zhangferry](https://zhangferry.com)：苹果的多个产品线带来了一波更新。
+
+### macOS Monterey 12.3
+
+* Python 2 被从系统中移出了，但新系统中也并没有预装 Python 3，需要开发者手动安装。
+* Universal Control（通用控制）：键盘、鼠标和触摸板可以在 Mac 和 iPad (iPadOS 15.4) 端无缝衔接。
+* M1 芯片的电脑可以搭配支持空间音频的 AirPods 使用头部追踪功能。
+
+### Xcode 13.3
+
+听说又很多兼容问题
+
+### iOS 15.4
+
+* 支持戴口罩的 FaceID 功能，仅支持 iPhone 12 及之后的机型。
+* 新增了 37个 Emoji 表情。
+
+### Swift 5.6 Released
+
+* 类型系统的提升。[Type Placeholders SE-0315](https://github.com/apple/swift-evolution/blob/main/proposals/0315-placeholder-types.md "Type Placeholders SE-0315")
+* 改进了指针交互的功能
+* SPM 增加了运行新插件的能力
+
+还有一个便利性的提升：[SE-0290: Unavailability Condition](https://github.com/apple/swift-evolution/blob/main/proposals/0290-negative-availability.md "SE-0290: Unavailability Condition") 
 
 ## 开发Tips
 
@@ -44,7 +67,7 @@
 
 2、[估值超百亿的 Figma 封禁中国大疆：科技再无中立可言](https://www.infoq.cn/article/lHx2zw4QKWWs3PmvWXgS "估值超百亿的 Figma 封禁中国大疆：科技再无中立可言")
 
-[@zhangferry](zhangferry.com)：Figma 决定遵守美国制裁名单，并停封所有遭制裁的企业账号，其中就包括大疆。
+[@zhangferry](zhangferry.com)：Figma 决定遵守美国制裁名单，并停封所有遭制裁的企业账号，其中就包括大疆。与此同时，国内的产品设计协作平台蓝湖旗下的同类竞品 MasterGo 推出一键导入 Figma 素材功能。
 
 3、[如何打造良好的分享氛围 ]()-- 来自公众号：hockor
 
@@ -52,11 +75,11 @@
 
 同时作为分享的参与者，我们应该抱着探索者的积极的心态去听，有参与感的学习形式是非常高效的。
 
-4、["和平主义者"为何恰恰是最残暴的：垄断暴力，是霸权主义的最终形式](https://b23.tv/MY0eVui ""和平主义者"为何恰恰是最残暴的：垄断暴力，是霸权主义的最终形式") -- 来自：Bilibili 棱镜Talk
+4、[Usage statistics of content languages for websites](https://w3techs.com/technologies/overview/content_language) -- 来自网站：W3Techs
 
-”真正的反战者应该反对的是导致战争发生的深层结构，真正的和平爱好者，应该超越眼前的对立，致力于重建一个崭新的秩序，否则战争的悲剧便会不断重演。”
+[@zhangferry](zhangferry.com)：当前世界上的网站按语言划分的话，英语最多，这个毋庸置疑。但第二多的竟然是俄语，更令人意外的是，作为使用人口非常多的汉语，其网站数量占比竟然排到了第10位。我能想到的原因是，俄语地区互联网发展比较早，催生了很多网站；汉语虽然使用人数多，但是相对集中，国内互联网的发展比较晚，近几年移动互联网浪潮催生了很多App，但网站的创建则很少。
 
-罗素作为一个和平主义者曾谴责美国政府对越作战，同时宣讲越战的非正义性，但美国并没有停下自己的战争机器，罗素用自身行动表明，在一个不平等的国际秩序中，即使像他那样著名的和平主义者，也是多么的无力。因为当和平主义者，将矛头对准一个弱国时，世界秩序的主导者就可以借正义之名，对弱国进行惩罚或制裁，但是当和平主义者将矛头对准世界秩序主导者本身时，却没有谁可以出来主持正义，甚至可能连声音都发不出去，这种不对等的局面必然会导致心怀美好愿望的和平主义者在实际操作中，却沦为霸权主义者的帮凶。历史已经证明，和平只有在一种情况下才是可能的，那就是将维护和平的能力，掌握在自己手中。
+![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220316231714.png)
 
 
 ## 学习资料
@@ -75,12 +98,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+iOS摸鱼周报 第四十六期
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第四十四期](https://mp.weixin.qq.com/s/q__-veuaUZAK6xGQFxzsEg)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第四十三期](https://mp.weixin.qq.com/s/Ktk5wCMPZQ5E-UASwHD7uw)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
