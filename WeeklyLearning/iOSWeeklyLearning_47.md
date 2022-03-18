@@ -15,16 +15,31 @@
 
 [@zhangferry](https://zhangferry.com)：苹果的多个产品线带来了一波更新。
 
-### macOS Monterey 12.3
+### [macOS Monterey 12.3](https://developer.apple.com/documentation/macos-release-notes/macos-12_3-release-notes "macOS Monterey 12.3")
 
 * Python 2 被从系统中移出了，但新系统中也并没有预装 Python 3，需要开发者手动安装。
 * Universal Control（通用控制）：键盘、鼠标和触摸板可以在 Mac 和 iPad (iPadOS 15.4) 端无缝衔接。
 * M1 芯片的电脑可以搭配支持空间音频的 AirPods 使用头部追踪功能。
 
-### iOS 15.4
+### [iOS 15.4](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-15_4-release-notes "iOS 15.4")
 
 * 支持戴口罩的 FaceID 功能，仅支持 iPhone 12 及之后的机型。
 * 新增了 37 个 Emoji 表情。
+
+### [Xcode 13.3](https://developer.apple.com/documentation/Xcode-Release-Notes/xcode-13_3-release-notes "Xcode 13.3")
+
+* 新增了一项针对 Swift 的编译优化
+
+```
+defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
+```
+
+* Instruments 获得了多项提升，提高了 leaks 、memory graph debugger 扫描的准确性等。
+
+问题收集：
+
+* 反馈打包时有 pod 相关异常
+* 反馈编译变慢
 
 ### [Swift 5.6 Released](https://www.swift.org/blog/swift-5.6-released/ "Swift 5.6 Released")
 
