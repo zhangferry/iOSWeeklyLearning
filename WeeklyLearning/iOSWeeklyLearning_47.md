@@ -159,9 +159,13 @@
 
 深度学习本质上是一种识别模式，当我们只需粗略结果时，它非常适合，但是对于需要精确性操作且风险很高的事情，像放射学和无人驾驶，就需要很谨慎了。人工智能确实没有我们想象的进化那么快，所以它的未来是悲观的吗？并不是，作者提出 Hinton 这样的先驱把深度学习的研究方向带偏了，应当将深度学习和符号处理结合起来，这种混合人工智能可能才是最好的方向。
 
-2、[估值超百亿的 Figma 封禁中国大疆：科技再无中立可言](https://www.infoq.cn/article/lHx2zw4QKWWs3PmvWXgS "估值超百亿的 Figma 封禁中国大疆：科技再无中立可言")
+2、[【译文】谷歌搜索正在消亡](https://sspai.com/post/72065 "【译文】谷歌搜索正在消亡") -- 来自少数派：赵喧典
 
-[@zhangferry](zhangferry.com)：Figma 决定遵守美国制裁名单，并停封所有遭制裁的企业账号，其中就包括大疆。与此同时，国内de 设计协作平台蓝湖旗下的 MasterGo 推出一键导入 Figma 素材功能。
+作者认为 reddit 才是目前最受欢迎的搜索引擎，而谷歌搜索正在走向消亡。认为谷歌不再被认可的原因有这几个：
+
+* 广告：谷歌的大部分收入来源于广告，但过多广告占据搜索词条会严重影响用户体验。
+* SEO 优化：很多人的工作就是搜索引擎优化，这违背了公平也会导致搜索质量下降。
+* 人工智能：人工智能在尝试帮你找到你想要的内容，但这种揣测经常让人不满意。
 
 3、[领导，我想改善团队的分享氛围](https://mp.weixin.qq.com/s/qfWtn2E3UhssjcbTAqQUEg)-- 来自公众号：hockor
 
@@ -172,6 +176,8 @@
 4、[Usage statistics of content languages for websites](https://w3techs.com/technologies/overview/content_language "Usage statistics of content languages for websites") -- 来自网站：W3Techs
 
 [@zhangferry](zhangferry.com)：当前世界上的网站按语言划分的话，英语最多，这个毋庸置疑。但第二多的竟然是俄语，更令人意外的是，作为使用人口非常多的汉语，其网站数量占比竟然排到了第10位。我能想到的原因是，俄语地区互联网发展比较早，催生了很多网站；汉语虽然使用人数多，但是相对集中，国内互联网的发展比较晚，近几年移动互联网浪潮催生了很多App，但网站的创建则很少。
+
+网站是目前人们获取信息最重要的途径之一，英语网站远超其他语种，也反应了当前英语世界的话语权是更大的。
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220316231714.png)
 
