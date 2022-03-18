@@ -2488,24 +2488,23 @@ id *add(id obj)
 {
       // .. 准备工作
         for (uintptr_t offset = 0; offset < 4; offset++) {
-                        AutoreleasePoolEntry *offsetEntry = topEntry - offset;
-                        if (offsetEntry <= (AutoreleasePoolEntry*)begin() || *(id *)offsetEntry == POOL_BOUNDARY) {
-                            break;
-                        }
-                        if (offsetEntry->ptr == (uintptr_t)obj && offsetEntry->count < AutoreleasePoolEntry::maxCount) {
-                            if (offset > 0) {
-                                AutoreleasePoolEntry found = *offsetEntry;
-                                // 将offsetEntry + 1中
-                                memmove(offsetEntry, offsetEntry + 1, offset * sizeof(*offsetEntry));
-                                *topEntry = found;
-                            }
-                            topEntry->count++;
-                            ret = (id *)topEntry;  // need to reset ret
-                            goto done;
-                        }
-#endif
+             AutoreleasePoolEntry *offsetEntry = topEntry - offset;
+             if (offsetEntry <= (AutoreleasePoolEntry*)begin() || *(id *)offsetEntry == POOL_BOUNDARY) {
+                 break;
+             }
+             if (offsetEntry->ptr == (uintptr_t)obj && offsetEntry->count < AutoreleasePoolEntry::maxCount) {
+                  if (offset > 0) {
+                       AutoreleasePoolEntry found = *offsetEntry;
+                       // 将offsetEntry + 1中
+                       memmove(offsetEntry, offsetEntry + 1, offset * sizeof(*offsetEntry));
+                       *topEntry = found;
+                  }
+                  topEntry->count++;
+                  ret = (id *)topEntry;  // need to reset ret
+                  goto done;
+             }
         // 旧版本依次插入对象的存储方式
-    }
+}
 ```
 
 如果使用 `LRU` 算法, 则插入时从 `next`指针向上遍历最近的四个对象， 遍历中如果和当前对象匹配，则 `Entry` 实体记录的 `count`属性加一, 然后通过 `memmove`函数移动内存数据，将匹配的 `Entry`放到距离 `next`指针最近的位置，以实现 `LRU`的特征。如果只是单纯的合并存储，则只匹配 `next`指针相邻的`Entry`，未匹配到则插入
@@ -2526,25 +2525,25 @@ id *add(id obj)
 
     ```cpp
     static void tls_dealloc(void *p) 
-        {
-            if (p == (void*)EMPTY_POOL_PLACEHOLDER) {
-                // No objects or pool pages to clean up here.
-                return;
-            }
-            // reinstate TLS value while we work
-            setHotPage((AutoreleasePoolPage *)p);
-    
-            if (AutoreleasePoolPage *page = coldPage()) {
-                if (!page->empty()) objc_autoreleasePoolPop(page->begin());  // pop all of the pools
-                if (slowpath(DebugMissingPools || DebugPoolAllocation)) {
-                    // pop() killed the pages already
-                } else {
-                    page->kill();  // free all of the pages
-                }
-            }
-            // clear TLS value so TLS destruction doesn't loop
-            setHotPage(nil);
+    {
+        if (p == (void*)EMPTY_POOL_PLACEHOLDER) {
+            // No objects or pool pages to clean up here.
+            return;
         }
+        // reinstate TLS value while we work
+        setHotPage((AutoreleasePoolPage *)p);
+    
+        if (AutoreleasePoolPage *page = coldPage()) {
+            if (!page->empty()) objc_autoreleasePoolPop(page->begin());  // pop all of the pools
+            if (slowpath(DebugMissingPools || DebugPoolAllocation)) {
+                // pop() killed the pages already
+            } else {
+                page->kill();  // free all of the pages
+            }
+        }
+        // clear TLS value so TLS destruction doesn't loop
+        setHotPage(nil);
+    }
     ```
 
     由以上流程可知，子线程处理 `Autorelease` 的时机一般有两种：线程销毁时 & 自定义 `pool`作用域退出时
@@ -2585,7 +2584,7 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 
 `bl`表示执行完函数后继续执行后续指令，后续汇编指令目的主要是为了检测是否存在函数调用栈溢出操作，详细解释可以参考[Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/)。这造成我们上面提到的 `__builtin_return_address()`函数获取到的返回值下一条指令地址，并不是优化标识指令 `mov x29 x29`，而是检测代码指令，导致优化未开启。
 
-> 未开启优化的影响是多做一次 `retain`操作和两次 `autorelease`操作， 笔者未测试出五子棋前辈遇到的 `Autoreleas` 对象未释放的情况， 可能是后续 apple 已经优化过，如果读者有不同的结果，欢迎指教
+> 未开启优化的影响是多做一次 `retain`操作和两次 `autorelease`操作， 笔者未测试出五子棋前辈遇到的 `Autorelease` 对象未释放的情况， 可能是后续 apple 已经优化过，如果读者有不同的结果，欢迎指教
 
 总结： 以上是笔者在搜集面试题时关于 `AutoreleasePool`的一些扩展内容，再次强调需要精读[AutoreleasePool](https://mp.weixin.qq.com/s/Z3MWUxR2SLtmzFZ3e5WzYQ)，尤其需要掌握 `ARC` 下手动处理的几种场景。希望各位可以对 `Autorelease`面试题一网打尽。
 
@@ -2594,4 +2593,76 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 * [Revisit iOS Autorelease  一](http://satanwoo.github.io/2019/07/02/RevisitAutorelease/?nsukey=jw8uyyU1C%2BzqPgSpg5Kie0F9Bj4HNHiPMBkxPWPBuEs1ZyVoZwklMAJVkv0TeJgILqxLQOH2a0Di8DhFj5abLdtFE3p09pb3az4o9B7IY7rvyZHamZN1OIh5zBQZv1J%2FnHLc6QkiMW%2Fo2PY9fVAeVQN%2FQ5lBojKaT%2FXmKQuCTY5E1MoBK4Ir7Qi6un5pXxvKQutSkFhgEVUn%2FboyV6pdxQ%3D%3D "Revisit iOS Autorelease  一")
 * [Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/ "Revisit iOS Autorelease  二")
 * [iOS13 一次Crash定位 - 被释放的NSURL.host](https://segmentfault.com/a/1190000020058030 "iOS13 一次Crash定位 - 被释放的NSURL.host")
+
+***
+整理编辑：[JY](https://juejin.cn/user/1574156380931144)
+
+### 静态库和动态库的区别
+
+#### 静态库（Static Library）
+
+特点如下：
+
+- 分发文件大
+
+- 静态库默认仅将有用到的类文件 `link` 到 `Mach-O` 中 （以类文件为最小链接单位）
+
+- ipa 包小（为了 App 瘦身，尽量将代码放静态库中）
+
+    - 静态库中某个目标文件的代码没有被任何地方引用，则这个目标文件不会被链接到可执行文件中去（分类代码经常被优化掉，一般都使用 `-Objc` 和 `-all_load` 或者 `-force_load` 来处理静态库分类加载问题）
+
+- App 冷启动速度快
+	- 前提是不使用 `动态库拆分` 搭配 `动态库懒加载方案`
+	- App 启动流程中有 `rebase` 和 `bind`，多个静态库只需要 `rebase` 和 `bind` 一次
+
+- 存在符号冲突可能
+- 共享 `TEXT 段`
+	- iOS 9 以前单个 Mach-O 的 TEXT 限制 60M
+	- iOS 9 以后单个 Mach-O 的 TEXT 限制 500M
+- 不需要额外签名验证  
+- 静态库符号的可见性可以在链接期间被修改 
+- 文件格式多为 `fat` 格式的静态库文件
+- 形式多为 `.a` 与 `.framework`
+- 静态库不含 `bitcode` 时，引用静态库的目标部署时就不能包含 `bitcode`   
+
+####  动态库（Dynamic Library）
+特点如下：
+
+- 分发文件小
+
+- ipa 包大（前提是不考虑懒加载的情况）
+	- 动态库会把整个 `lib` 复制进 `ipa` 中
+
+- App 冷启动速度慢
+	- App 启动流程中有 `rebase` 和 `bind`，多个动态库只需要多次 `rebase` 和 `bind`
+
+- 需要设置合适的 `runpath` 
+
+- 需要动态加载
+
+- 需要签名且需要验证签名
+	- 会检查 `framework` 的签名，签名中必须包含 `TeamIdentifier`，并且 `framework` 和 host App 的 `TeamIdentifier` 必须一致
+	- Xcode 重签名，保证动态库签名一致性
+
+- 需要导出符号
+
+- 重复的 `arch` 结构
+
+- App 与动态库中重复代码可以共存，不会发生符号冲突
+	- 因为可执行文件在构建链接阶段，遇到静态库则吸附进来，遇到动态库则打个标记，彼此保持独立性。
+	- 对于来自动态库的符号，编译器会打个标记，交给 `dyld` 去加载和链接符号，也就是把链接的过程推迟到了运行时执行。（比如 App 使用的是 3.0 版本 SDK，动态库使用的是 1.0 版本 SDK，能正常运行，但是会有风险）
+
+- 链接后需要包含分发大小
+
+- 冷启动过程中，默认会在 `main` 函数之前加载
+	- 默认情况下，过多的动态库会拖慢冷启动速度
+	- 如果采用懒加载动态库的形式，能够加快 App 的启动速度，可以使用 `dlopen` 和 `bundle` 懒加载优化
+
+- 文件格式 `Mach-O`（一个没有 `main` 函数的可执行文件）
+
+- 动态库不包含 `bitcode` 时，引用动态库的目标部署时可以包含 `bitcode`
+
+- `CocoaPods` 从 `v0.36.0` 开始，可添加关键字 `use_frameworks!` 编译成类似 `Embedded Framework` 的结构（可以称之为 `umbrella framework`）
+	- 缺点：默认把项目的依赖全部改为动态库（可使用 `use_modular_headers!`，也可以在 `podsepc` 添加 `s.static_framework = true` 规避）
+	- `CocoaPods` 执行脚本把动态库嵌入到 `.app` 的 `Framework` 目录下（相当于在 `Embedded Binaries` 加入动态库）
 

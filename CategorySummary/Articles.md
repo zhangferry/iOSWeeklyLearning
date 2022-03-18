@@ -1314,11 +1314,11 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 1、[无法解释的 SwiftUI —— SwiftUI 的编程语言本质](https://wezzard.com/post/2022/03/unexplained-swiftui-the-programming-language-nature-of-swiftui-d20e "Unexplained SwiftUI - The Programming Language Nature of SwiftUI") -- 来自：WeZZard
 
-[@东坡肘子](https://www.fatbobman.com/)：作者 WeZZard 从一个十分新颖的角度来看待、分析 SwiftUI。通过一个斐波纳契数实例，来展示 SwiftUI 的图灵完整性，进而提出一个有趣的观点——SwiftUI 是一种编程语言，而不是 UI 框架。
+[@东坡肘子](https://www.fatbobman.com/)：作者 WeZZard 从一个十分新颖的角度来看待、分析 SwiftUI。通过一个斐波纳契数示例，来展示 SwiftUI 的图灵完整性，进而提出一个有趣的观点——SwiftUI 是一种编程语言，而不是 UI 框架。
 
 2、[SwiftUI 底层：可变视图](https://movingparts.io/variadic-views-in-swiftui "SwiftUI under the Hood: Variadic Views") -- 来自：The Moving Parts Team
 
-[@东坡肘子](https://www.fatbobman.com/)：本文介绍了一些 View 协议中尚未公开的 API。通过使用这些 API，开发者可以编写出更加强大、灵活，且与原生实现类似的容器，构建自己的布局逻辑。作者 Moving Parts 团队当前正在开发一个功能强大的 SwiftUI 组建库。
+[@东坡肘子](https://www.fatbobman.com/)：本文介绍了一些 View 协议中尚未公开的 API。通过使用这些 API，开发者可以编写出更加强大、灵活，且与原生实现类似的容器，构建自己的布局逻辑。作者 Moving Parts 团队当前正在开发一个功能强大的 SwiftUI 组件库。
 
 3、[了解 SwiftUI 如何以及何时决定重绘视图](https://www.donnywals.com/understanding-how-and-when-swiftui-decides-to-redraw-views/ "Understanding how and when SwiftUI decides to redraw views") -- 来自：Donny Wals
 
@@ -1335,4 +1335,43 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 6、[高级 SwiftUI 动画 1-5](https://mp.weixin.qq.com/s/5KinQfNtcovf_451UGwLQQ "高级 SwiftUI 动画") -- 来自：Javier 中文版：Swift 君
 
 [@东坡肘子](https://www.fatbobman.com/)：仅需少量的代码，SwiftUI 即可为开发者实现相当优秀的动画效果。但如果想创建更加炫酷、灵活、高效的动画则需要掌握更多的知识和高级技巧。本系列文章已持续更新 2 年之久（SwiftUI 诞生至今不到 3 年），详细讲解了各种有关 SwiftUI 高级动画的内容。
+
+***
+整理编辑：皮拉夫大王在此
+
+> 本期优秀博客主题相对轻松，聊聊面试相关和成长相关的事情。本来想借助本期内容整理下 `rebase` & ` bind ` 的相关技术细节，但是这周被某些自媒体散布的裁员消息给刷屏了，恰巧我本人也是在最近换了工作，因此借助这个机会和大家一起暂停下技术学习的脚步，抬头看看外面的情况。
+>
+> **阅读后你将获得什么？**
+>
+> - 如果你在犹豫自己是不是该换工作，那么可以从文章中找到部分答案；
+> - 东野浪子和苍耳两位大佬是非常资深的大厂面试官，他们的建议是非常中肯的；
+> - 我本人近期面试的一些细节；
+> - 尽管不认同面试问八股文，但是还是给大家准备了八股集合，以供大家增强面试信心；
+
+
+1、**如果你在犹豫期，请看下文**
+
+1.1 [浅谈如何理性的判断自己是否应该换工作](https://mp.weixin.qq.com/s/h5G7LCCAPPh6GfwvRHhkOw) -- 来公众号：东野职场派
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：去年推荐过这篇文章，考虑到目前是金三银四，有些同学可能之前没有看过，因此再推荐一次。
+
+2、**面试官篇：知己知彼，面试官的关注点**
+
+2.1 [给面试者的一些建议](https://djs66256.github.io/2021/12/22/2021-12-22-%E7%BB%99%E9%9D%A2%E8%AF%95%E8%80%85%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BB%BA%E8%AE%AE/#more "给面试者的一些建议") -- 来自：苍耳的技术博客
+
+2.2 [面试过500+位候选人之后，想谈谈面试官视角的一些期待](https://mp.weixin.qq.com/s/kv-_oZObp7QRHeAbrkdfsA) -- 来公众号：东野职场派
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：以上两篇文章的观点本质上来说是一致的，面试官期望候选人是在平时工作中是有所思考和行动的人，而不是临时抱佛脚去应试。**因此用半年时间去刷题复习基础知识，不如用这个时间去认真打磨一个项目**。
+
+3、**候选人篇：近期面试的一些细节**
+
+3.1 [刚换工作，说点找工作相关的事情~](https://mp.weixin.qq.com/s/0BTRFr4m5FGH3fztIMkmVw) -- 来自公众号：皮拉夫大王在此
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：这是我本人近期的亲身经历，前段时间和几个朋友聊了聊换工作的事情。包括：该走该留？如何准备？如何写简历？如何投简历？面试中和面试后各有哪些问题？等等
+
+4、**最全基础知识整理**
+
+4.1 [《史上最全iOS八股文面试题》2022年](https://blog.51cto.com/u_15068388/5076104 "《史上最全iOS八股文面试题》2022年") -- 来自51CTO：宇夜iOS 
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：面试中多多少少会考察到部分基础知识，对基础不放心的同学可以看看。
 

@@ -1103,3 +1103,19 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 > 其中 Reveal、Lookin、FLEX 都有对应的`Tweak`，有越狱设备的小伙伴可以玩一玩；
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### Aria2GUI 
+
+**地址**：https://github.com/yangshun1029/aria2gui
+
+**软件状态**：免费
+
+**软件介绍**：
+
+`Aria2GUI` 是一款支持多种协议的轻量级命令行下载工具，可以轻松的下载离线资源。
+
+![Aria2GUI](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/687474703a2f2f692e696d6775722e636f6d2f4d455a7150397a2e706e67.png)
+
+
