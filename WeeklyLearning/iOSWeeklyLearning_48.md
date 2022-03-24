@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 第四十二期
+# iOS 摸鱼周报 第四十八期
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
 
@@ -12,7 +12,7 @@
 
 ## 本期话题
 
-[@zhangferry](https://zhangferry.com)：这期稍微聊一点 [「node-ipc 包以反战为名进行供应链投毒」](https://www.zhihu.com/question/522144107/answer/2391166752 "如何看待 node-ipc 包以反战为名进行供应链投毒？")这件事。这件事的原委是这样的，[node-ipc](https://github.com/RIAEvangelist/node-ipc "node-ipc")  是 npm 下的一个组件（iOS 开发可以将其理解为 CocoaPods 下的一个组件），其作者为了表达反战宣言，在该组件库里注入了恶意脚本，往用户的桌面和 OneDrive 里写一个文件，用于表达自己的政治观点。供应链的含义是你发布的软件所依赖的三方库、系统库、开发工具等组成的依赖链，你的软件属于其中一环，它受以上所有环节的影响。而供应链投毒的含义是，只要依赖链里有它，就会中招，其中就包括使用很广泛的 vue-cli 。
+[@zhangferry](https://zhangferry.com)：这期稍微聊一聊 [「node-ipc 包以反战为名进行供应链投毒」](https://www.zhihu.com/question/522144107/answer/2391166752 "如何看待 node-ipc 包以反战为名进行供应链投毒？")这件事。这件事的原委是这样的，[node-ipc](https://github.com/RIAEvangelist/node-ipc "node-ipc")  是 npm 下的一个组件（iOS 开发可以将其理解为 CocoaPods 下的一个组件），其作者为了表达反战宣言，在该组件库里注入了恶意脚本，往用户的桌面和 OneDrive 里写一个文件，用于表达自己的政治观点。供应链的含义是你发布的软件所依赖的三方库、系统库、开发工具等组成的依赖链，你的软件属于其中一环，它受以上所有环节的影响。而供应链投毒的含义是，只要依赖链里有它，就会中招，其中就包括使用很广泛的 vue-cli 。
 
 当前国内 nmp 镜像已经将 node-ipc 列入黑名单，该作者推特也遭黑客攻击，个人信息被人肉。
 
@@ -126,7 +126,7 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 
 ## 见闻
 
-> 这一周阅读或者观看到的有趣的讯息。
+> 这一周阅读/浏览到的有趣的资讯。
 
 1、[开源世界里的法律与政治](https://zhuangbiaowei.github.io/opensource/2022/03/07/law-and-politics-in-an-open-source-world.html "开源世界里的法律与政治") -- 来自博客：庄表伟
 
@@ -155,6 +155,18 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 * 人要不断的制造惊喜，制造幽默感，哪怕你在做一个重复的无趣的事情。除了务实的你，还要有一个调皮捣蛋，不断给出惊喜，带着玩乐心态的自己。（这一条跟我某些体验比较像）
 * 要有玩的集体感，不要有竞争感和情绪化，而是考虑大家一起创造的游戏体验。
 * 好好的去玩，要介于有目的性和无目的性之间，既要领悟，还要有神秘感。
+
+但理论毕竟是理论，个体感受是复杂的，很难定义标准，我们还应该结合自己的方式体会生活的快乐。
+
+4、[【亦】唠唠苹果 M1 Ultra：半导体新时代！](https://www.bilibili.com/video/BV1jS4y1g7xw "【亦】唠唠苹果M1 Ultra：半导体新时代！") -- 来自BiliBili：林亦LYi
+
+[@zhangferry](zhangferry.com)：不同于 M1 Ultra 的芯片测评，这期节目更多讲的是 M1 Ultra 的出现对半导体行业的影响。半导体行业有摩尔定律：当价格不变时，集成电路上可容纳的晶体管数目，约每隔 18 个月便会增加一倍，性能也将提升一倍。芯片制程从 5nm 到 3nm，摩尔定律还在生效，但它的物理极限也快到了。M1 Ultra 使用新一代缝合技术，在制程不变的情况下，靠两个芯片的拼接就完成了性能翻倍。而且这玩意可没有物理极限，这种依靠「缝合」技术来让性能翻倍带来的则是「摩尔定律 2.0 时代」。
+
+还有一点很有趣的地方，苹果对于 UltraFusion 的专利描述如下：
+
+![img](https://cdn.nlark.com/yuque/0/2022/png/2215058/1648133857555-8401b605-89bb-4d72-8d81-76de49f98603.png)
+
+在晶圆上排满 M1 Max 晶片，把相邻且联通达标的晶片找出来搭建信号通道，连上之后切割，作为M1 Ultra。对于跨电路通信有问题的晶片就单独拆成 M1 Max 来卖，M1 Max 来很复杂，万一也做坏了，可以横着来一刀变成 M1 Pro。M1 Pro 虽然没法再砍一刀变成 M1，但芯片里的 CPU、GPU 等还都可以复用到 M1 上（知道为啥 iPad 也上 M1 了吧。。） 。不得不说，苹果的这套设计确实强，这样不仅使得芯片造出来的良品很多，而且各种边角料都能复用，最大限度平摊芯片制造成本。
 
 ## 学习资料
 
