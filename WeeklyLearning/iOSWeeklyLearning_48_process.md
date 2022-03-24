@@ -134,6 +134,12 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Java 全栈知识体系
+
+**地址**：https://pdai.tech/
+
+以 Java 开发为背景的全栈开发知识体系，内容包含软件开发、算法、面试、架构、项目、产品团队以及一些方法论的思考。站内资源海量详实，文章和网站的排版和设计很规范，阅读起来非常舒适，也多有漂亮的示意图来帮助读者理解，内容非常丰富。关于这个网站的建立初衷以及介绍可以看[这里](https://pdai.tech/md/about/me/about-me.html#q2---%E5%81%9A%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88)。
+
 ## 见闻
 
 > 这一周阅读或者观看到的有趣的讯息。
