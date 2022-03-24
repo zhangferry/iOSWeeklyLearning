@@ -185,7 +185,7 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 
  `flomo` 是新一代卡片笔记工具，秉承尼克拉斯 · 卢曼（Niklas Luhmann）的卡片笔记法理念，让你能更好的利用碎片时间积累知识，建立知识间的关联。
 
-![flomo](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/pic_feature_product.png)
+![flomo](https://files.mdnice.com/user/15579/203f041f-a6ec-4d0a-af5b-599a579225c1.png)
 
 ### MoneyProgress
 
