@@ -40,7 +40,7 @@
 
 [@我是熊大](https://github.com/Tliens)：作者从生物专业转到程序员，从业余程序员到职业程序员。
 
-3、[如何提升你的能力？给年轻程序员的几条建议(https://tech.glowing.com/cn/advices-to-junior-developers/ "如何提升你的能力？给年轻程序员的几条建议") -- 来自Glow 技术团队博客
+3、[如何提升你的能力？给年轻程序员的几条建议](https://tech.glowing.com/cn/advices-to-junior-developers "如何提升你的能力？给年轻程序员的几条建议") -- 来自Glow 技术团队博客
 
 [@我是熊大](https://github.com/Tliens)：作者前后服务于NVIDIA、Google、Slide、Glow。在Glow，作者的个人的工作也从Developer，Tech Lead，Engineering Manager到CTO，他的看法可能会更全面。
 
