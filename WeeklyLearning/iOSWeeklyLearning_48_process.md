@@ -4,12 +4,11 @@
 
 ### 本期概要
 
-> * 话题：
+> * 话题：node-ipc 供应链投毒事件
 > * 面试模块：OC 对象弱引用指针标识位
 > * 优秀博客：程序员如何自我提升
-> * 见闻：
-> * 学习资料：
-> * 开发工具：
+> * 学习资料：以 Java 为背景的全栈知识体系
+> * 开发工具：新一代卡片笔记工具：flomo
 
 ## 本期话题
 
@@ -18,10 +17,6 @@
 当前国内 nmp 镜像已经将 node-ipc 列入黑名单，该作者推特也遭黑客攻击，个人信息被人肉。
 
 这件事算是结束了，但也暴露出开源社区的脆弱，谴责该作者之时，「**我们需要建立一种开源世界的反分裂共识**」，开源社区的规则不应该被政治因素打破。
-
-## 开发 Tips
-
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
 
 ## 面试解析
 
@@ -62,7 +57,7 @@
 
 我们在 `weak`创建流程中的关键函数 `storeWeak`中可以证实这一点，该函数在操作完弱引用表之后， 会设置对象的相关弱引用标识位，具体函数是`setWeaklyReferenced_nolock `
 
-```
+```c
 inline void
 objc_object::setWeaklyReferenced_nolock()
 {
@@ -105,7 +100,7 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 
 在对象释放过程中，查找对象关联弱引用的逻辑具体实现在 `objc_object::clearDeallocating()`中，如果判断是优化后 `isa`则调用 `clearDeallocating_slow`查找 `isa.weakly_referenced`；如果是未优化 `isa` 则调用 `objc_object::sidetable_clearDeallocating()`查找，可自行查看。
 
-另外关于 swift 弱引用可以学习 [周报四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw "周报四十五期")
+另外关于 swift 弱引用可以学习 [周报四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw)
 
 ## 优秀博客
 
@@ -128,16 +123,6 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 4、[程序员一定会有35岁危机吗](https://juejin.cn/post/6948239939809050638 "程序员一定会有35岁危机吗") -- 来自掘金：黄轶
 
 [@我是熊大](https://github.com/Tliens)：一个资深架构师的分享，正如他所说，企业并不是排斥大龄程序员，而是排斥能力与自己工龄不匹配的大龄程序员。
-
-## 学习资料
-
-整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
-
-### Java 全栈知识体系
-
-**地址**：https://pdai.tech/
-
-以 Java 开发为背景的全栈开发知识体系，内容包含软件开发、算法、面试、架构、项目、产品团队以及一些方法论的思考。站内资源海量详实，文章和网站的排版和设计很规范，阅读起来非常舒适，也多有漂亮的示意图来帮助读者理解，内容非常丰富。关于这个网站的建立初衷以及介绍可以看[这里](https://pdai.tech/md/about/me/about-me.html#q2---%E5%81%9A%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88)。
 
 ## 见闻
 
@@ -170,6 +155,16 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 * 人要不断的制造惊喜，制造幽默感，哪怕你在做一个重复的无趣的事情。除了务实的你，还要有一个调皮捣蛋，不断给出惊喜，带着玩乐心态的自己。（这一条跟我某些体验比较像）
 * 要有玩的集体感，不要有竞争感和情绪化，而是考虑大家一起创造的游戏体验。
 * 好好的去玩，要介于有目的性和无目的性之间，既要领悟，还要有神秘感。
+
+## 学习资料
+
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Java 全栈知识体系
+
+**地址**：https://pdai.tech/
+
+以 Java 开发为背景的全栈开发知识体系，内容包含软件开发、算法、面试、架构、项目、产品团队以及一些方法论的思考。站内资源海量详实，文章和网站的排版和设计很规范，阅读起来非常舒适，也多有漂亮的示意图来帮助读者理解，内容非常丰富。关于这个网站的建立初衷以及介绍可以看[这里](https://pdai.tech/md/about/me/about-me.html#q2---%E5%81%9A%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E4%BB%80%E4%B9%88 "Java 全栈知识体系建设初衷")。
 
 ## 工具推荐
 
@@ -207,12 +202,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS摸鱼周报 第四十七期](https://mp.weixin.qq.com/s/X6lPQ5qwY1epF6fEUhvCpQ)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS摸鱼周报 第四十六期](https://mp.weixin.qq.com/s/8Wpfk9yxpjwaDXN7iXIcvQ)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第四十四期](https://mp.weixin.qq.com/s/q__-veuaUZAK6xGQFxzsEg)
 
 ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
