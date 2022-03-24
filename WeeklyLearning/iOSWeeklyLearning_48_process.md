@@ -29,7 +29,7 @@
 
 ### OC 对象如何知道存在关联的弱引用指针
 
-我们都知道在释放对象之前会检查是否存在弱引用指针， 而判断OC 对象存在弱引用的依据是什么呢？
+我们都知道在释放对象之前会检查是否存在弱引用指针， 而判断 OC 对象存在弱引用的依据是什么呢？
 
 如果卷过八股文，肯定了解 `isa` 优化过后使用了 `union`存储更多的数据，其中有一个 `bit:weakly_referenced`是和弱引用指针相关的。
 
@@ -53,9 +53,9 @@
 在学习内存管理 `release & retain`流程时，发现引用计数表都是通过 `SIDE_TABLE_RC_ONE` 进行增减操作的。并未直接获取到引用计数后进行 `+/- 1`。该掩码定义处还给出了其他的定义：
 
 ```cpp
-#define SIDE_TABLE_WEAKLY_REFERENCED (1UL<<0) 
-#define SIDE_TABLE_DEALLOCATING      (1UL<<1)  // MSB-ward of weak bit 
-#define SIDE_TABLE_RC_ONE            (1UL<<2)  // MSB-ward of deallocating bit 
+#define SIDE_TABLE_WEAKLY_REFERENCED (1UL<<0)
+#define SIDE_TABLE_DEALLOCATING      (1UL<<1)  // MSB-ward of weak bit
+#define SIDE_TABLE_RC_ONE            (1UL<<2)  // MSB-ward of deallocating bit
 ```
 
 从定义大概猜到，引用计数表中获取到的数值，从第三位开始是真正的引用计数。第一位是用来表示是否存在弱引用指针的。第二位表示正在析构中。
@@ -75,7 +75,7 @@ objc_object::setWeaklyReferenced_nolock()
             sidetable_setWeaklyReferenced_nolock();
             return;
         }
-        
+
         // 优化过的 isa
         if (newisa.weakly_referenced) {
             ClearExclusive(&isa.bits);
@@ -86,15 +86,15 @@ objc_object::setWeaklyReferenced_nolock()
 }
 
 // 引用技术表中设置标识位
-void 
+void
 objc_object::sidetable_setWeaklyReferenced_nolock()
 {
 #if SUPPORT_NONPOINTER_ISA
     ASSERT(!isa.nonpointer);
 #endif
-  
+
     SideTable& table = SideTables()[this];
-  
+
     table.refcnts[this] |= SIDE_TABLE_WEAKLY_REFERENCED;
 }
 ```
@@ -108,7 +108,6 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 另外关于 swift 弱引用可以学习 [周报四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw "周报四十五期")
 
 ## 优秀博客
-
 
 整理编辑：[@我是熊大](https://github.com/Tliens)
 
@@ -187,6 +186,20 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
  `flomo` 是新一代卡片笔记工具，秉承尼克拉斯 · 卢曼（Niklas Luhmann）的卡片笔记法理念，让你能更好的利用碎片时间积累知识，建立知识间的关联。
 
 ![flomo](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/pic_feature_product.png)
+
+### MoneyProgress
+
+**地址**：https://github.com/Lakr233/MoneyProgress
+
+**软件状态**：免费
+
+**软件介绍**：
+
+老王的又一力作：钱条。
+
+> 上班的进度条，开始搬砖吧。
+
+![MoneyProgress](https://files.mdnice.com/user/15579/65fa2fe0-11ad-4a00-9d5f-4007ebb2edab.png)
 
 ## 关于我们
 
