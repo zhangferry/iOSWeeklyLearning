@@ -120,7 +120,7 @@ objc_object::sidetable_setWeaklyReferenced_nolock()
 
 [@我是熊大](https://github.com/Tliens)：作者前后服务于NVIDIA、Google、Slide、Glow。在Glow，作者的个人的工作也从Developer，Tech Lead，Engineering Manager到CTO，他的看法可能会更全面。
 
-4、[程序员一定会有35岁危机吗](https://juejin.cn/post/6948239939809050638 "程序员一定会有35岁危机吗") -- 来自掘金：黄轶
+4、[程序员一定会有35岁危机吗](https://juejin.cn/post/7012542827204706318 "程序员一定会有35岁危机吗") -- 来自掘金：黄轶
 
 [@我是熊大](https://github.com/Tliens)：一个资深架构师的分享，正如他所说，企业并不是排斥大龄程序员，而是排斥能力与自己工龄不匹配的大龄程序员。
 
