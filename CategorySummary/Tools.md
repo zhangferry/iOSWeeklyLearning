@@ -1119,3 +1119,32 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 ![Aria2GUI](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/687474703a2f2f692e696d6775722e636f6d2f4d455a7150397a2e706e67.png)
 
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### flomo
+
+**地址**：https://flomoapp.com/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+ `flomo` 是新一代卡片笔记工具，秉承尼克拉斯 · 卢曼（Niklas Luhmann）的卡片笔记法理念，让你能更好的利用碎片时间积累知识，建立知识间的关联。
+
+![flomo](https://files.mdnice.com/user/15579/203f041f-a6ec-4d0a-af5b-599a579225c1.png)
+
+### MoneyProgress
+
+**地址**：https://github.com/Lakr233/MoneyProgress
+
+**软件状态**：免费
+
+**软件介绍**：
+
+老王的又一力作：钱条。
+
+> 上班的进度条，开始搬砖吧。
+
+![MoneyProgress](https://files.mdnice.com/user/15579/65fa2fe0-11ad-4a00-9d5f-4007ebb2edab.png)
+

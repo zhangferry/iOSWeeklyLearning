@@ -1375,3 +1375,24 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：面试中多多少少会考察到部分基础知识，对基础不放心的同学可以看看。
 
+***
+整理编辑：[@我是熊大](https://github.com/Tliens)
+
+> 本期优秀博客的主题为：程序员如何自我提升。学习前辈们的经验，找到适合自己的路径。
+
+1、[程序员如何在业余时间提升自己](https://juejin.cn/post/6995079191548936223 "程序员如何在业余时间提升自己") -- 来自掘金：阿里巴巴大淘宝技术
+
+[@我是熊大](https://github.com/Tliens)：工作本身就很忙碌，如何在繁忙的工作中利用碎片化时间学习或是做自己感兴趣的事情，来自4名淘系技术的工程师的分享。
+
+2、[阿里毕玄：程序员如何提升自己的硬实力](https://segmentfault.com/a/1190000018005178 "阿里毕玄：程序员如何提升自己的硬实力") -- 来自segmentfault：阿里云云栖号
+
+[@我是熊大](https://github.com/Tliens)：作者从生物专业转到程序员，从业余程序员到职业程序员。
+
+3、[如何提升你的能力？给年轻程序员的几条建议](https://tech.glowing.com/cn/advices-to-junior-developers "如何提升你的能力？给年轻程序员的几条建议") -- 来自Glow 技术团队博客
+
+[@我是熊大](https://github.com/Tliens)：作者前后服务于NVIDIA、Google、Slide、Glow。在Glow，作者的个人的工作也从Developer，Tech Lead，Engineering Manager到CTO，他的看法可能会更全面。
+
+4、[程序员一定会有35岁危机吗](https://juejin.cn/post/6948239939809050638 "程序员一定会有35岁危机吗") -- 来自掘金：黄轶
+
+[@我是熊大](https://github.com/Tliens)：一个资深架构师的分享，正如他所说，企业并不是排斥大龄程序员，而是排斥能力与自己工龄不匹配的大龄程序员。
+

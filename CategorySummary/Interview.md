@@ -2666,3 +2666,86 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 	- 缺点：默认把项目的依赖全部改为动态库（可使用 `use_modular_headers!`，也可以在 `podsepc` 添加 `s.static_framework = true` 规避）
 	- `CocoaPods` 执行脚本把动态库嵌入到 `.app` 的 `Framework` 目录下（相当于在 `Embedded Binaries` 加入动态库）
 
+***
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### OC 对象如何知道存在关联的弱引用指针
+
+我们都知道在释放对象之前会检查是否存在弱引用指针， 而判断 OC 对象存在弱引用的依据是什么呢？
+
+如果卷过八股文，肯定了解 `isa` 优化过后使用了 `union`存储更多的数据，其中有一个 `bit:weakly_referenced`是和弱引用指针相关的。
+
+在弱引用对象创建成功后，会去设置该位的值为 1。结构如下：
+
+```cpp
+#     define ISA_BITFIELD                                                      \
+        uintptr_t nonpointer        : 1;                                       \
+        uintptr_t has_assoc         : 1;                                       \
+        uintptr_t has_cxx_dtor      : 1;                                       \
+        uintptr_t shiftcls          : 33; /*MACH_VM_MAX_ADDRESS 0x1000000000*/ \
+        uintptr_t magic             : 6;                                       \
+        uintptr_t weakly_referenced : 1;                                       \
+        uintptr_t unused            : 1;                                       \
+        uintptr_t has_sidetable_rc  : 1;                                       \
+        uintptr_t extra_rc          : 19
+```
+
+但是未优化的 `isa`存储的是类对象的内存地址，不能存储弱引用信息， 那么它关联的弱引用信息应该存储在哪？答案是 **引用计数表**。
+
+在学习内存管理 `release & retain`流程时，发现引用计数表都是通过 `SIDE_TABLE_RC_ONE` 进行增减操作的。并未直接获取到引用计数后进行 `+/- 1`。该掩码定义处还给出了其他的定义：
+
+```cpp
+#define SIDE_TABLE_WEAKLY_REFERENCED (1UL<<0)
+#define SIDE_TABLE_DEALLOCATING      (1UL<<1)  // MSB-ward of weak bit
+#define SIDE_TABLE_RC_ONE            (1UL<<2)  // MSB-ward of deallocating bit
+```
+
+从定义大概猜到，引用计数表中获取到的数值，从第三位开始是真正的引用计数。第一位是用来表示是否存在弱引用指针的。第二位表示正在析构中。
+
+我们在 `weak`创建流程中的关键函数 `storeWeak`中可以证实这一点，该函数在操作完弱引用表之后， 会设置对象的相关弱引用标识位，具体函数是`setWeaklyReferenced_nolock `
+
+```c
+inline void
+objc_object::setWeaklyReferenced_nolock()
+{
+    isa_t newisa, oldisa = LoadExclusive(&isa.bits);
+    do {
+        newisa = oldisa;
+        // 未优化的 isa
+        if (slowpath(!newisa.nonpointer)) {
+            ClearExclusive(&isa.bits);
+            sidetable_setWeaklyReferenced_nolock();
+            return;
+        }
+
+        // 优化过的 isa
+        if (newisa.weakly_referenced) {
+            ClearExclusive(&isa.bits);
+            return;
+        }
+        newisa.weakly_referenced = true;
+    } while (slowpath(!StoreExclusive(&isa.bits, &oldisa.bits, newisa.bits)));
+}
+
+// 引用技术表中设置标识位
+void
+objc_object::sidetable_setWeaklyReferenced_nolock()
+{
+#if SUPPORT_NONPOINTER_ISA
+    ASSERT(!isa.nonpointer);
+#endif
+
+    SideTable& table = SideTables()[this];
+
+    table.refcnts[this] |= SIDE_TABLE_WEAKLY_REFERENCED;
+}
+```
+
+`setWeaklyReferenced_nolock `判断如果是优化过的 `isa` 直接设置对应的 `weakly_referenced = 1` 。
+
+如果是非优化的 `isa`，则通过查找引用计数表设置对应的位置为 1。
+
+在对象释放过程中，查找对象关联弱引用的逻辑具体实现在 `objc_object::clearDeallocating()`中，如果判断是优化后 `isa`则调用 `clearDeallocating_slow`查找 `isa.weakly_referenced`；如果是未优化 `isa` 则调用 `objc_object::sidetable_clearDeallocating()`查找，可自行查看。
+
+另外关于 swift 弱引用可以学习 [周报四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw)
+
