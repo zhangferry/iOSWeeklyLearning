@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 第三十二期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -35,7 +35,7 @@
 
 #### 前后端交流的困境
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211104223956.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211104223956.png)
 
 由于前端直接与服务端进行对接，会导致以下问题：
 
@@ -86,7 +86,7 @@ BFF 理念中最重要的一点是 **服务自治**，谁用谁处理。通过�
 
 服务端可以限制只有中间层才能对后台进行访问，降低攻击的可能性。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211104224017.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211104224017.png)
 
 #### 中间层的限制及滥用
 
@@ -190,7 +190,7 @@ Fucking SwiftUI 是一个关于 SwiftUI 的 Cheat Sheet。这上面有许多许�
 
 `ipatool` 是一个允许你在 `App Store` 上搜索 iOS 应用程序并下载应用程序包的命令行工具。当然，这过程中需要你的账户以及密码，并且也只能下载账户过去已经下载过的应用程序。相对于使用 `Apple Configurator 2` 操作更加便捷一些。
 
-![ipatool](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/demo.gif)
+![ipatool](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/demo.gif)
 > 注意 gif 中的 `ipa` 命令实际使用中可能为 `ipatool`
 
 ## 关于我们
@@ -207,4 +207,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第二十八期](https://mp.weixin.qq.com/s/dKOkF_P5JvQnDLq09DOzaQ)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)

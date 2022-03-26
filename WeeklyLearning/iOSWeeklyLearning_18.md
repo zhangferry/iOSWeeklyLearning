@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十八期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -35,7 +35,7 @@
 
 图片来源：[iOS-Tips](https://github.com/awesome-tips/iOS-Tips/blob/master/resources/fastlane.png)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/fastlane.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/fastlane.png)
 
 ### React Native 0.59.9 引发手机发烫问题解决思路
 
@@ -259,7 +259,7 @@ Git Cheat Sheet 让你不用再去记所有的 git 命令！对新手友好，�
 
 一款强大的代码片段管理工具，从此告别手动复制粘贴，SnippetsLab 的设计更符合 Apple 的交互习惯，支持导航栏快速操作。另外还可以同步 Github Gist 内容，使用 iCloud 备份。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210710232333.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210710232333.png)
 
 ### CodeExpander
 
@@ -271,7 +271,7 @@ Git Cheat Sheet 让你不用再去记所有的 git 命令！对新手友好，�
 
 专为开发者开发的一个集输入增强、代码片段管理工具，支持跨平台，支持云同步（Github/码云）。免费版包含 90% 左右功能，相对 SnippetsLab 来说其适用范围更广泛，甚至包括一些日常文本的片段处理。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210710231521.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210710231521.png)
 
 
 
@@ -289,4 +289,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)

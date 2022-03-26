@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 第四十六期
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -23,7 +23,7 @@
 
 * 10 个多媒体处理引擎，用于提升视频的编解码能力，对 H264/HEVC/ProRes/ProRes RAW 处理有硬件层面的加速。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/image-20220310224908485.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/image-20220310224908485.png)
 
 当然这么强大的芯片要有一个产品使用，它就是 Mac Studio。这是一条新的产品线，它看上去像是 Mac Mini 「加厚」版，但得益于其强大的性能，它的定位确是工作站。到目前为止 Mac 端的产品线基本都用上 M1 了，除了 Mac Pro。Mac Pro 之前的定位也是工作站，从「垃圾桶」进化到「行李箱」，它作为苹果性能的最强代表不断惊艳着我们，但随着 M1 的到来，这两款产品都不香了，更不用说「行李箱」起售价就 47999。虽然 M1 Ultra 已经让我们大呼苹果不讲武德了，但发布会结尾特意提了一下 Mac Pro，这很有理由相信作为性能天花板的 Mac Pro 的下一代才是真正的大杀器。
 
@@ -293,11 +293,11 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 
 注释 `for`代码后跳转用的 `b`指令，所以 `lr` 寄存器存储的是调用方调用 `takeModel`函数后的指令地址
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_45_interview_02.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/weekly_45_interview_02.png)
 
 有 `for` 循环时，跳转到 `objc_autoreleaseReturnValue`的汇编指令是 `bl`。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_45_interview_01.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/weekly_45_interview_01.png)
 
 `bl`表示执行完函数后继续执行后续指令，后续汇编指令目的主要是为了检测是否存在函数调用栈溢出操作，详细解释可以参考[Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/)。这造成我们上面提到的 `__builtin_return_address()`函数获取到的返回值下一条指令地址，并不是优化标识指令 `mov x29 x29`，而是检测代码指令，导致优化未开启。
 
@@ -383,4 +383,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十二期](https://mp.weixin.qq.com/s/ybANWeLNHPOTkr5_alha9g)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)

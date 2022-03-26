@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二十六期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -89,7 +89,7 @@ zhangferry：在你看来要做独立开发需要具备哪些重要技能呢？
 
 以下是正常模式，当我们移动发生位移修改时，执行函数回调。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/callback.gif)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/callback.gif)
 
 这个执行明显太频繁了，所以需要有一种方法来减少执行次数，节流和防抖就是这样的方法。
 
@@ -233,7 +233,7 @@ NSKVONotifying_A 除了重写 setter 方法外，还重写了 class、dealloc、
 
 作为号主通常会将文章发布到多个平台，每个平台都重复地登录、复制、粘贴是一件很麻烦的事。Wechatsync就是这样一款解脱重复工作的神器。它是一款 Chrome 浏览器插件，支持多个平台的文章发布，这需要我们提前登录各个平台获得授权。它会自动识别公众号文章，弹出「同步该文章」按钮，然后点击就可以同步文章到我们授权的平台。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210904171532.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210904171532.png)
 
 ## 关于我们
 
@@ -249,4 +249,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第二十二期](https://mp.weixin.qq.com/s/JI5mlzX9cYhXJS81k1WE6A)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)

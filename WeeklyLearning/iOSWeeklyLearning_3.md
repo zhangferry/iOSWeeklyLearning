@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
@@ -277,7 +277,7 @@ Command Line Tools 是 一个运行在macos上的命令行工具集，它的安�
 
 咸鱼团队对Flutter技术的探索与实战分析，听说他们已经在准备写第二本Flutter书了。可以关注公众号：**咸鱼技术获取**，后台免费获取，另有实体书可以淘宝搜索购买。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110171712.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110171712.png)
 
 ### 《Flutter开发实站详解》
 
@@ -285,7 +285,7 @@ Command Line Tools 是 一个运行在macos上的命令行工具集，它的安�
 
 地址：[GSY Flutter](https://guoshuyu.cn/home/wx/ "GSY Flutter ")
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110172952.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110172952.png)
 
 ## 工具推荐
 
@@ -307,7 +307,7 @@ Mac上非常好用的解压缩软件：
 * 支持批量文件加密。
 * 支持压缩包预览
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110110014.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110110014.png)
 
 ### uTools
 
@@ -321,7 +321,7 @@ Mac上非常好用的解压缩软件：
 
 uTools是一个丰富的生产力工具集，支持将近百种的插件。它的使用方式和 Alfred 类似，通过快捷键调出输入框，并通过特殊指令执行结果。但它有比 Alfred 更简单的插件集成方式，在我看来它是更易用的。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110110536.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110110536.png)
 
 ## 联系我们
 
@@ -329,4 +329,4 @@ uTools是一个丰富的生产力工具集，支持将近百种的插件。它�
 
 [摸鱼周报第二期](https://zhangferry.com/2021/01/03/iOSWeeklyLearning_2/)
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)

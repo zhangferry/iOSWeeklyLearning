@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二十八期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -68,7 +68,7 @@ ease 表示减缓，所以 easeInOut 表示，进入和完成都是减缓的，�
 
 缓动函数并非特定的某一个函数，它有不同的拟合方式，不同形式的拟合效果可以参看[下图](https://easings.net/ "easings.net")：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210920125221.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210920125221.png)
 
 缓动函数名例如 easeInSine 后面的 Sine 就是拟合类型，其对应的就是三角函数拟合。常见的还有二次函数 Quad，三次函数 Cubic 等。以上函数有对应的 [TypeScript 源码](https://github.com/ai/easings.net/blob/33774b5880a787e467d6f4f65000608d17b577e2/src/easings/easingsFunctions.ts "easingsFunctions.ts")，有了具体的计算规则，我们就可以将缓动效果应用到颜色渐变等各个方面。以下是三角函数和二次函数拟合的 Swift 版本：
 
@@ -213,7 +213,7 @@ objc_msgSend 执行流程通常分为三大阶段：`消息发送`、`动态方�
 
 AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐槽，如果你也经历过这些事情可以试下 Xcodes。Xcodes 是一个 Xcode 下载管理器，支持下载不同版本的 Xcode，还可以切换默认版本。如果你喜欢命令行，还可以使用其[命令行版本](https://github.com/RobotsAndPencils/xcodes "xcodes")进行安装。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/xcodes.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/xcodes.png)
 
 
 ## 关于我们
@@ -230,4 +230,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第二十四期](https://mp.weixin.qq.com/s/vXyD_q5p2WGdoM_YmT-iQg)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)

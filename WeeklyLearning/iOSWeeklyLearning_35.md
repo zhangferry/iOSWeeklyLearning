@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十五期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -48,7 +48,7 @@ extension Set {
 
 因为涉及多个协议和具体类型，这里放一张表示这几个协议和类型之间的关系图。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211126004620.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211126004620.png)
 
 [图片来源](https://itwenty.me/2021/10/understanding-swifts-collection-protocols/ "图片来源")
 
@@ -147,7 +147,7 @@ extension Set {
 
 我们可以考虑用在给应用瘦身时扫描相似图片资源场景下。
 
-![PhotoSweeper](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/PhotoSweeper_MacBook.jpeg)
+![PhotoSweeper](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/PhotoSweeper_MacBook.jpeg)
 
 ## 关于我们
 
@@ -163,4 +163,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第三十一期](https://mp.weixin.qq.com/s/DQpsOw90UsRg6A5WDyT_pg)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)

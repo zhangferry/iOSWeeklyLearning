@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十六期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -15,7 +15,7 @@
 
 [@zhangferry](https://zhangferry.com)：知名 Markdown 编辑软件 Typora ，最近迎来了最新的 1.0 版本（正式版）。这次更新功能上没啥大变化，最大的变化是从之前的免费变为了付费。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211203010042.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211203010042.png)
 
 这在官方 Github 的 [Issus](https://github.com/typora/typora-issues "typora-issue") 里早有说明：
 
@@ -118,7 +118,7 @@ Typora 的收费标准：89 元（可支付宝）、买断制（终身）、最�
 
 思源笔记是一款本地优先的个人知识管理系统， 支持细粒度块级引用和 Markdown 所见即所得。
 
-![siyuan-note](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73697975616e2d6e6f74652f73697975616e40383438393339373430316366353032356561623834376466623236613466333839366265353336332f73637265656e73686f74732f66656174757265302e706e67.png)
+![siyuan-note](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73697975616e2d6e6f74652f73697975616e40383438393339373430316366353032356561623834376466623236613466333839366265353336332f73637265656e73686f74732f66656174757265302e706e67.png)
 
 
 ## 关于我们
@@ -135,4 +135,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第三十二期](https://mp.weixin.qq.com/s/6CyL0B6Zkf6KXRrfocohoQ)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)

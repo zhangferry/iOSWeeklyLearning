@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第六期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
@@ -156,7 +156,7 @@ ER图是 Entity Relationship Diagram 的简写，也叫实体关系图，它主�
 
 使用直线将联系的各方进行连接。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210314140748.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210314140748.png)
 
 横线表示键，双矩形表示弱实体，成绩单依赖于学生而不可单独存在。
 
@@ -194,7 +194,7 @@ ER图是 Entity Relationship Diagram 的简写，也叫实体关系图，它主�
 
 ### iOS开发者资源大全
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313212015.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210313212015.png)
 
 **推荐来源**：[cat13954](https://github.com/cat13954)
 
@@ -224,7 +224,7 @@ ER图是 Entity Relationship Diagram 的简写，也叫实体关系图，它主�
 
 F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色，白天亮度像太阳光，在夜间时会让屏幕看着更像是室内光。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210314141348.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210314141348.png)
 
 
 
@@ -240,7 +240,7 @@ F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色
 
 一款开源且简洁高效的屏幕录制软件，可以导出为GIF，MP4，WebM，APNG等格式，而且会有很不错的压缩率。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211617.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210313211617.png)
 
 鉴于微信公众号对GIF的两条限制：
 
@@ -266,7 +266,7 @@ F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色
 
 上传需要压缩的gif文件即可
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211739.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210313211739.png)
 
 ## 联系我们
 
@@ -276,4 +276,4 @@ F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色
 
 [摸鱼周报第五期](https://zhangferry.com/2021/02/28/iOSWeeklyLearning_5/)
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)

@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第七期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
@@ -24,7 +24,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 测试项目有27个动态库，其中6个是用Carthage集成的，21个是用CocoaPods集成的。把他们全部转成静态库之后，软件Size降低了14.55%，启动时间降低了35%左右，主要是降低了动态库的加载时间，以下是各阶段详细的时间对比：
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210328160207.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210328160207.png)
 
 这里启动时间降低好理解，大小降低是因为啥呢，是因为静态库时编译器移除了无用的符号表。
 
@@ -63,7 +63,7 @@ ssh登录流程为：
 
 ### 什么是Nginx
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/nginx.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/nginx.png)
 
 Nginx是一款轻量级的Web服务器、反向代理服务器，由于其开源、内存占用少，启动快，高并发能力强，在互联网项目中广泛应用；同时它还是一个IMAP、POP3、SMTP代理服务器，还可以作为反向代理进行负载均衡的实现。
 
@@ -85,7 +85,7 @@ Nginx可以用于实现负载均衡，也提供了以上几种分配算法实现
 
 ### 什么是Apache
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/apache.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/apache.png)
 
 Apache有多个含义：
 
@@ -97,7 +97,7 @@ Apache有多个含义：
 
 ### 什么是Tomcat
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/tomcat.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/tomcat.png)
 
 Tomcat是由Apache基金会推出的一款开源的可实现JavaWeb程序的Web服务器框架，它是配置JSP（Java Server Page）和JAVA系统必备的一款环境。
 
@@ -105,7 +105,7 @@ Tomcat是由Apache基金会推出的一款开源的可实现JavaWeb程序的Web�
 
 ### 什么是Docker 
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210326231951.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210326231951.png)
 
 理解Docker之前需要知道容器的概念，容器就是一个封闭的开发环境，类似移动端的沙盒，每个沙盒都可以配置不同的程序，甚至相同程序的不同版本，我在沙盒做的操作不会影响别的沙盒程序。
 
@@ -145,7 +145,7 @@ Docker是一家公司，它还做了一个好事情，就是供了很多配置�
 
 作者在每个章节都会设计一些问题，答对了才能进到下一章节。前面几节在讲人工智能学习的一些概念和核心数学思想，最后的两个章节属于练习题，我感觉还是有点难的。但课程整体还是很有意思的，如果想了解可以买来看看。下图是课程的目录：
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210328103223.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210328103223.png)
 
 ## 工具推荐
 
@@ -175,7 +175,7 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 
 以下是作为mergetool的界面，下面内容为最终合并的内容，我们可以通过右侧的扩展按钮选择当前应该选择哪个分支的内容。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210327200304.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210327200304.png)
 
 ## ProfilesManager
 
@@ -196,7 +196,7 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 5. 免费使用：而在App Store上类似功能的软件居然还要收费？？？
 6. 可排序和过滤：通过关键词筛选过滤找到想要的文件，也可以通过头部标签排序文件
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210327112346.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210327112346.png)
 
 ## 联系我们
 
@@ -208,4 +208,4 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 
 [摸鱼周报第六期](https://zhangferry.com/2021/03/14/iOSWeeklyLearning_6/)
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)

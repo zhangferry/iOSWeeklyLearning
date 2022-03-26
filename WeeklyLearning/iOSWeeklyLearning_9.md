@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第九期
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/iOS摸鱼周报模板.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
@@ -82,7 +82,7 @@ $ /bin/bash -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Home
 
 ### 什么是 Ruby
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/ruby_image.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/ruby_image.png)
 
 Ruby 是一种开源的面向对象程序设计的服务器端脚本语言，在 20 世纪 90 年代中期由日本的松本行弘设计并开发。在 Ruby 社区，松本也被称为马茨（Matz）。 
 
@@ -102,7 +102,7 @@ Ruby的设计和Objective-C有些类似，都是受Smalltalk的影响。而这�
 
 ### 什么是 Rails
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210419223057.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210419223057.png)
 
 Rails（也叫Ruby on Rails）框架首次提出是在 2004 年 7 月，它的研发者是 26 岁的丹麦人 David Heinemeier Hansson。Rails 是使用 Ruby 语言编写的 Web 应用开发框架，目的是通过解决快速开发中的共通问题，简化 Web 应用的开发。与其他编程语言和框架相比，使用 Rails 只需编写更少代码就能实现更多功能。有经验的 Rails 程序员常说，Rails 让 Web 应用开发变得更有趣。
 
@@ -112,7 +112,7 @@ Rails的两大哲学是：不要自我重复（DRY），多约定，少配置。
 
 ### 什么是 rbenv 
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/rbenv_image.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/rbenv_image.png)
 
 [rbenv](https://github.com/rbenv/rbenv "rbenv") 和 RVM 都是目前流行的 Ruby 环境管理工具，它们都能提供不同版本的 Ruby 环境管理和切换。
 
@@ -176,7 +176,7 @@ RubyGems 还提供了 Ruby 组件的托管服务，可以集中式的查找和�
 
 ### 什么是 Bundler
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210419225753.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210419225753.png)
 
 [Bundler](https://www.bundler.cn/ "Bundler") 是一个管理 Gem 依赖的 Gem，用来检查和安装指定 Gem 的特定版本，它可以隔离不同项目中 Gem 的版本和依赖环境的差异。
 
@@ -243,7 +243,7 @@ $ bundle exec fastlane beta
 
 入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210420215429.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210420215429.png)
 
 ## 开发利器
 
@@ -288,4 +288,4 @@ SnippetsLab是一款mac代码片段管理工具，使用SnippetsLab可以提高�
 
 [摸鱼周报第八期](https://zhangferry.com/2021/04/11/iOSWeeklyLearning_8/)
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)

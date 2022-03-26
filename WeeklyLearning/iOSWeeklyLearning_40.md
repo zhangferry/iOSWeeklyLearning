@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第四十期
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -31,13 +31,13 @@ Clang 中有预编译宏的概念，在 Xcode 中其对应的是 Build Setting -
 
 如果需要新增 Configuration，比如 Stage，我们想要一个新的预编译宏比如 STAGE 表示它，如果这么做：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220106190930.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220106190930.png)
 
 在 Objective-C 的代码中是可行的，对于 Swift 代码则无效。这是因为 Swift 使用的编译器是 swiftc，它无法识别 clang 里定义的预编译宏。
 
 解决方案是利用 `SWIFT_ACTIVE_COMPILATION_CONDITIONS` 这个配置变量，它对应 Build Setting 里的 Active Compilation Conditions。做如下设置即可让 STAGE 宏供 Swift 代码使用：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220106192217.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220106192217.png)
 
 ## 面试解析
 
@@ -51,7 +51,7 @@ dyld 是动态加载器，它主要用于动态库的链接和程序启动加载
 
 [dyld2](https://github.com/opensource-apple/dyld/tree/master/src "dyld开源地址") 从 iOS 3.1 开始引入，一直到 iOS 12 被 dyld 3 全面代替。它经过了很多次版本迭代，我们现在常见的特性比如 ASLR，Code Sign，Shared Cache 等技术，都是在 dyld 2 中引入的。dyld 2 的执行流程是这样的：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220104235847.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220104235847.png)
 
 - 解析 `mach-o` 头文件，找到依赖库，依赖库又可能有别的依赖，这里会进行递归分析，直到获得所有 dylib 的完整图。这里数据庞大，需要进行大量的处理；
 - 映射所有 `mach-o` 文件，将它们放入地址空间；
@@ -68,7 +68,7 @@ dyld 3 最大的特点就是引入了启动闭包，闭包里包含了启动所�
 
 最重要的特性就是启动闭包，闭包里包含了启动所需要的缓存信息，从而提高启动速度。下图是 dyld 2 和 dyld 3 的执行步骤对比：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220105001119.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220105001119.png)
 
 dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程外执行，以下进程创建时执行：
 
@@ -92,7 +92,7 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 其中前端受语言影响，Objective-C 和 Swift 对应的前端分别是 clang 和 swiftc。下图整理了两种语言的编译流程：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/ios_compiler.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/ios_compiler.png)
 
 #### 前端
 
@@ -178,7 +178,7 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 `Tig` 是一个 `git` 资源库浏览器，采用 `ncurses` 开发，很适合习惯使用命令行进行 `git` 操作的小伙伴们。
 
-![Tig](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_20220106.png)
+![Tig](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Snipaste_20220106.png)
 
 ## 关于我们
 
@@ -194,4 +194,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第三十六期](https://mp.weixin.qq.com/s/K_JHs1EoEn222huWIoJRmA)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)

@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第四十七期
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/moyu_weekly_cover.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -194,7 +194,7 @@ defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 
 网站是目前人们获取信息最重要的途径之一，英语网站远超其他语种，也反应了当前英语世界的话语权是更大的。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220316231714.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220316231714.png)
 
 
 ## 学习资料
@@ -207,7 +207,7 @@ defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 
 一本 Rust 书籍，有简体和繁体版（英文版和日文版正在撰写中），内容包括算法分析，基本数据结构和算法，外加一些实战，共有九章。包含了大家常用的常见的数据结构的实现和讲解，配有详实的代码和清晰简明的图解。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/%E6%88%AA%E5%B1%8F2022-03-17%20%E4%B8%8B%E5%8D%886.37.13.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/%E6%88%AA%E5%B1%8F2022-03-17%20%E4%B8%8B%E5%8D%886.37.13.png)
 
 ## 工具推荐
 
@@ -223,7 +223,7 @@ defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 
 `Aria2GUI` 是一款支持多种协议的轻量级命令行下载工具，可以轻松的下载离线资源。
 
-![Aria2GUI](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/687474703a2f2f692e696d6775722e636f6d2f4d455a7150397a2e706e67.png)
+![Aria2GUI](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/687474703a2f2f692e696d6775722e636f6d2f4d455a7150397a2e706e67.png)
 
 
 ## 关于我们
@@ -240,4 +240,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十三期](https://mp.weixin.qq.com/s/Ktk5wCMPZQ5E-UASwHD7uw)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
