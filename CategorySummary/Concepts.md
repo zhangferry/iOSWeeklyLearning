@@ -62,7 +62,7 @@ launchd是macOS第一个启动的进程，它的pid为1，整个系统的其他�
 ***
 ### 什么是Clang
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/clang.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/clang.png)
 
 Clang 是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它的目标是提供一个GNU编译器套装（GCC）的替代品，支持了GNU编译器大多数的编译设置以及非官方语言的扩展。作者是克里斯·拉特纳（Chris Lattner）。
 
@@ -78,7 +78,7 @@ LLVM有两层含义，广义的LLVM是指一个完整的编译器架构，包括
 
 狭义的LLVM仅指编译器后端功能的一些列模块和库，由Clange编译出的中间件经过LLVM后端处理变成对应机器码。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/llvm.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/llvm.png)
 
 ### 什么是ld
 
@@ -197,7 +197,7 @@ Command Line Tools 是 一个运行在macos上的命令行工具集，它的安�
 
 ### 什么是GNU
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124145056.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124145056.png)
 
 GNU是一个自由的操作系统，名字是一个递归 GNU’s Not Unix!的缩写。
 
@@ -240,7 +240,7 @@ Darwin地址：https://github.com/apple/darwin-xnu
 
 ### 什么是FreeBSD
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124145432.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124145432.png)
 
 在此之前先说下BDS（Berkeley Software Distribution 伯克利软件套装），它是Unix的衍生系统，在1977至1995年由伯克利大学分校开发和发布，其是去除SyStem V 删除了AT&T专利代码的。
 
@@ -256,7 +256,7 @@ Darwin地址：https://github.com/apple/darwin-xnu
 
 BSD的发展历史：
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124145540.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124145540.png)
 
 ### 什么是POSIX
 
@@ -274,7 +274,7 @@ DevOps 希望做到的是软件产品交付过程中IT工具链的打通，使�
 
 DevOps 通常需要很多工具的介入，Jira、GitLab、Jenkins、Docker、fastlane等。它是CI/CD的延伸，CI/CD是实现DevOps的基础核心。DevOps的实践可以用于增强敏捷开发。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/devops.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/devops.png)
 
 ### 什么是敏捷开发
 敏捷开发（Agile software development）是一种应对快速变化的需求的一种软件开发能力。相对于“非敏捷”，更强调程序员团队与业务专家之间的紧密协作、面对面的沟通（认为比书面的文档更有效）、频繁交付新的软件版本、紧凑而自我组织型的团队、能够很好地适应需求变化的代码编写和团队组织方法，也更注重软件开发过程中人的作用。
@@ -303,7 +303,7 @@ Scrum中有三个重要角色：
 2. 产品负责人，确定产品的方向和愿景，定义产品发布的内容、优先级及交付时间，为产品投资报酬率负责；
 3. 开发团队，一个跨职能的小团队，人数5-9人，团队拥有交付可用软件需要的各种技能。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/scrumcn.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/scrumcn.png)
 
 ### 什么是极限编程
 
@@ -424,7 +424,7 @@ ER图是 Entity Relationship Diagram 的简写，也叫实体关系图，它主�
 
 使用直线将联系的各方进行连接。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210314140748.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210314140748.png)
 
 横线表示键，双矩形表示弱实体，成绩单依赖于学生而不可单独存在。
 
@@ -469,7 +469,7 @@ ssh登录流程为：
 
 ### 什么是Nginx
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/nginx.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/nginx.png)
 
 Nginx是一款轻量级的Web服务器、反向代理服务器，由于其开源、内存占用少，启动快，高并发能力强，在互联网项目中广泛应用；同时它还是一个IMAP、POP3、SMTP代理服务器，还可以作为反向代理进行负载均衡的实现。
 
@@ -491,7 +491,7 @@ Nginx可以用于实现负载均衡，也提供了以上几种分配算法实现
 
 ### 什么是Apache
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/apache.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/apache.png)
 
 Apache有多个含义：
 
@@ -503,7 +503,7 @@ Apache有多个含义：
 
 ### 什么是Tomcat
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/tomcat.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/tomcat.png)
 
 Tomcat是由Apache基金会推出的一款开源的可实现JavaWeb程序的Web服务器框架，它是配置JSP（Java Server Page）和JAVA系统必备的一款环境。
 
@@ -511,7 +511,7 @@ Tomcat是由Apache基金会推出的一款开源的可实现JavaWeb程序的Web�
 
 ### 什么是Docker 
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210326231951.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210326231951.png)
 
 理解Docker之前需要知道容器的概念，容器就是一个封闭的开发环境，类似移动端的沙盒，每个沙盒都可以配置不同的程序，甚至相同程序的不同版本，我在沙盒做的操作不会影响别的沙盒程序。
 
@@ -618,7 +618,7 @@ $ /bin/bash -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Home
 
 ### 什么是 Ruby
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/ruby_image.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/ruby_image.png)
 
 Ruby 是一种开源的面向对象程序设计的服务器端脚本语言，在 20 世纪 90 年代中期由日本的松本行弘设计并开发。在 Ruby 社区，松本也被称为马茨（Matz）。 
 
@@ -638,7 +638,7 @@ Ruby的设计和Objective-C有些类似，都是受Smalltalk的影响。而这�
 
 ### 什么是 Rails
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210419223057.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210419223057.png)
 
 Rails（也叫Ruby on Rails）框架首次提出是在 2004 年 7 月，它的研发者是 26 岁的丹麦人 David Heinemeier Hansson。Rails 是使用 Ruby 语言编写的 Web 应用开发框架，目的是通过解决快速开发中的共通问题，简化 Web 应用的开发。与其他编程语言和框架相比，使用 Rails 只需编写更少代码就能实现更多功能。有经验的 Rails 程序员常说，Rails 让 Web 应用开发变得更有趣。
 
@@ -648,7 +648,7 @@ Rails的两大哲学是：不要自我重复（DRY），多约定，少配置。
 
 ### 什么是 rbenv 
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/rbenv_image.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/rbenv_image.png)
 
 [rbenv](https://github.com/rbenv/rbenv "rbenv") 和 RVM 都是目前流行的 Ruby 环境管理工具，它们都能提供不同版本的 Ruby 环境管理和切换。
 
@@ -712,7 +712,7 @@ RubyGems 还提供了 Ruby 组件的托管服务，可以集中式的查找和�
 
 ### 什么是 Bundler
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210419225753.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210419225753.png)
 
 [Bundler](https://www.bundler.cn/ "Bundler") 是一个管理 Gem 依赖的 Gem，用来检查和安装指定 Gem 的特定版本，它可以隔离不同项目中 Gem 的版本和依赖环境的差异。
 
@@ -776,7 +776,7 @@ BFF，全称是 Backend For Frontend，即服务于前端的后端，它是一�
 
 随着业务的发展，单个 BFF 为了适配多端的差异可能会变得越来越臃肿，可维护性降低，开发成本也会越来越高。这时候就得考虑为对 BFF 层进行拆分，给每种用户体验不同的前端分别对应一个 BFF，比如 PC BFF、移动端 BFF（或者再细拆为 iOS BFF 和 Android BFF） 等等，所以 BFF 也称为面向特定用户体验的适配层。
 
-![BFF](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430111611.png)
+![BFF](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430111611.png)
 
 参考：[BFF —— Backend For Frontend](https://www.jianshu.com/p/eb1875c62ad3 "BFF —— Backend For Frontend")
 
@@ -788,7 +788,7 @@ GraphQL（展开为 Graph Query Language）是 Facebook 开发的应用层查询
 
 它是一种 BFF 的实现方案。REST 数据是通过一个个 URI 定位到的，而 GraphQL 的模型更像是对象模型。GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/33034116-558F-40ED-B191-31D9E28715F2.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/33034116-558F-40ED-B191-31D9E28715F2.png)
 
 这里 GraphQL 起的是一个 API 网关的作用。
 
@@ -800,7 +800,7 @@ RPC，全称是 Remote Procedure Call，即远程过程调用。RPC 是一种进
 
 RPC 的工作流程大致是：客户端应用以本地调用的方式发起远程调用，将参数以及附加信息序列化为能够进行网络传输的消息体，并将消息发送给服务端。服务端对收到的消息进行反序列化后执行请求，然后将结果序列化为消息并返回给客户端。最后客户端接收到消息并反序列化得到数据。
 
-![RPC](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210501090439.png)
+![RPC](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210501090439.png)
 
 > RPC 框架可以看作一种代理模式，GoF 的《设计模式》一书中把它称作远程代理。通过远程代理，将网络通信、数据编解码等细节隐藏起来。客户端在使用 RPC 服务的时候，就像使用本地函数一样，无需了解跟服务器交互的细节。除此之外，RPC 服务的开发者也只需要开发业务逻辑，就像开发本地使用的函数一样，不需要关注跟客户端的交互细节。 —— 来自王争的《设计模式之美》
 
@@ -813,7 +813,7 @@ gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。它使�
 
 在 gRPC 里客户端应用可以像调用本地对象一样直接调用另一台不同的机器上服务端应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个服务，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个存根能够像服务端一样的方法。
 
-![gRPC](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210501090350.png)
+![gRPC](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210501090350.png)
 
 gRPC 客户端和服务端可以在多种环境中运行和交互 -- 从 Google 内部的服务器到你自己的笔记本，并且可以用任何 gRPC 支持的语言来编写。所以，你可以很容易地用 Java 创建一个 gRPC 服务端，用 Go、Python、Ruby 来创建客户端。此外，Google 最新 API 将有 gRPC 版本的接口，使你很容易地将 Google 的功能集成到你的应用里。
 
@@ -870,7 +870,7 @@ CPU 相关内容还有两个我们经常遇到的概念：位数、架构。
 
 其中，累加寄存器、标志寄存器、程序计数器、指令寄存器和栈寄存器都只有一个，其它寄存器一般有多个。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210515221243.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515221243.png)
 
 寄存器的命名是跟着 CPU 类型走的，ARM64 类型的 CPU 有 32 个寄存器，以下列出了部分寄存器的特殊作用：
 
@@ -889,7 +889,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 每执行一条指令后，PC 的值会立即指向下一条要执行的指令的地址。当顺序执行时，每执行一条指令，PC 的值就是简单的 +1。而条件分支和循环执行等转移指令会使 PC 的值指向任意的地址，这样程序就可以跳转到任意指令，或者返回到上一个地址来重复执行同一条指令。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210515222022.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515222022.png)
 
 ### 什么是内存
 
@@ -909,7 +909,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 内存和 CPU 使用 IC 电子元件作为基本单元。IC 电子元件有不同种形状，但是其内部的组成单位称为一个个的引脚。IC 元件两侧排列的四方形块就是引脚，IC 的所有引脚只有两种电压：0V 和 5V，该特性决定了计算机的信息处理只能用 0 和 1 表示，也就是二进制来处理。一个引脚可以表示一个 0 或 1，所以二进制的表示方式就变成 0、1、10、11、100、101 等，虽然二进制数并不是专门为引脚设计的，但是和 IC 引脚的特性非常吻合。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210515222223.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515222223.png)
 
 我们都知道内存是用来存储数据的，那么这个 IC 中能存储多少数据呢？D0 - D7 表示的是数据信号，也就是说一次可以输入输出 1 byte = 8 bit 数据。A0 - A9 是地址信号，共10个，表示可以指定 2^10 = 1024 个地址。每个地址都都可存放 1 byte 数据，所以这个 IC 的容量就是 1KB。
 
@@ -926,7 +926,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 如果用8位表示一个有符号整数，最高位为符号位，1 的表示为`0000 0001`。那 -1 该如何表示呢？答案是：`1111 1111`。如果你首次看到这个表示法可能很奇怪，为什么不是`1000 0001`呢，其实它是基于加法运算推演出来的结果。我们用让计算机计算`1 - 1`，即`1 + (-1)`，即`0000 0001 + 1111 1111` 结果为 `1 0000 0000`，舍去溢出的高位 1，结果就是 0 。所以 -1 对应到二进制就成了`1111 1111`。从正数到负数的表示，产生了补数的概念，它的计算是这样的：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522135424.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522135424.png)
 
 这个就是 1 到 -1 的计算方式。
 
@@ -934,7 +934,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 移位分两种，逻辑移位和算数移位，看下面示例：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522223515.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522223515.png)
 
 逻辑移位会在空缺部分补 0，算数右移会在空缺部分补符号位。左移的话都是补 0，没有区别。
 
@@ -972,13 +972,13 @@ if (NSHostByteOrder() == NS_BigEndian) {
 
 内存的内部是由各种 IC 电路组成的，它的种类很庞大，但是其主要分为三种存储器：随机存储器（RAM）、只读存储器（ROM）和高速缓存（Cache）。高速缓存通常又会分为一级缓存（L1 Cache）、二级缓存（L2 Cache）、三级缓存（L3 Cache），它位于内存和 CPU 之间，是一个读写速度比内存更快的存储器。以上分类从前往后速度越来越快。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522223549.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522223549.png)
 
 为什么会有这么多缓存呢？主要是有两方面的考虑：速度和成本。读取速度越高的设备成本也会越高，为了在这两者之间进行平衡才加入了各个缓存。后者都可以作为前者的缓存，比如可以把主存作为硬盘的缓存，也可以把高速缓存作为主存的缓存。
 
 以下是各种设备的读取速度对比：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522143424.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522143424.png)
 
 缓存的使用逻辑大致是，没有对应数据时向上一级寻找，如果找到了就在当级缓存下来，下次再寻找相同的内容就可以直接从当级的缓存调用了。因为作为缓存的部分一般都比其上一级容量更小，所以缓存内容就不可能一直存在，需要按照一定规则进行移除，这就引出了LRU（Least Recently Used，最近最少使用）算法，它是将最近一段时间内最少被访问过的数据淘汰出缓存，提高缓存的利用率。
 
@@ -1012,7 +1012,7 @@ RLE 是 run-length encoding的缩写，中文翻译为游程编码，是一种�
 
 哈夫曼编码是一种使用变长编码表对源符号进行编码的无损压缩编码方式。其特征是对于出现频率较高的字符使用较短的编码符号。对于 AAAAAABBCDDEEEEEF 这几个字符使用哈夫曼编码的结果如下：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522213007.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522213007.png)
 
 ***
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645)，[zhangferry](https://zhangferry.com)
@@ -1028,7 +1028,7 @@ BIOS 除了键盘，磁盘，显卡等基本控制程序外，还有`引导程�
 
 制作黑苹果的时候安装的 Clover 就是一个启动程序，它通过修改 BIOS 配置，让 BIOS 首先执行它，然后由它来引导至 MacOS 的启动。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210527232231.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210527232231.png)
 
 严格意义来说 BIOS 是 IBM PC架构上的一种设计规范，Mac电脑，包括一些新型的主板都没有 BIOS 这一概念，取而代之的是 EFI/UEFI。
 
@@ -1074,13 +1074,13 @@ IRQ（Interrupt Request）代表的就是中断请求。IRQ 是用来暂停当�
 
 从中断处理开始到请求中断的程序（中断处理程序）运行结束之前，被中断的程序（主程序）的处理是停止的。这种情况就类似于在处理文档的过程中有电话打进来，电话就相当于是中断处理。假如没有中断处理的发生，就必须等到文档处理完成后才能够接听电话。由此可见，中断处理有着巨大的价值，就像是接听完电话后会返回原来的文档作业一样，中断程序处理完成后，也会返回到主程序中继续。
 
-![中断请求示意图](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210526233248.png)
+![中断请求示意图](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210526233248.png)
 
 **实施中断请求的是连接外围设备的 I/O 控制器，负责实施中断处理的是 CPU。**
 
 假如有多个外围设备进行中断请求的话， CPU 需要做出选择进行处理，为此，我们可以在 I/O 控制器和 CPU 中间加入名为中断控制器的 IC 来进行缓冲。中断控制器会把从多个外围设备发出的中断请求有序的传递给 CPU。中断控制器的功能相当于就是缓冲。下面是中断控制器功能的示意图
 
-![中断控制器的功能](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210526233322.png)
+![中断控制器的功能](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210526233322.png)
 
 
 ### 什么是 DMA
@@ -1088,7 +1088,7 @@ IRQ（Interrupt Request）代表的就是中断请求。IRQ 是用来暂停当�
 DMA 全称为 Direct Memory Access，即直接存储器访问。DMA 是一种内存访问机制，它是指在不通过 CPU 的情况下，外围设备直接和主存进行数据传输。磁盘等硬件设备都用到了 DMA 机制，通过 DMA，大量数据就可以在短时间内实现传输，之所以这么快，是因为 CPU 作为中介的时间被节省了，下面是 DMA 的传输过程
 
 
-![使用 DMA 的外部设备和不使用 DMA 的外部设备](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210527220519.png)
+![使用 DMA 的外部设备和不使用 DMA 的外部设备](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210527220519.png)
 
 
 I/O 端口号、IRQ、DMA 通道可以说是识别外围设备的 3 点组合。不过，IRQ、DMA 通道并不是所有外围设备都具备的。计算机主机通过软件控制硬件时所需要的信息的最低限，是外围设备的 I/O 端口号。IRQ 只对需要中断处理的外围设备来说是必须的，DMA 通道则只对需要 DMA 机制的外围设备来说必须的。
@@ -1104,7 +1104,7 @@ Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去�
 
 ### 什么是 React
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605211826.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210605211826.png)
 
 内容整理：[zhangferry](https://zhangferry.com)
 
@@ -1174,7 +1174,7 @@ ReactDOM.render(
 
 [React Native](https://reactnative.dev/) 是一个使用 `React` 和应用平台的原生功能来构建 Android 和 iOS 应用的开源框架，其已经不是一个 Web 前端框架，而是一个移动端框架。通过 React Native，可以使用 JavaScript 来访问移动平台的 API，以及使用 React 组件来描述 UI 的外观和行为：一系列可重用、可嵌套的代码。通过一张图简单了解下 React Native 在移动开发中的架构：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605200722.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210605200722.png)
 
 其具有这些特点：跨平台（JavaScript 框架）虚拟 DOM、热更新，iOS 审核有限制、对 Web 开发者友好，上手快，性能几乎和原生相当。
 
@@ -1201,7 +1201,7 @@ yarn ios
 
 ### 什么是 Vue
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605011045.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210605011045.png)
 
 内容整理：[师大小海腾](https://juejin.cn/user/782508012091645)
 
@@ -1211,7 +1211,7 @@ yarn ios
 
 这是 Vue 与其他 JS 框架最大的不同。渐进式框架简单理解就是：你可以只用我的一部分，而非必须用我的全部；你可以仅将我作为应用的一部分嵌入，而非必须全部使用。Vue 支持你根据实际需求，在不同的阶段使用 Vue 中不同的功能，用最小最快的成本一步步搭建应用，不断渐进，而不是要求你一下子用上全家桶（vue-cli、vue-router、vuex 等）。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210605012155.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210605012155.png)
 
 你可以看看：[Vue 作者尤雨溪：Vue 2.0，渐进式前端解决方案](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485737&idx=1&sn=14fe8a5c72aaa98c11bf6fc57ae1b6c0&source=41#wechat_redirect "Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案")
 
@@ -1282,7 +1282,7 @@ BootStrap 最初由 Twitter 开发，后在Github [开源](https://github.com/tw
 
 其官网的首页图很形象的画出了 Webpack 是什么，如下：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210612002026.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210612002026.png)
 
 其是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 Webpack 处理应用程序时，它会在内部构建一个 [依赖图(dependency graph)](https://webpack.docschina.org/concepts/dependency-graph/)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。
 
@@ -1290,7 +1290,7 @@ BootStrap 最初由 Twitter 开发，后在Github [开源](https://github.com/tw
 
 ### 什么是 Flutter
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210613093819.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210613093819.png)
 
 内容整理：[我是熊大](https://juejin.cn/user/1151943916921885/posts)
 
@@ -1324,7 +1324,7 @@ Widget build(BuildContext context) {
 
 Flutter 拥有更优的性能，主要原因就是它用于一套自己独有的渲染引擎，其整理架构如下：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210613103605.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210613103605.png)
 
 Flutter 仍有一些缺点，即导致包体变大，iOS 引入后，包体积增加 10MB 左右。
 

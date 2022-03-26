@@ -40,7 +40,7 @@
 
 我们先来看一下 TCP 报文头部结构：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210704165732.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210704165732.png)
 
 握手阶段主要依靠以下几个标志位：
 * SYN：在建立连接时使用，用来同步序号。SYN=1 代表这是一个请求建立连接或同意建立连接的报文，只有前两次握手中 SYN 才为 1，带 SYN 标志的 TCP 报文段称为同步报文段；
@@ -51,7 +51,7 @@
 
 **三次握手是指建立一个 TCP 连接时，需要客户端和服务端总共发送 3 个包，需要三次握手才能确认双方的接收与发送能力是否正常。**
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210703051424.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703051424.png)
 
 1. 客户端向服务端发起连接请求，需要发送一个 SYN 报文到服务端。
 2. 当服务端收到客户端发过来的 SYN 报文后，返回给客户端 SYN、ACK 报文。`这时候服务端可以确认客户端的发送能力和自己的接收能力正常`。
@@ -59,7 +59,7 @@
 
 **四次挥手的目的是关闭一个 TCP 连接。**
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210703051443.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703051443.png)
 
 1. 客户端主动发起连接断开，发送一个 FIN 报文到服务端；
 2. 服务端返回给客户端 ACK 报文。此时服务端处于关闭等待状态，而不是立马给客户端发 FIN 报文，这个状态还要持续一段时间，因为服务端可能还有数据没发完。`此时客户端到服务端的连接已经断开。但客户端和服务端之间所建立的 TCP 连接通道是全双工的，此时只是处于半关闭状态，所以服务端到客户端可能还会传递数据`；
@@ -449,7 +449,7 @@ AAPLListItem *matchingItem = [self.list itemWithName:nil];  // warning!
 * 浅拷贝：指针拷贝，不产生新对象，增加被拷贝对象引用计数，相当于执行了 retain
 * 区别：1. 是否影响了引用计数；2. 是否开辟了新的内存空间
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724043958.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210724043958.png)
 
 #### 在 iOS 中对 mutable 对象与 immutable 对象进行 copy 与 mutableCopy 的结果
 
@@ -496,7 +496,7 @@ NSArray *deepCopyArray = [[NSArray alloc]initWithArray:someArray copyItems:YES];
 NSArray *trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:oldArray]];
 ```
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210724054744.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210724054744.png)
 
 
 >需要注意的是，使用 `initWithArray:copyItems:` 并将 copyItems 传 YES 时，生成的副本集合对象中的对象（下一个级别）是不可变的，所有更深的级别都具有它们以前的可变性。比如以下代码将 Crash。
@@ -720,7 +720,7 @@ emmm 整理的时候发现后面的版本又做了小优化，具体就不展开
 
 因为 NSObject 的 class 的对象的 isa 指向它的 meta-class 对象，而它的 meta-class 的 superclass 指向它的 class 对象，所以 `[[NSObject class] isKindOfClass:[NSObject class]]` 成立 。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/objc-isa-class-diagram.jpg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/objc-isa-class-diagram.jpg)
 
 总之，`[instance/class isKindOfClass:[NSObject class]]` 恒成立。（严谨点，需要是 NSObject 及其子类类型）
 
@@ -1592,7 +1592,7 @@ NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 
 这里再回顾下内存的分区情况，大多数情况我们只需关注进程的虚拟内存就可以了：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211216172748.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211216172748.png)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -1617,13 +1617,13 @@ HTTPS 的建立流程大概是这样的：
 
 我们以 `zhangferry.com`这个网站的 HTTPS 证书为例进行分析：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223165541.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223165541.png)
 
 `zhangferry.com` 的证书里有一个 Issuer Name 的分段，这里表示的是它的签发者信息。其签发者名称是 *TrustAsia TLS RSA CA*，而我们可以通过上面的链式结构发现，其上层就是*TrustAsia TLS RSA CA*。再往上一层是 *DigiCert Global Root CA*，所以证书签发链就是：*DigiCert Global Root CA* -> *TrustAsia TLS RSA CA* -> *zhangferry.com*。
 
 其中 *DigiCert Global Root CA* 是根证书，它的签发者是它自己。根证书由特定机构颁发，被认为是可信的。我们的电脑在安装的时候都会预装一些 CA 根证书，查看钥匙串能够找到刚才的根证书：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223170915.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223170915.png)
 
 如果能够验证签发链是没有篡改的，那就可以说明当前证书有效。
 
@@ -1637,7 +1637,7 @@ HTTPS 的建立流程大概是这样的：
 
 这些过程中使用到的对称加密算法和 Hash 算法都会在证书里说明。同理逐级验证，直到最终的证书节点，都没问题就算是证书验证通过了。流程如下：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223174908.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223174908.png)
 
 图片来源：https://cheapsslsecurity.com/blog/digital-signature-vs-digital-certificate-the-difference-explained/
 
@@ -1649,7 +1649,7 @@ HTTPS 的建立流程大概是这样的：
 
 开放定址法的思路是当地址已经被占用时，就再重新计算，直到生成一个不被占用地址。对应公式为：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20211223221219.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223221219.png)
 
 其中 di 为增量序列，m 为散列表长度， i 为已发生的冲突次数。根据 di 序列的内容不同又分为不同的处理方案：
 
@@ -1682,7 +1682,7 @@ dyld 是动态加载器，它主要用于动态库的链接和程序启动加载
 
 [dyld2](https://github.com/opensource-apple/dyld/tree/master/src "dyld开源地址") 从 iOS 3.1 开始引入，一直到 iOS 12 被 dyld 3 全面代替。它经过了很多次版本迭代，我们现在常见的特性比如 ASLR，Code Sign，Shared Cache 等技术，都是在 dyld 2 中引入的。dyld 2 的执行流程是这样的：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220104235847.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220104235847.png)
 
 - 解析 `mach-o` 头文件，找到依赖库，依赖库又可能有别的依赖，这里会进行递归分析，直到获得所有 dylib 的完整图。这里数据庞大，需要进行大量的处理；
 - 映射所有 `mach-o` 文件，将它们放入地址空间；
@@ -1699,7 +1699,7 @@ dyld 3 最大的特点就是引入了启动闭包，闭包里包含了启动所�
 
 最重要的特性就是启动闭包，闭包里包含了启动所需要的缓存信息，从而提高启动速度。下图是 dyld 2 和 dyld 3 的执行步骤对比：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220105001119.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220105001119.png)
 
 dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程外执行，以下进程创建时执行：
 
@@ -1723,7 +1723,7 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 其中前端受语言影响，Objective-C 和 Swift 对应的前端分别是 clang 和 swiftc。下图整理了两种语言的编译流程：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/ios_compiler.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/ios_compiler.png)
 
 #### 前端
 
@@ -1963,7 +1963,7 @@ OOM 与其他 Crash 不同的一点是它的触发是通过 `SIGKILL` 信号进�
 
 通过 Hook iOS 系统底层内存分配的相关方法（包括 `malloc_*zone`相关的堆内存分配以及 `vm*_allocate` 对应的 VM 内存分配方法），跟踪并记录进程中每个对象内存的分配信息，包括分配堆栈、累计分配次数、累计分配内存等，这些信息也会被缓存到进程内存中。在内存触顶的时候，组件会定时 Dump 这些堆栈信息到本地磁盘，这样如果程序爆内存了，就可以将爆内存前 Dump 的堆栈数据上报到后台服务器进行分析。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220119232138.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220119232138.png)
 
 参考：[【腾讯开源】iOS爆内存问题解决方案-OOMDetector组件](https://juejin.cn/post/6844903550187733000 "【腾讯开源】iOS爆内存问题解决方案-OOMDetector组件")
 
@@ -1971,7 +1971,7 @@ OOM 与其他 Crash 不同的一点是它的触发是通过 `SIGKILL` 信号进�
 
 这个是字节采用的方案，基于内存快照生成内存分布情况。线上 Memory Graph 核心的原理是扫描进程中所有 Dirty 内存，通过内存节点中保存的其他内存节点的地址值建立起内存节点之间的引用关系的有向图，用于内存问题的分析定位，整个过程不使用任何私有 API。该方案实现细节未开源，目前已搭载在字节跳动火山引擎旗下应用性能管理平台（[APMInsight](https://www.volcengine.com/product/apminsight "APMInsight")）上，供开发者注册使用。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220120225034.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220120225034.png)
 
 [有一篇文章](https://juejin.cn/post/6895583288451465230 "分析字节跳动解决OOM的在线Memory Graph技术实现")分析了这个方案的实现原理：通过 mach 内核的 `vm_*region_recurse/vm_region_recurse64` 函数遍历进程内所有 VM Region。这里包括二进制，动态库等内存，我们需要的是 Malloc Zone，然后通过 `malloc*_get_all_zones` 获取 libmalloc 内部所有的 zone，并遍历每个 zone 中管理的内存节点，获取 libmalloc 管理的存活的所有内存节点的指针和大小。再根据指针判断是 OC/Swift 对象，还是 C++ 对象，还是普通的 Buffer。
 
@@ -2077,7 +2077,7 @@ static StripedMap<SyncList> sDataLists; // 哈希表，以关联的 obj 内存�
 
 最终的存储数据结构如下图所示：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_43_interview_02.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/weekly_43_interview_02.png)
 
 当 id2data() 返回了 `SyncData` 对象后，`objc_sync_try_enter` 会调用 `data->mutex.tryLock(); `尝试加锁，其他线程再次执行时如果判断已经加锁，则进行资源等待
 
@@ -2201,7 +2201,7 @@ static void object_cxxDestructFromClass(id obj, Class cls)
 
 而 `cxx_destruct` 就是用于释放变量的，当类中新增了变量后，会自动插入该函数，这里可以通过 `LLDB watchpoint ` 监听实例的属性值变化， 然后查看堆栈信息验证。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_44_interview_02.jpg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/weekly_44_interview_02.jpg)
 
 #### 避免在 dealloc 中使用 __weak
 
@@ -2430,7 +2430,7 @@ class HeapObjectSideTableEntry {
 
 它既然是右移 3 位，那么我左移 3 位把它还原，`HeapObjectSideTableEntry`左移三位 得到`0x10062AFE0`
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220302155825.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220302155825.png)
 
 
 - `0x6000001a9710` 就是实例对象的地址
@@ -2576,11 +2576,11 @@ ARC 下函数返回值是否一定会开启优化呢，存在一种情况会破�
 
 注释 `for`代码后跳转用的 `b`指令，所以 `lr` 寄存器存储的是调用方调用 `takeModel`函数后的指令地址
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_45_interview_02.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/weekly_45_interview_02.png)
 
 有 `for` 循环时，跳转到 `objc_autoreleaseReturnValue`的汇编指令是 `bl`。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/weekly_45_interview_01.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/weekly_45_interview_01.png)
 
 `bl`表示执行完函数后继续执行后续指令，后续汇编指令目的主要是为了检测是否存在函数调用栈溢出操作，详细解释可以参考[Revisit iOS Autorelease  二](http://satanwoo.github.io/2019/07/07/RevisitAutorelease2/)。这造成我们上面提到的 `__builtin_return_address()`函数获取到的返回值下一条指令地址，并不是优化标识指令 `mov x29 x29`，而是检测代码指令，导致优化未开启。
 

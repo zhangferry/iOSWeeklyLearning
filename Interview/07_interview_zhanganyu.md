@@ -2,7 +2,7 @@
 
 本期访谈人物是张安宇，他是 #Swift社区 公众号的负责人，最近换工作接了微软（苏州）的 Offer，11月底入职，目前正在爽爽的休假。咱们拉他过来聊聊关于面试微软的经历。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/微软_苏州.jpg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/微软_苏州.jpg)
 
 zhangferry：简单介绍下自己吧。
 

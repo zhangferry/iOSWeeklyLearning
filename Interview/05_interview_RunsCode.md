@@ -32,7 +32,7 @@ zhangferry：听说你乒乓球和魔方都玩的很好，这些东西的学习�
 >
 > 怎么的也得三十块起步，国甲，孤鸿，圣手这种吧。
 >
-> ![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/魔方.jpeg)
+> ![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/魔方.jpeg)
 
 zhangferry：学习很多时候并不是有趣的，该如何保持学习热情？
 

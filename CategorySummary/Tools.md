@@ -43,15 +43,15 @@
 
 之前我的状态栏是这样的：
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20201219214427.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219214427.png)
 
 整理之后就变成了这样：
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20201219214453.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219214453.png)
 
 
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/wechat_official.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
 ***
 推荐好用的开发工具。
 
@@ -65,7 +65,7 @@
 
 作者的 [SwiftUI 实验室](https://swiftui-lab.com)，A Companion for SwiftUI 是一款可以记录 iOS 和 macOS 平台的 SwiftUI 视图，形状，协议，场景和属性包装的应用程序。该应用程序还包含每种方法的示例，其中有许多都是交互式的，并且嵌入在应用程序中运行。通过使用关联的控件，你可以看到它们对视图的直接影响，以及如何修改你的代码以产生这样的效果。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210103204133.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210103204133.png)
 
 
 
@@ -81,7 +81,7 @@
 
 1. 双击下载的文件, 将Go2Shell拖入Applications目录中
 2. 在Applications中, 双击打开Go2Shell, 出现下面的窗口
-   ![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210103221327.png)
+   ![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210103221327.png)
 3. 点击Install Go2Shell to Finder完成安装
 4. 打开Finder窗口, 在工具栏中出现Go2Shell图标
 5. 点击Go2Shell图标, 就会在终端中打开当前Finder目录
@@ -136,7 +136,7 @@ Mac上非常好用的解压缩软件：
 * 支持批量文件加密。
 * 支持压缩包预览
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110110014.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110110014.png)
 
 ### uTools
 
@@ -150,7 +150,7 @@ Mac上非常好用的解压缩软件：
 
 uTools是一个丰富的生产力工具集，支持将近百种的插件。它的使用方式和 Alfred 类似，通过快捷键调出输入框，并通过特殊指令执行结果。但它有比 Alfred 更简单的插件集成方式，在我看来它是更易用的。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210110110536.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110110536.png)
 
 ***
 推荐好用的开发工具。
@@ -167,7 +167,7 @@ uTools是一个丰富的生产力工具集，支持将近百种的插件。它�
 
 kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很强的diff工具。不光能查看文本的不同，还能识别图片和文件夹的不同。我们可以将它与 git 组合使用，使用它替换git的mergetool。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124184141.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124184141.png)
 
 ### Sherlock
 
@@ -181,7 +181,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 在iOS开发过程中的UI调试常常是让人痛苦的，因为不支持热更新，我们稍微改动一点地方就需要编译整个项目重新运行，这无疑很浪费时间。而Sherlock就是用于解决这个问题的工具（仅支持模拟器），我们可以实时修改各个控件的UI属性，并进行查看最终效果。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210124195019.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124195019.png)
 
 ***
 推荐好用的开发工具。
@@ -198,7 +198,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 强大且方便的流程图绘制软件，同时支持Web端和桌面端。和[Processon的](https://www.processon.com/)免费版只能添加9个文件的限制，Diagrams.net的文件数量是无限制的，而且它支持的流程图控件比Processon还要更多。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210227191005.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210227191005.png)
 
 * 支持几乎所有的主流流程图元素
 * 远程存储，文件数量不限，可以存储至Github、Google Drive、Dropbox等地方
@@ -214,7 +214,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 这个工具可以使我们访问github的仓库就像直接在VSCode中打开一样，使用方法非常简单，就是将网站域名换成github1s，以Swift仓库为例，访问：https://github1s.com/apple/swift，得到的结果如下。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210228152659.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210228152659.png)
 
 我们可以像在VSCode里一样，直接在浏览器里查看仓库代码。
 
@@ -235,7 +235,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色，白天亮度像太阳光，在夜间时会让屏幕看着更像是室内光。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210314141348.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210314141348.png)
 
 
 
@@ -251,7 +251,7 @@ F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色
 
 一款开源且简洁高效的屏幕录制软件，可以导出为GIF，MP4，WebM，APNG等格式，而且会有很不错的压缩率。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211617.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210313211617.png)
 
 鉴于微信公众号对GIF的两条限制：
 
@@ -277,7 +277,7 @@ F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色
 
 上传需要压缩的gif文件即可
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210313211739.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210313211739.png)
 
 ***
 推荐好用的工具。
@@ -306,7 +306,7 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 
 以下是作为mergetool的界面，下面内容为最终合并的内容，我们可以通过右侧的扩展按钮选择当前应该选择哪个分支的内容。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210327200304.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210327200304.png)
 
 ***
 推荐好用的工具。
@@ -323,7 +323,7 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 
 这个应用可以帮助你清除遗留以及废弃文件，从而极大的节省硬盘空间。 你可以每月或者每周运行一次进行清理。
 
-![](https://gitee.com/zhangferry/Images/raw/master/gitee/20210410105340.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210410105340.png)
 
 ******
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -337,7 +337,7 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 **使用介绍**
 
 SwitchHosts 是一个管理、切换多个 Host 方案的工具。它支持多个 Host 方案的不同组合；支持导入导出，方便协作分享；还可以通过 Alfred 插件进行快速切换。
-![SwitchHosts](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430084948.png)
+![SwitchHosts](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430084948.png)
 
 ### DevUtils
 
@@ -351,7 +351,7 @@ DevUtils 是一个开源的开发工具聚合的应用。它包含了常用的�
 
 大家如果不想付费，直接下源码，关掉付费验证就行。如果觉得软件有帮助且有支付能力的话希望还是可以支持下作者。
 
-![DevUtils](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210430085707.png)
+![DevUtils](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430085707.png)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -366,7 +366,7 @@ DevUtils 是一个开源的开发工具聚合的应用。它包含了常用的�
 
 Moment 是一个存在于菜单栏和通知中心的倒计时应用程序，以帮助你记住最难忘的日子和生活。这个类似手机端的 Countdown。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/menubar-mockup.jpg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/menubar-mockup.jpg)
 
 ### One Switch
 
@@ -378,7 +378,7 @@ Moment 是一个存在于菜单栏和通知中心的倒计时应用程序，以�
 
 One Switch 是一个聚合的开关控制软件，使用它可以在菜单控制栏直接配置桌面的隐藏显示、锁屏、暗黑模式、连接AirPods 等功能。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/mbp-mockup.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/mbp-mockup.png)
 
 ***
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)
@@ -397,7 +397,7 @@ SwiftFormat 是用于重新格式化 Swift 代码的命令行工具。它会在�
 
 如果有自动化的工具能完成这些工作，那几乎是最完美的方案了。在代码 review 时就不需要每次都强调无数遍繁琐的代码格式问题了。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522213832.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522213832.png)
 
 ### Notion
 
@@ -419,7 +419,7 @@ Notion 是一款极其出色的个人笔记软件，它将“万物皆对象”�
 * 保存历史操作记录并记录相关时间
 * 强大的关联功能，比如日历与笔记，笔记与文件以及网页链接
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210522213919.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522213919.png)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -436,7 +436,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 翻到一张之前公司电脑使用该软件将近一年的留存成果，100万+ 按键次数，使用最多的竟然是删除键。。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210529185605.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210529185605.png)
 
 # OctoMouse
 
@@ -448,7 +448,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 该软件主要用于统计键盘及鼠标的行为信息，比较有意思的是，它对鼠标的统计会包含移动距离参数。可以试试看多久才能让鼠标移动 5km。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210529191107.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210529191107.png)
 
 ***
 ### 柠檬清理
@@ -462,7 +462,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 腾讯柠檬清理 Lite 版-重点聚焦清理功能，包含系统/应用垃圾清理、大文件清理、重复文件清理、相似照片清理 4 个方面，当前还支持在状态栏上查看当前网速信息，帮助你实时了解 Mac 状况。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/16227749924686.jpg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/16227749924686.jpg)
 
 **核心功能**
 
@@ -485,7 +485,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户快速的比较您的文本文件、文档、PDF、照片、图形和扫描等，并且界面简单直观，输入两个文件的内容，然后单击“查找差异”即可，并且具有绝对的安全性，能够保障您的文件安全，具有统一差异、字符级差异、文件夹差异、导出为 PDF、语法高亮、文件导入、无广告等优势。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/1623388796593.jpg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/1623388796593.jpg)
 
 
 ***
@@ -501,7 +501,7 @@ Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户�
 
 一个开源的非官方 WWDC 视频的应用，其支持视频下载、最高 5 分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等。相比于官方应用来说，其功能只多不少（官方新版的 Developer 应用添加了代码片段预览功能），而且更新比较迅速，已经发展到了 v7.3.3 版本，可以查看 2021 年的 Sessions。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626230114.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210626230114.png)
 
 ### ScreenSize
 
@@ -516,7 +516,7 @@ Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户�
 * 标准模式和系统放大模式的尺寸大小
 * 各个设备之间的尺寸对比
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626223430.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210626223430.png)
 
 ***
 整理编辑：[brave723](https://juejin.cn/user/307518984425981/posts)，[zhangferry](https://zhangferry.com)
@@ -531,7 +531,7 @@ Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户�
 
 Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作，对那些不擅长使用命令行的开发来说会是一种苦恼，而且命令行确实不够直观。Cakebrew 是一款桌面端的 Homebrew 管理工具，它包含常用的 Homebrew 功能，并将其可视化，像是已安装工具，可升级工具以及工具库等功能。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210704205546.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210704205546.png)
 
 ### Paste - Clipboard Manager
 
@@ -543,7 +543,7 @@ Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作
 
 Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它能够为您储存您在设备上复制的所有内容，并将其储存在 Paste for Mac 的历史记录中。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210703184817.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703184817.png)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -558,7 +558,7 @@ Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它�
 
 一款强大的代码片段管理工具，从此告别手动复制粘贴，SnippetsLab 的设计更符合 Apple 的交互习惯，支持导航栏快速操作。另外还可以同步 Github Gist 内容，使用 iCloud 备份。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210710232333.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210710232333.png)
 
 ### CodeExpander
 
@@ -570,7 +570,7 @@ Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它�
 
 专为开发者开发的一个集输入增强、代码片段管理工具，支持跨平台，支持云同步（Github/码云）。免费版包含 90% 左右功能，相对 SnippetsLab 来说其适用范围更广泛，甚至包括一些日常文本的片段处理。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210710231521.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210710231521.png)
 
 
 
@@ -585,7 +585,7 @@ Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它�
 
 iOS 包的大小，是每个开发必须关注的问题，对于大型项目来说，只是代码段就有可能超过 100M，算上 armv7 和 arm64 架构，会超过 200M。 LinkMap 工具通过分析项目的 LinkMap 文件，能够计算出各个类、各个三方库占用的空间大小（代码段+数据段），方便开发者快速定位需要优化的文件。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/linkmap.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/linkmap.png)
 
 ***
 整理编辑：[CoderStar](https://juejin.cn/user/588993964541288/posts)
@@ -600,7 +600,7 @@ iOS 包的大小，是每个开发必须关注的问题，对于大型项目来�
 
 Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！普通版的功能已经足够使用，笔者认为其是最好用的截图软件了！（下图是官方图）
 
-![Snipaste](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/N3QEb3VA.png)
+![Snipaste](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/N3QEb3VA.png)
 
 ### LSUnusedResources
 
@@ -612,7 +612,7 @@ Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴�
 
 一个 Mac 应用程序，用于在 Xcode 项目中查找未使用的图像和资源，可以辅助我们优化包体积大小。
 
-![LSUnusedResources](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/LSUnusedResourcesExample.png)
+![LSUnusedResources](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/LSUnusedResourcesExample.png)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -627,7 +627,7 @@ Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴�
 
 Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，其相对于 AppleTrace 更易用，且能更方便的在越狱设备上 Trace 任意应用。它由三部分组成：Tweak 插件，动态库（Messier.framework），桌面端应用。非越狱场景，我们使用后两个部分可完成对自己应用的耗时监控，输出为 json 文件，再使用 `chrome://tracing` 将 json 文件绘制为火焰图，效果如下：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/messier-content.gif)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/messier-content.gif)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -638,7 +638,7 @@ Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，�
 
 一个正则表达式测试和分析网站，不仅可以将匹配结果进行输出，还会逐个分析表达式的含义。我们以摸鱼周报`关于我们`的文案进行测试，我们想匹配出 “iOS 摸鱼周报”（中间有空格），“iOS成长之路”，这两个字符串。文案特征为：”iOS“开头，不能紧跟其他字母，以逗号结尾但不包括逗号。测试结果如下：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210807164527.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210807164527.png)
 
 观察右侧结果分析，示例中使用的 `*?` 非贪婪模式和 `(?=，)` 零宽度正预测先行断言，都有很详细的讲解。这对于我们理解他人写的正则表达式能起到很好的帮助作用。
 
@@ -657,7 +657,7 @@ git branch -a -v --no-abbrev --contains 1a1b1c
 
 解析结果：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210814184638.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210814184638.png)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -672,7 +672,7 @@ git branch -a -v --no-abbrev --contains 1a1b1c
 
 KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。它不需要任何服务器或额外的资源。该应用程序可以在浏览器中运行，也可以作为桌面应用程序运行。更重要的是它还可以利用 Dropbox、Google  Drive 进行远程同步。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210822081714.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210822081714.png)
 
 ***
 整理编辑：[CoderStar](http://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18#wechat_redirect)
@@ -690,7 +690,7 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 其中 Pro 版增加的功能是设备间同步，不过软件本身也支持数据的导入导出，大家根据自己的情况进行选择。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210828101929.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210828101929.png)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -705,7 +705,7 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 作为号主通常会将文章发布到多个平台，每个平台都重复地登录、复制、粘贴是一件很麻烦的事。Wechatsync就是这样一款解脱重复工作的神器。它是一款 Chrome 浏览器插件，支持多个平台的文章发布，这需要我们提前登录各个平台获得授权。它会自动识别公众号文章，弹出「同步该文章」按钮，然后点击就可以同步文章到我们授权的平台。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210904171532.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210904171532.png)
 
 ***
 
@@ -721,7 +721,7 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 日常开发过程中，经常在终端中执行 pod install、pod update、或者 clear derived data 等操作，XcodeProjects 工具执行这些操作，只需要点击两下就能完成，还能为自己的项目自定义 command，很大程度的简化我们的操作步骤，节省开发时间。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/XcodeProjects.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/XcodeProjects.png)
 
 
 
@@ -739,7 +739,7 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐槽，如果你也经历过这些事情可以试下 Xcodes。Xcodes 是一个 Xcode 下载管理器，支持下载不同版本的 Xcode，还可以切换默认版本。如果你喜欢命令行，还可以使用其[命令行版本](https://github.com/RobotsAndPencils/xcodes "xcodes")进行安装。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/xcodes.png)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/xcodes.png)
 
 
 ***
@@ -762,7 +762,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 - Swift 框架：在 iOS 和 Android 上使用流行的 Swift 框架，如 Swift Foundation，无需更改代码
 - ...
 
-![SCADE](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/SCD_Auora1-1-1-1240x791.png)
+![SCADE](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/SCD_Auora1-1-1-1240x791.png)
 
 ### Privacy-Insight
 
@@ -778,7 +778,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 以下为我使用 1 天的隐私请求记录：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/4301634041484_.pic_hd.jpg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/4301634041484_.pic_hd.jpg)
 
 微信和今日头条的隐私权限获取频率均非常高，我是肯定没有那么频繁通过微信访问相册的。对于微信频繁获取相册权限的问题最近也在热议，希望不仅是微信，各个主流 App 都应该对于用户隐私问题予以重视。
 
@@ -797,7 +797,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 `Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支持 Xcode，值得一玩。
 
-![wakapi](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/screenshot.png)
+![wakapi](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/screenshot.png)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -812,7 +812,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 `fig` 是一个开源的终端自动补全工具，支持数百个 CLI 工具，如 `git`、`docker`、`npm `等等，并且可以无缝添加到你现有的终端，如 `iTerm`、`Hyper`、`VSCode` 和 `macOS 终端`，支持我们自己自定义一些补全规则。
 
-![fig](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_2021-10-27_21-04-03.png)
+![fig](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Snipaste_2021-10-27_21-04-03.png)
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
@@ -826,7 +826,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 `ipatool` 是一个允许你在 `App Store` 上搜索 iOS 应用程序并下载应用程序包的命令行工具。当然，这过程中需要你的账户以及密码，并且也只能下载账户过去已经下载过的应用程序。相对于使用 `Apple Configurator 2` 操作更加便捷一些。
 
-![ipatool](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/demo.gif)
+![ipatool](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/demo.gif)
 > 注意 gif 中的 `ipa` 命令实际使用中可能为 `ipatool`
 
 ***
@@ -845,7 +845,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 * 设置每个项目的 Swift 版本。
 * 允许您使用环境变量覆盖 Swift 版本。
 
-![swiftenv](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/swiftenv.png)
+![swiftenv](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/swiftenv.png)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -860,7 +860,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 `Mounty` 是一个在 macOS 下以读写模式重新挂载写保护的 NTFS 卷的小工具，功能类似于 `NTFS For Mac`，最大也是最重要的区别是它是**免费**的。
 
-![mounty](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/example.png)
+![mounty](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/example.png)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -877,7 +877,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 我们可以考虑用在给应用瘦身时扫描相似图片资源场景下。
 
-![PhotoSweeper](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/PhotoSweeper_MacBook.jpeg)
+![PhotoSweeper](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/PhotoSweeper_MacBook.jpeg)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -892,7 +892,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 思源笔记是一款本地优先的个人知识管理系统， 支持细粒度块级引用和 Markdown 所见即所得。
 
-![siyuan-note](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73697975616e2d6e6f74652f73697975616e40383438393339373430316366353032356561623834376466623236613466333839366265353336332f73637265656e73686f74732f66656174757265302e706e67.png)
+![siyuan-note](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73697975616e2d6e6f74652f73697975616e40383438393339373430316366353032356561623834376466623236613466333839366265353336332f73637265656e73686f74732f66656174757265302e706e67.png)
 
 
 ***
@@ -909,7 +909,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 看名字大家就知道这个是干啥的，还是配上老王的描述吧：
 > 本程序目前支持使用常见 Git 仓库托管提供商以及本地代码仓库进行分析。
 
-![myyearwithgit](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Screenshot.png)
+![myyearwithgit](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Screenshot.png)
 
 
 ### 往期推荐
@@ -922,7 +922,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 [iOS摸鱼周报 第三十三期](https://mp.weixin.qq.com/s/nznnGmBsqsrWcvZ4XFMttg)
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/WechatIMG384.jpeg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
 ***
 推荐来源：[iOSleep](https://github.com/iOSleep)
 
@@ -936,7 +936,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以吸附在屏幕边缘的 Dock，你可以拖拽任何东西「图片、文件、文字、链接...」暂存到 Dock 中，方便你在其他 App 中来使用。
 
-![Dropshelf](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/9964d0eee2c48e3d24ba63c09e25b10c_720w.jpeg)
+![Dropshelf](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/9964d0eee2c48e3d24ba63c09e25b10c_720w.jpeg)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -953,7 +953,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 `Xcodes` 的另一种选择，方便我们直接从苹果官网下载 Xcode。 据称下载速度比 `Xcodes` 更快。
 
-![xcinfo](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/inf.png)
+![xcinfo](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/inf.png)
 
 ### Mark Text
 
@@ -967,7 +967,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 其和 `Typora` 一样，也是单窗的形式。
 
-![Mark Text](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/marktext.png)
+![Mark Text](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/marktext.png)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -982,7 +982,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 `Tig` 是一个 `git` 资源库浏览器，采用 `ncurses` 开发，很适合习惯使用命令行进行 `git` 操作的小伙伴们。
 
-![Tig](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_20220106.png)
+![Tig](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Snipaste_20220106.png)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -1006,7 +1006,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 更多细节请直接前往 repo homepage 查看。
 
-![SwiftInfo](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220112183759.png)
+![SwiftInfo](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220112183759.png)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -1023,7 +1023,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 > 和《摸鱼周报》相得益彰，作者也是一直在维护这个软件。
 
-![摸鱼单词](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Snipaste_2022-01-18_20-46-39%E7%9A%84%E5%89%AF%E6%9C%AC.png)
+![摸鱼单词](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Snipaste_2022-01-18_20-46-39%E7%9A%84%E5%89%AF%E6%9C%AC.png)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -1038,7 +1038,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 贝尔实验室开发的有向图/无向图自动布局应用，支持 dot 脚本绘制结构图，流程图等。
 
-![Graphviz](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20220217174238.png)
+![Graphviz](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220217174238.png)
 
 对产物`.gz`文件进行解析查看的途径。
 
@@ -1066,7 +1066,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 小而强大的文件搜索应用，媲美 `windows` 下的 `Everything`。
 
-![EasyFind](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/easyfind-easyfind.png)
+![EasyFind](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/easyfind-easyfind.png)
 
 
 
@@ -1084,7 +1084,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 `Nginx`在线配置生成工具，配置高性能，安全和稳定的`Nginx`服务器的最简单方法。
 
-![nginxedit](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/Nginx%E5%9C%A8%E7%BA%BF%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.png)
+![nginxedit](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Nginx%E5%9C%A8%E7%BA%BF%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.png)
 
 ***
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
@@ -1116,7 +1116,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 `Aria2GUI` 是一款支持多种协议的轻量级命令行下载工具，可以轻松的下载离线资源。
 
-![Aria2GUI](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/687474703a2f2f692e696d6775722e636f6d2f4d455a7150397a2e706e67.png)
+![Aria2GUI](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/687474703a2f2f692e696d6775722e636f6d2f4d455a7150397a2e706e67.png)
 
 
 ***

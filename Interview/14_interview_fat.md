@@ -1,6 +1,6 @@
 # 人物访谈 | 东坡肘子：健康&开发
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/unsplash_interview14_cover.jpg)
+![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/unsplash_interview14_cover.jpg)
 
 肘子是摸鱼周报的一位编辑，最早知道他还是通过他写的几篇关于 Swift 的博客。他的博客专注于 Swift 领域，每篇文章的质量都很高，是这个领域非常值得关注的博客之一。后来了解到他之前得过一场大病，现在的生活节奏基本平稳有序。又想到其他几位圈里同样受到疾病影响的开发者，就决定了这次访谈的主题：健康&开发。
 
