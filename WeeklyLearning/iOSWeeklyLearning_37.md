@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十七期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -36,7 +36,7 @@ App Store Connect 后台的操作文档，可以参考：[配置自定产品页]
 
 我们对 App 的启动流程通常会关注比较多，而忽视设备的启动流程，这次来梳理一下设备的启动流程。设备的启动流程分两类：OS X 和 iOS 等 i系列设备，过程大致如下图所示：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211209233126.png)
+![](http://cdn.zhangferry.com/Images/20211209233126.png)
 
 #### 开机
 
@@ -192,7 +192,7 @@ HTTP（超文本传输协议，HyperText Transfer Protocol）是互联网上应�
 看名字大家就知道这个是干啥的，还是配上老王的描述吧：
 > 本程序目前支持使用常见 Git 仓库托管提供商以及本地代码仓库进行分析。
 
-![myyearwithgit](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Screenshot.png)
+![myyearwithgit](http://cdn.zhangferry.com/Images/Screenshot.png)
 
 
 ### 往期推荐
@@ -205,4 +205,4 @@ HTTP（超文本传输协议，HyperText Transfer Protocol）是互联网上应�
 
 [iOS摸鱼周报 第三十三期](https://mp.weixin.qq.com/s/nznnGmBsqsrWcvZ4XFMttg)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

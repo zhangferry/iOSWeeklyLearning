@@ -8,7 +8,7 @@
 
 Issue 适用于读者，PR 适用于联合编辑，我们来讲下 PR 的协作方式，大致流程可以看下下面这张图。
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626113835.png)
+![](http://cdn.zhangferry.com/Images/20210626113835.png)
 
 1-4 用于首次提交的场景，5-7用于后续的提交场景。
 
@@ -18,7 +18,7 @@ Issue 适用于读者，PR 适用于联合编辑，我们来讲下 PR 的协作�
 
 这里的同步分为两步进行，Moyu Remot -> My Remote 这一步需要利用 Github 针对Fork仓库增加的 Fetch upstream 功能：
 
-![](https://gitee.com/zhangferry/Images/raw/master/iOSWeeklyLearning/20210626112400.png)
+![](http://cdn.zhangferry.com/Images/20210626112400.png)
 
 点击 Fetch and merge 即可完成Moyu远程仓库到自己远程仓库的同步。之后我们还需通过本地的 Git 进行同步：
 

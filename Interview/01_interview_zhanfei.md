@@ -2,7 +2,7 @@
 
 [@zhangferry](https://zhangferry.com)：看一张最近掘金的作者排行榜图片
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/juejin_rank.png)
+![](http://cdn.zhangferry.com/Images/juejin_rank.png)
 
 从上图发现，掘金排名靠前的前端和 Android 端有不少作者也有公众号，而 iOS 端却没有；另一个方面是，前端和 Android 靠前的都有不少是团队号，而 iOS 端基本都是个人创作者。因为这个排行是根据最近一段时间作者文章活跃度动态变化的，所以会存在一定的偶然性，但从中也能分析出一些端倪。以下是我总结出的几点（仅指掘金平台）：
 

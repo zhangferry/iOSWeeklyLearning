@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第四十四期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/moyu_weekly_cover.jpeg)
+![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -15,7 +15,7 @@
 
 [@zhangferry](https://zhangferry.com)：Apple 将在 iPhone 上推出 Tap to Pay 功能，即可以通过简单的操作行为 -- 轻触，完成在商户端的付款过程。该功能通过 NFC 实现，非常安全，支持 Apple Pay、非接触式信用卡、借记卡以及其他数字钱包，这意味着 iPhone 将具备类似 POS 的功能，客户可以直接在商户的 iPhone 上刷信用卡进行消费。该功能仅 iPhone XS 及之后的机型支持。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Apple_Apple-Pay_Payment_inline.jpg.large_2x.jpg)
+![](http://cdn.zhangferry.com/Images/Apple_Apple-Pay_Payment_inline.jpg.large_2x.jpg)
 
 Stripe 将成为第一个在 iPhone 上向其商业客户提供 Tap to Pay 的支付平台。其他支付平台和应用程序将在今年晚些时候推出。
 
@@ -183,7 +183,7 @@ static void object_cxxDestructFromClass(id obj, Class cls)
 
 而 `cxx_destruct` 就是用于释放变量的，当类中新增了变量后，会自动插入该函数，这里可以通过 `LLDB watchpoint ` 监听实例的属性值变化， 然后查看堆栈信息验证。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/weekly_44_interview_02.jpg)
+![](http://cdn.zhangferry.com/Images/weekly_44_interview_02.jpg)
 
 #### 避免在 dealloc 中使用 __weak
 
@@ -309,7 +309,7 @@ id  weak_register_no_lock(weak_table_t *weak_table, id referent_id,   id *referr
 
 小而强大的文件搜索应用，媲美 `windows` 下的 `Everything`。
 
-![EasyFind](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/easyfind-easyfind.png)
+![EasyFind](http://cdn.zhangferry.com/Images/easyfind-easyfind.png)
 
 
 
@@ -327,4 +327,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十期](https://mp.weixin.qq.com/s/y4229I_l8aLILR7WA7y01Q)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

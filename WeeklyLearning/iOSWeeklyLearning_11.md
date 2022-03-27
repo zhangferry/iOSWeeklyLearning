@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十一期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。
 
@@ -16,7 +16,7 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 符合OAuth2.0 标准的 Authorization Code 授权流程如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515192755.png)
+![](http://cdn.zhangferry.com/Images/20210515192755.png)
 
 图片参考：[用iOS 内建的ASWebAuthenticationSession 实作OAuth 2.0 授权流程！](https://appcoda.com.tw/ios-oauth/ "用iOS 内建的ASWebAuthenticationSession 实作OAuth 2.0 授权流程！")
 
@@ -80,11 +80,11 @@ redirectUri 就是 3.1 配置的白名单，作为页面重定向的唯一标识
 
 在 Apple Configurator 2 里创建一个描述文件，填入电脑端的 IP 地址和端口号。按 Command + S 即可保存当前的描述文件。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515201316.png)
+![](http://cdn.zhangferry.com/Images/20210515201316.png)
 
 到这时还无法抓包 HTTPS 请求，需要导入一个 Charles 的证书。在Charles 里 Help > SSL Proxying > Save Charles Root Certificate，选择cer格式保存起来。在 Apple Configurator 2 里创建一个证书文件，描述文件里选证书即可，配置的时候添加刚才保存的cer文件。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515201530.png)
+![](http://cdn.zhangferry.com/Images/20210515201530.png)
 
 将这个两个文件通过 Configurator 2 安装到Apple TV里，并在 TV 端的 Settings > About 里的证书选项里进行信任。之后在 Charles 里加入对 443 端口的监听，并保持 TV 和 电脑处在同一Wifi 下即可进行抓包。
 
@@ -137,7 +137,7 @@ CPU 相关内容还有两个我们经常遇到的概念：位数、架构。
 
 其中，累加寄存器、标志寄存器、程序计数器、指令寄存器和栈寄存器都只有一个，其它寄存器一般有多个。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515221243.png)
+![](http://cdn.zhangferry.com/Images/20210515221243.png)
 
 寄存器的命名是跟着 CPU 类型走的，ARM64 类型的 CPU 有 32 个寄存器，以下列出了部分寄存器的特殊作用：
 
@@ -156,7 +156,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 每执行一条指令后，PC 的值会立即指向下一条要执行的指令的地址。当顺序执行时，每执行一条指令，PC 的值就是简单的 +1。而条件分支和循环执行等转移指令会使 PC 的值指向任意的地址，这样程序就可以跳转到任意指令，或者返回到上一个地址来重复执行同一条指令。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515222022.png)
+![](http://cdn.zhangferry.com/Images/20210515222022.png)
 
 ### 什么是内存
 
@@ -176,7 +176,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 内存和 CPU 使用 IC 电子元件作为基本单元。IC 电子元件有不同种形状，但是其内部的组成单位称为一个个的引脚。IC 元件两侧排列的四方形块就是引脚，IC 的所有引脚只有两种电压：0V 和 5V，该特性决定了计算机的信息处理只能用 0 和 1 表示，也就是二进制来处理。一个引脚可以表示一个 0 或 1，所以二进制的表示方式就变成 0、1、10、11、100、101 等，虽然二进制数并不是专门为引脚设计的，但是和 IC 引脚的特性非常吻合。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515222223.png)
+![](http://cdn.zhangferry.com/Images/20210515222223.png)
 
 我们都知道内存是用来存储数据的，那么这个 IC 中能存储多少数据呢？D0 - D7 表示的是数据信号，也就是说一次可以输入输出 1 byte = 8 bit 数据。A0 - A9 是地址信号，共10个，表示可以指定 2^10 = 1024 个地址。每个地址都都可存放 1 byte 数据，所以这个 IC 的容量就是 1KB。
 
@@ -234,7 +234,7 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 
 Moment 是一个存在于菜单栏和通知中心的倒计时应用程序，以帮助你记住最难忘的日子和生活。这个类似手机端的 Countdown。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/menubar-mockup.jpg)
+![](http://cdn.zhangferry.com/Images/menubar-mockup.jpg)
 
 ### One Switch
 
@@ -246,7 +246,7 @@ Moment 是一个存在于菜单栏和通知中心的倒计时应用程序，以�
 
 One Switch 是一个聚合的开关控制软件，使用它可以在菜单控制栏直接配置桌面的隐藏显示、锁屏、暗黑模式、连接AirPods 等功能。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/mbp-mockup.png)
+![](http://cdn.zhangferry.com/Images/mbp-mockup.png)
 
 ## 联系我们
 
@@ -258,4 +258,4 @@ One Switch 是一个聚合的开关控制软件，使用它可以在菜单控制
 
 [摸鱼周报第十期](https://zhangferry.com/2021/05/05/iOSWeeklyLearning_10/)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
+![](http://cdn.zhangferry.com/Images/wechat_official.png)

@@ -2,7 +2,7 @@
 
 本期访谈对象是摸鱼周报的主编之一：反向抽烟。他还在读研，因为名字里带个尧字，我们都叫他尧兄。尧兄有一个博客：https://blog.csdn.net/opooc，分享自己的学习记录，大家有兴趣可以看下。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG552_sea.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG552_sea.jpeg)
 
 zhangferry：简单介绍下自己，再讲一下最近的状态吧。
 
@@ -24,11 +24,11 @@ zhangferry：尧兄啃过很多本书，能推荐一个对自己影响最大的�
 
 备注：尧兄真的是在啃书，有一张之前群里发的图片为证：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG436_csapp.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG436_csapp.jpeg)
 
 再附一张他推荐过的书目名单：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/image_books.png)
+![](http://cdn.zhangferry.com/Images/image_books.png)
 
 zhangferry：对于学习这件事，你是如何保持热情的？感觉你对学习是沉迷的。可以推荐一些你的学习方法吗？
 

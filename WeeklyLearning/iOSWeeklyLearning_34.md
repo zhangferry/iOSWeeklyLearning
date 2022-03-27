@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十四期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -290,7 +290,7 @@ func postorderIteration(_ root: TreeNode?) {
 
 `Mounty` 是一个在 macOS 下以读写模式重新挂载写保护的 NTFS 卷的小工具，功能类似于 `NTFS For Mac`，最大也是最重要的区别是它是**免费**的。
 
-![mounty](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/example.png)
+![mounty](http://cdn.zhangferry.com/Images/example.png)
 
 ## 关于我们
 
@@ -306,4 +306,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第三十期](https://mp.weixin.qq.com/s/KNyIcOKGfY5Ok-oSQqLs6w)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

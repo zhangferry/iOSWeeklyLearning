@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -184,7 +184,7 @@ objc_release(id obj)
 
 来自 Microsoft 的 Data Science 基础课程，为期 10 周，有 20 节课。这是一个基于项目的课程，配套 40 多个小测试，通过该课程你可以学习到关于数据科学的基础知识。每节课程还有精美的插画配图，有兴趣学习 Data Science 的朋友可以尝试一下。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Data-Science-For-Beginners.png)
+![](http://cdn.zhangferry.com/Images/Data-Science-For-Beginners.png)
 
 ## 工具推荐
 
@@ -200,7 +200,7 @@ objc_release(id obj)
 
 `Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支持 Xcode，值得一玩。
 
-![wakapi](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/screenshot.png)
+![wakapi](http://cdn.zhangferry.com/Images/screenshot.png)
 
 ## 关于我们
 
@@ -216,4 +216,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第二十六期](https://mp.weixin.qq.com/s/PnUZLoyKr8i_smi0H-pQgQ)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

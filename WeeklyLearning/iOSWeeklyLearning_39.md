@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十九期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -84,13 +84,13 @@ HTTPS 的建立流程大概是这样的：
 
 我们以 `zhangferry.com`这个网站的 HTTPS 证书为例进行分析：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223165541.png)
+![](http://cdn.zhangferry.com/Images/20211223165541.png)
 
 `zhangferry.com` 的证书里有一个 Issuer Name 的分段，这里表示的是它的签发者信息。其签发者名称是 *TrustAsia TLS RSA CA*，而我们可以通过上面的链式结构发现，其上层就是*TrustAsia TLS RSA CA*。再往上一层是 *DigiCert Global Root CA*，所以证书签发链就是：*DigiCert Global Root CA* -> *TrustAsia TLS RSA CA* -> *zhangferry.com*。
 
 其中 *DigiCert Global Root CA* 是根证书，它的签发者是它自己。根证书由特定机构颁发，被认为是可信的。我们的电脑在安装的时候都会预装一些 CA 根证书，查看钥匙串能够找到刚才的根证书：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223170915.png)
+![](http://cdn.zhangferry.com/Images/20211223170915.png)
 
 如果能够验证签发链是没有篡改的，那就可以说明当前证书有效。
 
@@ -104,7 +104,7 @@ HTTPS 的建立流程大概是这样的：
 
 这些过程中使用到的对称加密算法和 Hash 算法都会在证书里说明。同理逐级验证，直到最终的证书节点，都没问题就算是证书验证通过了。流程如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223174908.png)
+![](http://cdn.zhangferry.com/Images/20211223174908.png)
 
 图片来源：https://cheapsslsecurity.com/blog/digital-signature-vs-digital-certificate-the-difference-explained/
 
@@ -116,7 +116,7 @@ HTTPS 的建立流程大概是这样的：
 
 开放定址法的思路是当地址已经被占用时，就再重新计算，直到生成一个不被占用地址。对应公式为：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223221219.png)
+![](http://cdn.zhangferry.com/Images/20211223221219.png)
 
 其中 di 为增量序列，m 为散列表长度， i 为已发生的冲突次数。根据 di 序列的内容不同又分为不同的处理方案：
 
@@ -188,7 +188,7 @@ di = 伪随机数列，就是伪随机数列探测法。
 
 `Xcodes` 的另一种选择，方便我们直接从苹果官网下载 Xcode。 据称下载速度比 `Xcodes` 更快。
 
-![xcinfo](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/inf.png)
+![xcinfo](http://cdn.zhangferry.com/Images/inf.png)
 
 ### Mark Text
 
@@ -202,7 +202,7 @@ di = 伪随机数列，就是伪随机数列探测法。
 
 其和 `Typora` 一样，也是单窗的形式。
 
-![Mark Text](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/marktext.png)
+![Mark Text](http://cdn.zhangferry.com/Images/marktext.png)
 
 ## 关于我们
 
@@ -218,4 +218,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第三十五期](https://mp.weixin.qq.com/s/fCEbYkAPlK0nm7UtLKFx5A)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

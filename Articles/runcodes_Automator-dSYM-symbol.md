@@ -1,6 +1,6 @@
 # 利用 Automator 快速符号化 Crash 文件
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator-unsplash.jpg)
+![](http://cdn.zhangferry.com/Images/automator-unsplash.jpg)
 
 ## 背景
 
@@ -16,7 +16,7 @@
 
 那么就提效了提效 50% 是不是，两个人的事情一个人搞定 （那么就可以卷点别的）
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_twodog.png)
+![](http://cdn.zhangferry.com/Images/automator_twodog.png)
 
 ## 初版方案
 
@@ -55,9 +55,9 @@ open $crash_log -a sublime
 * 工具：`Automator Service`， 脚本编辑器
 * 语言：`AppleScript`，`Shell`
 
-![automator](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_app.png)
+![automator](http://cdn.zhangferry.com/Images/automator_app.png)
 
-![automator script editor](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_scipt_editor.png)
+![automator script editor](http://cdn.zhangferry.com/Images/automator_scipt_editor.png)
 
 脚本编辑器，`AppleScript`调试用。
 
@@ -201,13 +201,13 @@ _所有的快捷操作，工作流都会在这个目录，就是说你想用别�
 
 示例图：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_services.png)
+![](http://cdn.zhangferry.com/Images/automator_services.png)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_demo.png.png)
+![](http://cdn.zhangferry.com/Images/automator_demo.png.png)
 
 #### 完整的操作步骤
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_proj.png)
+![](http://cdn.zhangferry.com/Images/automator_proj.png)
 
 #### 脚本交互
 
@@ -229,7 +229,7 @@ end tell
 
 ### 演示
 
-![gif](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_dsym.gif)
+![gif](http://cdn.zhangferry.com/Images/automator_dsym.gif)
 *模糊了点，为了加载快，压缩的有点狠，但是也能看大概流程就OK了*
 
 有两种使用方式启动 dSYM 自动化服务：
@@ -237,7 +237,7 @@ end tell
 * 首先选中 dSYM 文件，然后右键 -> 快捷操作 -> dSYM
 * 首先选中 dSYM文件，快捷键即可（这里需要到 Finder -> Service 偏好设置里面配置好按键）
 
-![automator rightkey](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_rightkey.png)
+![automator rightkey](http://cdn.zhangferry.com/Images/automator_rightkey.png)
 
 执行流程如下：
 
@@ -266,4 +266,4 @@ end tell
 
 最后就是要告诫自己：该做的事还得及时做出来， 不然就是午饭没吃 午休没睡。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/automator_meiyou.png)
+![](http://cdn.zhangferry.com/Images/automator_meiyou.png)

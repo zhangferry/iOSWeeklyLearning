@@ -2,7 +2,7 @@
 
 Jojo 是我的前同事，做事非常细心，负责过团队多项重要功能的开发与建设，是我接触过为数不多的比较优秀的程序媛之一。这次邀请到她，来聊一聊她眼中的 iOS 开发。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/programmer_girl.jpg)
+![](http://cdn.zhangferry.com/Images/programmer_girl.jpg)
 
 ### 简单做个自我介绍吧
 
@@ -27,7 +27,7 @@ Jojo 是我的前同事，做事非常细心，负责过团队多项重要功能
 
 最近在看《非暴力沟通》，读这本书一开始是因为家里有个调皮小孩，天天跟我唱反调，心累得很。收获，让我懂得分析矛盾产生原因，以及如何去解决矛盾，书中会提供几种方法，总而言之，冲突产生时，学会倾听内心的声音，然后站在对方角度去感受，这样很大可能能够建立积极关系，收到良好反馈。不仅育儿有用，工作中同样受益匪浅。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/feibaoligoutong.jpeg)
+![](http://cdn.zhangferry.com/Images/feibaoligoutong.jpeg)
 
 如果大家有看过的好书，感谢推荐给我看看。如果有跟我一样困惑的人，还没遇见影响着自己变的更好的人，那就多看些好的有意义的书，说不定能找到点思路或者多交交朋友。遇见优秀的人多了，自己也会变得更加优秀。
 

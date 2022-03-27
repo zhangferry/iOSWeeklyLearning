@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二十二期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -15,7 +15,7 @@
 
 [@zhangferry](https://zhangferry.com)：看一张最近掘金的作者排行榜图片
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/juejin_rank.png)
+![](http://cdn.zhangferry.com/Images/juejin_rank.png)
 
 从上图发现，掘金排名靠前的前端和 Android 端有不少作者也有公众号，而 iOS 端却没有；另一个方面是，前端和 Android 靠前的都有不少是团队号，而 iOS 端基本都是个人创作者。因为这个排行是根据最近一段时间作者文章活跃度动态变化的，所以会存在一定的偶然性，但从中也能分析出一些端倪。以下是我总结出的几点（仅指掘金平台）：
 
@@ -69,7 +69,7 @@
 
 JOIN 作用是把多个表的行结合起来，各个表中对应的列有可能数据为空，就出现了多种结合关系：LEFT JOIN、RIGHT JOIN、INNER JOIN、OUTER JOIN。对应到集合的表示，它们会出现如下 7 种表示方法：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210807132907.png)
+![](http://cdn.zhangferry.com/Images/20210807132907.png)
 
 UNION 表示合并多个 SELECT 结果。UNION 默认会合并相同的值，如果想让结果逐条显示的话可以使用 UNION ALL。
 
@@ -124,7 +124,7 @@ left join
 
 我们新增一个名为 AppStore 的 Configuration，然后给其设置一个宏 `APPSTORE=1`，然后将之前的 Release 设置为 `ADHOC=1`，即是为这两个项目环境指定了特定的宏。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210807151150.png)
+![](http://cdn.zhangferry.com/Images/20210807151150.png)
 
 **开发端服务器**
 
@@ -134,7 +134,7 @@ left join
 
 AppStore 的开发环境根据证书形式来定，其决定了 IAP 和推送的使用场景，在最后的封包环节决定，Xcode 将其分为以下四种场景：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210807151744.png)
+![](http://cdn.zhangferry.com/Images/20210807151744.png)
 
 可以看到 Configuration 设置和封包环节是相互独立的，如果本地有三个 Configuration 的话，我们可导出的包类型数量最多为：3 x 4 = 12 种。所以如果仅仅用开发包和生成环境包描述一个包的类型肯定是不够用的，但全描述又不现实，又因封包环节在编译之后，所以我们没法提前决定包类型，所以就有了约定成俗的一些习惯。
 
@@ -278,7 +278,7 @@ _NSConcreteMallocBlock|堆|引用计数增加
 
 由布朗大学的学生制作的「看见统计」课程，致力于用数据可视化的手段让数理统计概念更容易理解。其中的内容与国内本科的概率论与数理统计内容也大致相仿，且对于中文的本地化支持的非常好。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/%E6%88%AA%E5%B1%8F2021-08-06%20%E4%B8%8B%E5%8D%885.41.41.png)
+![](http://cdn.zhangferry.com/Images/%E6%88%AA%E5%B1%8F2021-08-06%20%E4%B8%8B%E5%8D%885.41.41.png)
 
 ### Hacker Laws
 
@@ -296,7 +296,7 @@ _NSConcreteMallocBlock|堆|引用计数增加
 
 一个正则表达式测试和分析网站，不仅可以将匹配结果进行输出，还会逐个分析表达式的含义。我们以摸鱼周报`关于我们`的文案进行测试，我们想匹配出 “iOS 摸鱼周报”（中间有空格），“iOS成长之路”，这两个字符串。文案特征为：”iOS“开头，不能紧跟其他字母，以逗号结尾但不包括逗号。测试结果如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210807164527.png)
+![](http://cdn.zhangferry.com/Images/20210807164527.png)
 
 观察右侧结果分析，示例中使用的 `*?` 非贪婪模式和 `(?=，)` 零宽度正预测先行断言，都有很详细的讲解。这对于我们理解他人写的正则表达式能起到很好的帮助作用。
 
@@ -314,4 +314,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第十八期](https://mp.weixin.qq.com/s/JsGmu7pzYLI3Svrmk5i2cA)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

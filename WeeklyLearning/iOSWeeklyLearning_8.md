@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第八期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
@@ -40,7 +40,7 @@ entitlements是一种授权文件，用于配置相应的操作是否被允许�
 
 我们可以Copy原来的授权文件，重命名，然后在`Build Setting > Signing > Code Signing Entitlements `中配置刚才新增的entitlements文件。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210410115024.png)
+![](http://cdn.zhangferry.com/Images/20210410115024.png)
 
 ### would clobber existing tag
 
@@ -201,7 +201,7 @@ DSL包含外部DSL和内部DSL，外部DSL包括：Regex、SQL、HTML&CSS
 
 Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](https://canbalkaya.blog/ "Can Balkaya")，经常发布一些介绍Swift特性相关的文章，质量都很高。我在别的地方看到有人翻译过里面部分文章，说明它还是有一定关注度的，如果英文稍微好些的可以直接订阅这个专栏来看。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210411102014.png)
+![](http://cdn.zhangferry.com/Images/20210411102014.png)
 
 ## 工具推荐
 
@@ -219,7 +219,7 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 这个应用可以帮助你清除遗留以及废弃文件，从而极大的节省硬盘空间。 你可以每月或者每周运行一次进行清理。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210410105340.png)
+![](http://cdn.zhangferry.com/Images/20210410105340.png)
 
 ## JSONExport
 
@@ -235,7 +235,7 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 对于一些适配CoreData、Realm的特殊格式也可以完整适配。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210410123533.png)
+![](http://cdn.zhangferry.com/Images/20210410123533.png)
 
 ## 联系我们
 
@@ -247,4 +247,4 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 [摸鱼周报第六期](https://zhangferry.com/2021/03/14/iOSWeeklyLearning_6/)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
+![](http://cdn.zhangferry.com/Images/wechat_official.png)

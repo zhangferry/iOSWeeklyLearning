@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十三期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
@@ -110,7 +110,7 @@ BIOS 除了键盘，磁盘，显卡等基本控制程序外，还有`引导程�
 
 制作黑苹果的时候安装的 Clover 就是一个启动程序，它通过修改 BIOS 配置，让 BIOS 首先执行它，然后由它来引导至 MacOS 的启动。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210527232231.png)
+![](http://cdn.zhangferry.com/Images/20210527232231.png)
 
 严格意义来说 BIOS 是 IBM PC架构上的一种设计规范，Mac电脑，包括一些新型的主板都没有 BIOS 这一概念，取而代之的是 EFI/UEFI。
 
@@ -156,13 +156,13 @@ IRQ（Interrupt Request）代表的就是中断请求。IRQ 是用来暂停当�
 
 从中断处理开始到请求中断的程序（中断处理程序）运行结束之前，被中断的程序（主程序）的处理是停止的。这种情况就类似于在处理文档的过程中有电话打进来，电话就相当于是中断处理。假如没有中断处理的发生，就必须等到文档处理完成后才能够接听电话。由此可见，中断处理有着巨大的价值，就像是接听完电话后会返回原来的文档作业一样，中断程序处理完成后，也会返回到主程序中继续。
 
-![中断请求示意图](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210526233248.png)
+![中断请求示意图](http://cdn.zhangferry.com/Images/20210526233248.png)
 
 **实施中断请求的是连接外围设备的 I/O 控制器，负责实施中断处理的是 CPU。**
 
 假如有多个外围设备进行中断请求的话， CPU 需要做出选择进行处理，为此，我们可以在 I/O 控制器和 CPU 中间加入名为中断控制器的 IC 来进行缓冲。中断控制器会把从多个外围设备发出的中断请求有序的传递给 CPU。中断控制器的功能相当于就是缓冲。下面是中断控制器功能的示意图
 
-![中断控制器的功能](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210526233322.png)
+![中断控制器的功能](http://cdn.zhangferry.com/Images/20210526233322.png)
 
 
 ### 什么是 DMA
@@ -170,7 +170,7 @@ IRQ（Interrupt Request）代表的就是中断请求。IRQ 是用来暂停当�
 DMA 全称为 Direct Memory Access，即直接存储器访问。DMA 是一种内存访问机制，它是指在不通过 CPU 的情况下，外围设备直接和主存进行数据传输。磁盘等硬件设备都用到了 DMA 机制，通过 DMA，大量数据就可以在短时间内实现传输，之所以这么快，是因为 CPU 作为中介的时间被节省了，下面是 DMA 的传输过程
 
 
-![使用 DMA 的外部设备和不使用 DMA 的外部设备](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210527220519.png)
+![使用 DMA 的外部设备和不使用 DMA 的外部设备](http://cdn.zhangferry.com/Images/20210527220519.png)
 
 
 I/O 端口号、IRQ、DMA 通道可以说是识别外围设备的 3 点组合。不过，IRQ、DMA 通道并不是所有外围设备都具备的。计算机主机通过软件控制硬件时所需要的信息的最低限，是外围设备的 I/O 端口号。IRQ 只对需要中断处理的外围设备来说是必须的，DMA 通道则只对需要 DMA 机制的外围设备来说必须的。
@@ -227,7 +227,7 @@ I/O 端口号、IRQ、DMA 通道可以说是识别外围设备的 3 点组合。
 
 [喵神](https://weibo.com/onevcat)关于 `async-swift` 的书开工了。是关于Swift5.5的新特性**协程**，待书籍完工的第一时间我们会通过周报再通知到大家。
 
-![New Book! Go!](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/11661621992188_.pic.jpg)
+![New Book! Go!](http://cdn.zhangferry.com/Images/11661621992188_.pic.jpg)
 
 ### 30 seconds of code
 
@@ -235,7 +235,7 @@ I/O 端口号、IRQ、DMA 通道可以说是识别外围设备的 3 点组合。
 
 该网站的口号是：「能找到满足你所有开发需求的代码片段！」，他有许多语言的常用代码片段（Code Snippets），例如排序算法、hex 转 rgb、时间转换等等，能让你轻松地找到各个语言的这些常用代码，让你的开发效率大大提升！（可惜目前还没有 `Swift` 的板块🥲
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210529183606.png)
+![](http://cdn.zhangferry.com/Images/20210529183606.png)
 
 ## 工具推荐
 
@@ -253,7 +253,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 翻到一张之前公司电脑使用该软件将近一年的留存成果，100万+ 按键次数，使用最多的竟然是删除键。。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210529185605.png)
+![](http://cdn.zhangferry.com/Images/20210529185605.png)
 
 # OctoMouse
 
@@ -265,7 +265,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 该软件主要用于统计键盘及鼠标的行为信息，比较有意思的是，它对鼠标的统计会包含移动距离参数。可以试试看多久才能让鼠标移动 5km。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210529191107.png)
+![](http://cdn.zhangferry.com/Images/20210529191107.png)
 
 ## 联系我们
 
@@ -279,4 +279,4 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 [iOS摸鱼周报 第十二期](https://zhangferry.com/2021/05/22/iOSWeeklyLearning_12/)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
+![](http://cdn.zhangferry.com/Images/wechat_official.png)

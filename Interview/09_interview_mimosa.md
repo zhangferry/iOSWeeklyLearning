@@ -2,7 +2,7 @@
 
 Mimosa 是摸鱼周报的编辑之一，负责每期的学习资料整理。在一次聊天过程中他晒出了跟 Tim Cook 的合影，给我们馋哭了。于是就有了这期访谈的主题：WWDC 之旅，也算是拉着 Mimosa 一起回忆了一把，哈哈。因为是在 17 年，WWDC 还是线下，活动真还挺多的，不知道还要多久才开发者大会才能再次回归线下，希望疫情赶紧过去吧。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Mimosa_IMG_0936_small.JPG)
+![](http://cdn.zhangferry.com/Images/Mimosa_IMG_0936_small.JPG)
 
 ### 简单介绍下自己吧
 
@@ -14,24 +14,24 @@ Mimosa 是摸鱼周报的编辑之一，负责每期的学习资料整理。在�
 
 我获得的是 17 年的奖学金，申请 WWDC 奖学金时我正值大二，当时是刚学完学校的 C 语言课程和数据结构，加入了我们学校的 iOS Club，也是第一次接触 iOS 开发。我还清晰的记得当时是在 Swift 3.0 的环境下用 Swift 2.0 的教学视频在自学😂，周围会 Swift 的人也是屈指可数，只能自己上网摸索。由于当时有学长获得过上一年的 WWDC 奖学金（但由于时间问题没去 WWDC 现场），所以当时的刚学我们也想试一试，就熬了几天用自己学过的所有东西做了一个作品提交了。没成想那年我们学校有 4 位同学获得了奖学金！但最后由于签证问题（我是之前已经有申根和美签了，但我的朋友们没有😢），所以只有我一个人去圣何塞 WWDC 的现场。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Mimosa_IMG_0906.JPG)
+![](http://cdn.zhangferry.com/Images/Mimosa_IMG_0906.JPG)
 
 ### 你当时开发的是什么作品？
 那一年是第一次 Apple 要求参赛者制作一个 playground（之前都是要求做一个介绍自己的 App 这种类型的题目），我制作了一个简单又可爱的可视化冒泡排序教程💂‍♀️，运行在 Swift Playgrounds 这个 App 中（可以在 iPad App Store 和 Mac App Store 中找到这个 App），利用这个 App 一侧可以写代码，一侧可以查看运行结果这种所见即所得的特性，来教使用者冒泡排序算法的原理。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/sorting.PNG)
+![](http://cdn.zhangferry.com/Images/sorting.PNG)
 
 ### 参加 WWDC 期间有什么好玩的事情，这个过程有什么收获？
 
 可以说是收获颇丰。首先一个是，作为 Scholarship Winner 可以额外参加一个 WWDC 正式开幕之前的 WWDC Scholarship Meeting，由 Apple 组织在一个小剧场和我们讲了一点 Apple 在各个方面做出的一些努力等等，还会给我们发一个 dev 版本的 Apple TV。重要的是，在所有演讲结束后，Tim Cook 会突然走出来和所有 Scholarship Winner 合影，然后接下来就是激动人心的和 Tim Cook 合影环节，我当时的情况是你只需挤到他旁边他就会和你合照一张！🤩据我观察现场大约有 2/3 的人都在成功合影了。（剩下没合影成功的只能落寞地望着 Tim Cook 和他保镖的背影😇
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/IMG_0626.JPG)
+![](http://cdn.zhangferry.com/Images/IMG_0626.JPG)
 
 对于大多数开发者来说，可能 WWDC 里面重要的是各种各样的 session，但其实也会有一些无关技术但与生活相关的演讲，给我印象深刻的有两个。
 
 一个是在 WWDC 的第二天，由于我时差没倒过来睡不着，参加的当天最早的一个演讲，是奥巴马夫人米歇尔的一个演讲，（虽说我排队时排在前几个但是仍没坐到前排，气死了），她讲了许多科技与生活的事情，谈论了他的孩子，还讲了去长城的经历，吐槽长城人多等等。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Mimosa_IMG_0725.JPG)
+![](http://cdn.zhangferry.com/Images/Mimosa_IMG_0725.JPG)
 
 另有一个让我印象深刻的演讲是来自 NASA 的一个女数学家奶奶，她谈论了她当年是怎么加入 NASA 以及工作至退休期间的经历，讨论了那个年代女性在 NASA 的情况，讨论了那个年代女科学家的境地，让我大受震撼。
 
@@ -39,15 +39,15 @@ Mimosa 是摸鱼周报的编辑之一，负责每期的学习资料整理。在�
 
 比如我的室友就来自俄罗斯🇷🇺，他大四在读，我们用散装英语交流了很多东西，他的作品是用 playgrounds 模拟 Metal（？我到现在也没懂这怎么做的😅），他的计算机基础踏实的一塌糊涂，聊天的时候我就像被面试一样，绞尽脑汁地想他到底在说啥。还有一位意大利小哥🇮🇹一看我这是亚洲人面孔，就凑上来问我们是哪里人，问我是不是中国人，问我来自上海嘛，在得到一系列肯定的答复后他说他去同济大学交流过一段时间，然后他突然很想告诉我他是哪个校区，然后我们开始一起苦思冥想同济大学除了四平路还有在哪的校区，想了半天没想出来，意大利小哥也不尴尬，和我面面相觑地走了一路，最后挥手道别😂。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/shuangx2.jpg)
+![](http://cdn.zhangferry.com/Images/shuangx2.jpg)
 
 在 WWDC 期间的会场外，也会有很多的 tech talk 在附近举办（蹭 WWDC 热度），我误打误撞参加了一个 Realm 举办的 tech talk。一开始先是吹了一波 Realm，然后是邀请了一些从 Apple 离职的人来做对话，结果发现请到了 Chris Lattner（当时就职于特斯拉）。大家伙那叫一个激动啊， 连下面的好多爷爷辈的听众都提了好几个问题（真的爷爷辈👨‍🦳，拄拐杖的，不开玩笑），只能感叹一下计算机技术这该死的魅力。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Photo.png)
+![](http://cdn.zhangferry.com/Images/Photo.png)
 
 另外 WWDC 的倒数第二天有个 Bash，算是一场露天音乐会，气氛很热烈！来的是 Fall Out Boy（代表作有"The Phoenix"，"Immortals" 等，现场太顶了）。大家在现场把酒言欢，给 WWDC 收了个尾。在 Bash 现场还和来自国内各大互联网公司的工程师们合影了，不知道各位看官有没有在照片里面的。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Mimosa_WechatIMG270.jpeg)
+![](http://cdn.zhangferry.com/Images/Mimosa_WechatIMG270.jpeg)
 
 在 WWDC 玩的这几天拓宽了我看待技术的视野，把我从学校里教的那些知识里面拉了出来，在会场的内外，看到了更多与业界发展相关的东西，看到了计算机科学的广度和深度。我本科就读于魔都某不知名二本，且不是工科强校，所以我的学校计算机专业水平比起其他获得奖学金的同学的学校来说（我记得有中大、同济、新国大、中科大、港大等🙂）差的不是一点半点，无意贬低我的母校。但确实这次的经历让我觉得我能努力的地方原来还有这么多，我在学校所认识到的那些知识似乎只是计算机科学的冰山一角，突然在心中对一些东西产生了渴望，让我突然对未来感到期待和兴奋，在这些经历和感受一起冲击我心灵之后，我知道了一件事：我掉进代码这个陷阱里了🥰。
 

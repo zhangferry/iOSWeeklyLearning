@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十一期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -25,13 +25,13 @@ App 内活动是指 App 和游戏内的时效性活动，例如游戏竞赛、�
 
 苹果在 10 月 22 日开放后台，可以上传活动素材提交审核。需要注意的是，此功能目前是测试阶段，需要开发者接受此协议才生效。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG312.png)
+![](http://cdn.zhangferry.com/Images/WechatIMG312.png)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG313.png)
+![](http://cdn.zhangferry.com/Images/WechatIMG313.png)
 
 2021 年 10 月 27 日起，在 iOS 15 以上设备的 App Store 上，用户可以看到 App 内活动。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG314.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG314.jpeg)
 
 
 详细，参见：https://developer.apple.com/cn/app-store/in-app-events/
@@ -61,7 +61,7 @@ New Build System 每次编译准备执行 Build Phase 中的脚本时，会根�
 
 正常 CocoaPods 在处理资源 Copy 的时候是带有 input 和 output 的，用于减少资源的导入和编译行为，如下图：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211027225406.png)
+![](http://cdn.zhangferry.com/Images/20211027225406.png)
 
 我们项目中有很多私有库，里面引用图片使用了 `Assets.xcassets` 的形式（未封装 Bundle，静态库），这导致一个编译错误：
 
@@ -85,7 +85,7 @@ install! 'cocoapods', :disable_input_output_paths => true
 
 CocoaPods 仓库里有一个 Issue 在讨论这个问题：[Issue #8122](https://github.com/CocoaPods/CocoaPods/issues/8122 "Issue #8122") 。但该回答下的方案均不适用，后来将私有库中资源引用的方式改为 Bundle，去掉 `disable_input_output_paths` 的设置，增量编译效果得到大幅提升：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/compile_optimize_timing.png)
+![](http://cdn.zhangferry.com/Images/compile_optimize_timing.png)
 
 其中主要占用编译耗时的 CompileAssetCatalog 阶段直接没有了。
 
@@ -111,7 +111,7 @@ Module Maps 主要缩短的是头文件的引用问题，未 Module 化的时候
 
 举个例子：当一个 target 依赖多个子 targets 时，Xcode 必须等待所有子 targets 完成才能继续编译当前 target。我们可以考虑分拆依赖关系，最大化利用 Xcode 的并发能力。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211027234051.png)
+![](http://cdn.zhangferry.com/Images/20211027234051.png)
 
 ## 面试解析
 
@@ -196,7 +196,7 @@ raywenderlich 新出的 Flutter 教程，该网站的教程一直以简单易懂
 
 `fig` 是一个开源的终端自动补全工具，支持数百个 CLI 工具，如 `git`、`docker`、`npm `等等，并且可以无缝添加到你现有的终端，如 `iTerm`、`Hyper`、`VSCode` 和 `macOS 终端`，支持我们自己自定义一些补全规则。
 
-![fig](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Snipaste_2021-10-27_21-04-03.png)
+![fig](http://cdn.zhangferry.com/Images/Snipaste_2021-10-27_21-04-03.png)
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
@@ -211,4 +211,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第二十七期](https://mp.weixin.qq.com/s/WvctY6OG1joJez2g6owroA)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

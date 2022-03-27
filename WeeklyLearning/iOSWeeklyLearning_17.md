@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十七期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -95,7 +95,7 @@ print((combinedEAcute as NSString).length) // 2
 
 我们先来看一下 TCP 报文头部结构：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210704165732.png)
+![](http://cdn.zhangferry.com/Images/20210704165732.png)
 
 握手阶段主要依靠以下几个标志位：
 * SYN：在建立连接时使用，用来同步序号。SYN=1 代表这是一个请求建立连接或同意建立连接的报文，只有前两次握手中 SYN 才为 1，带 SYN 标志的 TCP 报文段称为同步报文段；
@@ -106,7 +106,7 @@ print((combinedEAcute as NSString).length) // 2
 
 **三次握手是指建立一个 TCP 连接时，需要客户端和服务端总共发送 3 个包，需要三次握手才能确认双方的接收与发送能力是否正常。**
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703051424.png)
+![](http://cdn.zhangferry.com/Images/20210703051424.png)
 
 1. 客户端向服务端发起连接请求，需要发送一个 SYN 报文到服务端。
 2. 当服务端收到客户端发过来的 SYN 报文后，返回给客户端 SYN、ACK 报文。`这时候服务端可以确认客户端的发送能力和自己的接收能力正常`。
@@ -114,7 +114,7 @@ print((combinedEAcute as NSString).length) // 2
 
 **四次挥手的目的是关闭一个 TCP 连接。**
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703051443.png)
+![](http://cdn.zhangferry.com/Images/20210703051443.png)
 
 1. 客户端主动发起连接断开，发送一个 FIN 报文到服务端；
 2. 服务端返回给客户端 ACK 报文。此时服务端处于关闭等待状态，而不是立马给客户端发 FIN 报文，这个状态还要持续一段时间，因为服务端可能还有数据没发完。`此时客户端到服务端的连接已经断开。但客户端和服务端之间所建立的 TCP 连接通道是全双工的，此时只是处于半关闭状态，所以服务端到客户端可能还会传递数据`；
@@ -206,7 +206,7 @@ iOS 系统会自动对 GET 请求进行缓存；同时提供了`NSURLCache`支�
 
 Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作，对那些不擅长使用命令行的开发来说会是一种苦恼，而且命令行确实不够直观。Cakebrew 是一款桌面端的 Homebrew 管理工具，它包含常用的 Homebrew 功能，并将其可视化，像是已安装工具，可升级工具以及工具库等功能。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210704205546.png)
+![](http://cdn.zhangferry.com/Images/20210704205546.png)
 
 ### Paste - Clipboard Manager
 
@@ -218,7 +218,7 @@ Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作
 
 Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它能够为您储存您在设备上复制的所有内容，并将其储存在 Paste for Mac 的历史记录中。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703184817.png)
+![](http://cdn.zhangferry.com/Images/20210703184817.png)
 
 ## 关于我们
 
@@ -234,4 +234,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第十三期](https://mp.weixin.qq.com/s/qJG74OQsJ1VV1cB6fDX8TA)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
+![](http://cdn.zhangferry.com/Images/wechat_official.png)

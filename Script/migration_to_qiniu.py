@@ -8,15 +8,22 @@ import qiniu
 
 # folder map with repo
 repo_map = {
-    "/Users/zhangferry/Desktop/iOSWeeklyLearning": ["Articles", "Resources", "WeeklyLearning", "CategorySummary", "Interview"],
+    "/Users/zhangferry/Desktop/iOSWeeklyLearning": ["Articles", "Resources", "WeeklyLearning", "CategorySummary",
+                                                    "Interview"],
     "/Users/zhangferry/zhangferry.github.io/source": ["_posts", "about", "wechat"]
 }
 images_path = "/Users/zhangferry/Downloads/Images-master"
 
+# http://r9ccmp2wy.hb-bkt.clouddn.com/Images
+# https://gitee.com/zhangferry/Images/raw/master/
+link_prefix = r"http://r9ccmp2wy.hb-bkt.clouddn.com/Images"
+
+cdn_path = "http://cdn.zhangferry.com/Images"
 # qiniu config
 k_access_key = "HF6aHnsNHPJRePvl2PTE7Z_jWT_9kts2t4vgyB-u"
 k_secret_key = "Db-SRqLu9T0-1W3I8LfyM__aCGyvsuGBHbxn2v_A"
 k_bucket_name = "moyuweekly"
+
 
 def parse_urls(repo_map):
     for dir in repo_map:
@@ -39,20 +46,25 @@ def parse_urls(repo_map):
 
 def regular_expre(content: Str, path: Str):
     # result is wrapped by brackets
-    link_res = r"https://gitee.com/zhangferry/Images/raw/master/"
-    rex = r"!\[.*\]\(({}.*)\)".format(link_res)
-    print(rex)
-    pattern = re.compile(rex)
-    res_list = pattern.findall(content)
-    for res in res_list:
-        # pure link
-        print(res)
-        file_name = f"{res}".split("/")[-1]
-        new_link = f"http://r9ccmp2wy.hb-bkt.clouddn.com/Images/{file_name}"
-        # print(new_link)
-        # upload_file(path)
-        content = content.replace(res, new_link)
-        
+    # for markdown
+    rex1 = r"!\[.*\]\(({}.*)\)".format(link_prefix)
+    # for hexo header
+    rex2 = r"cover: *({}.*)".format(link_prefix)
+
+    rexs = [rex1, rex2]
+    for rex in rexs:
+
+        pattern = re.compile(rex)
+        res_list = pattern.findall(content)
+        for res in res_list:
+            # pure link
+            print(res)
+            file_name = f"{res}".split("/")[-1]
+            new_link = f"{cdn_path}/{file_name}"
+            # print(new_link)
+            # upload_file(path)
+            content = content.replace(res, new_link)
+
     # print(content)
     # replace = re.sub(rex, content,  content)
     # write back

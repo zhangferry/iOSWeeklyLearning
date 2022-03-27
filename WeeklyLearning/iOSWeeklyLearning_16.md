@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十六期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
@@ -51,7 +51,7 @@ imageoptim -Q --no-imageoptim --imagealpha --number-of-colors 16 --quality 40-80
 
 我们一般使用  Assets Catalogs 对图片资源进行管理。其会存在对应的优化方式
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210626221623.png)
+![](http://cdn.zhangferry.com/Images/20210626221623.png)
 
 在构建过程中，Xcode 会通过自己的压缩算法重新对图片进行处理。在构建 Assets Catalogs 的编译产物 Assest.car 的过程中，Xcode 会使用 `actool` 对  Assets Catalogs  中的 png 图片进行解码，由此得到 Bitmap 数据，然后再运用 actool 的编码压缩算法进行编码压缩处理。所以不改变编码方式的无损压缩方法对最终的包大小来说，可能没有什么作用。
 
@@ -195,7 +195,7 @@ RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以�
 
 一个开源的非官方 WWDC 视频的应用，其支持视频下载、最高 5 分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等。相比于官方应用来说，其功能只多不少（官方新版的 Developer 应用添加了代码片段预览功能），而且更新比较迅速，已经发展到了 v7.3.3 版本，可以查看 2021 年的 Sessions。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210626230114.png)
+![](http://cdn.zhangferry.com/Images/20210626230114.png)
 
 ### ScreenSize
 
@@ -210,7 +210,7 @@ RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以�
 * 标准模式和系统放大模式的尺寸大小
 * 各个设备之间的尺寸对比
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210626223430.png)
+![](http://cdn.zhangferry.com/Images/20210626223430.png)
 
 ## 联系我们
 
@@ -224,4 +224,4 @@ RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以�
 
 [iOS摸鱼周报 第十五期](https://zhangferry.com/2021/06/14/iOSWeeklyLearning_15/)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
+![](http://cdn.zhangferry.com/Images/wechat_official.png)

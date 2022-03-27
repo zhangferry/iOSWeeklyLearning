@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
@@ -136,7 +136,7 @@ BFF，全称是 Backend For Frontend，即服务于前端的后端，它是一�
 
 随着业务的发展，单个 BFF 为了适配多端的差异可能会变得越来越臃肿，可维护性降低，开发成本也会越来越高。这时候就得考虑为对 BFF 层进行拆分，给每种用户体验不同的前端分别对应一个 BFF，比如 PC BFF、移动端 BFF（或者再细拆为 iOS BFF 和 Android BFF） 等等，所以 BFF 也称为面向特定用户体验的适配层。
 
-![BFF](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430111611.png)
+![BFF](http://cdn.zhangferry.com/Images/20210430111611.png)
 
 参考：[BFF —— Backend For Frontend](https://www.jianshu.com/p/eb1875c62ad3 "BFF —— Backend For Frontend")
 
@@ -148,7 +148,7 @@ GraphQL（展开为 Graph Query Language）是 Facebook 开发的应用层查询
 
 它是一种 BFF 的实现方案。REST 数据是通过一个个 URI 定位到的，而 GraphQL 的模型更像是对象模型。GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/33034116-558F-40ED-B191-31D9E28715F2.png)
+![](http://cdn.zhangferry.com/Images/33034116-558F-40ED-B191-31D9E28715F2.png)
 
 这里 GraphQL 起的是一个 API 网关的作用。
 
@@ -160,7 +160,7 @@ RPC，全称是 Remote Procedure Call，即远程过程调用。RPC 是一种进
 
 RPC 的工作流程大致是：客户端应用以本地调用的方式发起远程调用，将参数以及附加信息序列化为能够进行网络传输的消息体，并将消息发送给服务端。服务端对收到的消息进行反序列化后执行请求，然后将结果序列化为消息并返回给客户端。最后客户端接收到消息并反序列化得到数据。
 
-![RPC](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210501090439.png)
+![RPC](http://cdn.zhangferry.com/Images/20210501090439.png)
 
 > RPC 框架可以看作一种代理模式，GoF 的《设计模式》一书中把它称作远程代理。通过远程代理，将网络通信、数据编解码等细节隐藏起来。客户端在使用 RPC 服务的时候，就像使用本地函数一样，无需了解跟服务器交互的细节。除此之外，RPC 服务的开发者也只需要开发业务逻辑，就像开发本地使用的函数一样，不需要关注跟客户端的交互细节。 —— 来自王争的《设计模式之美》
 
@@ -173,7 +173,7 @@ gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。它使�
 
 在 gRPC 里客户端应用可以像调用本地对象一样直接调用另一台不同的机器上服务端应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个服务，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个存根能够像服务端一样的方法。
 
-![gRPC](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210501090350.png)
+![gRPC](http://cdn.zhangferry.com/Images/20210501090350.png)
 
 gRPC 客户端和服务端可以在多种环境中运行和交互 -- 从 Google 内部的服务器到你自己的笔记本，并且可以用任何 gRPC 支持的语言来编写。所以，你可以很容易地用 Java 创建一个 gRPC 服务端，用 Go、Python、Ruby 来创建客户端。此外，Google 最新 API 将有 gRPC 版本的接口，使你很容易地将 Google 的功能集成到你的应用里。
 
@@ -231,7 +231,7 @@ Swift 崛起一直是大家的共识，但是缺少量化数据。本文对 Swif
 
 由新加坡国立大学的教授和学生发起、制作并完善的「数据结构和算法动态可视化」网站，在该网站你可以看到许多经典、非经典的，常见的、非常见的算法的可视化，清晰明了的图形化表现和实时的代码解读可以帮助读者更好地理解各种算法及数据结构。同时该网站支持自动问题生成器和验证器（在线测验系统）。
 
-![VisuAlgo](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430185031.png)
+![VisuAlgo](http://cdn.zhangferry.com/Images/20210430185031.png)
 
 ### [Announcing our Deprecated Books Repo!](https://www.raywenderlich.com/21965623-announcing-our-deprecated-books-repo)
 
@@ -252,7 +252,7 @@ Swift 崛起一直是大家的共识，但是缺少量化数据。本文对 Swif
 **使用介绍**
 
 SwitchHosts 是一个管理、切换多个 Host 方案的工具。它支持多个 Host 方案的不同组合；支持导入导出，方便协作分享；还可以通过 Alfred 插件进行快速切换。
-![SwitchHosts](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430084948.png)
+![SwitchHosts](http://cdn.zhangferry.com/Images/20210430084948.png)
 
 ### DevUtils
 
@@ -266,7 +266,7 @@ DevUtils 是一个开源的开发工具聚合的应用。它包含了常用的�
 
 大家如果不想付费，直接下源码，关掉付费验证就行。如果觉得软件有帮助且有支付能力的话希望还是可以支持下作者。
 
-![DevUtils](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430085707.png)
+![DevUtils](http://cdn.zhangferry.com/Images/20210430085707.png)
 
 ## 联系我们
 
@@ -280,4 +280,4 @@ DevUtils 是一个开源的开发工具聚合的应用。它包含了常用的�
 
 [摸鱼周报第九期](https://zhangferry.com/2021/04/24/iOSWeeklyLearning_9/)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
+![](http://cdn.zhangferry.com/Images/wechat_official.png)

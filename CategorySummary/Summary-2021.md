@@ -10,15 +10,15 @@
 
 来自`岁寒啊`的整理，基本涵盖iOS各个方面的知识点，熟练掌握在这内容，再也不怕iOS”八股文“了。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201220131223.png)
+![](http://cdn.zhangferry.com/Images/20201220131223.png)
 
 每个章节都会有展开内容，多为直接整理，少部分为链接内容。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201220131326.png)
+![](http://cdn.zhangferry.com/Images/20201220131326.png)
 
 ### [SwiftUI官方教程](https://developer.apple.com/tutorials/app-dev-training)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219201033.png)
+![](http://cdn.zhangferry.com/Images/20201219201033.png)
 
 地址：https://developer.apple.com/tutorials/app-dev-training
 
@@ -28,7 +28,7 @@
 
 地址：https://wangdoc.com/bash/
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219202410.png)
+![](http://cdn.zhangferry.com/Images/20201219202410.png)
 
 阮一峰老师制作的Bash脚本教程，主要介绍Linux命令行Bash的基本用法和脚本编程。Bash脚本应该是少有的一个横跨前端、后端及移动端，很多场景都有使用的语言工具。在移动端即使你没有编写Bash脚本的需求，也免不了会需要分析一些脚本的功能。
 
@@ -40,7 +40,7 @@
 
 开发过程中遇到问题是非常常见的，解决问题的过程免不了要向别人或者社区论坛提问，而提问方式的好坏通常决定了你能否获得想要的答案。有这么一个github仓库：[How-To-Ask-Questions-The-Smart-Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) star数高达13.7k，专门讲述如何更有效的提问，很多论坛也将这个作为提问准则，用于提醒大家有效提问的重要性。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210103203707.png)
+![](http://cdn.zhangferry.com/Images/20210103203707.png)
 
 一个好的提问，即表达了自己对问题答案的渴望，也表达了对解答者的尊重。
 
@@ -48,7 +48,7 @@
 
 [halfrost ](https://github.com/halfrost)总结的leetcode算法题解，使用go语言完成，书中各个题目代码都已经beats 100% 了。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210103211318.png)
+![](http://cdn.zhangferry.com/Images/20210103211318.png)
 
 ***
 
@@ -56,7 +56,7 @@
 
 咸鱼团队对Flutter技术的探索与实战分析，听说他们已经在准备写第二本Flutter书了。可以关注公众号：**咸鱼技术获取**，后台免费获取，另有实体书可以淘宝搜索购买。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110171712.png)
+![](http://cdn.zhangferry.com/Images/20210110171712.png)
 
 ### 《Flutter开发实站详解》
 
@@ -64,7 +64,7 @@
 
 地址：[GSY Flutter](https://guoshuyu.cn/home/wx/ "GSY Flutter ")
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110172952.png)
+![](http://cdn.zhangferry.com/Images/20210110172952.png)
 
 ***
 
@@ -72,7 +72,7 @@
 
 一个非常有趣的讲解设计模式、SOLID原则、重构原则的网站。支持八种语言，有很多丰富的配图帮助我们理解这些重要的编程概念。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124190413.png)
+![](http://cdn.zhangferry.com/Images/20210124190413.png)
 
 ***
 
@@ -82,7 +82,7 @@
 
 教程按照天数分为30天，每天都会介绍一些Python概念，伴有示例和练习。正如该仓库的介绍说的那样，真要30天完成这些内容的学习对很多人来说都是一个挑战，我们可以根据自己的节奏去学习，即使100天才学完他们都是可以的。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210228174503.png)
+![](http://cdn.zhangferry.com/Images/20210228174503.png)
 
 ### [Python-100-Days](https://github.com/jackfrued/Python-100-Days "Python-100-Days")
 
@@ -98,13 +98,13 @@
 
 这个斯坦福的iOS开发系列教程每年都会更新，最早之前还是OC语言，还是再讲MVC。现在已经更新到Swift和MVVM了，并使用SwiftUI 进行视图搭建。除视频需要到Youtube观看外，其他内容可以在国内网络环境访问。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210227190060.png)
+![](http://cdn.zhangferry.com/Images/20210227190060.png)
 
 ***
 
 ### iOS开发者资源大全
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210313212015.png)
+![](http://cdn.zhangferry.com/Images/20210313212015.png)
 
 **推荐来源**：[cat13954](https://github.com/cat13954)
 
@@ -122,7 +122,7 @@
 
 Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](https://canbalkaya.blog/ "Can Balkaya")，经常发布一些介绍Swift特性相关的文章，质量都很高。我在别的地方看到有人翻译过里面部分文章，说明它还是有一定关注度的，如果英文稍微好些的可以直接订阅这个专栏来看。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210411102014.png)
+![](http://cdn.zhangferry.com/Images/20210411102014.png)
 
 ***
 
@@ -136,7 +136,7 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210420215429.png)
+![](http://cdn.zhangferry.com/Images/20210420215429.png)
 
 ***
 
@@ -152,7 +152,7 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 由新加坡国立大学的教授和学生发起、制作并完善的「数据结构和算法动态可视化」网站，在该网站你可以看到许多经典、非经典的，常见的、非常见的算法的可视化，清晰明了的图形化表现和实时的代码解读可以帮助读者更好地理解各种算法及数据结构。同时该网站支持自动问题生成器和验证器（在线测验系统）。
 
-![VisuAlgo](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430185031.png)
+![VisuAlgo](http://cdn.zhangferry.com/Images/20210430185031.png)
 
 ### [Announcing our Deprecated Books Repo!](https://www.raywenderlich.com/21965623-announcing-our-deprecated-books-repo)
 
@@ -196,7 +196,7 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 
 [喵神](https://weibo.com/onevcat)关于 `async-swift` 的书开工了。是关于Swift5.5的新特性**协程**，待书籍完工的第一时间我们会通过周报再通知到大家。
 
-![New Book! Go!](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/11661621992188_.pic.jpg)
+![New Book! Go!](http://cdn.zhangferry.com/Images/11661621992188_.pic.jpg)
 
 ### 30 seconds of code
 
@@ -204,7 +204,7 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 
 该网站的口号是：「能找到满足你所有开发需求的代码片段！」，他有许多语言的常用代码片段（Code Snippets），例如排序算法、hex 转 rgb、时间转换等等，能让你轻松地找到各个语言的这些常用代码，让你的开发效率大大提升！（可惜目前还没有 `Swift` 的板块🥲
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210529183606.png)
+![](http://cdn.zhangferry.com/Images/20210529183606.png)
 
 ***
 
@@ -230,7 +230,7 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 
 链接：https://www.avanderlee.com/
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210613155259.png)
+![](http://cdn.zhangferry.com/Images/20210613155259.png)
 
 一个分享关于 Swift、iOS 和 Xcode 技巧和窍门的每周博客，博客的文章写得清晰易懂，排版、配图和动画质量也很高。值得关注一下。同时网站作者也是 [《Swift for Good》](https://www.swiftforgood.com/ "Swift for Good") 的联合作者之一。《Swift for Good》是由20位顶级作家和演讲者撰写的新书，其所有收入将100%捐给慈善机构，有兴趣也可以看一下😺。
 
@@ -300,7 +300,7 @@ Git Cheat Sheet 让你不用再去记所有的 git 命令！对新手友好，�
 
 一个用来学习 Combine 的 App，他将一些 Combine 中的各种操作符用可视化的手段表达了出来，还附加了蠢萌蠢萌的动画效果，很适合刚接触 Combine 的朋友尝试一下。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/co.png)
+![](http://cdn.zhangferry.com/Images/co.png)
 
 ### Stanford CS193P 2021 SwiftUI 2.0 双语字幕
 
@@ -350,7 +350,7 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 由布朗大学的学生制作的「看见统计」课程，致力于用数据可视化的手段让数理统计概念更容易理解。其中的内容与国内本科的概率论与数理统计内容也大致相仿，且对于中文的本地化支持的非常好。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/%E6%88%AA%E5%B1%8F2021-08-06%20%E4%B8%8B%E5%8D%885.41.41.png)
+![](http://cdn.zhangferry.com/Images/%E6%88%AA%E5%B1%8F2021-08-06%20%E4%B8%8B%E5%8D%885.41.41.png)
 
 ### Hacker Laws
 
@@ -488,7 +488,7 @@ gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 
 来自 Microsoft 的 Data Science 基础课程，为期 10 周，有 20 节课。这是一个基于项目的课程，配套 40 多个小测试，通过该课程你可以学习到关于数据科学的基础知识。每节课程还有精美的插画配图，有兴趣学习 Data Science 的朋友可以尝试一下。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Data-Science-For-Beginners.png)
+![](http://cdn.zhangferry.com/Images/Data-Science-For-Beginners.png)
 
 ***
 
@@ -635,7 +635,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 这是一份可视化的 Web 技能列表，它对刚开始学习 Web 或已经工作多年并想学习新东西的人都很有用，你可以从中了解 Web 开发的大概路径和图谱，按顺序或者选择自己感兴趣的部分来看。除此之外最吸引人的是这个列表可视化的非常棒，每个图标符号都很大方美观形象，快来看一下！
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Web%20Skills.png)
+![](http://cdn.zhangferry.com/Images/Web%20Skills.png)
 
 ***
 
@@ -699,13 +699,13 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 之前我的状态栏是这样的：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219214427.png)
+![](http://cdn.zhangferry.com/Images/20201219214427.png)
 
 整理之后就变成了这样：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219214453.png)
+![](http://cdn.zhangferry.com/Images/20201219214453.png)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
+![](http://cdn.zhangferry.com/Images/wechat_official.png)
 
 ***
 
@@ -721,7 +721,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 作者的 [SwiftUI 实验室](https://swiftui-lab.com)，A Companion for SwiftUI 是一款可以记录 iOS 和 macOS 平台的 SwiftUI 视图，形状，协议，场景和属性包装的应用程序。该应用程序还包含每种方法的示例，其中有许多都是交互式的，并且嵌入在应用程序中运行。通过使用关联的控件，你可以看到它们对视图的直接影响，以及如何修改你的代码以产生这样的效果。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210103204133.png)
+![](http://cdn.zhangferry.com/Images/20210103204133.png)
 
 ### Go2Shell - 在终端中打开当前Finder目录
 
@@ -735,7 +735,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 1. 双击下载的文件, 将Go2Shell拖入Applications目录中
 2. 在Applications中, 双击打开Go2Shell, 出现下面的窗口
-   ![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210103221327.png)
+   ![](http://cdn.zhangferry.com/Images/20210103221327.png)
 3. 点击Install Go2Shell to Finder完成安装
 4. 打开Finder窗口, 在工具栏中出现Go2Shell图标
 5. 点击Go2Shell图标, 就会在终端中打开当前Finder目录
@@ -792,7 +792,7 @@ Mac上非常好用的解压缩软件：
 * 支持批量文件加密。
 * 支持压缩包预览
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110110014.png)
+![](http://cdn.zhangferry.com/Images/20210110110014.png)
 
 ### uTools
 
@@ -806,7 +806,7 @@ Mac上非常好用的解压缩软件：
 
 uTools是一个丰富的生产力工具集，支持将近百种的插件。它的使用方式和 Alfred 类似，通过快捷键调出输入框，并通过特殊指令执行结果。但它有比 Alfred 更简单的插件集成方式，在我看来它是更易用的。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210110110536.png)
+![](http://cdn.zhangferry.com/Images/20210110110536.png)
 
 ***
 
@@ -824,7 +824,7 @@ uTools是一个丰富的生产力工具集，支持将近百种的插件。它�
 
 kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很强的diff工具。不光能查看文本的不同，还能识别图片和文件夹的不同。我们可以将它与 git 组合使用，使用它替换git的mergetool。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124184141.png)
+![](http://cdn.zhangferry.com/Images/20210124184141.png)
 
 ### Sherlock
 
@@ -838,7 +838,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 在iOS开发过程中的UI调试常常是让人痛苦的，因为不支持热更新，我们稍微改动一点地方就需要编译整个项目重新运行，这无疑很浪费时间。而Sherlock就是用于解决这个问题的工具（仅支持模拟器），我们可以实时修改各个控件的UI属性，并进行查看最终效果。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124195019.png)
+![](http://cdn.zhangferry.com/Images/20210124195019.png)
 
 ***
 
@@ -856,7 +856,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 强大且方便的流程图绘制软件，同时支持Web端和桌面端。和[Processon的](https://www.processon.com/)免费版只能添加9个文件的限制，Diagrams.net的文件数量是无限制的，而且它支持的流程图控件比Processon还要更多。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210227191005.png)
+![](http://cdn.zhangferry.com/Images/20210227191005.png)
 
 * 支持几乎所有的主流流程图元素
 * 远程存储，文件数量不限，可以存储至Github、Google Drive、Dropbox等地方
@@ -872,7 +872,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 这个工具可以使我们访问github的仓库就像直接在VSCode中打开一样，使用方法非常简单，就是将网站域名换成github1s，以Swift仓库为例，访问：https://github1s.com/apple/swift，得到的结果如下。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210228152659.png)
+![](http://cdn.zhangferry.com/Images/20210228152659.png)
 
 我们可以像在VSCode里一样，直接在浏览器里查看仓库代码。
 
@@ -894,7 +894,7 @@ kaleidoscope中文翻译是万花筒，它是一款颜值很高，专业性很�
 
 F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色，白天亮度像太阳光，在夜间时会让屏幕看着更像是室内光。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210314141348.png)
+![](http://cdn.zhangferry.com/Images/20210314141348.png)
 
 ### Kap
 
@@ -908,7 +908,7 @@ F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色
 
 一款开源且简洁高效的屏幕录制软件，可以导出为GIF，MP4，WebM，APNG等格式，而且会有很不错的压缩率。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210313211617.png)
+![](http://cdn.zhangferry.com/Images/20210313211617.png)
 
 鉴于微信公众号对GIF的两条限制：
 
@@ -934,7 +934,7 @@ F.lux就是处理这一问题的软件，他可以根据时间调节屏幕颜色
 
 上传需要压缩的gif文件即可
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210313211739.png)
+![](http://cdn.zhangferry.com/Images/20210313211739.png)
 
 ***
 
@@ -964,7 +964,7 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 
 以下是作为mergetool的界面，下面内容为最终合并的内容，我们可以通过右侧的扩展按钮选择当前应该选择哪个分支的内容。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210327200304.png)
+![](http://cdn.zhangferry.com/Images/20210327200304.png)
 
 ***
 
@@ -982,7 +982,7 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 
 这个应用可以帮助你清除遗留以及废弃文件，从而极大的节省硬盘空间。 你可以每月或者每周运行一次进行清理。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210410105340.png)
+![](http://cdn.zhangferry.com/Images/20210410105340.png)
 
 ******
 
@@ -997,7 +997,7 @@ $ git config --global mergetool.p4merge.cmd "/Applications/p4merge.app/Contents/
 **使用介绍**
 
 SwitchHosts 是一个管理、切换多个 Host 方案的工具。它支持多个 Host 方案的不同组合；支持导入导出，方便协作分享；还可以通过 Alfred 插件进行快速切换。
-![SwitchHosts](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430084948.png)
+![SwitchHosts](http://cdn.zhangferry.com/Images/20210430084948.png)
 
 ### DevUtils
 
@@ -1011,7 +1011,7 @@ DevUtils 是一个开源的开发工具聚合的应用。它包含了常用的�
 
 大家如果不想付费，直接下源码，关掉付费验证就行。如果觉得软件有帮助且有支付能力的话希望还是可以支持下作者。
 
-![DevUtils](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430085707.png)
+![DevUtils](http://cdn.zhangferry.com/Images/20210430085707.png)
 
 ***
 
@@ -1027,7 +1027,7 @@ DevUtils 是一个开源的开发工具聚合的应用。它包含了常用的�
 
 Moment 是一个存在于菜单栏和通知中心的倒计时应用程序，以帮助你记住最难忘的日子和生活。这个类似手机端的 Countdown。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/menubar-mockup.jpg)
+![](http://cdn.zhangferry.com/Images/menubar-mockup.jpg)
 
 ### One Switch
 
@@ -1039,7 +1039,7 @@ Moment 是一个存在于菜单栏和通知中心的倒计时应用程序，以�
 
 One Switch 是一个聚合的开关控制软件，使用它可以在菜单控制栏直接配置桌面的隐藏显示、锁屏、暗黑模式、连接AirPods 等功能。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/mbp-mockup.png)
+![](http://cdn.zhangferry.com/Images/mbp-mockup.png)
 
 ***
 
@@ -1059,7 +1059,7 @@ SwiftFormat 是用于重新格式化 Swift 代码的命令行工具。它会在�
 
 如果有自动化的工具能完成这些工作，那几乎是最完美的方案了。在代码 review 时就不需要每次都强调无数遍繁琐的代码格式问题了。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522213832.png)
+![](http://cdn.zhangferry.com/Images/20210522213832.png)
 
 ### Notion
 
@@ -1081,7 +1081,7 @@ Notion 是一款极其出色的个人笔记软件，它将“万物皆对象”�
 * 保存历史操作记录并记录相关时间
 * 强大的关联功能，比如日历与笔记，笔记与文件以及网页链接
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522213919.png)
+![](http://cdn.zhangferry.com/Images/20210522213919.png)
 
 ***
 
@@ -1099,7 +1099,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 翻到一张之前公司电脑使用该软件将近一年的留存成果，100万+ 按键次数，使用最多的竟然是删除键。。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210529185605.png)
+![](http://cdn.zhangferry.com/Images/20210529185605.png)
 
 ### OctoMouse
 
@@ -1111,7 +1111,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 该软件主要用于统计键盘及鼠标的行为信息，比较有意思的是，它对鼠标的统计会包含移动距离参数。可以试试看多久才能让鼠标移动 5km。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210529191107.png)
+![](http://cdn.zhangferry.com/Images/20210529191107.png)
 
 ***
 
@@ -1127,7 +1127,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 腾讯柠檬清理 Lite 版-重点聚焦清理功能，包含系统/应用垃圾清理、大文件清理、重复文件清理、相似照片清理 4 个方面，当前还支持在状态栏上查看当前网速信息，帮助你实时了解 Mac 状况。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/16227749924686.jpg)
+![](http://cdn.zhangferry.com/Images/16227749924686.jpg)
 
 **核心功能**
 
@@ -1150,7 +1150,7 @@ Whatpulse是一个电脑使用检测统计软件，它可以统计你每天的�
 
 Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户快速的比较您的文本文件、文档、PDF、照片、图形和扫描等，并且界面简单直观，输入两个文件的内容，然后单击“查找差异”即可，并且具有绝对的安全性，能够保障您的文件安全，具有统一差异、字符级差异、文件夹差异、导出为 PDF、语法高亮、文件导入、无广告等优势。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/1623388796593.jpg)
+![](http://cdn.zhangferry.com/Images/1623388796593.jpg)
 
 ***
 
@@ -1166,7 +1166,7 @@ Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户�
 
 一个开源的非官方 WWDC 视频的应用，其支持视频下载、最高 5 分钟的视频切割、书签功能、iCloud 同步、Chromecast 投屏、画中画功能等等。相比于官方应用来说，其功能只多不少（官方新版的 Developer 应用添加了代码片段预览功能），而且更新比较迅速，已经发展到了 v7.3.3 版本，可以查看 2021 年的 Sessions。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210626230114.png)
+![](http://cdn.zhangferry.com/Images/20210626230114.png)
 
 ### ScreenSize
 
@@ -1181,7 +1181,7 @@ Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户�
 * 标准模式和系统放大模式的尺寸大小
 * 各个设备之间的尺寸对比
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210626223430.png)
+![](http://cdn.zhangferry.com/Images/20210626223430.png)
 
 ***
 
@@ -1197,7 +1197,7 @@ Diffchecker 是一款简单好用的差异比较工具，使用可帮助用户�
 
 Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作，对那些不擅长使用命令行的开发来说会是一种苦恼，而且命令行确实不够直观。Cakebrew 是一款桌面端的 Homebrew 管理工具，它包含常用的 Homebrew 功能，并将其可视化，像是已安装工具，可升级工具以及工具库等功能。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210704205546.png)
+![](http://cdn.zhangferry.com/Images/20210704205546.png)
 
 ### Paste - Clipboard Manager
 
@@ -1209,7 +1209,7 @@ Homebrew 是 Mac 端常用的包管理工具，但其仅能通过命令行操作
 
 Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它能够为您储存您在设备上复制的所有内容，并将其储存在 Paste for Mac 的历史记录中。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703184817.png)
+![](http://cdn.zhangferry.com/Images/20210703184817.png)
 
 ***
 
@@ -1225,7 +1225,7 @@ Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它�
 
 一款强大的代码片段管理工具，从此告别手动复制粘贴，SnippetsLab 的设计更符合 Apple 的交互习惯，支持导航栏快速操作。另外还可以同步 Github Gist 内容，使用 iCloud 备份。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210710232333.png)
+![](http://cdn.zhangferry.com/Images/20210710232333.png)
 
 ### CodeExpander
 
@@ -1237,7 +1237,7 @@ Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它�
 
 专为开发者开发的一个集输入增强、代码片段管理工具，支持跨平台，支持云同步（Github/码云）。免费版包含 90% 左右功能，相对 SnippetsLab 来说其适用范围更广泛，甚至包括一些日常文本的片段处理。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210710231521.png)
+![](http://cdn.zhangferry.com/Images/20210710231521.png)
 
 ***
 
@@ -1251,7 +1251,7 @@ Paste for Mac 是 Mac 平台上一款专业的剪切板记录增强工具，它�
 
 iOS 包的大小，是每个开发必须关注的问题，对于大型项目来说，只是代码段就有可能超过 100M，算上 armv7 和 arm64 架构，会超过 200M。 LinkMap 工具通过分析项目的 LinkMap 文件，能够计算出各个类、各个三方库占用的空间大小（代码段+数据段），方便开发者快速定位需要优化的文件。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/linkmap.png)
+![](http://cdn.zhangferry.com/Images/linkmap.png)
 
 ***
 
@@ -1267,7 +1267,7 @@ iOS 包的大小，是每个开发必须关注的问题，对于大型项目来�
 
 Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！普通版的功能已经足够使用，笔者认为其是最好用的截图软件了！（下图是官方图）
 
-![Snipaste](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/N3QEb3VA.png)
+![Snipaste](http://cdn.zhangferry.com/Images/N3QEb3VA.png)
 
 ### LSUnusedResources
 
@@ -1279,7 +1279,7 @@ Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴�
 
 一个 Mac 应用程序，用于在 Xcode 项目中查找未使用的图像和资源，可以辅助我们优化包体积大小。
 
-![LSUnusedResources](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/LSUnusedResourcesExample.png)
+![LSUnusedResources](http://cdn.zhangferry.com/Images/LSUnusedResourcesExample.png)
 
 ***
 
@@ -1295,7 +1295,7 @@ Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴�
 
 Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，其相对于 AppleTrace 更易用，且能更方便的在越狱设备上 Trace 任意应用。它由三部分组成：Tweak 插件，动态库（Messier.framework），桌面端应用。非越狱场景，我们使用后两个部分可完成对自己应用的耗时监控，输出为 json 文件，再使用 `chrome://tracing` 将 json 文件绘制为火焰图，效果如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/messier-content.gif)
+![](http://cdn.zhangferry.com/Images/messier-content.gif)
 
 ***
 
@@ -1307,7 +1307,7 @@ Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，�
 
 一个正则表达式测试和分析网站，不仅可以将匹配结果进行输出，还会逐个分析表达式的含义。我们以摸鱼周报`关于我们`的文案进行测试，我们想匹配出 “iOS 摸鱼周报”（中间有空格），“iOS成长之路”，这两个字符串。文案特征为：”iOS“开头，不能紧跟其他字母，以逗号结尾但不包括逗号。测试结果如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210807164527.png)
+![](http://cdn.zhangferry.com/Images/20210807164527.png)
 
 观察右侧结果分析，示例中使用的 `*?` 非贪婪模式和 `(?=，)` 零宽度正预测先行断言，都有很详细的讲解。这对于我们理解他人写的正则表达式能起到很好的帮助作用。
 
@@ -1327,7 +1327,7 @@ git branch -a -v --no-abbrev --contains 1a1b1c
 
 解析结果：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210814184638.png)
+![](http://cdn.zhangferry.com/Images/20210814184638.png)
 
 ***
 
@@ -1343,7 +1343,7 @@ git branch -a -v --no-abbrev --contains 1a1b1c
 
 KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。它不需要任何服务器或额外的资源。该应用程序可以在浏览器中运行，也可以作为桌面应用程序运行。更重要的是它还可以利用 Dropbox、Google  Drive 进行远程同步。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210822081714.png)
+![](http://cdn.zhangferry.com/Images/20210822081714.png)
 
 ***
 
@@ -1363,7 +1363,7 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 其中 Pro 版增加的功能是设备间同步，不过软件本身也支持数据的导入导出，大家根据自己的情况进行选择。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210828101929.png)
+![](http://cdn.zhangferry.com/Images/20210828101929.png)
 
 ***
 
@@ -1379,7 +1379,7 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 作为号主通常会将文章发布到多个平台，每个平台都重复地登录、复制、粘贴是一件很麻烦的事。Wechatsync就是这样一款解脱重复工作的神器。它是一款 Chrome 浏览器插件，支持多个平台的文章发布，这需要我们提前登录各个平台获得授权。它会自动识别公众号文章，弹出「同步该文章」按钮，然后点击就可以同步文章到我们授权的平台。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210904171532.png)
+![](http://cdn.zhangferry.com/Images/20210904171532.png)
 
 ***
 
@@ -1395,7 +1395,7 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 日常开发过程中，经常在终端中执行 pod install、pod update、或者 clear derived data 等操作，XcodeProjects 工具执行这些操作，只需要点击两下就能完成，还能为自己的项目自定义 command，很大程度的简化我们的操作步骤，节省开发时间。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/XcodeProjects.png)
+![](http://cdn.zhangferry.com/Images/XcodeProjects.png)
 
 ***
 
@@ -1411,7 +1411,7 @@ KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。�
 
 AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐槽，如果你也经历过这些事情可以试下 Xcodes。Xcodes 是一个 Xcode 下载管理器，支持下载不同版本的 Xcode，还可以切换默认版本。如果你喜欢命令行，还可以使用其[命令行版本](https://github.com/RobotsAndPencils/xcodes "xcodes")进行安装。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/xcodes.png)
+![](http://cdn.zhangferry.com/Images/xcodes.png)
 
 ***
 
@@ -1436,7 +1436,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 - Swift 框架：在 iOS 和 Android 上使用流行的 Swift 框架，如 Swift Foundation，无需更改代码
 - ...
 
-![SCADE](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/SCD_Auora1-1-1-1240x791.png)
+![SCADE](http://cdn.zhangferry.com/Images/SCD_Auora1-1-1-1240x791.png)
 
 ### Privacy-Insight
 
@@ -1452,7 +1452,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 以下为我使用 1 天的隐私请求记录：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/4301634041484_.pic_hd.jpg)
+![](http://cdn.zhangferry.com/Images/4301634041484_.pic_hd.jpg)
 
 微信和今日头条的隐私权限获取频率均非常高，我是肯定没有那么频繁通过微信访问相册的。对于微信频繁获取相册权限的问题最近也在热议，希望不仅是微信，各个主流 App 都应该对于用户隐私问题予以重视。
 
@@ -1472,7 +1472,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 `Wakapi` 是一个开源工具，可帮助我们跟踪使用不同编程语言等在不同项目上编码所花费的时间，并使用图表等形式展现出来，支持 Xcode，值得一玩。
 
-![wakapi](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/screenshot.png)
+![wakapi](http://cdn.zhangferry.com/Images/screenshot.png)
 
 ***
 
@@ -1488,7 +1488,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 `fig` 是一个开源的终端自动补全工具，支持数百个 CLI 工具，如 `git`、`docker`、`npm `等等，并且可以无缝添加到你现有的终端，如 `iTerm`、`Hyper`、`VSCode` 和 `macOS 终端`，支持我们自己自定义一些补全规则。
 
-![fig](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Snipaste_2021-10-27_21-04-03.png)
+![fig](http://cdn.zhangferry.com/Images/Snipaste_2021-10-27_21-04-03.png)
 
 ***
 
@@ -1504,7 +1504,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 `ipatool` 是一个允许你在 `App Store` 上搜索 iOS 应用程序并下载应用程序包的命令行工具。当然，这过程中需要你的账户以及密码，并且也只能下载账户过去已经下载过的应用程序。相对于使用 `Apple Configurator 2` 操作更加便捷一些。
 
-![ipatool](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/demo.gif)
+![ipatool](http://cdn.zhangferry.com/Images/demo.gif)
 
 > 注意 gif 中的 `ipa` 命令实际使用中可能为 `ipatool`
 
@@ -1526,7 +1526,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 * 设置每个项目的 Swift 版本。
 * 允许您使用环境变量覆盖 Swift 版本。
 
-![swiftenv](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/swiftenv.png)
+![swiftenv](http://cdn.zhangferry.com/Images/swiftenv.png)
 
 ***
 
@@ -1542,7 +1542,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 `Mounty` 是一个在 macOS 下以读写模式重新挂载写保护的 NTFS 卷的小工具，功能类似于 `NTFS For Mac`，最大也是最重要的区别是它是**免费**的。
 
-![mounty](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/example.png)
+![mounty](http://cdn.zhangferry.com/Images/example.png)
 
 ***
 
@@ -1560,7 +1560,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 我们可以考虑用在给应用瘦身时扫描相似图片资源场景下。
 
-![PhotoSweeper](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/PhotoSweeper_MacBook.jpeg)
+![PhotoSweeper](http://cdn.zhangferry.com/Images/PhotoSweeper_MacBook.jpeg)
 
 ***
 
@@ -1576,7 +1576,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 思源笔记是一款本地优先的个人知识管理系统， 支持细粒度块级引用和 Markdown 所见即所得。
 
-![siyuan-note](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73697975616e2d6e6f74652f73697975616e40383438393339373430316366353032356561623834376466623236613466333839366265353336332f73637265656e73686f74732f66656174757265302e706e67.png)
+![siyuan-note](http://cdn.zhangferry.com/Images/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f73697975616e2d6e6f74652f73697975616e40383438393339373430316366353032356561623834376466623236613466333839366265353336332f73637265656e73686f74732f66656174757265302e706e67.png)
 
 ***
 
@@ -1594,7 +1594,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 > 本程序目前支持使用常见 Git 仓库托管提供商以及本地代码仓库进行分析。
 
-![myyearwithgit](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Screenshot.png)
+![myyearwithgit](http://cdn.zhangferry.com/Images/Screenshot.png)
 
 ### 往期推荐
 
@@ -1606,7 +1606,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 [iOS摸鱼周报 第三十三期](https://mp.weixin.qq.com/s/nznnGmBsqsrWcvZ4XFMttg)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
 
 ***
 
@@ -1622,7 +1622,7 @@ AppStore 自带的升级功能经常因为某些奇怪的原因卡住而被吐�
 
 Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以吸附在屏幕边缘的 Dock，你可以拖拽任何东西「图片、文件、文字、链接...」暂存到 Dock 中，方便你在其他 App 中来使用。
 
-![Dropshelf](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/9964d0eee2c48e3d24ba63c09e25b10c_720w.jpeg)
+![Dropshelf](http://cdn.zhangferry.com/Images/9964d0eee2c48e3d24ba63c09e25b10c_720w.jpeg)
 
 ***
 
@@ -1640,7 +1640,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 `Xcodes` 的另一种选择，方便我们直接从苹果官网下载 Xcode。 据称下载速度比 `Xcodes` 更快。
 
-![xcinfo](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/inf.png)
+![xcinfo](http://cdn.zhangferry.com/Images/inf.png)
 
 ### Mark Text
 
@@ -1654,7 +1654,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 其和 `Typora` 一样，也是单窗的形式。
 
-![Mark Text](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/marktext.png)
+![Mark Text](http://cdn.zhangferry.com/Images/marktext.png)
 
 ***
 
@@ -1670,7 +1670,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 `Tig` 是一个 `git` 资源库浏览器，采用 `ncurses` 开发，很适合习惯使用命令行进行 `git` 操作的小伙伴们。
 
-![Tig](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Snipaste_20220106.png)
+![Tig](http://cdn.zhangferry.com/Images/Snipaste_20220106.png)
 
 ***
 
@@ -1695,7 +1695,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 更多细节请直接前往 repo homepage 查看。
 
-![SwiftInfo](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220112183759.png)
+![SwiftInfo](http://cdn.zhangferry.com/Images/20220112183759.png)
 
 ***
 
@@ -1713,7 +1713,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 > 和《摸鱼周报》相得益彰，作者也是一直在维护这个软件。
 
-![摸鱼单词](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Snipaste_2022-01-18_20-46-39%E7%9A%84%E5%89%AF%E6%9C%AC.png)
+![摸鱼单词](http://cdn.zhangferry.com/Images/Snipaste_2022-01-18_20-46-39%E7%9A%84%E5%89%AF%E6%9C%AC.png)
 
 ## 面试题汇总
 
@@ -1758,7 +1758,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 我们先来看一下 TCP 报文头部结构：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210704165732.png)
+![](http://cdn.zhangferry.com/Images/20210704165732.png)
 
 握手阶段主要依靠以下几个标志位：
 
@@ -1770,7 +1770,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 **三次握手是指建立一个 TCP 连接时，需要客户端和服务端总共发送 3 个包，需要三次握手才能确认双方的接收与发送能力是否正常。**
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703051424.png)
+![](http://cdn.zhangferry.com/Images/20210703051424.png)
 
 1. 客户端向服务端发起连接请求，需要发送一个 SYN 报文到服务端。
 2. 当服务端收到客户端发过来的 SYN 报文后，返回给客户端 SYN、ACK 报文。`这时候服务端可以确认客户端的发送能力和自己的接收能力正常`。
@@ -1778,7 +1778,7 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 **四次挥手的目的是关闭一个 TCP 连接。**
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210703051443.png)
+![](http://cdn.zhangferry.com/Images/20210703051443.png)
 
 1. 客户端主动发起连接断开，发送一个 FIN 报文到服务端；
 2. 服务端返回给客户端 ACK 报文。此时服务端处于关闭等待状态，而不是立马给客户端发 FIN 报文，这个状态还要持续一段时间，因为服务端可能还有数据没发完。`此时客户端到服务端的连接已经断开。但客户端和服务端之间所建立的 TCP 连接通道是全双工的，此时只是处于半关闭状态，所以服务端到客户端可能还会传递数据`；
@@ -2102,7 +2102,7 @@ self.alertController = [TYAlertController alertControllerWithAlertView:alertView
 * 浅拷贝：指针拷贝，不产生新对象，增加被拷贝对象引用计数，相当于执行了 retain
 * 区别：1. 是否影响了引用计数；2. 是否开辟了新的内存空间
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210724043958.png)
+![](http://cdn.zhangferry.com/Images/20210724043958.png)
 
 #### 在 iOS 中对 mutable 对象与 immutable 对象进行 copy 与 mutableCopy 的结果
 
@@ -2149,7 +2149,7 @@ NSArray *deepCopyArray = [[NSArray alloc]initWithArray:someArray copyItems:YES];
 NSArray *trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:oldArray]];
 ```
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210724054744.png)
+![](http://cdn.zhangferry.com/Images/20210724054744.png)
 
 > 需要注意的是，使用 `initWithArray:copyItems:` 并将 copyItems 传 YES 时，生成的副本集合对象中的对象（下一个级别）是不可变的，所有更深的级别都具有它们以前的可变性。比如以下代码将 Crash。
 > 
@@ -2375,7 +2375,7 @@ emmm 整理的时候发现后面的版本又做了小优化，具体就不展开
 
 因为 NSObject 的 class 的对象的 isa 指向它的 meta-class 对象，而它的 meta-class 的 superclass 指向它的 class 对象，所以 `[[NSObject class] isKindOfClass:[NSObject class]]` 成立 。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/objc-isa-class-diagram.jpg)
+![](http://cdn.zhangferry.com/Images/objc-isa-class-diagram.jpg)
 
 总之，`[instance/class isKindOfClass:[NSObject class]]` 恒成立。（严谨点，需要是 NSObject 及其子类类型）
 
@@ -3261,7 +3261,7 @@ NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 
 这里再回顾下内存的分区情况，大多数情况我们只需关注进程的虚拟内存就可以了：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211216172748.png)
+![](http://cdn.zhangferry.com/Images/20211216172748.png)
 
 ***
 
@@ -3287,13 +3287,13 @@ HTTPS 的建立流程大概是这样的：
 
 我们以 `zhangferry.com`这个网站的 HTTPS 证书为例进行分析：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223165541.png)
+![](http://cdn.zhangferry.com/Images/20211223165541.png)
 
 `zhangferry.com` 的证书里有一个 Issuer Name 的分段，这里表示的是它的签发者信息。其签发者名称是 *TrustAsia TLS RSA CA*，而我们可以通过上面的链式结构发现，其上层就是*TrustAsia TLS RSA CA*。再往上一层是 *DigiCert Global Root CA*，所以证书签发链就是：*DigiCert Global Root CA* -> *TrustAsia TLS RSA CA* -> *zhangferry.com*。
 
 其中 *DigiCert Global Root CA* 是根证书，它的签发者是它自己。根证书由特定机构颁发，被认为是可信的。我们的电脑在安装的时候都会预装一些 CA 根证书，查看钥匙串能够找到刚才的根证书：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223170915.png)
+![](http://cdn.zhangferry.com/Images/20211223170915.png)
 
 如果能够验证签发链是没有篡改的，那就可以说明当前证书有效。
 
@@ -3307,7 +3307,7 @@ HTTPS 的建立流程大概是这样的：
 
 这些过程中使用到的对称加密算法和 Hash 算法都会在证书里说明。同理逐级验证，直到最终的证书节点，都没问题就算是证书验证通过了。流程如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223174908.png)
+![](http://cdn.zhangferry.com/Images/20211223174908.png)
 
 图片来源：https://cheapsslsecurity.com/blog/digital-signature-vs-digital-certificate-the-difference-explained/
 
@@ -3319,7 +3319,7 @@ HTTPS 的建立流程大概是这样的：
 
 开放定址法的思路是当地址已经被占用时，就再重新计算，直到生成一个不被占用地址。对应公式为：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211223221219.png)
+![](http://cdn.zhangferry.com/Images/20211223221219.png)
 
 其中 di 为增量序列，m 为散列表长度， i 为已发生的冲突次数。根据 di 序列的内容不同又分为不同的处理方案：
 
@@ -3353,7 +3353,7 @@ dyld 是动态加载器，它主要用于动态库的链接和程序启动加载
 
 [dyld2](https://github.com/opensource-apple/dyld/tree/master/src "dyld开源地址") 从 iOS 3.1 开始引入，一直到 iOS 12 被 dyld 3 全面代替。它经过了很多次版本迭代，我们现在常见的特性比如 ASLR，Code Sign，Shared Cache 等技术，都是在 dyld 2 中引入的。dyld 2 的执行流程是这样的：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220104235847.png)
+![](http://cdn.zhangferry.com/Images/20220104235847.png)
 
 - 解析 `mach-o` 头文件，找到依赖库，依赖库又可能有别的依赖，这里会进行递归分析，直到获得所有 dylib 的完整图。这里数据庞大，需要进行大量的处理；
 - 映射所有 `mach-o` 文件，将它们放入地址空间；
@@ -3370,7 +3370,7 @@ dyld 3 最大的特点就是引入了启动闭包，闭包里包含了启动所�
 
 最重要的特性就是启动闭包，闭包里包含了启动所需要的缓存信息，从而提高启动速度。下图是 dyld 2 和 dyld 3 的执行步骤对比：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220105001119.png)
+![](http://cdn.zhangferry.com/Images/20220105001119.png)
 
 dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程外执行，以下进程创建时执行：
 
@@ -3394,7 +3394,7 @@ dyld 3 的执行步骤分两大步，以图中虚线隔开，虚线以上进程�
 
 其中前端受语言影响，Objective-C 和 Swift 对应的前端分别是 clang 和 swiftc。下图整理了两种语言的编译流程：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/ios_compiler.png)
+![](http://cdn.zhangferry.com/Images/ios_compiler.png)
 
 #### 前端
 
@@ -3636,7 +3636,7 @@ OOM 与其他 Crash 不同的一点是它的触发是通过 `SIGKILL` 信号进�
 
 通过 Hook iOS 系统底层内存分配的相关方法（包括 `malloc_*zone`相关的堆内存分配以及 `vm*_allocate` 对应的 VM 内存分配方法），跟踪并记录进程中每个对象内存的分配信息，包括分配堆栈、累计分配次数、累计分配内存等，这些信息也会被缓存到进程内存中。在内存触顶的时候，组件会定时 Dump 这些堆栈信息到本地磁盘，这样如果程序爆内存了，就可以将爆内存前 Dump 的堆栈数据上报到后台服务器进行分析。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220119232138.png)
+![](http://cdn.zhangferry.com/Images/20220119232138.png)
 
 参考：[【腾讯开源】iOS爆内存问题解决方案-OOMDetector组件 - 掘金](https://juejin.cn/post/6844903550187733000)
 
@@ -3644,7 +3644,7 @@ OOM 与其他 Crash 不同的一点是它的触发是通过 `SIGKILL` 信号进�
 
 这个是字节采用的方案，基于内存快照生成内存分布情况。线上 Memory Graph 核心的原理是扫描进程中所有 Dirty 内存，通过内存节点中保存的其他内存节点的地址值建立起内存节点之间的引用关系的有向图，用于内存问题的分析定位，整个过程不使用任何私有 API。该方案实现细节未开源，目前已搭载在字节跳动火山引擎旗下应用性能管理平台（[APMInsight](https://www.volcengine.com/product/apminsight "APMInsight")）上，供开发者注册使用。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220120225034.png)
+![](http://cdn.zhangferry.com/Images/20220120225034.png)
 
 [有一篇文章](https://juejin.cn/post/6895583288451465230 "分析字节跳动解决OOM的在线Memory Graph技术实现")分析了这个方案的实现原理：通过 mach 内核的 `vm_*region_recurse/vm_region_recurse64` 函数遍历进程内所有 VM Region。这里包括二进制，动态库等内存，我们需要的是 Malloc Zone，然后通过 `malloc*_get_all_zones` 获取 libmalloc 内部所有的 zone，并遍历每个 zone 中管理的内存节点，获取 libmalloc 管理的存活的所有内存节点的指针和大小。再根据指针判断是 OC/Swift 对象，还是 C++ 对象，还是普通的 Buffer。
 
@@ -5010,7 +5010,7 @@ launchd是macOS第一个启动的进程，它的pid为1，整个系统的其他�
 
 ### 什么是Clang
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/clang.png)
+![](http://cdn.zhangferry.com/Images/clang.png)
 
 Clang 是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它的目标是提供一个GNU编译器套装（GCC）的替代品，支持了GNU编译器大多数的编译设置以及非官方语言的扩展。作者是克里斯·拉特纳（Chris Lattner）。
 
@@ -5026,7 +5026,7 @@ LLVM有两层含义，广义的LLVM是指一个完整的编译器架构，包括
 
 狭义的LLVM仅指编译器后端功能的一些列模块和库，由Clange编译出的中间件经过LLVM后端处理变成对应机器码。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/llvm.png)
+![](http://cdn.zhangferry.com/Images/llvm.png)
 
 ### 什么是ld
 
@@ -5148,7 +5148,7 @@ Command Line Tools 是 一个运行在macos上的命令行工具集，它的安�
 
 ### 什么是GNU
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124145056.png)
+![](http://cdn.zhangferry.com/Images/20210124145056.png)
 
 GNU是一个自由的操作系统，名字是一个递归 GNU’s Not Unix!的缩写。
 
@@ -5192,7 +5192,7 @@ Darwin地址：https://github.com/apple/darwin-xnu
 
 ### 什么是FreeBSD
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124145432.png)
+![](http://cdn.zhangferry.com/Images/20210124145432.png)
 
 在此之前先说下BDS（Berkeley Software Distribution 伯克利软件套装），它是Unix的衍生系统，在1977至1995年由伯克利大学分校开发和发布，其是去除SyStem V 删除了AT&T专利代码的。
 
@@ -5208,7 +5208,7 @@ Darwin地址：https://github.com/apple/darwin-xnu
 
 BSD的发展历史：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210124145540.png)
+![](http://cdn.zhangferry.com/Images/20210124145540.png)
 
 ### 什么是POSIX
 
@@ -5226,7 +5226,7 @@ DevOps 希望做到的是软件产品交付过程中IT工具链的打通，使�
 
 DevOps 通常需要很多工具的介入，Jira、GitLab、Jenkins、Docker、fastlane等。它是CI/CD的延伸，CI/CD是实现DevOps的基础核心。DevOps的实践可以用于增强敏捷开发。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/devops.png)
+![](http://cdn.zhangferry.com/Images/devops.png)
 
 ### 什么是敏捷开发
 
@@ -5256,7 +5256,7 @@ Scrum中有三个重要角色：
 2. 产品负责人，确定产品的方向和愿景，定义产品发布的内容、优先级及交付时间，为产品投资报酬率负责；
 3. 开发团队，一个跨职能的小团队，人数5-9人，团队拥有交付可用软件需要的各种技能。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/scrumcn.png)
+![](http://cdn.zhangferry.com/Images/scrumcn.png)
 
 ### 什么是极限编程
 
@@ -5382,7 +5382,7 @@ ER图是 Entity Relationship Diagram 的简写，也叫实体关系图，它主�
 
 使用直线将联系的各方进行连接。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210314140748.png)
+![](http://cdn.zhangferry.com/Images/20210314140748.png)
 
 横线表示键，双矩形表示弱实体，成绩单依赖于学生而不可单独存在。
 
@@ -5428,7 +5428,7 @@ ssh登录流程为：
 
 ### 什么是Nginx
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/nginx.png)
+![](http://cdn.zhangferry.com/Images/nginx.png)
 
 Nginx是一款轻量级的Web服务器、反向代理服务器，由于其开源、内存占用少，启动快，高并发能力强，在互联网项目中广泛应用；同时它还是一个IMAP、POP3、SMTP代理服务器，还可以作为反向代理进行负载均衡的实现。
 
@@ -5450,7 +5450,7 @@ Nginx可以用于实现负载均衡，也提供了以上几种分配算法实现
 
 ### 什么是Apache
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/apache.png)
+![](http://cdn.zhangferry.com/Images/apache.png)
 
 Apache有多个含义：
 
@@ -5462,7 +5462,7 @@ Apache有多个含义：
 
 ### 什么是Tomcat
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/tomcat.png)
+![](http://cdn.zhangferry.com/Images/tomcat.png)
 
 Tomcat是由Apache基金会推出的一款开源的可实现JavaWeb程序的Web服务器框架，它是配置JSP（Java Server Page）和JAVA系统必备的一款环境。
 
@@ -5470,7 +5470,7 @@ Tomcat是由Apache基金会推出的一款开源的可实现JavaWeb程序的Web�
 
 ### 什么是Docker
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210326231951.png)
+![](http://cdn.zhangferry.com/Images/20210326231951.png)
 
 理解Docker之前需要知道容器的概念，容器就是一个封闭的开发环境，类似移动端的沙盒，每个沙盒都可以配置不同的程序，甚至相同程序的不同版本，我在沙盒做的操作不会影响别的沙盒程序。
 
@@ -5581,7 +5581,7 @@ $ /bin/bash -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Home
 
 ### 什么是 Ruby
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/ruby_image.png)
+![](http://cdn.zhangferry.com/Images/ruby_image.png)
 
 Ruby 是一种开源的面向对象程序设计的服务器端脚本语言，在 20 世纪 90 年代中期由日本的松本行弘设计并开发。在 Ruby 社区，松本也被称为马茨（Matz）。 
 
@@ -5601,7 +5601,7 @@ Ruby的设计和Objective-C有些类似，都是受Smalltalk的影响。而这�
 
 ### 什么是 Rails
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210419223057.png)
+![](http://cdn.zhangferry.com/Images/20210419223057.png)
 
 Rails（也叫Ruby on Rails）框架首次提出是在 2004 年 7 月，它的研发者是 26 岁的丹麦人 David Heinemeier Hansson。Rails 是使用 Ruby 语言编写的 Web 应用开发框架，目的是通过解决快速开发中的共通问题，简化 Web 应用的开发。与其他编程语言和框架相比，使用 Rails 只需编写更少代码就能实现更多功能。有经验的 Rails 程序员常说，Rails 让 Web 应用开发变得更有趣。
 
@@ -5611,7 +5611,7 @@ Rails的两大哲学是：不要自我重复（DRY），多约定，少配置。
 
 ### 什么是 rbenv
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/rbenv_image.png)
+![](http://cdn.zhangferry.com/Images/rbenv_image.png)
 
 [rbenv](https://github.com/rbenv/rbenv "rbenv") 和 RVM 都是目前流行的 Ruby 环境管理工具，它们都能提供不同版本的 Ruby 环境管理和切换。
 
@@ -5675,7 +5675,7 @@ RubyGems 还提供了 Ruby 组件的托管服务，可以集中式的查找和�
 
 ### 什么是 Bundler
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210419225753.png)
+![](http://cdn.zhangferry.com/Images/20210419225753.png)
 
 [Bundler](https://www.bundler.cn/ "Bundler") 是一个管理 Gem 依赖的 Gem，用来检查和安装指定 Gem 的特定版本，它可以隔离不同项目中 Gem 的版本和依赖环境的差异。
 
@@ -5740,7 +5740,7 @@ BFF，全称是 Backend For Frontend，即服务于前端的后端，它是一�
 
 随着业务的发展，单个 BFF 为了适配多端的差异可能会变得越来越臃肿，可维护性降低，开发成本也会越来越高。这时候就得考虑为对 BFF 层进行拆分，给每种用户体验不同的前端分别对应一个 BFF，比如 PC BFF、移动端 BFF（或者再细拆为 iOS BFF 和 Android BFF） 等等，所以 BFF 也称为面向特定用户体验的适配层。
 
-![BFF](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210430111611.png)
+![BFF](http://cdn.zhangferry.com/Images/20210430111611.png)
 
 参考：[BFF —— Backend For Frontend](https://www.jianshu.com/p/eb1875c62ad3 "BFF —— Backend For Frontend")
 
@@ -5752,7 +5752,7 @@ GraphQL（展开为 Graph Query Language）是 Facebook 开发的应用层查询
 
 它是一种 BFF 的实现方案。REST 数据是通过一个个 URI 定位到的，而 GraphQL 的模型更像是对象模型。GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/33034116-558F-40ED-B191-31D9E28715F2.png)
+![](http://cdn.zhangferry.com/Images/33034116-558F-40ED-B191-31D9E28715F2.png)
 
 这里 GraphQL 起的是一个 API 网关的作用。
 
@@ -5764,7 +5764,7 @@ RPC，全称是 Remote Procedure Call，即远程过程调用。RPC 是一种进
 
 RPC 的工作流程大致是：客户端应用以本地调用的方式发起远程调用，将参数以及附加信息序列化为能够进行网络传输的消息体，并将消息发送给服务端。服务端对收到的消息进行反序列化后执行请求，然后将结果序列化为消息并返回给客户端。最后客户端接收到消息并反序列化得到数据。
 
-![RPC](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210501090439.png)
+![RPC](http://cdn.zhangferry.com/Images/20210501090439.png)
 
 > RPC 框架可以看作一种代理模式，GoF 的《设计模式》一书中把它称作远程代理。通过远程代理，将网络通信、数据编解码等细节隐藏起来。客户端在使用 RPC 服务的时候，就像使用本地函数一样，无需了解跟服务器交互的细节。除此之外，RPC 服务的开发者也只需要开发业务逻辑，就像开发本地使用的函数一样，不需要关注跟客户端的交互细节。 —— 来自王争的《设计模式之美》
 
@@ -5776,7 +5776,7 @@ gRPC 是 Google 开发的一个高性能、通用的开源 RPC 框架。它使�
 
 在 gRPC 里客户端应用可以像调用本地对象一样直接调用另一台不同的机器上服务端应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个服务，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个存根能够像服务端一样的方法。
 
-![gRPC](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210501090350.png)
+![gRPC](http://cdn.zhangferry.com/Images/20210501090350.png)
 
 gRPC 客户端和服务端可以在多种环境中运行和交互 -- 从 Google 内部的服务器到你自己的笔记本，并且可以用任何 gRPC 支持的语言来编写。所以，你可以很容易地用 Java 创建一个 gRPC 服务端，用 Go、Python、Ruby 来创建客户端。此外，Google 最新 API 将有 gRPC 版本的接口，使你很容易地将 Google 的功能集成到你的应用里。
 
@@ -5831,7 +5831,7 @@ CPU 相关内容还有两个我们经常遇到的概念：位数、架构。
 
 其中，累加寄存器、标志寄存器、程序计数器、指令寄存器和栈寄存器都只有一个，其它寄存器一般有多个。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515221243.png)
+![](http://cdn.zhangferry.com/Images/20210515221243.png)
 
 寄存器的命名是跟着 CPU 类型走的，ARM64 类型的 CPU 有 32 个寄存器，以下列出了部分寄存器的特殊作用：
 
@@ -5850,7 +5850,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 每执行一条指令后，PC 的值会立即指向下一条要执行的指令的地址。当顺序执行时，每执行一条指令，PC 的值就是简单的 +1。而条件分支和循环执行等转移指令会使 PC 的值指向任意的地址，这样程序就可以跳转到任意指令，或者返回到上一个地址来重复执行同一条指令。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515222022.png)
+![](http://cdn.zhangferry.com/Images/20210515222022.png)
 
 ### 什么是内存
 
@@ -5870,7 +5870,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 内存和 CPU 使用 IC 电子元件作为基本单元。IC 电子元件有不同种形状，但是其内部的组成单位称为一个个的引脚。IC 元件两侧排列的四方形块就是引脚，IC 的所有引脚只有两种电压：0V 和 5V，该特性决定了计算机的信息处理只能用 0 和 1 表示，也就是二进制来处理。一个引脚可以表示一个 0 或 1，所以二进制的表示方式就变成 0、1、10、11、100、101 等，虽然二进制数并不是专门为引脚设计的，但是和 IC 引脚的特性非常吻合。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210515222223.png)
+![](http://cdn.zhangferry.com/Images/20210515222223.png)
 
 我们都知道内存是用来存储数据的，那么这个 IC 中能存储多少数据呢？D0 - D7 表示的是数据信号，也就是说一次可以输入输出 1 byte = 8 bit 数据。A0 - A9 是地址信号，共10个，表示可以指定 2^10 = 1024 个地址。每个地址都都可存放 1 byte 数据，所以这个 IC 的容量就是 1KB。
 
@@ -5888,7 +5888,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 如果用8位表示一个有符号整数，最高位为符号位，1 的表示为`0000 0001`。那 -1 该如何表示呢？答案是：`1111 1111`。如果你首次看到这个表示法可能很奇怪，为什么不是`1000 0001`呢，其实它是基于加法运算推演出来的结果。我们用让计算机计算`1 - 1`，即`1 + (-1)`，即`0000 0001 + 1111 1111` 结果为 `1 0000 0000`，舍去溢出的高位 1，结果就是 0 。所以 -1 对应到二进制就成了`1111 1111`。从正数到负数的表示，产生了补数的概念，它的计算是这样的：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522135424.png)
+![](http://cdn.zhangferry.com/Images/20210522135424.png)
 
 这个就是 1 到 -1 的计算方式。
 
@@ -5896,7 +5896,7 @@ PC 的初值为程序第一条指令的地址。程序开始执行，CPU 需要�
 
 移位分两种，逻辑移位和算数移位，看下面示例：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522223515.png)
+![](http://cdn.zhangferry.com/Images/20210522223515.png)
 
 逻辑移位会在空缺部分补 0，算数右移会在空缺部分补符号位。左移的话都是补 0，没有区别。
 
@@ -5934,13 +5934,13 @@ if (NSHostByteOrder() == NS_BigEndian) {
 
 内存的内部是由各种 IC 电路组成的，它的种类很庞大，但是其主要分为三种存储器：随机存储器（RAM）、只读存储器（ROM）和高速缓存（Cache）。高速缓存通常又会分为一级缓存（L1 Cache）、二级缓存（L2 Cache）、三级缓存（L3 Cache），它位于内存和 CPU 之间，是一个读写速度比内存更快的存储器。以上分类从前往后速度越来越快。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522223549.png)
+![](http://cdn.zhangferry.com/Images/20210522223549.png)
 
 为什么会有这么多缓存呢？主要是有两方面的考虑：速度和成本。读取速度越高的设备成本也会越高，为了在这两者之间进行平衡才加入了各个缓存。后者都可以作为前者的缓存，比如可以把主存作为硬盘的缓存，也可以把高速缓存作为主存的缓存。
 
 以下是各种设备的读取速度对比：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522143424.png)
+![](http://cdn.zhangferry.com/Images/20210522143424.png)
 
 缓存的使用逻辑大致是，没有对应数据时向上一级寻找，如果找到了就在当级缓存下来，下次再寻找相同的内容就可以直接从当级的缓存调用了。因为作为缓存的部分一般都比其上一级容量更小，所以缓存内容就不可能一直存在，需要按照一定规则进行移除，这就引出了LRU（Least Recently Used，最近最少使用）算法，它是将最近一段时间内最少被访问过的数据淘汰出缓存，提高缓存的利用率。
 
@@ -5974,7 +5974,7 @@ RLE 是 run-length encoding的缩写，中文翻译为游程编码，是一种�
 
 哈夫曼编码是一种使用变长编码表对源符号进行编码的无损压缩编码方式。其特征是对于出现频率较高的字符使用较短的编码符号。对于 AAAAAABBCDDEEEEEF 这几个字符使用哈夫曼编码的结果如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210522213007.png)
+![](http://cdn.zhangferry.com/Images/20210522213007.png)
 
 ***
 
@@ -5990,7 +5990,7 @@ BIOS 除了键盘，磁盘，显卡等基本控制程序外，还有`引导程�
 
 制作黑苹果的时候安装的 Clover 就是一个启动程序，它通过修改 BIOS 配置，让 BIOS 首先执行它，然后由它来引导至 MacOS 的启动。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210527232231.png)
+![](http://cdn.zhangferry.com/Images/20210527232231.png)
 
 严格意义来说 BIOS 是 IBM PC架构上的一种设计规范，Mac电脑，包括一些新型的主板都没有 BIOS 这一概念，取而代之的是 EFI/UEFI。
 
@@ -6033,19 +6033,19 @@ IRQ（Interrupt Request）代表的就是中断请求。IRQ 是用来暂停当�
 
 从中断处理开始到请求中断的程序（中断处理程序）运行结束之前，被中断的程序（主程序）的处理是停止的。这种情况就类似于在处理文档的过程中有电话打进来，电话就相当于是中断处理。假如没有中断处理的发生，就必须等到文档处理完成后才能够接听电话。由此可见，中断处理有着巨大的价值，就像是接听完电话后会返回原来的文档作业一样，中断程序处理完成后，也会返回到主程序中继续。
 
-![中断请求示意图](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210526233248.png)
+![中断请求示意图](http://cdn.zhangferry.com/Images/20210526233248.png)
 
 **实施中断请求的是连接外围设备的 I/O 控制器，负责实施中断处理的是 CPU。**
 
 假如有多个外围设备进行中断请求的话， CPU 需要做出选择进行处理，为此，我们可以在 I/O 控制器和 CPU 中间加入名为中断控制器的 IC 来进行缓冲。中断控制器会把从多个外围设备发出的中断请求有序的传递给 CPU。中断控制器的功能相当于就是缓冲。下面是中断控制器功能的示意图
 
-![中断控制器的功能](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210526233322.png)
+![中断控制器的功能](http://cdn.zhangferry.com/Images/20210526233322.png)
 
 ### 什么是 DMA
 
 DMA 全称为 Direct Memory Access，即直接存储器访问。DMA 是一种内存访问机制，它是指在不通过 CPU 的情况下，外围设备直接和主存进行数据传输。磁盘等硬件设备都用到了 DMA 机制，通过 DMA，大量数据就可以在短时间内实现传输，之所以这么快，是因为 CPU 作为中介的时间被节省了，下面是 DMA 的传输过程
 
-![使用 DMA 的外部设备和不使用 DMA 的外部设备](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210527220519.png)
+![使用 DMA 的外部设备和不使用 DMA 的外部设备](http://cdn.zhangferry.com/Images/20210527220519.png)
 
 I/O 端口号、IRQ、DMA 通道可以说是识别外围设备的 3 点组合。不过，IRQ、DMA 通道并不是所有外围设备都具备的。计算机主机通过软件控制硬件时所需要的信息的最低限，是外围设备的 I/O 端口号。IRQ 只对需要中断处理的外围设备来说是必须的，DMA 通道则只对需要 DMA 机制的外围设备来说必须的。
 
@@ -6061,7 +6061,7 @@ Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去�
 
 ### 什么是 React
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210605211826.png)
+![](http://cdn.zhangferry.com/Images/20210605211826.png)
 
 内容整理：[zhangferry](https://zhangferry.com)
 
@@ -6131,7 +6131,7 @@ ReactDOM.render(
 
 [React Native](https://reactnative.dev/) 是一个使用 `React` 和应用平台的原生功能来构建 Android 和 iOS 应用的开源框架，其已经不是一个 Web 前端框架，而是一个移动端框架。通过 React Native，可以使用 JavaScript 来访问移动平台的 API，以及使用 React 组件来描述 UI 的外观和行为：一系列可重用、可嵌套的代码。通过一张图简单了解下 React Native 在移动开发中的架构：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210605200722.png)
+![](http://cdn.zhangferry.com/Images/20210605200722.png)
 
 其具有这些特点：跨平台（JavaScript 框架）虚拟 DOM、热更新，iOS 审核有限制、对 Web 开发者友好，上手快，性能几乎和原生相当。
 
@@ -6161,7 +6161,7 @@ yarn ios
 
 ### 什么是 Vue
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210605011045.png)
+![](http://cdn.zhangferry.com/Images/20210605011045.png)
 
 内容整理：[师大小海腾](https://juejin.cn/user/782508012091645)
 
@@ -6171,7 +6171,7 @@ yarn ios
 
 这是 Vue 与其他 JS 框架最大的不同。渐进式框架简单理解就是：你可以只用我的一部分，而非必须用我的全部；你可以仅将我作为应用的一部分嵌入，而非必须全部使用。Vue 支持你根据实际需求，在不同的阶段使用 Vue 中不同的功能，用最小最快的成本一步步搭建应用，不断渐进，而不是要求你一下子用上全家桶（vue-cli、vue-router、vuex 等）。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210605012155.png)
+![](http://cdn.zhangferry.com/Images/20210605012155.png)
 
 你可以看看：[Vue 作者尤雨溪：Vue 2.0，渐进式前端解决方案](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485737&idx=1&sn=14fe8a5c72aaa98c11bf6fc57ae1b6c0&source=41#wechat_redirect "Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案")
 
@@ -6242,7 +6242,7 @@ BootStrap 最初由 Twitter 开发，后在Github [开源](https://github.com/tw
 
 其官网的首页图很形象的画出了 Webpack 是什么，如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210612002026.png)
+![](http://cdn.zhangferry.com/Images/20210612002026.png)
 
 其是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 Webpack 处理应用程序时，它会在内部构建一个 [依赖图(dependency graph)](https://webpack.docschina.org/concepts/dependency-graph/)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。
 
@@ -6250,7 +6250,7 @@ BootStrap 最初由 Twitter 开发，后在Github [开源](https://github.com/tw
 
 ### 什么是 Flutter
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210613093819.png)
+![](http://cdn.zhangferry.com/Images/20210613093819.png)
 
 内容整理：[我是熊大](https://juejin.cn/user/1151943916921885/posts)
 
@@ -6284,7 +6284,7 @@ Widget build(BuildContext context) {
 
 Flutter 拥有更优的性能，主要原因就是它用于一套自己独有的渲染引擎，其整理架构如下：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210613103605.png)
+![](http://cdn.zhangferry.com/Images/20210613103605.png)
 
 Flutter 仍有一些缺点，即导致包体变大，iOS 引入后，包体积增加 10MB 左右。
 

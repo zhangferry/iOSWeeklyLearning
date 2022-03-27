@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第四十三期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/moyu_weekly_cover.jpeg)
+![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -19,7 +19,7 @@ dyld3 在不使用启动闭包的情况下会 fallback 到 dyld2，两套代码�
 
 还有一点，细心的开发者还在 dyld4 源码里发现了 realityOS 及 realityOS_Sim 相关的代码注释。很大可能苹果的 VR/AR 设备已经准备差不多了，静待今年的 WWDC 吧。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220217221153.png)
+![](http://cdn.zhangferry.com/Images/20220217221153.png)
 
 地址：[apple-oss-distributions/dyld](https://github.com/apple-oss-distributions/dyld/blob/5c9192436bb195e7a8fe61f22a229ee3d30d8222/common/MachOFile.cpp#L578 "apple-oss-distributions/dyld")
 
@@ -199,7 +199,7 @@ static StripedMap<SyncList> sDataLists; // 哈希表，以关联的 obj 内存�
 
 最终的存储数据结构如下图所示：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/weekly_43_interview_02.png)
+![](http://cdn.zhangferry.com/Images/weekly_43_interview_02.png)
 
 当 id2data() 返回了 `SyncData` 对象后，`objc_sync_try_enter` 会调用 `data->mutex.tryLock(); `尝试加锁，其他线程再次执行时如果判断已经加锁，则进行资源等待
 
@@ -292,7 +292,7 @@ static StripedMap<SyncList> sDataLists; // 哈希表，以关联的 obj 内存�
 
 贝尔实验室开发的有向图/无向图自动布局应用，支持 dot 脚本绘制结构图，流程图等。
 
-![Graphviz](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220217174238.png)
+![Graphviz](http://cdn.zhangferry.com/Images/20220217174238.png)
 
 对产物`.gz`文件进行解析查看的途径。
 
@@ -320,4 +320,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第三十九期](https://mp.weixin.qq.com/s/DolkTjL6d-KkvFftd2RLUQ)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

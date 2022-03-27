@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 第四十一期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/moyu_weekly_cover.jpeg)
+![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -51,7 +51,7 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 **如果违反了以上任何规则，将会得到编译器的警告。**
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220112232618.png)
+![](http://cdn.zhangferry.com/Images/20220112232618.png)
 
 示例代码：
 
@@ -96,7 +96,7 @@ Objective-C 类的指定构造器模式和 Swift 的略有不同。在 Objective
 
 简单来说，指定构造器必须总是`向上代理`，便利构造器必须总是`横向代理`。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220112232822.png)
+![](http://cdn.zhangferry.com/Images/20220112232822.png)
 
 另外，在 Objective-C 中，你还必须覆写父类的所有指定构造器退化为子类的便利构造器，并且要遵循便利构造器的实现规则；而 Swift 则不用，因为 Swift 中的子类默认情况下不会继承父类的构造器，仅会在安全和适当的某些情况下被继承。Swift 的这种机制可以防止一个父类的简单构造器被一个更精细的子类继承，而在用来创建子类时的新实例时没有完全或错误被初始化。
 
@@ -299,7 +299,7 @@ static NSIndexSet *_GetBlockStrongLayout(void *block) {
 
 这是一份可视化的 Web 技能列表，它对刚开始学习 Web 或已经工作多年并想学习新东西的人都很有用，你可以从中了解 Web 开发的大概路径和图谱，按顺序或者选择自己感兴趣的部分来看。除此之外最吸引人的是这个列表可视化的非常棒，每个图标符号都很大方美观形象，快来看一下！
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/Web%20Skills.png)
+![](http://cdn.zhangferry.com/Images/Web%20Skills.png)
 
 ## 工具推荐
 
@@ -324,7 +324,7 @@ static NSIndexSet *_GetBlockStrongLayout(void *block) {
 
 更多细节请直接前往 repo homepage 查看。
 
-![SwiftInfo](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20220112183759.png)
+![SwiftInfo](http://cdn.zhangferry.com/Images/20220112183759.png)
 
 ## 关于我们
 
@@ -340,4 +340,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第三十七期](https://mp.weixin.qq.com/s/PwZ2nIHRo0GDsjMx7lSFLg)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第一期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。成立的目的一个是开发知识碎片化，需要有一个地方去总结并用于回顾；另一个是为了提醒自己不断学习，内卷日益严重的开发环境下，不进则退。
 
@@ -227,15 +227,15 @@ launchd是macOS第一个启动的进程，它的pid为1，整个系统的其他�
 
 来自`岁寒啊`的整理，基本涵盖iOS各个方面的知识点，熟练掌握在这内容，再也不怕iOS”八股文“了。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201220131223.png)
+![](http://cdn.zhangferry.com/Images/20201220131223.png)
 
 每个章节都会有展开内容，多为直接整理，少部分为链接内容。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201220131326.png)
+![](http://cdn.zhangferry.com/Images/20201220131326.png)
 
 ### [SwiftUI官方教程](https://developer.apple.com/tutorials/app-dev-training)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219201033.png)
+![](http://cdn.zhangferry.com/Images/20201219201033.png)
 
 地址：https://developer.apple.com/tutorials/app-dev-training
 
@@ -245,7 +245,7 @@ launchd是macOS第一个启动的进程，它的pid为1，整个系统的其他�
 
 地址：https://wangdoc.com/bash/
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219202410.png)
+![](http://cdn.zhangferry.com/Images/20201219202410.png)
 
 阮一峰老师制作的Bash脚本教程，主要介绍Linux命令行Bash的基本用法和脚本编程。Bash脚本应该是少有的一个横跨前端、后端及移动端，很多场景都有使用的语言工具。在移动端即使你没有编写Bash脚本的需求，也免不了会需要分析一些脚本的功能。
 
@@ -297,12 +297,12 @@ launchd是macOS第一个启动的进程，它的pid为1，整个系统的其他�
 
 之前我的状态栏是这样的：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219214427.png)
+![](http://cdn.zhangferry.com/Images/20201219214427.png)
 
 整理之后就变成了这样：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20201219214453.png)
+![](http://cdn.zhangferry.com/Images/20201219214453.png)
 
 
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/wechat_official.png)
+![](http://cdn.zhangferry.com/Images/wechat_official.png)

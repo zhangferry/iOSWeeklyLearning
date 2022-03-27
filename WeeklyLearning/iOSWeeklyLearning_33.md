@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十三期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -69,7 +69,7 @@ os_signpost(.end, log: log, name: "Complex calculations", signpostID: signpostID
 
 打开 Instruments，选择创建 Blank 模板，点击右上角，添加 "+" 号，双击选择添加 os_signpost 和 Time Profiler 两个模板。运行应用直到触发标记函数时停止，我们展开 os_signpost，找到我们创建的 SignLogTest，将其加到下方。调整 Time Profiler 的 Call Tree 之后就可以看到下图样式。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20211107192353.png)
+![](http://cdn.zhangferry.com/Images/20211107192353.png)
 
 event 事件被一个减号所标记，鼠标悬停可以看到标记的函数名，begin 和 end 表示那个耗时函数执行的开始和结束用一个区间块表示。
 
@@ -355,7 +355,7 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 * 设置每个项目的 Swift 版本。
 * 允许您使用环境变量覆盖 Swift 版本。
 
-![swiftenv](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/swiftenv.png)
+![swiftenv](http://cdn.zhangferry.com/Images/swiftenv.png)
 
 ## 关于我们
 
@@ -371,4 +371,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第二十九期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

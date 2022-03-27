@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二十四期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -208,7 +208,7 @@ $ openssl enc -aes-256-cbc -k {password} -in "cert.p12" -out "cert.enc.p12" -a -
 
 每个证书文件都有特定的 ID，推送之前我们还需要修改加密证书的文件名。该 ID 在开发者网站证书详情那一页的网址最后面展示。就是下面码糊住的那一块：
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210822095006.png)
+![](http://cdn.zhangferry.com/Images/20210822095006.png)
 
 然后我们将那两个文件放到 git 仓库的 certs 目录对应的类型（development/distribution）下，然后进行推送。
 
@@ -298,7 +298,7 @@ Swift 闭包学习的两篇文章，也是包含了 Swift 的概念及用法，�
 
 KeeWeb 是一个浏览器和桌面密码管理器，兼容 KeePass 数据库。它不需要任何服务器或额外的资源。该应用程序可以在浏览器中运行，也可以作为桌面应用程序运行。更重要的是它还可以利用 Dropbox、Google  Drive 进行远程同步。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210822081714.png)
+![](http://cdn.zhangferry.com/Images/20210822081714.png)
 
 ## 关于我们
 
@@ -316,4 +316,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

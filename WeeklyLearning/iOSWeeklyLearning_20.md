@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二十期
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/iOS摸鱼周报模板.png)
+![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -17,7 +17,7 @@
 
 虽然天灾无情，但是有非常多感动人心的事情，一方有难八方支援，为每一个参与到河南抗洪救灾的人员致以最高的敬意。截止目前洪灾还没有完全退去，还不能掉以轻心。以下是我从多处官方新闻报道中总结的一些防洪应对指南，希望对大家有所帮助。
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210725223708.png)
+![](http://cdn.zhangferry.com/Images/20210725223708.png)
 
 最后的最后，河南加油，安徽加油！
 
@@ -31,7 +31,7 @@
 
 **效果展示**
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210724193757.png)
+![](http://cdn.zhangferry.com/Images/20210724193757.png)
 
 **折线统计图实现思路分析**
 
@@ -112,7 +112,7 @@
 * 浅拷贝：指针拷贝，不产生新对象，增加被拷贝对象引用计数，相当于执行了 retain
 * 区别：1. 是否影响了引用计数；2. 是否开辟了新的内存空间
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210724043958.png)
+![](http://cdn.zhangferry.com/Images/20210724043958.png)
 
 #### 在 iOS 中对 mutable 对象与 immutable 对象进行 copy 与 mutableCopy 的结果
 
@@ -159,7 +159,7 @@ NSArray *deepCopyArray = [[NSArray alloc]initWithArray:someArray copyItems:YES];
 NSArray *trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:oldArray]];
 ```
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/20210724054744.png)
+![](http://cdn.zhangferry.com/Images/20210724054744.png)
 
 
 >需要注意的是，使用 `initWithArray:copyItems:` 并将 copyItems 传 YES 时，生成的副本集合对象中的对象（下一个级别）是不可变的，所有更深的级别都具有它们以前的可变性。比如以下代码将 Crash。
@@ -260,7 +260,7 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴回到屏幕上！普通版的功能已经足够使用，笔者认为其是最好用的截图软件了！（下图是官方图）
 
-![Snipaste](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/N3QEb3VA.png)
+![Snipaste](http://cdn.zhangferry.com/Images/N3QEb3VA.png)
 
 ### LSUnusedResources
 
@@ -272,7 +272,7 @@ Snipaste 是一个简单但强大的截图工具，也可以让你将截图贴�
 
 一个 Mac 应用程序，用于在 Xcode 项目中查找未使用的图像和资源，可以辅助我们优化包体积大小。
 
-![LSUnusedResources](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/LSUnusedResourcesExample.png)
+![LSUnusedResources](http://cdn.zhangferry.com/Images/LSUnusedResourcesExample.png)
 
 ## 关于我们
 
@@ -288,4 +288,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
 
-![](http://r9ccmp2wy.hb-bkt.clouddn.com/Images/WechatIMG384.jpeg)
+![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
