@@ -6,7 +6,7 @@
 
 > * 话题：
 > * Tips：
-> * 面试模块：
+> * 面试模块：Runtime 中的 **StripeMap<T>** 模板类
 > * 优秀博客：
 > * 学习资料：
 > * 开发工具：
@@ -23,7 +23,77 @@
 
 ## 面试解析
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### `StripeMap<T>` 模板类
+
+`StripeMap<T>` 是 OC `Runtime` 中定义的一个类，用于引用计数表、`Synchroinzed`、以及属性设置时的 `lock`列表等。**该类可以理解成是一种特殊的 hashmap。**
+特殊性体现在：一般的 hashmap key&value 是一一对应的，即使存在哈希冲突，也会通过其他方法解决该冲突，但是`StripeMap`是 key&value 多对一的。
+我们去思考下 apple 为什么要将内存管理的表结构设计为 `StripeMap` 类型？先了解下简化后定义：
+
+```cpp
+enum { CacheLineSize = 64 };
+
+template<typename T>
+class StripedMap {
+#if TARGET_OS_IPHONE && !TARGET_OS_SIMULATOR
+    enum { StripeCount = 8 };
+#else
+    enum { StripeCount = 64 };
+#endif
+    struct PaddedT {
+        T value alignas(CacheLineSize); // 对齐
+    };
+
+    PaddedT array[StripeCount];
+};
+```
+
+**`StripeMap`存在的意义很显然就是优化访问性能 **. 优化高频访问 `<T>`产生的性能瓶颈，尤其是在多线程资源竞争场景下的。根据注释主要体现在以下方面
+
+- 对象结构内部维护一个数组，根据设备的不同分成不同的页，移动设备是 8 页，其他是 64 页。
+- 它使用对象的地址作为 key，进行哈希运算后获取一个 index，取得对应的 `<T>` value 。映射关系为 `void* -> <T>`
+- 做内存对齐，提高cpu 缓存命中率
+
+#### 分离锁优化
+
+`StripeMap` 实质上是对分离锁概念的实现，简单概述下个人对分离锁的理解
+我们都知道多线程场景下，如果多个变量都会被多线程访问和修改，最好的办法是针对不同的变量用不同的锁对象来实现资源管理。这样可以避免访问一个变量时，多线程访问其他不相关的变量时被阻塞等待。这其实是对分拆锁的应用。即避免对同一个锁访问等待。
+而分离锁则是对上述思路的进一步优化，针对同一个高频访问的对象来说，分段管理可以解决线程之间的资源竞争。拿 `SideTables`举例来说：
+将 `SideTables` 表结构分拆为 8 份，每一份维护一个锁对象。这样在高频访问时，在保证线程安全的同时最多可以支持访问所有的 8 页表数据。实现思路是数组 + 哈希函数（将地址指针转换为 index 索引）。 
+
+```cpp
+typedef unsigned long           uintptr_t;
+
+static unsigned int indexForPointer(const void *p) {
+        uintptr_t addr = reinterpret_cast<uintptr_t>(p);
+        return ((addr >> 4) ^ (addr >> 9)) % StripeCount;
+    }
+```
+
+将地址指针强制转换为 `uintptr_t` 无符号长整型，`uintptr_t` 定义为 8 字节，保证了指针（8 字节）的全量转换不会溢出。
+然后通过位运算以及取模保证 index 落在 StripeCount 索引范围内。
+
+#### CPU Cache Line
+
+在上面优化方式第三条提到，在定义模板类型 `<T>` 时，使用 `CacheLineSize`做了内存对齐。
+通常来讲，内存对齐的目的是为了加快 CPU 的访问，这里也不例外，
+
+但是好奇的是 OC 中常见的内存对齐大小一般是对象的 16 字节对齐。而 StripedMap 定义了 64 字节对齐是出于什么考虑。
+
+这里直接给出结论（理论部分不感兴趣的同学可以直接跳过）：**CacheLine 是 CPU Cache 缓存和主内存一次交换数据的大小，不同 CPU 上不同，Mac & iOS 上是 64 字节,这里是为了解决 `Cpu Cache`中的伪共享（False Sharing）问题。**
+
+出于探索心理，搜索了一下关键字。因为笔者对操作系统了解不多，所以只是做一个概述：
+
+1. CPU 和内存之间由于存在巨大的频率差距，影响数据访问速度从而诞生了 `CPU Cache` 的概念，`Cache Line` 是 `CPU Cache`之间数据传输和操作的最小单位。意味着每一次缓存之间的数据交换都是`Cache Line`的倍数。这是前置条件。
+
+2. 另外一个重要的点是不同核心之间 L1 和 L2 缓存是不共享的，其他核心中的线程要访问当前核心缓存中的数据需要发送 `RFO 消息`，当前核心重置命中的的`Cache Line`状态，并经过一次 L1 / L2 => L3/主内存的数据写入，另外一个核心再次读取后才能访问。如果频繁的在两个核心线程中访问。会造成性能损耗。
+
+我们假设一个场景， 两个不相关的变量 `var1` 和 `var2` 小于 64 字节，并且内存中紧邻，这时一个核心加载了包含 `var1 和 var2` 内存区域的`Cache Line` 并更新了 `var1`的值，此时处于另外一个核心需要访问 `var2`就会出现上面第二条的情况。
+解决这类问题的思路就是空间换时间。也是 `StripedMap` 的做法。内存对齐，尽量保证不同页的 `SideTable`表结构会在不同的 `Cahce Line`上。这样不同的核心线程就可以做到同时处理两个变量值。
+
+* [Objective-C runtime源码小记-StripedMap](https://juejin.cn/post/6869014441284141063 "Objective-C runtime源码小记-StripedMap")
+* [【译】CPU 高速缓存原理和应用](https://segmentfault.com/a/1190000022785358 "【译】CPU 高速缓存原理和应用")
 
 
 ## 优秀博客
