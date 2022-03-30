@@ -92,7 +92,7 @@ Markdown的渲染通常都是转成HTML，相同的语法可以对应不同的�
 
 当前周报选择的是 [mdnice](https://mdnice.com/) 提供的渲染功能，当前渲染的有两部分：
 
-* 主题渲染，选择的是橙心。
+* 主题渲染，选择自定义模式，然后增加[该文件](https://github.com/zhangferry/iOSWeeklyLearning/tree/main/Resources/Style)内的代码即可。
 * 代码主题，选择的是atom-one-dark，勾选 Mac 风格
 
 ### 注脚
