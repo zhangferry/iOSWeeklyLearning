@@ -126,7 +126,13 @@ static unsigned int indexForPointer(const void *p) {
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### 即时教程
 
+**地址**：https://js.design/courses
+
+由[即使设计](https://js.design/)社区组织的精选设计课程，即时设计是一款可以在线实时协作的专业 UI 设计工具，类似 Figma。在即时教程中你可以找到来自各大视频网站平台创作者们的免费高质量课程。从零基础开始一步步到做案例，进阶技巧，应有尽有，非常适合想学一点 UI 知识的程序员们。
+
+![jsdesign](http://cdn.zhangferry.com/Images/截屏2022-03-31 下午4.48.10.png)
 
 ## 工具推荐
 
