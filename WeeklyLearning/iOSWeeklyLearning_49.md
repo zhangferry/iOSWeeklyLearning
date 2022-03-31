@@ -4,6 +4,7 @@
 
 ### 本期概要
 
+> * 话题：Chrom 100 发布，关于阅读器类的 App 审核指南有所更新
 > * 面试模块：Runtime 中的 **StripeMap<T>** 模板类
 > * 优秀博客：Swift 5.6 和 Xcode 13.3 的新特性和新功能
 > * 学习资料：即时设计是一款可以在线实时协作的专业 UI 设计工具
@@ -17,9 +18,9 @@
 
 新版本更新不算大，将继续大幅减少内存、CPU占用率，速度会更快。本次更新应用图标也进行了更换，红黄绿相交边缘的阴影变得更小了。从图标的发展来看，Google 的设计风格越来越扁平化。
 
-### [「阅读器」app 分发的更新](https://developer.apple.com/cn/news/?id=grjqafts "「阅读器」app 分发的更新")
+### [「阅读器」App 分发的更新](https://developer.apple.com/cn/news/?id=grjqafts "「阅读器」app 分发的更新")
 
-去年，Apple [宣布](https://www.apple.com.cn/newsroom/2021/09/japan-fair-trade-commission-closes-app-store-investigation/) 了 2022 年初在 App Store 上将进行的更新，该更新将允许「阅读器」app 的开发者在 app 中提供一个指向其网站的链接，以便用户创建或管理帐户。从今天开始，[《App Store 审核指南》中的准则 3.1.3(a)](https://developer.apple.com/cn/app-store/review/guidelines/#reader-apps "《App Store 审核指南》中的准则 3.1.3(a)") 将会更新，阐明阅读器 app 的开发者现在可以申请外部链接的帐户授权。
+去年，Apple [宣布](https://www.apple.com.cn/newsroom/2021/09/japan-fair-trade-commission-closes-app-store-investigation/) 了 2022 年初在 App Store 上将进行的更新，该更新将允许「阅读器」App 的开发者在 App 中提供一个指向其网站的链接，以便用户创建或管理帐户。从今天开始，[《App Store 审核指南》中的准则 3.1.3(a)](https://developer.apple.com/cn/app-store/review/guidelines/#reader-apps "《App Store 审核指南》中的准则 3.1.3(a)") 将会更新，阐明阅读器 App 的开发者现在可以申请外部链接的帐户授权。
 
 ## 面试解析
 
@@ -148,11 +149,19 @@ static unsigned int indexForPointer(const void *p) {
 
 ![](http://cdn.zhangferry.com/Images/20220330095756.png)
 
-这个网站可以查看全球航班的实时飞行数据，且每隔几秒就会更新一次，那这些数据是如何获取的呢。注意到网站顶部有一个字母缩写：ADS-B，它的全称是：Automatic dependent surveillance – broadcast，[广播式自助相关监视](https://zh.wikipedia.org/wiki/%E5%B9%BF%E6%92%AD%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%9B%B8%E5%85%B3%E7%9B%91%E8%A7%86 "广播式自助相关监视")。
+[@zhangferry](zhangferry.com)：这个网站可以查看全球航班的实时飞行数据，且每隔几秒就会更新一次，那这些数据是如何获取的呢。注意到网站顶部有一个字母缩写：ADS-B，它的全称是：Automatic dependent surveillance – broadcast，[广播式自助相关监视](https://zh.wikipedia.org/wiki/%E5%B9%BF%E6%92%AD%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%9B%B8%E5%85%B3%E7%9B%91%E8%A7%86 "广播式自助相关监视")。
 
 它是一种飞机监视技术，飞机通过卫星导航系统确定其位置，并进行定期广播，使其可被追踪。该广播不需要人为操作，而是作为一种基础功能自动定时触发，新一代的飞机会被强要求配备该设备。它包含 ADS-B Out 和 ADS-B Int 两项服务，前者用于广播信息，后者用于接收信息。它有两个好处，一个是空中交通管制在想确认飞机信息时可以不用问询直接查看，二是可以空中采集其他飞机发出的信息，进行自主规避。
 
 因为广播的性质，这类信息的获取相对容易，像是 VarFlight、FlightAware 这类网站就是基于这些信息的聚合做出上述航班跟踪系统的。
+
+4、[DecoHack - 独立开发者的灵感周刊](https://www.decohack.com/ "DecoHack - 独立开发者的灵感周刊")
+
+[@zhangferry](zhangferry)：一份面向独立开发者，帮助他们发现新产品新方向的一份周刊，由一位腾讯的设计师创建，目前已经出到第 7 期。在这上面能发现很多小众却很精美的应用，以供开发者寻找灵感；还会分享一些技术教程、开公司所需处理的税务、营销技巧等内容。
+
+在这个周刊里还发现了一个很有趣的网站：https://lofi.co/，它可以模拟咖啡厅、书店的场景，并播放一些白噪音。在家远程办公，开着它往那一放，就很舒服。
+
+![](http://cdn.zhangferry.com/Images/20220331234543.png)
 
 ## 学习资料
 
@@ -162,7 +171,7 @@ static unsigned int indexForPointer(const void *p) {
 
 **地址**：https://js.design/courses
 
-由[即使设计](https://js.design/)社区组织的精选设计课程，即时设计是一款可以在线实时协作的专业 UI 设计工具，类似 Figma。在即时教程中你可以找到来自各大视频网站平台创作者们的免费高质量课程。从零基础开始一步步到做案例，进阶技巧，应有尽有，非常适合想学一点 UI 知识的程序员们。
+由[即时设计](https://js.design/)社区组织的精选设计课程，即时设计是一款可以在线实时协作的专业 UI 设计工具，类似 Figma。在即时教程中你可以找到来自各大视频网站平台创作者们的免费高质量课程。从零基础开始一步步到做案例，进阶技巧，应有尽有，非常适合想学一点 UI 知识的程序员们。
 
 ![](http://cdn.zhangferry.com/Images/20220331222838.png)
 
