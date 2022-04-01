@@ -44,7 +44,28 @@
 
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### AppleParty
+
+**地址**：https://github.com/37iOS/AppleParty
+
+**软件状态**：开源
+
+**软件介绍**：
+
+介绍一个我们周报团队成员所在公司开源的一个项目：`AppleParty`
+
+`AppleParty` 是三七互娱旗下37手游 iOS 团队研发，实现快速操作 `App Store Connect` 后台的自动化 `macOS` 工具。
+
+支持功能：
+
+* 内购买项目管理（批量创建和更新）；
+* 批量商店图和预览视频上传和更新；
+* 邮件发送工具；
+* 二维码扫描和生成工具；
+
+![AppleParty](http://cdn.zhangferry.com/06.jpeg)
 
 ## 关于我们
 
