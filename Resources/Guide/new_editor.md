@@ -47,6 +47,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 | 徐杨          | 东坡肘子         | 坐标大连，业余iOS开发者                     | 公共号：肘子的Swift记事本。 博客 https://www.fatbobman.com   |
 | 李晨光       | hello world | 坐标成都，iOS开发， 对OC底层原理、性能优化、工程自动化比较感兴趣，目前在向swift转型 | https://juejin.cn/user/2999123453164605/posts
 | 廖靖宇       | JY | 坐标上海微盟，iOS开发，对底层性能优化以及Mach-O，逆向方面比较感兴趣 | 掘金：https://juejin.cn/user/1574156380931144/posts
+| 陶宗强       | 远恒之义 | 坐标重庆，iOS 开发，关注 Swift 与 SwiftUI | https://github.com/tzqiang
 
 
 ## 协作形式
