@@ -4,35 +4,133 @@
 
 ### 本期概要
 
-> * 话题：
-> * Tips：
-> * 面试模块：
+> * 话题：WWDC 22 Call to Code
+> * 面试模块：事件响应与传递
 > * 优秀博客：
 > * 学习资料：
 > * 开发工具：
 
 ## 本期话题
 
-### [WWDC22 Call to Code](https://www.apple.com/newsroom/2022/04/apples-worldwide-developers-conference-returns-in-its-all-online-format/ "WWDC 2022 Call to Code")
+### [WWDC 22 Call to Code](https://www.apple.com/newsroom/2022/04/apples-worldwide-developers-conference-returns-in-its-all-online-format/ "WWDC 2022 Call to Code")
 
 ![](http://cdn.zhangferry.com/Images/20220411235752.png)
 
-Apple 宣布了 WWDC22 的相关事项，时间是 6 月 6 号到 10 号，形式还是线上播放。苹果一向喜欢玩彩蛋，可以通过这张图片简单推测下，从图片看主体是 Swift 图标，更准确的说表示 SwiftUI 的可能性更大，边缘透出的光亮还有一种黎明到来，开启新篇章的感觉，所以很可能 SwiftUI 将迎来重大更新。就可联想的范围来说，什么样的更新才算重大呢，对标 Flutter，有没有可能支持全栈：Windows、Linux、Web 等平台？这个想法确实能配得上黎明到来，但还是有些大胆了，跨端和模仿也一直不是苹果的调性。具体会有怎样的更新，还是等发布会的时候见分晓吧。
+Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形式还是线上播放。苹果一向喜欢玩彩蛋，可以通过这张图片简单推测下，从图片看主体是 Swift 图标，更准确的说表示 SwiftUI 的可能性更大，边缘透出的光亮还有一种黎明到来，开启新篇章的感觉，所以很可能 SwiftUI 将迎来重大更新。就可联想的范围来说，什么样的更新才算重大呢，对标 Flutter，有没有可能支持全栈：Windows、Linux、Web 等平台？这个想法确实能配得上黎明到来，但还是有些大胆了，跨端和模仿也一直不是苹果的调性。具体会有怎样的更新，还是等发布会的时候见分晓吧。
 
 同时 Swift Student Challenge 将继续举办，学生们可以通过 Swift Playgrounds 创造有趣的项目。项目提交截止时间是 4 月 25 号，获奖者将获得 Apple 提供的一件 WWDC22 主题外套，一套定制的别针套装和一年的开发者会员资格。活动详情可以点击 [Swift Student Challenge ](https://developer.apple.com/wwdc22/swift-student-challenge/ "Swift Student Challenge")查看。
 
-## 开发Tips
-
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
-
-### 
-
-
-
 ## 面试解析
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[JY](https://juejin.cn/user/1574156380931144)
 
+### 当指尖触碰屏幕，触摸事件由触屏生成后如何传递到当前应用？
+
+通过 `IOKit.framework` 事件发生，被封装为 `IOHIDEvent `对象，然后通过 `mach port`  转发到 `SpringBoard`（也就是桌面）。然后再通过`mach port`转发给当前 APP 的主线程，主线程`Runloop`的`Source1`触发,`Source1`回调内部触发`Source0回调`，`Source0`的回调内部将事件封装成`UIEvent` ，然后调用`UIApplication`的`sendEvent`将`UIEvent`传给了`UIWindow`。
+
+>  `souce1`回调方法： `__IOHIDEventSystemClientQueueCallback()`
+>
+>  `souce0`回调方法:    `__UIApplicationHandleEventQueue()`
+
+寻找最佳响应者，这个过程也就是`hit-testing`，确定了响应链，接下来就是传递事件。
+
+如果事件没能找到能够相应的对象，最终会释放掉。`Runloop` 在事件处理完后也会睡眠等待下一次事件。
+
+#### 寻找事件的最佳响应者（Hit-Testing）
+
+当 APP 接受到触摸事件后，会被放入到当前应用的一个事件队列中（先发生先执行），出队后，`Application` 首先将事件传递给当前应用最后显示的`UIWindow`，询问是否能够响应事件，若窗口能够响应事件，则向下传递子视图是否能响应事件，优先询问后添加的视图的子视图，如果视图没有能够响应的子视图了，则自身就是最合适的响应者。
+
+```objectivec
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    //3种状态无法响应事件
+     if (self.userInteractionEnabled == NO || self.hidden == YES ||  self.alpha <= 0.01) return nil; 
+    //触摸点若不在当前视图上则无法响应事件
+    if ([self pointInside:point withEvent:event] == NO) return nil; 
+    //从后往前遍历子视图数组 
+    int count = (int)self.subviews.count; 
+    for (int i = count - 1; i >= 0; i--) 
+    { 
+        // 获取子视图
+        UIView *childView = self.subviews[i]; 
+        // 坐标系的转换,把触摸点在当前视图上坐标转换为在子视图上的坐标
+        CGPoint childP = [self convertPoint:point toView:childView]; 
+        //询问子视图层级中的最佳响应视图
+        UIView *fitView = [childView hitTest:childP withEvent:event]; 
+        if (fitView) 
+        {
+            //如果子视图中有更合适的就返回
+            return fitView; 
+        }
+    } 
+    //没有在子视图中找到更合适的响应视图，那么自身就是最合适的
+    return self;
+}
+```
+
+#### 传递事件
+
+找到最佳响应者后开始传递事件
+
+`UIApplication sendEvent ` =>`UIWindow sendEvent` =>`UIWindow _sendTouchesForEvent` =>`touchesBegin` 
+
+#### UIApplication 是怎么知道要把事件传给哪个 window 的？window 又是怎么知道哪个视图才是最佳响应者的呢？
+
+在`hit-testing`过程中将 `Window`与 `view`绑定在 `UIEvent`上的`touch`对象
+
+#### 响应者为什么能够处理响应事件，提供了哪些方法？
+
+```objectivec
+//手指触碰屏幕，触摸开始
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
+//手指在屏幕上移动
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
+//手指离开屏幕，触摸结束
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
+//触摸结束前，某个系统事件中断了触摸，例如电话呼入
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
+```
+
+### 触摸事件如何沿着响应链流动？
+
+在确定最佳响应者之后，优先给最佳的对象响应，如果最佳对象要将事件传递给其他响应者，这个从底到上的过程叫做响应链。
+
+#### 如果有 UIResponder、手势、UIControl 同时存在，是怎么处理的？
+
+系统提供的有默认 `action` 操作的 `UIControl`，例如 `UIButton、UISwitch` 等的单击，响应优先级比手势高，而自定义的却比手势识别器要低，然后才是  `UIResponder` 。
+
+`Window` 在将事件传递给 `hit-tested view` 之前，会先将事件传递给相关的手势识别器,并由手势识别器优先识别。若手势识别器成功识别了事件，就会取消 `hit-tested view`对事件的响应；若手势识别器没能识别事件，`hit-tested view` 才完全接手事件的响应权。
+
+#### Window怎么知道要把事件传递给哪些手势识别器？
+
+`event` 绑定的`touch`对象维护了一个手势数组，在 `hit-testing` 的过程中收集对应的手势识别器， `Window` 先将事件传递给这些手势识别器，再传给 `hit-tested view`。一旦有手势识别器成功识别了手势，`Application` 就会取消`hit-tested view`对事件的响应。
+
+#### 手势识别器与UIResponder对于事件响应的联系？
+
+* `Window`先将绑定了触摸对象的事件传递给触摸对象上绑定的手势识别器，再发送给触摸对象对应的 `hit-tested view`。
+
+* 手势识别器识别手势期间，若触摸对象的触摸状态发生变化，事件都是先发送给手势识别器再发送给 `hit-test view`。
+
+* 手势识别器若成功识别了手势，则通知 `Application` 取消 `hit-tested view` 对于事件的响应，并停止向 `hit-tested view` 发送事件；
+
+* 若手势识别器未能识别手势，而此时触摸并未结束，则停止向手势识别器发送事件，仅向 `hit-test view` 发送事件。
+
+* 若手势识别器未能识别手势，且此时触摸已经结束，则向 `hit-tested view` 发送 `end` 状态的 `touch`事件以停止对事件的响应。
+
+>  **cancelsTouchesInView** 若设置成YES，则表示手势识别器在识别手势期间，截断事件，即不会将事件发送给hit-tested view。
+>
+>  **delaysTouchesBegan** 若设置成NO，则在手势识别失败时会立即通知Application发送状态为end的touch事件给hit-tested view以调用 `touchesEnded:withEvent:` 结束事件响应。
+
+#### 有哪些情况无法响应？
+
+* **不允许交互**：`userInteractionEnabled = NO`
+
+* **隐藏**（`hidden = YES `）：如果父视图隐藏，那么子视图也会隐藏，隐藏的视图无法接收事件
+
+* **透明度**：alpha < 0.01 如果设置一个视图的透明度<0.01，会直接影响子视图的透明度。alpha：0.0~0.01为透明。
+
+### 参考
+
+[iOS触摸事件全家桶](https://www.jianshu.com/p/c294d1bd963d "iOS触摸事件全家桶")
 
 ## 优秀博客
 
