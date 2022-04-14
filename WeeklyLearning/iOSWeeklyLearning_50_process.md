@@ -36,8 +36,44 @@ Apple 宣布了 WWDC22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 ## 优秀博客
 
-整理编辑：[@我是熊大](https://github.com/Tliens)
+整理编辑：皮拉夫大王在此
 
+> 本期优秀博客主题为重新了解`rebase` & ` bind` 。前段时间字节发了篇关于iOS 15`fixup-chain`机制的相关文章，其中`rebase`机制引起了大家热烈的讨论。在讨论的过程中，包括我在内的部分同学纠正了之前对`rebase`的错误认识，因此有必要跟大家一块再来学习下`rebase` & ` bind`
+>
+> **在阅读之前，先来问几个问题：**
+>
+> - `reabse` 时会修改TEXT段的数据吗？如果不修改，那静态链接时还不知道ASLR后的真实地址难道不需要通过rebase修正吗？如果要修改，TEXT段不是只读段吗，为什么可以修改呢？
+> - iOS 15之前的`fixup-chain`机制与之前的`rebase` & ` bind`有何不同？
+>
+> 如果你真正了解`rebase` & ` bind`机制，那么这两个问题要弄清楚。
+
+1、**复习iOS的rebase和bind**
+
+1.1 [深入理解 Symbol](https://mp.weixin.qq.com/s/uss-RFgWhIIPc6JPqymsNg) -- 来自公众号：小集
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：在了解rebase和bind之前必须要了解iOS的符号，符号是bind的桥梁。文章中对符号的介绍比较详细，包含之前很少提到的lazy symbol，weak symbol等。
+
+1.2 [给实习生讲明白 Lazy/Non-lazy Binding](https://juejin.cn/post/7001842254495268877) -- 来自掘金：No
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：这篇文章是对bind讲解的浅显易懂，非常适合之前不了解bind的同学阅读。
+
+1.3 [图解 Mach-O 中的 got](https://juejin.cn/post/6918645161303998478) -- 来自掘金：微微笑的蜗牛
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：这篇文章也是介绍相关知识的，可以补充阅读。
+
+2、**关于iOS15的fixup机制**
+
+2.1  [iOS 15 如何让你的应用启动更快]( https://juejin.cn/post/6978750428632580110) -- 来自掘金：ZacJi
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：iOS15的fixup介绍将主要通过三篇文章，逐次加深深度。阅读这篇文章后，大家应该要弄清楚作者所说的启动加速的原因，以及与二进制重排是否有关系。
+
+2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ) -- 来自公众号：皮拉夫大王在此
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：在阅读了《iOS 15 如何让你的应用启动更快》，进一步探索了bind机制并且加以应用。
+
+2.3 [iOS15 动态链接 fixup chain 原理详解](https://mp.weixin.qq.com/s/k_RI2in_Q5hwT33KWig34A "iOS15 动态链接 fixup chain 原理详解") -- 来自公众号：字节跳动终端技术
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：更加完善地介绍iOS 15的fixup机制。
 
 
 ## 见闻
