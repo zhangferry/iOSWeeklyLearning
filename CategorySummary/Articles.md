@@ -1417,7 +1417,7 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@东坡肘子](https://www.fatbobman.com/)：无法通过二进制发布库是阻碍开发者全面转向 Swift Package Manager 的一个重要因素。在 Xcode 12 中添加了XCFramework ，使得二进制发布得以可能。Xcode 13.3 再接再厉，增加了 XCFramework 对私有存储库的支持。开发者通过在开发私有的闭源库时将其代码作为二进制文件提供，以进一步保护其知识产权。
 
-5、[Swift异步算法介绍](https://www.swift.org/blog/swift-async-algorithms/) -- 来自：Tony Parker
+5、[Swift异步算法介绍](https://www.swift.org/blog/swift-async-algorithms/ "Swift异步算法介绍") -- 来自：Tony Parker
 
 [@东坡肘子](https://www.fatbobman.com/)：Swift 5.5 为 Swift 带来了全新的异步开发体验。近日，苹果公开了跨平台开源项目 Swift Async Algorithms，为开发者提供了更加自然、高效地处理异步序列的能力。该库需要 Swift 5.6 的支持。
 
