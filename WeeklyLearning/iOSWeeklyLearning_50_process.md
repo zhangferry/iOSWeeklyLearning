@@ -24,7 +24,9 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 整理编辑：[JY](https://juejin.cn/user/1574156380931144)
 
-### 当指尖触碰屏幕，触摸事件由触屏生成后如何传递到当前应用？
+### 事件响应与传递
+
+#### 当指尖触碰屏幕，触摸事件由触屏生成后如何传递到当前应用？
 
 通过 `IOKit.framework` 事件发生，被封装为 `IOHIDEvent `对象，然后通过 `mach port`  转发到 `SpringBoard`（也就是桌面）。然后再通过`mach port`转发给当前 APP 的主线程，主线程`Runloop`的`Source1`触发,`Source1`回调内部触发`Source0回调`，`Source0`的回调内部将事件封装成`UIEvent` ，然后调用`UIApplication`的`sendEvent`将`UIEvent`传给了`UIWindow`。
 
@@ -34,30 +36,28 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 寻找最佳响应者，这个过程也就是`hit-testing`，确定了响应链，接下来就是传递事件。
 
-如果事件没能找到能够相应的对象，最终会释放掉。`Runloop` 在事件处理完后也会睡眠等待下一次事件。
+如果事件没能找到能够响应的对象，最终会释放掉。`Runloop` 在事件处理完后也会睡眠等待下一次事件。
 
 #### 寻找事件的最佳响应者（Hit-Testing）
 
 当 APP 接受到触摸事件后，会被放入到当前应用的一个事件队列中（先发生先执行），出队后，`Application` 首先将事件传递给当前应用最后显示的`UIWindow`，询问是否能够响应事件，若窗口能够响应事件，则向下传递子视图是否能响应事件，优先询问后添加的视图的子视图，如果视图没有能够响应的子视图了，则自身就是最合适的响应者。
 
 ```objectivec
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     //3种状态无法响应事件
      if (self.userInteractionEnabled == NO || self.hidden == YES ||  self.alpha <= 0.01) return nil; 
     //触摸点若不在当前视图上则无法响应事件
     if ([self pointInside:point withEvent:event] == NO) return nil; 
     //从后往前遍历子视图数组 
     int count = (int)self.subviews.count; 
-    for (int i = count - 1; i >= 0; i--) 
-    { 
+    for (int i = count - 1; i >= 0; i--) { 
         // 获取子视图
         UIView *childView = self.subviews[i]; 
         // 坐标系的转换,把触摸点在当前视图上坐标转换为在子视图上的坐标
         CGPoint childP = [self convertPoint:point toView:childView]; 
         //询问子视图层级中的最佳响应视图
         UIView *fitView = [childView hitTest:childP withEvent:event]; 
-        if (fitView) 
-        {
+        if (fitView) {
             //如果子视图中有更合适的就返回
             return fitView; 
         }
@@ -90,7 +90,7 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
 ```
 
-### 触摸事件如何沿着响应链流动？
+#### 触摸事件如何沿着响应链流动？
 
 在确定最佳响应者之后，优先给最佳的对象响应，如果最佳对象要将事件传递给其他响应者，这个从底到上的过程叫做响应链。
 
@@ -147,25 +147,25 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 1、**复习iOS的rebase和bind**
 
-1.1 [深入理解 Symbol](https://mp.weixin.qq.com/s/uss-RFgWhIIPc6JPqymsNg) -- 来自公众号：小集
+1.1 [深入理解 Symbol](https://mp.weixin.qq.com/s/uss-RFgWhIIPc6JPqymsNg "深入理解 Symbol") -- 来自公众号：小集
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：在了解rebase和bind之前必须要了解iOS的符号，符号是bind的桥梁。文章中对符号的介绍比较详细，包含之前很少提到的lazy symbol，weak symbol等。
 
-1.2 [给实习生讲明白 Lazy/Non-lazy Binding](https://juejin.cn/post/7001842254495268877) -- 来自掘金：No
+1.2 [给实习生讲明白 Lazy/Non-lazy Binding](https://juejin.cn/post/7001842254495268877 "给实习生讲明白 Lazy/Non-lazy Binding") -- 来自掘金：No
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：这篇文章是对bind讲解的浅显易懂，非常适合之前不了解bind的同学阅读。
 
-1.3 [图解 Mach-O 中的 got](https://juejin.cn/post/6918645161303998478) -- 来自掘金：微微笑的蜗牛
+1.3 [图解 Mach-O 中的 got](https://juejin.cn/post/6918645161303998478 "图解 Mach-O 中的 got") -- 来自掘金：微微笑的蜗牛
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：这篇文章也是介绍相关知识的，可以补充阅读。
 
 2、**关于iOS15的fixup机制**
 
-2.1  [iOS 15 如何让你的应用启动更快]( https://juejin.cn/post/6978750428632580110) -- 来自掘金：ZacJi
+2.1  [iOS 15 如何让你的应用启动更快]( https://juejin.cn/post/6978750428632580110 "iOS 15 如何让你的应用启动更快") -- 来自掘金：ZacJi
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：iOS15的fixup介绍将主要通过三篇文章，逐次加深深度。阅读这篇文章后，大家应该要弄清楚作者所说的启动加速的原因，以及与二进制重排是否有关系。
 
-2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ) -- 来自公众号：皮拉夫大王在此
+2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ "从野指针探测到对iOS 15 bind 的探索") -- 来自公众号：皮拉夫大王在此
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：在阅读了《iOS 15 如何让你的应用启动更快》，进一步探索了bind机制并且加以应用。
 
@@ -261,7 +261,7 @@ CDN 的作用是访问加速，如何加速呢，就是分配多个服务器上�
 
 ## 工具推荐
 
-整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+整理编辑：[CoderStar]()
 
 ### AppleParty
 
@@ -289,6 +289,8 @@ CDN 的作用是访问加速，如何加速呢，就是分配多个服务器上�
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
+
+[iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
 
 [iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/vdUy-BqxWzuPcjYO6fFsJA)
 
