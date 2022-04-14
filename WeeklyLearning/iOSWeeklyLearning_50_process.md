@@ -119,7 +119,11 @@ CDN 的作用是访问加速，如何加速呢，就是分配多个服务器上�
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### 闲话 Swift 协程
 
+**地址**：https://www.bennyhuo.com/book/swift-coroutines/
+
+该系列博客从浅入深地介绍了 Swift 在 5.5 中新支持的协程特性。该系列文章介绍了 Swift 协程的特性，内容以 Swift 协程的基本概念、语法设计、使用场景等方面为基础展开，也会与大前端开发者常见的 Kotlin、JavaScript 做对比（作者是 Kotlin GDE），作者希望这个系列能给大家一个更多元化的视角来理解这个语法特性，十分推荐。
 
 ## 工具推荐
 
