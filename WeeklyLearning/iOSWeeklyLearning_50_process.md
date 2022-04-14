@@ -6,9 +6,9 @@
 
 > * 话题：WWDC 22 Call to Code
 > * 面试模块：事件响应与传递
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 优秀博客：复习 iOS 的 rebase 和 bind
+> * 学习资料：闲话 Swift 协程
+> * 开发工具：AppleParty 是三七互娱旗下37手游 iOS 团队研发，实现快速操作 App Store Connect 后台的自动化 macOS 工具。
 
 ## 本期话题
 
