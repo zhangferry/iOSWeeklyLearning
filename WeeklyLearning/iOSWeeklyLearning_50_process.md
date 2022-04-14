@@ -49,11 +49,11 @@ Apple 宣布了 WWDC22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 1、**复习iOS的rebase和bind**
 
-1.1[深入理解 Symbol](https://mp.weixin.qq.com/s/uss-RFgWhIIPc6JPqymsNg “深入理解 Symbol”) -- 来自公众号：小集
+1.1 [深入理解 Symbol](https://mp.weixin.qq.com/s/uss-RFgWhIIPc6JPqymsNg) -- 来自公众号：小集
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：在了解rebase和bind之前必须要了解iOS的符号，符号是bind的桥梁。文章中对符号的介绍比较详细，包含之前很少提到的lazy symbol，weak symbol等。
 
-1.1 [给实习生讲明白 Lazy/Non-lazy Binding](https://juejin.cn/post/7001842254495268877) -- 来自掘金：No
+1.2 [给实习生讲明白 Lazy/Non-lazy Binding](https://juejin.cn/post/7001842254495268877) -- 来自掘金：No
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：这篇文章是对bind讲解的浅显易懂，非常适合之前不了解bind的同学阅读。
 
@@ -67,7 +67,7 @@ Apple 宣布了 WWDC22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：iOS15的fixup介绍将主要通过三篇文章，逐次加深深度。阅读这篇文章后，大家应该要弄清楚作者所说的启动加速的原因，以及与二进制重排是否有关系。
 
-2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ “从野指针探测到对iOS 15 bind 的探索”) -- 来自公众号：皮拉夫大王在此
+2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ) -- 来自公众号：皮拉夫大王在此
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：在阅读了《iOS 15 如何让你的应用启动更快》，进一步探索了bind机制并且加以应用。
 
