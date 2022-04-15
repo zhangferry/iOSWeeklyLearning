@@ -16,7 +16,7 @@
 
 ![](http://cdn.zhangferry.com/Images/20220411235752.png)
 
-Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形式还是线上播放。苹果一向喜欢玩彩蛋，我们可以尝试从这张图片里获取一些信息。图片主体是 Swift 图标，更准确的说应该是 SwiftUI 的图标，图标边缘透出的光亮有一种黎明到来，开启新篇章的感觉，所以很可能 SwiftUI 将迎来重大更新。就可联想的范围来说，什么样的更新才算重大呢，对标 Flutter，有没有可能支持全栈：Windows、Linux、Web 等平台？这个想法确实能配得上黎明到来，至于是否会实现，还是会有别的我们想不到的大更新，就让我们等待它的到来吧。
+Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形式还是线上播放。苹果一向喜欢玩彩蛋，我们可以尝试从这张图片里获取一些信息。图片主体是 Swift 图标，更准确的说应该是 SwiftUI 的图标，图标边缘透出的光亮有一种黎明到来，开启新篇章的感觉，所以很可能 SwiftUI 将迎来重大更新。就可联想的范围来说，什么样的更新才算重大呢，对标 Flutter，有没有可能支持全栈：Windows、Linux、Web 等平台？这个想法确实能配得上黎明到来，至于是否会实现，还是会有别的我们想不到的大更新，就让我们等待它的到来吧！
 
 同时 Swift Student Challenge 将继续举办，学生们可以通过 Swift Playgrounds 创造有趣的项目。项目提交截止时间是 4 月 25 号，获奖者将获得 Apple 提供的一件 WWDC22 主题外套，一套定制的别针套装和一年的开发者会员资格。活动详情可以点击 [Swift Student Challenge ](https://developer.apple.com/wwdc22/swift-student-challenge/ "Swift Student Challenge")查看。
 
@@ -36,7 +36,7 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 寻找最佳响应者，这个过程也就是`hit-testing`，确定了响应链，接下来就是传递事件。
 
-如果事件没能找到能够响应的对象，最终会释放掉。`Runloop` 在事件处理完后也会睡眠等待下一次事件。
+如果事件找不到能够响应的对象，最终会释放掉。`Runloop` 在事件处理完后也会睡眠等待下一次事件。
 
 #### 寻找事件的最佳响应者（Hit-Testing）
 
@@ -147,7 +147,7 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 1、**复习iOS的rebase和bind**
 
-1.1 [深入理解 Symbol](https://mp.weixin.qq.com/s/uss-RFgWhIIPc6JPqymsNg "深入理解 Symbol") -- 来自公众号：小集
+1.1 [深入理解 Symbol](https://mp.weixin.qq.com/s/uss-RFgWhIIPc6JPqymsNg) -- 来自公众号：小集
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：在了解rebase和bind之前必须要了解iOS的符号，符号是bind的桥梁。文章中对符号的介绍比较详细，包含之前很少提到的lazy symbol，weak symbol等。
 
@@ -165,11 +165,11 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：iOS15的fixup介绍将主要通过三篇文章，逐次加深深度。阅读这篇文章后，大家应该要弄清楚作者所说的启动加速的原因，以及与二进制重排是否有关系。
 
-2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ "从野指针探测到对iOS 15 bind 的探索") -- 来自公众号：皮拉夫大王在此
+2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ) -- 来自公众号：皮拉夫大王在此
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：在阅读了《iOS 15 如何让你的应用启动更快》，进一步探索了bind机制并且加以应用。
 
-2.3 [iOS15 动态链接 fixup chain 原理详解](https://mp.weixin.qq.com/s/k_RI2in_Q5hwT33KWig34A "iOS15 动态链接 fixup chain 原理详解") -- 来自公众号：字节跳动终端技术
+2.3 [iOS15 动态链接 fixup chain 原理详解](https://mp.weixin.qq.com/s/k_RI2in_Q5hwT33KWig34A) -- 来自公众号：字节跳动终端技术
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：更加完善地介绍iOS 15的fixup机制。
 
