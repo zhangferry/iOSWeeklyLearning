@@ -54,15 +54,22 @@
   * 液体：喝咖啡（-12%\~-22% ACM），喝牛奶（-10%\~-17% ACM），喝茶（-8%\~15% ACM），少喝或不喝甜味饮料（否则每天一杯 +7% ACM），戒酒或每周 100g 内（否则 +\~50% ACM）
   * 气体：不吸烟（否则 +~50% ACM）
   * 光照：晒太阳（-~40% ACM）
-
 * 输出
   * 运动：每周 3 次 45 分钟挥拍运动（-47% ACM）
   * 日常：刷牙（-25% ACM）
   * 睡眠：每天睡 7 小时全因死亡率最低；且 10-12 点间最好，早睡 +43% ACM，晚睡 +15% ACM
-
 * 上下文
   * 体重：减肥（-54% ACM）
 
+3、[Flying Through Giga Berlin](https://www.youtube.com/watch?v=7-4yOx1CnXE "Flying Through Giga Berlin")
+
+这是特斯拉在 YouTube 发布的柏林工厂的航拍视频，国内也有人搬运，可以在 [B 站](https://www.bilibili.com/s/video/BV1B34y1s7wr "Giga 柏林特斯拉工厂航拍 - Bilibili")查看，清晰度差一些。不同于室外的高空航拍，这是一次工厂车间内的穿梭拍摄。无人机经过车间的各个厂区，飞跃车床和舞动的机械臂，从板材定型到成品车完成的主要环节都有展示。看着这些高度机械化的画面，真的非常震撼。
+
+4、[Apple 微距摄影大赛获奖作品赏析](https://www.apple.com/newsroom/2022/04/apple-unveils-the-best-photos-from-the-shot-on-iphone-macro-challenge/ "Apple 微距摄影大赛获奖作品赏析")
+
+微距模式是 iPhone 13 Pro 和 iPhone 13 Pro Max 开始支持的一种专门用于拍摄事物细节的功能。本次摄影大赛也是针对这两款机型举办，下面是其中一副获奖作品，很难想象这是用手机拍摄出来的。一片简单的树叶都有这么丰富的纹理，可以感受到微距模式下的镜头细节表现能力真的非常强。
+
+![](http://cdn.zhangferry.com/Images/20220419230049.png)
 
 ## 学习资料
 
