@@ -76,10 +76,23 @@
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
 
-
 ## 工具推荐
 
-整理编辑：[zhangferry](https://zhangferry.com)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### Quiver
+
+**地址**：https://yliansoft.com/#quiver
+
+**软件状态**：免费
+
+**软件介绍**：
+
+`Quiver`是为程序员打造的笔记本。它让您可以在一个笔记中轻松混合文本、代码、`Markdown` 和 `LaTeX`，使用出色的代码编辑器编辑代码，实时预览 `Markdown` 和 `LaTeX`，并通过全文搜索立即找到任何笔记。
+
+包含`MacOS`、`iOS`两端。
+
+![Quiver](http://cdn.zhangferry.com/screenshot1.png)
 
 ## 关于我们
 
