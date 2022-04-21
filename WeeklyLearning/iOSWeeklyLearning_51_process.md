@@ -4,11 +4,11 @@
 
 ### 本期概要
 
-> * 话题：游戏版号恢复发放，45款游戏获版号
+> * 话题：游戏版号恢复发放，45 款游戏获版号
 > * 面试模块：简述 `mmap` 应用
-> * 优秀博客：iOS内购
-> * 学习资料：iOS 高性能app架构
-> * 开发工具：`Quiver`是为程序员打造的笔记本。它让您可以在一个笔记中轻松混合文本、代码、`Markdown` 和 `LaTeX`
+> * 优秀博客：iOS 内购主题
+> * 学习资料：一本刚翻译的 《iOS 高性能 App 架构》小书
+> * 开发工具：`Quiver`是为程序员打造的笔记本，可以轻松混合文本、代码、`Markdown` 和 `LaTeX`。iTab 一款可以自定义 Tab 页的浏览器插件。
 
 ## 本期话题
 
@@ -106,7 +106,7 @@ void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
 
 整理编辑：[@我是熊大](https://github.com/Tliens)
 
-> 本期优秀博客的主题为：iOS内购。
+> 本期优秀博客的主题为：iOS 内购。
 
 1、[iOS内购详解](https://juejin.cn/post/7029252038252822564 "iOS内购详解") -- 来自掘金：QiShare
 
@@ -173,7 +173,7 @@ Web 3.0 是一个最近很热的概念，那什么是 Web 3.0 呢？作者用一
 
 **地址**：https://github.com/dudongge/iOS_Architecture
 
-该仓库是 [Advanced iOS App Architecture (1st Edition)](https://zh.sg1lib.org/book/5002805/90c154) 的大量机翻译本，对于译文修改了一些错别字，有 pdf 和 word 可以选择。本书主要讨论了在开发 App 的时候，代码在各种架构中的表现和细节的不同，讨论了各种架构的优缺点以及在 iOS 中，这些架构又有何特点和不同。
+该仓库是 [Advanced iOS App Architecture (1st Edition)](https://zh.sg1lib.org/book/5002805/90c154) 的翻译本，对于译文修改了一些错别字，有 pdf 和 word 可以选择。本书主要讨论了在开发 App 的时候，代码在各种架构中的表现和细节的不同，讨论了各种架构的优缺点以及在 iOS 中，这些架构又有何特点和不同。
 
 
 ## 工具推荐
