@@ -83,6 +83,12 @@ Web 3.0 是一个最近很热的概念，那什么是 Web 3.0 呢？作者用一
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### iOS 高性能app架构
+
+**地址**：https://github.com/dudongge/iOS_Architecture
+
+该仓库是 [Advanced iOS App Architecture (1st Edition)](https://zh.sg1lib.org/book/5002805/90c154) 的大量机翻译本，对于译文修改了一些错别字，有 pdf 和 word 可以选择。本书主要讨论了在开发 App 的时候，代码在各种架构中的表现和细节的不同，讨论了各种架构的优缺点以及在 iOS 中，这些架构又有何特点和不同。
+
 
 ## 工具推荐
 
