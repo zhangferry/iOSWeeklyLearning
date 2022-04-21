@@ -104,9 +104,29 @@ void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+整理编辑：[@我是熊大](https://github.com/Tliens)
 
+> 本期优秀博客的主题为：iOS内购。
 
+1、[iOS内购详解](https://juejin.cn/post/7029252038252822564 "iOS内购详解") -- 来自掘金：QiShare
+
+[@我是熊大](https://github.com/Tliens)：本文是QiShare针对内购写的一篇文章，包含了内购前的准备、内购流程、恢复购买、内购掉单等内容。
+
+2、[iOS内购（IAP）自动续订订阅类型总结](https://juejin.cn/post/6844904021229060103 "iOS内购（IAP）自动续订订阅类型总结") -- 来自简书：凡几多
+
+[@我是熊大](https://github.com/Tliens)：本文主要介绍自动订阅的相关情况。自定订阅与其他的购买不同，是比较复杂的一种情况。自定续期订阅类是有连续性的，其中还有免费试用期、促销期、宽限期的概念。用户还可以取消续订，恢复续订等，这无疑又增加了复杂性。
+
+3、[iOS项目技术还债之路《二》IAP掉单优化](https://juejin.cn/post/6844904021229060103 "iOS项目技术还债之路《二》IAP掉单优化") -- 来自掘金：njuxjy
+
+[@我是熊大](https://github.com/Tliens)：IAP调单一定是大多数开发者不可避免的问题，作者针对调单情况做了非常详细的总结，如果你也正有类似的问题，推荐阅读。
+
+4、[苹果iOS内购三步曲：App内退款、历史订单查询、绑定用户防掉单！--- WWDC21](https://juejin.cn/post/6974733392260644895 "苹果iOS内购三步曲：App内退款、历史订单查询、绑定用户防掉单！--- WWDC21") -- 来自掘金：37手游iOS技术运营团队
+
+[@我是熊大](https://github.com/Tliens)：本文是基于WWDC21的总结，介绍了最新的内购情况，StoreKit 2的出现让内购更简单。惊喜的是：客户端已经支持用户退款了。
+
+5、[SwiftyStoreKit](https://github.com/bizz84/SwiftyStoreKit "SwiftyStoreKit") -- 来自SwiftyStoreKit
+
+[@我是熊大](https://github.com/Tliens)：一个star高达5.9k的开源库，支持内购查询、购买、校验、结束交易等。api简洁易懂，能帮助你在项目中快速接入内购，美中不足的是不支持订单退订，这还需要自己开发。
 
 ## 见闻
 
