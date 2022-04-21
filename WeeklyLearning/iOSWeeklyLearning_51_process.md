@@ -1,15 +1,14 @@
-# iOS摸鱼周报 第四十二期
+# iOS摸鱼周报 第五十一期
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 话题：
-> * Tips：
-> * 面试模块：
+> * 话题：游戏版号恢复发放，45款游戏获版号
+> * 面试模块：简述 `mmap` 应用
 > * 优秀博客：
 > * 学习资料：
-> * 开发工具：
+> * 开发工具：`Quiver`是为程序员打造的笔记本。它让您可以在一个笔记中轻松混合文本、代码、`Markdown` 和 `LaTeX`
 
 ## 本期话题
 
@@ -19,15 +18,88 @@
 
 网络直播乱象、青少年沉迷游戏等问题，也一直是全民关心的问题，所以，游戏作为一个重要的内容创作平台，应该传递更多正能量，理性表达、合理消费，共同维护文明健康的网络视听生态环境。
 
-## 开发Tips
-
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638) [人魔七七](https://github.com/renmoqiqi)
-
-
-
 ## 面试解析
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### mmap 应用
+
+`mmap`是系统提供的一种虚拟内存映射文件的方法。可以将一个文件或者其他对象映射到进程的地址空间，实现文件磁盘地址和进程中虚拟内存地址的一个映射关系。
+
+在 iOS 中经常用在对性能要求较高的场景使用。例如常见的 `APM` 的日志写入，大文件读写操作等。
+
+> `mmap`还有可以用来做共享内存进程通信、匿名内存映射，感兴趣的同学可以自行学习
+
+#### 普通`I/O`流程
+
+普通的读写操作，由于考虑虚拟内存权限安全的问题，所有操作系统级别的行为（例如 `I/O`）都是在内核态处理的。同时  `I/O` 操作为了平衡主存和磁盘之间的读写速度以及保护磁盘写入次数，做了缓存处理，即 `page cache`该缓存是位于内核态主存中的。
+
+内核态空间，用户进程是无法直接访问的，可以间接通过**系统调用**获取并拷贝到用户态空间进行读取。 即一次读操作的简化流程为：
+
+1. 用户进程发起读取数据操作`read()`。
+
+2. `read()`通过系统调用函数调用内核态的函数读取数据
+
+3. 内核态会判断读取内存页是否在 `Page Cache`中，如果命中缓存，则直接拷贝到主存中供用户进程使用
+
+4. 如果未命中，则先从磁盘将数据按照 `Page Size`对齐拷贝到 `Page Cache`中，然后再次执行上面步骤 3
+
+所以一次普通读写，最多需要经历两次数据拷贝，一次是从磁盘映射到 `Page cache`，第二次是`Page Cachef`拷贝到用户进程空间。
+
+以上只是简化后的流程，对文件读写操作感兴趣的可以通过该文章学习[从内核文件系统看文件读写过程 ](https://www.cnblogs.com/huxiao-tee/p/4657851.html "从内核文件系统看文件读写过程")
+
+#### 优缺点
+
+由上可知 `mmap`相比普通的文件读写，优势在于可以有选择的映射，只加载一部分内容到进程虚拟内存中。另一方面，由于 `mmap`是直接映射磁盘文件到虚拟内存，减少了数据交换的次数，所以写入性能也更快。
+
+在存在优势的同时，也有一些缺点，例如 `mmap` 要求加载的最小单位为 `VM Page Size`，所以如果是小文件，该方法会导致碎片空间浪费。
+
+#### mmap API 示例
+
+`mmap` 实际应用主要是 `mmap() & munmap()`两个函数实现。两个函数原型如下：
+
+```cpp
+/// 需要导入头文件
+#import <sys/mman.h>
+
+void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
+ int munmap(void* start,size_t length);
+```
+
+函数参数：
+
+- `start`：映射区的其实位置，设置为零表示由系统决定映射区的起始位置
+- `length`： 映射区长度，单位是字节， 不足一页内存按一整页处理
+- `prot`：期望的内存保护标志，不能与文件打开模式冲突，支持 `|` 取多个值
+    - `PROT_EXEC`: 页内容允许执行
+    - `PROT_READ`：页内容允许读取
+    - `PROT_WRITE`：页内容可以写入
+    - `PROT_NONE`：不可访问
+- `flags`：指定映射对象的类型，映射选项和映射页是否可以共享（这里只注释使用的两项，其他更多定义可以自行查看）
+    - `MAP_SHARED`：与其它所有映射这个文件对象的进程共享映射空间。对共享区的写入，相当于输出到文件。
+    - `MAP_FILE`：默认值，表示从文件中映射
+- `fd`：有效的文件描述词。一般是由open()函数返回，其值也可以设置为-1，此时需要指定flags参数中的MAP_ANON,表明是匿名映射。
+- `off_set`：文件映射的偏移量，通常设置为0，代表从文件最前方开始对应offset必须是分页大小的整数倍。
+
+`mmap` 回写时机并不是实时的，调用 `msync()`或者`munmap()` 时会从内存中回写到文件，系统异常退出也会进行内容回写，不会导致日志数据丢失，所以特别适合日志文件写入。
+
+> Demo 可以参考开源库 `OOMDetector` 中的 `HighSppedLogger` 类的使用封装，有比较完整的映射、写入、读取、同步的代码封装，可直接使用。
+
+#### 注意事项
+
+`mmap` 允许映射到内存中的大小大于文件的大小，最后一个内存页不被使用的空间将会清零。但是如果映射的虚拟内存过大，超过了文件实际占用的内存页数量，后续访问会抛出异常。
+
+示例可以参考[认真分析mmap：是什么 为什么 怎么用 ](https://www.cnblogs.com/huxiao-tee/p/4660352.html "认真分析 mmap: 是什么 为什么 怎么用")中的情景二：
+
+![](http://cdn.zhangferry.com/Images/weekly_51_interview.png)
+
+超出文件大小的虚拟内存区域，文件所在页的内存扔可以访问，超出所在页的访问会抛出 `Signal` 信号异常
+
+#### 参考
+
+- [认真分析mmap：是什么 为什么 怎么用 ](https://www.cnblogs.com/huxiao-tee/p/4660352.html "认真分析 mmap: 是什么 为什么 怎么用")
+- [C语言mmap()函数：建立内存映射](http://c.biancheng.net/cpp/html/138.html "C语言mmap()函数：建立内存映射")
+- [OOMDetector](https://github.com/Tencent/OOMDetector "OOMDetector")
 
 
 ## 优秀博客
@@ -108,12 +180,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/vdUy-BqxWzuPcjYO6fFsJA)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第四十七期](https://mp.weixin.qq.com/s/X6lPQ5qwY1epF6fEUhvCpQ)
 
 ![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
