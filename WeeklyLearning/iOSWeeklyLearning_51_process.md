@@ -7,7 +7,7 @@
 > * 话题：游戏版号恢复发放，45款游戏获版号
 > * 面试模块：简述 `mmap` 应用
 > * 优秀博客：iOS内购
-> * 学习资料：
+> * 学习资料：iOS 高性能app架构
 > * 开发工具：`Quiver`是为程序员打造的笔记本。它让您可以在一个笔记中轻松混合文本、代码、`Markdown` 和 `LaTeX`
 
 ## 本期话题
@@ -89,7 +89,7 @@ void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
 
 `mmap` 允许映射到内存中的大小大于文件的大小，最后一个内存页不被使用的空间将会清零。但是如果映射的虚拟内存过大，超过了文件实际占用的内存页数量，后续访问会抛出异常。
 
-示例可以参考[认真分析mmap：是什么 为什么 怎么用 ](https://www.cnblogs.com/huxiao-tee/p/4660352.html "认真分析 mmap: 是什么 为什么 怎么用")中的情景二：
+示例可以参考[认真分析mmap：是什么 为什么 怎么用 ](https://www.cnblogs.com/huxiao-tee/p/4660352.html)中的情景二：
 
 ![](http://cdn.zhangferry.com/Images/weekly_51_interview.png)
 
