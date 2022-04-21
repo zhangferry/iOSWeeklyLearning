@@ -1,4 +1,4 @@
-# iOS摸鱼周报 第五十一期
+# iOS摸鱼周报 #51 | 游戏版号恢复发放
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -142,24 +142,18 @@ void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
 
 2、[程序员延寿指南](https://github.com/geekan/HowToLiveLonger "程序员延寿指南") -- 来自 Github: geekan
 
-[@远恒之义](https://github.com/eternaljust/)：最近在逛 V 站的时候刷到一个[帖子](https://fast.v2ex.com/t/847490#reply42 "V 站原帖")，作者分享了一些如何活得更久的方法，里面提到了一个术语 ACM: All-Cause Mortality / 全因死亡率，十分好奇就去阅读了一下。作者提到的部分参考文献有矛盾争议，有几个观点我也不太赞同，该指南仅供大家参考。
+[@远恒之义](https://github.com/eternaljust/)：最近在逛 V 站的时候刷到一个[帖子](https://fast.v2ex.com/t/847490#reply42 "V 站原帖")，作者分享了一些如何活得更久的方法，里面提到了一个术语 ACM：All-Cause Mortality（全因死亡率），它指的是一定时期内各种原因导致的总死亡人数与该人群同期平均人口数之比。如何稳健的活得更久，关键在于降低全因死亡率，按照文中的说法以下措施均能降低 ACM。
 
-如何稳健的活得更久，关键在于降低全因死亡率，具体可从三个方面来调整。
-* 输入
-  * 固体：吃白肉（-3%\~-11% ACM）、蔬果为主（-17%\~-26% ACM），多吃辣（-23% ACM），多吃坚果（-4%\~-27% ACM），中量碳水、多吃植物蛋白（-10% ACM）
-  * 液体：喝咖啡（-12%\~-22% ACM），喝牛奶（-10%\~-17% ACM），喝茶（-8%\~15% ACM），少喝或不喝甜味饮料（否则每天一杯 +7% ACM），戒酒或每周 100g 内（否则 +\~50% ACM）
-  * 气体：不吸烟（否则 +~50% ACM）
-  * 光照：晒太阳（-~40% ACM）
-* 输出
-  * 运动：每周 3 次 45 分钟挥拍运动（-47% ACM）
-  * 日常：刷牙（-25% ACM）
-  * 睡眠：每天睡 7 小时全因死亡率最低；且 10-12 点间最好，早睡 +43% ACM，晚睡 +15% ACM
-* 上下文
-  * 体重：减肥（-54% ACM）
+* 固体：吃白肉、蔬果为主，多吃辣，多吃坚果，中量碳水、多吃植物蛋白
+* 液体：喝咖啡，喝牛奶，喝茶，少喝或不喝甜味饮料，戒酒或每周 100g 内
+* 光照：晒太阳
+
+* 运动：每周 3 次 45 分钟挥拍运动
+* 睡眠：每天睡 7 小时全因死亡率最低；且 10-12 点间最好
 
 3、[Flying Through Giga Berlin](https://www.youtube.com/watch?v=7-4yOx1CnXE "Flying Through Giga Berlin")
 
-这是特斯拉在 YouTube 发布的柏林工厂的航拍视频，国内也有人搬运，可以在 [B 站](https://www.bilibili.com/s/video/BV1B34y1s7wr "Giga 柏林特斯拉工厂航拍 - Bilibili")查看，清晰度差一些。不同于室外的高空航拍，这是一次工厂车间内的穿梭拍摄。无人机经过车间的各个厂区，飞跃车床和舞动的机械臂，从板材定型到成品车完成的主要环节都有展示。看着这些高度机械化的画面，真的非常震撼。
+这是特斯拉在 YouTube 发布的柏林工厂的航拍视频，国内也有人搬运，可以在 [B 站](https://www.bilibili.com/s/video/BV1B34y1s7wr "Giga 柏林特斯拉工厂航拍 - Bilibili")查看。不同于室外的高空航拍，这是一次工厂车间内的穿梭拍摄。无人机经过车间的各个厂区，飞跃车床和机械臂，从板材定型到成品车完成的主要环节都有展示。这些高度机械化的画面，非常震撼。
 
 4、[Apple 微距摄影大赛获奖作品赏析](https://www.apple.com/newsroom/2022/04/apple-unveils-the-best-photos-from-the-shot-on-iphone-macro-challenge/ "Apple 微距摄影大赛获奖作品赏析")
 
@@ -199,6 +193,18 @@ Web 3.0 是一个最近很热的概念，那什么是 Web 3.0 呢？作者用一
 包含`MacOS`、`iOS`两端。
 
 ![Quiver](http://cdn.zhangferry.com/screenshot1.png)
+
+### iTab
+
+**地址**：https://www.itab.link/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+一款浏览器空白 Tab 页定制工具，支持几乎所有主流浏览器。iTab 提供了很多模板，你可以自由地搭建属于自己的 Tab 页。同时配备备忘录，TODO 等功能，浏览器在平常的工作中使用频率非常高，综合体验下来，把一部分内容聚焦到浏览器中的 Tab 页确是一个提高效率的好方案。
+
+![](http://cdn.zhangferry.com/Images/20220421230343.png)
 
 ## 关于我们
 
