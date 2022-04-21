@@ -1164,3 +1164,56 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 ![Decode](http://cdn.zhangferry.com/top-d338be7e-1200.png)
 
 
+***
+整理编辑：[CoderStar]()
+
+### AppleParty
+
+**地址**：https://github.com/37iOS/AppleParty
+
+**软件状态**：开源
+
+**软件介绍**：
+
+介绍一个我们周报团队成员所在公司开源的一个项目：`AppleParty`
+
+`AppleParty` 是三七互娱旗下37手游 iOS 团队研发，实现快速操作 `App Store Connect` 后台的自动化 `macOS` 工具。
+
+支持功能：
+
+* 内购买项目管理（批量创建和更新）；
+* 批量商店图和预览视频上传和更新；
+* 邮件发送工具；
+* 二维码扫描和生成工具；
+
+![AppleParty](http://cdn.zhangferry.com/06.jpeg)
+
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### Quiver
+
+**地址**：https://yliansoft.com/#quiver
+
+**软件状态**：免费
+
+**软件介绍**：
+
+`Quiver`是为程序员打造的笔记本。它让您可以在一个笔记中轻松混合文本、代码、`Markdown` 和 `LaTeX`，使用出色的代码编辑器编辑代码，实时预览 `Markdown` 和 `LaTeX`，并通过全文搜索立即找到任何笔记。
+
+包含`MacOS`、`iOS`两端。
+
+![Quiver](http://cdn.zhangferry.com/screenshot1.png)
+
+### iTab
+
+**地址**：https://www.itab.link/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+一款浏览器空白 Tab 页定制工具，支持几乎所有主流浏览器。iTab 提供了很多模板，你可以自由地搭建属于自己的 Tab 页。同时配备备忘录，TODO 等功能，浏览器在平常的工作中使用频率非常高，综合体验下来，把一部分内容聚焦到浏览器中的 Tab 页确是一个提高效率的好方案。
+
+![](http://cdn.zhangferry.com/Images/20220421230343.png)
+

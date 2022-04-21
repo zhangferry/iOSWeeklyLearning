@@ -1421,3 +1421,69 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@东坡肘子](https://www.fatbobman.com/)：Swift 5.5 为 Swift 带来了全新的异步开发体验。近日，苹果公开了跨平台开源项目 Swift Async Algorithms，为开发者提供了更加自然、高效地处理异步序列的能力。该库需要 Swift 5.6 的支持。
 
+***
+整理编辑：皮拉夫大王在此
+
+> 本期优秀博客主题为重新了解`rebase` & ` bind` 。前段时间字节发了篇关于iOS 15`fixup-chain`机制的相关文章，其中`rebase`机制引起了大家热烈的讨论。在讨论的过程中，包括我在内的部分同学纠正了之前对`rebase`的错误认识，因此有必要跟大家一块再来学习下`rebase` & ` bind`
+>
+> **在阅读之前，先来问几个问题：**
+>
+> - `reabse` 时会修改TEXT段的数据吗？如果不修改，那静态链接时还不知道ASLR后的真实地址难道不需要通过rebase修正吗？如果要修改，TEXT段不是只读段吗，为什么可以修改呢？
+> - iOS 15之前的`fixup-chain`机制与之前的`rebase` & ` bind`有何不同？
+>
+> 如果你想真正了解`rebase` & ` bind`机制，那么这两个问题要弄清楚。
+
+1、**复习iOS的rebase和bind**
+
+1.1 [深入理解 Symbol](https://mp.weixin.qq.com/s/uss-RFgWhIIPc6JPqymsNg) -- 来自公众号：小集
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：在了解rebase和bind之前必须要了解iOS的符号，符号是bind的桥梁。文章中对符号的介绍比较详细，包含之前很少提到的lazy symbol，weak symbol等。
+
+1.2 [给实习生讲明白 Lazy/Non-lazy Binding](https://juejin.cn/post/7001842254495268877 "给实习生讲明白 Lazy/Non-lazy Binding") -- 来自掘金：No
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：这篇文章是对bind讲解的浅显易懂，非常适合之前不了解bind的同学阅读。
+
+1.3 [图解 Mach-O 中的 got](https://juejin.cn/post/6918645161303998478 "图解 Mach-O 中的 got") -- 来自掘金：微微笑的蜗牛
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：这篇文章也是介绍相关知识的，可以补充阅读。
+
+2、**关于iOS15的fixup机制**
+
+2.1  [iOS 15 如何让你的应用启动更快]( https://juejin.cn/post/6978750428632580110 "iOS 15 如何让你的应用启动更快") -- 来自掘金：ZacJi
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：iOS15的fixup介绍将主要通过三篇文章，逐次加深深度。阅读这篇文章后，大家应该要弄清楚作者所说的启动加速的原因，以及与二进制重排是否有关系。
+
+2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ) -- 来自公众号：皮拉夫大王在此
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：在阅读了《iOS 15 如何让你的应用启动更快》，进一步探索了bind机制并且加以应用。
+
+2.3 [iOS15 动态链接 fixup chain 原理详解](https://mp.weixin.qq.com/s/k_RI2in_Q5hwT33KWig34A) -- 来自公众号：字节跳动终端技术
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：更加完善地介绍iOS 15的fixup机制。
+
+
+***
+整理编辑：[@我是熊大](https://github.com/Tliens)
+
+> 本期优秀博客的主题为：iOS 内购。
+
+1、[iOS内购详解](https://juejin.cn/post/7029252038252822564 "iOS内购详解") -- 来自掘金：QiShare
+
+[@我是熊大](https://github.com/Tliens)：本文是QiShare针对内购写的一篇文章，包含了内购前的准备、内购流程、恢复购买、内购掉单等内容。
+
+2、[iOS内购（IAP）自动续订订阅类型总结](https://www.jianshu.com/p/9531a85ba165 "iOS内购（IAP）自动续订订阅类型总结") -- 来自简书：凡几多
+
+[@我是熊大](https://github.com/Tliens)：本文主要介绍自动订阅的相关情况。自定订阅与其他的购买不同，是比较复杂的一种情况。自定续期订阅类是有连续性的，其中还有免费试用期、促销期、宽限期的概念。用户还可以取消续订，恢复续订等，这无疑又增加了复杂性。
+
+3、[iOS项目技术还债之路《二》IAP掉单优化](https://juejin.cn/post/6844904021229060103 "iOS项目技术还债之路《二》IAP掉单优化") -- 来自掘金：njuxjy
+
+[@我是熊大](https://github.com/Tliens)：IAP调单一定是大多数开发者不可避免的问题，作者针对调单情况做了非常详细的总结，如果你也正有类似的问题，推荐阅读。
+
+4、[苹果iOS内购三步曲：App内退款、历史订单查询、绑定用户防掉单！--- WWDC21](https://juejin.cn/post/6974733392260644895 "苹果iOS内购三步曲：App内退款、历史订单查询、绑定用户防掉单！--- WWDC21") -- 来自掘金：37手游iOS技术运营团队
+
+[@我是熊大](https://github.com/Tliens)：本文是基于WWDC21的总结，介绍了最新的内购情况，StoreKit 2的出现让内购更简单。惊喜的是：客户端已经支持用户退款了。
+
+5、[SwiftyStoreKit](https://github.com/bizz84/SwiftyStoreKit "SwiftyStoreKit") -- 来自SwiftyStoreKit
+
+[@我是熊大](https://github.com/Tliens)：一个star高达5.9k的开源库，支持内购查询、购买、校验、结束交易等。api简洁易懂，能帮助你在项目中快速接入内购，美中不足的是不支持订单退订，这还需要自己开发。
+

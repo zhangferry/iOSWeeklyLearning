@@ -2829,3 +2829,197 @@ static unsigned int indexForPointer(const void *p) {
 * [【译】CPU 高速缓存原理和应用](https://segmentfault.com/a/1190000022785358 "【译】CPU 高速缓存原理和应用")
 
 
+***
+整理编辑：[JY](https://juejin.cn/user/1574156380931144)
+
+### 事件响应与传递
+
+#### 当指尖触碰屏幕，触摸事件由触屏生成后如何传递到当前应用？
+
+通过 `IOKit.framework` 事件发生，被封装为 `IOHIDEvent `对象，然后通过 `mach port`  转发到 `SpringBoard`（也就是桌面）。然后再通过`mach port`转发给当前 APP 的主线程，主线程`Runloop`的`Source1`触发,`Source1`回调内部触发`Source0回调`，`Source0`的回调内部将事件封装成`UIEvent` ，然后调用`UIApplication`的`sendEvent`将`UIEvent`传给了`UIWindow`。
+
+>  `souce1`回调方法： `__IOHIDEventSystemClientQueueCallback()`
+>
+>  `souce0`回调方法:    `__UIApplicationHandleEventQueue()`
+
+寻找最佳响应者，这个过程也就是`hit-testing`，确定了响应链，接下来就是传递事件。
+
+如果事件找不到能够响应的对象，最终会释放掉。`Runloop` 在事件处理完后也会睡眠等待下一次事件。
+
+#### 寻找事件的最佳响应者（Hit-Testing）
+
+当 APP 接受到触摸事件后，会被放入到当前应用的一个事件队列中（先发生先执行），出队后，`Application` 首先将事件传递给当前应用最后显示的`UIWindow`，询问是否能够响应事件，若窗口能够响应事件，则向下传递子视图是否能响应事件，优先询问后添加的视图的子视图，如果视图没有能够响应的子视图了，则自身就是最合适的响应者。
+
+```objectivec
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    //3种状态无法响应事件
+     if (self.userInteractionEnabled == NO || self.hidden == YES ||  self.alpha <= 0.01) return nil; 
+    //触摸点若不在当前视图上则无法响应事件
+    if ([self pointInside:point withEvent:event] == NO) return nil; 
+    //从后往前遍历子视图数组 
+    int count = (int)self.subviews.count; 
+    for (int i = count - 1; i >= 0; i--) { 
+        // 获取子视图
+        UIView *childView = self.subviews[i]; 
+        // 坐标系的转换,把触摸点在当前视图上坐标转换为在子视图上的坐标
+        CGPoint childP = [self convertPoint:point toView:childView]; 
+        //询问子视图层级中的最佳响应视图
+        UIView *fitView = [childView hitTest:childP withEvent:event]; 
+        if (fitView) {
+            //如果子视图中有更合适的就返回
+            return fitView; 
+        }
+    } 
+    //没有在子视图中找到更合适的响应视图，那么自身就是最合适的
+    return self;
+}
+```
+
+#### 传递事件
+
+找到最佳响应者后开始传递事件
+
+`UIApplication sendEvent ` =>`UIWindow sendEvent` =>`UIWindow _sendTouchesForEvent` =>`touchesBegin` 
+
+#### UIApplication 是怎么知道要把事件传给哪个 window 的？window 又是怎么知道哪个视图才是最佳响应者的呢？
+
+在`hit-testing`过程中将 `Window`与 `view`绑定在 `UIEvent`上的`touch`对象
+
+#### 响应者为什么能够处理响应事件，提供了哪些方法？
+
+```objectivec
+//手指触碰屏幕，触摸开始
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
+//手指在屏幕上移动
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
+//手指离开屏幕，触摸结束
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
+//触摸结束前，某个系统事件中断了触摸，例如电话呼入
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event;
+```
+
+#### 触摸事件如何沿着响应链流动？
+
+在确定最佳响应者之后，优先给最佳的对象响应，如果最佳对象要将事件传递给其他响应者，这个从底到上的过程叫做响应链。
+
+#### 如果有 UIResponder、手势、UIControl 同时存在，是怎么处理的？
+
+系统提供的有默认 `action` 操作的 `UIControl`，例如 `UIButton、UISwitch` 等的单击，响应优先级比手势高，而自定义的却比手势识别器要低，然后才是  `UIResponder` 。
+
+`Window` 在将事件传递给 `hit-tested view` 之前，会先将事件传递给相关的手势识别器,并由手势识别器优先识别。若手势识别器成功识别了事件，就会取消 `hit-tested view`对事件的响应；若手势识别器没能识别事件，`hit-tested view` 才完全接手事件的响应权。
+
+#### Window怎么知道要把事件传递给哪些手势识别器？
+
+`event` 绑定的`touch`对象维护了一个手势数组，在 `hit-testing` 的过程中收集对应的手势识别器， `Window` 先将事件传递给这些手势识别器，再传给 `hit-tested view`。一旦有手势识别器成功识别了手势，`Application` 就会取消`hit-tested view`对事件的响应。
+
+#### 手势识别器与UIResponder对于事件响应的联系？
+
+* `Window`先将绑定了触摸对象的事件传递给触摸对象上绑定的手势识别器，再发送给触摸对象对应的 `hit-tested view`。
+
+* 手势识别器识别手势期间，若触摸对象的触摸状态发生变化，事件都是先发送给手势识别器再发送给 `hit-test view`。
+
+* 手势识别器若成功识别了手势，则通知 `Application` 取消 `hit-tested view` 对于事件的响应，并停止向 `hit-tested view` 发送事件；
+
+* 若手势识别器未能识别手势，而此时触摸并未结束，则停止向手势识别器发送事件，仅向 `hit-test view` 发送事件。
+
+* 若手势识别器未能识别手势，且此时触摸已经结束，则向 `hit-tested view` 发送 `end` 状态的 `touch`事件以停止对事件的响应。
+
+>  **cancelsTouchesInView** 若设置成YES，则表示手势识别器在识别手势期间，截断事件，即不会将事件发送给hit-tested view。
+>
+>  **delaysTouchesBegan** 若设置成NO，则在手势识别失败时会立即通知Application发送状态为end的touch事件给hit-tested view以调用 `touchesEnded:withEvent:` 结束事件响应。
+
+#### 有哪些情况无法响应？
+
+* **不允许交互**：`userInteractionEnabled = NO`
+
+* **隐藏**（`hidden = YES `）：如果父视图隐藏，那么子视图也会隐藏，隐藏的视图无法接收事件
+
+* **透明度**：alpha < 0.01 如果设置一个视图的透明度<0.01，会直接影响子视图的透明度。alpha：0.0~0.01为透明。
+
+### 参考
+
+[iOS触摸事件全家桶](https://www.jianshu.com/p/c294d1bd963d "iOS触摸事件全家桶")
+
+***
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### mmap 应用
+
+`mmap`是系统提供的一种虚拟内存映射文件的技术。可以将一个文件或者其他对象映射到进程的地址空间，实现文件磁盘地址和进程中虚拟内存地址之间的映射关系。
+
+在 iOS 中经常用在对性能要求较高的场景使用。例如常见的 `APM` 的日志写入，大文件读写操作等。
+
+> `mmap`还有可以用来做共享内存进程通信、匿名内存映射，感兴趣的同学可以自行学习
+
+#### 普通`I/O`流程
+
+普通的读写操作，由于考虑虚拟内存权限安全的问题，所有操作系统级别的行为（例如 `I/O`）都是在内核态处理的。同时  `I/O` 操作为了平衡主存和磁盘之间的读写速度以及保护磁盘写入次数，做了缓存处理，即 `page cache`该缓存是位于内核态主存中的。
+
+内核态空间，用户进程是无法直接访问的，可以间接通过**系统调用**获取并拷贝到用户态空间进行读取。 即一次读操作的简化流程为：
+
+1. 用户进程发起读取数据操作`read()`。
+
+2. `read()`通过系统调用函数调用内核态的函数读取数据
+
+3. 内核态会判断读取内存页是否在 `Page Cache`中，如果命中缓存，则直接拷贝到主存中供用户进程使用
+
+4. 如果未命中，则先从磁盘将数据按照 `Page Size`对齐拷贝到 `Page Cache`中，然后再次执行上面步骤 3
+
+所以一次普通读写，最多需要经历两次数据拷贝，一次是从磁盘映射到 `Page cache`，第二次是`Page Cachef`拷贝到用户进程空间。
+
+以上只是简化后的流程，对文件读写操作感兴趣的可以通过该文章学习[从内核文件系统看文件读写过程 ](https://www.cnblogs.com/huxiao-tee/p/4657851.html "从内核文件系统看文件读写过程")
+
+#### 优缺点
+
+由上可知 `mmap`相比普通的文件读写，优势在于可以有选择的映射，只加载一部分内容到进程虚拟内存中。另一方面，由于 `mmap`是直接映射磁盘文件到虚拟内存，减少了数据交换的次数，所以写入性能也更快。
+
+在存在优势的同时，也有一些缺点，例如 `mmap` 要求加载的最小单位为 `VM Page Size`，所以如果是小文件，该方法会导致碎片空间浪费。
+
+#### mmap API 示例
+
+`mmap` 实际应用主要是 `mmap() & munmap()`两个函数实现。两个函数原型如下：
+
+```cpp
+/// 需要导入头文件
+#import <sys/mman.h>
+
+void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
+ int munmap(void* start,size_t length);
+```
+
+函数参数：
+
+- `start`：映射区的其实位置，设置为零表示由系统决定映射区的起始位置
+- `length`： 映射区长度，单位是字节， 不足一页内存按一整页处理
+- `prot`：期望的内存保护标志，不能与文件打开模式冲突，支持 `|` 取多个值
+    - `PROT_EXEC`: 页内容允许执行
+    - `PROT_READ`：页内容允许读取
+    - `PROT_WRITE`：页内容可以写入
+    - `PROT_NONE`：不可访问
+- `flags`：指定映射对象的类型，映射选项和映射页是否可以共享（这里只注释使用的两项，其他更多定义可以自行查看）
+    - `MAP_SHARED`：与其它所有映射这个文件对象的进程共享映射空间。对共享区的写入，相当于输出到文件。
+    - `MAP_FILE`：默认值，表示从文件中映射
+- `fd`：有效的文件描述词。一般是由open()函数返回，其值也可以设置为-1，此时需要指定flags参数中的MAP_ANON,表明是匿名映射。
+- `off_set`：文件映射的偏移量，通常设置为0，代表从文件最前方开始对应offset必须是分页大小的整数倍。
+
+`mmap` 回写时机并不是实时的，调用 `msync()`或者`munmap()` 时会从内存中回写到文件，系统异常退出也会进行内容回写，不会导致日志数据丢失，所以特别适合日志文件写入。
+
+> Demo 可以参考开源库 `OOMDetector` 中的 `HighSppedLogger` 类的使用封装，有比较完整的映射、写入、读取、同步的代码封装，可直接使用。
+
+#### 注意事项
+
+`mmap` 允许映射到内存中的大小大于文件的大小，最后一个内存页不被使用的空间将会清零。但是如果映射的虚拟内存过大，超过了文件实际占用的内存页数量，后续访问会抛出异常。
+
+示例可以参考[认真分析mmap：是什么 为什么 怎么用 ](https://www.cnblogs.com/huxiao-tee/p/4660352.html)中的情景二：
+
+![](http://cdn.zhangferry.com/Images/weekly_51_interview.png)
+
+超出文件大小的虚拟内存区域，文件所在页的内存扔可以访问，超出所在页的访问会抛出 `Signal` 信号异常
+
+#### 参考
+
+- [认真分析mmap：是什么 为什么 怎么用 ](https://www.cnblogs.com/huxiao-tee/p/4660352.html "认真分析 mmap: 是什么 为什么 怎么用")
+- [C语言mmap()函数：建立内存映射](http://c.biancheng.net/cpp/html/138.html "C语言mmap()函数：建立内存映射")
+- [OOMDetector](https://github.com/Tencent/OOMDetector "OOMDetector")
+
+
