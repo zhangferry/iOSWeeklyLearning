@@ -112,7 +112,7 @@ void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
 
 [@我是熊大](https://github.com/Tliens)：本文是QiShare针对内购写的一篇文章，包含了内购前的准备、内购流程、恢复购买、内购掉单等内容。
 
-2、[iOS内购（IAP）自动续订订阅类型总结](https://juejin.cn/post/6844904021229060103 "iOS内购（IAP）自动续订订阅类型总结") -- 来自简书：凡几多
+2、[iOS内购（IAP）自动续订订阅类型总结](https://www.jianshu.com/p/9531a85ba165 "iOS内购（IAP）自动续订订阅类型总结") -- 来自简书：凡几多
 
 [@我是熊大](https://github.com/Tliens)：本文主要介绍自动订阅的相关情况。自定订阅与其他的购买不同，是比较复杂的一种情况。自定续期订阅类是有连续性的，其中还有免费试用期、促销期、宽限期的概念。用户还可以取消续订，恢复续订等，这无疑又增加了复杂性。
 
