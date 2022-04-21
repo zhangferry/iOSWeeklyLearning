@@ -698,3 +698,22 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 ![](http://cdn.zhangferry.com/Images/20220331222838.png)
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### 闲话 Swift 协程
+
+**地址**：https://www.bennyhuo.com/book/swift-coroutines/
+
+该系列博客从浅入深地介绍了 Swift 在 5.5 中新支持的协程特性。该系列文章介绍了 Swift 协程的特性，内容以 Swift 协程的基本概念、语法设计、使用场景等方面为基础展开，也会与大前端开发者常见的 Kotlin、JavaScript 做对比（作者是 Kotlin GDE），作者希望这个系列能给大家一个更多元化的视角来理解这个语法特性，十分推荐。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### iOS 高性能app架构
+
+**地址**：https://github.com/dudongge/iOS_Architecture
+
+该仓库是 [Advanced iOS App Architecture (1st Edition)](https://zh.sg1lib.org/book/5002805/90c154) 的翻译本，对于译文修改了一些错别字，有 pdf 和 word 可以选择。本书主要讨论了在开发 App 的时候，代码在各种架构中的表现和细节的不同，讨论了各种架构的优缺点以及在 iOS 中，这些架构又有何特点和不同。
+
+
