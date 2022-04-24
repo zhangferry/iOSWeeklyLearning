@@ -1,4 +1,4 @@
-# iOS摸鱼周报 #51 | 游戏版号恢复发放
+# iOS摸鱼周报 51 | 游戏版号恢复发放
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
