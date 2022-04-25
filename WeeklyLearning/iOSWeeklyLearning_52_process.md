@@ -28,9 +28,29 @@
 
 ## 优秀博客
 
-整理编辑：[皮拉夫大王在此](https://www.jianshu.com/u/739b677928f7)、[我是熊大](https://juejin.cn/user/1151943916921885)
+> 本期将介绍一些有特点的中文技术博客。虽然其中大多的内容与 iOS 或 Swift 关系不大，但对于开扩视野、了解其他领域的动态很有帮助。
 
+整理编辑：[东坡肘子](https://www.fatbobman.com)
 
+1、[漩涡的博客](https://xuanwo.io "漩涡的博客") -- 来自：Xuanwo
+
+[@东坡肘子](https://www.fatbobman.com/)：作者是一名受雇于开源项目 datafuselabs 的全职开发者，工作中主要使用的是 Rust 语言。每周他都会介绍当周的项目进展，包括：技术分享、开源运营、开发感受等。从中可以对商业运营的开源项目的参与和运作有所了解。
+
+2、[科技爱好者周刊](https://www.ruanyifeng.com/blog/ "科技爱好者周刊") -- 来自：阮一峰
+
+[@东坡肘子](https://www.fatbobman.com/)：内容包罗万象，包含技术分享、软件推荐、科技动态、奇闻异事等等。最大的特点是读者的参与度高，留言踊跃。
+
+3、[codedump的网络日志](https://www.codedump.info "codedump的网络日志") -- 来自：codedump
+
+[@东坡肘子](https://www.fatbobman.com/)：作者对存储引擎、分布式开发、缓存服务等内容情有独钟，撰写了大量的相关文章。近期开始从 C 转向 Rust ，估计今后有关 Rust 的内容也会逐渐增多。
+
+4、[体验碎周报](https://www.ftium4.com "体验碎周报") -- 来自：龙爪槐守望者
+
+[@东坡肘子](https://www.fatbobman.com/)：作者是一个交互设计师，每周的博文都会汇总大量有关交互设计的文章、案例、动态、评论、分析等内容。即使你从事的工作与交互无关，从中也能有所收获。
+
+5、[13 的 Apple 开发者周报](https://ethanhuang13.substack.com "13 的 Apple 开发者周报") -- 来自：Ethan Huang
+
+[@东坡肘子](https://www.fatbobman.com/)：以 Twitter 上的信息汇总为主，内容包括：苹果官方消息、媒体报道、技术资源、趣事小梗等内容，并且每周还会制作一个由苹果开发者参与的 podcast。对了解对岸开发者的开发状态有一定的帮助。
 
 ## 见闻
 
