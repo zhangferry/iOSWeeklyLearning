@@ -54,7 +54,13 @@
 
 ## 见闻
 
+> 这一周阅读/浏览到的有趣的资讯。
 
+1、[你真的了解二维码吗？](https://mp.weixin.qq.com/s/Y4A8hPumwP_Vwdj3J0toBA) -- 来自公众号：中兴文档
+[@远恒之义](https://github.com/eternaljust/)：如今二维码和我们的生活息息相关，扫码加好友扩大社交圈，线下扫微信和支付宝购物，出行查看行程码与健康码，这些都是最常见的使用场景。那么，有如此广泛用途的二维码你真的了解吗？文中详细的介绍了二维码的组成区域和工作原理，回答了二维码是否会被耗尽以及怎样才能安全地扫描二维码等相关问题。
+
+2、[AI 绘画能代替真人么？我们和几位设计大咖聊了聊](https://mp.weixin.qq.com/s/nPH-FqlOZ7o93gSGouxXmQ) -- 来自公众号：设计青年实验室
+[@远恒之义](https://github.com/eternaljust/)：如果你关注艺术和设计，那么最近也许会被一款外网爆火的 [Disco Diffusion](https://github.com/alembics/disco-diffusion "Disco Diffusion Github 地址") AI 刷屏。Disco Diffusion 是一款可以根据描述场景的关键词渲染出对应图像的 AI 图像生成程序（你说我画）。面对功能如此强大的 AI 绘画神器，作者非常好奇关于它背后的一些故事：Disco Diffusion 的创作的逻辑是什么？生成的画作版权归属怎么算？以及大家讨论度最高的话题，Disco Diffusion 的出现是否意味着人工绘画会被电脑代替？
 
 
 ## 学习资料
