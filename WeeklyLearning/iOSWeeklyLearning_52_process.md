@@ -1,15 +1,14 @@
-iOS摸鱼周报 第四十二期
+iOS 摸鱼周报 52 | 如何规划个人发展
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 话题：
-> * Tips：
-> * 面试模块：
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 话题：互联网行业不景气，个人该如何发展
+> * 面试模块：load方法为什么耗时？
+> * 优秀博客：扩展视野，了解其他领域的动态
+> * 学习资料：Python 最佳实践指南
+> * 开发工具：`Bartender`是一款很棒的菜单栏管理工具，有效解决当屏幕比较小时，顶部菜单栏显示不全的问题；
 
 ## 本期话题
 
@@ -52,7 +51,7 @@ iOS摸鱼周报 第四十二期
 }
 ```
 
-这段代码编译完之后，这个函数会储存在`Mach-O`中的`TEXT`两个段中，`__text`存函数二进制，**`cstring`**存储字符串 123
+这段代码编译完之后，这个函数会储存在`Mach-O`中的`TEXT`两个段中，`__text`存函数二进制，`cstring`存储字符串 123
 
 要执行`printf`函数，首先需要访问`__text`触发一次`page In` 读入物理内存，为了要打印字符串，还需要访问`cstring`，还会触发一次`page In`
 
@@ -60,7 +59,7 @@ iOS摸鱼周报 第四十二期
 
 `mmap` 的全称是 `memory map`，是一种内存映射技术，可以把文件映射到虚拟内存的地址空间里，这样就可以像直接操作内存那样来读写文件。
 
-**当读取虚拟内存，其对应的文件内容在物理内存中不存在的时候，会触发一个事件：` Page In`，把对应的文件内容读入物理内存中**。
+当读取虚拟内存，其对应的文件内容在物理内存中不存在的时候，会触发一个事件：` Page In`，把对应的文件内容读入物理内存中。
 
 `Page In`又做了哪些事情呢？
 
@@ -171,12 +170,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
+[iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
 
-[iOS摸鱼周报 第十六期](https://mp.weixin.qq.com/s/nuij8iKsARAF2rLwkVtA8w)
+[iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
 
-[iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
+[iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
 
-[iOS摸鱼周报 第十四期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
