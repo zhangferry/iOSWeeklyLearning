@@ -33,9 +33,7 @@ iOS摸鱼周报 第四十二期
 
 另外一点是正确的努力，只努力不行，方向要正确。职场不同于学校，它要求的不是单一能力，而是综合能力。如何学习新知识、如何更好的协作、如何复盘、如果应对复杂的业务需求、如何构建自己的高效工作流、如何带团队、如何向上管理等等，在努力自我更新的同时也要注意这个更大的环境所发生的变化，结合自己的需求去往不同方向延展。以上每个点都有很大往里探索的空间，职场成长也应是个人成长，在努力做好工作的同时我们也在努力塑造一个更强大的自己。
 
-我看待工作的态度不是单纯的打工，而是我要借着工作的形式去培养自己更好的行为习惯。这么想会感觉公司就是一个试炼场，而我是那个需求试炼的人。当然最好有个前提，你喜欢它，整个过程你情我愿，这样才能相互成就。
-
-回过头来，互联网不景气了，个人该如何发展呢？确实是不景气了，没办法，你也无法控制大环境。环境不景气但个人是要发展的，找准定位，正确的努力。技能强大，内心强大才会无畏外界变化。
+回过头来，互联网不景气了，个人该如何发展呢？大环境基本无法控制，我们还是需要从自身出发，自己能够做到无可替代，那就无惧外接环境变化。找准定位，正确的努力。
 
 ## 开发Tips
 
@@ -86,7 +84,11 @@ iOS摸鱼周报 第四十二期
 
 3、[WebAssembly完全入门——了解wasm的前世今身](https://zhuanlan.zhihu.com/p/68048524 "WebAssembly完全入门——了解wasm的前世今身") -- 来自知乎：SH的全栈笔记
 
-[@zhangferry](zhangferry.com)：我开始对 WebAssembly 一直不理解，直到阅读到这篇文章才恍然大悟。 我们把WebAssembly 拆开看：Web + Assembly，Web 格式的汇编！对，这就是 WebAssembly 的精髓。它并不是编程语言，而是一种类汇编的、可移植的 Web 格式。更进一步来说 WebAssembly 就像是 Java 中的bytecode，iOS 中的 BitCode，它是一种中间码。
+[@zhangferry](zhangferry.com)：我开始对 WebAssembly 一直不理解，直到阅读到这篇文章才恍然大悟。 看[官网的定义](https://webassembly.org/ "WebAssembly")：
+
+> WebAssembly (abbreviated *Wasm*) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.
+
+我们再把WebAssembly 拆开看：Web + Assembly，Web 格式的汇编！对，这就是 WebAssembly 的精髓。它并不是高级的编程语言，而是一种类汇编的、可移植的、兼容 Web 的二进制格式（format。有时也把它成为语言，我感觉按格式来理解更清晰一些）。更进一步来说 WebAssembly 就类似是 Java 中的 Bytecode，iOS 中的 BitCode，它是一种中间码。
 
 那为什么会出现这个东西了？它是用于解决什么问题的？
 
@@ -94,7 +96,11 @@ iOS摸鱼周报 第四十二期
 
 这个是 Mircsoft Edge 开源的 ChakraCore 的执行流程，可以看出对于 JavaScripts 这种解释性语言的执行，调用过程过程要进行解析和生成 Bytecode 的操作是比较耗时的。那能不能想编译型语言一样，直接给它一个“编译文件”，将编译任务提前做好，给到解释器呢？可以，这个工作就是 WebAssembly 诞生的目的。它不光是能节省 JavaScripts 的执行时间，还凭借其可移植性，可以将一些用 C/C++/Rust 等创建应用直接移植到Web端，而无需再搞一遍 JavaScripts实现。现在 AutoCAD、GoogleEarth、Unity 等一些较大型的项目都借助于 WebAssembly 移植到了 Web 端。
 
-4、
+4、[Doodle Icons](https://khushmeen.com/icons.html "Doodle Icons")
+
+[@zhangferry](zhangferry.com)：一款涂鸦风的图标网站，有 400+ 可用 ICON，除了ICON 还有一些涂鸦插画，个用和商用都免费。相对于标准规范的流水线图标，涂鸦风格能给人带来一种更加轻松欢快的感觉，在一些特定场合我们可以将图标换成这类风格试一下。
+
+![](http://cdn.zhangferry.com/Images/20220428102206.png)
 
 ## 学习资料
 
