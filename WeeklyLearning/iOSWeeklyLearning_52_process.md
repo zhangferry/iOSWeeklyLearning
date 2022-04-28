@@ -106,7 +106,13 @@ iOS摸鱼周报 第四十二期
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### 程序员延寿指南
 
+**地址**：https://github.com/geekan/HowToLiveLonger
+
+该仓库以比较专业的角度为我们提供了许多可以“延寿”的指南。它涵盖饮食、运动、生活等方面的建议，并给出了参考文献、出处、以及研究文档，以比较学术的角度为我们解读了各种行为对长寿的影响。同时该仓库的 issue 也非常有意思，推荐大家阅读。
+
+![](http://cdn.zhangferry.com/Images/52-health.png)
 
 ## 工具推荐
 
