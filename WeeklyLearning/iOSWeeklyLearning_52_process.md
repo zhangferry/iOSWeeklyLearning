@@ -140,7 +140,13 @@ Space X 的星链用一种更直观的方式可以更好的感受它的存在，
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Python 最佳实践指南
 
+**地址**：https://pythonguidecn.readthedocs.io/zh/latest/
+
+这是一份关于 Python 的实践指南，该指南目前持续不断地更新与完善，在 Github 上有 5.8k 的 Stars。它旨在为 Python 初学者和专家提供一个关于 Python 安装、配置和日常使用的最佳实践手册。涵盖各种平台的 Python 安装、优秀的模块推荐、配合不同的 web 框架和工具、如何写出优雅的 Python 代码等内容。链接中的这份是该指南的中文版。
+
+![](http://cdn.zhangferry.com/Images/52-python.png)
 
 ## 工具推荐
 
