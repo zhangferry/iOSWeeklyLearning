@@ -106,13 +106,13 @@ iOS摸鱼周报 第四十二期
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
-### 程序员延寿指南
+### Python 最佳实践指南
 
-**地址**：https://github.com/geekan/HowToLiveLonger
+**地址**：https://pythonguidecn.readthedocs.io/zh/latest/
 
-该仓库以比较专业的角度为我们提供了许多可以“延寿”的指南。它涵盖饮食、运动、生活等方面的建议，并给出了参考文献、出处、以及研究文档，以比较学术的角度为我们解读了各种行为对长寿的影响。同时该仓库的 issue 也非常有意思，推荐大家阅读。
+这是一份关于 Python 的实践指南，该指南目前持续不断地更新与完善，在 Github 上有 5.8k 的 Stars。它旨在为 Python 初学者和专家提供一个关于 Python 安装、配置和日常使用的最佳实践手册。涵盖各种平台的 Python 安装、优秀的模块推荐、配合不同的 web 框架和工具、如何写出优雅的 Python 代码等内容。链接中的这份是该指南的中文版。
 
-![](http://cdn.zhangferry.com/Images/52-health.png)
+![](http://cdn.zhangferry.com/Images/52-python.png)
 
 ## 工具推荐
 
