@@ -6,7 +6,7 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 > * 话题：
 > * 面试模块：
-> * 优秀博客：
+> * 优秀博客：App Extension
 > * 学习资料：
 > * 开发工具：
 
@@ -118,6 +118,27 @@ iOS1.x 版本最初的代号是 Alpine （这是i系列设备的默认root密码
 
 
 ## 优秀博客
+> 本期优秀博客的主题为：App Extension。
+
+1、[iOS - App Extension 整体总结](https://www.cnblogs.com/junhuawang/p/8178276.html "iOS - App Extension 整体总结") -- 来自博客园：俊华
+
+[@我是熊大](https://github.com/Tliens)：本文比较全面的介绍了App Extension的种类以及使用方法，平时不怎么使用的extension竟然有十几种。通过此文应该能对extension有个整体的了解。
+
+2、[App与Extensions间通信共享数据](http://yulingtianxia.com/blog/2015/04/06/Communication-between-your-App-and-Extensions/ "App与Extensions间通信共享数据") -- 来自博客：杨萧玉
+
+[@我是熊大](https://github.com/Tliens)：本文利用WatchKit Extension实现了app与watch之间的通信，介绍了containing app与app extension之间如何进行通信和数据共享。
+
+3、[Photo Editing Extension 详解](https://colin1994.github.io/2016/03/12/Photo-Editing-Extension/ "Photo Editing Extension 详解") -- 来自博客：colin
+
+[@我是熊大](https://github.com/Tliens)：本文通过一个Demo演示，介绍了Photo Editing Extension如何开发。
+
+4、[iOS14 Widget小组件开发(Widget Extension)](https://www.jianshu.com/p/94a98c203763 "iOS14 Widget小组件开发(Widget Extension)") -- 来自简书：Singularity_Lee
+
+[@我是熊大](https://github.com/Tliens)：iOS14之后出现了非常重要的extension，这就是Widget，桌面小组件，本文十分详细的介绍了如何开发Widget，如果你也有开发需求，推荐阅读。
+
+5、[揭秘 iOS App Extension 开发 —— Today 篇](https://www.jianshu.com/p/bbc6a95d9c54 "揭秘 iOS App Extension 开发 —— Today 篇") -- 来自简书：Cyandev
+
+[@我是熊大](https://github.com/Tliens)：在iOS14之前，是没有桌面组件的，那时候叫做Today Extension，但在iOS14之后，这个extension已经被widget代替。本文借助一个todo的demo，介绍了Today Extension。
 
 
 
