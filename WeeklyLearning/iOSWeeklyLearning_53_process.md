@@ -1,4 +1,4 @@
-iOS 摸鱼周报 52 | 如何规划个人发展
+iOS 摸鱼周报 #53 | 如何规划个人发展
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -8,7 +8,7 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 > * 面试模块：CRC 实践应用：理论推导
 > * 优秀博客：App Extension
 > * 学习资料：一个大学生的学习计划
-> * 开发工具：
+> * 开发工具：适用于 `macOS` 的 **现代** 媒体播放器，`IINA` 由开源媒体播放器 `mpv` 提供支持，几乎可以播放您拥有的所有媒体文件。
 
 ## 本期话题
 
@@ -195,7 +195,7 @@ for(int i = 0;  i< 1; i++) {
 }
 ```
 
-以上只是 CRC 的一个推导过程，下期周报将以 `OOMDetecor` 中的实例讲解实际应用中的变体操作有哪些。
+以上是 CRC 的一个推导过程，下期周报将以 `OOMDetecor` 中的实例讲解实际应用中的变体操作有哪些。
 
 - [【脑冻结】CRC我就拿下了](https://www.cnblogs.com/poiu-elab/archive/2012/10/22/2734715.html "【脑冻结】CRC我就拿下了")
 - [不要跑，CRC没这么难！（简单易懂的CRC原理阐述）](https://segmentfault.com/a/1190000018094567 "不要跑，CRC没这么难！（简单易懂的CRC原理阐述）")
@@ -289,12 +289,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
+[iOS 摸鱼周报 #52 | 如何规划个人发展](https://mp.weixin.qq.com/s/45ftt4AC2C5Ts8Zt3sWvJA)
+
 [iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
 
 [iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
 
 [iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
-
-[iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

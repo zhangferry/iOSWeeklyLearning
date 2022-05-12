@@ -1,4 +1,4 @@
-iOS 摸鱼周报 52 | 如何规划个人发展
+iOS 摸鱼周报 #52 | 如何规划个人发展
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
