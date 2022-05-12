@@ -1,4 +1,4 @@
-iOS 摸鱼周报 #53 | 远程办公正在普及
+# iOS 摸鱼周报 #53 | 远程办公正在成为趋势
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -12,7 +12,7 @@ iOS 摸鱼周报 #53 | 远程办公正在普及
 
 ## 本期话题
 
-### 远程工作正在成为趋势
+### 远程办公正在成为趋势
 
 随着疫情的影响，远程工作的趋势正在以更快的速度发展和普及。携程、爱彼迎、GitLab 等都先后出台政策鼓励员工远程办公，可以预见不久之后还会有更多公司支持常态化的远程办公。远程工作是一个很早就有的概念，它也天然适合互联网行业，那为什么却发展这么慢呢，可以简要对比下传统办公模式和远程办公各自的优缺点。
 
@@ -39,7 +39,7 @@ iOS 摸鱼周报 #53 | 远程办公正在普及
 
 携程代表混合模式，爱彼迎代表纯自由模式。爱彼迎比较彻底，永久灵活，但注意是灵活，个人还是有权力回归办公室的。携程的混合模式更像是纯远程和传统的中间态，既提供了一定的自由度，也有约束条件定期回归公司以维系归属感。携程这个是更偏探索的一种状态，感觉是一个值得推广的好案例，他们的调研发现远程之后整体工作效率不降反升。
 
-如果一种模式即没有损失工作效果，又给与了员工一定的自由，那就是应该推行的，希望远程办公的模式能早点普及开来。
+如果一种模式即没有损失工作效果，又给与了员工一定的自由，那就是应该推行，希望远程办公的趋势能来的更快一些吧。
 
 ## 面试解析
 
@@ -204,23 +204,23 @@ for(int i = 0;  i< 1; i++) {
 
 1、[iOS - App Extension 整体总结](https://www.cnblogs.com/junhuawang/p/8178276.html "iOS - App Extension 整体总结") -- 来自博客园：俊华
 
-[@我是熊大](https://github.com/Tliens)：本文比较全面的介绍了App Extension的种类以及使用方法，平时不怎么使用的extension竟然有十几种。通过此文应该能对extension有个整体的了解。
+[@我是熊大](https://github.com/Tliens)：本文比较全面的介绍了 App Extension 的种类以及使用方法，平时不怎么使用的 Extension 竟然有十几种。通过此文应该能对 Extension 有个整体的了解。
 
 2、[App与Extensions间通信共享数据](http://yulingtianxia.com/blog/2015/04/06/Communication-between-your-App-and-Extensions/ "App与Extensions间通信共享数据") -- 来自博客：杨萧玉
 
-[@我是熊大](https://github.com/Tliens)：本文利用WatchKit Extension实现了app与watch之间的通信，介绍了containing app与app extension之间如何进行通信和数据共享。
+[@我是熊大](https://github.com/Tliens)：本文利用 WatchKit Extension 实现了 App 与 Watch 之间的通信，介绍了Containing app 与 App Extension 之间如何进行通信和数据共享。
 
 3、[Photo Editing Extension 详解](https://colin1994.github.io/2016/03/12/Photo-Editing-Extension/ "Photo Editing Extension 详解") -- 来自博客：colin
 
-[@我是熊大](https://github.com/Tliens)：本文通过一个Demo演示，介绍了Photo Editing Extension如何开发。
+[@我是熊大](https://github.com/Tliens)：本文通过一个 Demo 演示，介绍了 Photo Editing Extension 如何开发。
 
 4、[iOS14 Widget小组件开发(Widget Extension)](https://www.jianshu.com/p/94a98c203763 "iOS14 Widget小组件开发(Widget Extension)") -- 来自简书：Singularity_Lee
 
-[@我是熊大](https://github.com/Tliens)：iOS14之后出现了非常重要的extension，这就是Widget，桌面小组件，本文十分详细的介绍了如何开发Widget，如果你也有开发需求，推荐阅读。
+[@我是熊大](https://github.com/Tliens)：iOS14 之后出现了非常重要的 Extension，这就是 Widget，桌面小组件，本文十分详细的介绍了如何开发Widget，如果你也有开发需求，推荐阅读。
 
 5、[揭秘 iOS App Extension 开发 —— Today 篇](https://www.jianshu.com/p/bbc6a95d9c54 "揭秘 iOS App Extension 开发 —— Today 篇") -- 来自简书：Cyandev
 
-[@我是熊大](https://github.com/Tliens)：在iOS14之前，是没有桌面组件的，那时候叫做Today Extension，但在iOS14之后，这个extension已经被widget代替。本文借助一个todo的demo，介绍了Today Extension。
+[@我是熊大](https://github.com/Tliens)：在iOS14之前，是没有桌面组件的，那时候叫做 Today Extension，但在 iOS14 之后，这个 Extension 已经被 Widget 代替。本文借助一个 todo 的 Demo，介绍了 Today Extension。
 
 ## 见闻
 
