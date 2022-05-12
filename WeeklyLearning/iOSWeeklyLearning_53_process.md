@@ -199,6 +199,7 @@ for(int i = 0;  i< 1; i++) {
 
 - [【脑冻结】CRC我就拿下了](https://www.cnblogs.com/poiu-elab/archive/2012/10/22/2734715.html "【脑冻结】CRC我就拿下了")
 - [不要跑，CRC没这么难！（简单易懂的CRC原理阐述）](https://segmentfault.com/a/1190000018094567 "不要跑，CRC没这么难！（简单易懂的CRC原理阐述）")
+- [《循環冗餘校驗-维基百科》](https://zh.wikipedia.org/wiki/%E5%BE%AA%E7%92%B0%E5%86%97%E9%A4%98%E6%A0%A1%E9%A9%97"《循環冗餘校驗-维基百科》")
 
 ## 优秀博客
 
