@@ -229,9 +229,9 @@ for(int i = 0;  i< 1; i++) {
 
 > 这一周阅读 / 浏览到的有趣的资讯。
 
-1、[985 毕业后，我成了天光墟里收破烂的“无冕之王”](https://mp.weixin.qq.com/s/LeC_aOiYVcs3MA8jkDYc7Q) -- 来自公众号：显微故事
+1、[Google I/O 2022: 促进知识和计算机技术发展](https://mp.weixin.qq.com/s/bflDfIO1F6xF-tfMEcBjAw) -- 来自公众号：谷歌开发者
 
-[@远恒之义](https://github.com/eternaljust/)：985 毕业的武楷斯开设了一家名为“永续旧物”的店铺，一个属于他一个人的跳蚤市场。受父母工作的影响，他从小辗转于多地，在不同的城市读书和生活，倍感孤独的他却与旧物结下了不解之缘。15 年他凭借自己捡破烂的本事在美国走南闯北，穷游了美国 16 个城市。与旧物对话，他从此不再孤独。面对采访，他表示他的生活不曾焦虑。
+[@远恒之义](https://github.com/eternaljust/)：备受期待的开发者科技盛宴 [Google I/O 2022](https://io.google/2022/program/intl/zh/ "Google I/O 2022 官网") 于北京时间 5 月 12 日凌晨 01:00 正式开幕，Sundar Pichai 在大会开幕式上发表了主题演讲。硬件方面，主打性价比 Pixel 6a 售价 449 美元，Pixel 7 / 7 Pro 拥有三款新配色。Pixel Buds Pro 对标 AirPods Pro，是 Google 第一款支持主动降噪的 TWS 耳机。新的硬件 Pixel Watch 会与 Pixel 7 系列一道在 Google 秋季硬件发布会登场。搭载 Google Tensor 芯片的 Pixel 平板将画饼到 2023 年。软件方面，Android 开发领域迎来了大量新的特性与更新，Android 13、Flutter 3、Jetpack、Compose 1.2 beta、Large Screens、Machine Learning、Android Studio Dolphin (2021.3.1) 等等。
 
 2、[告别华尔街十年，我在非洲做起 WiFi 生意](https://mp.weixin.qq.com/s/fote_47nG8AQW-lrkQy9Hw) -- 来自公众号：志象网
 
