@@ -1217,3 +1217,34 @@ Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以�
 
 ![](http://cdn.zhangferry.com/Images/20220421230343.png)
 
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### Bartender
+
+**地址**：https://www.macbartender.com/
+
+**软件状态**：免费
+
+**软件介绍**：可以免费试用4周，购买费用 $15;
+
+`Bartender`是一款很棒的菜单栏管理工具，有效解决当屏幕比较小时，顶部菜单栏显示不全的问题；
+
+![Bartender](http://cdn.zhangferry.com/20220427102101.png)
+
+
+***
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+### IINA
+
+**地址**：https://iina.io/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+适用于 `macOS` 的 **现代** 媒体播放器，`IINA` 由开源媒体播放器 `mpv` 提供支持，几乎可以播放您拥有的所有媒体文件。
+
+![iina](http://cdn.zhangferry.com/sc-sky.png)
+

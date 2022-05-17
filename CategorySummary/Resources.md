@@ -717,3 +717,25 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 该仓库是 [Advanced iOS App Architecture (1st Edition)](https://zh.sg1lib.org/book/5002805/90c154) 的翻译本，对于译文修改了一些错别字，有 pdf 和 word 可以选择。本书主要讨论了在开发 App 的时候，代码在各种架构中的表现和细节的不同，讨论了各种架构的优缺点以及在 iOS 中，这些架构又有何特点和不同。
 
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Python 最佳实践指南
+
+**地址**：https://pythonguidecn.readthedocs.io/zh/latest/
+
+这是一份关于 Python 的实践指南，该指南目前持续不断地更新与完善，在 Github 上有 5.8k 的 Stars。它旨在为 Python 初学者和专家提供一个关于 Python 安装、配置和日常使用的最佳实践手册。涵盖各种平台的 Python 安装、优秀的模块推荐、配合不同的 web 框架和工具、如何写出优雅的 Python 代码等内容。链接中的这份是该指南的中文版。
+
+![](http://cdn.zhangferry.com/Images/52-python.png)
+
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### Skr_Learning
+
+**地址**：https://github.com/Kiprey/Skr_Learning
+
+这里将定期记录着一些与`Sakura`师傅以及一群小伙伴共同学习的内容与进度。是一篇学习汇报，内容包括但不限于C++ STL、编译原理、LLVM IR Pass代码优化、CSAPP Lab、uCore操作系统等等。持续更新ing...
+
+感觉 Github 也是一种很好的记录学习过程的平台！
+

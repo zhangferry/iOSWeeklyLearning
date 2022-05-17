@@ -1487,3 +1487,51 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@我是熊大](https://github.com/Tliens)：一个star高达5.9k的开源库，支持内购查询、购买、校验、结束交易等。api简洁易懂，能帮助你在项目中快速接入内购，美中不足的是不支持订单退订，这还需要自己开发。
 
+***
+> 本期将介绍一些有特点的中文技术博客。虽然其中大多的内容与 iOS 或 Swift 关系不大，但对于开扩视野、了解其他领域的动态很有帮助。
+
+整理编辑：[东坡肘子](https://www.fatbobman.com)
+
+1、[漩涡的博客](https://xuanwo.io "漩涡的博客") -- 来自：Xuanwo
+
+[@东坡肘子](https://www.fatbobman.com/)：作者是一名受雇于开源项目 datafuselabs 的全职开发者，工作中主要使用的是 Rust 语言。每周他都会介绍当周的项目进展，包括：技术分享、开源运营、开发感受等。从中可以对商业运营的开源项目的参与和运作有所了解。
+
+2、[科技爱好者周刊](https://www.ruanyifeng.com/blog/ "科技爱好者周刊") -- 来自：阮一峰
+
+[@东坡肘子](https://www.fatbobman.com/)：内容包罗万象，包含技术分享、软件推荐、科技动态、奇闻异事等等。最大的特点是读者的参与度高，留言踊跃。
+
+3、[codedump的网络日志](https://www.codedump.info "codedump的网络日志") -- 来自：codedump
+
+[@东坡肘子](https://www.fatbobman.com/)：作者对存储引擎、分布式开发、缓存服务等内容情有独钟，撰写了大量的相关文章。近期开始从 C 转向 Rust ，估计今后有关 Rust 的内容也会逐渐增多。
+
+4、[体验碎周报](https://www.ftium4.com "体验碎周报") -- 来自：龙爪槐守望者
+
+[@东坡肘子](https://www.fatbobman.com/)：作者是一个交互设计师，每周的博文都会汇总大量有关交互设计的文章、案例、动态、评论、分析等内容。即使你从事的工作与交互无关，从中也能有所收获。
+
+5、[13 的 Apple 开发者周报](https://ethanhuang13.substack.com "13 的 Apple 开发者周报") -- 来自：Ethan Huang
+
+[@东坡肘子](https://www.fatbobman.com/)：以 Twitter 上的信息汇总为主，内容包括：苹果官方消息、媒体报道、技术资源、趣事小梗等内容，并且每周还会制作一个由苹果开发者参与的 podcast。对了解对岸开发者的开发状态有一定的帮助。
+
+***
+> 本期优秀博客的主题为：App Extension。
+
+1、[iOS - App Extension 整体总结](https://www.cnblogs.com/junhuawang/p/8178276.html "iOS - App Extension 整体总结") -- 来自博客园：俊华
+
+[@我是熊大](https://github.com/Tliens)：本文比较全面的介绍了 App Extension 的种类以及使用方法，平时不怎么使用的 Extension 竟然有十几种。通过此文应该能对 Extension 有个整体的了解。
+
+2、[App与Extensions间通信共享数据](http://yulingtianxia.com/blog/2015/04/06/Communication-between-your-App-and-Extensions/ "App与Extensions间通信共享数据") -- 来自博客：杨萧玉
+
+[@我是熊大](https://github.com/Tliens)：本文利用 WatchKit Extension 实现了 App 与 Watch 之间的通信，介绍了Containing app 与 App Extension 之间如何进行通信和数据共享。
+
+3、[Photo Editing Extension 详解](https://colin1994.github.io/2016/03/12/Photo-Editing-Extension/ "Photo Editing Extension 详解") -- 来自博客：colin
+
+[@我是熊大](https://github.com/Tliens)：本文通过一个 Demo 演示，介绍了 Photo Editing Extension 如何开发。
+
+4、[iOS14 Widget小组件开发(Widget Extension)](https://www.jianshu.com/p/94a98c203763 "iOS14 Widget小组件开发(Widget Extension)") -- 来自简书：Singularity_Lee
+
+[@我是熊大](https://github.com/Tliens)：iOS14 之后出现了非常重要的 Extension，这就是 Widget，桌面小组件，本文十分详细的介绍了如何开发Widget，如果你也有开发需求，推荐阅读。
+
+5、[揭秘 iOS App Extension 开发 —— Today 篇](https://www.jianshu.com/p/bbc6a95d9c54 "揭秘 iOS App Extension 开发 —— Today 篇") -- 来自简书：Cyandev
+
+[@我是熊大](https://github.com/Tliens)：在iOS14之前，是没有桌面组件的，那时候叫做 Today Extension，但在 iOS14 之后，这个 Extension 已经被 Widget 代替。本文借助一个 todo 的 Demo，介绍了 Today Extension。
+
