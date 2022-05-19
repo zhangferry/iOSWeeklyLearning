@@ -1,14 +1,14 @@
-iOS 摸鱼周报 52 | 如何规划个人发展
+# iOS 摸鱼周报 #54 | Apple 辅助功能持续创新
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 话题：Apple 在辅助功能上继续创新；IAP 自动续订提价通知更新
+> * 话题：Apple 在辅助功能上持续创新；IAP 自动续订提价通知更新
 > * 面试模块：学习 OOMDetector 中的 CRC64 应用实践
-> * 优秀博客：
+> * 优秀博客：iOS 内存
 > * 学习资料：一份英语进阶指南
-> * 开发工具：
+> * 开发工具：一款 macOS 上的 纯文本编辑器 CotEditor
 
 ## 本期话题
 
@@ -20,7 +20,7 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 针对盲人和视力障碍的人群：Apple 基于配有 LiDAR 的设备可以探测到前方是否有门，门距离自己有多远，甚至要通过推还是拉的方式开门都能识别出来。
 
-针对行动不便的人群：有一项 iPhone 结合 Apple Watch 的功能，借助于 Apple Watch 的 Mirroring 功能，可以用手机远程操作 Apple Watch。同时 Apple Watch 也有提升，通过 AssistiveTouch 技术，可以让 Apple Watch 识别特定手势，像是手指两次捏合的手势可以用于接电话、拍照、暂定音乐等。
+针对行动不便的人群：有一项 iPhone 结合 Apple Watch 的功能，借助于 Apple Watch 的 Mirroring 功能，可以用手机远程操作 Apple Watch。同时 Apple Watch 也有提升，通过 AssistiveTouch 技术，可以让 Apple Watch 识别特定手势，像是手指两次捏合的手势可以用于接电话、拍照、暂停音乐等。
 
 针对听力障碍的人群：在 iPhone、iPad、Mac 配备了实时字幕功能，不只是针对 Facetime，对于任意音频内容，包括外部 App 都可以使用。样式是在设备顶部展示一个文本转义框，字体大小还可调整。
 
@@ -108,7 +108,7 @@ void init_crc_table_for_oom(void) {
 
 #### 生成表-多表级联
 
-有别于《#53 周报》中的单表查询方式，`OOMDetector`将 `crc_table`定义为`crc_table[8][256]`二维矩阵的多表查询。其中单维度的表仍然以字节大小（8 bit）作为位宽生成，即单个表大小为 `2 ^ 8 = 256`，`crc_table[8]`表示不同权重的单表， 这种方式称为 CRC 位域多表查询 。
+有别于[《#53 周报》](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)中的单表查询方式，`OOMDetector`将 `crc_table`定义为`crc_table[8][256]`二维矩阵的多表查询。其中单维度的表仍然以字节大小（8 bit）作为位宽生成，即单个表大小为 `2 ^ 8 = 256`，`crc_table[8]`表示不同权重的单表， 这种方式称为 CRC 位域多表查询 。
 
 **CRC 位域多表查表方法与传统的 CRC 查表方法最大的不同在于多表级联压缩表格空间。**
 
@@ -156,37 +156,35 @@ CRC 级联查表另一个需要解决的就是多字节数据的权重问题，�
 
 `OOMDetector` 在查表之前和查表之后都做了一次取反操作 `c = ~c`，该变体的目的是解决普通 CRC 无法区分只有起始 0 的个数不同的两个数据。（暂时未理解这个目的，所以直接引用 wiki 中的解释）
 
-> 《循環冗餘校驗-wiki》：移位寄存器可以初始化成1而不是0。同样，在用算法处理之前，消息的最初n个数据位要取反。这是因为未经修改的CRC无法区分只有起始0的个数不同的两条消息。而经过这样的取反过程，CRC就可以正确地分辨这些消息了。
+> [《循環冗餘校驗-wiki》](https://zh.wikipedia.org/wiki/%E5%BE%AA%E7%92%B0%E5%86%97%E9%A4%98%E6%A0%A1%E9%A9%97 "循環冗餘校驗-wiki")：移位寄存器可以初始化成1而不是0。同样，在用算法处理之前，消息的最初n个数据位要取反。这是因为未经修改的CRC无法区分只有起始0的个数不同的两条消息。而经过这样的取反过程，CRC就可以正确地分辨这些消息了。
 
 - [CRC位域多表查表方法](https://www.eefocus.com/HotPower/blog/12-09/285545_d6429.html/ "CRC位域多表查表方法")
-
-- [循環冗餘校驗-wiki](https://zh.wikipedia.org/wiki/%E5%BE%AA%E7%92%B0%E5%86%97%E9%A4%98%E6%A0%A1%E9%A9%97 "循環冗餘校驗-wiki")
 
 ## 优秀博客
 
 整理编辑：皮拉夫大王在此
 
-> 本期博客主题：iOS内存。如果你对以下几个问题不了解的话，推荐阅读本期的博客。
-> - 什么是MMU?什么是clean/dirty/compressed memory？
-> - 申请malloc(1)，malloc_size是多少？
+> 本期博客主题：iOS 内存。如果你对以下几个问题不了解的话，推荐阅读本期的博客。
+> - 什么是 MMU？什么是 clean/dirty/compressed memory？
+> - 申请 malloc(1)，malloc_size 是多少？
 > - 小内存释放，内存会立即还给系统吗？
 > - TCMalloc 主要解决什么问题？
 
 1. [iOS Memory 内存详解 (长文)](https://juejin.cn/post/6844903902169710600#heading-2 "iOS Memory 内存详解 (长文)") -- 来自掘金：RickeyBoy
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：本文主要介绍了iOS 内存相关的基础知识，可以帮助读者建立内存知识全景图。我们可以带着问题去阅读这篇文章：（1）、虚拟内存是如何映射到物理内存的？（2）、clean/dirty memory是如何区分的？一块dirty memory的单位大小是多少？
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：本文主要介绍了 iOS 内存相关的基础知识，可以帮助读者建立内存知识全景图。我们可以带着问题去阅读这篇文章：（1）、虚拟内存是如何映射到物理内存的？（2）、clean/dirty memory是如何区分的？一块 dirty memory 的单位大小是多少？
 
 2. [深入理解内存分配](https://sq.sf.163.com/blog/article/178605610527186944 "深入理解内存分配") -- 来自网易数帆：阿凡达
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：内存分配的硬核文章，内容很有意思。通过阅读这篇文章，首先我们会了解free的过程，顺带也就能理解作者举的例子：str[0]='a'报错非bad_access的原因了。另外作者列举了多种替换系统默认内存分配方式，这也是比较有意思的一点。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：内存分配的硬核文章，内容很有意思。通过阅读这篇文章，首先我们会了解 free 的过程，顺带也就能理解作者举的例子：str[0]='a' 报错非 bad_access 的原因了。另外作者列举了多种替换系统默认内存分配方式，这也是比较有意思的一点。
 
 3. [Matrix-iOS 内存监控](https://cloud.tencent.com/developer/article/1427932 "Matrix-iOS 内存监控") -- 来自腾讯云：微信终端团队
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：来自微信的matrix 内存监控原理介绍工具，能够抓取每个对象生成时的堆栈。与OOMDetector的原理一致，但是性能上更胜一筹。如此大量且高频的堆栈抓取和保存，matrix是如何做优化的？可以通过阅读本文来了解细节。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：来自微信的 matrix 内存监控原理介绍工具，能够抓取每个对象生成时的堆栈。与 OOMDetector 的原理一致，但是性能上更胜一筹。如此大量且高频的堆栈抓取和保存，matrix 是如何做优化的？可以通过阅读本文来了解细节。
 
 4. [TCMalloc解密](https://wallenwang.com/2018/11/tcmalloc/ "TCMalloc解密") -- 来自：Wallen's Blog
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：对《深入理解内存分配》中提到的TCMalloc感兴趣的可以继续阅读这篇文章。
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：对《深入理解内存分配》中提到的 TCMalloc 感兴趣的可以继续阅读这篇文章。
 
 
 ## 见闻
@@ -266,12 +264,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
+[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+
+[iOS 摸鱼周报 #52 | 如何规划个人发展](https://mp.weixin.qq.com/s/45ftt4AC2C5Ts8Zt3sWvJA)
+
 [iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
 
 [iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
-
-[iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
-
-[iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
