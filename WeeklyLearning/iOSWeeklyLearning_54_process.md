@@ -24,9 +24,15 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 整理编辑：皮拉夫大王在此
 
+> 本期博客主题：iOS内存。如果你对以下几个问题不了解的话，推荐阅读本期的博客。
+> - 什么是MMU?什么是clean/dirty/compressed memory？
+> - 申请malloc(1)，malloc_size是多少？
+> - 小内存释放，内存会立即还给系统吗？
+> - TCMalloc 主要解决什么问题？
+
 1. [iOS Memory 内存详解 (长文)](https://juejin.cn/post/6844903902169710600#heading-2 "iOS Memory 内存详解 (长文)") -- 来自掘金：RickeyBoy
 
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：本文主要介绍了iOS 内存相关的基础知识，可以帮助读者建立内存知识全景图。我们可以带着问题去阅读这篇文章：（1）、虚拟内存是如何映射到物理内存的？（2）、clean|dirty memory是依赖什么进行划分的？一块dirty memory的单位大小是多少？
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：本文主要介绍了iOS 内存相关的基础知识，可以帮助读者建立内存知识全景图。我们可以带着问题去阅读这篇文章：（1）、虚拟内存是如何映射到物理内存的？（2）、clean/dirty memory是如何区分的？一块dirty memory的单位大小是多少？
 
 2. [深入理解内存分配](https://sq.sf.163.com/blog/article/178605610527186944 "深入理解内存分配") -- 来自网易数帆：阿凡达
 
@@ -39,22 +45,6 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 4. [TCMalloc解密](https://wallenwang.com/2018/11/tcmalloc/ "TCMalloc解密") -- 来自：Wallen's Blog
 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：对《深入理解内存分配》中提到的TCMalloc感兴趣的可以继续阅读这篇文章。
-
-
-2、**关于iOS15的fixup机制**
-
-2.1  [iOS 15 如何让你的应用启动更快]( https://juejin.cn/post/6978750428632580110 "iOS 15 如何让你的应用启动更快") -- 来自掘金：ZacJi
-
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：iOS15的fixup介绍将主要通过三篇文章，逐次加深深度。阅读这篇文章后，大家应该要弄清楚作者所说的启动加速的原因，以及与二进制重排是否有关系。
-
-2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ) -- 来自公众号：皮拉夫大王在此
-
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：在阅读了《iOS 15 如何让你的应用启动更快》，进一步探索了bind机制并且加以应用。
-
-2.3 [iOS15 动态链接 fixup chain 原理详解](https://mp.weixin.qq.com/s/k_RI2in_Q5hwT33KWig34A) -- 来自公众号：字节跳动终端技术
-
-[@皮拉夫大王](https://juejin.cn/user/281104094332653)：更加完善地介绍iOS 15的fixup机制。
-
 
 
 ## 见闻
