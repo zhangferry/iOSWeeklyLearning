@@ -22,6 +22,39 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 ## 优秀博客
 
+整理编辑：皮拉夫大王在此
+
+1. [iOS Memory 内存详解 (长文)](https://juejin.cn/post/6844903902169710600#heading-2 "iOS Memory 内存详解 (长文)") -- 来自掘金：RickeyBoy
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：本文主要介绍了iOS 内存相关的基础知识，可以帮助读者建立内存知识全景图。我们可以带着问题去阅读这篇文章：（1）、虚拟内存是如何映射到物理内存的？（2）、clean|dirty memory是依赖什么进行划分的？一块dirty memory的单位大小是多少？
+
+2. [深入理解内存分配](https://sq.sf.163.com/blog/article/178605610527186944 "深入理解内存分配") -- 来自网易数帆：阿凡达
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：内存分配的硬核文章，内容很有意思。通过阅读这篇文章，首先我们会了解free的过程，顺带也就能理解作者举的例子：str[0]='a'报错非bad_access的原因了。另外作者列举了多种替换系统默认内存分配方式，这也是比较有意思的一点。
+
+3. [Matrix-iOS 内存监控](https://cloud.tencent.com/developer/article/1427932 "Matrix-iOS 内存监控") -- 来自腾讯云：微信终端团队
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：来自微信的matrix 内存监控原理介绍工具，能够抓取每个对象生成时的堆栈。与OOMDetector的原理一致，但是性能上更胜一筹。如此大量且高频的堆栈抓取和保存，matrix是如何做优化的？可以通过阅读本文来了解细节。
+
+4. [TCMalloc解密](https://wallenwang.com/2018/11/tcmalloc/ "TCMalloc解密") -- 来自：Wallen's Blog
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：对《深入理解内存分配》中提到的TCMalloc感兴趣的可以继续阅读这篇文章。
+
+
+2、**关于iOS15的fixup机制**
+
+2.1  [iOS 15 如何让你的应用启动更快]( https://juejin.cn/post/6978750428632580110 "iOS 15 如何让你的应用启动更快") -- 来自掘金：ZacJi
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：iOS15的fixup介绍将主要通过三篇文章，逐次加深深度。阅读这篇文章后，大家应该要弄清楚作者所说的启动加速的原因，以及与二进制重排是否有关系。
+
+2.2 [从野指针探测到对iOS 15 bind 的探索](https://mp.weixin.qq.com/s/BNIWBwemmz4isbjBb9-pnQ) -- 来自公众号：皮拉夫大王在此
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：在阅读了《iOS 15 如何让你的应用启动更快》，进一步探索了bind机制并且加以应用。
+
+2.3 [iOS15 动态链接 fixup chain 原理详解](https://mp.weixin.qq.com/s/k_RI2in_Q5hwT33KWig34A) -- 来自公众号：字节跳动终端技术
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：更加完善地介绍iOS 15的fixup机制。
+
 
 
 ## 见闻
