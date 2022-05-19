@@ -1535,3 +1535,29 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@我是熊大](https://github.com/Tliens)：在iOS14之前，是没有桌面组件的，那时候叫做 Today Extension，但在 iOS14 之后，这个 Extension 已经被 Widget 代替。本文借助一个 todo 的 Demo，介绍了 Today Extension。
 
+***
+整理编辑：皮拉夫大王在此
+
+> 本期博客主题：iOS 内存。如果你对以下几个问题不了解的话，推荐阅读本期的博客。
+> - 什么是 MMU？什么是 clean/dirty/compressed memory？
+> - 申请 malloc(1)，malloc_size 是多少？
+> - 小内存释放，内存会立即还给系统吗？
+> - TCMalloc 主要解决什么问题？
+
+1. [iOS Memory 内存详解 (长文)](https://juejin.cn/post/6844903902169710600#heading-2 "iOS Memory 内存详解 (长文)") -- 来自掘金：RickeyBoy
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：本文主要介绍了 iOS 内存相关的基础知识，可以帮助读者建立内存知识全景图。我们可以带着问题去阅读这篇文章：（1）、虚拟内存是如何映射到物理内存的？（2）、clean/dirty memory是如何区分的？一块 dirty memory 的单位大小是多少？
+
+2. [深入理解内存分配](https://sq.sf.163.com/blog/article/178605610527186944 "深入理解内存分配") -- 来自网易数帆：阿凡达
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：内存分配的硬核文章，内容很有意思。通过阅读这篇文章，首先我们会了解 free 的过程，顺带也就能理解作者举的例子：str[0]='a' 报错非 bad_access 的原因了。另外作者列举了多种替换系统默认内存分配方式，这也是比较有意思的一点。
+
+3. [Matrix-iOS 内存监控](https://cloud.tencent.com/developer/article/1427932 "Matrix-iOS 内存监控") -- 来自腾讯云：微信终端团队
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：来自微信的 matrix 内存监控原理介绍工具，能够抓取每个对象生成时的堆栈。与 OOMDetector 的原理一致，但是性能上更胜一筹。如此大量且高频的堆栈抓取和保存，matrix 是如何做优化的？可以通过阅读本文来了解细节。
+
+4. [TCMalloc解密](https://wallenwang.com/2018/11/tcmalloc/ "TCMalloc解密") -- 来自：Wallen's Blog
+
+[@皮拉夫大王](https://juejin.cn/user/281104094332653)：对《深入理解内存分配》中提到的 TCMalloc 感兴趣的可以继续阅读这篇文章。
+
+

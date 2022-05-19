@@ -739,3 +739,14 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 感觉 Github 也是一种很好的记录学习过程的平台！
 
+***
+整理编辑：[zhangferry](https://zhangferry.com)
+
+### 英语进阶指南
+
+地址：https://babyyoung.gitbook.io/english-level-up-tips/
+
+![](http://cdn.zhangferry.com/Images/20220518204154.png)
+
+英语是程序员绕不过去的一项技能，虽然我们可能从小学就开始接触英语了，但直到毕业工作，英语能够不成为学习障碍还是一件不容易的事情。这其中的差别很大成分可以归结为学习方法，这份文档就是这样一个注重方法和可操作性的英语学习指南。
+
