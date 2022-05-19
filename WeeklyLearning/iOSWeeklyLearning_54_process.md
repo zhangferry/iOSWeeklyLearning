@@ -79,6 +79,18 @@ $ echo -e "\e[31mRed Text\e[0m"
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
+### CotEditor
+
+**地址**：https://coteditor.com/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+适用于 `macOS` 的纯文本编辑器，轻巧、整洁并且功能强大。
+
+![CotEditor](http://cdn.zhangferry.com/screenshot@2x.png)
+
 
 
 ## 关于我们
