@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 话题：WWDC22 码上就位
-> * 面试模块：
+> * 面试模块：iOS WebView 中的 User-Agent
 > * 优秀博客：
 > * 学习资料：
 > * 开发工具：
@@ -62,9 +62,111 @@ Forums 是一个更广泛的 Apple 跟开发者之间交流的形式，你可以
 
 ## 面试解析
 
-整理编辑：[JY](https://juejin.cn/user/1574156380931144)
+整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### iOS WebView 中的 User-Agent
+
+User-Agent 中文名为用户代理，简称 UA，它是一个特殊的字符串头，内容涵盖客户端的操作系统类型及版本、CPU 类型、浏览器及版本、浏览器语言等；`WebView` 会在每个 URL 请求头中携带该信息。
+
+UA 在项目中的常见应用：
+
+1. 区分访问客户端是移动端还是 PC，如果是移动端还可以区分是 iOS 或者 Android。
+2. 收集有关访问者的统计信息，例如渠道信息等。
+3. 传递一些基础数据，例如站点、协议版本号、app 名称等等和业务相关的基础信息。
+
+#### UA 字符串格式 
+
+**UA 字符串格式：**Mozilla/[version] ([system and browser information]) [platform] ([platform details]) [extensions]
+
+由于浏览器厂商的历史兼容性问题，很多字段值都没有严格按照格式排布，有些字段值和最初的定义也不具有对应价值。各部分描述参考如下：
+
+- **Mozilla/[version]**：设计目的是描述浏览器名称以及版本，但是由于浏览器兼容性问题，已经没有实际意义，一般值为 `"Mozilla/5.0"`。
+- **([system and browser information])**：CPU 操作系统以及浏览器信息，值是以 `;`分割的。例如 `"Macintosh; Intel Mac OS X 10_13_6"` Macintosh 指的是 Mac 平台、CPU 类型是 intel、 操作系统为 10.13.6 MacOS。
+- **[platform]**： 浏览器渲染引擎，chrome/safari浏览器的值一般为 `"AppleWebKit/xxx"` 表示内核为`webkit/blink`。
+- **([platform details])**： 浏览器渲染其他补充信息，同样由于兼容性问题，值不具有代表意义，例如 iOS 上是 `(KHTML, like Gecko)`
+- **[extensions]**：扩展字段，主要描述了浏览器信息以及自定义字段，自定义字段是 key/value 形式，例如 `protocol/1.0.0` 传递协议版本等内容。扩展字段中一些字段描述：
+    - Chrome：Chrome/版本号
+    - Safari：Safari/版本号 （chrome 浏览器后面也会带 Safari 字段）
+    - Version：Version/版本号
+    - Mobile：移动设备标识，一般指内部版本号，苹果设备会带版本号，安卓设备不含版本号
+
+iPhone 上的示例格式如下:
+
+```cpp
+Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X)  AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148
+```
+
+其他数据值类型参考[解析Navigator.userAgent的迷惑行为](https://juejin.cn/post/6908647211945590791 "解析Navigator.userAgent的迷惑行为")
+
+#### 获取系统的 UA
+
+iOS 获取 UA 的方式是相似的，都是直接调用 js  查询 `navigator.userAgent`；区别在于执行 js 的 api 不同。iOS 已经淘汰了 `UIWebView` 所以这里只做对比了解就可以。
+
+```objective-c
+// UIWebView
+UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+self.userAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"] ?:@"";
+
+// WkWebView
+WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+if (@available(iOS 13.0, *)) {
+   config.defaultWebpagePreferences.preferredContentMode = WKContentModeMobile;
+}
+WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
+[webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id _Nullable response, NSError *_Nullable error) {
+        self.userAgent = (NSString *)response;
+}];
+```
+
+`UIWebView` 是同步方式， `WKWebView` 是异步方式，所以要注意如果是使用 `WKWebView`，确保 user-agent 已经设置完成后再创建 web 页面，否则会造成自定义信息的丢失。
+
+#### 修改 UA
+
+一般场景因为业务需求，经常需要在 UA 里添加自定义值，有三种方式来修改默认的 UA 值。
+
+1. 修改系统 UA，程序一旦杀死更改的 UA 也会随即失效，如果希望保持更改 UA，则需要在每次应用启动时重新更改系统User-Agent。修改后使用 `NSUserDefaults` 进行缓存，APP 内所有的 H5 页面共享使用。
+
+```objective-c
+- (void)updateSystemUserAgent:(NSString *)userAgent {
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":userAgent}];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+```
+
+2. iOS 12支持修改局部的 UA，此时 UA 仅在当前的 `WebView`的生命周期内生效，随着 `WebView` 销毁，更改的 UA 信息就会随机失效。作用域是针对 `WebView` 实例的。
+
+```objective-c
+- (void)updateCustomUserAgent:(NSString *)userAgent {
+    [self.wkWebView setCustomUserAgent:userAgent];
+}
+```
 
 
+3. 通过 `applicationNameForUserAgent` 设置，该方式非直接覆盖，而是将设置的值追加到默认值的后面。也是仅针对当前 config 生效的。
+
+```objective-c
+let config = WKWebViewConfiguration()
+config.applicationNameForUserAgent = "Custom User Agent"
+let webview = WKWebView(frame: .zero, configuration: config)
+    
+// 修改后的UA 值为：`Mozilla/5.0 (iPhone; CPU iPhone OS 13_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Custom UserAgent`。
+```
+
+`applicationNameForUserAgent`在客户端获取默认值仅有 `Mobile/16A404`，实际上 web 页面获取到的是完整的值。
+
+> **三种方式的优先级：**`customUserAgent > UserDefault > applicationNameForUserAgent`
+
+#### 注意事项
+
+1. `WKWebView` 获取系统 UA 为异步方式，如果需要多次设置 UA，则需要依次进行，否则会造成覆盖问题。
+
+2. 修改自定义 UA，需要在创建加载页面的 `WKWebView` 前设置好。所以一般情况是在 `AppDelegate中`使用临时对象调用 `evaluateJavaScript:@"navigator.userAgent"`，否则会造成加载页面的 `WKWebView`首次使用 UA 失效。需要重新 reload webview 才生效。
+
+3. 由于第一种经常造成莫名失效问题， 建议使用 2、3 设置方式。
+
+- [iOS - User Agent 的应用和设置](https://www.cnblogs.com/lxlx1798/p/10819610.html "iOS - User Agent 的应用和设置")
+- [WKWebView 设置自定义UserAgent正确姿势](https://juejin.cn/post/6844903632152821773 "WKWebView 设置自定义UserAgent正确姿势")
+- [记使用WKWebView修改user-agent在iOS 12踩的一个坑](https://cloud.tencent.com/developer/article/1158832 "记使用WKWebView修改user-agent在iOS 12踩的一个坑")
 
 ## 优秀博客
 
