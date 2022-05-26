@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 55 | WWDC 码上就位
+# iOS 摸鱼周报 #55 | WWDC 码上就位
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -6,9 +6,9 @@
 
 > * 话题：WWDC22 码上就位
 > * 面试模块：iOS WebView 中的 User-Agent
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 优秀博客：swift 中修饰声明和类型的两种特性
+> * 学习资料：TypeScript 入门教程
+> * 开发工具：itsycal 一款适用于`mac`的简洁日历软件。
 
 ## 本期话题
 
@@ -28,7 +28,7 @@
 
 北京时间：6 月 8 号至 11 号
 
-这是 WWDC 的核心环节，由 Apple 开发工程师介绍 Apple 全平台最近做的一些升级、创新或者最佳实践。这4天时间里会有 100+ Session 放出。
+这是 WWDC 的核心环节，由 Apple 开发工程师介绍 Apple 全平台最近做的一些升级、创新或者最佳实践。这 4 天时间里会有 100+ Session 放出。
 
 #### Labs
 
@@ -80,11 +80,11 @@ UA 在项目中的常见应用：
 
 由于浏览器厂商的历史兼容性问题，很多字段值都没有严格按照格式排布，有些字段值和最初的定义也不具有对应价值。各部分描述参考如下：
 
-- **Mozilla/[version]**：设计目的是描述浏览器名称以及版本，但是由于浏览器兼容性问题，已经没有实际意义，一般值为 `"Mozilla/5.0"`。
-- **([system and browser information])**：CPU 操作系统以及浏览器信息，值是以 `;`分割的。例如 `"Macintosh; Intel Mac OS X 10_13_6"` Macintosh 指的是 Mac 平台、CPU 类型是 intel、 操作系统为 10.13.6 MacOS。
-- **[platform]**： 浏览器渲染引擎，chrome/safari浏览器的值一般为 `"AppleWebKit/xxx"` 表示内核为`webkit/blink`。
-- **([platform details])**： 浏览器渲染其他补充信息，同样由于兼容性问题，值不具有代表意义，例如 iOS 上是 `(KHTML, like Gecko)`
-- **[extensions]**：扩展字段，主要描述了浏览器信息以及自定义字段，自定义字段是 key/value 形式，例如 `protocol/1.0.0` 传递协议版本等内容。扩展字段中一些字段描述：
+- Mozilla/[version]：设计目的是描述浏览器名称以及版本，但是由于浏览器兼容性问题，已经没有实际意义，一般值为 `"Mozilla/5.0"`。
+- ([system and browser information])：CPU 操作系统以及浏览器信息，值是以 `;`分割的。例如 `"Macintosh; Intel Mac OS X 10_13_6"` Macintosh 指的是 Mac 平台、CPU 类型是 intel、 操作系统为 10.13.6 MacOS。
+- [platform]： 浏览器渲染引擎，chrome/safari浏览器的值一般为 `"AppleWebKit/xxx"` 表示内核为`webkit/blink`。
+- ([platform details])： 浏览器渲染其他补充信息，同样由于兼容性问题，值不具有代表意义，例如 iOS 上是 `(KHTML, like Gecko)`
+- [extensions]：扩展字段，主要描述了浏览器信息以及自定义字段，自定义字段是 key/value 形式，例如 `protocol/1.0.0` 传递协议版本等内容。扩展字段中一些字段描述：
     - Chrome：Chrome/版本号
     - Safari：Safari/版本号 （chrome 浏览器后面也会带 Safari 字段）
     - Version：Version/版本号
@@ -270,7 +270,5 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 [iOS 摸鱼周报 #52 | 如何规划个人发展](https://mp.weixin.qq.com/s/45ftt4AC2C5Ts8Zt3sWvJA)
 
 [iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
-
-[iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
 
 ![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
