@@ -66,7 +66,11 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### TypeScript 入门教程
 
+**地址**：https://ts.xcatliu.com/
+
+这是一份 TypeScript 的入门教程，与官方手册不同，这份 TypeScript 入门教程着重于从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript，示例丰富，比官方文档更易读。同时作者也指出，本书比较适合已经熟悉 JavaScript 的开发者，不适合没有学习过 JavaScript 的人群。
 
 ## 工具推荐
 
