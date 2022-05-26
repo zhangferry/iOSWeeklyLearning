@@ -1,10 +1,10 @@
-iOS 摸鱼周报 52 | 如何规划个人发展
+# iOS 摸鱼周报 55 | WWDC 码上就位
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 话题：
+> * 话题：WWDC22 码上就位
 > * 面试模块：
 > * 优秀博客：
 > * 学习资料：
@@ -12,7 +12,53 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 ## 本期话题
 
+### [WWDC22 码上就位](https://developer.apple.com/wwdc22/ "WWDC22 码上就位")
 
+![](http://cdn.zhangferry.com/Images/20220526003950.png)
+
+[@zhangferry](zhangferry.com)：WWDC22 已经快到了，Apple 放出了一些开发者大会的活动安排，我们可以根据这些安排了解WWDC 的整个过程。
+
+#### Apple Keynote and Platforms State of the Union
+
+北京时间：6 月 7 号凌晨 1 点和 凌晨 4 点。
+
+这是 WWDC 的开场，介绍 Apple 各平台的新版创新，有时也会公布一些硬件产品。
+
+#### Sessions
+
+北京时间：6 月 8 号至 11 号
+
+这是 WWDC 的核心环节，由 Apple 开发工程师介绍 Apple 全平台最近做的一些升级、创新或者最佳实践。这4天时间里会有 100+ Session 放出。
+
+#### Labs
+
+需要申请，条件是：需要具备开发者会员身份或者是 Swift Student Challenge 的获奖者。
+
+申请开始时间：6月 6 号（美国时区）
+
+是一个跟 Apple 内部员工一对一交流的活动，可以问设计或者开发相关的各种问题，包括一些类似优化、调试等。
+
+#### Digital Lounges
+
+需要注册，条件是：需要具备开发者会员身份或者是 Swift Student Challenge 的获奖者。
+
+注册开始时间：5 月 31号（美国时区）
+
+WWDC 在线休息室也是一个跟 Apple 内部员工交流的活动，相比于 Labs 它对应场景更广泛，会分一些主题开展，像是 WWDC21 就有 SwiftUI、Accessibilty、DevTools 主题。这有一个[网站](https://roblack.github.io/WWDC21Lounges/ "WWDC21 Digital Lounges")还记录了 WWDC21 Digital Lounges 的问答内容。
+
+#### Apple Design Awards
+
+北京时间：6 月 7 号早上 8 点
+
+苹果设计奖表彰那些在包容性、愉悦和乐趣、互动、社会影响、视觉和图形以及创新等方面表现突出的应用程序和游戏。
+
+#### Forums
+
+需要注册：条件是要有 Apple ID
+
+北京时间：6 月 7 号
+
+Forums 是一个更广泛的 Apple 跟开发者之间交流的形式，你可以在这里询问跟 WWDC 22 相关的任何问题。记得把问题标签标记为 WWDC22 或者对应 Session 的主题。
 
 ## 面试解析
 
@@ -62,6 +108,26 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 [@远恒之义](https://github.com/eternaljust)：之前有推荐过[程序员延寿指南](https://github.com/geekan/HowToLiveLonger "程序员延寿指南")，延寿的关键在于降低 ACM: All-Cause Mortality / 全因死亡率。最近又在 V2EX 上刷到类似的话题：[不可不看的程序员续命科技](https://www.v2ex.com/t/855113 "V 站原帖：不可不看的程序员续命科技")，作者提出通过调优人体系统来延长寿命。对于程序员来说，降低全因死亡率就好比降低软件程序 bug 奔溃率，只要解决了项目中的疑难杂症，奔溃减少了，系统自然就能长期稳定运行。我们通过学习了解自身的人体系统（类比计算机组成原理），从机体工作原理出发，像调优软件程序那样来“调优”自身的人体系统，这也是一个不错的延寿方案。如果能把两者结合起来，相辅相成，那么长寿指日可待。
 
+3、[Beautify Github Profile](https://github.com/rzashakeri/beautify-github-profile) -- 来自 Github
+
+![](http://cdn.zhangferry.com/Images/20220525231909.png)
+
+[@zhangferry](zhangferry.com)：Github 自定义 Profile 是一个很棒的功能，我们可以用它定制自己的个人介绍页面。它的使用非常简单，建一个跟用户名同名的仓库，该仓库的 README.md 即是 Profile 的展示页面。Github 有很多做的很漂亮的样式都有对应的开源配置链接，该仓库对这类配置进行了收录整理。
+
+4、[我的移动开发程序人生：写在创业十周年](https://blog.devtang.com/2022/05/22/startup-10th-year-summary/ "我的移动开发程序人生：写在创业十周年") -- 来自唐巧的博客
+
+[@zhangferry](zhangferry.com)：巧哥是国内 iOS 圈最著名的开发者之一，这篇文章是对他移动开发程序人生的总结。我发现很多非常优秀的开发者都是有着一个跟计算机紧密联系的童年，他们一个偶然的机会接触到计算机，被这个神奇的机器所吸引，然后寻找当下可以获取的所有资料去探索它，最终从事计算机行业，凭借时代红利和个人努力，最终成长为某一领域的翘楚。这一切的起点都来源于热爱，有了那股一心钻研去满足好奇心的劲，才将这份热爱开花结果。
+
+5、[移动应用出海趋势洞察白皮书](https://report.iresearch.cn/report_pdf.aspx?id=3999) -- 来自艾瑞网
+
+[@zhangferry](zhangferry.com)：2022 年移动应用出海趋势愈发明显，那出海的环境怎么样，机会还有多大呢？艾瑞网的这份白皮书正是基于这个背景下产出的。根据对仅百位移动开发者的调研，得出以下观点：
+
+* 国内移动应用多个领域增长放缓，部分分类已到天花板。海外市场仅2021年网民数量扩展了6亿，中东、拉美渗透率增长较快。
+* 隐私安全、数据保护在国外的重视程度趋严，应用合规性需要给予重视。
+* 游戏类和娱乐类应用收入增长强劲。非游戏类视频&照片类应用更吸引全球用户。
+* 由于印度 App 的封禁措施，东南亚取而代之成为下载量最多的区域，非洲下载增速最明显。北美、日韩、欧洲仍是收入主要来源地。
+* 出海遇到的困难有对海外市场的陌生感、本地化难开展、推广困难、海外政策不熟悉等。针对这些问题华为提供了一些解决方案，[AppTouch](https://developer.huawei.com/consumer/cn/AppTouch "AppTouch") 和 [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/ "AppGallery Conenct")，他们可以在本地化、投放、运营和技术等多方面提供出海支持。
+
 ## 学习资料
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -80,12 +146,14 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
+[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
+
+[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+
+[iOS 摸鱼周报 #52 | 如何规划个人发展](https://mp.weixin.qq.com/s/45ftt4AC2C5Ts8Zt3sWvJA)
+
 [iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
 
 [iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
-
-[iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
-
-[iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
