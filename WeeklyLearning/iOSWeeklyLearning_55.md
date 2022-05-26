@@ -6,9 +6,9 @@
 
 > * 话题：WWDC22 码上就位
 > * 面试模块：iOS WebView 中的 User-Agent
-> * 优秀博客：swift 中修饰声明和类型的两种特性
+> * 优秀博客：Swift 中修饰声明和类型的两种特性
 > * 学习资料：TypeScript 入门教程
-> * 开发工具：itsycal 一款适用于 Mac 的简洁日历软件。
+> * 开发工具：一款适用于 mac 的简洁日历软件 itsycal 
 
 ## 本期话题
 
@@ -16,7 +16,7 @@
 
 ![](http://cdn.zhangferry.com/Images/20220526003950.png)
 
-[@zhangferry](zhangferry.com)：WWDC22 已经快到了，Apple 放出了一些开发者大会的活动安排，我们可以根据这些安排了解WWDC 的整个过程。
+[@zhangferry](zhangferry.com)：WWDC22 已经快到了，Apple 放出了一些开发者大会的活动安排，我们可以根据这些安排了解 WWDC 的整个过程。
 
 #### Apple Keynote and Platforms State of the Union
 
@@ -66,7 +66,7 @@ Forums 是一个更广泛的 Apple 跟开发者之间交流的形式，你可以
 
 ### iOS WebView 中的 User-Agent
 
-User-Agent 中文名为用户代理，简称 UA，它是一个特殊的字符串头，内容涵盖客户端的操作系统类型及版本、CPU 类型、浏览器及版本、浏览器语言等；`WebView` 会在每个 URL 请求头中携带该信息。
+User-Agent 中文名为用户代理，简称 UA（后文中的 User-Agent 统一用 UA 表示），它是一个特殊的字符串头，内容涵盖客户端的操作系统类型及版本、CPU 类型、浏览器及版本、浏览器语言等；`WebView` 会在每个 URL 请求头中携带该信息。
 
 UA 在项目中的常见应用：
 
