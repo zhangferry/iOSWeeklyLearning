@@ -8,7 +8,7 @@
 > * 面试模块：iOS WebView 中的 User-Agent
 > * 优秀博客：swift 中修饰声明和类型的两种特性
 > * 学习资料：TypeScript 入门教程
-> * 开发工具：itsycal 一款适用于`mac`的简洁日历软件。
+> * 开发工具：itsycal 一款适用于 Mac 的简洁日历软件。
 
 ## 本期话题
 
@@ -102,7 +102,7 @@ Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X)  AppleWebKit/605.1.15 (KH
 
 iOS 获取 UA 的方式是相似的，都是直接调用 js  查询 `navigator.userAgent`；区别在于执行 js 的 api 不同。iOS 已经淘汰了 `UIWebView` 所以这里只做对比了解就可以。
 
-```objective-c
+```objectivec
 // UIWebView
 UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
 self.userAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"] ?:@"";
@@ -126,7 +126,7 @@ WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:c
 
 1. 修改系统 UA，程序一旦杀死更改的 UA 也会随即失效，如果希望保持更改 UA，则需要在每次应用启动时重新更改系统User-Agent。修改后使用 `NSUserDefaults` 进行缓存，APP 内所有的 H5 页面共享使用。
 
-```objective-c
+```objectivec
 - (void)updateSystemUserAgent:(NSString *)userAgent {
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent":userAgent}];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -135,7 +135,7 @@ WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:c
 
 2. iOS 12支持修改局部的 UA，此时 UA 仅在当前的 `WebView`的生命周期内生效，随着 `WebView` 销毁，更改的 UA 信息就会随机失效。作用域是针对 `WebView` 实例的。
 
-```objective-c
+```objectivec
 - (void)updateCustomUserAgent:(NSString *)userAgent {
     [self.wkWebView setCustomUserAgent:userAgent];
 }
@@ -144,7 +144,7 @@ WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:c
 
 3. 通过 `applicationNameForUserAgent` 设置，该方式非直接覆盖，而是将设置的值追加到默认值的后面。也是仅针对当前 config 生效的。
 
-```objective-c
+```objectivec
 let config = WKWebViewConfiguration()
 config.applicationNameForUserAgent = "Custom User Agent"
 let webview = WKWebView(frame: .zero, configuration: config)
@@ -192,7 +192,7 @@ let webview = WKWebView(frame: .zero, configuration: config)
 
 5、[Swift 中的 @objc、@objcMembers 关键字探讨](https://mp.weixin.qq.com/s?__biz=MzkwMDIxNDA3NA==&mid=2247483745&idx=1&sn=8f1db6e0a109754ed73bd3438f64285e&chksm=c0463d34f731b4222e8c238448d19e71f801b25d459b57be673305bcee2ae9cd5aa09a120f01&token=912344454&lang=zh_CN#rd "Swift 中的 @objc、@objcMembers 关键字探讨") -- 来自：剑老师
 
-[@东坡肘子](https://www.fatbobman.com/)：我们说 Objective-c 是一门动态语言，决策会尽可能地推迟到运行时。而 Swit 是一门静态语言，也就是说 Swift 的对象类型、调用的方法都是在编译期就确定的，这也是为什么 Swift 比 oc 性能高的原因。但是在 Swift 中所有继承自 NSObject 的类，仍然保留了 Objective-c 的动态性。如果想要使用它的动态性就需要加上 @objc 关键字，本篇文章就来讲一下，哪些情况需要用到@objc。
+[@东坡肘子](https://www.fatbobman.com/)：我们说 Objective-C 是一门动态语言，决策会尽可能地推迟到运行时。而 Swit 是一门静态语言，也就是说 Swift 的对象类型、调用的方法都是在编译期就确定的，这也是为什么 Swift 比 OC 性能高的原因。但是在 Swift 中所有继承自 NSObject 的类，仍然保留了 Objective-C 的动态性。如果想要使用它的动态性就需要加上 @objc 关键字，本篇文章就来讲一下，哪些情况需要用到 @objc。
 
 6、[为自定义属性包装类型添加类 @Published 的能力](https://mp.weixin.qq.com/s/USGJbLnR-l8Ajgcj8Vb7_A "为自定义属性包装类型添加类 @Published 的能力") -- 来自：东坡肘子
 
@@ -210,7 +210,7 @@ let webview = WKWebView(frame: .zero, configuration: config)
 
 [@远恒之义](https://github.com/eternaljust)：之前有推荐过[程序员延寿指南](https://github.com/geekan/HowToLiveLonger "程序员延寿指南")，延寿的关键在于降低 ACM: All-Cause Mortality / 全因死亡率。最近又在 V2EX 上刷到类似的话题：[不可不看的程序员续命科技](https://www.v2ex.com/t/855113 "V 站原帖：不可不看的程序员续命科技")，作者提出通过调优人体系统来延长寿命。对于程序员来说，降低全因死亡率就好比降低软件程序 bug 奔溃率，只要解决了项目中的疑难杂症，奔溃减少了，系统自然就能长期稳定运行。我们通过学习了解自身的人体系统（类比计算机组成原理），从机体工作原理出发，像调优软件程序那样来“调优”自身的人体系统，这也是一个不错的延寿方案。如果能把两者结合起来，相辅相成，那么长寿指日可待。
 
-3、[Beautify Github Profile](https://github.com/rzashakeri/beautify-github-profile) -- 来自 Github
+3、[Beautify Github Profile](https://github.com/rzashakeri/beautify-github-profile "Beautify Github Profile") -- 来自 Github
 
 ![](http://cdn.zhangferry.com/Images/20220525231909.png)
 
@@ -220,7 +220,7 @@ let webview = WKWebView(frame: .zero, configuration: config)
 
 [@zhangferry](zhangferry.com)：巧哥是国内 iOS 圈最著名的开发者之一，这篇文章是对他移动开发程序人生的总结。我发现很多非常优秀的开发者都是有着一个跟计算机紧密联系的童年，他们一个偶然的机会接触到计算机，被这个神奇的机器所吸引，然后寻找当下可以获取的所有资料去探索它，最终从事计算机行业，凭借时代红利和个人努力，最终成长为某一领域的翘楚。这一切的起点都来源于热爱，有了那股一心钻研去满足好奇心的劲，才将这份热爱开花结果。
 
-5、[移动应用出海趋势洞察白皮书](https://report.iresearch.cn/report_pdf.aspx?id=3999) -- 来自艾瑞网
+5、[移动应用出海趋势洞察白皮书](https://report.iresearch.cn/report_pdf.aspx?id=3999 "移动应用出海趋势洞察白皮书") -- 来自艾瑞网
 
 [@zhangferry](zhangferry.com)：2022 年移动应用出海趋势愈发明显，那出海的环境怎么样，机会还有多大呢？艾瑞网的这份白皮书正是基于这个背景下产出的。根据对仅百位移动开发者的调研，得出以下观点：
 
