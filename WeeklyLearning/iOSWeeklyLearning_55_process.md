@@ -244,6 +244,17 @@ let webview = WKWebView(frame: .zero, configuration: config)
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
+### itsycal
+
+**地址**：https://www.mowglii.com/itsycal/
+
+**软件状态**：免费
+
+**软件介绍**：
+
+一款简洁的适用于`mac`的日历软件。
+
+![itsycal](http://cdn.zhangferry.com/20220526142405.png)
 
 
 ## 关于我们
