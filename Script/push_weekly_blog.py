@@ -5,7 +5,7 @@ import argparse # 参数模块
 import shutil
 import time
 
-blog_path = "/Users/zhangferry/zhangferry.github.io"
+blog_path = "/Users/zhangferry/zhangferry"
 
 # 读取文件
 def getSourceFile(index):
@@ -18,7 +18,7 @@ def getSourceFile(index):
 # 复制文件到目标路径
 def moveFile(source):
     fileName = source.split("/")[-1]
-    target = f"{blog_path}/source/_posts/{fileName}"
+    target = f"{blog_path}/Content/posts/{fileName}"
     dateStr = ""
     if os.path.exists(target):
         print("you had copy file before")
@@ -85,11 +85,11 @@ def runAndPublic(status):
     # os.system("python content_category.py")
     os.chdir(f"{blog_path}")
     if status == 1:
-        os.system("hexo g && hexo s -p 4001")
+        os.system("publish run")
     elif status == 2:
         val = os.system('ls -al')
         # print(val)
-        os.system("hexo g && hexo d")
+        os.system("publish run && publish deploy")
     
     
 
