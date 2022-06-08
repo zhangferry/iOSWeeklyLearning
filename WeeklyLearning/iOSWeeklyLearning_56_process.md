@@ -50,7 +50,13 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
+### Exploring Swift Memory Layout
 
+**地址**：https://www.youtube.com/watch?v=ERYNyrfXjlg
+
+一份来自 GOTO Conferences 有关 Swift Memory Layout 的一小时讲座，该讲座深入浅出的讲解了 Swift 中各种例如指针、结构体、类、枚举、数组、协议等我们平时使用的这些工具在内存中是以什么样的形式存在，以及如何解决一些常见问题。对于想了解这部分知识的朋友，这个讲座视频将是一个不错的开胃菜。
+
+![memorylayout](http://cdn.zhangferry.com/Images/memorylayout.png)
 
 ## 工具推荐
 
