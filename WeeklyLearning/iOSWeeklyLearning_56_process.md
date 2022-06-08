@@ -90,6 +90,17 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
+### Mac-CLI
+
+**地址**：https://github.com/guarinogabriel/Mac-CLI
+
+**软件状态**：免费
+
+**软件介绍**：
+
+面向开发人员的 `macOS` 命令行工具。
+
+![Mac-CLI](http://cdn.zhangferry.com/demo.gif)
 
 
 ## 关于我们
