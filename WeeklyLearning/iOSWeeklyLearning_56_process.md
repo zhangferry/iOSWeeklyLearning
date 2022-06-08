@@ -6,7 +6,7 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 > * 话题：
 > * 面试模块：
-> * 优秀博客：
+> * 优秀博客：酷炫动画框架推荐
 > * 学习资料：
 > * 开发工具：
 
@@ -22,7 +22,35 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 ## 优秀博客
 
+> 本期优秀博客的主题为：酷炫动画框架推荐。
 
+开发过程中，如果需要比较复杂的动画，一般都是由设计师来处理，前端负责展示。设计师会给我们提供gif、webp、apng等格式的资源，然而因为资源体积或者效果的原因，我们需要一些特殊的实现方式，本期就推荐几个跨平台的酷炫动画框架：Lottie、SVGA、VAP、PAG。
+
+1、[Lottie](https://github.com/airbnb/lottie-ios "Lottie") -- 来自Github：Airbnb
+
+[@我是熊大](https://github.com/Tliens)：Lottie 是Airbnb开源的一套成熟的跨平台动画框架。
+
+优势：
+
+- 1. 因为动画文件通常是 图片+json描述文件，所以我们可以对动画进行解析和调整
+- 2. 官方提供了非常多的免费动画，社区是这几个当中比较完善的
+- 3. 多端效果能保持一致
+
+缺点: 
+- 1. 效果一般，有特效限制
+- 2. 文件提交在动画比较复杂时依旧会达到数兆
+
+2、[SVGA](https://svga.io/intro.html "SVGA") -- 来自博客：SVGA
+
+[@我是熊大](https://github.com/Tliens)：SVGA 是一种跨平台的开源动画格式，同时兼容 iOS / Android / Web。SVGA 除了使用简单，性能卓越，同时让动画开发分工明确，各自专注各自的领域，大大减少动画交互的沟通成本，提升开发效率。
+
+3、[VAP](https://github.com/Tencent/vap "VAP") -- 来自Github：VAP
+
+[@我是熊大](https://github.com/Tliens)：VAP是企鹅电竞开发，用于播放特效动画的实现方案。具有高压缩率、硬件解码等优点。同时支持 iOS,Android,Web 平台。
+
+4、[PAG](https://www.jianshu.com/p/94a98c203763 "PAG") -- 来自博客：PAG
+
+[@我是熊大](https://github.com/Tliens)：PAG 是一套完整的动画工作流解决方案。提供从 AE (Adobe After Effects) 导出插件，到桌面预览工具，再到覆盖 iOS，Android，macOS，Windows，Linux 和 Web 等各平台的渲染 SDK。PAG 方案目前已经接入了腾讯系 40 余款应用，包括微信，手机QQ，王者荣耀，腾讯视频，QQ音乐等头部产品。
 
 ## 见闻
 
