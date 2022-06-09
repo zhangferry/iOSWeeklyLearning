@@ -29,84 +29,84 @@ iOS 摸鱼周报 #52 | 如何规划个人发展
 }
 ```
 
-利用 Hopper 打开 MachO 就可以看到  
+利用 Hopper 打开 MachO 就可以看到：
 
 ![](http://cdn.zhangferry.com/Images/weekly_56_interview_01.jpg)
 
-* 解决办法 1  
+#### 解决办法
 
-    * 在方法中返回这个字符串
+- 在方法中返回这个字符串，示例如下：
 
     ```C++
-    #define KRYSTAL_ENCRYPT_KEY @"krystal_key"
-    @implementation ViewController
-    - (void)viewDidLoad {
-        [super viewDidLoad];
-        //使用函数代替字符串
-        [self uploadDataWithKey:AES_KEY()];  
-    }
-    
-    - (void)uploadDataWithKey:(NSString *)key{
-        NSLog(@"%@",key);
-    }
-    
-    static NSString * AES_KEY(){
-        unsigned char key[] = {
-            'k','r','y','s','t','a','l','_','k','e','y','\0',
-        };
-        return [NSString stringWithUTF8String:(const char *)key];
-    }
-    @end
+        #define KRYSTAL_ENCRYPT_KEY @"krystal_key"
+        @implementation ViewController
+        - (void)viewDidLoad {
+            [super viewDidLoad];
+            //使用函数代替字符串
+            [self uploadDataWithKey:AES_KEY()];  
+        }
+        
+        - (void)uploadDataWithKey:(NSString *)key{
+            NSLog(@"%@",key);
+        }
+        
+        static NSString * AES_KEY(){
+            unsigned char key[] = {
+                'k','r','y','s','t','a','l','_','k','e','y','\0',
+            };
+            return [NSString stringWithUTF8String:(const char *)key];
+        }
+        @end
     ```
 
     这样做能够简单的防护，但是如果逆向以后直接静态分析找到需要返回`key`的函数，也是能够很轻易的破解掉 
 
-* 解决办法 2
-
-    * 通过异或的方式（字符串正常会进入常量区，但是通过异或的方式编译器会直接换算成异步结果）
+- 通过异或的方式（字符串正常会进入常量区，但是通过异或的方式编译器会直接换算成异步结果）
 
     ```C++
-    #define STRING_ENCRYPT_KEY @"demo_AES_key"
-    #define ENCRYPT_KEY 0xAC
-    @interface ViewController ()
-    @end
-    
-    @implementation ViewController
-    - (void)viewDidLoad {
-        [super viewDidLoad];
-    //    [self uploadDataWithKey:STRING_ENCRYPT_KEY]; //使用宏/常量字符串
-        [self uploadDataWithKey:AES_KEY()]; //使用函数代替字符串
-    }
-    
-    - (void)uploadDataWithKey:(NSString *)key{
-        NSLog(@"%@",key);
-    }
-    
-    static NSString * AES_KEY(){
-        unsigned char key[] = {
-            (ENCRYPT_KEY ^ 'd'),
-            (ENCRYPT_KEY ^ 'e'),
-            (ENCRYPT_KEY ^ 'm'),
-            (ENCRYPT_KEY ^ 'o'),
-            (ENCRYPT_KEY ^ '_'),
-            (ENCRYPT_KEY ^ 'A'),
-            (ENCRYPT_KEY ^ 'E'),
-            (ENCRYPT_KEY ^ 'S'),
-            (ENCRYPT_KEY ^ '_'),
-            (ENCRYPT_KEY ^ '\0'),
-        };
-        unsigned char * p = key;
-        while (((*p) ^= ENCRYPT_KEY) != '\0') {
-            p++;
+        #define STRING_ENCRYPT_KEY @"demo_AES_key"
+        #define ENCRYPT_KEY 0xAC
+        @interface ViewController ()
+        @end
+        
+        @implementation ViewController
+        - (void)viewDidLoad {
+            [super viewDidLoad];
+        //    [self uploadDataWithKey:STRING_ENCRYPT_KEY]; //使用宏/常量字符串
+            [self uploadDataWithKey:AES_KEY()]; //使用函数代替字符串
         }
-        return [NSString stringWithUTF8String:(const char *)key];
-    }
-    @end
+        
+        - (void)uploadDataWithKey:(NSString *)key{
+            NSLog(@"%@",key);
+        }
+        
+        static NSString * AES_KEY(){
+            unsigned char key[] = {
+                (ENCRYPT_KEY ^ 'd'),
+                (ENCRYPT_KEY ^ 'e'),
+                (ENCRYPT_KEY ^ 'm'),
+                (ENCRYPT_KEY ^ 'o'),
+                (ENCRYPT_KEY ^ '_'),
+                (ENCRYPT_KEY ^ 'A'),
+                (ENCRYPT_KEY ^ 'E'),
+                (ENCRYPT_KEY ^ 'S'),
+                (ENCRYPT_KEY ^ '_'),
+                (ENCRYPT_KEY ^ '\0'),
+            };
+            unsigned char * p = key;
+            while (((*p) ^= ENCRYPT_KEY) != '\0') {
+                p++;
+            }
+            return [NSString stringWithUTF8String:(const char *)key];
+        }
+        @end
     ```
 
-    可以看到 通过`Hopper`打开直接是异或的结果
+    可以看到 通过`Hopper`打开直接是异或的结果：
 
     ![](http://cdn.zhangferry.com/Images/weekly_56_interview_02.jpg)
+
+    
 
 ## 优秀博客
 
