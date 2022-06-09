@@ -1,10 +1,10 @@
-iOS 摸鱼周报 #52 | 如何规划个人发展
+# iOS 摸鱼周报 #56 | WWDC 进行时
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 话题：
+> * 话题：WWDC 进行时
 > * 面试模块：iOS 中关键字符串该如何混淆加密？
 > * 优秀博客：酷炫动画框架推荐
 > * 学习资料：Exploring Swift Memory Layout（视频讲座）
@@ -12,7 +12,19 @@ iOS 摸鱼周报 #52 | 如何规划个人发展
 
 ## 本期话题
 
+### WWDC 进行时
 
+[@zhangferry](zhangferry.com)：WWDC 进行时持续 5 天的 WWDC22 已经快到尾声了，作为科技圈最负盛名的开发者大会，它不仅吸引到众多 Apple 生态的开发者，还有大半个科技圈在跟进报道，Apple 的影响力可见一斑。WWDC 的意义对于 Apple 来说不只是发布新产品、新功能，它还体现了 Apple 想与开发者之间打造的一种紧密联系。
+
+ 为了加强这种联系 ，苹果在 Apple Park 对面建了全新的 Developer Center，以便于开发者和Apple工程师之间交流沟通；为了让 Apple 对开发者的支持范围更广，从去年秋天开始，还推出了各种线上 Tech Talks，除了宣讲各种最新技术，开发者还可以和 Apple 工程师直接交流；Apple 还在全球建立了 17 所 Academy，用于教授相关的开发技术。基于苹果的各种支持和完善的生态，目前全球已有3400 万相关开发者。这众多开发者跟 Apple 的关系又是互相成就的，可以看出 Apple 把生态这个事真是玩的明明白白。 
+
+如果去考究 WWDC 的历史，结果可能会更令人惊讶，首届大会竟然早在 1983 年就举办了。1983 年是什么概念呢，那个时候微软才发布了第一个桌面操作系统 Microsoft Windows，这也是 Windows 这个名字第一次出现的时间。同年晚于 Winddows 三个月苹果发布了第一款搭载图形用户界面的个人电脑 Apple Lisa。乔布斯当年还对此耿耿于怀，图形化界面是苹果的首创却被 Windows 抢先发布。电影[史蒂夫·乔布斯 Steve Jobs](https://movie.douban.com/subject/25850443/ "史蒂夫·乔布斯 Steve Jobs") 就是以这场发布会为开头展开的。
+
+WWDC 发展至今，举办地、演讲者、产品内容、形式都多次变化，但 Apple 还是当年的 Apple，它依然是那个被模仿的存在。这些年间诞生过了很多经典时刻，我找到了一份网友整理的从 2006 年到 2021 年的[Apple 苹果发布会合集](https://www.bilibili.com/video/BV1m4411q75C "Apple 苹果发布会合集")，如果想考考古可以前往观看。 
+
+说到形式的变化 WWDC 因为疫情的原因演讲形式从幻灯片变成视频，感觉这更凸显了 Apple 的设计能力。视频内容相比幻灯片有更大的发挥空间，镜头间流畅的转场切换，贴近视频主题的录制场景，一些三维效果的渲染，以及精良的音效，都让整个视频内容更具趣味性和观赏性。Apple 这几年的片头动画也成了很多设计师争相效仿的对象。
+
+WWDC 被称为 Apple 开发者的「春晚」真的很贴切，WWDC 进行时，大家好好体验剩下的发布会内容吧。
 
 ## 面试解析
 
@@ -22,7 +34,7 @@ iOS 摸鱼周报 #52 | 如何规划个人发展
 
 很多开发的同学在项目中遇到`AppKey`以及一些密钥`SecretKey`的时候通常都会定义成宏，方便使用查看，但是这样做，是会有一定的风险，我们来看看有什么风险？
 
-```C++
+```objectivec
 #define kWxAppID @"krystal69d7xxxxxx"  
  - (void)configureForWXSDK {
     [WXApi registerApp:kWxAppID universalLink:@"123123"];
@@ -37,69 +49,69 @@ iOS 摸鱼周报 #52 | 如何规划个人发展
 
 - 在方法中返回这个字符串，示例如下：
 
-    ```C++
-        #define KRYSTAL_ENCRYPT_KEY @"krystal_key"
-        @implementation ViewController
-        - (void)viewDidLoad {
-            [super viewDidLoad];
-            //使用函数代替字符串
-            [self uploadDataWithKey:AES_KEY()];  
-        }
+    ```objectivec
+    #define KRYSTAL_ENCRYPT_KEY @"krystal_key"
+    @implementation ViewController
+    - (void)viewDidLoad {
+        [super viewDidLoad];
+        //使用函数代替字符串
+        [self uploadDataWithKey:AES_KEY()];  
+    }
         
-        - (void)uploadDataWithKey:(NSString *)key{
-            NSLog(@"%@",key);
-        }
+    - (void)uploadDataWithKey:(NSString *)key{
+        NSLog(@"%@",key);
+    }
         
-        static NSString * AES_KEY(){
-            unsigned char key[] = {
-                'k','r','y','s','t','a','l','_','k','e','y','\0',
-            };
-            return [NSString stringWithUTF8String:(const char *)key];
-        }
-        @end
+    static NSString * AES_KEY(){
+        unsigned char key[] = {
+            'k','r','y','s','t','a','l','_','k','e','y','\0',
+        };
+        return [NSString stringWithUTF8String:(const char *)key];
+    }
+    @end
     ```
 
     这样做能够简单的防护，但是如果逆向以后直接静态分析找到需要返回`key`的函数，也是能够很轻易的破解掉 
 
 - 通过异或的方式（字符串正常会进入常量区，但是通过异或的方式编译器会直接换算成异步结果）
 
-    ```C++
-        #define STRING_ENCRYPT_KEY @"demo_AES_key"
-        #define ENCRYPT_KEY 0xAC
-        @interface ViewController ()
-        @end
+    ```objectivec
+    #define STRING_ENCRYPT_KEY @"demo_AES_key"
+    #define ENCRYPT_KEY 0xAC
+    @interface ViewController ()
+    @end
         
-        @implementation ViewController
-        - (void)viewDidLoad {
-            [super viewDidLoad];
-        //    [self uploadDataWithKey:STRING_ENCRYPT_KEY]; //使用宏/常量字符串
-            [self uploadDataWithKey:AES_KEY()]; //使用函数代替字符串
-        }
+    @implementation ViewController
+    - (void)viewDidLoad {
+        [super viewDidLoad];
+    //    [self uploadDataWithKey:STRING_ENCRYPT_KEY]; //使用宏/常量字符串
+        [self uploadDataWithKey:AES_KEY()]; //使用函数代替字符串
+    }
         
-        - (void)uploadDataWithKey:(NSString *)key{
-            NSLog(@"%@",key);
-        }
+    - (void)uploadDataWithKey:(NSString *)key{
+        NSLog(@"%@",key);
+    }
         
-        static NSString * AES_KEY(){
-            unsigned char key[] = {
-                (ENCRYPT_KEY ^ 'd'),
-                (ENCRYPT_KEY ^ 'e'),
-                (ENCRYPT_KEY ^ 'm'),
-                (ENCRYPT_KEY ^ 'o'),
-                (ENCRYPT_KEY ^ '_'),
-                (ENCRYPT_KEY ^ 'A'),
-                (ENCRYPT_KEY ^ 'E'),
-                (ENCRYPT_KEY ^ 'S'),
-                (ENCRYPT_KEY ^ '_'),
-                (ENCRYPT_KEY ^ '\0'),
-            };
-            unsigned char * p = key;
-            while (((*p) ^= ENCRYPT_KEY) != '\0') {
-                p++;
-            }
-            return [NSString stringWithUTF8String:(const char *)key];
+    static NSString * AES_KEY(){
+        unsigned char key[] = {
+            (ENCRYPT_KEY ^ 'd'),
+            (ENCRYPT_KEY ^ 'e'),
+            (ENCRYPT_KEY ^ 'm'),
+            (ENCRYPT_KEY ^ 'o'),
+            (ENCRYPT_KEY ^ '_'),
+            (ENCRYPT_KEY ^ 'A'),
+            (ENCRYPT_KEY ^ 'E'),
+            (ENCRYPT_KEY ^ 'S'),
+            (ENCRYPT_KEY ^ '_'),
+            (ENCRYPT_KEY ^ '\0'),
+        };
+        unsigned char * p = key;
+        while (((*p) ^= ENCRYPT_KEY) != '\0') {
+            p++;
         }
-        @end
+        return [NSString stringWithUTF8String:(const char *)key];
+    }
+    @end
     ```
 
     可以看到 通过`Hopper`打开直接是异或的结果：
