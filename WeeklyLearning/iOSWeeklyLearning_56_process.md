@@ -1,14 +1,14 @@
-iOS 摸鱼周报 52 | 如何规划个人发展
+iOS 摸鱼周报 #52 | 如何规划个人发展
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 话题：
-> * 面试模块：
+> * 面试模块：iOS 中关键字符串该如何混淆加密？
 > * 优秀博客：酷炫动画框架推荐
-> * 学习资料：
-> * 开发工具：
+> * 学习资料：Exploring Swift Memory Layout（视频讲座）
+> * 开发工具：Mac-CLI 一款面向开发人员的 `macOS` 命令行工具 
 
 ## 本期话题
 
@@ -18,7 +18,95 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 整理编辑：[JY](https://juejin.cn/user/1574156380931144)
 
+### iOS 中关键字符串该如何混淆加密？
 
+很多开发的同学在项目中遇到`AppKey`以及一些密钥`SecretKey`的时候通常都会定义成宏，方便使用查看，但是这样做，是会有一定的风险，我们来看看有什么风险？
+
+```C++
+#define kWxAppID @"krystal69d7xxxxxx"  
+ - (void)configureForWXSDK {
+    [WXApi registerApp:kWxAppID universalLink:@"123123"];
+}
+```
+
+利用 Hopper 打开 MachO 就可以看到  
+
+![](http://cdn.zhangferry.com/Images/weekly_56_interview_01.jpg)
+
+* 解决办法 1  
+
+    * 在方法中返回这个字符串
+
+    ```C++
+    #define KRYSTAL_ENCRYPT_KEY @"krystal_key"
+    @implementation ViewController
+    - (void)viewDidLoad {
+        [super viewDidLoad];
+        //使用函数代替字符串
+        [self uploadDataWithKey:AES_KEY()];  
+    }
+    
+    - (void)uploadDataWithKey:(NSString *)key{
+        NSLog(@"%@",key);
+    }
+    
+    static NSString * AES_KEY(){
+        unsigned char key[] = {
+            'k','r','y','s','t','a','l','_','k','e','y','\0',
+        };
+        return [NSString stringWithUTF8String:(const char *)key];
+    }
+    @end
+    ```
+
+    这样做能够简单的防护，但是如果逆向以后直接静态分析找到需要返回`key`的函数，也是能够很轻易的破解掉 
+
+* 解决办法 2
+
+    * 通过异或的方式（字符串正常会进入常量区，但是通过异或的方式编译器会直接换算成异步结果）
+
+    ```C++
+    #define STRING_ENCRYPT_KEY @"demo_AES_key"
+    #define ENCRYPT_KEY 0xAC
+    @interface ViewController ()
+    @end
+    
+    @implementation ViewController
+    - (void)viewDidLoad {
+        [super viewDidLoad];
+    //    [self uploadDataWithKey:STRING_ENCRYPT_KEY]; //使用宏/常量字符串
+        [self uploadDataWithKey:AES_KEY()]; //使用函数代替字符串
+    }
+    
+    - (void)uploadDataWithKey:(NSString *)key{
+        NSLog(@"%@",key);
+    }
+    
+    static NSString * AES_KEY(){
+        unsigned char key[] = {
+            (ENCRYPT_KEY ^ 'd'),
+            (ENCRYPT_KEY ^ 'e'),
+            (ENCRYPT_KEY ^ 'm'),
+            (ENCRYPT_KEY ^ 'o'),
+            (ENCRYPT_KEY ^ '_'),
+            (ENCRYPT_KEY ^ 'A'),
+            (ENCRYPT_KEY ^ 'E'),
+            (ENCRYPT_KEY ^ 'S'),
+            (ENCRYPT_KEY ^ '_'),
+            (ENCRYPT_KEY ^ '\0'),
+        };
+        unsigned char * p = key;
+        while (((*p) ^= ENCRYPT_KEY) != '\0') {
+            p++;
+        }
+        return [NSString stringWithUTF8String:(const char *)key];
+    }
+    @end
+    ```
+
+    可以看到 通过`Hopper`打开直接是异或的结果
+
+    ![](http://cdn.zhangferry.com/Images/weekly_56_interview_02.jpg)
 
 ## 优秀博客
 
@@ -121,12 +209,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
+[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
 
-[iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
+[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
 
-[iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
+[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
-[iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS 摸鱼周报 #52 | 如何规划个人发展](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
 ![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
