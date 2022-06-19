@@ -1,18 +1,20 @@
-iOS 摸鱼周报 52 | 如何规划个人发展
+# iOS 摸鱼周报 56
 
 ![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 话题：
+> * 本期话题：
 > * 本周学习：Xcode Playground Tips
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 内容推荐：
+> * 摸一下鱼：
+> * 岗位推荐：
 
 ## 本期话题
 
+### 周报改版
 
+[zhangferry](zhangferry.com)：周报停了一期，主要是为了这期改版，算是一个小变动吧。主要目的是为了解决两个问题：让内容整理的工作量降下来，让内容阅读更轻松。针对这两个问题，内容长度会有一点的缩减，内容丰富度进行了一定的扩展。大家如果对内容上有其他什么建议，也欢迎给我们提意见。
 
 ## 本周学习
 
@@ -94,26 +96,37 @@ iOS 摸鱼周报 52 | 如何规划个人发展
 
 Markup 更多格式可以查看官方文档 [markup-apple](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/index.html#//apple_ref/doc/uid/TP40016497-CH2-SW1 "markup-apple")，另外 `Playground`还支持和框架或者工程结合使用，可以通过另一位主编的博客内容了解学习 [玩转 Xcode Playground（下）- 东坡肘子](https://www.fatbobman.com/posts/xcodePlayground2/ "玩转 Xcode Playground（下）- 东坡肘子")
 
-## 优秀博客
+## 内容推荐
 
 
 
-## 见闻
+## 摸一下鱼
 
-> 这一周阅读/浏览到的有趣的资讯。
+1、[PicX](https://github.com/XPoet/picx "PicX") 是一款基于 GitHub API & jsDelivr 开发的具有 CDN 加速功能的图床管理工具。
 
+2、[Apple Logo Artwork](https://www.figma.com/community/file/1117235995751919225 "Apple Logo Artwork")：
 
-## 学习资料
+![](http://cdn.zhangferry.com/Images/20220619104319.png)
 
-整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+早在 2018 年，苹果公司就发出了独特的媒体邀请，它为自己的 logo 设计了无数个独特、多彩的版本，每个人似乎都收到了不同风格的邀请。苹果公司的商标图案从抽象到经典各不相同，由多位艺术家参与设计。在 Figma 上的这个仓库收录了多达 350 个Logo。
 
+3、[Brooklyn](https://github.com/pedrommcarrasco/Brooklyn "Brooklyn") 一款 Mac 版屏保，灵感来源于2018年的 Apple Event，这些素材正是 Apple Logo Artwork，效果非常酷炫。
 
+![](http://cdn.zhangferry.com/Images/showcase.gif)
 
-## 工具推荐
+## 岗位推荐
 
-整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+会整理一些内推信息放到周报里，大家有合适的岗位欢迎提 issue 来录入。
 
+1、[抖音 iOS 基础技术 - 研发效能方向](https://mp.weixin.qq.com/s/-mu76FMWaSPp8XXbP_7mNg)
 
+我们是负责抖音客户端基础能力研发和新技术探索的团队。我们在工程/业务架构，研发工具，编译系统等方向深耕，支撑业务快速迭代的同时，保证超大规模团队的研发效能和工程质量。在性能/稳定性方面不断探索，努力为全球数亿用户提供最极致的基础体验。岗位详情可以点击上面链接查看👆。
+
+工作地点：北京、上海、深圳、杭州
+
+岗位需求：有扎实的数据结构和算法基础，对新技术保持热情，具备良好的分析、解决问题的能力。有这些经验会成为加分项：脚本语言、静态分析、LLVM、单元测试、自动测试框架、架构、工程效率、全栈开发
+
+联系方式：微信号：zhangferry，或者发送简历到 `zhangfei.ferry@bytedance.com`。
 
 ## 关于我们
 
