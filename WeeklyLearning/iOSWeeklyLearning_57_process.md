@@ -51,7 +51,7 @@
 
 您也可以通过扫描以下二维码报名：
 
-
+![](http://cdn.zhangferry.com/Images/WechatIMG12.jpeg)
 
 ## 本周学习
 
