@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 57
+# iOS 摸鱼周报 #57 | 周报改版，WWDC22 讲座集锦
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -6,9 +6,9 @@
 
 > * 本期话题： Developer 设计开发加速器｜WWDC22 讲座集锦（6.28 - 6.29）
 > * 本周学习：Xcode Playground Tips
-> * 内容推荐：
-> * 摸一下鱼：
-> * 岗位推荐：
+> * 内容推荐：WWDC22 已落幕，推荐些新的技术点以及内容变动
+> * 摸一下鱼：apple 全系操作系统 beta2 版本已发布，喜欢尝鲜的同学可以踊跃测试了
+> * 岗位推荐：宇宙的尽头字节又来招聘了：本次是抖音 iOS 基础技术 - 研发效能方向
 
 ## 本期话题
 
@@ -89,7 +89,7 @@
 
 `Playground` 可以修改运行方式，分别是 `Automatically Run` 和 `Manually Run`，区别就是自动模式在每次键入后自动编译。调整方式为长按运行按钮，如图：
 
-![](https/Images/weekly_57_weeklyStudy_01.png)
+![](https://cdn.zhangferry.com/Images/weekly_57_weeklyStudy_01.png)
 
 另外，通过快捷键 `shift-回车` 可以只运行到当前鼠标所在位置代码，作用同直接点击代码所在行的运行按钮一致。
 
