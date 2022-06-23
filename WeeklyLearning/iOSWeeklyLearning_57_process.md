@@ -16,8 +16,6 @@
 
 [zhangferry](zhangferry.com)：周报停了一期，主要是为了这期改版，算是一个小变动吧。主要目的是为了解决两个问题：让内容整理的工作量降下来，让内容阅读更轻松。针对这两个问题，内容长度会有一点的缩减，内容丰富度进行了一定的扩展。大家如果对内容上有其他什么建议，也欢迎给我们提意见。
 
-## 本期话题
-
 ###  Developer 设计开发加速器｜WWDC22 讲座集锦 
 
 @师大小海腾：本期活动精选了 WWDC22 公布的最新技术，邀请 Apple 设计和技术布道师为中国开发者带来中文讲座集锦。通过本次活动您可以了解最新技术趋势、学习平台的最新功能，从而打造更为卓越的 App 体验。
@@ -59,7 +57,7 @@
 
 ### Xcode Playground Tips
 
-`Playground`是学习 Swift 和 SwiftUI 的必不可少的工具，这里总结一些可能涉及到的 Tips，方便更好的学习和使用。
+`Playground` 是学习 Swift 和 SwiftUI 的必不可少的工具，这里总结一些可能涉及到的 Tips，方便更好的学习和使用。
 
 #### 模块化
 
@@ -71,7 +69,7 @@
 
     添加到 Playground Sources 下的辅助代码，所有 Page 主代码和辅助代码 都可使用。区别在于 Page 辅助代码如果未 import 导入 module, 则不会有代码提示，主代码无需 import。
 
-    添加到 Page Sources 下的辅助代码，只有当前的 Page 可用（apple 文档）。module 命名格式为 **xxx(PageName)_PageSources**。
+    添加到 Page Sources 下的辅助代码，只有当前的 Page 可用（Apple 文档）。module 命名格式为 **xxx(PageName)_PageSources**。
 
     > 实际测试，如果在其他 Page 主代码中和辅助代码中同时 `import` 当前 Sources Module 也是可用的，但是只在辅助代码中 `import`，则不生效。如果有不同测试结果的同学可以交流下
 
@@ -87,7 +85,7 @@
 
 ![](http://cdn.zhangferry.com/Images/weekly_57_weeklyStudy_01.png)
 
-另外，通过快捷键 `shift+回车` 可以只运行到当前鼠标所在位置代码，作用同直接点击代码所在行的运行按钮一致。
+另外，通过快捷键 `shift-回车` 可以只运行到当前鼠标所在位置代码，作用同直接点击代码所在行的运行按钮一致。
 
 #### PlaygroundSupport
 
@@ -102,9 +100,9 @@
     PlaygroundPage.current.finishExecution()
     ```
 
-- 使用 `Playground` 展示实时视图时，需要将视图添加到属性 `liveView`上。如果设置了 `liveView`则系统会自动设置 `needsIndefiniteExecution`，无需重复设置。
+- 使用 `Playground` 展示实时视图时，需要将视图添加到属性 `liveView` 上。如果设置了 `liveView` 则系统会自动设置 `needsIndefiniteExecution`，无需重复设置。
 
-    > 如果是 `UIKit`视图则通过 `liveView`属性赋值或者 `setLiveView()`函数调用都可以，但是 `SwiftUI` 只支持 `setLiveView()`函数调用方式。
+    > 如果是 `UIKit` 视图则通过 `liveView` 属性赋值或者 `setLiveView()` 函数调用都可以，但是 `SwiftUI` 只支持 `setLiveView()` 函数调用方式。
 
     ```swift
     struct contentView: View {...}
@@ -115,9 +113,9 @@
 
 #### markup 注释
 
-根据文档，markup 支持标题、列表、代码、粗体、斜体、链接、资产、转移字符等，目的是在 `Quick Help` 和 代码提示中显示更丰富的描述信息
+根据文档，markup 支持标题、列表、代码、粗体、斜体、链接、资产、转移字符等，目的是在 `Quick Help` 和代码提示中显示更丰富的描述信息
 
-书写格式分两种，单行使用 `//: 描述区` 多行使用`/*: 描述区 */`
+书写格式分两种，单行使用 `//: 描述区` 多行使用 `/*: 描述区 */`
 
 源码/渲染模式切换方式：`Editor -> Show Rendered Markup` 或者设置右侧扩展栏的 `Playground Settings ->Render Documentation`。
 
@@ -131,7 +129,7 @@
 
 > 指定具体页时，页面名称去掉扩展名，并且编码替换空格和特殊字符。不需要使用 `@` 符号
 
-Markup 更多格式可以查看官方文档 [markup-apple](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/index.html#//apple_ref/doc/uid/TP40016497-CH2-SW1 "markup-apple")，另外 `Playground`还支持和框架或者工程结合使用，可以通过另一位主编的博客内容了解学习 [玩转 Xcode Playground（下）- 东坡肘子](https://www.fatbobman.com/posts/xcodePlayground2/ "玩转 Xcode Playground（下）- 东坡肘子")
+Markup 更多格式可以查看官方文档 [markup-apple](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/index.html#//apple_ref/doc/uid/TP40016497-CH2-SW1 "markup-apple")，另外 `Playground` 还支持和框架或者工程结合使用，可以通过另一位主编的博客内容了解学习 [玩转 Xcode Playground（下）- 东坡肘子](https://www.fatbobman.com/posts/xcodePlayground2/ "玩转 Xcode Playground（下）- 东坡肘子")
 
 ## 内容推荐
 
