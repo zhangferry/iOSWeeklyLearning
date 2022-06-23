@@ -1,6 +1,6 @@
-# iOS 摸鱼周报 56
+# iOS 摸鱼周报 57
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -89,7 +89,7 @@
 
 `Playground` 可以修改运行方式，分别是 `Automatically Run` 和 `Manually Run`，区别就是自动模式在每次键入后自动编译。调整方式为长按运行按钮，如图：
 
-![](http://cdn.zhangferry.com/Images/weekly_57_weeklyStudy_01.png)
+![](https/Images/weekly_57_weeklyStudy_01.png)
 
 另外，通过快捷键 `shift-回车` 可以只运行到当前鼠标所在位置代码，作用同直接点击代码所在行的运行按钮一致。
 
@@ -177,13 +177,13 @@ Markup 更多格式可以查看官方文档 [markup-apple](https://developer.app
 
 3、[Apple Logo Artwork](https://www.figma.com/community/file/1117235995751919225 "Apple Logo Artwork")：
 
-![](http://cdn.zhangferry.com/Images/20220619104319.png)
+![](https://cdn.zhangferry.com/Images/20220619104319.png)
 
 早在 2018 年，苹果公司就发出了独特的媒体邀请，它为自己的 logo 设计了无数个独特、多彩的版本，每个人似乎都收到了不同风格的邀请。苹果公司的商标图案从抽象到经典各不相同，由多位艺术家参与设计。在 Figma 上的这个仓库收录了多达 350 个 Logo。
 
 4、[Brooklyn](https://github.com/pedrommcarrasco/Brooklyn "Brooklyn") 一款 Mac 版屏保，灵感来源于 2018 年的 Apple Event，这些素材正是 Apple Logo Artwork，效果非常酷炫。
 
-![](http://cdn.zhangferry.com/Images/showcase.gif)
+![](https://cdn.zhangferry.com/Images/showcase.gif)
 
 5、[PicX](https://github.com/XPoet/picx "PicX") 是一款基于 GitHub API & jsDelivr 开发的具有 CDN 加速功能的图床管理工具。
 
@@ -215,4 +215,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
