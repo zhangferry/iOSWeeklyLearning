@@ -49,7 +49,7 @@
 
 您也可以通过扫描以下二维码报名：
 
-![](http://cdn.zhangferry.com/Images/WechatIMG12.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG12.jpeg)
 
 ## 本周学习
 
@@ -161,13 +161,13 @@ Markup 更多格式可以查看官方文档 [markup-apple](https://developer.app
 
 1、[Felibe444](https://twitter.com/felibe444) 总结了WWDC22 里 What's new in Swift 和 What's new in UIKit 对应的功能点，并将它们做成 Sketchnote：
 
-![](http://cdn.zhangferry.com/Images/20220623091955.png)
+![](https://cdn.zhangferry.com/Images/20220623091955.png)
 
-![](http://cdn.zhangferry.com/Images/20220623092017.png)
+![](https://cdn.zhangferry.com/Images/20220623092017.png)
 
 2、iOS 16、iPadOS16、macOS 13、watchOS9、tvOS 16 都已经发布了第二个 beta 版本。
 
-![](http://cdn.zhangferry.com/Images/FV34em9WAAAAAzH.jpeg)
+![](https://cdn.zhangferry.com/Images/FV34em9WAAAAAzH.jpeg)
 
 3、[PicX](https://github.com/XPoet/picx "PicX") 是一款基于 GitHub API & jsDelivr 开发的具有 CDN 加速功能的图床管理工具。
 
@@ -201,12 +201,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
+[iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/ZyGV6WlFsZOX6Aqgrf1QRQ)
 
-[iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
+[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
 
-[iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
+[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
 
-[iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
