@@ -157,11 +157,11 @@ Markup 更多格式可以查看官方文档 [markup-apple](https://developer.app
 
 [@东坡肘子](https://www.fatbobman.com/)：长久以来，开发者对 SwiftUI 的导航系统颇有微词。受 NavigationView 的能力限制，开发者需要动用各种技巧乃至黑科技才能实现一些本应具备的基本功能（例如：返回根视图、向堆栈添加任意视图、返回任意层级视图 、Deep Link 跳转等 ）。SwiftUI 4.0 对导航系统作出了重大改变，提供了以视图堆栈为管理对象的新 API ，让开发者可以轻松实现编程式导航。本文将对新的导航系统作以介绍。
 
-6、[WWDC 2022 Swift Student Challenge Submissions](https://wwdc.github.io/2022) -- 来自：WWDC Students
+6、[WWDC 2022 Swift Student Challenge Submissions](https://wwdc.github.io/2022 "WWDC 2022 Swift Student Challenge Submissions") -- 来自：WWDC Students
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：一年一度的 [WWDC Swift Student Challenge](https://developer.apple.com/wwdc22/swift-student-challenge/) 随着 WWDC 22 的召开也随之落幕了，全球无数学生开发者通过提交作品来争抢 300 多张 WWDC 现场门票，在这个网站可以看到许多优秀学生开发者今年制作的作品，以及视频演示链接，其中许多作品效果令人惊艳，难以想象其中某些作品仅出自初高中生之手。
 
-7、[WWDC 2022 Summary for Designers](https://uxmisfit.com/2022/06/06/wwdc-2022-summary/) -- 来自：Thalion
+7、[WWDC 2022 Summary for Designers](https://uxmisfit.com/2022/06/06/wwdc-2022-summary/ "WWDC 2022 Summary for Designers") -- 来自：Thalion
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：最关注每年 WWDC 的群体莫过于程序员了，但其实除了程序员之外，也有许多并非是 Coder 的人在默默地关注着，设计师（UX/UI）就是其中的一员。本文作者通过自己的视角来解读了对于设计师们来说，这次 WWDC 中有哪些值得注意的点、在新系统中，有哪些地方更加提升了用户的体验的、以及一些他自己的看法等等。
 
