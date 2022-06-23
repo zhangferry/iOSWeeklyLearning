@@ -139,15 +139,25 @@ Markup 更多格式可以查看官方文档 [markup-apple](https://developer.app
 
 ## 摸一下鱼
 
-1、[PicX](https://github.com/XPoet/picx "PicX") 是一款基于 GitHub API & jsDelivr 开发的具有 CDN 加速功能的图床管理工具。
+1、[Felibe444](https://twitter.com/felibe444) 总结了WWDC22 里 What's new in Swift 和 What's new in UIKit 对应的功能点，并将它们做成 Sketchnote：
 
-2、[Apple Logo Artwork](https://www.figma.com/community/file/1117235995751919225 "Apple Logo Artwork")：
+![](http://cdn.zhangferry.com/Images/20220623091955.png)
+
+![](http://cdn.zhangferry.com/Images/20220623092017.png)
+
+2、iOS 16、iPadOS16、macOS 13、watchOS9、tvOS 16 都已经发布了第二个 beta 版本。
+
+![](http://cdn.zhangferry.com/Images/FV34em9WAAAAAzH.jpeg)
+
+3、[PicX](https://github.com/XPoet/picx "PicX") 是一款基于 GitHub API & jsDelivr 开发的具有 CDN 加速功能的图床管理工具。
+
+4、[Apple Logo Artwork](https://www.figma.com/community/file/1117235995751919225 "Apple Logo Artwork")：
 
 ![](http://cdn.zhangferry.com/Images/20220619104319.png)
 
 早在 2018 年，苹果公司就发出了独特的媒体邀请，它为自己的 logo 设计了无数个独特、多彩的版本，每个人似乎都收到了不同风格的邀请。苹果公司的商标图案从抽象到经典各不相同，由多位艺术家参与设计。在 Figma 上的这个仓库收录了多达 350 个Logo。
 
-3、[Brooklyn](https://github.com/pedrommcarrasco/Brooklyn "Brooklyn") 一款 Mac 版屏保，灵感来源于2018年的 Apple Event，这些素材正是 Apple Logo Artwork，效果非常酷炫。
+5、[Brooklyn](https://github.com/pedrommcarrasco/Brooklyn "Brooklyn") 一款 Mac 版屏保，灵感来源于2018年的 Apple Event，这些素材正是 Apple Logo Artwork，效果非常酷炫。
 
 ![](http://cdn.zhangferry.com/Images/showcase.gif)
 
