@@ -133,7 +133,29 @@ Markup 更多格式可以查看官方文档 [markup-apple](https://developer.app
 
 ## 内容推荐
 
+> 每年一度的苹果开发者盛会在不久前落幕了。今年的 WWDC 一如既往地精彩。我们将分几期将一些有关 WWDC 2022 上推出的新内容、新技术介绍给大家。
 
+整理编辑：[东坡肘子](https://www.fatbobman.com), [Mimosa]()
+
+1、[怎么快速看完 WWDC22](https://www.ethanhuang13.com/p/144 "怎么快速看完 WWDC22") -- 来自：Ethan Huang
+
+[@东坡肘子](https://www.fatbobman.com/)：今年的 WWDC 2022 很精彩，内容也非常多。跟其他人不同的是，Ethan Huang 写的不是整理好的笔记、个别的知识点，而是一套有效率的吸收策略。涵盖：建立全面的印象、挑选有兴趣的主题深入以及如何利用社群来发现重要的知识。
+
+2、[WWDC22 笔记](https://ming1016.github.io/2022/06/10/wwdc22-notes/ "WWDC22 笔记") -- 来自：戴铭
+
+[@东坡肘子](https://www.fatbobman.com/)：边看、边记、边整理是本文的特色。作者采用了类似日记的方式，记录并整理了自己在观看 WWDC 2022 期间的每日心得。这种方式也值得其他的开发者借鉴。
+
+3、[Swift 5.7 新特性](https://juejin.cn/post/7107058234409615373 "Swift 5.7 新特性") -- 来自：Paul Hudson 中文译者：猫克杯
+
+[@东坡肘子](https://www.fatbobman.com/)：Swift 5.7 变化巨大，新特性中包括正则表达式， if let 速记语法，以及围绕 any 和 some 关键字的一致性改动。在本文中，Paul Hudson 想向你介绍重大变化，提供一些实际操作示例，以便你可以快速了解和掌握。
+
+4、[WWDC 2022 在线休息室中有关 SwiftUI 的讨论](https://swiftui-lab.com/digital-lounges-2022/ "WWDC 2022 在线休息室中有关 SwiftUI 的讨论") -- 来自：Javier
+
+[@东坡肘子](https://www.fatbobman.com/)：从 WWDC 2021 开始，苹果引入了在线休息室（ Digital Lounge ），为广大开发者提供了同苹果各个团队的工程师和设计师展开文字形式的讨论，针对最新技术提出问题，寻求编程方面的帮助以及结交演讲嘉宾的机会。今年 Javier 一如既往地对 WWDC 2022 在线休息室中有关 SwiftUI 方面的讨论进行了整理，并添加了自己的评论。
+
+5、[SwiftUI 4.0 的全新导航系统](https://www.fatbobman.com/posts/new_navigator_of_SwiftUI_4/ "SwiftUI 4.0 的全新导航系统") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：长久以来，开发者对 SwiftUI 的导航系统颇有微词。受 NavigationView 的能力限制，开发者需要动用各种技巧乃至黑科技才能实现一些本应具备的基本功能（例如：返回根视图、向堆栈添加任意视图、返回任意层级视图 、Deep Link 跳转等 ）。SwiftUI 4.0 对导航系统作出了重大改变，提供了以视图堆栈为管理对象的新 API ，让开发者可以轻松实现编程式导航。本文将对新的导航系统作以介绍。
 
 ## 摸一下鱼
 
