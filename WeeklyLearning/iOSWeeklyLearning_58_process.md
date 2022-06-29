@@ -1,44 +1,43 @@
-iOS 摸鱼周报 52 | 如何规划个人发展
+# iOS 摸鱼周报 #58 | 周报改版，WWDC22 讲座集锦
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 话题：
-> * 面试模块：
-> * 优秀博客：
-> * 学习资料：
-> * 开发工具：
+> * 本期话题：在您的 App 中提供帐户删除选项
+> * 本周学习：
+> * 内容推荐：
+> * 摸一下鱼：
+> * 岗位推荐：
 
 ## 本期话题
 
+### [在您的 App 中提供帐户删除选项](https://developer.apple.com/cn/support/offering-account-deletion-in-your-app "在您的 App 中提供帐户删除选项")
 
+[@远恒之义](https://github.com/eternaljust)：苹果要求，自 2022 年 6 月 30 日起，如果您的 App 支持帐户创建，提交到 App Store 审核，必须支持用户在 App 中发起帐户删除，以避免审核延迟。
 
-## 面试解析
+⚠️ 注意事项：
+* 支持“通过 Apple 登录”的 App 应使用 Sign in with Apple REST API 来[撤销用户令牌](https://www.yuque.com/eternaljust/rpmt31/bxmc3d#khpAl "撤销用户令牌")。
+* 如果 App 帐户删除流程是手动的（如在应用内申请删除账号，需要管理员后台审核），请告知用户删除帐户需要多长时间，并在删除完成时提供一条确认信息。
+* 如何避免拥有自动续期订阅的用户在删除帐户后意外被 Apple 继续扣款？可提供[链接](https://apps.apple.com/account/subscriptions "打开用户管理订阅链接")来让用户管理取消自己的订阅。
+
+## 本周学习
 
 整理编辑：[JY](https://juejin.cn/user/1574156380931144)
 
 
 
-## 优秀博客
-
-
-
-## 见闻
-
-> 这一周阅读/浏览到的有趣的资讯。
-
-
-## 学习资料
+## 内容推荐
 
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
 
 
-## 工具推荐
+## 摸一下鱼
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
+## 岗位推荐
 
 
 ## 关于我们
@@ -47,12 +46,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
+[iOS 摸鱼周报 #57 | 周报改版，WWDC22 讲座集锦](https://mp.weixin.qq.com/s/e4ZbFBPqclgy7KyfxVyQZA)
 
-[iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
+[iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/ZyGV6WlFsZOX6Aqgrf1QRQ)
 
-[iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
+[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
 
-[iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
+[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
