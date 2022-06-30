@@ -40,7 +40,7 @@ ATS 为我们的应用安全增加了保护，但是由于某些原因，我们�
 
 **最新完整**的 ATS 配置键值如下：
 
-```
+```objectivec
 NSAppTransportSecurity : Dictionary {
     NSAllowsArbitraryLoads : Boolean
     NSAllowsArbitraryLoadsForMedia : Boolean
@@ -131,6 +131,19 @@ NSAppTransportSecurity : Dictionary {
 
 ![](http://cdn.zhangferry.com//Images/20220630213027.png)
 
+3、[网页设计博物馆](https://www.webdesignmuseum.org/ "网页设计博物管")：该网站收录了从 1996 开始至今的一些主流网站的页面样式，从这里能清晰的感受网站设计这几十年的变化趋势。看一下 Apple 在 1999 年发布 Power Mac G4 的页面，突出重点，结构清晰。再说 Power Mac G4，用现在的眼光来看，它依然像是一款未来项的产品，Apple 的设计真的很超强。
+
+![](https://cdn.zhangferry.com/Images/20220630235025.png)
+
+4、[Stackoverflow 的年度调查](https://survey.stackoverflow.co/2022/ "Stackoverflow 的年度调查")：调查结果来源于 70000 多个开发者的问卷分析，看两个比较有意思的结果吧。
+
+参与调查的开发者的身份，全栈和后端所占比例非常高，移动开发相比就少很多了。
+
+![](https://cdn.zhangferry.com/Images/20220701000811.png)
+
+薪水和使用开发语言、工作年限之间的关系，这一批调查者占总人数的一半以上，工作年限从 9 年到 22 年，所以至少在国外大龄程序员是一个很常见的现象。
+
+![](https://cdn.zhangferry.com/Images/20220701002813.png)
 
 ## 关于我们
 
