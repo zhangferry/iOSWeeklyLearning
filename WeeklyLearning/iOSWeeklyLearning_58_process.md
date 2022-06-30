@@ -68,13 +68,13 @@ NSAppTransportSecurity : Dictionary {
 
 >  受限于篇幅，我们就不展示命令运行的结果
 
-从 ATS 默认的空字典开始，共计 16 中组合
+从 ATS 默认的空字典开始，共计 16 种组合
 
 * `Result : PASS` 说明该配置可以连接到域名服务器成功
 
 * `Result : FAIL` 说明请求域名服务器失败，当前配置无法组合成功
 
-> **注：**虽然起列举的结果不包括    `NSAllowsArbitraryLoadsForMedia` ,`NSAllowsArbitraryLoadsInWebContent `, `NSAllowsLocalNetworking` ，但是这三个是针对特定的文件的，所以不会影响配置
+> **注：**虽然其列举的结果不包括    `NSAllowsArbitraryLoadsForMedia` ,`NSAllowsArbitraryLoadsInWebContent `, `NSAllowsLocalNetworking` ，但是这三个是针对特定的文件的，所以不会影响配置
 
 基于**最小最适用**原则选择对应的 ATS 配置。
 
