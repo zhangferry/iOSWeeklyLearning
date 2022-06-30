@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #58 | 周报改版，WWDC22 讲座集锦
+# iOS 摸鱼周报 #58 | 极客风音乐播放器
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
