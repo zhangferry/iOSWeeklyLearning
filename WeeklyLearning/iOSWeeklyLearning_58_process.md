@@ -29,13 +29,33 @@
 
 ## 内容推荐
 
-整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+> 每年一度的苹果开发者盛会在不久前落幕了。今年的 WWDC 一如既往地精彩。我们将分几期将一些有关 WWDC 2022 上推出的新内容、新技术介绍给大家。
 
-1、[What’s the difference between any and some in Swift 5.7?](https://www.donnywals.com/whats-the-difference-between-any-and-some-in-swift-5-7/ "What’s the difference between any and some in Swift 5.7?") -- 来自：Donny Wals
+整理编辑：[远恒之义](https://github.com/eternaljust)，[Mimosa](https://juejin.cn/user/1433418892590136)
+
+1、[WWDC22: Wrap up and recommended talks](https://www.hackingwithswift.com/articles/254/wwdc22-wrap-up-and-recommended-talks "WWDC22: Wrap up and recommended talks") -- 来自：hackingwithswift
+
+[@远恒之义](https://github.com/eternaljust)：WWDC22 精彩纷呈，本文作者回顾了他参与本次活动的过程，一些现场有趣的故事，10 个最喜欢的演讲主题，6 个推荐视频来了解刚推出的新内容，还有几个丰富的 WWDC22 周边社区活动。
+
+2、[在 SwiftUI 利用 Live Text API 從圖片中擷取文本](https://www.appcoda.com.tw/live-text-api/ "在 SwiftUI 利用 Live Text API 從圖片中擷取文本") -- 来自：appcoda
+
+[@远恒之义](https://github.com/eternaljust)：在新的 iOS 16，Apple 发布了 Live Text API，可以将图像转换为机器可读的文本格式。我们只需使用 VisionKit 中的一个新类别 DataScannerViewController，来启用有 Live Text 功能的相机，就能提取出图像中的文本。本文同时为你提供了一个 demo 来快速上手体验。
+
+3、[iOS CarPlay｜WWDC22 - 通过 CarPlay 让你的 App 发挥更大的作用](https://juejin.cn/post/7114239495360233479 "iOS CarPlay｜WWDC22 - 通过 CarPlay 让你的 App 发挥更大的作用") -- 来自：师大小海腾
+
+[@远恒之义](https://github.com/eternaljust)：时隔 2 年，CarPlay 迎来了大更新。在 iOS16 中新增的两种支持 CarPlay 的 App 类型：Fueling App 和 Driving Task App。感兴趣的话，和作者一起来探索 Navigation App 如何在受支持车辆中的数字仪表盘上实时绘制地图。
+
+此外，Apple 今年给我们带来了 CarPlay Simulator，它是一个 Mac App，可以帮助你在不离开办公桌的情况下连接 iPhone Device 来开发和测试 CarPlay App，模拟真实环境，而无需经常来回跑到你的车上或购买售后市场主机进行测试。这大幅度提升了开发者的开发测试体验。
+
+4、[用 Table 在 SwiftUI 下创建表格](https://www.fatbobman.com/posts/table_in_SwiftUI/ "用 Table 在 SwiftUI 下创建表格") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：Table 是 SwiftUI 3.0 中为 macOS 平台提供的表格控件，开发者通过它可以快捷地创建可交互的多列表格。在 WWDC 2022 中，Table 被拓展到 iPadOS 平台，让其拥有了更大的施展空间。本文将介绍 Table 的用法、分析 Table 的特点以及如何在其他的平台上实现类似的功能。
+
+5、[What’s the difference between any and some in Swift 5.7?](https://www.donnywals.com/whats-the-difference-between-any-and-some-in-swift-5-7/ "What’s the difference between any and some in Swift 5.7?") -- 来自：Donny Wals
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：作者通过举例来说明了在 Swift 5.7 中你该如何选择 some 还是 any 关键词，阐述了他们之间的不同，同时谈了一下该如何正确的使用它们，以及未来可能在 Swift 6 中的表现。在作者的另一篇文章 [What are primary associated types in Swift 5.7?](https://www.donnywals.com/what-are-primary-associated-types-in-swift-5-7/) 中它也谈到了，在实际使用场景，例如关联类型的使用中，some 和 any 关键词对程序的影响。
 
-2、[深入理解 Git 底层实现原理](http://chuquan.me/2022/05/21/understand-principle-of-git/ "深入理解 Git 底层实现原理") -- 来自：楚权
+6、[深入理解 Git 底层实现原理](http://chuquan.me/2022/05/21/understand-principle-of-git/ "深入理解 Git 底层实现原理") -- 来自：楚权
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：大家平时都在使用 Git，但是其中的底层实现原理大家了解么？该文章作者从 Git 整体的架构出发，分层讲解了各层作用，主要谈了对象数据库的设计等。同时也给出了基于其原理的一个设计案例 —— CocoaPods Source 管理机制。文章整体写的通俗易懂，配图也简洁大方。
 
