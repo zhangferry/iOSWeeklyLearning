@@ -750,3 +750,24 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 英语是程序员绕不过去的一项技能，虽然我们可能从小学就开始接触英语了，但直到毕业工作，英语能够不成为学习障碍还是一件不容易的事情。这其中的差别很大成分可以归结为学习方法，这份文档就是这样一个注重方法和可操作性的英语学习指南。
 
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### TypeScript 入门教程
+
+**地址**：https://ts.xcatliu.com/
+
+这是一份 TypeScript 的入门教程，与官方手册不同，这份 TypeScript 入门教程着重于从 JavaScript 程序员的角度总结思考，循序渐进的理解 TypeScript，示例丰富，比官方文档更易读。同时作者也指出，本书比较适合已经熟悉 JavaScript 的开发者，不适合没有学习过 JavaScript 的人群。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+### Exploring Swift Memory Layout
+
+**地址**：https://www.youtube.com/watch?v=ERYNyrfXjlg
+
+一份来自 GOTO Conferences 有关 Swift Memory Layout 的一小时讲座，该讲座深入浅出的讲解了 Swift 中各种例如指针、结构体、类、枚举、数组、协议等我们平时使用的这些工具在内存中是以什么样的形式存在，以及如何解决一些常见问题。对于想了解这部分知识的朋友，这个讲座视频将是一个不错的开胃菜。
+
+![memorylayout](http://cdn.zhangferry.com/Images/memorylayout.png)
+
+******

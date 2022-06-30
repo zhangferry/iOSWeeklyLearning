@@ -1561,3 +1561,64 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 [@皮拉夫大王](https://juejin.cn/user/281104094332653)：对《深入理解内存分配》中提到的 TCMalloc 感兴趣的可以继续阅读这篇文章。
 
 
+***
+> 在 Swift 中有两种特性（ Attributes ），分别用于修饰声明和类型。特性提供了有关声明和类型的更多信息。本期将汇总一些介绍声明特性的文章以帮助大家更好的掌握和使用特性这个强大的工具。
+
+整理编辑：[东坡肘子](https://www.fatbobman.com)
+
+1、[@available 与调用方进行沟通](https://mp.weixin.qq.com/s/e2_mWNx4HduM57LF0xTvqA) -- 来自：OldBirds
+
+[@东坡肘子](https://www.fatbobman.com/)：保持代码不变很难，因为需求不断在变化，系统、框架不断在更新。那么项目实践中，往往会废弃掉一些类或方法。如果是自己独立维护代码，且不需要将代码给他人使用，废弃 API 对你来说是非常简单的，直接改动源码即可。但是对于多人合作的项目，特别是开源的库，废弃一个公开的 API 不是简单地改动下代码就可以，因为你的改动将会影响使用你这个库的所有代码。公开的 API 的更新换代，就相当于你改动了和别人约定的契约一样，这也侧面反映了作者的专业水平。那么如果要废弃一个 API，在 Swift 中我们该如何做？
+
+2、[了解 Swift 中的 @inlinable](https://swiftrocks.com/understanding-inlinable-in-swift.html "了解 Swift 中的 @inlinable") -- 来自：Bruno Rocha
+
+[@东坡肘子](https://www.fatbobman.com/)：@inlinable 特性是 Swift 中较少为人所知的属性之一。和其他同类特性一样，它的目的是启用一组特定的微优化，开发者可以用它来提高应用程序的性能。本文将介绍这个属性是如何工作的，并分析使用它的利弊。
+
+3、[ViewBuilder 研究 —— 掌握 Result builders](https://mp.weixin.qq.com/s/4TwfyhWHVjm3Dv-Vz7MYvg) -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：结果构造器能按顺序构造一组嵌套的数据结构。利用它，可以以一种自然的声明式语法为嵌套数据结构实现一套领域专门语言（ DSL ），SwiftUI 的声明式特性即来源于此。本文将探讨结果构造器的实现原理，以及如何使用它来创建自己的 DSL 。
+
+4、[@testable 的隐藏成本](https://paul-samuels.com/blog/2021/03/29/thoughts-on-testable-import/ "@testable 的隐藏成本") -- 来自：Paul Samuels
+
+[@东坡肘子](https://www.fatbobman.com/)：在单元测试中，开发者通过为 import 添加 @testable 特性以改变代码的可见性。在需要的时候，这当然是有用的，但它常常被过于急切地使用而没有考虑到可能导致的一些问题。本文将探讨一下使用 @testable 可能导致的一些潜在的设计问题。本文的作者并不是说使用 @testable 是错误的，而是开发者需要为此做的一些设计权衡。
+
+5、[Swift 中的 @objc、@objcMembers 关键字探讨](https://mp.weixin.qq.com/s?__biz=MzkwMDIxNDA3NA==&mid=2247483745&idx=1&sn=8f1db6e0a109754ed73bd3438f64285e&chksm=c0463d34f731b4222e8c238448d19e71f801b25d459b57be673305bcee2ae9cd5aa09a120f01&token=912344454&lang=zh_CN#rd) -- 来自：剑老师
+
+[@东坡肘子](https://www.fatbobman.com/)：我们说 Objective-C 是一门动态语言，决策会尽可能地推迟到运行时。而 Swit 是一门静态语言，也就是说 Swift 的对象类型、调用的方法都是在编译期就确定的，这也是为什么 Swift 比 OC 性能高的原因。但是在 Swift 中所有继承自 NSObject 的类，仍然保留了 Objective-C 的动态性。如果想要使用它的动态性就需要加上 @objc 关键字，本篇文章就来讲一下，哪些情况需要用到 @objc。
+
+6、[为自定义属性包装类型添加类 @Published 的能力](https://mp.weixin.qq.com/s/USGJbLnR-l8Ajgcj8Vb7_A) -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：属性包装器允许你在一个独特的包装器对象中提取通用逻辑。你可以把属性包装器看作是一个额外的层，它定义了一个属性是如何在读取时存储或计算的。它有利于改善 getters 和 setters 中发现重复性代码的几率。本文介绍了 Swift 编译器如何将属性包装类型转译为标准的 Swift 代码，并通过几个实例让读者对属性包装器的用法有更深的了解。
+
+***
+> 本期优秀博客的主题为：酷炫动画框架推荐。
+
+开发过程中，如果需要比较复杂的动画，一般都是由设计师来处理，前端负责展示。设计师会给我们提供gif、webp、apng等格式的资源，然而因为资源体积或者效果的原因，我们需要一些特殊的实现方式，本期就推荐几个跨平台的酷炫动画框架：Lottie、SVGA、VAP、PAG。
+
+1、[Lottie](https://github.com/airbnb/lottie-ios "Lottie") -- 来自Github：Airbnb
+
+[@我是熊大](https://github.com/Tliens)：Lottie 是Airbnb开源的一套成熟的跨平台动画框架。
+
+优势：
+
+- 1. 因为动画文件通常是 图片+json描述文件，所以我们可以对动画进行解析和调整
+- 2. 官方提供了非常多的免费动画，社区是这几个当中比较完善的
+- 3. 多端效果能保持一致
+
+缺点: 
+- 1. 效果一般，有特效限制
+- 2. 文件提交在动画比较复杂时依旧会达到数兆
+
+2、[SVGA](https://svga.io/intro.html "SVGA") -- 来自博客：SVGA
+
+[@我是熊大](https://github.com/Tliens)：SVGA 是一种跨平台的开源动画格式，同时兼容 iOS / Android / Web。SVGA 除了使用简单，性能卓越，同时让动画开发分工明确，各自专注各自的领域，大大减少动画交互的沟通成本，提升开发效率。
+
+3、[VAP](https://github.com/Tencent/vap "VAP") -- 来自Github：VAP
+
+[@我是熊大](https://github.com/Tliens)：VAP是企鹅电竞开发，用于播放特效动画的实现方案。具有高压缩率、硬件解码等优点。同时支持 iOS,Android,Web 平台。
+
+4、[PAG](https://www.jianshu.com/p/94a98c203763 "PAG") -- 来自博客：PAG
+
+[@我是熊大](https://github.com/Tliens)：PAG 是一套完整的动画工作流解决方案。提供从 AE (Adobe After Effects) 导出插件，到桌面预览工具，再到覆盖 iOS，Android，macOS，Windows，Linux 和 Web 等各平台的渲染 SDK。PAG 方案目前已经接入了腾讯系 40 余款应用，包括微信，手机QQ，王者荣耀，腾讯视频，QQ音乐等头部产品。
+
+******
