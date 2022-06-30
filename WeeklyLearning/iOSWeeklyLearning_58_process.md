@@ -57,7 +57,7 @@ NSAppTransportSecurity : Dictionary {
 		}
 }
 ```
-> 如果你现有的ATS 配置存在冗余的键值，证明其已被摒弃。你可以查看[Document Revision History](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/RevisionHistory.html#//apple_ref/doc/uid/TP40016535-SW1) 明确相关键值的信息 
+> 如果你现有的ATS 配置存在冗余的键值，证明其已被摒弃。你可以查看[Document Revision History](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/RevisionHistory.html#//apple_ref/doc/uid/TP40016535-SW1 "Document Revision History") 明确相关键值的信息 
 
 #### 如何挑选合适的 ATS 配置
 
@@ -81,11 +81,11 @@ NSAppTransportSecurity : Dictionary {
 
 #### 参考资料
 
-[NSAppTransportSecurity](https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity?language=objc)
+[NSAppTransportSecurity](https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity?language=objc "NSAppTransportSecurity")
 
-[NSExceptionDomains](https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity/nsexceptiondomains?language=objc)
+[NSExceptionDomains](https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity/nsexceptiondomains?language=objc "NSExceptionDomains")
 
-[Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections?language=objc)
+[Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections?language=objc "Preventing Insecure Network Connections") 
 
 
 ## 内容推荐
