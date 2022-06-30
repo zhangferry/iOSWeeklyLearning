@@ -5,10 +5,9 @@
 ### 本期概要
 
 > * 本期话题：在您的 App 中提供帐户删除选项
-> * 本周学习：
-> * 内容推荐：
+> * 本周学习：如何配置合适的 ATS
+> * 内容推荐：WWDC22 推出的新技术和新内容（二番）
 > * 摸一下鱼：
-> * 岗位推荐：
 
 ## 本期话题
 
@@ -124,8 +123,6 @@ NSAppTransportSecurity : Dictionary {
 ## 摸一下鱼
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
-
-## 岗位推荐
 
 
 ## 关于我们
