@@ -125,11 +125,11 @@ NSAppTransportSecurity : Dictionary {
 
 整理编辑：[东坡肘子](https://www.fatbobman.com)、[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
-1、[Goldfishies](https://goldfishies.com)：开启真·摸鱼模式，在线养金鱼，有 5 种皮肤的鱼可选。对程序员来说刚刚好，不幼稚。
+1、[Goldfishies](https://goldfishies.com "Goldfishies")：开启真·摸鱼模式，在线养金鱼，有 5 种皮肤的鱼可选。对程序员来说刚刚好，不幼稚。
 
 ![](http://cdn.zhangferry.com//Images/20220630214456.png)
 
-2、[MusicForProgramming](https://musicforprogramming.net/fortyone "Felibe444")：极客风的听歌网站，纯文字的音乐播放器，作者说里面都是适合编程的音乐。
+2、[MusicForProgramming](https://musicforprogramming.net/fortyone "MusicForProgramming")：极客风的听歌网站，纯文字的音乐播放器，作者说里面都是适合编程的音乐。
 
 ![](http://cdn.zhangferry.com//Images/20220630213027.png)
 
