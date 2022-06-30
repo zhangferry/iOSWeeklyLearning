@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #58 | 极客风音乐播放器
+# iOS 摸鱼周报 #58 | 极客风听歌网站，纯文字音乐播放器
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -7,8 +7,7 @@
 > * 本期话题：在您的 App 中提供帐户删除选项
 > * 本周学习：如何配置合适的 ATS
 > * 内容推荐：WWDC22 推出的新技术和新内容（二番）
-> * 摸一下鱼：
-
+> * 摸一下鱼：开启真·摸鱼模式，在线养金鱼；极客风的听歌网站，纯文字的音乐播放器。
 ## 本期话题
 
 ### [在您的 App 中提供帐户删除选项](https://developer.apple.com/cn/support/offering-account-deletion-in-your-app "在您的 App 中提供帐户删除选项")
@@ -29,7 +28,7 @@
 
 **ATS 会阻止不符合最低安全规范的连接**
 
-![Apps-Transport-Security~dark@2x](https://docs-assets.developer.apple.com/published/eca371e3de/Apps-Transport-Security~dark@2x.png)
+![Apps-Transport-Security~dark@2x](http://cdn.zhangferry.com/Images/Apps-Transport-Security_dark@2x.png)
 
 <center> 图片来源于开发者官网</center>
 
@@ -122,7 +121,15 @@ NSAppTransportSecurity : Dictionary {
 
 ## 摸一下鱼
 
-整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+整理编辑：[东坡肘子](https://www.fatbobman.com)、[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+1、[Goldfishies](https://goldfishies.com "Goldfishies")：开启真·摸鱼模式，在线养金鱼，有 5 种皮肤的鱼可选。对程序员来说刚刚好，不幼稚。
+
+![](http://cdn.zhangferry.com//Images/20220630214456.png)
+
+2、[MusicForProgramming](https://musicforprogramming.net/fortyone "MusicForProgramming")：极客风的听歌网站，纯文字的音乐播放器，作者说里面都是适合编程的音乐。
+
+![](http://cdn.zhangferry.com//Images/20220630213027.png)
 
 
 ## 关于我们
