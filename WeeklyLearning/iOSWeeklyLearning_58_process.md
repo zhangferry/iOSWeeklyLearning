@@ -23,8 +23,70 @@
 
 ## 本周学习
 
-整理编辑：[JY](https://juejin.cn/user/1574156380931144)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638) 
+### 如何配置合适的 ATS（App Transport Security）配置
 
+为了增强应用与网络交互的安全，从 **iOS 9** 开始，苹果开启了称为应用传输安全 (ATS) 的网络功能用于提高所有应用和应用扩展的隐私和数据完整性。
+
+**ATS 会阻止不符合最低安全规范的连接**
+
+![Apps-Transport-Security~dark@2x](https://docs-assets.developer.apple.com/published/eca371e3de/Apps-Transport-Security~dark@2x.png)
+
+<center> 图片来源于开发者官网</center>
+
+#### 为什么需要进行 ATS 配置
+
+ATS 为我们的应用安全增加了保护，但是由于某些原因，我们不得不需要某些手段来*规避* ATS 规则
+
+在 `info.plist` 中提供了 ATS 配置信息允许用户自定义规则
+
+**最新完整**的 ATS 配置键值如下：
+
+```
+NSAppTransportSecurity : Dictionary {
+    NSAllowsArbitraryLoads : Boolean
+    NSAllowsArbitraryLoadsForMedia : Boolean
+    NSAllowsArbitraryLoadsInWebContent : Boolean
+    NSAllowsLocalNetworking : Boolean
+    NSExceptionDomains : Dictionary {
+    	<domain-name-string> : Dictionary {
+      	  NSIncludesSubdomains : Boolean
+        	NSExceptionAllowsInsecureHTTPLoads : Boolean
+        	NSExceptionMinimumTLSVersion : String
+        	NSExceptionRequiresForwardSecrecy : Boolean
+    	}
+		}
+}
+```
+> 如果你现有的ATS 配置存在冗余的键值，证明其已被摒弃。你可以查看[Document Revision History](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/RevisionHistory.html#//apple_ref/doc/uid/TP40016535-SW1) 明确相关键值的信息 
+
+#### 如何挑选合适的 ATS 配置
+
+但是由于各种键值的组合分类繁杂，为了确保连通性，我们需要一个简单的方法，来寻找到我们最适合的 ATS 配置
+
+>  `nscurl --ats-diagnostics --verbose https://developer.apple.com`
+
+上述命令会模拟我们 ATS 中配置规则对项目中使用`URLSession:task:didCompleteWithError:`是否能够请求成功，也就是我们发起网络请求的结果。
+
+>  受限于篇幅，我们就不展示命令运行的结果
+
+从 ATS 默认的空字典开始，共计 16 中组合
+
+* `Result : PASS` 说明该配置可以连接到域名服务器成功
+
+* `Result : FAIL` 说明请求域名服务器失败，当前配置无法组合成功
+
+> **注：**虽然起列举的结果不包括    `NSAllowsArbitraryLoadsForMedia` ,`NSAllowsArbitraryLoadsInWebContent `, `NSAllowsLocalNetworking` ，但是这三个是针对特定的文件的，所以不会影响配置
+
+基于**最小最适用**原则选择对应的 ATS 配置。
+
+#### 参考资料
+
+[NSAppTransportSecurity](https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity?language=objc)
+
+[NSExceptionDomains](https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity/nsexceptiondomains?language=objc)
+
+[Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections?language=objc)
 
 
 ## 内容推荐
