@@ -28,7 +28,7 @@
 
 **ATS 会阻止不符合最低安全规范的连接**
 
-![Apps-Transport-Security~dark@2x](http://cdn.zhangferry.com/Images/Apps-Transport-Security_dark@2x.png)
+![Apps-Transport-Security~dark@2x](https://cdn.zhangferry.com/Images/Apps-Transport-Security_dark@2x.png)
 
 <center> 图片来源于开发者官网</center>
 

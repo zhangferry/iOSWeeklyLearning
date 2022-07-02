@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十二期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
@@ -30,7 +30,7 @@ $ defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 
 其还对应一个 xcodebuild 参数`-buildWithTimingSummary`，使用该参数，编译日志里也会带上个阶段耗时的统计分析。
 
-![](http://cdn.zhangferry.com/Images/20210522134121.png)
+![](https://cdn.zhangferry.com/Images/20210522134121.png)
 
 **Swift 耗时阈值设置**
 
@@ -41,7 +41,7 @@ Swift 编译器提供了以下两个参数：
 
 配置位置如下：
 
-![](http://cdn.zhangferry.com/Images/20210522133914.png)
+![](https://cdn.zhangferry.com/Images/20210522133914.png)
 
 分别对应了长函数体编译耗时警告和长类型检查耗时警告。
 
@@ -53,11 +53,11 @@ Swift 编译器提供了以下两个参数：
 
 Build Settings 里搜索 non-modular，将以下`Allow Non-modular Includes In Framework Modules`选项设置为 Yes。
 
-![](http://cdn.zhangferry.com/Images/20210522133020.png)
+![](https://cdn.zhangferry.com/Images/20210522133020.png)
 
 该选项进对 OC 模块代码有作用，对于 Swift 的引用还需要加另外一个编译参数：`-Xcc -Wno-error=non-modular-include-in-framework-module`。添加位置为：
 
-![](http://cdn.zhangferry.com/Images/20210522133508.png)
+![](https://cdn.zhangferry.com/Images/20210522133508.png)
 
 注意这两处设置均是对项目的设置，而非组件库。另外这些方案均是临时方案，最好还是要将所有依赖库全部 modular 化。
 
@@ -158,7 +158,7 @@ bool isBroadcast = [targetHostName hasSuffix:@"255"];
 
 如果用8位表示一个有符号整数，最高位为符号位，1 的表示为`0000 0001`。那 -1 该如何表示呢？答案是：`1111 1111`。如果你首次看到这个表示法可能很奇怪，为什么不是`1000 0001`呢，其实它是基于加法运算推演出来的结果。我们用让计算机计算`1 - 1`，即`1 + (-1)`，即`0000 0001 + 1111 1111` 结果为 `1 0000 0000`，舍去溢出的高位 1，结果就是 0 。所以 -1 对应到二进制就成了`1111 1111`。从正数到负数的表示，产生了补数的概念，它的计算是这样的：
 
-![](http://cdn.zhangferry.com/Images/20210522135424.png)
+![](https://cdn.zhangferry.com/Images/20210522135424.png)
 
 这个就是 1 到 -1 的计算方式。
 
@@ -166,7 +166,7 @@ bool isBroadcast = [targetHostName hasSuffix:@"255"];
 
 移位分两种，逻辑移位和算数移位，看下面示例：
 
-![](http://cdn.zhangferry.com/Images/20210522223515.png)
+![](https://cdn.zhangferry.com/Images/20210522223515.png)
 
 逻辑移位会在空缺部分补 0，算数右移会在空缺部分补符号位。左移的话都是补 0，没有区别。
 
@@ -204,13 +204,13 @@ if (NSHostByteOrder() == NS_BigEndian) {
 
 内存的内部是由各种 IC 电路组成的，它的种类很庞大，但是其主要分为三种存储器：随机存储器（RAM）、只读存储器（ROM）和高速缓存（Cache）。高速缓存通常又会分为一级缓存（L1 Cache）、二级缓存（L2 Cache）、三级缓存（L3 Cache），它位于内存和 CPU 之间，是一个读写速度比内存更快的存储器。以上分类从前往后速度越来越快。
 
-![](http://cdn.zhangferry.com/Images/20210522223549.png)
+![](https://cdn.zhangferry.com/Images/20210522223549.png)
 
 为什么会有这么多缓存呢？主要是有两方面的考虑：速度和成本。读取速度越高的设备成本也会越高，为了在这两者之间进行平衡才加入了各个缓存。后者都可以作为前者的缓存，比如可以把主存作为硬盘的缓存，也可以把高速缓存作为主存的缓存。
 
 以下是各种设备的读取速度对比：
 
-![](http://cdn.zhangferry.com/Images/20210522143424.png)
+![](https://cdn.zhangferry.com/Images/20210522143424.png)
 
 缓存的使用逻辑大致是，没有对应数据时向上一级寻找，如果找到了就在当级缓存下来，下次再寻找相同的内容就可以直接从当级的缓存调用了。因为作为缓存的部分一般都比其上一级容量更小，所以缓存内容就不可能一直存在，需要按照一定规则进行移除，这就引出了LRU（Least Recently Used，最近最少使用）算法，它是将最近一段时间内最少被访问过的数据淘汰出缓存，提高缓存的利用率。
 
@@ -244,7 +244,7 @@ RLE 是 run-length encoding的缩写，中文翻译为游程编码，是一种�
 
 哈夫曼编码是一种使用变长编码表对源符号进行编码的无损压缩编码方式。其特征是对于出现频率较高的字符使用较短的编码符号。对于 AAAAAABBCDDEEEEEF 这几个字符使用哈夫曼编码的结果如下：
 
-![](http://cdn.zhangferry.com/Images/20210522213007.png)
+![](https://cdn.zhangferry.com/Images/20210522213007.png)
 
 ## 优秀博客
 
@@ -312,7 +312,7 @@ SwiftFormat 是用于重新格式化 Swift 代码的命令行工具。它会在�
 
 如果有自动化的工具能完成这些工作，那几乎是最完美的方案了。在代码 review 时就不需要每次都强调无数遍繁琐的代码格式问题了。
 
-![](http://cdn.zhangferry.com/Images/20210522213832.png)
+![](https://cdn.zhangferry.com/Images/20210522213832.png)
 
 ### Notion
 
@@ -334,7 +334,7 @@ Notion 是一款极其出色的个人笔记软件，它将“万物皆对象”�
 * 保存历史操作记录并记录相关时间
 * 强大的关联功能，比如日历与笔记，笔记与文件以及网页链接
 
-![](http://cdn.zhangferry.com/Images/20210522213919.png)
+![](https://cdn.zhangferry.com/Images/20210522213919.png)
 
 ## 联系我们
 
@@ -348,4 +348,4 @@ Notion 是一款极其出色的个人笔记软件，它将“万物皆对象”�
 
 [iOS摸鱼周报 第十一期](https://zhangferry.com/2021/05/16/iOSWeeklyLearning_11/)
 
-![](http://cdn.zhangferry.com/Images/wechat_official.png)
+![](https://cdn.zhangferry.com/Images/wechat_official.png)

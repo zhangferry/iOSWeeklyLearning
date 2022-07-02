@@ -7,15 +7,15 @@
 
 来自`岁寒啊`的整理，基本涵盖iOS各个方面的知识点，熟练掌握在这内容，再也不怕iOS”八股文“了。
 
-![](http://cdn.zhangferry.com/Images/20201220131223.png)
+![](https://cdn.zhangferry.com/Images/20201220131223.png)
 
 每个章节都会有展开内容，多为直接整理，少部分为链接内容。
 
-![](http://cdn.zhangferry.com/Images/20201220131326.png)
+![](https://cdn.zhangferry.com/Images/20201220131326.png)
 
 ### [SwiftUI官方教程](https://developer.apple.com/tutorials/app-dev-training)
 
-![](http://cdn.zhangferry.com/Images/20201219201033.png)
+![](https://cdn.zhangferry.com/Images/20201219201033.png)
 
 地址：https://developer.apple.com/tutorials/app-dev-training
 
@@ -25,7 +25,7 @@
 
 地址：https://wangdoc.com/bash/
 
-![](http://cdn.zhangferry.com/Images/20201219202410.png)
+![](https://cdn.zhangferry.com/Images/20201219202410.png)
 
 阮一峰老师制作的Bash脚本教程，主要介绍Linux命令行Bash的基本用法和脚本编程。Bash脚本应该是少有的一个横跨前端、后端及移动端，很多场景都有使用的语言工具。在移动端即使你没有编写Bash脚本的需求，也免不了会需要分析一些脚本的功能。
 
@@ -36,7 +36,7 @@
 
 开发过程中遇到问题是非常常见的，解决问题的过程免不了要向别人或者社区论坛提问，而提问方式的好坏通常决定了你能否获得想要的答案。有这么一个github仓库：[How-To-Ask-Questions-The-Smart-Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) star数高达13.7k，专门讲述如何更有效的提问，很多论坛也将这个作为提问准则，用于提醒大家有效提问的重要性。
 
-![](http://cdn.zhangferry.com/Images/20210103203707.png)
+![](https://cdn.zhangferry.com/Images/20210103203707.png)
 
 一个好的提问，即表达了自己对问题答案的渴望，也表达了对解答者的尊重。
 
@@ -44,14 +44,14 @@
 
 [halfrost ](https://github.com/halfrost)总结的leetcode算法题解，使用go语言完成，书中各个题目代码都已经beats 100% 了。
 
-![](http://cdn.zhangferry.com/Images/20210103211318.png)
+![](https://cdn.zhangferry.com/Images/20210103211318.png)
 
 ***
 ### 《Flutter技术解析与实战》
 
 咸鱼团队对Flutter技术的探索与实战分析，听说他们已经在准备写第二本Flutter书了。可以关注公众号：**咸鱼技术获取**，后台免费获取，另有实体书可以淘宝搜索购买。
 
-![](http://cdn.zhangferry.com/Images/20210110171712.png)
+![](https://cdn.zhangferry.com/Images/20210110171712.png)
 
 ### 《Flutter开发实站详解》
 
@@ -59,14 +59,14 @@
 
 地址：[GSY Flutter](https://guoshuyu.cn/home/wx/ "GSY Flutter ")
 
-![](http://cdn.zhangferry.com/Images/20210110172952.png)
+![](https://cdn.zhangferry.com/Images/20210110172952.png)
 
 ***
 ### [Refactoring.Guru](https://refactoringguru.cn/ "Refactoring.Guru")
 
 一个非常有趣的讲解设计模式、SOLID原则、重构原则的网站。支持八种语言，有很多丰富的配图帮助我们理解这些重要的编程概念。
 
-![](http://cdn.zhangferry.com/Images/20210124190413.png)
+![](https://cdn.zhangferry.com/Images/20210124190413.png)
 
 ***
 ### [30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python "30-Days-Of-Python")
@@ -75,7 +75,7 @@
 
 教程按照天数分为30天，每天都会介绍一些Python概念，伴有示例和练习。正如该仓库的介绍说的那样，真要30天完成这些内容的学习对很多人来说都是一个挑战，我们可以根据自己的节奏去学习，即使100天才学完他们都是可以的。
 
-![](http://cdn.zhangferry.com/Images/20210228174503.png)
+![](https://cdn.zhangferry.com/Images/20210228174503.png)
 
 ### [Python-100-Days](https://github.com/jackfrued/Python-100-Days "Python-100-Days")
 
@@ -91,14 +91,14 @@
 
 这个斯坦福的iOS开发系列教程每年都会更新，最早之前还是OC语言，还是再讲MVC。现在已经更新到Swift和MVVM了，并使用SwiftUI 进行视图搭建。除视频需要到Youtube观看外，其他内容可以在国内网络环境访问。
 
-![](http://cdn.zhangferry.com/Images/20210227190060.png)
+![](https://cdn.zhangferry.com/Images/20210227190060.png)
 
 
 
 ***
 ### iOS开发者资源大全
 
-![](http://cdn.zhangferry.com/Images/20210313212015.png)
+![](https://cdn.zhangferry.com/Images/20210313212015.png)
 
 **推荐来源**：[cat13954](https://github.com/cat13954)
 
@@ -119,14 +119,14 @@
 
 作者在每个章节都会设计一些问题，答对了才能进到下一章节。前面几节在讲人工智能学习的一些概念和核心数学思想，最后的两个章节属于练习题，我感觉还是有点难的。但课程整体还是很有意思的，如果想了解可以买来看看。下图是课程的目录：
 
-![](http://cdn.zhangferry.com/Images/20210328103223.png)
+![](https://cdn.zhangferry.com/Images/20210328103223.png)
 
 ***
 ### Can Balkaya
 
 Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](https://canbalkaya.blog/ "Can Balkaya")，经常发布一些介绍Swift特性相关的文章，质量都很高。我在别的地方看到有人翻译过里面部分文章，说明它还是有一定关注度的，如果英文稍微好些的可以直接订阅这个专栏来看。
 
-![](http://cdn.zhangferry.com/Images/20210411102014.png)
+![](https://cdn.zhangferry.com/Images/20210411102014.png)
 
 ***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -139,7 +139,7 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 入门级的 Git 使用教程，用图形化的方式来介绍 Git 的各个命令，每一关都有一个小测试来巩固知识点。编者自己过了一遍了，体验很不错，同时填补了我自己一些 Git 知识上的漏洞和误区。
 
-![](http://cdn.zhangferry.com/Images/20210420215429.png)
+![](https://cdn.zhangferry.com/Images/20210420215429.png)
 
 ***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -154,7 +154,7 @@ Can Balkaya是WWDC20的学生挑战赛冠军，当前在Medium开了[专栏](htt
 
 由新加坡国立大学的教授和学生发起、制作并完善的「数据结构和算法动态可视化」网站，在该网站你可以看到许多经典、非经典的，常见的、非常见的算法的可视化，清晰明了的图形化表现和实时的代码解读可以帮助读者更好地理解各种算法及数据结构。同时该网站支持自动问题生成器和验证器（在线测验系统）。
 
-![VisuAlgo](http://cdn.zhangferry.com/Images/20210430185031.png)
+![VisuAlgo](https://cdn.zhangferry.com/Images/20210430185031.png)
 
 ### [Announcing our Deprecated Books Repo!](https://www.raywenderlich.com/21965623-announcing-our-deprecated-books-repo)
 
@@ -195,7 +195,7 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 
 [喵神](https://weibo.com/onevcat)关于 `async-swift` 的书开工了。是关于Swift5.5的新特性**协程**，待书籍完工的第一时间我们会通过周报再通知到大家。
 
-![New Book! Go!](http://cdn.zhangferry.com/Images/11661621992188_.pic.jpg)
+![New Book! Go!](https://cdn.zhangferry.com/Images/11661621992188_.pic.jpg)
 
 ### 30 seconds of code
 
@@ -203,7 +203,7 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 
 该网站的口号是：「能找到满足你所有开发需求的代码片段！」，他有许多语言的常用代码片段（Code Snippets），例如排序算法、hex 转 rgb、时间转换等等，能让你轻松地找到各个语言的这些常用代码，让你的开发效率大大提升！（可惜目前还没有 `Swift` 的板块🥲
 
-![](http://cdn.zhangferry.com/Images/20210529183606.png)
+![](https://cdn.zhangferry.com/Images/20210529183606.png)
 
 ***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -227,7 +227,7 @@ iOS Core Animation: Advanced Techniques 的中文译本 GitBook 版，翻译自 
 
 链接：https://www.avanderlee.com/
 
-![](http://cdn.zhangferry.com/Images/20210613155259.png)
+![](https://cdn.zhangferry.com/Images/20210613155259.png)
 
 一个分享关于 Swift、iOS 和 Xcode 技巧和窍门的每周博客，博客的文章写得清晰易懂，排版、配图和动画质量也很高。值得关注一下。同时网站作者也是 [《Swift for Good》](https://www.swiftforgood.com/ "Swift for Good") 的联合作者之一。《Swift for Good》是由20位顶级作家和演讲者撰写的新书，其所有收入将100%捐给慈善机构，有兴趣也可以看一下😺。
 
@@ -293,7 +293,7 @@ Git Cheat Sheet 让你不用再去记所有的 git 命令！对新手友好，�
 
 一个用来学习 Combine 的 App，他将一些 Combine 中的各种操作符用可视化的手段表达了出来，还附加了蠢萌蠢萌的动画效果，很适合刚接触 Combine 的朋友尝试一下。
 
-![](http://cdn.zhangferry.com/Images/co.png)
+![](https://cdn.zhangferry.com/Images/co.png)
 
 ### Stanford CS193P 2021 SwiftUI 2.0 双语字幕
 
@@ -340,7 +340,7 @@ Better Explaine 是一个帮助你真正理解数学概念、使数学概念变�
 
 由布朗大学的学生制作的「看见统计」课程，致力于用数据可视化的手段让数理统计概念更容易理解。其中的内容与国内本科的概率论与数理统计内容也大致相仿，且对于中文的本地化支持的非常好。
 
-![](http://cdn.zhangferry.com/Images/%E6%88%AA%E5%B1%8F2021-08-06%20%E4%B8%8B%E5%8D%885.41.41.png)
+![](https://cdn.zhangferry.com/Images/%E6%88%AA%E5%B1%8F2021-08-06%20%E4%B8%8B%E5%8D%885.41.41.png)
 
 ### Hacker Laws
 
@@ -470,7 +470,7 @@ gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 
 来自 Microsoft 的 Data Science 基础课程，为期 10 周，有 20 节课。这是一个基于项目的课程，配套 40 多个小测试，通过该课程你可以学习到关于数据科学的基础知识。每节课程还有精美的插画配图，有兴趣学习 Data Science 的朋友可以尝试一下。
 
-![](http://cdn.zhangferry.com/Images/Data-Science-For-Beginners.png)
+![](https://cdn.zhangferry.com/Images/Data-Science-For-Beginners.png)
 
 ***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -606,7 +606,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 这是一份可视化的 Web 技能列表，它对刚开始学习 Web 或已经工作多年并想学习新东西的人都很有用，你可以从中了解 Web 开发的大概路径和图谱，按顺序或者选择自己感兴趣的部分来看。除此之外最吸引人的是这个列表可视化的非常棒，每个图标符号都很大方美观形象，快来看一下！
 
-![](http://cdn.zhangferry.com/Images/Web%20Skills.png)
+![](https://cdn.zhangferry.com/Images/Web%20Skills.png)
 
 ***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -656,7 +656,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 一份由 Swift 语言实现的设计模式教程。其中设计模式的举例清晰明了，代码也简洁易懂，大部分例子中有 UML 图来帮助理解，其中也会有一些对于不同设计模式之间区别与联系的总结和归纳，是很不错的学习设计模式的资源。
 
-![](http://cdn.zhangferry.com/Images/20220302215124.png)
+![](https://cdn.zhangferry.com/Images/20220302215124.png)
 
 ***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -676,7 +676,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 一本 Rust 书籍，有简体和繁体版（英文版和日文版正在撰写中），内容包括算法分析，基本数据结构和算法，外加一些实战，共有九章。包含了大家常用的常见的数据结构的实现和讲解，配有详实的代码和清晰简明的图解。
 
-![](http://cdn.zhangferry.com/Images/%E6%88%AA%E5%B1%8F2022-03-17%20%E4%B8%8B%E5%8D%886.37.13.png)
+![](https://cdn.zhangferry.com/Images/%E6%88%AA%E5%B1%8F2022-03-17%20%E4%B8%8B%E5%8D%886.37.13.png)
 
 ***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -696,7 +696,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 由[即时设计](https://js.design/)社区组织的精选设计课程，即时设计是一款可以在线实时协作的专业 UI 设计工具，类似 Figma。在即时教程中你可以找到来自各大视频网站平台创作者们的免费高质量课程。从零基础开始一步步到做案例，进阶技巧，应有尽有，非常适合想学一点 UI 知识的程序员们。
 
-![](http://cdn.zhangferry.com/Images/20220331222838.png)
+![](https://cdn.zhangferry.com/Images/20220331222838.png)
 
 ***
 整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
@@ -726,7 +726,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 这是一份关于 Python 的实践指南，该指南目前持续不断地更新与完善，在 Github 上有 5.8k 的 Stars。它旨在为 Python 初学者和专家提供一个关于 Python 安装、配置和日常使用的最佳实践手册。涵盖各种平台的 Python 安装、优秀的模块推荐、配合不同的 web 框架和工具、如何写出优雅的 Python 代码等内容。链接中的这份是该指南的中文版。
 
-![](http://cdn.zhangferry.com/Images/52-python.png)
+![](https://cdn.zhangferry.com/Images/52-python.png)
 
 ***
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -746,7 +746,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 地址：https://babyyoung.gitbook.io/english-level-up-tips/
 
-![](http://cdn.zhangferry.com/Images/20220518204154.png)
+![](https://cdn.zhangferry.com/Images/20220518204154.png)
 
 英语是程序员绕不过去的一项技能，虽然我们可能从小学就开始接触英语了，但直到毕业工作，英语能够不成为学习障碍还是一件不容易的事情。这其中的差别很大成分可以归结为学习方法，这份文档就是这样一个注重方法和可操作性的英语学习指南。
 

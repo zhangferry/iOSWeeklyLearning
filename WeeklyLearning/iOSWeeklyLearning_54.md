@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 #54 | Apple 辅助功能持续创新
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -14,7 +14,7 @@
 
 ### [Apple 在辅助功能上的又一创新](https://www.apple.com/newsroom/2022/05/apple-previews-innovative-accessibility-features/ "Apple 在辅助功能上的又一创新")
 
-![](http://cdn.zhangferry.com/Images/20220519094126.png)
+![](https://cdn.zhangferry.com/Images/20220519094126.png)
 
 [@zhangferry](zhangferry.com)：作为一款受众非常广的产品，针对特殊人群的辅助功能就显得尤为重要，不得不说 Apple 对辅助功能的重视程度和探索精神都是值得尊敬的。最近 Apple 又公布了一些基于软硬件和机器学习带来的辅助功能提升。
 
@@ -232,13 +232,13 @@ $ echo -e "\e[31mRed Text\e[0m"
 
 4、[Airport](https://app.airport.community/ "Airport")
 
-![](http://cdn.zhangferry.com/Images/airport_screenshoot.jpeg)
+![](https://cdn.zhangferry.com/Images/airport_screenshoot.jpeg)
 
 [@zhangferry](zhangferry.com)：TestFlight 是 Apple 用于提供内测功能的应用，一般我们只是用它测试自己的应用或者已安装应用的升级尝鲜。TestFlight 版本的 App 有这些优点：审核相比 AppStore 要松很多、功能限制少、对于需要内购的产品可以 0 元尝鲜。但是对于外界还有哪些不为人熟知的 TF 版应用我们是不清楚的，Airport 要做的事情就是这个，你可以在这里根据分类和搜索挑选你喜欢的应用参与测试。
 
 5、[大疆无人机模拟飞行](https://start.dji.com/ "大疆无人机模拟飞行")
 
-![](http://cdn.zhangferry.com/Images/20220519114451.png)
+![](https://cdn.zhangferry.com/Images/20220519114451.png)
 
 [@zhangferry](zhangferry.com)：这是大疆出的无人机模拟飞行体验网站，打开之后等待页面渲染完成就可以在一个虚拟城市里体验操纵无人机的感觉。该模拟还配备了视角切换、拍照、录像等物理机具备的所有几乎所有功能。同时还有物理撞击的模拟，也就是说如果你飞行中撞到了建筑物，无人机也是会坠毁的，第一视角的坠毁效果做的很不错。
 
@@ -250,7 +250,7 @@ $ echo -e "\e[31mRed Text\e[0m"
 
 地址：https://babyyoung.gitbook.io/english-level-up-tips/
 
-![](http://cdn.zhangferry.com/Images/20220518204154.png)
+![](https://cdn.zhangferry.com/Images/20220518204154.png)
 
 英语是程序员绕不过去的一项技能，虽然我们可能从小学就开始接触英语了，但直到毕业工作，英语能够不成为学习障碍还是一件不容易的事情。这其中的差别很大成分可以归结为学习方法，这份文档就是这样一个注重方法和可操作性的英语学习指南。
 
@@ -286,4 +286,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS 摸鱼周报 第五十期](https://mp.weixin.qq.com/s/6IS0RlytWxjeRHyh0f2fXA)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

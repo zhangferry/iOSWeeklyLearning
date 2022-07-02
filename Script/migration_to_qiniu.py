@@ -16,9 +16,9 @@ images_path = "/Users/zhangferry/Downloads/Images-master"
 
 # http://r9ccmp2wy.hb-bkt.clouddn.com/Images
 # https://gitee.com/zhangferry/Images/raw/master/
-link_prefix = r"http://r9ccmp2wy.hb-bkt.clouddn.com/Images"
+link_prefix = r"http://cdn.zhangferry.com/Images"
 
-cdn_path = "http://cdn.zhangferry.com/Images"
+cdn_path = "https://cdn.zhangferry.com/Images"
 # qiniu config
 k_access_key = "HF6aHnsNHPJRePvl2PTE7Z_jWT_9kts2t4vgyB-u"
 k_secret_key = "Db-SRqLu9T0-1W3I8LfyM__aCGyvsuGBHbxn2v_A"
@@ -38,16 +38,17 @@ def parse_urls(repo_map):
                     # if idx == 1:
                     #     break
                     file = sub_root + "/" + file
-                    print(file)
+                    # print(file)
                     with open(file, 'r') as fp:
                         content = fp.read()
                         regular_expre(content, file)
 
 
-def regular_expre(content: Str, path: Str):
+def regular_expre(content, path):
     # result is wrapped by brackets
     # for markdown
     rex1 = r"!\[.*\]\(({}.*)\)".format(link_prefix)
+    # rex1 = r"({}.*)".format(link_prefix)
     # for hexo header
     rex2 = r"cover: *({}.*)".format(link_prefix)
 
@@ -58,10 +59,11 @@ def regular_expre(content: Str, path: Str):
         res_list = pattern.findall(content)
         for res in res_list:
             # pure link
-            print(res)
+            # print(res)
             file_name = f"{res}".split("/")[-1]
             new_link = f"{cdn_path}/{file_name}"
-            # print(new_link)
+            print(f"find url:{res}")
+            print(f"new url:{new_link}")
             # upload_file(path)
             content = content.replace(res, new_link)
 
@@ -73,7 +75,7 @@ def regular_expre(content: Str, path: Str):
 
 
 def upload_file(file_path):
-    host = "https://upload-z1.qiniup.com"
+    host = "https://cdn.zhangferry.com"
 
     # 需要填写你的 Access Key 和 Secret Key
     access_key = k_access_key

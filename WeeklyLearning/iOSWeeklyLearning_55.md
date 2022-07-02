@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 #55 | WWDC 码上就位
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -14,7 +14,7 @@
 
 ### [WWDC22 码上就位](https://developer.apple.com/wwdc22/ "WWDC22 码上就位")
 
-![](http://cdn.zhangferry.com/Images/20220526003950.png)
+![](https://cdn.zhangferry.com/Images/20220526003950.png)
 
 [@zhangferry](zhangferry.com)：WWDC22 已经快到了，Apple 放出了一些开发者大会的活动安排，我们可以根据这些安排了解 WWDC 的整个过程。
 
@@ -212,7 +212,7 @@ let webview = WKWebView(frame: .zero, configuration: config)
 
 3、[Beautify Github Profile](https://github.com/rzashakeri/beautify-github-profile "Beautify Github Profile") -- 来自 Github
 
-![](http://cdn.zhangferry.com/Images/20220525231909.png)
+![](https://cdn.zhangferry.com/Images/20220525231909.png)
 
 [@zhangferry](zhangferry.com)：Github 自定义 Profile 是一个很棒的功能，我们可以用它定制自己的个人介绍页面。它的使用非常简单，建一个跟用户名同名的仓库，该仓库的 README.md 即是 Profile 的展示页面。Github 有很多做的很漂亮的样式都有对应的开源配置链接，该仓库对这类配置进行了收录整理。
 
@@ -271,4 +271,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS 摸鱼周报 #51 | 游戏版号恢复发放](https://mp.weixin.qq.com/s/ogjhELipiVFRaYJkT2NQwA)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

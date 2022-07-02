@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 第四十八期
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -222,4 +222,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十四期](https://mp.weixin.qq.com/s/q__-veuaUZAK6xGQFxzsEg)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

@@ -2,7 +2,7 @@
 
 Parsifal 是老司机周报的主编，今年他给摸鱼周报提供了很多帮助和建议，这里对他再次表达一下感谢。这次邀请他来做一期访谈，主题分为两部分，一部分是老司机周报的发展故事和他的行业观察，另一部分是他对开发者的一些建议。如果大家还有其他问题欢迎留言提问~
 
-![](http://cdn.zhangferry.com/Images/20211211190529.png)
+![](https://cdn.zhangferry.com/Images/20211211190529.png)
 
 ### 简单介绍下自己吧
 
@@ -40,7 +40,7 @@ Parsifal 是老司机周报的主编，今年他给摸鱼周报提供了很多�
 
 未来的走向我现在不太好说，但目前的形势是很好的，今年做的几个尝试反响也很好，我们会争取更大的影响力，并继续尝试与苹果做一些进一步的合作。当然，更具体的未来规划，就等我们下一任主编官宣后再聊了。
 
-![](http://cdn.zhangferry.com/Images/ant-rozetsky-HXOllTSwrpM-unsplash.jpg)
+![](https://cdn.zhangferry.com/Images/ant-rozetsky-HXOllTSwrpM-unsplash.jpg)
 
 ### 随着移动互联网红利的消失，对 iOS 开发的要求可能不再仅限于能做出一个 App。如果需要进一步提升，学习的广度和深度，哪一个帮助可能更大？
 

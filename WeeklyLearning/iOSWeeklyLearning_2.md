@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。成立的目的一个是开发知识碎片化，需要有一个地方去总结并用于回顾；另一个是为了提醒自己不断学习，内卷日益严重的开发环境下，不进则退。
 
@@ -75,7 +75,7 @@ git push --mirror git@host/new.git # 使用mirror参数推送至新仓库
 
 日期格式在国内的通常记法是yyyy-mm-dd，年月日的格式，但是不同地区它们的习惯会有所不同，以下按地区划分：
 
-![](http://cdn.zhangferry.com/Images/image.png)
+![](https://cdn.zhangferry.com/Images/image.png)
 
 参考：https://zh.wikipedia.org/wiki/%E5%90%84%E5%9C%B0%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E8%A1%A8%E7%A4%BA%E6%B3%95
 
@@ -93,7 +93,7 @@ git push --mirror git@host/new.git # 使用mirror参数推送至新仓库
 
 各个地区对小数点的使用可以看这张图的总结：
 
-![](http://cdn.zhangferry.com/Images/20210101223402.png)
+![](https://cdn.zhangferry.com/Images/20210101223402.png)
 
 参考资料：https://zh.wikipedia.org/wiki/%E5%B0%8F%E6%95%B8%E9%BB%9E
 
@@ -145,7 +145,7 @@ extension在编译期决议，它就是类的一部分，在编译期和头文�
 
 ### 什么是Clang
 
-![](http://cdn.zhangferry.com/Images/clang.png)
+![](https://cdn.zhangferry.com/Images/clang.png)
 
 Clang 是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端。它的目标是提供一个GNU编译器套装（GCC）的替代品，支持了GNU编译器大多数的编译设置以及非官方语言的扩展。作者是克里斯·拉特纳（Chris Lattner）。
 
@@ -161,7 +161,7 @@ LLVM有两层含义，广义的LLVM是指一个完整的编译器架构，包括
 
 狭义的LLVM仅指编译器后端功能的一些列模块和库，由Clange编译出的中间件经过LLVM后端处理变成对应机器码。
 
-![](http://cdn.zhangferry.com/Images/llvm.png)
+![](https://cdn.zhangferry.com/Images/llvm.png)
 
 ### 什么是ld
 
@@ -235,7 +235,7 @@ linkmap（Link Map File）指的就是记录链接相关信息的纯文本文件
 
 开发过程中遇到问题是非常常见的，解决问题的过程免不了要向别人或者社区论坛提问，而提问方式的好坏通常决定了你能否获得想要的答案。有这么一个github仓库：[How-To-Ask-Questions-The-Smart-Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way) star数高达13.7k，专门讲述如何更有效的提问，很多论坛也将这个作为提问准则，用于提醒大家有效提问的重要性。
 
-![](http://cdn.zhangferry.com/Images/20210103203707.png)
+![](https://cdn.zhangferry.com/Images/20210103203707.png)
 
 一个好的提问，即表达了自己对问题答案的渴望，也表达了对解答者的尊重。
 
@@ -243,7 +243,7 @@ linkmap（Link Map File）指的就是记录链接相关信息的纯文本文件
 
 [halfrost ](https://github.com/halfrost)总结的leetcode算法题解，使用go语言完成，书中各个题目代码都已经beats 100% 了。
 
-![](http://cdn.zhangferry.com/Images/20210103211318.png)
+![](https://cdn.zhangferry.com/Images/20210103211318.png)
 
 ## 工具推荐
 
@@ -259,7 +259,7 @@ linkmap（Link Map File）指的就是记录链接相关信息的纯文本文件
 
 作者的 [SwiftUI 实验室](https://swiftui-lab.com)，A Companion for SwiftUI 是一款可以记录 iOS 和 macOS 平台的 SwiftUI 视图，形状，协议，场景和属性包装的应用程序。该应用程序还包含每种方法的示例，其中有许多都是交互式的，并且嵌入在应用程序中运行。通过使用关联的控件，你可以看到它们对视图的直接影响，以及如何修改你的代码以产生这样的效果。
 
-![](http://cdn.zhangferry.com/Images/20210103204133.png)
+![](https://cdn.zhangferry.com/Images/20210103204133.png)
 
 
 
@@ -275,7 +275,7 @@ linkmap（Link Map File）指的就是记录链接相关信息的纯文本文件
 
 1. 双击下载的文件, 将Go2Shell拖入Applications目录中
 2. 在Applications中, 双击打开Go2Shell, 出现下面的窗口
-   ![](http://cdn.zhangferry.com/Images/20210103221327.png)
+   ![](https://cdn.zhangferry.com/Images/20210103221327.png)
 3. 点击Install Go2Shell to Finder完成安装
 4. 打开Finder窗口, 在工具栏中出现Go2Shell图标
 5. 点击Go2Shell图标, 就会在终端中打开当前Finder目录

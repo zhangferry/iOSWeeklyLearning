@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十四期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
@@ -10,7 +10,7 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 整理编辑：[人魔七七](https://github.com/renmoqiqi)
 
-![包大小优化脑图](http://cdn.zhangferry.com/Images/%E5%AE%89%E8%A3%85%E5%8C%85%E7%98%A6%E8%BA%AB.jpeg)
+![包大小优化脑图](https://cdn.zhangferry.com/Images/%E5%AE%89%E8%A3%85%E5%8C%85%E7%98%A6%E8%BA%AB.jpeg)
 
 因篇幅问题仅展示一张梳理过后的图片，完整文章可以查看小专栏的这篇：https://xiaozhuanlan.com/topic/6147250839。
 
@@ -26,7 +26,7 @@ iOS摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 iOS 开发者账号续费虽然流程有点繁琐且只支持信用卡付款，但是每年都能顺利的续费成功，今年续费磕磕绊绊试了很多次都不成功，总是提示“你的支付授权失败。请核对你的信息并重试，或尝试其他支付方式。请联系你的银行了解更多信息。”，如下图：
 
-![](http://cdn.zhangferry.com/Images/20210605174833.png)
+![](https://cdn.zhangferry.com/Images/20210605174833.png)
 
 下面主要分析如何解决 iOS 开发者账号续费时出现 “你的支付授权失败...” 的问题。
 
@@ -54,7 +54,7 @@ iOS 开发者账号续费虽然流程有点繁琐且只支持信用卡付款，�
 
 * 确保我们的信用卡，同时支持银联 + Visa / Mastercard。
 
-![](http://cdn.zhangferry.com/Images/20210605174707.png)
+![](https://cdn.zhangferry.com/Images/20210605174707.png)
 
 * 确保信用卡开通了网上支付功能
 * 确保信用卡开通了境外支付功能，有的卡默认开通，有的没有开通（我的交行信用卡是默认开通了）
@@ -74,7 +74,7 @@ Web 前端的主要技术是围绕 HTML/CSS、 JavaScript 发展的。在过去�
 
 ### 什么是 React
 
-![](http://cdn.zhangferry.com/Images/20210605211826.png)
+![](https://cdn.zhangferry.com/Images/20210605211826.png)
 
 内容整理：[zhangferry](https://zhangferry.com)
 
@@ -144,7 +144,7 @@ ReactDOM.render(
 
 [React Native](https://reactnative.dev/) 是一个使用 `React` 和应用平台的原生功能来构建 Android 和 iOS 应用的开源框架，其已经不是一个 Web 前端框架，而是一个移动端框架。通过 React Native，可以使用 JavaScript 来访问移动平台的 API，以及使用 React 组件来描述 UI 的外观和行为：一系列可重用、可嵌套的代码。通过一张图简单了解下 React Native 在移动开发中的架构：
 
-![](http://cdn.zhangferry.com/Images/20210605200722.png)
+![](https://cdn.zhangferry.com/Images/20210605200722.png)
 
 其具有这些特点：跨平台（JavaScript 框架）虚拟 DOM、热更新，iOS 审核有限制、对 Web 开发者友好，上手快，性能几乎和原生相当。
 
@@ -171,7 +171,7 @@ yarn ios
 
 ### 什么是 Vue
 
-![](http://cdn.zhangferry.com/Images/20210605011045.png)
+![](https://cdn.zhangferry.com/Images/20210605011045.png)
 
 内容整理：[师大小海腾](https://juejin.cn/user/782508012091645)
 
@@ -181,7 +181,7 @@ yarn ios
 
 这是 Vue 与其他 JS 框架最大的不同。渐进式框架简单理解就是：你可以只用我的一部分，而非必须用我的全部；你可以仅将我作为应用的一部分嵌入，而非必须全部使用。Vue 支持你根据实际需求，在不同的阶段使用 Vue 中不同的功能，用最小最快的成本一步步搭建应用，不断渐进，而不是要求你一下子用上全家桶（vue-cli、vue-router、vuex 等）。
 
-![](http://cdn.zhangferry.com/Images/20210605012155.png)
+![](https://cdn.zhangferry.com/Images/20210605012155.png)
 
 你可以看看：[Vue 作者尤雨溪：Vue 2.0，渐进式前端解决方案](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247485737&idx=1&sn=14fe8a5c72aaa98c11bf6fc57ae1b6c0&source=41#wechat_redirect "Vue作者尤雨溪：Vue 2.0，渐进式前端解决方案")
 
@@ -286,7 +286,7 @@ var app6 = new Vue({
 
 腾讯柠檬清理 Lite 版-重点聚焦清理功能，包含系统/应用垃圾清理、大文件清理、重复文件清理、相似照片清理 4 个方面，当前还支持在状态栏上查看当前网速信息，帮助你实时了解 Mac 状况。
 
-![](http://cdn.zhangferry.com/Images/16227749924686.jpg)
+![](https://cdn.zhangferry.com/Images/16227749924686.jpg)
 
 **核心功能**
 
@@ -308,4 +308,4 @@ var app6 = new Vue({
 
 [iOS摸鱼周报 第十三期](https://zhangferry.com/2021/05/30/iOSWeeklyLearning_13/)
 
-![](http://cdn.zhangferry.com/Images/wechat_official.png)
+![](https://cdn.zhangferry.com/Images/wechat_official.png)

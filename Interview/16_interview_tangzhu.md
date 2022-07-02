@@ -4,7 +4,7 @@
 
 ### 简单介绍下自己吧
 
-![](http://cdn.zhangferry.com/Images/15221650267704_.pic_hd.jpg)
+![](https://cdn.zhangferry.com/Images/15221650267704_.pic_hd.jpg)
 
 大家好，我是东阁堂主，在成为码农之前，在车企里做过售后，仪器厂做过测试，电子厂做过机修。受室友影响，15 年入坑 iOS，目前在 B 站的漫画事业部。
 
@@ -54,7 +54,7 @@
 
 这里特别强烈推荐一款应用，就是苹果自己家的：Developer。这款应用有 WWDC 相关的技术视频，可以缓存下来，也有字幕，闲时找自己感兴趣的看一看，还是会有收获的，稍微介绍一下，说不定你就会爱上它。
 
-![](http://cdn.zhangferry.com/Images/20220424000446.png)
+![](https://cdn.zhangferry.com/Images/20220424000446.png)
 
 ## 个人爱好
 
@@ -66,13 +66,13 @@
 
 我不是真正的二次元，但也不排斥二次元文化，我的手办不多，补几张大佬的桌面吧。
 
-![](http://cdn.zhangferry.com/Images/20220424000532.png)
+![](https://cdn.zhangferry.com/Images/20220424000532.png)
 
-![](http://cdn.zhangferry.com/Images/20220424000557.png)
+![](https://cdn.zhangferry.com/Images/20220424000557.png)
 
-![](http://cdn.zhangferry.com/Images/20220424000627.png)
+![](https://cdn.zhangferry.com/Images/20220424000627.png)
 
-![](http://cdn.zhangferry.com/Images/20220424000644.png)
+![](https://cdn.zhangferry.com/Images/20220424000644.png)
 
 ### 作为 B 站人，肯定少不了刷 B 站，推荐几个你感觉不错的up主吧。
 
@@ -104,4 +104,4 @@
 
 漫画部门暂时没有 iOS 坑位 (⊙︿⊙)，其他部门有，有看上的可以直接投递，也可以敲我：
 
-![](http://cdn.zhangferry.com/Images/20220424000733.png)
+![](https://cdn.zhangferry.com/Images/20220424000733.png)

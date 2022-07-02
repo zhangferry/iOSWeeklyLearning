@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二十一期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -203,7 +203,7 @@ Swift 已经是大势所趋，各个大厂都已经在做尝试和推广，所�
 
 Messier 是基于 AppleTrace 开发的 Objective-C 方法耗时测量应用，其相对于 AppleTrace 更易用，且能更方便的在越狱设备上 Trace 任意应用。它由三部分组成：Tweak 插件，动态库（Messier.framework），桌面端应用。非越狱场景，我们使用后两个部分可完成对自己应用的耗时监控，输出为 json 文件，再使用 `chrome://tracing` 将 json 文件绘制为火焰图，效果如下：
 
-![](http://cdn.zhangferry.com/Images/messier-content.gif)
+![](https://cdn.zhangferry.com/Images/messier-content.gif)
 
 ## 关于我们
 
@@ -219,4 +219,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第十七期](https://mp.weixin.qq.com/s/3vukUOskJzoPyES2R7rJNg)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

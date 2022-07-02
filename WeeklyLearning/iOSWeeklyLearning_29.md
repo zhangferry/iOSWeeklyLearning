@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二十九期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -211,7 +211,7 @@ gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 - Swift 框架：在 iOS 和 Android 上使用流行的 Swift 框架，如 Swift Foundation，无需更改代码
 - ...
 
-![SCADE](http://cdn.zhangferry.com/Images/SCD_Auora1-1-1-1240x791.png)
+![SCADE](https://cdn.zhangferry.com/Images/SCD_Auora1-1-1-1240x791.png)
 
 ### Privacy-Insight
 
@@ -227,7 +227,7 @@ gitmoji 是一个 GitHub 提交信息的 emoji 指南😎，致力于成为一�
 
 以下为我使用 1 天的隐私请求记录：
 
-![](http://cdn.zhangferry.com/Images/4301634041484_.pic_hd.jpg)
+![](https://cdn.zhangferry.com/Images/4301634041484_.pic_hd.jpg)
 
 微信和今日头条的隐私权限获取频率均非常高，我是肯定没有那么频繁通过微信访问相册的。对于微信频繁获取相册权限的问题最近也在热议，希望不仅是微信，各个主流 App 都应该对于用户隐私问题予以重视。
 
@@ -247,4 +247,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第二十五期](https://mp.weixin.qq.com/s/LLwiEmezRkXHVk66A6GDlQ)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

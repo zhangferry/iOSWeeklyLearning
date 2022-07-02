@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第四十五期
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -33,7 +33,7 @@
 
 Xcode 的 build setting 里有很多配置项，这些配置项都有对应的环境变量，当我们要用脚本自定义的话就需要知道对应的环境变量 Key是哪个才好设置。比如下面这个 Header Search Paths
 
-![](http://cdn.zhangferry.com/Images/20220220215645.png)
+![](https://cdn.zhangferry.com/Images/20220220215645.png)
 
 其对应的 Key 是 `HEADER_SEARCH_PATHS`。那如何或者这个 Key 呢，除了网上查相关资料我们还可以通过 Xcode 获取。
 
@@ -41,13 +41,13 @@ Xcode 的 build setting 里有很多配置项，这些配置项都有对应的�
 
 选中该配置项，展开右部侧边栏，选中点击帮助按钮就能够看到这个配置的说明和对应的环境变量名称。
 
-![](http://cdn.zhangferry.com/Images/20220220220200.png)
+![](https://cdn.zhangferry.com/Images/20220220220200.png)
 
 **方法二**
 
 选中该配置，按住 Option 键，双击该配置，会出现一个描述该选项的帮助卡片，这个内容与上面的帮助侧边栏内容一致。
 
-![](http://cdn.zhangferry.com/Images/20220220220534.png)
+![](https://cdn.zhangferry.com/Images/20220220220534.png)
 
 ### 在 SPM 集成 SwiftLint
 
@@ -252,7 +252,7 @@ class HeapObjectSideTableEntry {
 
 它既然是右移 3 位，那么我左移 3 位把它还原，`HeapObjectSideTableEntry`左移三位 得到`0x10062AFE0`
 
-![](http://cdn.zhangferry.com/Images/20220302155825.png)
+![](https://cdn.zhangferry.com/Images/20220302155825.png)
 
 
 - `0x6000001a9710` 就是实例对象的地址
@@ -295,7 +295,7 @@ class HeapObjectSideTableEntry {
 
 一份由 Swift 语言实现的设计模式教程。其中设计模式的举例清晰明了，代码也简洁易懂，大部分例子中有 UML 图来帮助理解，其中也会有一些对于不同设计模式之间区别与联系的总结和归纳，是很不错的学习设计模式的资源。
 
-![](http://cdn.zhangferry.com/Images/20220302215124.png)
+![](https://cdn.zhangferry.com/Images/20220302215124.png)
 
 ## 工具推荐
 
@@ -312,7 +312,7 @@ class HeapObjectSideTableEntry {
 
 `Nginx`在线配置生成工具，配置高性能，安全和稳定的`Nginx`服务器的最简单方法。
 
-![nginxedit](http://cdn.zhangferry.com/Images/Nginx%E5%9C%A8%E7%BA%BF%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.png)
+![nginxedit](https://cdn.zhangferry.com/Images/Nginx%E5%9C%A8%E7%BA%BF%E9%85%8D%E7%BD%AE%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.png)
 
 ## 关于我们
 
@@ -328,4 +328,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十一期](https://mp.weixin.qq.com/s/DNXrfZgx0JaXyvfVZ4sYVA)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

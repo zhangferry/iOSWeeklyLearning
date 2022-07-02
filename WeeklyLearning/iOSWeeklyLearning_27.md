@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第二十七期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -45,7 +45,7 @@ zhangferry：听说你乒乓球和魔方都玩的很好，这些东西的学习�
 >
 > 怎么的也得三十块起步，国甲，孤鸿，圣手这种吧。
 >
-> ![](http://cdn.zhangferry.com/Images/魔方.jpeg)
+> ![](https://cdn.zhangferry.com/Images/魔方.jpeg)
 
 zhangferry：学习很多时候并不是有趣的，该如何保持学习热情？
 
@@ -132,11 +132,11 @@ func isBrokenDevice() -> Bool {
 
 请求权限：
 
-![](http://cdn.zhangferry.com/Images/1_request_access-2.png)
+![](https://cdn.zhangferry.com/Images/1_request_access-2.png)
 
 创建秘钥：
 
-![](http://cdn.zhangferry.com/Images/2_create_key-1.png)
+![](https://cdn.zhangferry.com/Images/2_create_key-1.png)
 
 这里的 `.p8` 秘钥文件只能下载一次，注意保存。
 
@@ -256,7 +256,7 @@ end
 
 日常开发过程中，经常在终端中执行 pod install、pod update、或者 clear derived data 等操作，XcodeProjects 工具执行这些操作，只需要点击两下就能完成，还能为自己的项目自定义 command，很大程度的简化我们的操作步骤，节省开发时间。
 
-![](http://cdn.zhangferry.com/Images/XcodeProjects.png)
+![](https://cdn.zhangferry.com/Images/XcodeProjects.png)
 
 
 
@@ -274,4 +274,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第二十三期](https://mp.weixin.qq.com/s/1Vs50Lbo0Z27dnU-ARQ96A)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

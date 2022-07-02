@@ -11,7 +11,7 @@ macOS 最为 iOS 开发的钦定操作系统，且 iOS 本身就是通过它衍�
 
 文章内容主要参考《Mac OS X And iOS Internals》（中译本叫《深入解析Mac OS & iOS》）和 《*OS Internal Volume I -- User Mode》，作者都是 Jonathan Levin。前者完书于 2012年，后者第二版本完书于 2019 年，后者不仅是前者的完善版本，还是一个全新版本，大量图文都进行了重写。随着时间的推进，后者对最新的技术有了更多讨论。
 
-![](http://cdn.zhangferry.com/Images/julian-hochgesang-dc-I7GCibzs-unsplash.jpg)
+![](https://cdn.zhangferry.com/Images/julian-hochgesang-dc-I7GCibzs-unsplash.jpg)
 
 ## MacOS 发展背景
 
@@ -56,7 +56,7 @@ Darwin 和 Darwin 变体的一系列 OS 版本是同步更新的。它们之间�
 
 ### Darwin 操作系统的演变历史。
 
-![](http://cdn.zhangferry.com/Images/20220504081928.png)
+![](https://cdn.zhangferry.com/Images/20220504081928.png)
 
 图片来自（*OS Volume 1）
 
@@ -72,7 +72,7 @@ XNU 是一个占据关键作用的 Darwin 核心，XNU = Mach + BSD + libkern + 
 
 Mach 和 BSD 一个是微内核（Microkernel）一个是宏内核（Monolithic Kernel），所以 XNU 是一个混合架构（Hybrid kernel）。理解这几种内核的关键是需要注意内核模式和用户模式占据的范围。
 
-![](http://cdn.zhangferry.com/Images/20220504000309.png)
+![](https://cdn.zhangferry.com/Images/20220504000309.png)
 
 #### Mach
 
@@ -102,7 +102,7 @@ BSD（宏内核），它是 **B**erkeley **S**oftware **D**istribution （伯克
 
 既然没有完美的内核模式，于是苹果就将两者混合，它同时兼顾微内核和宏内核各自的优点，这就是 Darwin了。
 
-![](http://cdn.zhangferry.com/Images/20220504122023.png)
+![](https://cdn.zhangferry.com/Images/20220504122023.png)
 
 图片来自（Mac OS X And iOS Internals）
 
@@ -160,7 +160,7 @@ OpenDarwin 和 PureDarwin 的发展仍带来了一些有益的事情，其基于
 
 BSD 的吉祥物是一只小恶魔😈，叫做 [Beastie](https://zh.wikipedia.org/wiki/BSD%E5%B0%8F%E6%83%A1%E9%AD%94 "BSD 小恶魔")，它的发音跟 BSD 很像。它通常带支三叉戟，代表行程的分岔。
 
-![](http://cdn.zhangferry.com/Images/20220504083150.png)
+![](https://cdn.zhangferry.com/Images/20220504083150.png)
 
 ### Darwin
 
@@ -168,7 +168,7 @@ Darwin 的吉祥物是 [Hexley](http://www.hexley.com/ "Hexley")，它是一个�
 
 这个形象并不属于 Apple，而属于开源社区，所以开源版本的 Darwin 均有该图案的展示。
 
-![](http://cdn.zhangferry.com/Images/20220504083800.png)
+![](https://cdn.zhangferry.com/Images/20220504083800.png)
 
 「*OS Internal 三部曲」的书籍封面就是用的 Hexley 形象。
 

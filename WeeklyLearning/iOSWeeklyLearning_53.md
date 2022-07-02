@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 #53 | 远程办公正在成为趋势
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -93,7 +93,7 @@ CRC 算法推到过程，可以参考《循環冗餘校驗-维基百科》简介
 
 根据上面的算法思想，我们这里通过一个计算实例验证：
 
-![](http://cdn.zhangferry.com/Images/weekly_53_interview_01.png)
+![](https://cdn.zhangferry.com/Images/weekly_53_interview_01.png)
 
 上面的计算过程省略了商为 0 的余数计算，转换为程序逻辑代码如下：
 
@@ -132,7 +132,7 @@ for(int shift_bit = DATA_WIDTH + CRC_WIDTH;  shift_bit >  0;  shift_bit--) {
 
 示例表位宽简化为 4 bit 如下所示：
 
-![](http://cdn.zhangferry.com/Images/weekly_53_interview_03.png)
+![](https://cdn.zhangferry.com/Images/weekly_53_interview_03.png)
 
 观察选中内容两种计算顺序，针对0b 1011每一位数据计算余数的结果和先进行除数的多次异或，然后再和数据 0b 1011异或的结果是一致的，驱动表就是这样实现的，提前计算初始化1011的余数值并存入表中，可以实现该值的重复利用，以空间换取后续同样数据的计算时间。
 
@@ -245,7 +245,7 @@ for(int i = 0;  i< 1; i++) {
 
 [@zhangferry](zhangferry.com)：一个帮助你学习英语的插件，使用起来是这样的。对于一篇英文文章，它可以自动根据设置等级翻译特定词汇，阅读本来就是非常高效的记忆单词技巧，加上这个自动翻译高级词汇的功能，真的非常便捷。还可以将自己不熟悉的单词记录到生词本中，有需要的快用起来吧。
 
-![](http://cdn.zhangferry.com/Images/20220511233016.png)
+![](https://cdn.zhangferry.com/Images/20220511233016.png)
 
 5、[图解iOS签名背后的原理](https://mp.weixin.qq.com/s?__biz=Mzg3MjcxNzUxOQ==&mid=2247484901&idx=1&sn=83fcf34b5b4b7a63c17742efa3ee20a8&chksm=ceea4845f99dc1537003bdebd2a93d09c9b413ad0cc8c5108cd93d5b84e63e65a30ce0f6c019&token=996185752&lang=zh_CN#rd) -- 公众号：Bo2SS
 
@@ -295,4 +295,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS 摸鱼周报 第四十九期](https://mp.weixin.qq.com/s/6GvVh8_CJmsm1dp-CfIRvw)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第五十期
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -14,7 +14,7 @@
 
 ### [WWDC 22 Call to Code](https://www.apple.com/newsroom/2022/04/apples-worldwide-developers-conference-returns-in-its-all-online-format/ "WWDC 2022 Call to Code")
 
-![](http://cdn.zhangferry.com/Images/20220411235752.png)
+![](https://cdn.zhangferry.com/Images/20220411235752.png)
 
 Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形式还是线上播放。苹果一向喜欢玩彩蛋，我们可以尝试从这张图片里获取一些信息。图片主体是 Swift 图标，更准确的说应该是 SwiftUI 的图标，图标边缘透出的光亮有一种黎明到来，开启新篇章的感觉，所以很可能 SwiftUI 将迎来重大更新。就可联想的范围来说，什么样的更新才算重大呢，对标 Flutter，有没有可能支持全栈：Windows、Linux、Web 等平台？这个想法确实能配得上黎明到来，至于是否会实现，还是会有别的我们想不到的大更新，就让我们等待它的到来吧！
 
@@ -182,7 +182,7 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 [@zhangferry](zhangferry.com)：春天来了，又到了踏春赏花的时候，如果此时没有疫情可能大家的脚步能走的更远。春天的信号最明显的就是马路或者公园里盛开了各种各样的花，五颜六色的，非常招人喜欢。当我把手机对准这些花的时候，才发现他们在我眼里统称为花，即使相差很大，我也很难说这是什么花那是什么花。后来找到了一个叫做形色的软件，它可以通过拍照识别花的名字。我将小区和附近公园里的花用它来识别，于是就有了下面这张图：
 
-![](http://cdn.zhangferry.com/Images/spring_flowers.jpg)
+![](https://cdn.zhangferry.com/Images/spring_flowers.jpg)
 
 终于知道这些花叫什么名字了，当我把花和它们各自的名字对应上之后，花也感觉更好看了。
 
@@ -221,13 +221,13 @@ Apple 宣布了 WWDC 22 的相关事项，时间是 6 月 6 号到 10 号，形�
 
 [@zhangferry](zhangferry.com)：前一段时间发现往 Gitee 上传图片失败，博客的图片也全挂了，打开邮箱发现 Gitee 发的一封邮件：
 
-![](http://cdn.zhangferry.com/Images/20220413232557.png)
+![](https://cdn.zhangferry.com/Images/20220413232557.png)
 
 果然免费的东西不好用，简单调研之后决定迁移到七牛云上。
 
 使用七牛云作为图床的话，需要用到它的两个服务：存储和访问（使用七牛云的前提是要有备案域名）。存储是每月免费 10 个 G。访问的话，默认开启 CDN 加速，这部分流量需要付费，这个可以根据需求购买对应的流量包，很便宜。这里可以讲下配置 CDN 加速时遇到的两个概念，CNAME 和 CDN。
 
-![](http://cdn.zhangferry.com/Images/20220414003247.png)
+![](https://cdn.zhangferry.com/Images/20220414003247.png)
 
 CDN 的作用是访问加速，如何加速呢，就是分配多个服务器上，就近访问，访问之后该服务器会缓存源站的资源，之后的访问就不会请求源站而是直接访问这台就近的服务器了。
 
@@ -295,4 +295,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十六期](https://mp.weixin.qq.com/s/8Wpfk9yxpjwaDXN7iXIcvQ)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

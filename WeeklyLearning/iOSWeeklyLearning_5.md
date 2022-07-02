@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第五期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习内容。虽说是周报，但当前内容的贡献途径还未稳定下来，如果后续的内容不足一期，可能会拖更到下一周再发。所以希望大家可以多分享自己学到的开发小技巧和解bug经历。
 
@@ -14,7 +14,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及学习�
 
 UML图中的关系表达形式很容易记混，这里参照下图可以便于我们记忆：
 
-![](http://cdn.zhangferry.com/Images/20210228170958.png)
+![](https://cdn.zhangferry.com/Images/20210228170958.png)
 
 实现关系：描述接口和类之间的关系，对应Java里interface的实现，在Swift里就是protocol的实现。
 
@@ -42,7 +42,7 @@ UML图中的关系表达形式很容易记混，这里参照下图可以便于�
 
 个人账号和公司账号功能基本一样，不同之处就在于协作人数，这里协作人数可以理解为证书的管理权限。在个人开发者账号下，我们可以在AppStoreConnect里邀请开发者，并可以选择提供给他们管理者、开发者等身份，但是在开发者资源一栏的选项却是置灰不可选的。
 
-![](http://cdn.zhangferry.com/Images/reliao_img_1613815285985.png)
+![](https://cdn.zhangferry.com/Images/reliao_img_1613815285985.png)
 
 
 
@@ -100,7 +100,7 @@ DevOps 希望做到的是软件产品交付过程中IT工具链的打通，使�
 
 DevOps 通常需要很多工具的介入，Jira、GitLab、Jenkins、Docker、fastlane等。它是CI/CD的延伸，CI/CD是实现DevOps的基础核心。DevOps的实践可以用于增强敏捷开发。
 
-![](http://cdn.zhangferry.com/Images/devops.png)
+![](https://cdn.zhangferry.com/Images/devops.png)
 
 ### 什么是敏捷开发
 敏捷开发（Agile software development）是一种应对快速变化的需求的一种软件开发能力。相对于“非敏捷”，更强调程序员团队与业务专家之间的紧密协作、面对面的沟通（认为比书面的文档更有效）、频繁交付新的软件版本、紧凑而自我组织型的团队、能够很好地适应需求变化的代码编写和团队组织方法，也更注重软件开发过程中人的作用。
@@ -129,7 +129,7 @@ Scrum中有三个重要角色：
 2. 产品负责人，确定产品的方向和愿景，定义产品发布的内容、优先级及交付时间，为产品投资报酬率负责；
 3. 开发团队，一个跨职能的小团队，人数5-9人，团队拥有交付可用软件需要的各种技能。
 
-![](http://cdn.zhangferry.com/Images/scrumcn.png)
+![](https://cdn.zhangferry.com/Images/scrumcn.png)
 
 ### 什么是极限编程
 
@@ -216,7 +216,7 @@ iOS签名及证书的几篇文章：
 
 教程按照天数分为30天，每天都会介绍一些Python概念，伴有示例和练习。正如该仓库的介绍说的那样，真要30天完成这些内容的学习对很多人来说都是一个挑战，我们可以根据自己的节奏去学习，即使100天才学完他们都是可以的。
 
-![](http://cdn.zhangferry.com/Images/20210228174503.png)
+![](https://cdn.zhangferry.com/Images/20210228174503.png)
 
 ### [Python-100-Days](https://github.com/jackfrued/Python-100-Days "Python-100-Days")
 
@@ -232,7 +232,7 @@ iOS签名及证书的几篇文章：
 
 这个斯坦福的iOS开发系列教程每年都会更新，最早之前还是OC语言，还是再讲MVC。现在已经更新到Swift和MVVM了，并使用SwiftUI 进行视图搭建。除视频需要到Youtube观看外，其他内容可以在国内网络环境访问。
 
-![](http://cdn.zhangferry.com/Images/20210227190060.png)
+![](https://cdn.zhangferry.com/Images/20210227190060.png)
 
 
 
@@ -252,7 +252,7 @@ iOS签名及证书的几篇文章：
 
 强大且方便的流程图绘制软件，同时支持Web端和桌面端。和[Processon的](https://www.processon.com/)免费版只能添加9个文件的限制，Diagrams.net的文件数量是无限制的，而且它支持的流程图控件比Processon还要更多。
 
-![](http://cdn.zhangferry.com/Images/20210227191005.png)
+![](https://cdn.zhangferry.com/Images/20210227191005.png)
 
 * 支持几乎所有的主流流程图元素
 * 远程存储，文件数量不限，可以存储至Github、Google Drive、Dropbox等地方
@@ -268,7 +268,7 @@ iOS签名及证书的几篇文章：
 
 这个工具可以使我们访问github的仓库就像直接在VSCode中打开一样，使用方法非常简单，就是将网站域名换成github1s，以Swift仓库为例，访问：https://github1s.com/apple/swift，得到的结果如下。
 
-![](http://cdn.zhangferry.com/Images/20210228152659.png)
+![](https://cdn.zhangferry.com/Images/20210228152659.png)
 
 我们可以像在VSCode里一样，直接在浏览器里查看仓库代码。
 
@@ -282,4 +282,4 @@ iOS签名及证书的几篇文章：
 
 [摸鱼周报第四期](https://zhangferry.com/2021/01/24/iOSWeeklyLearning_4/)
 
-![](http://cdn.zhangferry.com/Images/wechat_official.png)
+![](https://cdn.zhangferry.com/Images/wechat_official.png)

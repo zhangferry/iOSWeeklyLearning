@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第三十八期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -50,7 +50,7 @@ defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 
 汇总一下寻址流程如下图所示：
 
-![](http://cdn.zhangferry.com/Images/20211216194314.png)
+![](https://cdn.zhangferry.com/Images/20211216194314.png)
 
 #### 内存不足的处理
 
@@ -87,7 +87,7 @@ iPhone 11 Pro Max: 2067/3740/55% (iOS 13.2.3)
 
 iOS 将内存页分为 Clean Page 和 Dirty Page，Clean Page 一般是固定内容，可以被系统回收，需要时从磁盘再加载回来。
 
-![](http://cdn.zhangferry.com/Images/20211216191758.png)
+![](https://cdn.zhangferry.com/Images/20211216191758.png)
 
 上图可以看出，写入数据前申请内存为 Clean 内存，使用的部分就变成了 Dirty 内存。
 
@@ -97,7 +97,7 @@ iOS 还有另一种机制是压缩内存（Compressed Memory），这也是一�
 
 这部分内存可以被 Instrument 统计到，对应的就是 VM Tracker 里的 Swapped Size：
 
-![](http://cdn.zhangferry.com/Images/20211216193218.png)
+![](https://cdn.zhangferry.com/Images/20211216193218.png)
 
 参考：
 
@@ -185,7 +185,7 @@ NSLog(@"str3.class=%@, str3 = %p, *str3 = %p", str3.class, str3, &str3);
 
 这里再回顾下内存的分区情况，大多数情况我们只需关注进程的虚拟内存就可以了：
 
-![](http://cdn.zhangferry.com/Images/20211216172748.png)
+![](https://cdn.zhangferry.com/Images/20211216172748.png)
 
 ## 优秀博客
 
@@ -240,7 +240,7 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 Dropshelf 是一款 Mac OS 下的拖拽效率应用。它提供了一个可以吸附在屏幕边缘的 Dock，你可以拖拽任何东西「图片、文件、文字、链接...」暂存到 Dock 中，方便你在其他 App 中来使用。
 
-![Dropshelf](http://cdn.zhangferry.com/Images/9964d0eee2c48e3d24ba63c09e25b10c_720w.jpeg)
+![Dropshelf](https://cdn.zhangferry.com/Images/9964d0eee2c48e3d24ba63c09e25b10c_720w.jpeg)
 
 ## 关于我们
 
@@ -256,4 +256,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第三十四期](https://mp.weixin.qq.com/s/P0HjLDCIM3T-hAgQFjO1mg)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

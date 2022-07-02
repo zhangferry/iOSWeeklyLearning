@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第十九期
 
-![](http://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
+![](https://cdn.zhangferry.com/Images/iOS摸鱼周报模板.png)
 
 ### 本期概要
 
@@ -39,9 +39,9 @@
 
 `minimumLineSpacing` 和 `minimumInteritemSpacing` 这两个值表示含义是受滚动方向影响的，不同滚动方向，行列的排列方式不同，我们仅需记住行间距为 lineSpace 即可。下图为可视化的描述：
 
-![](http://cdn.zhangferry.com/Images/20210716180322.png)
+![](https://cdn.zhangferry.com/Images/20210716180322.png)
 
-![](http://cdn.zhangferry.com/Images/3162666d7fa108da73e6549aea9154cf.png)
+![](https://cdn.zhangferry.com/Images/3162666d7fa108da73e6549aea9154cf.png)
 
 ### 本地化时一些需要注意的日期设置
 
@@ -331,7 +331,7 @@ AAPLListItem *matchingItem = [self.list itemWithName:nil];  // warning!
 
 一个用来学习 Combine 的 App，他将一些 Combine 中的各种操作符用可视化的手段表达了出来，还附加了蠢萌蠢萌的动画效果，很适合刚接触 Combine 的朋友尝试一下。
 
-![](http://cdn.zhangferry.com/Images/co.png)
+![](https://cdn.zhangferry.com/Images/co.png)
 
 ### Stanford CS193P 2021 SwiftUI 2.0 双语字幕
 
@@ -351,7 +351,7 @@ Stanford CS193P 2021 SwiftUI 2.0 课程，该课程的老师是 Paul Hegarty，�
 
 iOS 包的大小，是每个开发必须关注的问题，对于大型项目来说，只是代码段就有可能超过 100M，算上 armv7 和 arm64 架构，会超过 200M。 LinkMap 工具通过分析项目的 LinkMap 文件，能够计算出各个类、各个三方库占用的空间大小（代码段+数据段），方便开发者快速定位需要优化的文件。
 
-![](http://cdn.zhangferry.com/Images/linkmap.png)
+![](https://cdn.zhangferry.com/Images/linkmap.png)
 
 ## 关于我们
 
@@ -367,4 +367,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第十五期](https://mp.weixin.qq.com/s/6thW_YKforUy_EMkX0OVxA)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

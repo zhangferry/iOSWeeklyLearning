@@ -1,6 +1,6 @@
 # iOS摸鱼周报 51 | 游戏版号恢复发放
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -91,7 +91,7 @@ void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
 
 示例可以参考《认真分析mmap：是什么 为什么 怎么用》中的情景二：
 
-![](http://cdn.zhangferry.com/Images/weekly_51_interview.png)
+![](https://cdn.zhangferry.com/Images/weekly_51_interview.png)
 
 超出文件大小的虚拟内存区域，文件所在页的内存仍可以访问，超出所在页的访问会抛出 `Signal` 信号异常。
 
@@ -136,7 +136,7 @@ void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
 
 [@远恒之义](https://github.com/eternaljust/)：作为一名程序员，如果有一个要在照顾刚出生婴儿时完成的编码需求，遇到这种情况你会怎么做？购买静音键盘的打字声音或许对于小婴儿来说还是太吵了，那么如何才能一边带孩子一边工作呢，国外一名程序员给出了他的答案：面部打字。
 
-![图片来自：YouTube 频道「Everything Is Hacked」](http://cdn.zhangferry.com/Images/face-detection.gif)
+![图片来自：YouTube 频道「Everything Is Hacked」](https://cdn.zhangferry.com/Images/face-detection.gif)
 
 这款特殊的键盘名为「[CheekyKeys](https://github.com/everythingishacked/CheekyKeys "CheekyKeys github")」，开发采用了现代图像识别技术，利用 OpenCV 和 DLib 等工具跟踪用户脸部特定点的移动，打字识别的速度尚可。准备好电脑和摄像头，再学习一下摩斯密码，用户就可以开始尝试面部打字，非常锻炼脸部肌肉。
 
@@ -159,7 +159,7 @@ void* mmap(void* start,size_t length,int prot,int flags,int fd,off_t offset);
 
 微距模式是 iPhone 13 Pro 和 iPhone 13 Pro Max 开始支持的一种专门用于拍摄事物细节的功能。本次摄影大赛也是针对这两款机型举办，下面是其中一副获奖作品，很难想象这是用手机拍摄出来的。一片简单的树叶都有这么丰富的纹理，可以感受到微距模式下的镜头细节表现能力真的非常强。
 
-![](http://cdn.zhangferry.com/Images/20220419230049.png)
+![](https://cdn.zhangferry.com/Images/20220419230049.png)
 
 5、[Web 3.0 漫游指南 2022【完整篇】](https://mirror.xyz/tannhauser2049.eth/vPrV-lqGjFpT2VWT4kDvtjhZayxm6n8ym7ra4wiegSc "Web 3.0 漫游指南 2022【完整篇】")
 
@@ -204,7 +204,7 @@ Web 3.0 是一个最近很热的概念，那什么是 Web 3.0 呢？作者用一
 
 一款浏览器空白 Tab 页定制工具，支持几乎所有主流浏览器。iTab 提供了很多模板，你可以自由地搭建属于自己的 Tab 页。同时配备备忘录，TODO 等功能，浏览器在平常的工作中使用频率非常高，综合体验下来，把一部分内容聚焦到浏览器中的 Tab 页确是一个提高效率的好方案。
 
-![](http://cdn.zhangferry.com/Images/20220421230343.png)
+![](https://cdn.zhangferry.com/Images/20220421230343.png)
 
 ## 关于我们
 
@@ -220,4 +220,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十七期](https://mp.weixin.qq.com/s/X6lPQ5qwY1epF6fEUhvCpQ)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

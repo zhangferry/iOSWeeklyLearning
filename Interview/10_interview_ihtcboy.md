@@ -47,7 +47,7 @@ iHTCboy 是摸鱼周报里负责校对的成员之一。记得他第一次参与
 
 大家可能忽视了一个重要的问题：苹果 IAP 收入占比最大的是什么类型的 App？答案是游戏！所以，对非游戏类 App 允许使用 IAP ，目前对于苹果的损失还不是很大，当然，如果没有损失是最好，但是目前的大环境和反垄断，一定会让苹果做出调整。（注：游戏一直以来都是 App Store 中的重头戏，从 2017 年 iOS 11 开始，苹果在 App Store 增加了 [Games](https://developer.apple.com/videos/play/wwdc2017/301/ "Introducing the New App Store - WWDC17") 游戏标签入口。）
 
-![](http://cdn.zhangferry.com/Images/AppStore入口更新.jpg)
+![](https://cdn.zhangferry.com/Images/AppStore入口更新.jpg)
 
 
 对于苹果败诉带来的影响：
@@ -85,7 +85,7 @@ iHTCboy 是摸鱼周报里负责校对的成员之一。记得他第一次参与
 
 大家一定知道一个道理，图片比文字更加形象。思维导图比一段文字也更加生动形象，所以，它不仅能够梳理知识，还能理清知识的层次和架构，帮助记忆知识。举个例子，[Vim 快捷键](https://mp.weixin.qq.com/s/iFJ-EcJPCSbzpQp4nyBzZQ)，如果你忘记了，打开思维导图，一看就知道：
 
-![](http://cdn.zhangferry.com/Images/20211120140108.png)
+![](https://cdn.zhangferry.com/Images/20211120140108.png)
 
 再比如，说到[人工智能](https://mp.weixin.qq.com/s/mT76LA7AVGZhnQj89sRnSw)，可能想法很多，那么大的框架应该是怎么样的呢？
 

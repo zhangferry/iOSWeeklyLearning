@@ -1,6 +1,6 @@
 # iOS摸鱼周报 第四十九期
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -14,7 +14,7 @@
 
 ### Google Chrome 发布到版本号 100
 
-![](http://cdn.zhangferry.com/Images/20220331225302.png)
+![](https://cdn.zhangferry.com/Images/20220331225302.png)
 
 新版本更新不算大，将继续大幅减少内存、CPU占用率，速度会更快。本次更新应用图标也进行了更换，红黄绿相交边缘的阴影变得更小了。从图标的发展来看，Google 的设计风格越来越扁平化。
 
@@ -151,7 +151,7 @@ static unsigned int indexForPointer(const void *p) {
 
 3、[Variflight 全球航班实时跟踪雷达](https://flightadsb.variflight.com/ "全球航班实时跟踪雷达")
 
-![](http://cdn.zhangferry.com/Images/20220330095756.png)
+![](https://cdn.zhangferry.com/Images/20220330095756.png)
 
 [@zhangferry](zhangferry.com)：这个网站可以查看全球航班的实时飞行数据，且每隔几秒就会更新一次，那这些数据是如何获取的呢。注意到网站顶部有一个字母缩写：ADS-B，它的全称是：Automatic dependent surveillance – broadcast，[广播式自助相关监视](https://zh.wikipedia.org/wiki/%E5%B9%BF%E6%92%AD%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%9B%B8%E5%85%B3%E7%9B%91%E8%A7%86 "广播式自助相关监视")。
 
@@ -165,7 +165,7 @@ static unsigned int indexForPointer(const void *p) {
 
 在这个周刊里还发现了一个很有趣的网站：https://lofi.co/，它可以模拟咖啡厅、书店的场景，并播放一些白噪音。在家远程办公，开着它往那一放，就很舒服。
 
-![](http://cdn.zhangferry.com/Images/20220331234543.png)
+![](https://cdn.zhangferry.com/Images/20220331234543.png)
 
 ## 学习资料
 
@@ -177,7 +177,7 @@ static unsigned int indexForPointer(const void *p) {
 
 由[即时设计](https://js.design/)社区组织的精选设计课程，即时设计是一款可以在线实时协作的专业 UI 设计工具，类似 Figma。在即时教程中你可以找到来自各大视频网站平台创作者们的免费高质量课程。从零基础开始一步步到做案例，进阶技巧，应有尽有，非常适合想学一点 UI 知识的程序员们。
 
-![](http://cdn.zhangferry.com/Images/20220331222838.png)
+![](https://cdn.zhangferry.com/Images/20220331222838.png)
 
 ## 工具推荐
 
@@ -210,4 +210,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十五期](https://mp.weixin.qq.com/s/_N98ADlfQCUkxYjmH0SvZw)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

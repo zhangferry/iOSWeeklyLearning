@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 #52 | 如何规划个人发展
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -117,7 +117,7 @@
 
 那为什么会出现这个东西了？它是用于解决什么问题的？
 
-![](http://cdn.zhangferry.com/Images/20220427235534.png)
+![](https://cdn.zhangferry.com/Images/20220427235534.png)
 
 这个是 Mircsoft Edge 开源的 ChakraCore 的执行流程，可以看出对于 JavaScripts 这种解释性语言的执行，调用过程过程要进行解析和生成 Bytecode 的操作是比较耗时的。那能不能想编译型语言一样，直接给它一个“编译文件”，将编译任务提前做好，给到解释器呢？可以，这个工作就是 WebAssembly 诞生的目的。它不光是能节省 JavaScripts 的执行时间，还凭借其可移植性，可以将一些用 C/C++/Rust 等创建应用直接移植到Web端，而无需再搞一遍 JavaScripts实现。现在 AutoCAD、GoogleEarth、Unity 等一些较大型的项目都借助于 WebAssembly 移植到了 Web 端。
 
@@ -125,11 +125,11 @@
 
 [@zhangferry](zhangferry.com)：一款涂鸦风的图标网站，有 400+ 可用 ICON，除了ICON 还有一些涂鸦插画，个用和商用都免费。相对于标准规范的流水线图标，涂鸦风格能给人带来一种更加轻松欢快的感觉，在一些特定场合我们可以将图标换成这类风格试一下。
 
-![](http://cdn.zhangferry.com/Images/20220428102206.png)
+![](https://cdn.zhangferry.com/Images/20220428102206.png)
 
 5、[星链 Starlink](https://satellitemap.space/ "星链 Starlink")
 
-![](http://cdn.zhangferry.com/Images/20220428132650.png)
+![](https://cdn.zhangferry.com/Images/20220428132650.png)
 
 Space X 的星链用一种更直观的方式可以更好的感受它的存在，上图是官网给出的星链卫星分布图。可以看到星链已经覆盖了很多地方，图片左下角的数字区域表示，在 4 月 28 这一天，一共有 2336 颗卫星，正在使用的是 1730颗，损毁的有 211，其余是未激活状态。2300 多颗是什么概念，这已经达到我国历史发射卫星总量的 3 倍。
 
@@ -145,7 +145,7 @@ Space X 的星链用一种更直观的方式可以更好的感受它的存在，
 
 这是一份关于 Python 的实践指南，该指南目前持续不断地更新与完善，在 Github 上有 5.8k 的 Stars。它旨在为 Python 初学者和专家提供一个关于 Python 安装、配置和日常使用的最佳实践手册。涵盖各种平台的 Python 安装、优秀的模块推荐、配合不同的 web 框架和工具、如何写出优雅的 Python 代码等内容。链接中的这份是该指南的中文版。
 
-![](http://cdn.zhangferry.com/Images/52-python.png)
+![](https://cdn.zhangferry.com/Images/52-python.png)
 
 ## 工具推荐
 
@@ -178,4 +178,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS摸鱼周报 第四十八期](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)

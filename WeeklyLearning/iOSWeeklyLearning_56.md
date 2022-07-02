@@ -1,6 +1,6 @@
 # iOS 摸鱼周报 #56 | WWDC 进行时
 
-![](http://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
+![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
@@ -43,7 +43,7 @@ WWDC 被称为 Apple 开发者的「春晚」真的很贴切，WWDC 进行时，
 
 利用 Hopper 打开 MachO 就可以看到：
 
-![](http://cdn.zhangferry.com/Images/weekly_56_interview_01.jpg)
+![](https://cdn.zhangferry.com/Images/weekly_56_interview_01.jpg)
 
 #### 解决办法
 
@@ -116,7 +116,7 @@ WWDC 被称为 Apple 开发者的「春晚」真的很贴切，WWDC 进行时，
 
     可以看到 通过`Hopper`打开直接是异或的结果：
 
-    ![](http://cdn.zhangferry.com/Images/weekly_56_interview_02.jpg)
+    ![](https://cdn.zhangferry.com/Images/weekly_56_interview_02.jpg)
 
     
 
@@ -196,7 +196,7 @@ WWDC 被称为 Apple 开发者的「春晚」真的很贴切，WWDC 进行时，
 
 一份来自 GOTO Conferences 有关 Swift Memory Layout 的一小时讲座，该讲座深入浅出的讲解了 Swift 中各种例如指针、结构体、类、枚举、数组、协议等我们平时使用的这些工具在内存中是以什么样的形式存在，以及如何解决一些常见问题。对于想了解这部分知识的朋友，这个讲座视频将是一个不错的开胃菜。
 
-![memorylayout](http://cdn.zhangferry.com/Images/memorylayout.png)
+![memorylayout](https://cdn.zhangferry.com/Images/memorylayout.png)
 
 ## 工具推荐
 
@@ -229,4 +229,4 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS 摸鱼周报 #52 | 如何规划个人发展](https://mp.weixin.qq.com/s/br4DUrrtj9-VF-VXnTIcZw)
 
-![](http://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
+![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
