@@ -36,6 +36,19 @@
 
 [@东坡肘子](https://www.fatbobman.com/)：本文是系列文章的第三篇（ 前两篇为 Swift Protocol 背后的故事 —— 实践、Protocol 背后的故事 —— 理论 ），介绍了 Swift 5.6/5.7 在 Protocol 上的相关扩展和优化，主要包括：any、Opaque Parameter、Unlock existentials for all protocols 以及 Primary Associated Types 等内容。
 
+4、[How to Use ShareLink for Sharing Data Like Text and Photos](https://www.appcoda.com/swiftui-sharelink/ "How to Use ShareLink for Sharing Data Like Text and Photos") -- 来自：Simon Ng
+
+[@远恒之义](https://github.com/eternaljust)：当前在 SwiftUI 项目中，我们如果需要调用系统分享数据，必须通过桥接 UIActivityViewController 来实现。在 iOS 16 中，SwiftUI 推出一个名为 ShareLink 的视图控件，当用户点击分享链接时，它会弹出显示系统分享列表，让用户将内容共享到其他应用程序或复制数据以供以后使用。本文将向你展示如何使用 ShareLink 来分享文本、URL 链接和图像等数据。
+
+5、[Implementing a custom native calendar using UICalendarView in iOS16 and Swift](https://ohmyswift.com/blog/2022/06/12/implementing-a-custom-native-calendar-using-uicalendarview-in-ios16-and-swift/ "Implementing a custom native calendar using UICalendarView in iOS16 and Swift") -- 来自：Rizwan Ahmed
+
+[@远恒之义](https://github.com/eternaljust)：以前，面对复杂的日历显示交互需求，我们通常选择第三方日历组件或者自定义日历视图来实现。今年，Apple 引入了原生 UICalendarView，支持在 iOS 16 创建自定义日历视图。本文将介绍如何使用 UICalendarView 来实现自定义原生日历，并支持单选与多选日期。
+
+6、[How to change status bar color in SwiftUI](https://sarunw.com/posts/swiftui-status-bar-color/ "How to change status bar color in SwiftUI") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：在 UIKit 中，我们有很多方法可以[改变状态栏的样式](https://sarunw.com/posts/how-to-set-status-bar-style/ "改变状态栏的样式")。
+然而在 SwiftUI 中，我们无法直接更改状态栏样式，需要通过视图修饰符 .preferredColorScheme 来间接修改。这种方式将影响应用程序中的每个视图，相当于手动设置了浅色与深色模式。在 iOS 16 中，我们使用新的修饰符 .toolbarColorScheme 来影响特定导航堆栈上的状态栏，也可以单独在目标视图中再次设置来覆盖此值。
+
 ## 摸一下鱼
 
 
