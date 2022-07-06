@@ -89,7 +89,7 @@ def runAndPublic(status):
     elif status == 2:
         val = os.system('ls -al')
         # print(val)
-        os.system("publish run && publish deploy")
+        os.system("publish deploy")
     
     
 
