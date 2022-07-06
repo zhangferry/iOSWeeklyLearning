@@ -32,7 +32,7 @@
 
 [@东坡肘子](https://www.fatbobman.com/)：“对齐”是 SwiftUI 中极为重要的概念，然而相当多的开发者并不能很好地驾驭这个布局利器。在 WWDC 2022 中，苹果为 SwiftUI 增添了 Layout 协议，让我们有了更多的机会了解和验证 SwiftUI 的布局原理。本文将结合 Layout 协议的内容对 SwiftUI 的“对齐”进行梳理，希望能让读者对“对齐”有更加清晰地认识和掌握。
 
-3、[Swift Protocol 背后的故事 —— Swift 5.6/5.7](http://zxfcumtcs.github.io/2022/06/30/SwiftProtocol3/ "Swift Protocol 背后的故事 —— Swift 5.6/5.7") -- 雪峰
+3、[Swift Protocol 背后的故事 —— Swift 5.6/5.7](http://zxfcumtcs.github.io/2022/06/30/SwiftProtocol3/ "Swift Protocol 背后的故事 —— Swift 5.6/5.7") -- 来自：雪峰
 
 [@东坡肘子](https://www.fatbobman.com/)：本文是系列文章的第三篇（ 前两篇为 Swift Protocol 背后的故事 —— 实践、Protocol 背后的故事 —— 理论 ），介绍了 Swift 5.6/5.7 在 Protocol 上的相关扩展和优化，主要包括：any、Opaque Parameter、Unlock existentials for all protocols 以及 Primary Associated Types 等内容。
 
