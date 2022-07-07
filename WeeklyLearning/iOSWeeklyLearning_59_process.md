@@ -41,6 +41,10 @@ DevOps 还常会跟容器技术同时出现，无容积化流程通常是这样�
 * BizDevOps：Biz 表示 Business，就是将业务与 DevOps 结合起来。BizDevOps 的概念是将不写代码的业务团队，像是产品和运行也参与进来。它要解决的问题源于[三个不等式](https://developer.aliyun.com/article/839569 "深度 | 从DevOps到BizDevOps, 研发效能提升的系统方法")：局部效率不等于高效交付，高效交付不等于持续高效，高效交付不等于业务成功。为了起到真正助力业务的目标，需要落地产品导向的交付，建设标准化基础设施，不断积累技术资产，同时还需要与业务之间建立快速的反馈闭环。
 * AIOps：人工智能 Ops，在原有 DevOps 的各个阶段都融入 AI 能力，通过不断的数据采集和分析，能够根据算法自动的下发执行规则。更进一步，通过自动化测试，不断的分析测试结果，还可以用于异常检测、瓶颈分析、故障预测甚至于故障自愈。
 
+### [Apple 计划推出 Lockdown 模式，保护用户免遭间谍软件侵害](https://www.apple.com.cn/newsroom/2022/07/apple-expands-commitment-to-protect-users-from-mercenary-spyware/ "Apple 计划推出 Lockdown 模式，保护用户免遭间谍软件侵害")
+
+Apple 宣布将发布突破性的安全功能，为可能成为高度针对性网络攻击目标的用户提供特别的额外保护。这些网络攻击来自唯利是图、受国家支持开发间谍软件的私人企业。在 iOS 16、iPadOS 16 和 macOS Ventura 中开启 Lockdown 模式将进一步加强设备防护，严格限制部分功能，大幅减少受攻击面，以免给具高度针对性的间谍软件可乘之机。
+
 ## 本周学习
 
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
@@ -63,15 +67,19 @@ DevOps 还常会跟容器技术同时出现，无容积化流程通常是这样�
 
 [@东坡肘子](https://www.fatbobman.com/)：本文是系列文章的第三篇（ 前两篇为 Swift Protocol 背后的故事 —— 实践、Protocol 背后的故事 —— 理论 ），介绍了 Swift 5.6/5.7 在 Protocol 上的相关扩展和优化，主要包括：any、Opaque Parameter、Unlock existentials for all protocols 以及 Primary Associated Types 等内容。
 
-4、[How to Use ShareLink for Sharing Data Like Text and Photos](https://www.appcoda.com/swiftui-sharelink/ "How to Use ShareLink for Sharing Data Like Text and Photos") -- 来自：Simon Ng
+4、[利用 SwiftUI 的新 Charts API 輕鬆建立漂亮的折線圖](https://www.appcoda.com.tw/swiftui-line-charts/ "利用 SwiftUI 的新 Charts API　輕鬆建立漂亮的折線圖") -- 来自：Simon Ng
+
+[@远恒之义](https://github.com/eternaljust)：在 iOS 16 的新版 SwiftUI 中，Apple 重磅更新带来了 Charts 框架。在此之前，我们需要自定义构建图表，或者是依靠第三方库来建立图表。等到现在，我们简单使用 Charts API，就能轻松上手构建折线图。除此之外，开发者还可以更方便地创建动画化和互动的其他图表。
+
+5、[How to Use ShareLink for Sharing Data Like Text and Photos](https://www.appcoda.com/swiftui-sharelink/ "How to Use ShareLink for Sharing Data Like Text and Photos") -- 来自：Simon Ng
 
 [@远恒之义](https://github.com/eternaljust)：当前在 SwiftUI 项目中，我们如果需要调用系统分享数据，必须通过桥接 UIActivityViewController 来实现。在 iOS 16 中，SwiftUI 推出一个名为 ShareLink 的视图控件，当用户点击分享链接时，它会弹出显示系统分享列表，让用户将内容共享到其他应用程序或复制数据以供以后使用。本文将向你展示如何使用 ShareLink 来分享文本、URL 链接和图像等数据。
 
-5、[Implementing a custom native calendar using UICalendarView in iOS16 and Swift](https://ohmyswift.com/blog/2022/06/12/implementing-a-custom-native-calendar-using-uicalendarview-in-ios16-and-swift/ "Implementing a custom native calendar using UICalendarView in iOS16 and Swift") -- 来自：Rizwan Ahmed
+6、[Implementing a custom native calendar using UICalendarView in iOS16 and Swift](https://ohmyswift.com/blog/2022/06/12/implementing-a-custom-native-calendar-using-uicalendarview-in-ios16-and-swift/ "Implementing a custom native calendar using UICalendarView in iOS16 and Swift") -- 来自：Rizwan Ahmed
 
 [@远恒之义](https://github.com/eternaljust)：以前，面对复杂的日历显示交互需求，我们通常选择第三方日历组件或者自定义日历视图来实现。今年，Apple 引入了原生 UICalendarView，支持在 iOS 16 创建自定义日历视图。本文将介绍如何使用 UICalendarView 来实现自定义原生日历，并支持单选与多选日期。
 
-6、[How to change status bar color in SwiftUI](https://sarunw.com/posts/swiftui-status-bar-color/ "How to change status bar color in SwiftUI") -- 来自：sarunw
+7、[How to change status bar color in SwiftUI](https://sarunw.com/posts/swiftui-status-bar-color/ "How to change status bar color in SwiftUI") -- 来自：sarunw
 
 [@远恒之义](https://github.com/eternaljust)：在 UIKit 中，我们有很多方法可以[改变状态栏的样式](https://sarunw.com/posts/how-to-set-status-bar-style/ "改变状态栏的样式")。
 然而在 SwiftUI 中，我们无法直接更改状态栏样式，需要通过视图修饰符 .preferredColorScheme 来间接修改。这种方式将影响应用程序中的每个视图，相当于手动设置了浅色与深色模式。在 iOS 16 中，我们使用新的修饰符 .toolbarColorScheme 来影响特定导航堆栈上的状态栏，也可以单独在目标视图中再次设置来覆盖此值。
