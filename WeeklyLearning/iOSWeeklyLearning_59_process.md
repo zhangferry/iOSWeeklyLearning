@@ -46,7 +46,56 @@ Apple 宣布将发布突破性的安全功能，为可能成为高度针对性�
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[JY](https://juejin.cn/user/1574156380931144/posts)
+### OC所使用的类信息存储在哪？ 如何从Macho中找到？
+
+首先我们需要读取到 `__DATA,__objc_classlist` 的信息，存储结构是8个字节指针，读取到对应的指针数据 `data`  
+
+`data` 数据是 `VM Address` 地址，我们需要通过转换拿到对应的 `offset`
+
+
+* 需要判断是否在对应的 `segmentCommand` 当中
+
+**`offset = address - (segmentCommand.vmaddr - segmentCommand.fileoff)`**
+
+
+拿到偏移地址之后，我们就可以根据 `Class64` 的数据结构，在 `machoData` 当中找到对应的数据 `Class` 数据，其中的 `data` 数据才是真正 `Class` 信息的数据
+
+```C++
+struct Class64 {
+    let isa: UInt64
+    let superClass: UInt64
+    let cache: UInt64
+    let vtable: UInt64
+    let data: UInt64
+}
+```
+
+--- 
+
+`Class64.data` 数据是 `VM Address` 地址，我们需要通过转换拿到 `offset` 
+拿到 `offset` 后，在 `machData` 当中找到对应的 `ClassInfo64` 数据，然后其中 `name` 就是对应的 `className`
+```C++
+struct Class64Info
+{
+    let flags: Int32 //objc-runtime-new.h line:379~460
+    let instanceStart: Int32
+    let instanceSize: Int32
+    let reserved: Int32
+    let instanceVarLayout: UInt64
+    let name: UInt64
+    let baseMethods: UInt64
+    let baseProtocols: UInt64
+    let instanceVariables: UInt64
+    let weakInstanceVariables: UInt64
+    let baseProperties: UInt64
+};
+
+```
+![](http://cdn.zhangferry.com/Images/20220707210722.png)
+
+如果想要了解具体源码实现，可以通过另一位主编皮拉夫大王的开源项目 [WBBlades](https://github.com/wuba/WBBlades) 学习
+
 
 
 
