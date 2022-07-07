@@ -1,14 +1,13 @@
-# iOS 摸鱼周报 #59
+# iOS 摸鱼周报 #59 | 深入理解 DevOps 
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
+> * 本期话题：深入理解 DevOps 
 > * 本周学习：
-> * 内容推荐：
+> * 内容推荐： WWDC 2022 上推出的新技术（三番）
 > * 摸一下鱼：iOS Icon Gallery 是一个收录 App Store 上精美的 iOS/macOS/watchOS icon 的网站；Thief 是一款基于 Electron 开发的跨平台多功能的上班摸鱼神器。
-> * 岗位推荐：
 
 ## 本期话题
 
@@ -120,12 +119,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
+[iOS 摸鱼周报 #58 | 极客风听歌网站，纯文字音乐播放器](https://mp.weixin.qq.com/s/KwqFraJk40f9bEy0eKa8Kw)
+
+[iOS 摸鱼周报 #57 | 周报改版，WWDC22 讲座集锦](https://mp.weixin.qq.com/s/e4ZbFBPqclgy7KyfxVyQZA)
+
 [iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/ZyGV6WlFsZOX6Aqgrf1QRQ)
 
-[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
-
-[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
-
-[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
