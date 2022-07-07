@@ -7,7 +7,7 @@
 > * 本期话题：
 > * 本周学习：
 > * 内容推荐：
-> * 摸一下鱼：
+> * 摸一下鱼：iOS Icon Gallery 是一个收录 App Store 上精美的 iOS/macOS/watchOS icon 的网站；Thief 是一款基于 Electron 开发的跨平台多功能的上班摸鱼神器。
 > * 岗位推荐：
 
 ## 本期话题
@@ -85,6 +85,28 @@ Apple 宣布将发布突破性的安全功能，为可能成为高度针对性�
 然而在 SwiftUI 中，我们无法直接更改状态栏样式，需要通过视图修饰符 .preferredColorScheme 来间接修改。这种方式将影响应用程序中的每个视图，相当于手动设置了浅色与深色模式。在 iOS 16 中，我们使用新的修饰符 .toolbarColorScheme 来影响特定导航堆栈上的状态栏，也可以单独在目标视图中再次设置来覆盖此值。
 
 ## 摸一下鱼
+
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+1、[iOS Icon Gallery](https://www.iosicongallery.com/ "iOS Icon Gallery")：一个收录 App Store 上精美的 iOS/macOS/watchOS icon 的网站，可以为作为设计师的你在设计 icon 时提供良好的设计灵感。
+
+![](https://cdn.zhangferry.com/Images/20220707204618.png)
+
+![](https://cdn.zhangferry.com/Images/20220707204501.png)
+
+2、[Thief](https://thief.im/ "Thief")：**`Thief`** 是一款基于 **`Electron`** 开发的跨平台多功能(`真正创新的`)摸鱼软件，为了上班族打造的`上班必备神器`，使用此软件可以让上班`倍感轻松`，远离 **`ICU`**。
+
+- **多功能** 不仅仅支持 **`小说摸鱼`** ，还支持 **`股票`**、**`基金`**、**`网页`**、**`视频`**、**`直播`**、**`PDF`**、**`游戏`**、等摸鱼模式
+- **隐蔽性** 每种摸鱼模式都提供了不同的摸鱼 **技巧**，可以很隐秘地进行摸鱼
+- **跨平台** 支持 **`Win`** + **`Mac`** + **`Linux`** , 不管你用什么系统，**`Thief`** 都让你无缝隙摸鱼
+
+![](https://cdn.zhangferry.com/Images/20220707205920.png)
+
+![](https://cdn.zhangferry.com/Images/20220707210020.png)
+
+3、[Objective-See's Tools](https://objective-see.org/tools.html "Objective-See's Tools")：提供了一系列保护 Mac 的免费、开源的工具。
+
+![](https://cdn.zhangferry.com/Images/20220707211351.png)
 
 
 
