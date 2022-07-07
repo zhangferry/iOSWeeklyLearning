@@ -1,14 +1,13 @@
-# iOS 摸鱼周报 #59
+# iOS 摸鱼周报 #59 | DevOps 再理解 
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：iOS Icon Gallery 是一个收录 App Store 上精美的 iOS/macOS/watchOS icon 的网站；Thief 是一款基于 Electron 开发的跨平台多功能的上班摸鱼神器。
-> * 岗位推荐：
+> * 本期话题：DevOps 再理解
+> * 本周学习：OC 类信息解析
+> * 内容推荐： WWDC 2022 上推出的新技术（三番）
+> * 摸一下鱼：一款跨平台摸鱼神器 Thief，有趣的骚话生成器 sao-gen-gen
 
 ## 本期话题
 
@@ -22,7 +21,7 @@ DevOps 是 Development和 Operations 的组合，即开发和运维，再加上�
 
 DevOps 要解决的问题主要有两个：
 
-一、开发流程中原本的三方是各自独立且顺序依赖的。这样效率会很低，DevOps将开发流程中原本独立的三方进行聚合，这也是为什么它的结构是一个重叠的环形结构。
+1、开发流程中原本的三方是各自独立且顺序依赖的。这样效率会很低，DevOps 将开发流程中原本独立的三方进行聚合，这也是为什么它的结构是一个重叠的环形结构。
 
 2、传统的开发模式更新迭代比较慢。DevOps 接收敏捷开发中快速迭代思想，将各个开发环节都设计成自动化、可持续的流程。
 
@@ -63,7 +62,7 @@ Apple 宣布将发布突破性的安全功能，为可能成为高度针对性�
 
 * 需要判断是否在对应的 `segmentCommand` 当中
 
-**`offset = address - (segmentCommand.vmaddr - segmentCommand.fileoff)`**
+`offset = address - (segmentCommand.vmaddr - segmentCommand.fileoff)`
 
 
 拿到偏移地址之后，我们就可以根据 `Class64` 的数据结构，在 `machoData` 当中找到对应的数据 `Class` 数据，其中的 `data` 数据才是真正 `Class` 信息的数据
@@ -79,9 +78,8 @@ struct Class64 {
 ```
 
 ---
+`Class64.data` 数据是 `VM Address` 地址，我们需要通过转换后拿到 `offset` ，在 `machData` 当中找到对应的 `ClassInfo64` 数据，然后其中 `name` 就是对应的 `className`
 
-`Class64.data` 数据是 `VM Address` 地址，我们需要通过转换拿到 `offset` 
-拿到 `offset` 后，在 `machData` 当中找到对应的 `ClassInfo64` 数据，然后其中 `name` 就是对应的 `className`
 ```C++
 struct Class64Info
 {
@@ -102,8 +100,6 @@ struct Class64Info
 ![](http://cdn.zhangferry.com/Images/20220707210722.png)
 
 如果想要了解具体源码实现，可以通过另一位主编皮拉夫大王的开源项目 [WBBlades](https://github.com/wuba/WBBlades) 学习
-
-
 
 
 ## 内容推荐
@@ -149,11 +145,11 @@ struct Class64Info
 
 ![](https://cdn.zhangferry.com/Images/20220707204501.png)
 
-2、[Thief](https://thief.im/ "Thief")：**`Thief`** 是一款基于 **`Electron`** 开发的跨平台多功能(`真正创新的`)摸鱼软件，为了上班族打造的`上班必备神器`，使用此软件可以让上班`倍感轻松`，远离 **`ICU`**。
+2、[Thief](https://thief.im/ "Thief")：`Thief` 是一款基于 `Electron`开发的跨平台多功能(`真正创新的`)摸鱼软件，为了上班族打造的`上班必备神器`，使用此软件可以让上班`倍感轻松`，远离 `ICU`。
 
-- **多功能** 不仅仅支持 **`小说摸鱼`** ，还支持 **`股票`**、**`基金`**、**`网页`**、**`视频`**、**`直播`**、**`PDF`**、**`游戏`**、等摸鱼模式
+- **多功能** 不仅仅支持 `小说摸鱼` ，还支持 `股票`、`基金`、`网页`、`视频`、`直播`、`PDF`、`游戏 `等摸鱼模式
 - **隐蔽性** 每种摸鱼模式都提供了不同的摸鱼 **技巧**，可以很隐秘地进行摸鱼
-- **跨平台** 支持 **`Win`** + **`Mac`** + **`Linux`** , 不管你用什么系统，**`Thief`** 都让你无缝隙摸鱼
+- **跨平台** 支持 `Win` + `Mac` + `Linux` , 不管你用什么系统，`Thief` 都让你无缝隙摸鱼
 
 ![](https://cdn.zhangferry.com/Images/20220707205920.png)
 
@@ -175,12 +171,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
+[iOS 摸鱼周报 #58 | 极客风听歌网站，纯文字音乐播放器](https://mp.weixin.qq.com/s/KwqFraJk40f9bEy0eKa8Kw)
+
+[iOS 摸鱼周报 #57 | 周报改版，WWDC22 讲座集锦](https://mp.weixin.qq.com/s/e4ZbFBPqclgy7KyfxVyQZA)
+
 [iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/ZyGV6WlFsZOX6Aqgrf1QRQ)
 
-[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
-
-[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
-
-[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
