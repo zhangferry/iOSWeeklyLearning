@@ -1,13 +1,13 @@
-# iOS 摸鱼周报 #59 | 深入理解 DevOps 
+# iOS 摸鱼周报 #59 | DevOps 再理解 
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：深入理解 DevOps 
-> * 本周学习：
+> * 本期话题：DevOps 再理解
+> * 本周学习：OC 类信息解析
 > * 内容推荐： WWDC 2022 上推出的新技术（三番）
-> * 摸一下鱼：iOS Icon Gallery 是一个收录 App Store 上精美的 iOS/macOS/watchOS icon 的网站；Thief 是一款基于 Electron 开发的跨平台多功能的上班摸鱼神器。
+> * 摸一下鱼：一款跨平台摸鱼神器 Thief，有趣的骚话生成器 sao-gen-gen
 
 ## 本期话题
 
@@ -56,7 +56,7 @@ Apple 宣布将发布突破性的安全功能，为可能成为高度针对性�
 
 * 需要判断是否在对应的 `segmentCommand` 当中
 
-**`offset = address - (segmentCommand.vmaddr - segmentCommand.fileoff)`**
+`offset = address - (segmentCommand.vmaddr - segmentCommand.fileoff)`
 
 
 拿到偏移地址之后，我们就可以根据 `Class64` 的数据结构，在 `machoData` 当中找到对应的数据 `Class` 数据，其中的 `data` 数据才是真正 `Class` 信息的数据
@@ -71,10 +71,10 @@ struct Class64 {
 }
 ```
 
---- 
+---
 
-`Class64.data` 数据是 `VM Address` 地址，我们需要通过转换拿到 `offset` 
-拿到 `offset` 后，在 `machData` 当中找到对应的 `ClassInfo64` 数据，然后其中 `name` 就是对应的 `className`
+`Class64.data` 数据是 `VM Address` 地址，我们需要通过转换后拿到 `offset` ，在 `machData` 当中找到对应的 `ClassInfo64` 数据，然后其中 `name` 就是对应的 `className`
+
 ```C++
 struct Class64Info
 {
@@ -95,8 +95,6 @@ struct Class64Info
 ![](http://cdn.zhangferry.com/Images/20220707210722.png)
 
 如果想要了解具体源码实现，可以通过另一位主编皮拉夫大王的开源项目 [WBBlades](https://github.com/wuba/WBBlades) 学习
-
-
 
 
 ## 内容推荐
@@ -142,11 +140,11 @@ struct Class64Info
 
 ![](https://cdn.zhangferry.com/Images/20220707204501.png)
 
-2、[Thief](https://thief.im/ "Thief")：**`Thief`** 是一款基于 **`Electron`** 开发的跨平台多功能(`真正创新的`)摸鱼软件，为了上班族打造的`上班必备神器`，使用此软件可以让上班`倍感轻松`，远离 **`ICU`**。
+2、[Thief](https://thief.im/ "Thief")：`Thief` 是一款基于 `Electron`开发的跨平台多功能(`真正创新的`)摸鱼软件，为了上班族打造的`上班必备神器`，使用此软件可以让上班`倍感轻松`，远离 `ICU`。
 
-- **多功能** 不仅仅支持 **`小说摸鱼`** ，还支持 **`股票`**、**`基金`**、**`网页`**、**`视频`**、**`直播`**、**`PDF`**、**`游戏`**、等摸鱼模式
+- **多功能** 不仅仅支持 `小说摸鱼` ，还支持 `股票`、`基金`、`网页`、`视频`、`直播`、`PDF`、`游戏`、等摸鱼模式
 - **隐蔽性** 每种摸鱼模式都提供了不同的摸鱼 **技巧**，可以很隐秘地进行摸鱼
-- **跨平台** 支持 **`Win`** + **`Mac`** + **`Linux`** , 不管你用什么系统，**`Thief`** 都让你无缝隙摸鱼
+- **跨平台** 支持 `Win` + `Mac` + `Linux` , 不管你用什么系统，`Thief` 都让你无缝隙摸鱼
 
 ![](https://cdn.zhangferry.com/Images/20220707205920.png)
 
