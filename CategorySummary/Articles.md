@@ -1621,4 +1621,4 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@我是熊大](https://github.com/Tliens)：PAG 是一套完整的动画工作流解决方案。提供从 AE (Adobe After Effects) 导出插件，到桌面预览工具，再到覆盖 iOS，Android，macOS，Windows，Linux 和 Web 等各平台的渲染 SDK。PAG 方案目前已经接入了腾讯系 40 余款应用，包括微信，手机QQ，王者荣耀，腾讯视频，QQ音乐等头部产品。
 
-******
+*********
