@@ -88,7 +88,15 @@ Swift 标准库的部分协议已经改写为 **primary associated types**，同
 
 ## 摸一下鱼
 
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
+- [Doodle Icons](https://khushmeen.com/icons.html)：涂鸦风图标；
+- [iconpark](https://iconpark.oceanengine.com/home)：字节出品的一款图标网站；
+- [iconfont](https://www.iconfont.cn/)：估计这个大家都知道，就不介绍了；
+- [icons8](https://icons8.com/animated-icons)：Icons8 推出的动态图标网站；
+- [openmoji](https://openmoji.dashgame.com/#/)：面向设计师、开发人员和其他人的开源表情符号！
+
+自己做`Side Project`的时候用的上哦！
 
 ## 岗位推荐
 
