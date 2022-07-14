@@ -1,13 +1,13 @@
-# iOS 摸鱼周报 #59
+# iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
+> * 本期话题：2022 Apple 高校优惠活动开启
 > * 本周学习：Swift 5.7 中的 opaque parameter 和 primary associated types
-> * 内容推荐：
-> * 摸一下鱼：
+> * 内容推荐： WWDC22 内参推荐 
+> * 摸一下鱼：推荐收集到的各种图标网站
 > * 岗位推荐：
 
 ## 本期话题
@@ -79,7 +79,7 @@ func bookArticlesOpaque(_ articles: some Collection<Article>) {}
 
 Swift 标准库的部分协议已经改写为 **primary associated types**，同样这一特新也支持我们自定义的协议，语法是相同的。
 
-> 另外需要了解的相关的特性还包括泛型和 `some`、`any`之间的实现异同。以及如何取舍的问题。
+> 另外相关联的特性还包括泛型和 `some`、`any`之间的实现异同。以及如何取舍的问题。
 
 * [What’s new in Swift 5.7](https://www.hackingwithswift.com/articles/249/whats-new-in-swift-5-7  "What’s new in Swift 5.7")
 * [What are primary associated types in Swift 5.7?](https://www.donnywals.com/what-are-primary-associated-types-in-swift-5-7/  "What are primary associated types in Swift 5.7?")
@@ -88,31 +88,31 @@ Swift 标准库的部分协议已经改写为 **primary associated types**，同
 
 > 对于国内的 iOSer 来说，WWDC 内参是一个较好的了解 WWDC 新内容途径，目前超过三成的文章已经出炉，今年的内参质量更上一层楼。今年我们部分摸鱼编辑参与其中，你可以查看[WWDC22内参参与体验](https://mp.weixin.qq.com/s/1x6JaHxb-bT3NtDb56BHDw)，今天还有机会获得邀请码呦。
 
-1、[**使用 LLDB 调试 Swift**](https://xiaozhuanlan.com/topic/4809126537) -- 来自：WWDC22内参
+1、[**使用 LLDB 调试 Swift**](https://xiaozhuanlan.com/topic/4809126537 "使用 LLDB 调试 Swift") -- 来自：WWDC22内参
 
 [@夏天](https://juejin.cn/user/3298190611456638)：使用 LLDB 调试 Swift 代码时，有时候有点力不从心，有时候找不到源码，有时候指令失效等。文章介绍了几个解决方案来解决命令失效的问题。文章最后还介绍了如何正确的为打包 Framework 设置参数，确保 LLDB 能够正常运行。
 
-2、[**Safari 和 WebKit 新特性介绍**](https://xiaozhuanlan.com/topic/1560743928) -- 来自：WWDC22内参
+2、[**Safari 和 WebKit 新特性介绍**](https://xiaozhuanlan.com/topic/1560743928 "Safari 和 WebKit 新特性介绍") -- 来自：WWDC22内参
 
 [@夏天](https://juejin.cn/user/3298190611456638)：苹果关于 Safari 和 WebKit 的更新，可能是其为了追平某些功能在各个浏览器上相同或相似的体验。文章介绍了一些前端的概念，以及几个有助于前端开发的网站 [Can I use](https://caniuse.com/) 和 [MDN](https://developer.mozilla.org/en-US/)。
 
-3、[**在 SwiftUI 中组合各种自定义布局**](https://xiaozhuanlan.com/topic/1507368249) -- 来自：WWDC22内参
+3、[**在 SwiftUI 中组合各种自定义布局**](https://xiaozhuanlan.com/topic/1507368249 "在 SwiftUI 中组合各种自定义布局") -- 来自：WWDC22内参
 
 [@夏天](https://juejin.cn/user/3298190611456638)：Grid 是一个十分强大的网格排版工具，极大地改善了 SwiftUI 的版式控制能力。除了 Grid， 文章还介绍了 `ViewThatFits` 以及使用 `AnyLayout` 在不同的布局类型之间平滑地过渡。
 
-4、[**快速链接：优化构建和启动耗时**](https://xiaozhuanlan.com/topic/1509638472) -- 来自：WWDC22内参
+4、[**快速链接：优化构建和启动耗时**](https://xiaozhuanlan.com/topic/1509638472 "快速链接：优化构建和启动耗时") -- 来自：WWDC22内参
 
 [@夏天](https://juejin.cn/user/3298190611456638)：一篇关于实现更快构建和优化 APP 提交和缩短启动耗时的文章。文章介绍了静态链接和动态链接相关的概念，并引申其原理内容。构建和启动相关的知识，一直是 iOS 开发中较为深奥的一部分，文章介绍的内容无论你是学习还是准备面试，都有一定的作用。
 
-5、[**Swift 新特性介绍**](https://xiaozhuanlan.com/topic/2498765013) -- 来自：WWDC22内参
+5、[**Swift 新特性介绍**](https://xiaozhuanlan.com/topic/2498765013 "Swift 新特性介绍") -- 来自：WWDC22内参
 
 [@夏天](https://juejin.cn/user/3298190611456638)：是一篇让你快速了解今 Swift 更新内容的文章，为你提供了最近几年 Swift 发展的概览，介绍了今年更新的内容。如果你需要对今年 Swift 更新内容有一个了解，不失为一种途径。
 
-7、[**探索 In-App Purchase 集成和迁移**](https://xiaozhuanlan.com/topic/8024563197) -- 来自：WWDC22内参
+7、[**探索 In-App Purchase 集成和迁移**](https://xiaozhuanlan.com/topic/8024563197 "探索 In-App Purchase 集成和迁移") -- 来自：WWDC22内参
 
 [@夏天](https://juejin.cn/user/3298190611456638)：IAP 可能是部分国内开发者上架 App Store 的一种`阻碍`。去年 Apple 对 IAP 大拆大建，今年也新增了部分功能。如果你近期有关于 IAP 相关的内容，可以回顾最近两年的内参，对你有不小的帮助。
 
-6、[**Swift 编程语言**](https://www.cnswift.org/)--来自：cnswift
+6、[**Swift 编程语言**](https://www.cnswift.org/ "Swift 编程语言")--来自：cnswift
 
 [@Hello World](https://juejin.cn/user/2999123453164605/posts)：比 SwiftGG `更快` 的 Swift 中文版本。
 
@@ -120,11 +120,11 @@ Swift 标准库的部分协议已经改写为 **primary associated types**，同
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
-- [Doodle Icons](https://khushmeen.com/icons.html)：涂鸦风图标；
-- [iconpark](https://iconpark.oceanengine.com/home)：字节出品的一款图标网站；
-- [iconfont](https://www.iconfont.cn/)：估计这个大家都知道，就不介绍了；
-- [icons8](https://icons8.com/animated-icons)：Icons8 推出的动态图标网站；
-- [openmoji](https://openmoji.dashgame.com/#/)：面向设计师、开发人员和其他人的开源表情符号！
+- [Doodle Icons](https://khushmeen.com/icons.html "Doodle Icons")：涂鸦风图标；
+- [iconpark](https://iconpark.oceanengine.com/home "iconpark")：字节出品的一款图标网站；
+- [iconfont](https://www.iconfont.cn/ "iconfont")：估计这个大家都知道，就不介绍了；
+- [icons8](https://icons8.com/animated-icons "icons8")：Icons8 推出的动态图标网站；
+- [openmoji](https://openmoji.dashgame.com/#/ "openmoji")：面向设计师、开发人员和其他人的开源表情符号！
 
 自己做`Side Project`的时候用的上哦！
 
@@ -138,12 +138,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/ZyGV6WlFsZOX6Aqgrf1QRQ)
+[iOS 摸鱼周报 #59 | DevOps 再理解 ](https://mp.weixin.qq.com/s/LJNCo0Eg11shGZN75-TZcg)
 
-[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
+[iOS 摸鱼周报 #58 | 极客风听歌网站，纯文字音乐播放器](https://mp.weixin.qq.com/s/KwqFraJk40f9bEy0eKa8Kw)
 
-[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
+[iOS 摸鱼周报 #57 | 周报改版，WWDC22 讲座集锦](https://mp.weixin.qq.com/s/e4ZbFBPqclgy7KyfxVyQZA)
 
-[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
