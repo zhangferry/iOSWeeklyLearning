@@ -12,7 +12,9 @@
 
 ## 本期话题
 
+### [2022 Apple 高校优惠活动开启](https://www.apple.com.cn/cn-edu/shop/back-to-school "2022 Apple 高校优惠活动开启")
 
+[@远恒之义](https://github.com/eternaljust)：炎热的暑假来袭，Apple 为你“降降温”。一年一度的 Apple 高校优惠活动正式开启，为你的高校生活购买 Mac 或 iPad，不仅省钱，还送 AirPods，更有 Apple Pencil 和智能键盘优惠、八折加购 AppleCare+ 服务计划及更多惊喜等着你。此次优惠活动面向在读及新录取的高校学生，以及各级教师和教职员工，选购前需要[通过 UNiDAYS 资格验证](https://www.myunidays.uk/CN/zh-CN/partners/appleeducationstore/spotlight/online "通过 UNiDAYS 资格验证")。活动限制查看 [2022 中国大陆高校优惠活动的条款和条件](https://www.apple.com.cn/cn-edu/shop/open/back_to_school/terms_conditions "2022 中国大陆高校优惠活动的条款和条件")。
 
 ## 本周学习
 
