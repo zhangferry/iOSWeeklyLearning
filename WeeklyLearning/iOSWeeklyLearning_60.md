@@ -8,9 +8,9 @@
 > * 本周学习：Swift 5.7 中的 opaque parameter 和 primary associated types
 > * 内容推荐： WWDC22 内参推荐 
 > * 摸一下鱼：推荐收集到的各种图标网站
-> * 岗位推荐：
+> * 岗位推荐：上海 Espressif 招聘全栈工程师
 
-## 本期话题
+## Apple 资讯
 
 ### [2022 Apple 高校优惠活动开启](https://www.apple.com.cn/cn-edu/shop/back-to-school "2022 Apple 高校优惠活动开启")
 
@@ -77,7 +77,7 @@ func bookArticlesOpaque(_ articles: some Collection<Article>) {}
 
 此时通过 `some` 实现的 `bookArticlesOpaque` 才和泛型的函数 `bookArticlesGeneric`完全等价。
 
-Swift 标准库的部分协议已经改写为 **primary associated types**，同样这一特新也支持我们自定义的协议，语法是相同的。
+Swift 标准库的部分协议已经改写为 **primary associated types**，同样这一特性也支持我们自定义的协议，语法是相同的。
 
 > 另外相关联的特性还包括泛型和 `some`、`any`之间的实现异同。以及如何取舍的问题。
 
@@ -120,7 +120,8 @@ Swift 标准库的部分协议已经改写为 **primary associated types**，同
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
-- [Doodle Icons](https://khushmeen.com/icons.html "Doodle Icons")：涂鸦风图标；
+![](https://cdn.zhangferry.com/Images/20220714233011.png)
+
 - [iconpark](https://iconpark.oceanengine.com/home "iconpark")：字节出品的一款图标网站；
 - [iconfont](https://www.iconfont.cn/ "iconfont")：估计这个大家都知道，就不介绍了；
 - [icons8](https://icons8.com/animated-icons "icons8")：Icons8 推出的动态图标网站；
@@ -130,7 +131,31 @@ Swift 标准库的部分协议已经改写为 **primary associated types**，同
 
 ## 岗位推荐
 
+公司名：Espressif（乐鑫科技）
 
+城市：上海
+
+Job Description & Summary: 
+
+A career within ESPRESSIF Digital Solutions team, will provide you with the opportunity to digitally transform the company by building elegant web/mobile systems backed by latest technologies. As a member of our team, the candidate will join talented professionals with diverse backgrounds and skills. 
+
+Skills Required
+
+· Bachelor's degree in Computer Science, Information Technology or related area
+· 2-6 years of hands-on experience developing full-stack software applications
+· Experienced with relational databases (MySQL, MSSQL) with the ability of database design and optimization
+· Strong expertise in Java/Scala/Python programming language with Spring/Play/Django framework experience
+· Deep understanding of front-end technologies such as JavaScript, CSS, HTML5, React or Vue etc.
+
+Skills Desired
+
+· Understanding of CI/CD pipeline and related tools such as Git, Jenkins, Docker, Kubernetes
+· Experienced with any NoSQL databases e.g. MongoDB and distributed cache e.g. Redis 
+· Experience with ELK (ElasticSearch, LogStash, Kibana) stack
+· Experience with Azure or AWS cloud
+· Fluent oral English communication
+
+联系方式：简历发送到邮箱：fanbaoying@espressif.com 或加微信：fzhanfei（备注：摸鱼周报）。
 
 ## 关于我们
 
