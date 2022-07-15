@@ -770,4 +770,4 @@ Joel Spolsky 的 Blog 纸质版文集，中文版由阮一峰翻译。作者 Joe
 
 ![memorylayout](https://cdn.zhangferry.com/Images/memorylayout.png)
 
-*********
+************
