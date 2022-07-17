@@ -44,7 +44,7 @@ Markdown语法分两部分：
 
 2、配置七牛云
 
-![](http://cdn.zhangferry.com/Images/20220327111659.png)
+![](https://cdn.zhangferry.com/Images20220717141216.png)
 
 AccessKey 和 SecretKey 内容需要跟 @zhangferry 索取，其他内容均如图填写即可。
 
