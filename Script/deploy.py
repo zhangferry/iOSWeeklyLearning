@@ -34,6 +34,12 @@ class BlogRepo:
         date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         today = f"date: {date}"
 
+        date_path_format = time.strftime("%Y/%m/%d", time.localtime())
+        file_name_format = os.path.splitext(self.file_name)[0]
+        # for real address
+        blog_url = f"https://zhangferry.com/{date_path_format}/{file_name_format}"
+        print(f"Blog url: {blog_url}")
+
         cover = "cover: https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg"
         tags = "tags:\n\t- iOS摸鱼周报"
         comments = "comments: true"
@@ -145,4 +151,4 @@ if __name__ == '__main__':
     blog_repo = BlogRepo(token=blog_token, git_url=blog_git_url, branch=blog_branch)
     builder.run_with(blog_repo=blog_repo)
 
-    print("push weekly article success! 🚀")
+    print("Deploy weekly article success! It will take effect in about 10 minutes 🚀")
