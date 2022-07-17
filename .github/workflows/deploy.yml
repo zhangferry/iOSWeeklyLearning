@@ -26,13 +26,29 @@ jobs:
     steps:
       - name: print inputs
         run: |
-          echo "Log level: ${{ github.event.inputs.weekly_index }}"
-        
+          echo "Weekly Index: ${{ github.event.inputs.weekly_index }}"
+          
+      - name: Git Config
+        run: |
+          git config --global user.email moyuweekly@github.com
+          git config --global user.name moyuweekly
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+#      - name: Clone Repo
+#        uses: GuillaumeFalourd/clone-github-repo-action@v2
+#        with:
+#          owner: 'zhangferry'
+#          repository: 'GithubPage'
+#          access-token: ${{ secrets.ACCESS_TOKEN }}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: ./Script/ci_run.sh
         shell: bash
+          
+#      - name: Push Repo
+#        uses: actions-js/push@master
+#        with:
+#          github_token: ${{ secrets.ACCESS_TOKEN }}
 

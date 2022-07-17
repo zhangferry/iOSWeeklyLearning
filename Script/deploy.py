@@ -124,10 +124,10 @@ class BlogArticleBuilder:
 
     def run_with(self, blog_repo):
         article_path = self.get_weekly_article_path()
-        print(article_path)
+        # print(article_path)
         blog_repo.clone_or_update_repo()
         target_folder = f"{blog_repo.repo_path}/Content/posts"
-        print(target_folder)
+        # print(target_folder)
         head_str, target_path = self.copy_file_to_repo(source_path=article_path, target_folder=target_folder)
         blog_repo.modify_file(head_str, target_path)
         blog_repo.push()
