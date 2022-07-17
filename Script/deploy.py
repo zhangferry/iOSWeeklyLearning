@@ -125,7 +125,7 @@ class BlogArticleBuilder:
     def run_with(self, blog_repo):
         article_path = self.get_weekly_article_path()
         print(article_path)
-        # blog_repo.clone_or_update_repo()
+        blog_repo.clone_or_update_repo()
         target_folder = f"{blog_repo.repo_path}/Content/posts"
         print(target_folder)
         head_str, target_path = self.copy_file_to_repo(source_path=article_path, target_folder=target_folder)
@@ -137,9 +137,10 @@ if __name__ == '__main__':
 
     builder = BlogArticleBuilder()
 
-    # 也可以通过环境变量传入
-    blog_token = ""
-    blog_git_url = "git@github.com:zhangferry/GithubPage.git"
+    # 通过环境变量传入
+    blog_token = os.environ["ACCESS_TOKEN"]
+
+    blog_git_url = f"https://{blog_token}@github.com/zhangferry/GithubPage.git"
     blog_branch = "master"
     blog_repo = BlogRepo(token=blog_token, git_url=blog_git_url, branch=blog_branch)
     builder.run_with(blog_repo=blog_repo)
