@@ -1,3 +1,5 @@
-# open virtual python environment
-#source venv/bin/activate
-python3 deploy.py
+#!/bin/bash
+
+path=$(cd $(dirname $0); pwd)
+deploy="${path}/deploy.py"
+python3 ${deploy}
