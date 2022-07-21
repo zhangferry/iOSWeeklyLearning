@@ -85,6 +85,8 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 }
 ```
 
+参考：[解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题 - Swift社区](https://mp.weixin.qq.com/s/MZqpzCAkWE9gGpsAYyo_aw)
+
 ## 内容推荐
 
 
