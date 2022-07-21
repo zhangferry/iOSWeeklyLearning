@@ -84,7 +84,7 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 }
 ```
 
-参考：[解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题 - Swift 社区](https://mp.weixin.qq.com/s/MZqpzCAkWE9gGpsAYyo_aw)
+参考：[解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题 - Swift 社区](https://mp.weixin.qq.com/s/MZqpzCAkWE9gGpsAYyo_aw "解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题 - Swift 社区")
 
 ## 内容推荐
 
@@ -100,6 +100,13 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 
 [@东坡肘子](https://www.fatbobman.com/)：在 WWDC 2022 中，虽然苹果没有为 Core Data 增加新的功能，但这并不意味着 Core Data 在苹果生态中变得不那么重要。Keith Harrison 整理了在 WWDC 2022 数字会客室中有关 Core Data 方面的一些讨论，主要涉及：数据同步、异步加载等方面的内容。
 
+4、[Bottom Sheet in SwiftUI on iOS 16 with presentationDetents modifier](https://sarunw.com/posts/swiftui-bottom-sheet/ "Bottom Sheet in SwiftUI on iOS 16 with presentationDetents modifier") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：底部表单(Bottom Sheet)是一种类似 Apple 地图主页面拖动的控件，你可以从设备屏幕底部向上滑动，来调整页面内容的显示大小。在 iOS 15 UIKit 中，Apple 推出了 `UISheetPresentationController`，支持展示 `.medium` 和 `.large` 两种形态。今年，iOS 16 SwiftUI 推出了 `presentationdetents` 修饰符，除了支持之前的大中尺寸，新的修饰符还升级了三种设置方式：固定高度(`.height`)，分数(`.fraction`)以及自定义高度逻辑(`.custom`)。
+
+5、[利用新的 ImageRenderer API 輕鬆把 SwiftUI 視圖轉換為圖像](https://www.appcoda.com.tw/imagerenderer-swiftui/ "利用新的 ImageRenderer API 輕鬆把 SwiftUI 視圖轉換為圖像") -- 来自：Simon Ng
+
+[@远恒之义](https://github.com/eternaljust)：iOS 16 SwiftUI 新推出了 `ImageRenderer`。利用这个 API，我们可以轻松把 SwiftUI 中的视图转换为图像，再保存这个图像到系统相册中。同时，分享视图转换后的图像也是轻而易举的操作。此外，通过设置 `ImageRenderer` 类别中的 `scale` 属性，你还可以调整渲染图像的比例，从而提高图像的解析度。
 
 ## 摸一下鱼
 
