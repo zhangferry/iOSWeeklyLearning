@@ -17,6 +17,14 @@
 
 活动将于 2022 年 8 月 2 日 (周二) 举办，完全免费，但仅限受邀开发人员参加。您可在您的开发团队中额外邀请最多 5 位成员参加，详情查看[设计开发加速器活动注册指南](https://essentials.applesurveys.com/WRQualtricsControlPanel_rel/File.php?F=F_a4rFfRXziNGhoAm "设计开发加速器活动注册指南")。活动注册截止日期为 2022 年 8 月 1 日，**报名地址**：https://developer.apple.com/events/view/upcoming-events。
 
+### [即将从 XML Feed 过渡到 App Store Connect API](https://developer.apple.com/cn/news/?id=yqf4kgwb)
+
+[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：App Store Connect REST API 让您可以跨各种开发者工具自定义任务并实现任务自动化，使工作流程更灵活、更高效。从 2022 年 11 月开始，您将需要使用此 API 来代替 XML Feed，从而实现对 App 内购买项目、订阅、元数据和 App 定价的自动化管理。XML Feed 将继续为现有的 Game Center 管理功能提供支持。
+
+### [Apple 介绍如何通过健康信息为用户赋能](https://www.apple.com.cn/newsroom/2022/07/how-apple-is-empowering-people-with-their-health-information/)
+
+[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：Apple 于 7 月 20 日公布了一份新报告，简要介绍 Apple 产品帮助用户掌控自身健康，担当用户健康与安全智能守护者的多种方式。全球各地的用户、开发者、医疗机构与保健组织正在使用 Apple 设备、功能与 API 帮助人们消除获取自身健康信息的障碍，同时严格保障个人隐私。
+
 ## 本周学习
 
 ### 解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题
