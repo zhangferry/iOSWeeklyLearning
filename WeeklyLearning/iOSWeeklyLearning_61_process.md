@@ -1,14 +1,13 @@
-# iOS 摸鱼周报 #59
+# iOS 摸鱼周报 #61 |  Developer 设计开发加速器
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
-> * 岗位推荐：
+> * 本期话题： Developer 设计开发加速器｜探索 Create ML Components
+> * 本周学习：解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题
+> * 内容推荐：SwiftUI 本周好文推荐
+> * 摸一下鱼：摸鱼网站推荐
 
 ## 本期话题
 
@@ -112,25 +111,19 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
-1. [JSON Hero](https://github.com/jsonhero-io/jsonhero-web)，一款让你轻松直观地查看 JSON 文档的工具，为你提供类似 Mac Finder 体验的工具。
+1. [JSON Hero](https://github.com/jsonhero-io/jsonhero-web "JSON Hero")，一款让你轻松直观地查看 JSON 文档的工具，为你提供类似 Mac Finder 体验的工具。
 
-   ![](https://raw.githubusercontent.com/jsonhero-io/documentation-hosting/main/images/features-treeview.gif)
+   ![](http://cdn.zhangferry.com/Images/features-treeview (1).gif)
 
    如果你的 JSON 文件足够庞大，这款软件必不可少。
 
-2. [SingleFile](https://github.com/gildas-lormeau/SingleFile)是一种 Web 扩展（和 CLI 工具），与Chrome、Firefox（桌面和移动）、Microsoft Edge、Vivaldi、Brave、Waterbox、Yandex browser 和 Opera 兼容。它可以帮助您将完整的网页保存到单个 HTML 文件中。
+2. [SingleFile](https://github.com/gildas-lormeau/SingleFile "SingleFile")是一种 Web 扩展（和 CLI 工具），与Chrome、Firefox（桌面和移动）、Microsoft Edge、Vivaldi、Brave、Waterbox、Yandex browser 和 Opera 兼容。它可以帮助您将完整的网页保存到单个 HTML 文件中。
 
-3. [State-of-the-Art Shitcode Principles](https://github.com/trekhleb/state-of-the-art-shitcode) 这是一个`Shitcode`书写准则.
+3. [State-of-the-Art Shitcode Principles](https://github.com/trekhleb/state-of-the-art-shitcode "State-of-the-Art Shitcode Principles") 这是一个`Shitcode`书写准则.
 
-4. [This-repo-has-N-stars](https://github.com/fslongjin/This-repo-has-838-stars) 如项目名称所示，这个项目有 N 个 Star，当 Star 的数量发生改变时，项目名称会被动态地更新。
+4. [This-repo-has-N-stars](https://github.com/fslongjin/This-repo-has-838-stars "This-repo-has-N-stars") 如项目名称所示，这个项目有 N 个 Star，当 Star 的数量发生改变时，项目名称会被动态地更新。
 
-5. [摸鱼游戏](https://moyu.games) 可能是一个全方位的摸鱼指南，无论你是想休闲娱乐还是需要学习，都能给你提供不一样内容。
-
-   
-
-## 岗位推荐
-
-
+5. [摸鱼游戏](https://moyu.games "摸鱼游戏") 可能是一个全方位的摸鱼指南，无论你是想休闲娱乐还是需要学习，都能给你提供不一样内容。
 
 ## 关于我们
 
@@ -138,12 +131,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/ZyGV6WlFsZOX6Aqgrf1QRQ)
+[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/Sv3goAv198eXjmlVJsN1rw)
 
-[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
+[iOS 摸鱼周报 #59 | DevOps 再理解 ](https://mp.weixin.qq.com/s/LJNCo0Eg11shGZN75-TZcg)
 
-[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
+[iOS 摸鱼周报 #58 | 极客风听歌网站，纯文字音乐播放器](https://mp.weixin.qq.com/s/KwqFraJk40f9bEy0eKa8Kw)
 
-[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #57 | 周报改版，WWDC22 讲座集锦](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
