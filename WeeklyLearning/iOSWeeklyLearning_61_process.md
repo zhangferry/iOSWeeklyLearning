@@ -16,9 +16,74 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+### 解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题
 
+整理编辑：[FBY展菲](https://github.com/fanbaoying)
 
+#### 问题背景
+
+App 实现录音保存音频文件，并实现本地语音识别匹配功能。
+
+通过网络请求上传完成语音匹配的音频文件。
+
+服务器接收到文件并进行语音识别，使用的是第三方微软语音识别，只支持 `PCM` 数据源的 `WAV` 格式。
+
+本地识别没有任何问题，上传到服务器的文件无法识别，微软库直接报错。猜测上传的音频格式有误，导致的问题。
+
+#### 问题代码
+
+```objectivec
+- (NSDictionary *)getAudioSetting {
+    NSMutableDictionary *dicM=[NSMutableDictionary dictionary];
+    //设置录音格式
+    [dicM setObject:@(kAudioFormatLinearPCM) forKey:AVFormatIDKey];
+    //设置录音采样率，8000是电话采样率，对于一般录音已经够了
+    [dicM setObject:@(16000) forKey:AVSampleRateKey];
+    //设置通道,这里采用单声道 1 2
+    [dicM setObject:@(2) forKey:AVNumberOfChannelsKey];
+    //每个采样点位数,分为8、16、24、32
+    [dicM setObject:@(16) forKey:AVLinearPCMBitDepthKey];
+    //是否使用浮点数采样
+    [dicM setObject:@(NO) forKey:AVLinearPCMIsFloatKey];
+    //....其他设置等
+    return dicM;
+}
+```
+
+在没有使用微软语音识别库之前，使用上面的代码没有任何问题。识别库更新之后，不识别上传的的音频文件。
+
+一开始以为是因为没有使用浮点数采样导致音频文件被压缩。修改后依然没有解决问题。
+
+经过和服务器的联调，发现 .wav 音频文件的头部信息服务区无法识别。
+
+#### 解决方案
+
+当音频文件保存为 `.wav` 格式的时候，`iOS11` 以下的系统，`.wav` 文件的头部信息是没问题，但是在 `iOS11+` `.wav` 文件的头部信息服务区识别不了。
+
+需要设置 `AVAudioFileTypeKey` 来解决这个问题。代码如下：
+
+```objectivec
+- (NSDictionary *)getAudioSetting {
+    NSMutableDictionary *dicM=[NSMutableDictionary dictionary];
+    //设置录音格式
+    [dicM setObject:@(kAudioFormatLinearPCM) forKey:AVFormatIDKey];
+    if (@available(iOS 11.0, *)) {
+        [dicM setObject:@(kAudioFileWAVEType) forKey:AVAudioFileTypeKey];
+    } else {
+        // Fallback on earlier versions
+    }
+    //设置录音采样率，8000是电话采样率，对于一般录音已经够了
+    [dicM setObject:@(16000) forKey:AVSampleRateKey];
+    //设置通道,这里采用单声道 1 2
+    [dicM setObject:@(2) forKey:AVNumberOfChannelsKey];
+    //每个采样点位数,分为8、16、24、32
+    [dicM setObject:@(16) forKey:AVLinearPCMBitDepthKey];
+    //是否使用浮点数采样
+    [dicM setObject:@(NO) forKey:AVLinearPCMIsFloatKey];
+    //....其他设置等
+    return dicM;
+}
+```
 
 ## 内容推荐
 
