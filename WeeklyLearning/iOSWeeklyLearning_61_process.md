@@ -88,6 +88,17 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 
 ## 内容推荐
 
+1、[SwiftUI中的后台任务](https://swiftwithmajid.com/2022/07/06/background-tasks-in-swiftui/ "SwiftUI中的后台任务") -- 来自：Majid
+
+[@东坡肘子](https://www.fatbobman.com/)：苹果随着 iOS 13 一起发布了一个 BackgroundTasks 框架。该框架允许开发者使用代码在后台智能地安排工作。在 SwiftUI 4.0 中，苹果又新增了 backgroundTask 视图修饰器，进一步降低了使用后台框架的难度。Majid 将通过本文介绍如何在 SwiftUI 中安排和处理后台任务。
+
+2、[SwiftUI 布局 —— 尺寸](https://www.fatbobman.com/posts/layout-dimensions-1/ "SwiftUI 布局 —— 尺寸") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：在 SwiftUI 中，尺寸这一布局中极为重要的概念，似乎变得有些神秘。无论是设置尺寸还是获取尺寸都不是那么地符合直觉。本文将从布局的角度入手，为你揭开盖在 SwiftUI 尺寸概念上面纱，了解并掌握 SwiftUI 中众多尺寸的含义与用法；并通过创建符合 Layout 协议的 frame 和 fixedSize 视图修饰器的复制品，让你对 SwiftUI 的布局机制有更加深入地理解。
+
+3、[WWDC 2022 数字会客室中有关 Core Data 的内容](https://useyourloaf.com/blog/wwdc22-core-data-lab-notes/ "WWDC 2022 数字会客室中有关 Core Data 的内容") -- 来自：Keith Harrison
+
+[@东坡肘子](https://www.fatbobman.com/)：在 WWDC 2022 中，虽然苹果没有为 Core Data 增加新的功能，但这并不意味着 Core Data 在苹果生态中变得不那么重要。Keith Harrison 整理了在 WWDC 2022 数字会客室中有关 Core Data 方面的一些讨论，主要涉及：数据同步、异步加载等方面的内容。
 
 
 ## 摸一下鱼
