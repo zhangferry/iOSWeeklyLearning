@@ -143,7 +143,19 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 
 2. [SingleFile](https://github.com/gildas-lormeau/SingleFile "SingleFile")是一种 Web 扩展（和 CLI 工具），与Chrome、Firefox（桌面和移动）、Microsoft Edge、Vivaldi、Brave、Waterbox、Yandex browser 和 Opera 兼容。它可以帮助您将完整的网页保存到单个 HTML 文件中。
 
-3. [State-of-the-Art Shitcode Principles](https://github.com/trekhleb/state-of-the-art-shitcode "State-of-the-Art Shitcode Principles") 这是一个`Shitcode`书写准则.
+3. [State-of-the-Art Shitcode Principles](https://github.com/trekhleb/state-of-the-art-shitcode "State-of-the-Art Shitcode Principles") 这是一个`Shitcode`书写准则，来学习下「垃圾」代码的艺术。
+
+   ```swift
+   /// 💩 Mix variable/functions naming style
+   
+   ///Good 👍🏻
+   let wWidth = 640;
+   let w_height = 480;
+   
+   ///Bad 👎🏻
+   let windowWidth = 640;
+   let windowHeight = 480;
+   ```
 
 4. [This-repo-has-N-stars](https://github.com/fslongjin/This-repo-has-838-stars "This-repo-has-N-stars") 如项目名称所示，这个项目有 N 个 Star，当 Star 的数量发生改变时，项目名称会被动态地更新。
 
