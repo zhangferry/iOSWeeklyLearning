@@ -93,7 +93,23 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 
 ## 摸一下鱼
 
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
+1. [JSON Hero](https://github.com/jsonhero-io/jsonhero-web)，一款让你轻松直观地查看 JSON 文档的工具，为你提供类似 Mac Finder 体验的工具。
+
+   ![](https://raw.githubusercontent.com/jsonhero-io/documentation-hosting/main/images/features-treeview.gif)
+
+   如果你的 JSON 文件足够庞大，这款软件必不可少。
+
+2. [SingleFile](https://github.com/gildas-lormeau/SingleFile)是一种 Web 扩展（和 CLI 工具），与Chrome、Firefox（桌面和移动）、Microsoft Edge、Vivaldi、Brave、Waterbox、Yandex browser 和 Opera 兼容。它可以帮助您将完整的网页保存到单个 HTML 文件中。
+
+3. [State-of-the-Art Shitcode Principles](https://github.com/trekhleb/state-of-the-art-shitcode) 这是一个`Shitcode`书写准则.
+
+4. [This-repo-has-N-stars](https://github.com/fslongjin/This-repo-has-838-stars) 如项目名称所示，这个项目有 N 个 Star，当 Star 的数量发生改变时，项目名称会被动态地更新。
+
+5. [摸鱼游戏](https://moyu.games) 可能是一个全方位的摸鱼指南，无论你是想休闲娱乐还是需要学习，都能给你提供不一样内容。
+
+   
 
 ## 岗位推荐
 
