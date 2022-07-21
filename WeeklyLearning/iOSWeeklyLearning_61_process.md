@@ -12,13 +12,17 @@
 
 ## 本期话题
 
+###  Developer 设计开发加速器｜探索 Create ML Components
 
+[@远恒之义](https://github.com/eternaljust)：本次活动将探索全新的 Create ML Components 框架，来配置更细颗粒度的机器学习任务。了解如何通过 Create ML Components 在图片类、列表类、视频类等任务上创建自定义模型，更好地配合您的使用场景。
+
+活动将于 2022 年 8 月 2 日 (周二) 举办，完全免费，但仅限受邀开发人员参加。您可在您的开发团队中额外邀请最多 5 位成员参加，详情查看[设计开发加速器活动注册指南](https://essentials.applesurveys.com/WRQualtricsControlPanel_rel/File.php?F=F_a4rFfRXziNGhoAm "设计开发加速器活动注册指南")。活动注册截止日期为 2022 年 8 月 1 日，**报名地址**：https://developer.apple.com/events/view/upcoming-events。
 
 ## 本周学习
 
 ### 解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题
 
-整理编辑：[FBY展菲](https://github.com/fanbaoying)
+整理编辑：[FBY 展菲](https://github.com/fanbaoying)
 
 #### 问题背景
 
@@ -33,19 +37,18 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 #### 问题代码
 
 ```objectivec
-- (NSDictionary *)getAudioSetting {
-    NSMutableDictionary *dicM=[NSMutableDictionary dictionary];
-    //设置录音格式
+- (NSDictionary *)getAudioSetting {NSMutableDictionary *dicM=[NSMutableDictionary dictionary];
+    // 设置录音格式
     [dicM setObject:@(kAudioFormatLinearPCM) forKey:AVFormatIDKey];
-    //设置录音采样率，8000是电话采样率，对于一般录音已经够了
+    // 设置录音采样率，8000 是电话采样率，对于一般录音已经够了
     [dicM setObject:@(16000) forKey:AVSampleRateKey];
-    //设置通道,这里采用单声道 1 2
+    // 设置通道, 这里采用单声道 1 2
     [dicM setObject:@(2) forKey:AVNumberOfChannelsKey];
-    //每个采样点位数,分为8、16、24、32
+    // 每个采样点位数, 分为 8、16、24、32
     [dicM setObject:@(16) forKey:AVLinearPCMBitDepthKey];
-    //是否使用浮点数采样
+    // 是否使用浮点数采样
     [dicM setObject:@(NO) forKey:AVLinearPCMIsFloatKey];
-    //....其他设置等
+    //.... 其他设置等
     return dicM;
 }
 ```
@@ -63,29 +66,25 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 需要设置 `AVAudioFileTypeKey` 来解决这个问题。代码如下：
 
 ```objectivec
-- (NSDictionary *)getAudioSetting {
-    NSMutableDictionary *dicM=[NSMutableDictionary dictionary];
-    //设置录音格式
+- (NSDictionary *)getAudioSetting {NSMutableDictionary *dicM=[NSMutableDictionary dictionary];
+    // 设置录音格式
     [dicM setObject:@(kAudioFormatLinearPCM) forKey:AVFormatIDKey];
-    if (@available(iOS 11.0, *)) {
-        [dicM setObject:@(kAudioFileWAVEType) forKey:AVAudioFileTypeKey];
-    } else {
-        // Fallback on earlier versions
-    }
-    //设置录音采样率，8000是电话采样率，对于一般录音已经够了
+    if (@available(iOS 11.0, *)) {[dicM setObject:@(kAudioFileWAVEType) forKey:AVAudioFileTypeKey];
+    } else {// Fallback on earlier versions}
+    // 设置录音采样率，8000 是电话采样率，对于一般录音已经够了
     [dicM setObject:@(16000) forKey:AVSampleRateKey];
-    //设置通道,这里采用单声道 1 2
+    // 设置通道, 这里采用单声道 1 2
     [dicM setObject:@(2) forKey:AVNumberOfChannelsKey];
-    //每个采样点位数,分为8、16、24、32
+    // 每个采样点位数, 分为 8、16、24、32
     [dicM setObject:@(16) forKey:AVLinearPCMBitDepthKey];
-    //是否使用浮点数采样
+    // 是否使用浮点数采样
     [dicM setObject:@(NO) forKey:AVLinearPCMIsFloatKey];
-    //....其他设置等
+    //.... 其他设置等
     return dicM;
 }
 ```
 
-参考：[解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题 - Swift社区](https://mp.weixin.qq.com/s/MZqpzCAkWE9gGpsAYyo_aw)
+参考：[解决使用 AVAudioRecorder 录音保存 .WAV 文件遇到的问题 - Swift 社区](https://mp.weixin.qq.com/s/MZqpzCAkWE9gGpsAYyo_aw)
 
 ## 内容推荐
 
@@ -101,7 +100,7 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 
 ## 关于我们
 
-iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
+iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS 成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
