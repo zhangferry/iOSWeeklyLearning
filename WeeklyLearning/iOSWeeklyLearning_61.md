@@ -115,13 +115,29 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 
 [@远恒之义](https://github.com/eternaljust)：iOS 16 SwiftUI 新推出了 `ImageRenderer`。利用这个 API，我们可以轻松把 SwiftUI 中的视图转换为图像，再保存这个图像到系统相册中。同时，分享视图转换后的图像也是轻而易举的操作。此外，通过设置 `ImageRenderer` 类别中的 `scale` 属性，你还可以调整渲染图像的比例，从而提高图像的解析度。
 
+6、[信息安全 | 互联网时代，如何建立信任？](https://mp.weixin.qq.com/s?__biz=Mzg3MjcxNzUxOQ==&mid=2247484972&idx=1&sn=4f0d819e8ab9456bd2ee81942abb3f22&chksm=ceea4b8cf99dc29ad27798c860c9db89621d81497fb6a5d206ed0602d75cffbb1bfdbec5809a&token=2062691669&lang=zh_CN#rd) -- 来自公众号：Bo2SS
+
+[@doubleLLL3](https://github.com/doubleLLL3)：文章从信息安全是什么说起，到为什么，到怎么做，脉络清晰，层层递进，最后还聊了一些相关的应用加深理解。
+
+通过文章可以让读者回答并理解以下问题：
+
+1）信息传输一般使用对称加密+非对称加密，为什么？不能只使用其中一种吗？
+
+2）信息安全为什么需要数字签名？
+
+3）为什么签名前需要做哈希操作？
+
+4）信息安全为什么需要数字证书？
+
+文章的终极目标是：当我们在遇到密码学相关问题时，不再恐惧和迷惑。
+
 ## 摸一下鱼
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
 1. [JSON Hero](https://github.com/jsonhero-io/jsonhero-web "JSON Hero")，一款让你轻松直观地查看 JSON 文档的工具，为你提供类似 Mac Finder 体验的工具。
 
-   ![](http://cdn.zhangferry.com/Images/features-treeview (1).gif)
+   ![](https://cdn.zhangferry.com/Images/features-treeview (1).gif)
 
    如果你的 JSON 文件足够庞大，这款软件必不可少。
 
@@ -132,6 +148,20 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 4. [This-repo-has-N-stars](https://github.com/fslongjin/This-repo-has-838-stars "This-repo-has-N-stars") 如项目名称所示，这个项目有 N 个 Star，当 Star 的数量发生改变时，项目名称会被动态地更新。
 
 5. [摸鱼游戏](https://moyu.games "摸鱼游戏") 可能是一个全方位的摸鱼指南，无论你是想休闲娱乐还是需要学习，都能给你提供不一样内容。
+
+6. [Qwerty Learner](https://qwerty.kaiyi.cool/ "Qwerty Learner")：练打字，学英语，学编程词汇，一个网站全搞定w(ﾟДﾟ)w
+
+   ![](https://cdn.zhangferry.com/Images/20220721230920.png)
+
+7. Apple 全系系统迎来了一波更新，最新版本如下：
+
+   | OS      | Version | Build |
+   | ------- | ------- | ----- |
+   | iOS     | 15.6    | 19G71 |
+   | iPadOS  | 15.6    | 19G71 |
+   | macOS   | 12.5    | 21G72 |
+   | watchOS | 8.7     | 19U66 |
+   | tvOS    | 15.6    | 19M65 |
 
 ## 关于我们
 
