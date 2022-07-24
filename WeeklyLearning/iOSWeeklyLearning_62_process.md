@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #59
+# iOS 摸鱼周报 #62
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -22,7 +22,13 @@
 
 ## 内容推荐
 
+1、 [开源｜WBBlades重要节点更新-专为提效而设计](https://mp.weixin.qq.com/s/tXxhnDKerobyxoWuEBGjNQ) -- 来自：58技术
 
+[@皮拉夫大王]()：给iOS开发人员提供基于Mach-O文件解析的工具集，工具包括无用类检测（支持OC和Swift）、包大小分析（支持单个静态库/动态库的包大小分析）、点对点崩溃解析（基于系统日志，支持有符号状态和无符号状态），主要基于Mach-O文件的分析、轻量符号表剥离，系统日志解析等技术手段。
+
+2、[iOS不必现崩溃的点对点解析以及治理](https://mp.weixin.qq.com/s/tGvE-2flzhm4skkrfbUIBA) -- 来自：58技术
+
+[@皮拉夫大王]()：本文章中介绍iOS端发生崩溃后，在无法复现的情况下如何针对各种不同类型的崩溃日志进行解析，包括普通堆栈，wakesup崩溃，json格式日志，bugly堆栈类型等。此外还介绍了系统日志存在异常情况进行自动修正的方法，包括进程名称丢失，基地址丢失，偏移地址错误等。
 
 ## 摸一下鱼
 

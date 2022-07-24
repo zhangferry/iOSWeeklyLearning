@@ -9,8 +9,7 @@ import re
 
 class BlogRepo:
     """blog仓库信息"""
-    def __init__(self, token, git_url, branch):
-        self.token = token
+    def __init__(self, git_url, branch):
         self.git_url = git_url
         self.branch = branch
         self.execute_path = os.getcwd()
@@ -27,7 +26,7 @@ class BlogRepo:
         os.chdir(f"{self.repo_path}")
         os.system(f"git reset --hard origin/{self.branch}")
 
-    def get_blog_head_contents(self, title):
+    def get_blog_head_contents(self, title, file_path, tags):
         """拼接文章抬头，固定内容"""
         top_line = "---"
         the_title = f"title: {title}"
@@ -40,17 +39,33 @@ class BlogRepo:
         blog_url = f"https://zhangferry.com/{date_path_format}/{file_name_format}"
         print(f"Blog url: {blog_url}")
 
-        cover = "cover: https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg"
-        tags = "tags:\n\t- iOS摸鱼周报"
+        cover, tags_str = self.ready_blog_head(file_path=file_path, tags=tags)
         comments = "comments: true"
         empty_line = "\n"
 
-        list_str = [top_line, the_title, today, cover, tags, comments, top_line, empty_line]
+        list_str = [top_line, the_title, today, cover, tags_str, comments, top_line, empty_line]
         total_title = "\n".join(list_str)
         return total_title
 
+    def ready_blog_head(self, file_path, tags):
+        cover_url = ""
+        if "iOSWeeklyLearning" in self.file_name:
+            cover_url = "https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg"
+            tags_value = ["iOS摸鱼周报"]
+        else:
+            with open(file_path, "r") as fileHandler:
+                lines = fileHandler.read()
+                # find the first img as cover
+                cover_url = re.findall(r"!\[.*\]\((.*)\)", lines)[0]
+            tags_value = tags.split(",")
+        tags_value_str = "tags:"
+        for tag_value in tags_value:
+            tags_value_str += f"\n\t- {tag_value}"
+
+        return cover_url, tags_value_str
+
     # 修改文件
-    def modify_file(self, title_str, file_path):
+    def modify_file(self, title_str, file_path, tags):
         """修改内容"""
         self.file_name = os.path.basename(file_path)
         with open(file_path, "r+") as fileHandler:
@@ -60,7 +75,7 @@ class BlogRepo:
             if len(title_str) == 0:
                 print(f"Add new article: {self.file_name}")
                 title = lines[0].strip("#").strip()
-                title_content = self.get_blog_head_contents(title)
+                title_content = self.get_blog_head_contents(title, file_path, tags)
                 new_content.append(title_content)
             else:
                 print(f"Update article: {self.file_name}")
@@ -87,13 +102,17 @@ class BlogRepo:
 class BlogArticleBuilder:
     """创建博客文章，如果以存在会自动更新"""
     def __init__(self):
-        parser = argparse.ArgumentParser(description='Input the weekly index')
+        parser = argparse.ArgumentParser(description='Input the article identifier')
         parser.add_argument('--index', '-i', type=int, help='Please input the weekly index')
+        parser.add_argument('--name', '-n', type=str, help='Please input the Articles name')
+        parser.add_argument('--tags', '-t', type=str, help='Please input article tags, separate with commas')
         parse_args = parser.parse_args()
         self.weekly_index = parse_args.index
+        self.article_name = parse_args.name
+        self.tags = parse_args.tags
 
     def get_weekly_article_path(self):
-        """get article source path"""
+        """get weekly article source path"""
         # scripts path
         script_path = sys.path[0]
         weekly_folder_path = script_path + "/../" + "WeeklyLearning"
@@ -106,6 +125,17 @@ class BlogArticleBuilder:
             self.weekly_index = current_index
 
         return f"{weekly_folder_path}/iOSWeeklyLearning_{self.weekly_index}.md"
+
+    def get_personal_article_path(self):
+        """get personal artcile source path"""
+        if not self.article_name:
+            raise Exception("You must assign article name")
+        script_path = sys.path[0]
+        articles_folder_path = script_path + "/../" + "Articles"
+        article_path = articles_folder_path + f"/{self.article_name}.md"
+        if not os.path.exists(article_path):
+            raise Exception("Article path is not exist")
+        return article_path
 
     # 复制文件到目标路径
     def copy_file_to_repo(self, source_path, target_folder):
@@ -129,26 +159,31 @@ class BlogArticleBuilder:
         return head_str, target_path
 
     def run_with(self, blog_repo):
-        article_path = self.get_weekly_article_path()
+        if self.article_name:
+            article_path = self.get_personal_article_path()
+        else:
+            article_path = self.get_weekly_article_path()
         # print(article_path)
-        blog_repo.clone_or_update_repo()
+        # blog_repo.clone_or_update_repo()
         target_folder = f"{blog_repo.repo_path}/Content/posts"
         # print(target_folder)
         head_str, target_path = self.copy_file_to_repo(source_path=article_path, target_folder=target_folder)
-        blog_repo.modify_file(head_str, target_path)
-        blog_repo.push()
+        blog_repo.modify_file(head_str, target_path, self.tags)
+        # blog_repo.push()
 
 
 if __name__ == '__main__':
 
     builder = BlogArticleBuilder()
 
-    # 通过环境变量传入
-    blog_token = os.environ["ACCESS_TOKEN"]
-
-    blog_git_url = f"https://{blog_token}@github.com/zhangferry/GithubPage.git"
+    if os.environ.get("CI"):
+        # 通过环境变量传入
+        blog_token = os.environ["ACCESS_TOKEN"]
+        blog_git_url = f"https://{blog_token}@github.com/zhangferry/GithubPage.git"
+    else:
+        blog_git_url = "git@github.com:zhangferry/GithubPage.git"
     blog_branch = "master"
-    blog_repo = BlogRepo(token=blog_token, git_url=blog_git_url, branch=blog_branch)
+    blog_repo = BlogRepo(git_url=blog_git_url, branch=blog_branch)
     builder.run_with(blog_repo=blog_repo)
 
     print("Deploy weekly article success! It will take effect in about 10 minutes 🚀")

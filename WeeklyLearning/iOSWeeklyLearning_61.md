@@ -137,7 +137,7 @@ App 实现录音保存音频文件，并实现本地语音识别匹配功能。
 
 1. [JSON Hero](https://github.com/jsonhero-io/jsonhero-web "JSON Hero")，一款让你轻松直观地查看 JSON 文档的工具，为你提供类似 Mac Finder 体验的工具。
 
-   ![](https://cdn.zhangferry.com/Images/features-treeview (1).gif)
+   ![](https://cdn.zhangferry.com/Images/features-treeview.gif)
 
    如果你的 JSON 文件足够庞大，这款软件必不可少。
 
