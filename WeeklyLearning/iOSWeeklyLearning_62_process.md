@@ -14,7 +14,7 @@
 
 ### [与 App Store 专家会面交流](https://developer.apple.com/cn/news/?id=20ikqram "与 App Store 专家会面交流")
 
-[@zhangferry](zhangferry.com)：8 月份，Apple 将做一个线上的专家交流会，主要是讲授如何利用 App Store 能力吸引新顾客、测试营销策略、添加订阅等。其实有很多公司是专门做 Apple Store 的 SEO、排名等工作的，因为 Apple Store 采取的策略是不公开的，外部只能通过不通的测试去推断什么样的策略能够生效。所以相对来说，这项可以了解一手 App Store 运作信息的交流会是非常有价值的（也看 Apple 人员愿意分享多少内容了）。如果有类似需求可以注册参与下，参与条件限定为参与 Apple 开发计划的账号。
+[@zhangferry](zhangferry.com)：8 月份，Apple 将做一个线上的专家交流会，主要是讲授如何利用 App Store 能力吸引新顾客、测试营销策略、添加订阅等。其实有不少公司是专门做这个事情的， 但因为 Apple Store 采取的策略是不公开的，像是 SEO、排名策略等，外部只能通过不通的测试去推断如何做才能最优。这些公司就是依靠这些积累的信息赚钱的，现在是有了一个免费获取付费信息的渠道，还是一手的信息。看简介内容都是能够直接提升App 收益的干货，所以这个交流会会是非常有价值的。现在只要是注册的开发者身份都可以预约参与。
 
 ### [Carbon 语言发布](https://www.youtube.com/watch?v=omrY53kbVoA "Carbon 语言发布")
 
