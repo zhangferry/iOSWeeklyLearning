@@ -32,7 +32,27 @@
 
 ## 摸一下鱼
 
+整理编辑：[东坡肘子](https://www.fatbobman.com)
 
+1、[Flowful](https://flowful.app "Flowful") 是一个提供多种氛围类型环境音乐（ 由程序生成 ）的播放器网站。其目标是通过可定制的环境音乐生成器来激发无尽的专注。经过试听后，很难说这些音乐是否能够起到开发助力器的作用，但相当地适合冥想。目前网站提供的音乐大多数都是免费的。
+
+![Flowful](https://cdn.zhangferry.com/Images/flowful.png)
+
+2、[Tencent/lemon-cleaner](https://github.com/Tencent/lemon-cleaner "Tencent/lemon-cleaner")：腾讯柠檬清理是针对 macOS 系统专属制定的清理工具。主要功能包括重复文件和相似照片的识别、软件的定制化垃圾扫描、可视化的全盘空间分析、内存释放、浏览器隐私清理以及设备实时状态的监控等。重点聚焦清理功能，对上百款软件提供定制化的清理方案，提供专业的清理建议，帮助用户轻松完成一键式清理。
+
+腾讯的柠檬清理在上周开源了。这个 app 是针对 macOS 系统专属制定的清理工具。此次开源的是完整版本（ App Store 版本中功能不全 ）。社区对于腾讯的这次开源行为给予了良好的反馈，48 小时该项目已经获得了 1K+ 的 star 。由于此次的开源很突然且并不符合腾讯的一贯风格，不少人打趣说是否开发团队领大礼包了。
+
+![腾讯柠檬清理](https://cdn.zhangferry.com/Images/lemon-cleaner.png)
+
+3、[便携小空调](http://game.waimai.zone/air/ "便携小空调")：今年夏天，世界各地都进入了烤箱模式，每个人都渴望在充满冷气的房间里，听着音乐，喝着冷饮。便携小空调将为你提供全方位的空调体验（ 除了不制冷 ），为你的精神空间带来一丝冰凉。
+
+![便携小空调](https://cdn.zhangferry.com/Images/air-conditioner.png)
+
+4、[Awesome Readme Template](https://github.com/Louis3797/awesome-readme-template "Awesome Readme Template")：一个开源项目，提供了数种 Readme 模板。降低使用者创建文档的难度，为摸鱼提供便利。
+
+5、[回村三天，二舅治好了我的精神内耗](https://www.bilibili.com/video/BV1MN4y177PB?spm_id_from=333.337.search-card.all.click&vd_source=47c38aa7a1b9837457a41f3f489f9377 "回村三天，二舅治好了我的精神内耗")：从夏日祭到 CBA 侵权，最近几天 B 站的日子不太好过。不知道横空出世的二舅能否缓解 BiliBili 的危机。
+
+6、[文昌哪些地方可以观测火箭发射](http://haikou.bendibao.com/tour/20201030/47241.shtm "文昌哪些地方可以观测火箭发射")：随着“问天”舱的对接成功，我国的空间站建设又向前迈进了一大步。2022 下半年海南文昌还会迎来多次的发射，有兴趣现场观看的小伙伴应该提前做好攻略。
 
 ## 岗位推荐
 
