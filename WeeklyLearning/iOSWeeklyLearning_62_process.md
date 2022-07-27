@@ -50,6 +50,10 @@
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：来自 Apple 系统开发工程师 [manu](https://twitter.com/codePrincess) 的 WWDC 22 手绘笔记，包含多个 What's New 系列以及 Create ML、Actors 等热门 session。她的手绘笔记制作精美、风格强烈，言简意赅的概括了 session 的内容，非常推荐大家看一下。
 
+6、[SwiftUI Split View Configuration](https://useyourloaf.com/blog/swiftui-split-view-configuration) -- 来自：useyourloaf
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：本文主要讨论了在 iOS 16 SwiftUI 中使用 NavigationSplitView 创建两列或三列布局的过程，提到了一些在 beta 或者之后版本可能出现的坑以及对应的解决方案。
+
 ## 摸一下鱼
 
 整理编辑：[东坡肘子](https://www.fatbobman.com)
