@@ -24,11 +24,23 @@
 
 1、 [开源｜WBBlades重要节点更新-专为提效而设计](https://mp.weixin.qq.com/s/tXxhnDKerobyxoWuEBGjNQ) -- 来自：58技术
 
-[@皮拉夫大王]()：给iOS开发人员提供基于Mach-O文件解析的工具集，工具包括无用类检测（支持OC和Swift）、包大小分析（支持单个静态库/动态库的包大小分析）、点对点崩溃解析（基于系统日志，支持有符号状态和无符号状态），主要基于Mach-O文件的分析、轻量符号表剥离，系统日志解析等技术手段。
+[@皮拉夫大王]()：给 iOS 开发人员提供基于 Mach-O 文件解析的工具集，工具包括无用类检测（支持 OC 和 Swift）、包大小分析（支持单个静态库/动态库的包大小分析）、点对点崩溃解析（基于系统日志，支持有符号状态和无符号状态），主要基于 Mach-O 文件的分析、轻量符号表剥离，系统日志解析等技术手段。
 
 2、[iOS不必现崩溃的点对点解析以及治理](https://mp.weixin.qq.com/s/tGvE-2flzhm4skkrfbUIBA) -- 来自：58技术
 
-[@皮拉夫大王]()：本文章中介绍iOS端发生崩溃后，在无法复现的情况下如何针对各种不同类型的崩溃日志进行解析，包括普通堆栈，wakesup崩溃，json格式日志，bugly堆栈类型等。此外还介绍了系统日志存在异常情况进行自动修正的方法，包括进程名称丢失，基地址丢失，偏移地址错误等。
+[@皮拉夫大王]()：本文章中介绍 iOS 端发生崩溃后，在无法复现的情况下如何针对各种不同类型的崩溃日志进行解析，包括普通堆栈，wakesup 崩溃，json 格式日志，bugly 堆栈类型等。此外还介绍了系统日志存在异常情况进行自动修正的方法，包括进程名称丢失，基地址丢失，偏移地址错误等。
+
+3、[西瓜视频iOS启动优化实践](https://juejin.cn/post/7122472926792089607) -- 来自：QYizhong
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：本文介绍了在西瓜视频在 iOS 启动方面做了哪些努力去优化，将启动时面临的问题都一一列出，并根据问题的不同性质和影响阶段，提供了不同的优化的方案，并配上精致的动画来帮助读者理解优化前后的区别。同时也介绍了防劣化与监控的相关知识和实践来保证保持优化效果以及感知线上劣化情况。
+
+4、[Background Modes Tutorial: Getting Started](https://www.raywenderlich.com/34269507-background-modes-tutorial-getting-started) -- 来自：raywenderlich
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：这是一篇面向新手的 Background Modes 开发指南，通过该教程，你可以了解到应用程序可以在后台执行的逻辑，以及四个样例：播放音频、获取位置更新、有限长度任务、后台请求。并且有 Swift 5.5 的代码工程样例佐以配合。
+
+5、[WWDC 22 Sessions 手绘笔记](https://drive.google.com/drive/folders/1Ux57jowC_IziRpJgPrvqf4M6GlLxslOL) -- 来自：manu
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：来自 Apple 系统开发工程师 [manu](https://twitter.com/codePrincess) 的 WWDC 22 手绘笔记，包含多个 What's New 系列以及 Create ML、Actors 等热门 session。她的手绘笔记制作精美、风格强烈，言简意赅的概括了 session 的内容，非常推荐大家看一下。
 
 ## 摸一下鱼
 
