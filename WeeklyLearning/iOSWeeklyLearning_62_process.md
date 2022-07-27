@@ -12,7 +12,15 @@
 
 ## 本期话题
 
+### [与 App Store 专家会面交流](https://developer.apple.com/cn/news/?id=20ikqram "与 App Store 专家会面交流")
 
+[@zhangferry](zhangferry.com)：8 月份，Apple 将做一个线上的专家交流会，主要是讲授如何利用 App Store 能力吸引新顾客、测试营销策略、添加订阅等。其实有很多公司是专门做 Apple Store 的 SEO、排名等工作的，因为 Apple Store 采取的策略是不公开的，外部只能通过不通的测试去推断什么样的策略能够生效。所以相对来说，这项可以了解一手 App Store 运作信息的交流会是非常有价值的（也看 Apple 人员愿意分享多少内容了）。如果有类似需求可以注册参与下，参与条件限定为参与 Apple 开发计划的账号。
+
+### [Carbon 语言发布](https://www.youtube.com/watch?v=omrY53kbVoA "Carbon 语言发布")
+
+[@zhangferry](zhangferry.com)：Google 在 CppNorth 发布了 Carbon 语言，目标是作为 C++ 的继任者。它可以和兼容现有的 C++ 项目，是一个现代化的语言，当然它还是[开源](https://github.com/carbon-language/carbon-lang "Github carbon-lang") 的。原有语言的继任者，看看 Java 和 Kotlin，ObjectiveC 和 Swift 的关系，开发者会因为更现代的语法喜欢新的编程语言，但开发生态的搭建是一项漫长过程，因为跟生态的耦合，一个领域的初代编程语言会有非常长的生命力。更别提已经诞生 37 年，应用到无数领域的 C++ 了。
+
+所以新语言的意义在哪？我感觉是新语言在于摒弃原有思路，基于现有想法用全新思路去设计，它做的是尝试打破僵局的事情。类似于一个维护很久的框架，即使有人对它有怨言，还是不得不使用它，因为重新设计的成本远高于缝缝补补。敢于推翻重构已经算是勇者了，不管新语言未来发展如何，这种精神值得点赞。
 
 ## 本周学习
 
