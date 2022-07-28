@@ -14,13 +14,17 @@
 
 ### [与 App Store 专家会面交流](https://developer.apple.com/cn/news/?id=20ikqram "与 App Store 专家会面交流")
 
-[@zhangferry](zhangferry.com)：8 月份，Apple 将做一个线上的专家交流会，主要是讲授如何利用 App Store 能力吸引新顾客、测试营销策略、添加订阅等。其实有不少公司是专门做这个事情的， 但因为 Apple Store 采取的策略是不公开的，像是 SEO、排名策略等，外部只能通过不通的测试去推断如何做才能最优。这些公司就是依靠这些积累的信息赚钱的，现在是有了一个免费获取付费信息的渠道，还是一手的信息。看简介内容都是能够直接提升App 收益的干货，所以这个交流会会是非常有价值的。现在只要是注册的开发者身份都可以预约参与。
+[@zhangferry](zhangferry.com)：8 月份，Apple 将做一个线上的专家交流会，主要是讲授如何利用 App Store 能力吸引新顾客、测试营销策略、添加订阅等。其实有不少公司是专门做这个事情的， 但因为 Apple Store 采取的策略是不公开的，像是 SEO、排名策略等，外部只能通过不通的测试去推断如何做才能最优。这些公司就是依靠这些积累的信息赚钱的，现在是有了一个免费获取付费信息的渠道，还是一手的信息。看简介内容都是能够直接提升 App 收益的干货，所以这个交流会会是非常有价值的。现在只要是注册的开发者身份都可以预约参与。
 
 ### [Carbon 语言发布](https://www.youtube.com/watch?v=omrY53kbVoA "Carbon 语言发布")
 
 [@zhangferry](zhangferry.com)：Google 在 CppNorth 发布了 Carbon 语言，目标是作为 C++ 的继任者。它可以和兼容现有的 C++ 项目，是一个现代化的语言，当然它还是[开源](https://github.com/carbon-language/carbon-lang "Github carbon-lang") 的。原有语言的继任者，看看 Java 和 Kotlin，ObjectiveC 和 Swift 的关系，开发者会因为更现代的语法喜欢新的编程语言，但开发生态的搭建是一项漫长过程，因为跟生态的耦合，一个领域的初代编程语言会有非常长的生命力。更别提已经诞生 37 年，应用到无数领域的 C++ 了。
 
 所以新语言的意义在哪？我感觉是新语言在于摒弃原有思路，基于现有想法用全新思路去设计，它做的是尝试打破僵局的事情。类似于一个维护很久的框架，即使有人对它有怨言，还是不得不使用它，因为重新设计的成本远高于缝缝补补。敢于推翻重构已经算是勇者了，不管新语言未来发展如何，这种精神值得点赞。
+
+### [实时活动现已推出 Beta 版本](https://developer.apple.com/cn/news/?id=hi37aek8 "实时活动现已推出 Beta 版本")
+
+[@远恒之义](https://github.com/eternaljust)：实时活动能帮助用户直接通过锁定屏幕实时了解您的 App 中正在发生的事情。现在，您可以开始使用实时活动和新的 ActivityKit 框架了。周四更新的 iOS 16 beta 4 版本中已推出相关功能。请注意，实时活动和 ActivityKit 会在今年晚些时候随着 iOS 的更新版本推出。
 
 ## 本周学习
 
@@ -122,17 +126,17 @@ REACT_NATIVE_XCODE="../node_modules/react-native/scripts/react-native-xcode.sh"
 
 ### 参考资料
 
-[iOS 已有项目利用Pod集成RN](https://blog.csdn.net/ljmios/article/details/119451577)
+[iOS 已有项目利用 Pod 集成 RN](https://blog.csdn.net/ljmios/article/details/119451577 "iOS 已有项目利用 Pod 集成 RN")
 
-[git-submodules](https://git-scm.com/docs/git-submodule)
+[git-submodules](https://git-scm.com/docs/git-submodule "git-submodules")
 
 ## 内容推荐
 
-1、 [开源｜WBBlades重要节点更新-专为提效而设计](https://mp.weixin.qq.com/s/tXxhnDKerobyxoWuEBGjNQ) -- 来自：58技术
+1、 [开源｜WBBlades 重要节点更新-专为提效而设计](https://mp.weixin.qq.com/s/tXxhnDKerobyxoWuEBGjNQ) -- 来自：58技术
 
 [@皮拉夫大王]()：给 iOS 开发人员提供基于 Mach-O 文件解析的工具集，工具包括无用类检测（支持 OC 和 Swift）、包大小分析（支持单个静态库/动态库的包大小分析）、点对点崩溃解析（基于系统日志，支持有符号状态和无符号状态），主要基于 Mach-O 文件的分析、轻量符号表剥离，系统日志解析等技术手段。
 
-2、[iOS不必现崩溃的点对点解析以及治理](https://mp.weixin.qq.com/s/tGvE-2flzhm4skkrfbUIBA) -- 来自：58技术
+2、[iOS 不必现崩溃的点对点解析以及治理](https://mp.weixin.qq.com/s/tGvE-2flzhm4skkrfbUIBA) -- 来自：58技术
 
 [@皮拉夫大王]()：本文章中介绍 iOS 端发生崩溃后，在无法复现的情况下如何针对各种不同类型的崩溃日志进行解析，包括普通堆栈，wakesup 崩溃，json 格式日志，bugly 堆栈类型等。此外还介绍了系统日志存在异常情况进行自动修正的方法，包括进程名称丢失，基地址丢失，偏移地址错误等。
 
