@@ -1,15 +1,25 @@
-# iOS 摸鱼周报 #62 | Carbon 语言发布
+# iOS 摸鱼周报 #62 | Live Activity 上线 Beta 版 
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：App Store 专家会面交流 & Carbon 语言发布 & 实时活动现已推出 Beta 版本
+> * 本期话题：Live Activity 上线 iOS Beta 4 版本 & App Store 专家会面交流 & Carbon 语言发布
 > * 本周学习：iOS 使用 Pod 在现有项目上集成 React Native
 > * 内容推荐：性能优化文件以及 WWDC22 优秀内容推荐
-> * 摸一下鱼：火爆全网的二舅是否治好了你的精神内耗
+> * 摸一下鱼：Flowful 用程序生成氛围音乐；柠檬清理开源；网页版便携小空调带给你夏季清凉
 
 ## 本期话题
+
+### [Live Activity 已上线 iOS 16 Beta 4](https://developer.apple.com/cn/news/?id=hi37aek8 "Live Activity 已上线 iOS 16 Beta 4")
+
+![](https://cdn.zhangferry.com/Images/20220728223617.png)
+
+[@zhangferry](zhangferry.com)：Live Activity 是 iOS 16 推出的新功能，它可以实现在锁屏界面实时更新应用信息。像是体育比赛的比分、打车软件当前定位等信息，如果是当前系统，我们需要通过多次推送或者打开 App 才能查看最新信息，现在只需点亮屏幕即可实时获取信息。
+
+开发 Live Activity 功能需要使用 ActivityKit 框架，该框架会被包含在 iOS 16 Beta 4 版本中。Live Activity 和 Widget 有诸多相似之处，需要使用 SwiftUI 开发，你甚至可以直接复用 Widget 的代码。但是他们更新数据的机制不同，Widget 采用时间线机制， Live Activity 则是通过 ActivityKit 或者 Push 更新数据。
+
+注意，Live Activity 不会包含在早期的的正式版本中，它会晚些时候发布。到时候你才能将配置了 Live Activity 功能的应用提交至 App Store。
 
 ### [与 App Store 专家会面交流](https://developer.apple.com/cn/news/?id=20ikqram "与 App Store 专家会面交流")
 
@@ -20,10 +30,6 @@
 [@zhangferry](zhangferry.com)：Google 在 CppNorth 发布了 Carbon 语言，目标是作为 C++ 的继任者。它可以和兼容现有的 C++ 项目，是一个现代化的语言，当然它还是[开源](https://github.com/carbon-language/carbon-lang "Github carbon-lang") 的。原有语言的继任者，看看 Java 和 Kotlin，ObjectiveC 和 Swift 的关系，开发者会因为更现代的语法喜欢新的编程语言，但开发生态的搭建是一项漫长过程，因为跟生态的耦合，一个领域的初代编程语言会有非常长的生命力。更别提已经诞生 37 年，应用到无数领域的 C++ 了。
 
 所以新语言的意义在哪？我感觉是新语言在于摒弃原有思路，基于现有想法用全新思路去设计，它做的是尝试打破僵局的事情。类似于一个维护很久的框架，即使有人对它有怨言，还是不得不使用它，因为重新设计的成本远高于缝缝补补。敢于推翻重构已经算是勇者了，不管新语言未来发展如何，这种精神值得点赞。
-
-### [实时活动现已推出 Beta 版本](https://developer.apple.com/cn/news/?id=hi37aek8 "实时活动现已推出 Beta 版本")
-
-[@远恒之义](https://github.com/eternaljust)：实时活动能帮助用户直接通过锁定屏幕实时了解您的 App 中正在发生的事情。现在，您可以开始使用实时活动和新的 ActivityKit 框架了。周四更新的 iOS 16 beta 4 版本中已推出相关功能。请注意，实时活动和 ActivityKit 会在今年晚些时候随着 iOS 的更新版本推出。
 
 ## 本周学习
 
