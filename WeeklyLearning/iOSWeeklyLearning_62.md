@@ -99,7 +99,7 @@ end
 
 最后，新增官网项目中的两个 `Build Phase` 用于启动 RN 服务。分别是
 
-```shell
+```bash
 export RCT_METRO_PORT="${RCT_METRO_PORT:=8081}"
 echo "export RCT_METRO_PORT=${RCT_METRO_PORT}" > "${SRCROOT}/../node_modules/react-native/scripts/.packager.env"
 if [ -z "${RCT_NO_LAUNCH_PACKAGER+xxx}" ] ; then
@@ -116,7 +116,7 @@ fi
 
 和
 
-```shell
+```bash
 set -e
 
 WITH_ENVIRONMENT="../node_modules/react-native/scripts/xcode/with-environment.sh"
