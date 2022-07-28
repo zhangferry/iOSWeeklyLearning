@@ -27,7 +27,7 @@
 
 ### [Carbon 语言发布](https://www.youtube.com/watch?v=omrY53kbVoA "Carbon 语言发布")
 
-[@zhangferry](zhangferry.com)：Google 在 CppNorth 发布了 Carbon 语言，目标是作为 C++ 的继任者。它可以和兼容现有的 C++ 项目，是一个现代化的语言，当然它还是[开源](https://github.com/carbon-language/carbon-lang "Github carbon-lang") 的。原有语言的继任者，看看 Java 和 Kotlin，ObjectiveC 和 Swift 的关系，开发者会因为更现代的语法喜欢新的编程语言，但开发生态的搭建是一项漫长过程，因为跟生态的耦合，一个领域的初代编程语言会有非常长的生命力。更别提已经诞生 37 年，应用到无数领域的 C++ 了。
+[@zhangferry](zhangferry.com)：Google 在 CppNorth 发布了 Carbon 语言，目标是作为 C++ 的继任者。它可以兼容现有的 C++ 项目，是一个现代化的语言，当然它还是[开源](https://github.com/carbon-language/carbon-lang "Github carbon-lang") 的。原有语言的继任者，看看 Java 和 Kotlin，ObjectiveC 和 Swift 的关系，开发者会因为更现代的语法喜欢新的编程语言，但开发生态的搭建是一项漫长过程，因为跟生态的耦合，一个领域的初代编程语言会有非常长的生命力。更别提已经诞生 37 年，应用到无数领域的 C++ 了。
 
 所以新语言的意义在哪？我感觉是新语言在于摒弃原有思路，基于现有想法用全新思路去设计，它做的是尝试打破僵局的事情。类似于一个维护很久的框架，即使有人对它有怨言，还是不得不使用它，因为重新设计的成本远高于缝缝补补。敢于推翻重构已经算是勇者了，不管新语言未来发展如何，这种精神值得点赞。
 
