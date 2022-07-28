@@ -4,12 +4,12 @@
 
 ### 本期概要
 
-> * 本期话题：Live Activity 上线 iOS Beta 4 版本 & App Store 专家会面交流 & Carbon 语言发布
+> * 开发资讯：Live Activity 上线 iOS Beta 4 版本 & App Store 专家会面交流 & Carbon 语言发布
 > * 本周学习：iOS 使用 Pod 在现有项目上集成 React Native
 > * 内容推荐：性能优化文件以及 WWDC22 优秀内容推荐
 > * 摸一下鱼：Flowful 用程序生成氛围音乐；柠檬清理开源；网页版便携小空调带给你夏季清凉
 
-## 本期话题
+## 开发资讯
 
 ### [Live Activity 已上线 iOS 16 Beta 4](https://developer.apple.com/cn/news/?id=hi37aek8 "Live Activity 已上线 iOS 16 Beta 4")
 
