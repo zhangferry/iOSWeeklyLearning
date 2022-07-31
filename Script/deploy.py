@@ -61,8 +61,8 @@ class BlogRepo:
         tags_value_str = "tags:"
         for tag_value in tags_value:
             tags_value_str += f"\n\t- {tag_value}"
-
-        return cover_url, tags_value_str
+        cover = f"cover: {cover_url}"
+        return cover, tags_value_str
 
     # 修改文件
     def modify_file(self, title_str, file_path, tags):
