@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 本期话题：Apple 企业家培训营已开放申请
-> * 本周学习：
+> * 本周学习：Swift 当中的 Sequence
 > * 内容推荐：
 > * 摸一下鱼：
 > * 岗位推荐：
@@ -37,8 +37,180 @@ Apple Entrepreneur Camp 的核心是一个密集的技术实验室，获得申�
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[JY](https://juejin.cn/user/1574156380931144/posts)
 
+### 什么是Sequence？
+`Sequence` 协议是集合类型的基础，`Swift` 中的 `Sequence` 协议为序列提供了迭代能力。 `Sequence` 协议只要求实现 `makeIterator()` 方法，该方法会返回一个迭代器 `Iterator`，我们来看一下 `Sequence` 源码实现:
+
+```Swift
+public protocol Sequence {
+  /// 元素类型
+  associatedtype Element 
+  
+  /// 迭代器
+  associatedtype Iterator: IteratorProtocol where Iterator.Element == Element
+  
+  /// 子序列
+  associatedtype SubSequence : Sequence = AnySequence<Element>
+    where Element == SubSequence.Element,
+          SubSequence.SubSequence == SubSequence
+  
+  /// 返回当前迭代器
+  __consuming func makeIterator() -> Iterator
+  ///...
+}
+```
+
+子序列 `subSequence`  是 `Sequence` 的另一个关联类型，通过切片操作（`split`,`prefix`,`suffix`,`drop`等）会返回 `subSequence` 类型
+
+
+
+首先我们先看下 `IteratorProtocol` 的源码:
+
+```Swift
+public protocol IteratorProtocol {
+  
+  associatedtype Element
+
+  mutating func next() -> Element?
+}
+```
+
+`IteratorProtocol` 的核心是 `next()`  方法，这个方法在每次被调用时返回序列中的下一个值。当序列下一个值为空时，`next()` 则返回 `nil` 
+
+
+
+`IteratorProtocol` 协议与 `Sequence` 协议是一对紧密相连的协议。序列通过创建一个提供对其元素进行访问的迭代器，它通过跟踪迭代过程并在调用 `next()` 时返回一个元素。
+
+`for-in` 访问序列或者集合时，`Swift` 底层则是通过迭代器来循环遍历数据
+
+```Swift
+let numbers = ["1", "2", "3"]
+for num in numbers {
+    print(num)
+}
+
+/// 底层代码
+let numbers = ["1", "2", "3"]
+var iterator = numbers.makeIterator()
+while let num = iterator.next() {
+    print(num)
+}
+```
+
+
+
+我们可以实现一个自己的序列，实现一个输出 0..n的平方数的序列
+
+```Swift
+struct SquareIterator: IteratorProtocol {
+    typealias Element = Int
+    var state = (curr: 0, next: 1)
+    mutating func next() -> SquareIterator.Element? {
+        let curr = state.curr
+        let next = state.next
+        state = (curr: next, next: next + 1)
+        if curr == 0 {
+            return 0
+        }
+        return curr * curr
+    }
+}
+
+struct Square: Sequence {
+    typealias Element = Int
+    func makeIterator() -> SquareIterator {
+        return SquareIterator()
+    }
+}
+
+// 通过实现了 Sequence 与 IteratorProtocol 两个协议，就可以实现我们的自定义序列
+let square = Square()
+var iterator = square.makeIterator()
+while let num = iterator.next(), num <= 100 {
+    print(num) // 0,1,4,9,16,25,36,49,64,81,100
+}
+```
+
+ 我们实现了一个自定义的序列，它支持通过迭代器遍历序列的所有元素，但是无法通过索引下标的方式来访问序列元素，想要实现下标访问，就需要 `Collection` 协议了
+
+
+
+### Collection
+`Collection` 继承自 `Sequence` ，是一个元素可以反复遍历并且可以通过索引的下标访问的有限集合。我们来看一下 `Collection` 源码实现：
+
+```Swift
+public protocol Collection: Sequence {
+  /// 重写 Sequence 的 Element 
+  override associatedtype Element
+  associatedtype Index : Comparable
+  
+  /// 非空集合中第一个、最后一个元素的位置；
+  var startIndex: Index { get }
+  var endIndex: Index { get }
+  associatedtype Iterator = IndexingIterator<Self>
+  
+  /// 重写 Sequence 的 makeIterator 
+  override __consuming func makeIterator() -> Iterator
+
+  associatedtype SubSequence: Collection = Slice<Self>
+  where SubSequence.Index == Index,
+        Element == SubSequence.Element,
+        SubSequence.SubSequence == SubSequence
+  
+  /// 下标访问集合元素
+  @_borrowed
+  subscript(position: Index) -> Element { get }
+  subscript(bounds: Range<Index>) -> SubSequence { get }
+
+  associatedtype Indices : Collection = DefaultIndices<Self>
+    where Indices.Element == Index, 
+          Indices.Index == Index,
+          Indices.SubSequence == Indices
+   /// 集合的索引    
+  var indices: Indices { get }
+}
+```
+
+
+
+通过源码解析，我们可以发现 `Collection` 与 `Sequence` 最大的不同点是提供了索引能力，提供了通过下标访问元素的能力。 `Collection` 的自定义了迭代器 `IndexingIterator` , 我们来看一下 `IndexingIterator` 的源码实现：
+
+ ```Swift
+public struct IndexingIterator<Elements : Collection> {
+  /// 需要迭代的集合
+  internal let _elements: Elements
+  
+  /// 记录遍历的index
+  internal var _position: Elements.Index
+  
+  init(_elements: Elements) {
+    self._elements = _elements
+    self._position = _elements.startIndex
+  }
+  init(_elements: Elements, _position: Elements.Index) {
+    self._elements = _elements
+    self._position = _position
+  }
+}
+extension IndexingIterator: IteratorProtocol, Sequence {
+  public typealias Element = Elements.Element
+  public typealias Iterator = IndexingIterator<Elements>
+  public typealias SubSequence = AnySequence<Element>
+  
+  public mutating func next() -> Elements.Element? {
+    if _position == _elements.endIndex { return nil }
+    let element = _elements[_position]
+    _elements.formIndex(after: &_position)
+    return element
+  }
+}
+```
+
+从源码可以看出，`IndexingIterator` 的主要作用就是在迭代器执行 `next()`方法时，记录了当前的 `position`，从而实现了记录索引，以及当 `position `等于 `elements.endIndex` 时，返回 `nil`
+
+
+这只是 `Collection` 的冰山一角，还有`LazySequence`、高阶函数实现等， 如果感兴趣的同学，可以深入研究研究
 
 
 ## 内容推荐
