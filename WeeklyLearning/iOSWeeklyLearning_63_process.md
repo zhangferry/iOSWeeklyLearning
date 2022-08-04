@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #59
+# iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -6,9 +6,8 @@
 
 > * 本期话题：Apple 企业家培训营已开放申请
 > * 本周学习：Swift 当中的 Sequence
-> * 内容推荐：
-> * 摸一下鱼：
-> * 岗位推荐：
+> * 内容推荐：WWDC22 & SwiftUI 好文推荐
+> * 摸一下鱼：React 实现的 Win11 在线体验，模拟 Windows 和 x86 系统的网站
 
 ## 本期话题
 
@@ -205,7 +204,7 @@ extension IndexingIterator: IteratorProtocol, Sequence {
     return element
   }
 }
-```
+ ```
 
 从源码可以看出，`IndexingIterator` 的主要作用就是在迭代器执行 `next()`方法时，记录了当前的 `position`，从而实现了记录索引，以及当 `position `等于 `elements.endIndex` 时，返回 `nil`
 
@@ -265,22 +264,18 @@ extension IndexingIterator: IteratorProtocol, Sequence {
 
 ![](https://cdn.zhangferry.com/Images/20220731145541.png)
 
-## 岗位推荐
-
-
-
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/ZyGV6WlFsZOX6Aqgrf1QRQ)
+[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
 
-[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
+[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
 
-[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
+[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/Sv3goAv198eXjmlVJsN1rw)
 
-[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #59 | DevOps 再理解 ](https://mp.weixin.qq.com/s/LJNCo0Eg11shGZN75-TZcg)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
