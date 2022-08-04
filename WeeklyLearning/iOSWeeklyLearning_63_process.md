@@ -31,7 +31,7 @@ Apple Entrepreneur Camp 的核心是一个密集的技术实验室，获得申�
 
 三组面向女性、黑人以及西班牙裔及拉丁裔创业者的在线课程将在 2022 年 10 月开展，国内符合条件的创业者可以选择女性这一组提交申请。申请截止日期为 2022 年 8 月 24 日。
 
-杭州小而精的开发团队谜底科技，作品包括广受好评的 OffScreen，创始人为柳毅和梁逸伦夫妇。谜底科技的梁逸伦是首批参加 Apple 企业家培训营的中国开发者代表之一。
+谜底科技是一家杭州小而精的开发团队，创始人为柳毅和梁逸伦夫妇，他们开发了许多优秀的应用产品，其中包括广受好评的 OffScreen。谜底科技的梁逸伦是首批参加 Apple 企业家培训营的中国开发者代表之一。
 
 ![谜底科技柳毅和梁逸伦夫妇](https://cdn.zhangferry.com/Images/midi-couple.jpg)
 
@@ -39,7 +39,7 @@ Apple Entrepreneur Camp 的核心是一个密集的技术实验室，获得申�
 
 整理编辑：[JY](https://juejin.cn/user/1574156380931144/posts)
 
-### 什么是Sequence？
+### 什么是 Sequence？
 `Sequence` 协议是集合类型的基础，`Swift` 中的 `Sequence` 协议为序列提供了迭代能力。 `Sequence` 协议只要求实现 `makeIterator()` 方法，该方法会返回一个迭代器 `Iterator`，我们来看一下 `Sequence` 源码实现:
 
 ```Swift
@@ -100,7 +100,7 @@ while let num = iterator.next() {
 
 
 
-我们可以实现一个自己的序列，实现一个输出 0..n的平方数的序列
+我们可以实现一个自己的序列，实现一个输出 0..n 的平方数的序列
 
 ```Swift
 struct SquareIterator: IteratorProtocol {
@@ -215,23 +215,29 @@ extension IndexingIterator: IteratorProtocol, Sequence {
 
 ## 内容推荐
 
-1、[Ultimate guide on Timer in Swift](https://www.swiftanytime.com/ultimate-guide-on-timer-in-swift/ "Ultimate guide on Timer in Swift") -- 来自：Team SA
+1、[Experimenting with Live Activities](https://oleb.net/2022/live-activity/ "Experimenting with Live Activities") -- 来自：Ole Begemann
 
-[@远恒之义](https://github.com/eternaljust)：计时器 Timer 是用于在特定时间间隔后执行任何任务的类。计时器在 Swift 中使用非常方便，我们可以用于执行有延迟的任务或重复的工作。本文作者介绍以下了内容：如何执行任务，重复和非重复的定时器，使用 RunLoop 模式，跟踪计时器，定时器优化以减少能源和功率影响。这些内容覆盖了 Timer 方方面面的使用场景，是一份 Swift 计时器的终极指南。
+[@远恒之义](https://github.com/eternaljust)：上周更新的 iOS 16 beta 4 是第一个支持实时活动 Live Activities 的版本，实时活动是一个类似于小组件的视图，放置在锁定屏幕底部并能实时更新。苹果官方推荐的有用示例包括现场体育比分或火车出发时间。
 
-2、[Variable Color in SF Symbols 4](https://sarunw.com/posts/sf-symbols-variable-color/ "Variable Color in SF Symbols 4") -- 来自：sarunw
+本文作者和一群朋友设计了一个小盒子，可以连接到自行车的轮毂发电机，测量速度和距离，并通过蓝牙将数据发送到 iOS 应用程序，再利用 Live Activities 把数据同步更新到手机锁定屏幕上。本文是作者使用该 API 来实现第一个 Live Activities 的笔记，文中展示了一个实际操作视频，同时介绍了作者使用 Live Activities 的一些尝试和疑问，主要关于实时活动的几点：使用限制条件、锁屏配色、动画控制以及代码共享。
+
+2、[Ultimate guide on Timer in Swift](https://www.swiftanytime.com/ultimate-guide-on-timer-in-swift/ "Ultimate guide on Timer in Swift") -- 来自：Team SA
+
+[@远恒之义](https://github.com/eternaljust)：计时器 Timer 是用于在特定时间间隔后执行任何任务的类。计时器在 Swift 中使用非常方便，我们可以用于执行有延迟的任务或重复的工作。本文介绍以下了内容：如何执行任务，重复和非重复的定时器，使用 RunLoop 模式，跟踪计时器，定时器优化以减少能源和功率影响。这些内容覆盖了 Timer 方方面面的使用场景，是一份 Swift 计时器的终极指南。
+
+3、[Variable Color in SF Symbols 4](https://sarunw.com/posts/sf-symbols-variable-color/ "Variable Color in SF Symbols 4") -- 来自：sarunw
 
 [@远恒之义](https://github.com/eternaljust)：今年在 WWDC22 中，Apple 推出了 SF Symbols 4，带来了新特性可变颜色 Variable Color，你可以根据百分比值来更改符号的外观显示。新功能将有利于一些可以显示进度趋势的符号，例如 Wi-Fi 信号、扬声器响度。需要注意的是，并非所有符号都支持可变颜色。你需要下载最新的 SF Symbols App，通过从左侧面板中选择“变量”类别来浏览支持可变颜色的符号。
 
-3、[How to Use the SwiftUI PhotosPicker](https://swiftsenpai.com/development/swiftui-photos-picker/?utm_source=rss&utm_medium=rss&utm_campaign=swiftui-photos-picker "How to Use the SwiftUI PhotosPicker") -- 来自：Lee Kah Seng
+4、[How to Use the SwiftUI PhotosPicker](https://swiftsenpai.com/development/swiftui-photos-picker/?utm_source=rss&utm_medium=rss&utm_campaign=swiftui-photos-picker "How to Use the SwiftUI PhotosPicker") -- 来自：Lee Kah Seng
 
 [@远恒之义](https://github.com/eternaljust)：在今年的 WWDC22 中，Apple 对 SwiftUI 进行了大量改进，SwiftUI 终于在 iOS 16 中获得了自己的原生图片选择器视图 PhotosPicker。PhotosPicker 视图支持 PHPickerViewController 中所有常见的功能，包括单选、多选、资源类型过滤和相册切换等功能。在 SwiftUI 中使用 PhotosPicker 视图非常简单，本文将介绍如何使用该图片选择器。
 
-4、[实时切换 Core Data 的云同步状态](https://www.fatbobman.com/posts/real-time-switching-of-cloud-syncs-status/ "实时切换 Core Data 的云同步状态") -- 来自：东坡肘子
+5、[实时切换 Core Data 的云同步状态](https://www.fatbobman.com/posts/real-time-switching-of-cloud-syncs-status/ "实时切换 Core Data 的云同步状态") -- 来自：东坡肘子
 
 [@远恒之义](https://github.com/eternaljust)：在 WWDC 2019 上，苹果推出了 Core Data with CloudKit API，极大地降低了 Core Data 数据的云同步门槛。由于该服务对于开发者来说几乎是免费的，因此在之后的几年中，越来越多的开发者在应用中集成了该服务，并为用户带来了良好的跨设备、跨平台的使用体验。本文将对实时切换 Core Data 云同步状态的实现原理、操作细节以及注意事项进行探讨和说明。
 
-5、[避免 SwiftUI 视图的重复计算](https://www.fatbobman.com/posts/avoid_repeated_calculations_of_SwiftUI_views/ "避免 SwiftUI 视图的重复计算") -- 来自：东坡肘子
+6、[避免 SwiftUI 视图的重复计算](https://www.fatbobman.com/posts/avoid_repeated_calculations_of_SwiftUI_views/ "避免 SwiftUI 视图的重复计算") -- 来自：东坡肘子
 
 [@远恒之义](https://github.com/eternaljust)：在 SwiftUI 中，每个视图都有与其对应的状态，当状态变化时，SwiftUI 都将重新计算与其对应视图的 body 值，这就是 SwiftUI “视图是状态的函数”的基本概念。如果视图响应了不该响应的状态，或者视图的状态中包含了不该包含的成员，都可能造成 SwiftUI 对该视图进行不必要的更新（重复计算），当类似情况集中出现，将直接影响应用的交互响应，并产生卡顿的状况。通常我们会将这种多余的计算行为称之为过度计算或重复计算。本文将介绍如何减少（甚至避免）类似的情况发生，从而改善 SwiftUI 应用的整体表现。
 
