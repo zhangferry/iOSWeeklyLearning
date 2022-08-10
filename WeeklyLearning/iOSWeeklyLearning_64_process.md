@@ -4,7 +4,7 @@
 
 ### 本期概要
 
-> * 本期话题：
+> * 本期话题：今年 8 月，把握与 App Store 专家会面交流的机会
 > * 本周学习：Swift 闭包中的变量捕获
 > * 内容推荐：
 > * 摸一下鱼：
@@ -12,7 +12,13 @@
 
 ## 本期话题
 
+### 今年 8 月，把握与 App Store 专家会面交流的机会
 
+[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：想让你的产品页更加出色？对 TestFlight 或实施订阅有疑问？与 App Store 专家交流探讨，了解如何充分利用这些功能。探索如何吸引新顾客、测试营销策略、添加订阅等等。在整个 8 月，Apple 将在多个时区以多种语言进行实时演讲和答疑。如果你是 Apple Developer Program 的成员，现在即可注册申请。
+
+![](https://cdn.zhangferry.com/Images/20220811001526.png)
+
+![](https://cdn.zhangferry.com/Images/20220811001546.png)
 
 ## 本周学习
 
