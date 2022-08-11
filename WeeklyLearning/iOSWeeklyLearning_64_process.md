@@ -7,7 +7,7 @@
 > * 本期话题：今年 8 月，把握与 App Store 专家会面交流的机会
 > * 本周学习：Swift 闭包中的变量捕获
 > * 内容推荐：程序开发文档及资源网站
-> * 摸一下鱼：
+> * 摸一下鱼：一款体感识别空气投篮模拟器 app
 
 ## 本期话题
 
@@ -159,6 +159,28 @@ closure 2 - value has been now set to <Pokemon Charizard>
 [@夏天](https://juejin.cn/user/3298190611456638)：号称东南亚最大的 iOS 开发者大会。从 2016 年举办至今已有 6 年，一个纯为 iOS 开发者举办的开发者大会。每年大概有 15 个左右的视频来讲述一些 iOS 相关的视频，你可以在 [YouTube ](https://www.youtube.com/c/iOSConfSG) 进行观看。
 
 ## 摸一下鱼
+
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+1、[空气投篮](https://apps.apple.com/cn/app/%E7%A9%BA%E6%B0%94%E6%8A%95%E7%AF%AE/id1625289361 "空气投篮")：一款体感识别空气投篮模拟器 app。根据提示佩戴 Apple Watch，识别投篮手势动作，模拟真实的空心入网的空间音效。还有飞盘模式、巴掌模式、摩托模式等你探索。但是需要付费，价格 6 元，感兴趣的可以去体验一下。
+
+![](https://cdn.zhangferry.com/Images/20220811223405.png)
+
+2、[TO-D 杂志](https://2d2d.io/ "TO-D 杂志")：《TO-D 杂志》是一个专注于探讨全球 To-D 领域相关产品、创业公司、融资等资讯的开源独立杂志。To-D 即 To Developers，主要指面向开发者市场的创业活动。《TO-D 杂志》最早为诞生在字节跳动内部的一份名为《To-D 观察室》的飞书文档，作者从 2021 年 12 月 23 号开始编写第一篇文章，每周在内网更新。目标读者主要为字节跳动内部的工程师、产品经理和对开发者领域感兴趣的同学，并且受到大家的众多好评。后来于 2022 年 3 月 22 号开始在这里正式对外发表。
+
+![](https://cdn.zhangferry.com/Images/20220811224205.png)
+
+3、[dot-to-ascii](https://dot-to-ascii.ggerganov.com/ "dot-to-ascii")：Graphviz to ASCII converter using Graph::Easy。
+
+![](https://cdn.zhangferry.com/Images/20220811224732.png)
+
+4、[Popovers](https://github.com/aheze/Popovers "Popovers")：一个显示弹窗的库。简单、现代、可高度定制。不无聊！
+
+![](https://cdn.zhangferry.com/Images/20220811225210.png)
+
+5、[appsmith](https://github.com/appsmithorg/appsmith "appsmith")：一个用于构建内部工具的强大的开源框架。
+
+![](https://cdn.zhangferry.com/Images/20220811225727.png)
 
 ## 关于我们
 
