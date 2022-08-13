@@ -7,6 +7,13 @@ import time
 import re
 
 
+def is_ci_env():
+    if os.environ.get("CI"):
+        return True
+    else:
+        return False
+
+
 class BlogRepo:
     """blog仓库信息"""
     def __init__(self, git_url, branch):
@@ -89,14 +96,17 @@ class BlogRepo:
             for newline in new_content:
                 fileHandler.write(newline)
 
-    def push(self):
+    def deploy(self):
         """推送仓库"""
         os.chdir(f"{self.repo_path}")
         # print(self.repo_path)
 
         commit_msg = f"[Script]: update blog for {self.file_name}"
         os.system(f"git add . && git commit -m '{commit_msg}'")
-        os.system(f"git push origin {self.branch}")
+        if is_ci_env():
+            os.system(f"git push origin {self.branch}")
+        else:
+            os.system("publish deploy")
 
 
 class BlogArticleBuilder:
@@ -169,14 +179,14 @@ class BlogArticleBuilder:
         # print(target_folder)
         head_str, target_path = self.copy_file_to_repo(source_path=article_path, target_folder=target_folder)
         blog_repo.modify_file(head_str, target_path, self.tags)
-        blog_repo.push()
+        blog_repo.deploy()
 
 
 if __name__ == '__main__':
 
     builder = BlogArticleBuilder()
 
-    if os.environ.get("CI"):
+    if is_ci_env():
         # 通过环境变量传入
         blog_token = os.environ["ACCESS_TOKEN"]
         blog_git_url = f"https://{blog_token}@github.com/zhangferry/GithubPage.git"
