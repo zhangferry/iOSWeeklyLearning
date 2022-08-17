@@ -50,6 +50,13 @@
 
 ## 摸一下鱼
 
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+介绍两款动态图片生成器，可根据访问地址上携带的参数动态控制返回图片的大小、格式等属性，适合Mock数据等场景；
+
+- [placeholder](https://placeholder.com/)
+- [dummyimage](https://dummyimage.com/)
+
 
 
 ## 岗位推荐
