@@ -69,13 +69,10 @@
 
 1、介绍两款动态图片生成器，可根据访问地址上携带的参数动态控制返回图片的大小、格式等属性，适合Mock 数据等场景；
 
-- [placeholder](https://placeholder.com/)
-- [dummyimage](https://dummyimage.com/)
+- [placeholder](https://placeholder.com/ "placeholder")
+- [dummyimage](https://dummyimage.com/ "dummyimage")
 
 2、iOS 16 beta 5
-
-
-## 岗位推荐
 
 
 
