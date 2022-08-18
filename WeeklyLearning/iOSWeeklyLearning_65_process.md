@@ -1,14 +1,13 @@
-# iOS 摸鱼周报 #59
+# iOS 摸鱼周报 #65 | App Accelerator 分享会
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
-> * 岗位推荐：
+> * 本期话题：App Accelerator 分享会 & 精准测试的概念
+> * 本周学习：iOS Memory 内存概念 
+> * 内容推荐：Swift 内容推荐 & Github 实用技巧
+> * 摸一下鱼：两款动态图片生成器，iOS 16 Beta 6 和 iPhone 14 发布日期确认，系统设计课程以及 Go 语言教程。
 
 ## 本期话题
 
@@ -101,14 +100,16 @@ iOS 是基于 `BSD` 发展而来，所以理解一般的桌面操作系统的内
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
-1、介绍两款动态图片生成器，可根据访问地址上携带的参数动态控制返回图片的大小、格式等属性，适合Mock 数据等场景；
+1. 介绍两款动态图片生成器，可根据访问地址上携带的参数动态控制返回图片的大小、格式等属性，适合Mock 数据等场景；
 
 - [placeholder](https://placeholder.com/ "placeholder")
 - [dummyimage](https://dummyimage.com/ "dummyimage")
 
-2、iOS 16 beta 5
+2. [iPhone 14 发布日期确认](https://www.bloomberg.com/news/articles/2022-08-17/apple-targets-sept-7-for-iphone-14-launch-in-flurry-of-devices#xj4y7vzkg "iPhone14发布日期确认")：根据 Bloomberg 的报道，Apple 已经确定了 iPhone 14 的发布时间：9 月 7 号。iPhone 14 Pro有一对针孔，用于前置摄像头和FaceID扫描器。介时还会有 Macs，低端和高端的 iPad，以及三款 Apple Watch。
 
-
+3. [karanpratapsingh - 系统设计课程](https://www.karanpratapsingh.com/courses/system-design "karanpratapsingh - 上的系统设计课程")：karan pratap singh 个人做的免费的系统设计课程，短小精悍，但涉及基础设施、数据和存储等各类知识，对此感兴趣可以看看。
+4. [karanpratapsingh - 学习Go语言](https://www.karanpratapsingh.com/courses/go "karanpratapsingh 学习 GO语言")：同样来自 karan pratap singh，他本人是 Go 语言开发者，该课程可以作为入门教程。
+5. [iOS 16 Beta 6 发布](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-16-release-notes "iOS 16 Beta 6 发布")：该版本状态栏增加了百分比的显示。
 
 ## 关于我们
 
@@ -116,12 +117,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #56 | WWDC 进行时](https://mp.weixin.qq.com/s/ZyGV6WlFsZOX6Aqgrf1QRQ)
+[iOS 摸鱼周报 #64 | 与 App Store 专家会面交流](https://mp.weixin.qq.com/s/Bd9MZDqmvmgp1UTr5WKPig)
 
-[iOS 摸鱼周报 #55 | WWDC 码上就位](https://mp.weixin.qq.com/s/zDhnOwOiLGJ_Nwxy5NBePw)
+[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
 
-[iOS 摸鱼周报 #54 | Apple 辅助功能持续创新](https://mp.weixin.qq.com/s/6jdqa143Y5yr6lbjCuzlqA)
+[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
 
-[iOS 摸鱼周报 #53 | 远程办公正在成为趋势](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
