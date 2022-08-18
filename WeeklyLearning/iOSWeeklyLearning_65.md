@@ -1,31 +1,33 @@
-# iOS 摸鱼周报 #65 | App Accelerator 分享会
+# iOS 摸鱼周报 #65 | 什么是精准测试
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：App Accelerator 分享会 & 精准测试的概念
+> * 本期话题：App Accelerator 分享会 & 什么是精准测试
 > * 本周学习：iOS Memory 内存概念 
 > * 内容推荐：Swift 内容推荐 & Github 实用技巧
 > * 摸一下鱼：两款动态图片生成器，iOS 16 Beta 6 和 iPhone 14 发布日期确认，系统设计课程以及 Go 语言教程。
 
 ## 本期话题
 
+整理编辑：[zhangferry](zhangferry.com)
+
 ### App Accelerator
 
-近期有两场分享：
+近期有两场 Apple 加速器分享：
 
 * 设计卓越的桌面级 iPad App，8 月 22 号。iPadOS 16 有一项重要更新就是对桌面级应用的支持，这样改动会为 iPad 生态带来哪些改变还不确定。如果对这方面内容感兴趣可以报名这场分享，该次分享会通过 Apple 在搜索、导航栏、编辑菜单、多选等功能当中的一系列改进，来介绍如何在 iPad 上设计出桌面级的 App。
 * 了解和消除 App 的卡顿，8 月 25 号。本次分享会讲解通过 Xcode 14 提供的新能力发现卡顿及其相关原因的工具和方法，以及 App 卡顿的一些反面典型，学习避免这些卡顿的最佳实践。
 
 
-### 精准测试
+### 什么是精准测试
 
 在讲精准测试之前先来了解下传统的测试流程，传统测试流程会有黑盒测试、白盒测试，白盒测试会更精准一些，因为它是基于已知逻辑编写的测试用例。但白盒测试有个问题是它没有代码概念，每次回归都需要跑全量用例，随着项目越来越大，测试用例可能会多达上万条。要知道每个版本的修改相对代码总量来说都是比较小的，如果每次都跑全量用例显然是一种浪费，那有没有办法再精准一些，涉及改动的部分才跑对应的用例？有的，这就是精准测试要解决的问题。
 
-精准测试的核心技术就是把用例和代码关联起来，关联的方式是插桩，给每一个执行语句（Basic Block）插上桩，当该语句被执行时创建一个标记记录其执行次数。一个用例执行完的时候，导出插桩内容并解析，我们就可以记录该用例执行代码的覆盖率。覆盖率数据可以用来测量当前用例测试的充分程度，集合增量覆盖率可以更有效的测试MR/版本维度的测试充分程度。
+精准测试的核心技术就是把用例和代码关联起来，关联的方式是插桩，给每一个执行语句（Basic Block，BB 是一种更细粒度的代码块，它能表示每一个条件语句的分支）插上桩，当该语句被执行时创建一个标记记录其执行次数。一个用例执行完的时候，导出插桩内容并解析，我们就可以记录该用例执行的「代码覆盖率」。覆盖率数据可以用来测量当前用例测试的充分程度，但随着工程的演进「增量代码覆盖率」更具意义，我们可以利用这个增量指标衡量 MR/版本维度的测试程度。
 
-再回到精准测试，当我们拿到覆盖率数据时其实也就拿到了代码与用于之间的映射关系，把这部分数据落入数据库中，根据MR/版本变更代码内容就可以推测出应该执行的用例了，而这部分用例就是我们需要「精准的测试用例」。
+再回到精准测试，当我们拿到覆盖率数据时其实也就拿到了代码与用于之间的映射关系，把这部分数据落入数据库中，根据 MR/版本变更产生的代码 Diff 就可以推测出关联用例了，而这部分用例就是我们需要的「精准的测试用例」。理论不复杂，但是实施起来却不容易，精准测试对应的是一整个体系，这里再推荐两篇精准测试相关的文章：[深入理解 Swift 代码覆盖率](https://juejin.cn/post/6996596951969955853 "深入理解 Swift 代码覆盖率")，[走出回归测试困境，爱奇艺精准测试体系建设](https://xie.infoq.cn/article/781b1a4fa4aca12e38caf86aa "走出回归测试困境，爱奇艺精准测试体系建设")。
 
 
 ## 本周学习
@@ -101,11 +103,24 @@ iOS 是基于 `BSD` 发展而来，所以理解一般的桌面操作系统的内
 - [placeholder](https://placeholder.com/ "placeholder")
 - [dummyimage](https://dummyimage.com/ "dummyimage")
 
-2. [iPhone 14 发布日期确认](https://www.bloomberg.com/news/articles/2022-08-17/apple-targets-sept-7-for-iphone-14-launch-in-flurry-of-devices#xj4y7vzkg "iPhone14发布日期确认")：根据 Bloomberg 的报道，Apple 已经确定了 iPhone 14 的发布时间：9 月 7 号。iPhone 14 Pro有一对针孔，用于前置摄像头和FaceID扫描器。介时还会有 Macs，低端和高端的 iPad，以及三款 Apple Watch。
+2. [iOS 16 Beta 6 发布](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-16-release-notes "iOS 16 Beta 6 发布")： Beta 5 版本引入电量百分比，低电量会自动显示，Beta 6 改为根据配置显示。
 
-3. [karanpratapsingh - 系统设计课程](https://www.karanpratapsingh.com/courses/system-design "karanpratapsingh - 上的系统设计课程")：karan pratap singh 个人做的免费的系统设计课程，短小精悍，但涉及基础设施、数据和存储等各类知识，对此感兴趣可以看看。
-4. [karanpratapsingh - 学习Go语言](https://www.karanpratapsingh.com/courses/go "karanpratapsingh 学习 GO语言")：同样来自 karan pratap singh，他本人是 Go 语言开发者，该课程可以作为入门教程。
-5. [iOS 16 Beta 6 发布](https://developer.apple.com/documentation/ios-ipados-release-notes/ios-ipados-16-release-notes "iOS 16 Beta 6 发布")：该版本状态栏增加了百分比的显示。
+   ![](https://cdn.zhangferry.com/Images/20220819001035.png)
+
+3. [iPhone 14 发布日期确认](https://www.bloomberg.com/news/articles/2022-08-17/apple-targets-sept-7-for-iphone-14-launch-in-flurry-of-devices#xj4y7vzkg "iPhone14发布日期确认")：根据 Bloomberg 的报道，Apple 已经确定了 iPhone 14 的发布时间：9 月 7 号。iPhone 14 Pro有一对针孔，用于前置摄像头和FaceID扫描器。介时还会有 Macs，低端和高端的 iPad，以及三款 Apple Watch。
+
+   ![](https://cdn.zhangferry.com/Images/20220818233911.png)
+
+4. [karanpratapsingh - 系统设计课程](https://www.karanpratapsingh.com/courses/system-design "karanpratapsingh - 上的系统设计课程")：karan pratap singh 个人做的免费的系统设计课程，短小精悍，但涉及基础设施、数据和存储等各类知识，对此感兴趣可以看看。
+
+5. [karanpratapsingh - 学习Go语言](https://www.karanpratapsingh.com/courses/go "karanpratapsingh 学习 GO语言")：同样来自 karan pratap singh，他本人也是 Go 语言开发者，该课程可以作为入门教程。
+
+6. Apple 生态中内购，特别是订阅型内购是一项非常重要的获取收入的功能，随着 Apple 在订阅功能上的完善，其对应的状态也越来越多。以服务端通知类型为例其组合状态以多大数十种，那怎么区分各个状态之间的切换流程呢，这有有一张图进行了很好的总结。
+
+   ![](https://cdn.zhangferry.com/Images/iap_subscription.png)
+
+7. 前几天群里看到一个笑话，分享出来（手动狗头）：
+	![](https://cdn.zhangferry.com/Images/20220819002542.png)
 
 ## 关于我们
 
