@@ -7,7 +7,7 @@
 > * 本期话题：App Accelerator 分享会 & 什么是精准测试
 > * 本周学习：iOS Memory 内存概念 
 > * 内容推荐：Swift 内容推荐 & Github 实用技巧
-> * 摸一下鱼：两款动态图片生成器，iOS 16 Beta 6 和 iPhone 14 发布日期确认，系统设计课程以及 Go 语言教程。
+> * 摸一下鱼：两款动态图片生成器，iOS 16 Beta 6 和 iPhone 14 发布日期确认，系统设计课程以及 Go 语言教程，IAP 服务端通知状态码变化流程。
 
 ## 本期话题
 
@@ -134,6 +134,6 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 [iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
