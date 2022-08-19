@@ -28,26 +28,27 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 
 以下是各位编辑的介绍，新编辑按照如下格式，在最后一行加入自己的介绍，提交 PR 即可。
 
-| 名字       | 常用ID         | 介绍                                                         | 个人博客或公众号                                             |
-| ---------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 张飞       | zhangferry     | 抖音，感兴趣方向：研发效能、自动化测试、逆向                 | 公众号：iOS成长之路，博客：https://zhangferry.com/           |
-| highway    | highway        | 央行研究院，6年iOS开发经验                                   | 简书：https://www.jianshu.com/u/1e59b1fe9df8                 |
-| 人魔七七   | 人魔七七       | iOS开发老兵                                                  | 公众号：人魔七七[ ](https://github.com/fanbaoying)https://github.com/renmoqiqi |
-| 夏天       | 夏天           | iOS开发老兵，游荡在各种博客之间，对底层和性能优化比较感兴趣  | 公众号：iOS成长指北 掘金：https://juejin.cn/user/3298190611456638 |
-| 展菲       | 展菲           | espressif AE 团队，智能家居研发，擅长蓝牙、Wi-Fi、嵌入式     | 公众号：网罗开发、Swift社区，掘金：https://juejin.cn/user/3192637497025335 |
-| 窦术尧     | 反向抽烟       | 网易，研一在读                                               | https://blog.csdn.net/opooc                                  |
-| 师大小海腾 | 师大小海腾     | BabyBus                                                      | https://juejin.cn/user/782508012091645/posts |
-| 邓竹立     | 皮拉夫大王在此 | 58同城无线团队对底层Mach-O和性能优化比较感兴趣               | 公众号：皮拉夫大王在此，简书：https://www.jianshu.com/u/739b677928f7 掘金：https://juejin.cn/user/281104094332653 |
-| 冯士魁     | 我是熊大       | 《今日水印相机》，目前负责海外音视频社交项目                 | 掘金：https://juejin.cn/user/1151943916921885/posts          |
-| Mim0sa     | Mim0sa         | 没考上研所以家里蹲，WWDC 2017 Scholarship Winner，对界面交互体验这方面比较感兴趣 | 掘金：https://juejin.cn/user/1433418892590136                |
-| 邢勇       | brave723       | 樊登读书，对工程化工具比较感兴趣                             | 掘金：https://juejin.cn/user/307518984425981/posts           |
-| 何天从     | iHTCboy        | 坐标广州，iOS 自动化方向，目前从事游戏 SDK 开发五年啦~       | https://ihtcboy.com/                                  |
-| CoderStar     | CoderStar        | 坐标北京，大前端开发方向，对前端、后端都有一定涉猎，目前主要工作与iOS相关，喜欢分享干货博文     | 公众号：CoderStar； 掘金：https://juejin.cn/user/588993964541288/posts      |
-| RunsCode     | RunsCode        | 坐标杭州，主要iOS，对前后端、游戏均有涉猎     | https://github.com/RunsCode      |
-| 徐杨          | 东坡肘子         | 坐标大连，业余iOS开发者                     | 公共号：肘子的Swift记事本。 博客 https://www.fatbobman.com   |
-| 李晨光       | hello world | 坐标成都，iOS开发， 对OC底层原理、性能优化、工程自动化比较感兴趣，目前在向swift转型 | https://juejin.cn/user/2999123453164605/posts
-| 廖靖宇       | JY | 坐标上海微盟，iOS开发，对底层性能优化以及Mach-O，逆向方面比较感兴趣 | 掘金：https://juejin.cn/user/1574156380931144/posts
-| 陶宗强       | 远恒之义 | 坐标重庆，iOS 开发，关注 Swift 与 SwiftUI | https://github.com/eternaljust
+| 名字        | 常用ID        | 介绍                                                     | 个人博客或公众号                                             |
+|-----------|-------------|--------------------------------------------------------| ------------------------------------------------------------ |
+| 张飞        | zhangferry  | 抖音，感兴趣方向：研发效能、自动化测试、逆向                                 | 公众号：iOS成长之路，博客：https://zhangferry.com/           |
+| highway   | highway     | 央行研究院，6年iOS开发经验                                        | 简书：https://www.jianshu.com/u/1e59b1fe9df8                 |
+| 人魔七七      | 人魔七七        | iOS开发老兵                                                | 公众号：人魔七七[ ](https://github.com/fanbaoying)https://github.com/renmoqiqi |
+| 夏天        | 夏天          | iOS开发老兵，游荡在各种博客之间，对底层和性能优化比较感兴趣                        | 公众号：iOS成长指北 掘金：https://juejin.cn/user/3298190611456638 |
+| 展菲        | 展菲          | espressif AE 团队，智能家居研发，擅长蓝牙、Wi-Fi、嵌入式                  | 公众号：网罗开发、Swift社区，掘金：https://juejin.cn/user/3192637497025335 |
+| 窦术尧       | 反向抽烟        | 网易，研一在读                                                | https://blog.csdn.net/opooc                                  |
+| 师大小海腾     | 师大小海腾       | BabyBus                                                | https://juejin.cn/user/782508012091645/posts |
+| 邓竹立       | 皮拉夫大王在此     | 58同城无线团队对底层Mach-O和性能优化比较感兴趣                            | 公众号：皮拉夫大王在此，简书：https://www.jianshu.com/u/739b677928f7 掘金：https://juejin.cn/user/281104094332653 |
+| 冯士魁       | 我是熊大        | 《今日水印相机》，目前负责海外音视频社交项目                                 | 掘金：https://juejin.cn/user/1151943916921885/posts          |
+| Mim0sa    | Mim0sa      | 没考上研所以家里蹲，WWDC 2017 Scholarship Winner，对界面交互体验这方面比较感兴趣 | 掘金：https://juejin.cn/user/1433418892590136                |
+| 邢勇        | brave723    | 樊登读书，对工程化工具比较感兴趣                                       | 掘金：https://juejin.cn/user/307518984425981/posts           |
+| 何天从       | iHTCboy     | 坐标广州，iOS 自动化方向，目前从事游戏 SDK 开发五年啦~                       | https://ihtcboy.com/                                  |
+| CoderStar | CoderStar   | 坐标北京，大前端开发方向，对前端、后端都有一定涉猎，目前主要工作与iOS相关，喜欢分享干货博文        | 公众号：CoderStar； 掘金：https://juejin.cn/user/588993964541288/posts      |
+| RunsCode  | RunsCode    | 坐标杭州，主要iOS，对前后端、游戏均有涉猎                                 | https://github.com/RunsCode      |
+| 徐杨        | 东坡肘子        | 坐标大连，业余iOS开发者                                          | 公共号：肘子的Swift记事本。 博客 https://www.fatbobman.com   |
+| 李晨光       | hello world | 坐标成都，iOS开发， 对OC底层原理、性能优化、工程自动化比较感兴趣，目前在向swift转型        | https://juejin.cn/user/2999123453164605/posts
+| 廖靖宇       | JY          | 坐标上海微盟，iOS开发，对底层性能优化以及Mach-O，逆向方面比较感兴趣                 | 掘金：https://juejin.cn/user/1574156380931144/posts
+| 陶宗强       | 远恒之义        | 坐标重庆，iOS 开发，关注 Swift 与 SwiftUI                         | https://github.com/eternaljust
+| 强子        | 强子          | 坐标北京，58驾考：iOS + ReactNative                            | https://www.jianshu.com/u/5875a5736734
 
 
 ## 协作形式
