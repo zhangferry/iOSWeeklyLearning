@@ -30,7 +30,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 
 | 名字       | 常用ID         | 介绍                                                         | 个人博客或公众号                                             |
 | ---------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 张飞       | zhangferry     | 爱奇艺，感兴趣方向：IAP、蓝牙、RxSwift、逆向                 | 公众号：iOS成长之路，博客：https://zhangferry.com/           |
+| 张飞       | zhangferry     | 抖音，感兴趣方向：研发效能、自动化测试、逆向                 | 公众号：iOS成长之路，博客：https://zhangferry.com/           |
 | highway    | highway        | 央行研究院，6年iOS开发经验                                   | 简书：https://www.jianshu.com/u/1e59b1fe9df8                 |
 | 人魔七七   | 人魔七七       | iOS开发老兵                                                  | 公众号：人魔七七[ ](https://github.com/fanbaoying)https://github.com/renmoqiqi |
 | 夏天       | 夏天           | iOS开发老兵，游荡在各种博客之间，对底层和性能优化比较感兴趣  | 公众号：iOS成长指北 掘金：https://juejin.cn/user/3298190611456638 |
