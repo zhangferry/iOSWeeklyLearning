@@ -35,7 +35,72 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[FBY 展菲](https://github.com/fanbaoying)
+
+### 如何将 NSImage 转换为 PNG
+
+首先创建 `NSBitmapImageRep` 尺寸，并在上面绘制 `NSImage`。`NSBitmapImageRep` 需要专门构建，不是直接使用 `NSBitmapImageRep(data:)` 初始化，`NSBitmapImageRep(cgImage:)` 可以避免一些分辨率问题。
+
+```Swift
+extension NSImage {
+    func pngData(
+        size: CGSize,
+        imageInterpolation: NSImageInterpolation = .high
+    ) -> Data? {
+        guard let bitmap = NSBitmapImageRep(
+            bitmapDataPlanes: nil,
+            pixelsWide: Int(size.width),
+            pixelsHigh: Int(size.height),
+            bitsPerSample: 8,
+            samplesPerPixel: 4,
+            hasAlpha: true,
+            isPlanar: false,
+            colorSpaceName: .deviceRGB,
+            bitmapFormat: [],
+            bytesPerRow: 0,
+            bitsPerPixel: 0
+        ) else {
+            return nil
+        }
+
+        bitmap.size = size
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
+        NSGraphicsContext.current?.imageInterpolation = imageInterpolation
+        draw(
+            in: NSRect(origin: .zero, size: size),
+            from: .zero,
+            operation: .copy,
+            fraction: 1.0
+        )
+        NSGraphicsContext.restoreGraphicsState()
+
+        return bitmap.representation(using: .png, properties: [:])
+    }
+}
+```
+
+来源：[如何将 NSImage 转换为 PNG - Swift 社区](https://blog.csdn.net/qq_36478920/article/details/126182661?spm=1001.2014.3001.5501 "如何将 NSImage 转换为 PNG - Swift 社区")
+
+### 如何在 macOS 中找到以前最前沿的应用程序
+
+监听 `didActivateApplicationNotification` 并过滤结果获取希望找到的应用程序。
+
+```Swift
+NSWorkspace.shared.notificationCenter
+    .publisher(for: NSWorkspace.didActivateApplicationNotification)
+    .sink(receiveValue: { [weak self] note in
+        guard
+            let app = note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication,
+            app.bundleIdentifier != Bundle.main.bundleIdentifier
+        else { return }
+        
+        self?.frontMostApp = app
+    })
+    .store(in: &bag)
+```
+
+来源：[如何在 macOS 中找到以前最前沿的应用程序 - Swift 社区](https://blog.csdn.net/qq_36478920/article/details/126504375?spm=1001.2014.3001.5501 "如何在 macOS 中找到以前最前沿的应用程序 - Swift 社区")
 
 
 ## 内容推荐
