@@ -45,8 +45,27 @@
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[东坡肘子](https://www.fatbobman.com)
 
+1. [微软开源表情符 —— Fluent Emoji](https://github.com/microsoft/fluentui-emoji "微软开源图标项目 —— Fluent Emoji")：微软开源了 1800 多个表情符（持续增加中），在 Github 和 Figma 社区中均可获取。表情符提供了多种样式（ 3D、彩色、平面、高度比 ）和六种肤色。新表情符已经被用于 Teams 的最新版本之中了。
+
+![微软开源表情符](https://cdn.zhangferry.com/Images/66-fluentui-emoji.jpg)
+
+2. [Shortcuts.design - 快捷键大全](https://shortcuts.design "Shortcuts.design - 快捷键大全")：汇总整理了一些热门的设计、开发、效率工具的快捷键。提供了查询功能，对于跨平台产品分别提供了 Mac 和 Windows 的不同键位清单。
+
+![快捷键大全](https://cdn.zhangferry.com/Images/66-shortcuts-design.jpg)
+
+3. [Evil.js](https://juejin.cn/post/7134882958845935647 "Evil.js")：不知道上周是否有小伙伴因它而影响了摸鱼的时间。目前 Github 和 NPM 均已对其进行了删除。此次事件已经引发了有关投毒与反投毒的热烈讨论。
+
+![Evil.js](https://cdn.zhangferry.com/Images/66-evil-js.jpg)
+
+4. [猫咪插画制作](https://uchinoko-maker.jp "猫咪插画制作")：东京一家设计公司推出的网站，通过捏脸的方式制作个性猫咪插画。目前可用的选项不多，仍无法做到准确传神。可以持续关注它的后续演变。
+
+![猫咪插画制作](https://cdn.zhangferry.com/Images/66-cat-maker.jpg)
+
+5. [将微信删除了，为什么还占用大量的空间](https://www.bilibili.com/video/BV1UG4y1a75w?vd_source=47c38aa7a1b9837457a41f3f489f9377 "将微信删除了，为什么还占用大量的空间")：微信的删除操作只是不向你显示标记删除的记录了，记录仍然保存在你的设备中。B 站 up 主玄离199 通过视频告诉你微信中不能清理的“其他空间到底存了什么”。up 主还制作了另一条视频探讨关于微信在手机上存了什么，要怎么清理。
+
+![将微信删除了，为什么还占用大量的空间](https://cdn.zhangferry.com/Images/66-delete-weixin-message.jpg)
 
 ## 关于我们
 
