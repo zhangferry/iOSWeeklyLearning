@@ -1,13 +1,13 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #66 | Shazam 迎来问世 20 周年
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 本期话题：Shazam 迎来问世 20 周年
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本周学习：将 NSImage 转换为 PNG的方法；在 macOS 中找到以前最前沿的应用程序
+> * 内容推荐：iOS 基础应用和优化内容推荐
+> * 摸一下鱼：微软开源表情符大全，软件快捷键速查资源，以及可以制作猫咪插画的网站资源
 
 ## 本期话题
 
@@ -115,11 +115,11 @@ NSWorkspace.shared.notificationCenter
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136)：低端机启动优化实践，文章讨论了在低端机的情况下，会在启动时有哪些特点，介绍了在 GCD queue 上发现的问题和优化方案。
 
-3、[RunLoop的实际使用](https://mp.weixin.qq.com/s/GrkCUyxsoxqdkbeJcoAIdw ''RunLoop的实际使用') -- 来自：搜狐技术产品
+3、[RunLoop的实际使用](https://mp.weixin.qq.com/s/GrkCUyxsoxqdkbeJcoAIdw "RunLoop的实际使用") -- 来自：搜狐技术产品
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136)：来自搜狐技术产品的一篇比较基础的 RunLoop 文章，从线程保活开始介绍了 RunLoop 在实际开发中的使用，然后介绍了卡顿监测和 Crash 防护中的高阶使用。
 
-4、[iOS下锁的独白](https://mp.weixin.qq.com/s/3d365xrDKp7TwwY_htloiA ''iOS下锁的独白') -- 来自：搜狐技术产品
+4、[iOS下锁的独白](https://mp.weixin.qq.com/s/3d365xrDKp7TwwY_htloiA "iOS下锁的独白") -- 来自：搜狐技术产品
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136)：来自搜狐技术产品的一篇关于锁的文章，介绍了 iOS 中的锁有哪一些，以及如何使用。文章中的代码和注释清晰明了，归纳的也很全。
 
@@ -127,7 +127,7 @@ NSWorkspace.shared.notificationCenter
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136)：一篇关于如何避免竞争的文章，文章内容比较简单，但是观点很深入，探讨了在软件的设计中去避免资源的竞争，靠的不是一味的使用各种锁、栅栏，而是精良的设计。文中举的例子生动易懂且随文的图片制作精良。
 
-6、[How do 3D transforms of iOS views work under the hood?](https://www.thealexanderlee.com/blog/how-do-3d-transforms-of-ios-views-work-under-the-hood ''How do 3D transforms of iOS views work under the hood?') -- 来自：Alex Lee
+6、[How do 3D transforms of iOS views work under the hood?](https://www.thealexanderlee.com/blog/how-do-3d-transforms-of-ios-views-work-under-the-hood "How do 3D transforms of iOS views work under the hood?") -- 来自：Alex Lee
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136)：本文主要介绍了 3D transforms 的各种变化是怎么得来的，配有手绘介绍图，但需要一点点数学知识才可以读懂。
 
@@ -162,12 +162,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
+[iOS 摸鱼周报 #65 | 什么是精准测试](https://mp.weixin.qq.com/s/lvMHf5qQHpnDGLz1KY-2dg)
+
+[iOS 摸鱼周报 #64 | 与 App Store 专家会面交流](https://mp.weixin.qq.com/s/Bd9MZDqmvmgp1UTr5WKPig)
+
 [iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
-
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
-
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
