@@ -105,7 +105,31 @@ NSWorkspace.shared.notificationCenter
 
 ## 内容推荐
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+整理编辑：[Mim0sa](https://juejin.cn/user/1433418892590136)
+
+1、[从响应式编程到 Combine 实践](https://mp.weixin.qq.com/s/b_q6R64xkq8Rl9EiIde4MA "从响应式编程到 Combine 实践") -- 来自：字节跳动技术团队
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：来自字节跳动技术团队的 Combine 实践记录，文章从浅到深讲解了响应式编程的特点、选择 Combine 的理由以及具体实践。也介绍了 Combine 中的三个关键概念，事件发布／操作变形／订阅使用，也提及了一些常见错误等，很适合不是特别了解响应式编程的同学。
+
+2、[不改一行业务代码，飞书 iOS 低端机启动优化实践](https://mp.weixin.qq.com/s/KQJ5QXHdhwHRN65KdD45qA "不改一行业务代码，飞书 iOS 低端机启动优化实践") -- 来自：字节跳动技术团队
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：低端机启动优化实践，文章讨论了在低端机的情况下，会在启动时有哪些特点，介绍了在 GCD queue 上发现的问题和优化方案。
+
+3、[RunLoop的实际使用](https://mp.weixin.qq.com/s/GrkCUyxsoxqdkbeJcoAIdw ''RunLoop的实际使用') -- 来自：搜狐技术产品
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：来自搜狐技术产品的一篇比较基础的 RunLoop 文章，从线程保活开始介绍了 RunLoop 在实际开发中的使用，然后介绍了卡顿监测和 Crash 防护中的高阶使用。
+
+4、[iOS下锁的独白](https://mp.weixin.qq.com/s/3d365xrDKp7TwwY_htloiA ''iOS下锁的独白') -- 来自：搜狐技术产品
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：来自搜狐技术产品的一篇关于锁的文章，介绍了 iOS 中的锁有哪一些，以及如何使用。文章中的代码和注释清晰明了，归纳的也很全。
+
+5、[Avoiding race conditions in Swift](https://medium.com/swiftcairo/avoiding-race-conditions-in-swift-9ccef0ec0b26 "Avoiding race conditions in Swift") -- 来自：Mostafa Abdellateef
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：一篇关于如何避免竞争的文章，文章内容比较简单，但是观点很深入，探讨了在软件的设计中去避免资源的竞争，靠的不是一味的使用各种锁、栅栏，而是精良的设计。文中举的例子生动易懂且随文的图片制作精良。
+
+6、[How do 3D transforms of iOS views work under the hood?](https://www.thealexanderlee.com/blog/how-do-3d-transforms-of-ios-views-work-under-the-hood ''How do 3D transforms of iOS views work under the hood?') -- 来自：Alex Lee
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：本文主要介绍了 3D transforms 的各种变化是怎么得来的，配有手绘介绍图，但需要一点点数学知识才可以读懂。
 
 
 ## 摸一下鱼
