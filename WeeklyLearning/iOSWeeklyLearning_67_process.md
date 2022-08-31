@@ -46,6 +46,38 @@
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
 
+## 岗位推荐
+
+公司名：Espressif（乐鑫科技）
+
+城市：上海
+
+**Senior QA Engineer**
+
+Successful candidate will:
+
+* Work closely with users to understand their needs
+* Lead the quality assurance for multiple web/mobile projects of the team 
+* Create and execute functional and non-functional tests
+* Perform testing using a variety of test methodologies, including manual and automated testing for both frontend and backend
+* Report, track, and help determine priorities for enhancements and defects utilizing tools likes Jira
+* Capture detailed documentation of test execution
+* Collaborate across boundaries with peers and business partners in an agile way
+* Contribute to a culture of innovation and teamwork
+
+
+Skills Required
+
+* Bachelor's degree in Computer Science, Information Technology or related area
+* Experienced with API, functional, regression, compatibility and acceptance/smoke testing, 
+* Experienced with Selenium for web automated testing
+* Experienced with at least one major programming language such as Java or Python for backend automated testing
+* A strong sense of ownership and ability to collaborate with others as a great team player
+* Desire to learn new skills
+* Mindset of understanding the real business needs, generating designs to satisfy current and future customer needs
+
+联系方式：简历发送到邮箱：fanbaoying@espressif.com 或加微信：fzhanfei（备注：摸鱼周报）。
+
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
