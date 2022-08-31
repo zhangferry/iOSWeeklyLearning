@@ -36,7 +36,7 @@
 
 [@远恒之义](https://github.com/eternaljust)：仪表 Gauge 在 iOS 16 (SwiftUI 4) 中引入，是一种能显示范围内值的视图。在现实世界中，仪表是用于测量某物的大小、数量或内容，比如燃油表、温度表、转速表和速度表等仪器设备。Gauge 和 Slider 有些类似，你可以将 Gauge 视为 ProgressView 和 Slider 的结合。本文将介绍 Gauge 的使用方法，几种样式标签显示，以及如何进行自定义仪表视图。
 
-5、[Lock screen widgets in SwiftUI](https://swiftwithmajid.com/2022/08/30/lock-screen-widgets-in-swiftui/ "Lock screen widgets in SwiftUI")
+5、[Lock screen widgets in SwiftUI](https://swiftwithmajid.com/2022/08/30/lock-screen-widgets-in-swiftui/ "Lock screen widgets in SwiftUI") -- 来自：Majid
 
 [@远恒之义](https://github.com/eternaljust)：锁屏小组件是 iOS 16 最重磅的功能更新，作为 iPhone 设备上最顶级的访问入口，我们需要把握住用户使用自家 App 的曝光机会。实现锁屏小部件非常简单，因为它的 API 能与主屏幕小部件共享相同的代码。本文将介绍如何为我们的应用程序实现锁屏小部件。
 
