@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #67 | Xcode Cloud 已支持订阅
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -6,8 +6,8 @@
 
 > * 本期话题：WWDC22 视频现已提供简体中文字幕；现已推出 Xcode Cloud 订阅
 > * 本周学习：移动网络的优化方向；DNS 解析的相关问题
-> * 内容推荐：
-> * 摸一下鱼：Superhuman 3D 捏人；cnchar 是一个功能全面、多端支持的汉字拼音笔画 js 库；Swifty Compiler 是一个可以在 iPhone/iPad 上编写和运行 Swift 代码的 app。
+> * 内容推荐：SwiftUI 相关的一些文章推荐。
+> * 摸一下鱼：Superhuman 3D 捏人；Swifty Compiler 是一个可以在 iPhone/iPad 上编写和运行 Swift 代码的 app；一款命令行版本的电脑状态管理器 iStats；一款极客范儿的浏览器主题 YuIndex。
 
 ## 本期话题
 
@@ -17,11 +17,11 @@
 
 ![](https://cdn.zhangferry.com/Images/20220901232418.png)
 
-### [现已推出 Xcode Cloud 订阅](https://developer.apple.com/cn/news/?id=5hlzzu3u "现已推出 Xcode Cloud 订阅")
+### [Xcode Cloud 已支持订阅](https://developer.apple.com/cn/news/?id=5hlzzu3u " Xcode Cloud 已支持订阅")
 
-[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：Xcode Cloud 是一项内置于 Xcode 中的持续集成和交付服务，能有效地为高质量 App 的开发和交付提升速度。开始使用此服务，您将能在 Xcode 中配置工作流程，并在 2023 年底之前免费获取每月 25 个计算小时。现在，帐户持有人还可以在 Apple Developer App 中订阅更多的计算小时数。[开始使用 Xcode Cloud (英文)](https://developer.apple.com/xcode-cloud/get-started/ "开始使用 Xcode Cloud (英文)")。
+[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：Xcode Cloud 是一项内置于 Xcode 中的持续集成和交付服务，能有效地为高质量 App 的开发和交付提升速度。该功能为收费项目，从现在开始到 2023 年底之前注册开发者可以每月免费获取 25 个小时使用时长。如果需要更长时间使用，可以付费订阅这项功能，目前[订阅计划](https://developer.apple.com/xcode-cloud/get-started/ "开始使用 Xcode Cloud (英文))是这样的：
 
-![](https://cdn.zhangferry.com/Images/20220901233644.png)
+![](https://cdn.zhangferry.com/Images/20220901224059.png)
 
 ## 本周学习
 
@@ -55,7 +55,7 @@ DNS（Domain Name System，域名系统），DNS 服务用于在网络请求时�
 
 > 域名到 IP 地址的映射，DNS 解析请求采用 UDP 数据报，且明文
 
-DNS 解析的查询方式氛围`递归查询`和`迭代查询`
+DNS 解析的查询方式分为递归查询`和`迭代查询`
 
 * 递归查询：如果主机所询问的本地域名服务器不知道被查询域名的 IP 地址，那么本地域名服务器就以 DNS 客户的身份，向其他根域名服务器继续发出查询请求报文，而不是让该主机自己进行下一步的查询。
 * 迭代查询：当根域名服务器收到本地域名服务器发出的迭代查询请求报文时，要么给出所要查询的 IP 地址，要么告诉本地域名服务器：你下一步应当向哪一个域名服务器进行查询。然后让本地域名服务器进行后续的查询，而不是替本地域名服务器进行后续的查询。
@@ -122,6 +122,16 @@ HTTPDNS 利用 HTTP 协议与 DNS 服务器交互，代替了传统的基于 UDP
 
 ![](https://cdn.zhangferry.com/Images/20220901233246.png)
 
+4、[iStats](https://github.com/Chris911/iStats "iStats")：iStats 是一款命令行版的电脑运行状态记录工具，使用 Ruby 开发。安装和使用方式非常简单：
+
+```
+gem install iStats
+```
+![](https://cdn.zhangferry.com/Images/20220901225407.png)
+
+5、[YuIndex](https://github.com/liyupi/yuindex)：一款极客范儿的浏览器主题，你可以在一个网页版的终端中完成多数需求。目前支持搜索、书签管理、音乐、todo 等功能，可以在这里体验：https://www.yuindex.com/ ：
+
+![](https://cdn.zhangferry.com/Images/20220901230609.png)
 
 ## 岗位推荐
 
