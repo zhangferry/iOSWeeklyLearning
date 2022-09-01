@@ -4,14 +4,24 @@
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
+> * 本期话题：WWDC22 视频现已提供简体中文字幕；现已推出 Xcode Cloud 订阅
+> * 本周学习：移动网络的优化方向；DNS 解析的相关问题
 > * 内容推荐：
-> * 摸一下鱼：
+> * 摸一下鱼：Superhuman 3D 捏人；cnchar 是一个功能全面、多端支持的汉字拼音笔画 js 库；Swifty Compiler 是一个可以在 iPhone/iPad 上编写和运行 Swift 代码的 app。
 
 ## 本期话题
 
+### [WWDC22 视频现已提供简体中文字幕](https://developer.apple.com/cn/news/?id=lw8dnr3l "WWDC22 视频现已提供简体中文字幕")
 
+[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：现在，主题演讲、Platforms State of the Union 以及今年 Apple 全球开发者大会的近 200 场主题演讲皆配有日语、韩语和简体中文字幕。相关视频可在开发者网站或 iPhone、iPad、Mac 和 Apple TV 中的 Apple Developer App 上观看。
+
+![](https://cdn.zhangferry.com/Images/20220901232418.png)
+
+### [现已推出 Xcode Cloud 订阅](https://developer.apple.com/cn/news/?id=5hlzzu3u "现已推出 Xcode Cloud 订阅")
+
+[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：Xcode Cloud 是一项内置于 Xcode 中的持续集成和交付服务，能有效地为高质量 App 的开发和交付提升速度。开始使用此服务，您将能在 Xcode 中配置工作流程，并在 2023 年底之前免费获取每月 25 个计算小时。现在，帐户持有人还可以在 Apple Developer App 中订阅更多的计算小时数。[开始使用 Xcode Cloud (英文)](https://developer.apple.com/xcode-cloud/get-started/ "开始使用 Xcode Cloud (英文)")。
+
+![](https://cdn.zhangferry.com/Images/20220901233644.png)
 
 ## 本周学习
 
@@ -99,6 +109,18 @@ HTTPDNS 利用 HTTP 协议与 DNS 服务器交互，代替了传统的基于 UDP
 ## 摸一下鱼
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+
+1、[Superhuman 3D 捏人](https://superhuman.fun/ "3D 捏人")：Superhuman 3D character builder for your interfaces。
+
+![](https://cdn.zhangferry.com/Images/20220901232647.png)
+
+2、[cnchar](https://theajack.github.io/cnchar/ "cnchar")：功能全面、多端支持的汉字拼音笔画 js 库。
+
+![](https://cdn.zhangferry.com/Images/20220901233322.png)
+
+3、[Swifty Compiler](https://apps.apple.com/cn/app/swifty-compiler/id1544749600 "Swifty Compiler")：一个可以在 iPhone/iPad 上编写和运行 Swift 代码的 app。
+
+![](https://cdn.zhangferry.com/Images/20220901233246.png)
 
 
 ## 岗位推荐
