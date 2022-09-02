@@ -19,7 +19,7 @@
 
 ### [Xcode Cloud 已支持订阅](https://developer.apple.com/cn/news/?id=5hlzzu3u " Xcode Cloud 已支持订阅")
 
-[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：Xcode Cloud 是一项内置于 Xcode 中的持续集成和交付服务，能有效地为高质量 App 的开发和交付提升速度。该功能为收费项目，从现在开始到 2023 年底之前注册开发者可以每月免费获取 25 个小时使用时长。如果需要更长时间使用，可以付费订阅这项功能，目前[订阅计划](https://developer.apple.com/xcode-cloud/get-started/ "开始使用 Xcode Cloud (英文))是这样的：
+[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：Xcode Cloud 是一项内置于 Xcode 中的持续集成和交付服务，能有效地为高质量 App 的开发和交付提升速度。该功能为收费项目，从现在开始到 2023 年底之前注册开发者可以每月免费获取 25 个小时使用时长。如果需要更长时间使用，可以付费订阅这项功能，目前[订阅计划](https://developer.apple.com/xcode-cloud/get-started/ "开始使用 Xcode Cloud")是这样的：
 
 ![](https://cdn.zhangferry.com/Images/20220901224059.png)
 
