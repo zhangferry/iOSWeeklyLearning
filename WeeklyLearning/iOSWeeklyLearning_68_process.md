@@ -15,8 +15,64 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[JY](https://juejin.cn/user/1574156380931144/posts)
 
+#### OC泛型中的  `__covariant`  与 `__contravariant`
+
+ `__covariant` 与 `__contravariant` 分别是OC泛型当中的关键字
+
+* `__covariant` 代表协变，子类转成父类，子类型可以和父类型一样使用。
+* `__contravariant`  代表逆变，父类转成子类，父类型可以和子类型一样使用。
+
+我们来看一下 `__covariant` 的作用：
+
+```C++
+@interface Car : NSObject 
+@property (nonatomic, copy) NSString *name;
+@end
+  
+@interface BMW : Car 
+@end
+  
+@interface Person<__covariant T> : NSObject
+@property (nonatomic, strong) T car;
+@end  
+...
+Person<BMW *> * personBMW = [[Person alloc]init];;
+BMW * bmw = [[BMW alloc]init];
+personBMW.car = bmw;
+personBMW.car.name = @"BMW";
+      
+Person<Car *> * pCar = [[Person alloc]init];  
+pCar = personBMW;  
+NSLog(@"%@",pCar.car.name); // BMW
+```
+我们可以看到上述实例当中，子类型 `BMW` 成功转换成了父类型 `Car`
+
+我们再来看看 `__contravariant` 的作用：
+
+```C++
+  // 不使用__contravariant 的情况下
+  Person<Car *> * PCar = [[Person alloc]init];
+  Person<BMW *> * PBMW = [[Person alloc]init];
+  BMW * bmw = [[BMW alloc]init];
+  PBMW.car = bmw;
+  PBMW.car.name = @"BMW";
+  PBMW = PCar;  // ⚠️ 出现警告 Incompatible pointer types assigning to 'Person<BMW *> *' from 'Person<Car *> *'
+```
+
+```C++
+@interface Person<__contravariant T> : NSObject
+@property (nonatomic, strong) T car;
+@end
+...
+Person<Car *> * PCar = [[Person alloc]init];
+Person<BMW *> * PBMW = [[Person alloc]init];
+BMW * bmw = [[BMW alloc]init];
+PBMW.car = bmw;
+PBMW.car.name = @"BMW";
+PBMW = PCar; // 这时候再去赋值，不会出现警告
+```
 
 ## 内容推荐
 
