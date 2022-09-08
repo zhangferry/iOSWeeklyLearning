@@ -1,13 +1,13 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #68 | 与 App Store 专家会面交流
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本周学习：OC泛型中的  `__covariant`  与 `__contravariant`
+> * 内容推荐：编译和热重载优秀文章推荐
+> * 摸一下鱼：关于 iOS 开发国际化相关工具推荐
 
 ## 本期话题
 
@@ -61,7 +61,7 @@ NSLog(@"%@",pCar.car.name); // BMW
   PBMW = PCar;  // ⚠️ 出现警告 Incompatible pointer types assigning to 'Person<BMW *> *' from 'Person<Car *> *'
 ```
 
-```C++
+```c++
 @interface Person<__contravariant T> : NSObject
 @property (nonatomic, strong) T car;
 @end
@@ -78,25 +78,25 @@ PBMW = PCar; // 这时候再去赋值，不会出现警告
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
-1. [基于 LLVM 自制编译器——序](http://chuquan.me/2022/07/17/compiler-for-kaleidoscope-00/)  -- 来自：楚权的世界
+1. [基于 LLVM 自制编译器——序](http://chuquan.me/2022/07/17/compiler-for-kaleidoscope-00/ "基于 LLVM 自制编译器——序")  -- 来自：楚权的世界
 
-   [@夏天](https://juejin.cn/user/3298190611456638)：文章是基于官方教程 [《My First Language Frontend with LLVM Tutorial》](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html) 的翻译，有助于加深对编译原理的理解。
+   [@夏天](https://juejin.cn/user/3298190611456638)：文章是基于官方教程 [《My First Language Frontend with LLVM Tutorial》](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html "《My First Language Frontend with LLVM Tutorial》") 的翻译，有助于加深对编译原理的理解。
 
    这位大佬的其他内容也值得推荐。
 
-2. [How to improve iOS build times with modularization](https://www.runway.team/blog/how-to-improve-ios-build-times-with-modularization) -- 来自：Bruno Rocha
+2. [How to improve iOS build times with modularization](https://www.runway.team/blog/how-to-improve-ios-build-times-with-modularization "How to improve iOS build times with modularization") -- 来自：Bruno Rocha
 
    [@夏天](https://juejin.cn/user/3298190611456638)：文章分析了影响 iOS 构建的因素，以及当我们使用模块化后如何使用 **API/Impl** 技术更快地编译相互依赖的模块。
 
-3. [ARC and Memory Management in Swift](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift) -- 来自：RayWenderlich
+3. [ARC and Memory Management in Swift](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift "ARC and Memory Management in Swift") -- 来自：RayWenderlich
 
    [@夏天](https://juejin.cn/user/3298190611456638)：RayWenderlich 教程系列的文章质量都比较高，本文介绍了 ARC 的工作原理以及内存管理的最佳实践，顺便介绍了如何发现内存泄露，很完整的一个教程。
 
-4. [Hot Reloading in Swift](https://www.merowing.info/hot-reloading-in-swift/) —— Krzysztof Zabłocki
+4. [Hot Reloading in Swift](https://www.merowing.info/hot-reloading-in-swift/ "Hot Reloading in Swift") —— Krzysztof Zabłocki
 
-   [@夏天](https://juejin.cn/user/3298190611456638)：如同 Injection  一样的帮助热重载的工具[DyCI](https://github.com/DyCI/dyci-main)，文章并没有涉足原理，但是讲述了一些设计历程。
+   [@夏天](https://juejin.cn/user/3298190611456638)：如同 Injection  一样的帮助热重载的工具[DyCI](https://github.com/DyCI/dyci-main "DyCI")，文章并没有涉足原理，但是讲述了一些设计历程。
 
-5. [App 如何通过注入动态库的方式实现极速编译调试？](https://time.geekbang.org/column/article/87188)—— 戴铭《iOS 开发高手课》
+5. [App 如何通过注入动态库的方式实现极速编译调试？](https://time.geekbang.org/column/article/87188 "App 如何通过注入动态库的方式实现极速编译调试？")—— 戴铭《iOS 开发高手课》
 
    [@夏天](https://juejin.cn/user/3298190611456638)：使用动态库加载方式进行极速调试，简单分析了 Flutter 和 Injection 的原理。
 
@@ -118,12 +118,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #67 | Xcode Cloud 已支持订阅](https://mp.weixin.qq.com/s/8H7YnrVTubKvVnYJBXcF_A)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #66 | Shazam 迎来问世 20 周年](https://mp.weixin.qq.com/s/LP1qNAgjzEiDwrR7I32kuA)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #65 | 什么是精准测试](https://mp.weixin.qq.com/s/lvMHf5qQHpnDGLz1KY-2dg)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #64 | 与 App Store 专家会面交流](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
