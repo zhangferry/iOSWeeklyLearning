@@ -22,6 +22,27 @@
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
+1. [基于 LLVM 自制编译器——序](http://chuquan.me/2022/07/17/compiler-for-kaleidoscope-00/)  -- 来自：楚权的世界
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：文章是基于官方教程 [《My First Language Frontend with LLVM Tutorial》](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html) 的翻译，有助于加深对编译原理的理解。
+
+   这位大佬的其他内容也值得推荐。
+
+2. [How to improve iOS build times with modularization](https://www.runway.team/blog/how-to-improve-ios-build-times-with-modularization) -- 来自：Bruno Rocha
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：文章分析了影响 iOS 构建的因素，以及当我们使用模块化后如何使用 **API/Impl** 技术更快地编译相互依赖的模块。
+
+3. [ARC and Memory Management in Swift](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift) -- 来自：RayWenderlich
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：RayWenderlich 教程系列的文章质量都比较高，本文介绍了 ARC 的工作原理以及内存管理的最佳实践，顺便介绍了如何发现内存泄露，很完整的一个教程。
+
+4. [Hot Reloading in Swift](https://www.merowing.info/hot-reloading-in-swift/) —— Krzysztof Zabłocki
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：如同 Injection  一样的帮助热重载的工具[DyCI](https://github.com/DyCI/dyci-main)，文章并没有涉足原理，但是讲述了一些设计历程。
+
+5. [App 如何通过注入动态库的方式实现极速编译调试？](https://time.geekbang.org/column/article/87188)—— 戴铭《iOS 开发高手课》
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：使用动态库加载方式进行极速调试，简单分析了 Flutter 和 Injection 的原理。
 
 ## 摸一下鱼
 
