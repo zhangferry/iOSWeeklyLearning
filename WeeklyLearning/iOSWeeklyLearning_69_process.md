@@ -30,7 +30,7 @@
 
 2、[iPhone 14 屏幕尺寸](https://useyourloaf.com/blog/iphone-14-screen-sizes/ "iPhone 14 屏幕尺寸") -- 来自：Keith Harrison
 
-[@东坡肘子](https://www.fatbobman.com/)：iPhone 14 Pro 和 iPhone 14 Pro Max 用活力岛替换了刘海，这导致了屏幕的分辨率也发生了变化。本文对 2022 年 iPhone 14 系列机型的屏幕尺寸的变化做了总结。
+[@东坡肘子](https://www.fatbobman.com/)：iPhone 14 Pro 和 iPhone 14 Pro Max 用灵动岛替换了刘海，这导致了屏幕的分辨率也发生了变化。本文对 2022 年 iPhone 14 系列机型的屏幕尺寸的变化做了总结。
 
 3、[如何判断 ScrollView、List 是否正在滚动中](https://www.fatbobman.com/posts/how_to_judge_ScrollView_is_scrolling/ "如何判断 ScrollView、List 是否正在滚动中") -- 来自：Holly Borla
 
