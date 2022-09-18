@@ -55,7 +55,6 @@ class BlogRepo:
         return total_title
 
     def ready_blog_head(self, file_path, tags):
-        cover_url = ""
         if "iOSWeeklyLearning" in self.file_name:
             cover_url = "https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg"
             tags_value = ["iOS摸鱼周报"]
@@ -103,9 +102,9 @@ class BlogRepo:
 
         commit_msg = f"[Script]: update blog for {self.file_name}"
         os.system(f"git add . && git commit -m '{commit_msg}'")
-        if is_ci_env():
-            os.system(f"git push origin {self.branch}")
-        else:
+        os.system(f"git push origin {self.branch}")
+        if not is_ci_env():
+            # 本地触发一次deploy为了提前发布时间
             os.system("publish deploy")
 
 
