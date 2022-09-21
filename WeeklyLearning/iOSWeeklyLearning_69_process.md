@@ -60,6 +60,11 @@
 
 [@东坡肘子](https://www.fatbobman.com/)：2015 年 4 月 24 日，Apple 发布了第一代 Apple Watch。 无论我们对 Apple Watch 看法如何，watchOS 肯定是我们要支持的 Apple 生态系统的一部分，确保我们的应用获得更大的曝光率。作者将通过创建一个 watchOS 应用程序，来展示如何将我们现有的 iOS 开发知识转移到 watchOS 上来。
 
+7、[灵动岛开发演示](https://www.youtube.com/watch?v=gEWvV-TmjqE&t=65s "灵动岛开发演示") -- 来自：
+Kavsoft
+
+[@东坡肘子](https://www.fatbobman.com/)：Kavsoft 将在本视频中演示如何使用 SwiftUI 开发可用于 Apple iPhone 14 Pro 灵动岛的 Live Actitivy。
+
 ## 摸一下鱼
 
 整理编辑：[zhangferry](https://zhangferry.com)
