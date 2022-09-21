@@ -4,14 +4,26 @@
 
 ### 本期概要
 
-> * 本期话题：
+> * 本期话题：使用 iOS 16.1 Beta 版和 Xcode 14.1 Beta 版，准备登陆灵动岛
 > * 本周学习：
 > * 内容推荐：
 > * 摸一下鱼：
 
 ## 本期话题
 
+### [使用 iOS 16.1 Beta 版和 Xcode 14.1 Beta 版，开发实时活动功能](https://developer.apple.com/cn/news/?id=ttuz9vwq "使用 iOS 16.1 Beta 版和 Xcode 14.1 Beta 版，开发实时活动功能")
 
+[@远恒之义](https://github.com/eternaljust)：从 iOS 16.1 Beta 版和 Xcode 14.1 Beta 版开始，我们可以在灵动岛和锁定屏幕上共享应用程序的实时更新作为实时活动。借助于新 ActivityKit 框架的实时更新功能，实时活动能帮助用户跟踪 App 内容状态的变化。
+
+灵动岛作为 iPhone 14 Pro 系列最惊艳的设计，App 的实时活动会显示在锁定屏幕和灵动岛中，可以让用户非常直观、愉悦地体验到实时更新的内容。实时活动功能和 ActivityKit 将在今年晚些时候 iOS 16.1 正式版中上线。
+
+推荐观看 [Dynamic Island API - iOS 16.1 Beta - Xcode 14.1](https://www.youtube.com/watch?v=gEWvV-TmjqE&t=25s "Dynamic Island API - iOS 16.1 Beta - Xcode 14.1 - SwiftUI Tutorials") 课程介绍，开始登陆灵动岛。
+
+![Kavsoft SwiftUI Tutorials](https://cdn.zhangferry.com/Images/dynamic-island-api.jpeg)
+
+### [App 和 App 内购买项目即将实行价格和税率调整](https://developer.apple.com/cn/news/?id=e1b1hcmv "App 和 App 内购买项目即将实行价格和税率调整")
+
+[@远恒之义](https://github.com/eternaljust)：最早于 2022 年 10 月 5 日起，智利、埃及、日本、马来西亚、巴基斯坦、波兰、韩国、瑞典、越南和所有使用欧元货币的地区的 App Store 上的 App 及 App 内购买项目 (自动续期订阅除外) 价格将有所提高。
 
 ## 本周学习
 
