@@ -153,8 +153,23 @@ Kavsoft
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+1、关于升级到 iOS 16，看到有不少人反馈手机发热严重。我之前也遇到过，重启手机可以解决。如果仍未解决有可能是小组件后台请求频繁或者 App 适配问题导致的，可以关闭小组件或者等 App 适配。还有一种方案是 iOS 降级，提前下载 iOS 15 固件包，利用 iTunes 或者爱思助手进行固件安装，但这种方案有比较大的风险，不太建议。
 
+iOS 16 升级之后，最大的变化当属锁屏小组件了，最近用到两个在锁屏组件上功能还不错的 App：[Lock Launcher](https://apps.apple.com/cn/app/id1636719674 "Lock Launcher")、[Top Widgets](https://apps.apple.com/cn/app/id1527221228 "Top Widges")。它们都可以支持在锁屏界面配置微信/支付宝健康码，还有自定义图标、多种内置跳转指令，以下是我的锁屏配置。
 
+![](https://cdn.zhangferry.com/Images/20220921-232143.jpeg)
+
+2、[hexclock](https://www.jacopocolo.com/hexclock/ "hexclock")：一个把当前时间作为 16 进制颜色表达的网站，当前时间 22:30:41。
+
+![](https://cdn.zhangferry.com/Images/20220901223058.png)
+
+3、[emojimix](https://emojimix.app/ "emojimix")：Emoji 混合网站，它可以将两个完全不同的 emoji 进行混合。下面这张可以命名为「面包猫」。
+
+![](https://cdn.zhangferry.com/Images/20220921221449.png)
+
+4、[能不能好好说话](https://lab.magiconch.com/nbnhhsh/ "能不能好好说话")：面对越来越多的网络缩略语，有时真是让人头大，比较常见的「yyds」、「xswl」、「awsl」还能理解，但是像「bdjw」、「jdl」就要上网去查了。这个「能不能好好说话」是[「神奇海螺试验场」](https://lab.magiconch.com/ "神奇海螺试验场")里的一个工具，这些网络缩略语含义可以从这里快速找到。
+
+![](https://cdn.zhangferry.com/Images/20220921223040.png)
 
 ## 关于我们
 
