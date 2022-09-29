@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #70 | 待定
+# iOS 摸鱼周报 #70 | iOS / iPadOS 16.1 公测版 Beta 3 发布，支持老款 iPad 台前调度
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -123,15 +123,15 @@ Xcode 中的 Crashes 也没有收到任何崩溃信息。
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
-1、[麦当劳-营养计算器](https://www.mcdonalds.com.cn/nutrition_calculator)：如同其提及的，这是一款计算麦当劳套餐卡路里的网页，你可以怀揣着健康饮食的心来面对你手中的汉堡和多冰可乐。
+1、[麦当劳-营养计算器](https://www.mcdonalds.com.cn/nutrition_calculator "麦当劳-营养计算器")：如同其提及的，这是一款计算麦当劳套餐卡路里的网页，你可以怀揣着健康饮食的心来面对你手中的汉堡和多冰可乐。
 
 ![](https://cdn.zhangferry.com/Images/nutrition_calculator.png)
 
-2、[Wooden Fish](https://apps.apple.com/app/id1522144157): 木鱼-念经助手。一个模拟真实敲木鱼的App。如果你是一个虔诚的基督徒，你可以试试 [我的圣经](https://apps.apple.com/cn/app/my-holy-rosary-%E6%88%91%E7%9A%84%E5%9C%A3%E7%BB%8F-%E6%9C%89%E5%A3%B0%E8%AF%BB%E7%89%A9/id1188342937?mt=12)。
+2、[Wooden Fish](https://apps.apple.com/app/id1522144157 "Wooden Fish"): 木鱼-念经助手。一个模拟真实敲木鱼的App。如果你是一个虔诚的基督徒，你可以试试 [我的圣经](https://apps.apple.com/cn/app/my-holy-rosary-%E6%88%91%E7%9A%84%E5%9C%A3%E7%BB%8F-%E6%9C%89%E5%A3%B0%E8%AF%BB%E7%89%A9/id1188342937?mt=12 "我的圣经")。
 
 ![](https://cdn.zhangferry.com/Images/wooden_fish.png)
 
-3、[Vectornator](https://www.vectornator.io): 一款好用的插图绘制软件。
+3、[Vectornator](https://www.vectornator.io "Vectornator"): 一款好用的插图绘制软件。
 
 ![](https://cdn.zhangferry.com/Images/vectornator.png)
 
