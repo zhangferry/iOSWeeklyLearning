@@ -1,6 +1,6 @@
 # iOSWeeklyLearning
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## 周报介绍
@@ -81,29 +81,35 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/zhangferry"><img src="https://avatars.githubusercontent.com/u/13702445?v=4?s=100" width="100px;" alt=""/><br /><sub><b>zhangferry</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=zhangferry" title="Documentation">📖</a> <a href="#blog-zhangferry" title="Blogposts">📝</a> <a href="https://github.com/zhangferry/iOSWeeklyLearning/pulls?q=is%3Apr+reviewed-by%3Azhangferry" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://www.jianshu.com/u/739b677928f7"><img src="https://avatars.githubusercontent.com/u/62095149?v=4?s=100" width="100px;" alt=""/><br /><sub><b>pilaf-king</b></sub></a><br /><a href="#blog-pilaf-king" title="Blogposts">📝</a> <a href="https://github.com/zhangferry/iOSWeeklyLearning/pulls?q=is%3Apr+reviewed-by%3Apilaf-king" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://juejin.cn/user/782508012091645/posts"><img src="https://avatars.githubusercontent.com/u/76877122?v=4?s=100" width="100px;" alt=""/><br /><sub><b>师大小海腾</b></sub></a><br /><a href="#blog-teney97" title="Blogposts">📝</a> <a href="https://github.com/zhangferry/iOSWeeklyLearning/pulls?q=is%3Apr+reviewed-by%3Ateney97" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://github.com/Mim0sa"><img src="https://avatars.githubusercontent.com/u/25274332?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mim0sa</b></sub></a><br /><a href="#blog-Mim0sa" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://github.com/HighwayLaw"><img src="https://avatars.githubusercontent.com/u/10418403?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HighwayLaw</b></sub></a><br /><a href="#blog-HighwayLaw" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://juejin.im/user/5a30d987f265da430d580126"><img src="https://avatars.githubusercontent.com/u/24238160?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BaoYing-Fan</b></sub></a><br /><a href="#blog-fanbaoying" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://github.com/brave723"><img src="https://avatars.githubusercontent.com/u/1267034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>brave723</b></sub></a><br /><a href="#blog-brave723" title="Blogposts">📝</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/renmoqiqi"><img src="https://avatars.githubusercontent.com/u/8848376?v=4?s=100" width="100px;" alt=""/><br /><sub><b>renmoqiqi</b></sub></a><br /><a href="#blog-renmoqiqi" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://github.com/Tliens"><img src="https://avatars.githubusercontent.com/u/31976044?v=4?s=100" width="100px;" alt=""/><br /><sub><b>我是熊大</b></sub></a><br /><a href="#blog-Tliens" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://juejin.im/user/571d719171cfe4006170de6f"><img src="https://avatars.githubusercontent.com/u/8653935?v=4?s=100" width="100px;" alt=""/><br /><sub><b>xia</b></sub></a><br /><a href="#blog-LoneyIsError" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://github.com/opooc"><img src="https://avatars.githubusercontent.com/u/26709018?v=4?s=100" width="100px;" alt=""/><br /><sub><b>opooc</b></sub></a><br /><a href="#blog-opooc" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://coder-star.github.io/"><img src="https://avatars.githubusercontent.com/u/29835618?v=4?s=100" width="100px;" alt=""/><br /><sub><b>CoderStar</b></sub></a><br /><a href="#blog-Coder-Star" title="Blogposts">📝</a></td>
-    <td align="center"><a href="http://blog.csdn.net/qq_24761271"><img src="https://avatars.githubusercontent.com/u/25574478?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dev-wang</b></sub></a><br /><a href="#blog-RunsCode" title="Blogposts">📝</a></td>
-    <td align="center"><a href="http://www.fatbobman.com"><img src="https://avatars.githubusercontent.com/u/55673881?v=4?s=100" width="100px;" alt=""/><br /><sub><b>东坡肘子</b></sub></a><br /><a href="#blog-fatbobman" title="Blogposts">📝</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/talka123456"><img src="https://avatars.githubusercontent.com/u/20468636?v=4?s=100" width="100px;" alt=""/><br /><sub><b>clownfish</b></sub></a><br /><a href="#blog-talka123456" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://github.com/krystal1110"><img src="https://avatars.githubusercontent.com/u/83936557?v=4?s=100" width="100px;" alt=""/><br /><sub><b>krystal1110</b></sub></a><br /><a href="#blog-krystal1110" title="Blogposts">📝</a></td>
-    <td align="center"><a href="https://github.com/eternaljust"><img src="https://avatars.githubusercontent.com/u/17566920?v=4?s=100" width="100px;" alt=""/><br /><sub><b>远恒之义</b></sub></a><br /><a href="#blog-eternaljust" title="Blogposts">📝</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/zhangferry"><img src="https://avatars.githubusercontent.com/u/13702445?v=4?s=100" width="100px;" alt="zhangferry"/><br /><sub><b>zhangferry</b></sub></a><br /><a href="https://github.com/zhangferry/iOSWeeklyLearning/commits?author=zhangferry" title="Documentation">📖</a> <a href="#blog-zhangferry" title="Blogposts">📝</a> <a href="https://github.com/zhangferry/iOSWeeklyLearning/pulls?q=is%3Apr+reviewed-by%3Azhangferry" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center"><a href="https://www.jianshu.com/u/739b677928f7"><img src="https://avatars.githubusercontent.com/u/62095149?v=4?s=100" width="100px;" alt="pilaf-king"/><br /><sub><b>pilaf-king</b></sub></a><br /><a href="#blog-pilaf-king" title="Blogposts">📝</a> <a href="https://github.com/zhangferry/iOSWeeklyLearning/pulls?q=is%3Apr+reviewed-by%3Apilaf-king" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center"><a href="https://juejin.cn/user/782508012091645/posts"><img src="https://avatars.githubusercontent.com/u/76877122?v=4?s=100" width="100px;" alt="师大小海腾"/><br /><sub><b>师大小海腾</b></sub></a><br /><a href="#blog-teney97" title="Blogposts">📝</a> <a href="https://github.com/zhangferry/iOSWeeklyLearning/pulls?q=is%3Apr+reviewed-by%3Ateney97" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center"><a href="https://github.com/Mim0sa"><img src="https://avatars.githubusercontent.com/u/25274332?v=4?s=100" width="100px;" alt="Mim0sa"/><br /><sub><b>Mim0sa</b></sub></a><br /><a href="#blog-Mim0sa" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://github.com/HighwayLaw"><img src="https://avatars.githubusercontent.com/u/10418403?v=4?s=100" width="100px;" alt="HighwayLaw"/><br /><sub><b>HighwayLaw</b></sub></a><br /><a href="#blog-HighwayLaw" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://juejin.im/user/5a30d987f265da430d580126"><img src="https://avatars.githubusercontent.com/u/24238160?v=4?s=100" width="100px;" alt="BaoYing-Fan"/><br /><sub><b>BaoYing-Fan</b></sub></a><br /><a href="#blog-fanbaoying" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://github.com/brave723"><img src="https://avatars.githubusercontent.com/u/1267034?v=4?s=100" width="100px;" alt="brave723"/><br /><sub><b>brave723</b></sub></a><br /><a href="#blog-brave723" title="Blogposts">📝</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/renmoqiqi"><img src="https://avatars.githubusercontent.com/u/8848376?v=4?s=100" width="100px;" alt="renmoqiqi"/><br /><sub><b>renmoqiqi</b></sub></a><br /><a href="#blog-renmoqiqi" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://github.com/Tliens"><img src="https://avatars.githubusercontent.com/u/31976044?v=4?s=100" width="100px;" alt="我是熊大"/><br /><sub><b>我是熊大</b></sub></a><br /><a href="#blog-Tliens" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://juejin.im/user/571d719171cfe4006170de6f"><img src="https://avatars.githubusercontent.com/u/8653935?v=4?s=100" width="100px;" alt="xia"/><br /><sub><b>xia</b></sub></a><br /><a href="#blog-LoneyIsError" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://github.com/opooc"><img src="https://avatars.githubusercontent.com/u/26709018?v=4?s=100" width="100px;" alt="opooc"/><br /><sub><b>opooc</b></sub></a><br /><a href="#blog-opooc" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://coder-star.github.io/"><img src="https://avatars.githubusercontent.com/u/29835618?v=4?s=100" width="100px;" alt="CoderStar"/><br /><sub><b>CoderStar</b></sub></a><br /><a href="#blog-Coder-Star" title="Blogposts">📝</a></td>
+      <td align="center"><a href="http://blog.csdn.net/qq_24761271"><img src="https://avatars.githubusercontent.com/u/25574478?v=4?s=100" width="100px;" alt="dev-wang"/><br /><sub><b>dev-wang</b></sub></a><br /><a href="#blog-RunsCode" title="Blogposts">📝</a></td>
+      <td align="center"><a href="http://www.fatbobman.com"><img src="https://avatars.githubusercontent.com/u/55673881?v=4?s=100" width="100px;" alt="东坡肘子"/><br /><sub><b>东坡肘子</b></sub></a><br /><a href="#blog-fatbobman" title="Blogposts">📝</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/talka123456"><img src="https://avatars.githubusercontent.com/u/20468636?v=4?s=100" width="100px;" alt="clownfish"/><br /><sub><b>clownfish</b></sub></a><br /><a href="#blog-talka123456" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://github.com/krystal1110"><img src="https://avatars.githubusercontent.com/u/83936557?v=4?s=100" width="100px;" alt="krystal1110"/><br /><sub><b>krystal1110</b></sub></a><br /><a href="#blog-krystal1110" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://github.com/eternaljust"><img src="https://avatars.githubusercontent.com/u/17566920?v=4?s=100" width="100px;" alt="远恒之义"/><br /><sub><b>远恒之义</b></sub></a><br /><a href="#blog-eternaljust" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://akashark.github.io/"><img src="https://avatars.githubusercontent.com/u/26460192?v=4?s=100" width="100px;" alt="Alloc Alice"/><br /><sub><b>Alloc Alice</b></sub></a><br /><a href="#blog-AkaShark" title="Blogposts">📝</a></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    
+  </tfoot>
 </table>
 
 <!-- markdownlint-restore -->
