@@ -166,6 +166,15 @@
       "contributions": [
         "blog"
       ]
+    },
+    {
+      "login": "AkaShark",
+      "name": "Alloc Alice",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26460192?v=4",
+      "profile": "https://akashark.github.io/",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
