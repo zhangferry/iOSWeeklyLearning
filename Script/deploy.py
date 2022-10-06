@@ -20,15 +20,24 @@ class BlogRepo:
         self.git_url = git_url
         self.branch = branch
         self.execute_path = os.getcwd()
+        if os.path.basename(self.execute_path) == "Script":
+            # 保证工作目录建立在父级目录
+            self.execute_path = f"{self.execute_path}/.."
         self.repo_path = f"{self.execute_path}/.workspace"
         self.file_name = ""
 
     def clone_or_update_repo(self):
         # ssh 配置
-        os.chdir(f"{self.execute_path}")
         if os.path.exists(self.repo_path):
-            os.system(f"git pull")
+            os.chdir(f"{self.repo_path}")
+            r1 = os.system("pwd")
+            print(r1)
+            res = os.system("git fetch")
+            if res != 0:
+                raise RuntimeError("execute git pull failed")
+            print(res)
         else:
+            os.chdir(f"{self.execute_path}")
             os.system(f"git clone {self.git_url} {self.repo_path}")
         os.chdir(f"{self.repo_path}")
         os.system(f"git reset --hard origin/{self.branch}")
@@ -102,7 +111,10 @@ class BlogRepo:
 
         commit_msg = f"[Script]: update blog for {self.file_name}"
         os.system(f"git add . && git commit -m '{commit_msg}'")
-        os.system(f"git push origin {self.branch}")
+
+        res = os.system(f"git push origin {self.branch}")
+        if res != 0:
+            raise RuntimeError("git push error")
         if not is_ci_env():
             # 本地触发一次deploy为了提前发布时间
             os.system("publish deploy")
@@ -110,15 +122,20 @@ class BlogRepo:
 
 class BlogArticleBuilder:
     """创建博客文章，如果以存在会自动更新"""
-    def __init__(self):
+    def __init__(self, args=None):
+        if not args:
+            args = sys.argv[1:]
+        parse_args = self.parse_args(args)
+        self.weekly_index = parse_args.index
+        self.article_name = parse_args.name
+        self.tags = parse_args.tags
+
+    def parse_args(self, args):
         parser = argparse.ArgumentParser(description='Input the article identifier')
         parser.add_argument('--index', '-i', type=int, help='Please input the weekly index')
         parser.add_argument('--name', '-n', type=str, help='Please input the Articles name')
         parser.add_argument('--tags', '-t', type=str, help='Please input article tags, separate with commas')
-        parse_args = parser.parse_args()
-        self.weekly_index = parse_args.index
-        self.article_name = parse_args.name
-        self.tags = parse_args.tags
+        return parser.parse_args(args)
 
     def get_weekly_article_path(self):
         """get weekly article source path"""
