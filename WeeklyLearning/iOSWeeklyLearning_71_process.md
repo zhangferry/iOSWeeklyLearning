@@ -1,17 +1,17 @@
-# iOS 摸鱼周报 #71
+# iOS 摸鱼周报 #71 | One More Thing?
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
+> * 本期话题：十月份 One More Thing? Apple 新增 QA 活动；Swift 和  SwiftUI 在 iOS 系统中的使用情况。 
 > * 本周学习：
 > * 内容推荐：
 > * 摸一下鱼：
 
 ## 本期话题
 
-### One More Things
+### One More Thing?
 
 [@zhangferry](zhangferry.com)：虽然还没有官宣，但是网上已经讨论很多了，Apple 10 月还会有一场发布会。YouTube 博主 GregsGadgets 录了一期视频爆料新产品：[Apple October Event LEAKS!](https://www.youtube.com/watch?v=euUGv_Fz71o&list=RDCMUCoi3Uk6JtP9QgA5BRwnh6NQ "Apple October Event LEAKS!")。
 
@@ -19,13 +19,21 @@
 
 新产品会有这些：New iPads、New M2 iPad Pros、M2 Mac mini、M2 MacBook Pro（14/16寸），M2 版本的 Mac Pro 和 Apple TV 也可能会一起发布。
 
+### [Apple 提供 Ask People 服务](https://developer.apple.com/cn/events/ask-apple/ "Ask People")
+
+![](https://cdn.zhangferry.com/Images/20221012233542.png)
+
+[@zhangferry](zhangferry.com)：Apple 提供了 Ask People 服务让开发者能够通过 Slack 与 Apple 专家进行交流。Ask People 可以理解为一个 QA 环节，可以问代码级别的支持、设计建议、系统库使用等内容，Apple 指定了一段时间用于问答，从 10月 17 号开始到 21 号结束，这个期间会按照不同专题进行问答，这些专题对应 Slack 不同频道。活动注册，需要为开发者计划会员，具体日程和话题安排可以参照这个[日程表](https://developer.apple.com/cn/events/ask-apple/questions-and-answers/ "Ask People 日程表")。
+
+Tech Talks 和 Meet with Apple Store Experts 项目在过去一年提供了 200 多个现场演示时长达数千小时。Apple 从这些活动中看到开发者对 Apple 专家交流的诉求，于是有了 Ask People。所以有理由相信后面还会有更多的 Ask People。
+
 ### [Swift 和 SwiftUI 在系统层面使用情况](https://blog.timac.org/2022/1005-state-of-swift-and-swiftui-ios16/ "Swift 和 SwiftUI 在系统层面使用情况")
 
-作者通过分析系统库的所有二进制文件来统计 Swift 和 SwiftUI 在系统版本上的占比情况：
+[@zhangferry](zhangferry.com)：作者通过分析系统库的所有二进制文件来统计 Swift 和 SwiftUI 在系统版本上的占比情况：
 
 ![](https://cdn.zhangferry.com/Images/20221011222541.png)
 
-统计方式是把系统中的所有二进制文件数量作为总数（不包含 XNU 和固件代码），如果该二进制文件中包含以上统计信息就加一，按照比例划分做出上图。从这张图中我们可以得出以下结论：
+统计方式是把系统中的所有二进制文件数量作为总数（不包含 XNU 和固件代码），如果该二进制文件中包含以上统计信息（语言或框架）就加一，按照比例划分做出上图。从这张图中可以得出以下结论：
 
 * Objective-C 仍然是 iOS 系统的核心语言。
 * Swift 在系统库中的使用越来越高，相对成熟；SwiftUI 开始崭露头角但仍处于早期阶段。
