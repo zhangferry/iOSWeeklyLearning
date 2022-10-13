@@ -41,8 +41,65 @@ Tech Talks 和 Meet with Apple Store Experts 项目在过去一年提供了 200 
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[FBY 展菲](https://github.com/fanbaoying)
 
+### iOS Xcode 解决 Showing Recent Messages :-1: Unable to load contents of file list
+
+Xcode 运行 pod 项目报错 Showing Recent Messages :-1: Unable to load contents of file list
+
+```
+Showing Recent Messages
+:-1: Unable to load contents of file list: '/Users/fanbaoying/Desktop/AWSDemo/amazon-freertos-ble-ios-sdk/Example/AmazonFreeRTOSDemo/Pods/Target Support Files/Pods-AmazonFreeRTOSDemo/Pods-AmazonFreeRTOSDemo-frameworks-Debug-output-files.xcfilelist' (in target 'AmazonFreeRTOSDemo')
+```
+
+导致原因：
+因为是下载的第三方的项目 cocoapods 的版本不同导致
+
+解决方法：
+
+重新安装或者升级一下就好
+
+```
+sudo gem install cocoapods
+```
+
+然后把工程里面的 Pod 文件夹和 Podfile.lock 文件删掉，然后 cd 到项目根目录，然后重新运行一下 pod install 命令，重新编译即可。
+
+使用上面重新安装命令时可能会报下面的错
+
+```
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /usr/bin directory.
+```
+
+解决方法：
+
+执行下面命令
+
+```
+sudo gem install cocoapods -n /usr/local/bin
+```
+
+来源：[iOS Xcode 解决 Showing Recent Messages :-1: Unable to load contents of file list - Swift社区](https://blog.csdn.net/qq_36478920/article/details/90207331 "iOS Xcode 问题解决 - Swift 社区")
+
+### 在 iOS 16 中更改文本编辑器背景
+
+从iOS 16开始，我们可以使用 [scrollContentBackground()](https://developer.apple.com/documentation/swiftui/view/scrollcontentbackground%28_%3A%29) 和 [background()](https://developer.apple.com/documentation/swiftui/view/background%28_%3Aignoressafeareaedges%3A%29) 视图修饰符的组合在SwiftUI中为 [TextEditor](https://developer.apple.com/documentation/swiftui/texteditor) 设置自定义背景。我们首先必须通过应用 `scrollContentBackground(.hidden)` 来隐藏 `TextEditor` 上的默认背景，否则我们的自定义背景将不可见。然后，我们可以轻松地使用 `background()` 方法设置新的背景。
+
+```Swift
+struct ContentView: View {
+    @State private var text = "Some text"
+    
+    var body: some View {
+        TextEditor(text: $text)
+            .frame(width: 300, height: 200)
+            .scrollContentBackground(.hidden)
+            .background(.indigo)
+    }
+}
+```
+
+来源：[在 iOS 16 中更改文本编辑器背景 - Swift社区](https://blog.csdn.net/qq_36478920/article/details/127302530 "在 iOS 16 中更改文本编辑器背景 - Swift 社区")
 
 ## 内容推荐
 
