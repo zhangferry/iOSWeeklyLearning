@@ -74,8 +74,27 @@ Tech Talks 和 Meet with Apple Store Experts 项目在过去一年提供了 200 
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[东坡肘子](https://www.fatbobman.com)
 
+1、[迷宫生成器](https://www.mazegenerator.net/ "迷宫生成器")：一个可以生成多种形状、规格迷宫的网站。生成的迷宫图形可以以 PDF 的格式下载，并且会附带迷宫解法。
+
+![image-20221013094111617](https://cdn.zhangferry.com/Images/image-20221013094111617.png)
+
+2、[老地图查询](https://www.oldmapsonline.org/ "老地图查询")：该网站汇总了大量文献中的老地图，选择你要查询的位置，网站会列出与其相关的各个时期的老地图资料。
+
+![image-20221013095128193](https://cdn.zhangferry.com/Images/image-20221013095128193.png)
+
+3、[来自幽灵的数字](https://www.anumberfromtheghost.com/ "来自幽灵的数字")：Peter Adams 为自己的音乐创建的一个虚幻的空间。音乐与视觉共同营造了一个梦幻的氛围。
+
+![image-20221013100119087](https://cdn.zhangferry.com/Images/image-20221013100119087.png)
+
+4、[imagesTool —— 无需上传的在线图片处理服务](https://imagestool.com/zh_CN/ "imagesTool —— 无需上传的在线图片处理服务")：提供了格式转换、水印、拼接、Gif 处理、视频转 Gif 等多项功能。所有工具均使用浏览器本地技术实现，无需上传，速度更快、隐私也更有保障。
+
+![image-20221013101815464](https://cdn.zhangferry.com/Images/image-20221013101815464.png)
+
+5、[第一批彩色字体在谷歌字体上发布](https://material.io/blog/color-fonts-are-here "第一批彩色字体在谷歌字体上发布")：通过 COLRv1 格式，字体设计师可以设计并制作更富表现力的可定义字体。本次一共发布了九款彩色字体。Chrome、Android 和 Google 字体 API 中已经提供了对 COLRv1 格式的支持。
+
+![1-google-font.png](https://cdn.zhangferry.com/Images/71-google-font.png)
 
 ## 关于我们
 
