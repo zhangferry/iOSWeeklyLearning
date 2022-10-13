@@ -46,8 +46,31 @@ Tech Talks 和 Meet with Apple Store Experts 项目在过去一年提供了 200 
 
 ## 内容推荐
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+1、[StateObject 与 ObservedObject](https://www.fatbobman.com/posts/StateObject_and_ObservedObject/ "StateObject 与 ObservedObject") -- 来自：东坡肘子
 
+[@远恒之义](https://github.com/eternaljust)：StateObject 和 ObservedObject 两者都是用来订阅可观察对象（ 符合 ObservableObject 协议的引用类型 ）的属性包装器。当被订阅的可观察对象通过内置的 Publisher 发送数据时（ 通过 @Published 或直接调用其 objectWillChange.send 方法 ），StateObject 和 ObservedObject 会驱动其所属的视图进行更新。StateObject 是在 SwiftUI 2.0 中才添加的属性包装器，它的出现解决了在某些情况下使用 ObservedObject 视图会出现超预期的问题。本文将介绍两者间的异同，原理以及注意事项。
+
+2、[SwiftUI 开发之旅：适配深色模式](https://juejin.cn/post/7150553079060889614 "SwiftUI 开发之旅：适配深色模式") -- 来自：掘金 new_cheng
+
+[@远恒之义](https://github.com/eternaljust)：从 iOS 13 开始，苹果支持了深色模式，在昏暗的环境中，我们打开深色模式可获得出色的视觉体验。SwiftUI 默认支持深色模式，对于基本视图的文字和背景都有默认的深色模式样式。本文作者介绍了 Color Set、overrideUserInterfaceStyle 等适配方法，还有如何支持用户手动切换颜色模式。对于深色模式的适配，推荐采用 Assets.xcassets 的方式去定义一个完整的颜色集来适配。
+
+3、[How to dismiss sheet in SwiftUI](https://sarunw.com/posts/swiftui-dismiss-sheet/ "How to dismiss sheet in SwiftUI") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：模态或表单（.sheet）是 iOS 中的核心展示之一。在 SwiftUI 中有三种方法（`in the same view`、`with @Binding`、`with @Environment`）来关闭表单，具体的方式取决于你的视图结构以及支持的最低 iOS 版本。
+
+4、[SwiftUI List Style examples](https://sarunw.com/posts/swiftui-list-style/ "SwiftUI List Style examples") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：SwiftUI 中的 list 列表有多种样式，基于不同的平台也支持许多不同的风格。本文中将专注于 iOS 平台，介绍六种不同的风格：`.automatic`、`.insetGrouped`、`.grouped`、`.inset`、`.plain`、`.sidebar`，每种样式都有简单的代码示例和展示配图。
+
+5、[How to show badge on Tab Bar Item in SwiftUI](https://sarunw.com/posts/swiftui-tabbar-badge/ "How to show badge on Tab Bar Item in SwiftUI") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：tabItem 上的红点角标非常能吸引用户的注意，通常与应用程序图标上未读通知的数量相关联。在 SwiftUI 中，我们能非常方便的实现这个功能，使用 `badge(_:)` 来修饰选项卡栏项目（tabItem），支持设置整数（`.badge(3)`）和字符串（`.badge("99+")`）。
+
+6、[How To Automatically Create .gifs From The iOS Simulator](https://digitalbunker.dev/automatically-create-gifs-from-the-ios-simulator/ "How To Automatically Create .gifs From The iOS Simulator")  -- 来自：digitalbunker
+
+[@远恒之义](https://github.com/eternaljust)：如何在不需要任何第三方工具的情况下，直接从 iOS 模拟器录制视频并导出 .gif？首先，请按住 Option 键并将鼠标悬停在模拟器“保存屏幕”按钮上。按下该 Option 键，此设置将更改为“录制屏幕”。接着，你可以像往常一样继续录制你的应用程序。最后，停止录制，在视频预览消失之前，右键单击它并选择“另存为动画 GIF”。
+
+![来自 digitalbunker 的演示操作 gif](https://cdn.zhangferry.com/Images/ios-simulator-gif.gif)
 
 ## 摸一下鱼
 
