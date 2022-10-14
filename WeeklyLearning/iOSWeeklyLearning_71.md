@@ -5,9 +5,9 @@
 ### 本期概要
 
 > * 本期话题：十月份 One More Thing? Apple 新增 QA 活动；Swift 和  SwiftUI 在 iOS 系统中的使用情况。 
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本周学习：在 iOS 16 中更改文本编辑器背景；解决 Cocoapods 导致的 Showing Recent Messages 问题
+> * 内容推荐：SwiftUI 好文推荐
+> * 摸一下鱼：推荐一款图片在线处理网站以及老地图查询网站；供摸鱼的迷宫生成器。
 
 ## 本期话题
 
@@ -159,12 +159,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #70 | iOS / iPadOS 16.1 公测版 Beta 3 发布，支持老款 iPad 台前调度](https://mp.weixin.qq.com/s/rSPC8lgvUKPKfgR53xdHqg)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #69| 准备登陆灵动岛](https://mp.weixin.qq.com/s/Miy8xsHYHHSXsl5NtxswQA)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #68 |  iPhone14 灵动岛创意](https://mp.weixin.qq.com/s/YNukagI-VTOsIkhlYM6dEQ)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #67 | Xcode Cloud 已支持订阅](https://mp.weixin.qq.com/s/8H7YnrVTubKvVnYJBXcF_A)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
