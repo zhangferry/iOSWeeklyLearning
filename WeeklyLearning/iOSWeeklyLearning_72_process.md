@@ -46,7 +46,9 @@ optional func collectionView(
 
 由于项目支持 iOS 12.0 以上，最新版本测试时发现 iOS 12.1.4 的系统无法打开安装包，而 12.4 的设备可以正常打开。
 
-Xcode 14 的编译包会多出一些系统库，你需要添加 `libswiftCoreGraphics.tbd` ，否则在 iOS12.2 以下的系统找不到 `libswiftCoreGraphics.tbd`  而发生崩溃。
+Xcode 14 的编译包会多出一些系统库，你需要添加 `libswiftCoreGraphics.tbd` ，否则在 iOS 12.2 以下的系统找不到 `libswiftCoreGraphics.tbd`  而发生崩溃。
+
+![](https://cdn.zhangferry.com/Images/add.png)
 
 来源：[iOS小技能：Xcode14新特性(适配）](https://juejin.cn/post/7150842048944767006)
 
