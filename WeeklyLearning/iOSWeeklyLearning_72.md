@@ -64,7 +64,7 @@ Xcode 14 的编译包会多出一些系统库，你需要添加 `libswiftCoreGra
 
 ![](https://cdn.zhangferry.com/Images/add.png)
 
-来源：[iOS小技能：Xcode14新特性(适配）](https://juejin.cn/post/7150842048944767006)
+来源：[iOS小技能：Xcode14新特性(适配）](https://juejin.cn/post/7150842048944767006 "iOS小技能：Xcode14新特性(适配）")
 
 ## 内容推荐
 
@@ -111,6 +111,8 @@ Xcode 14 的编译包会多出一些系统库，你需要添加 `libswiftCoreGra
 ![](https://cdn.zhangferry.com/Images/20221020221106.png)
 
 ![](https://cdn.zhangferry.com/Images/20221020221117.png)
+
+![](https://cdn.zhangferry.com/Images/WechatIMG907.png)
 
 2、[Mac-QuickLook](https://github.com/haokaiyang/Mac-QuickLook "Mac-QuickLook")：收录了许多好用的 QuickLook 的插件和软件包。
 
