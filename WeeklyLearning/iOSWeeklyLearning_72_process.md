@@ -7,7 +7,7 @@
 > * 本期话题：1024 程序员节活动，App Store 现已开放 iOS 16.1 和 iPadOS 16.1 App 提交
 > * 本周学习：
 > * 内容推荐：
-> * 摸一下鱼：
+> * 摸一下鱼：CleverToolKit：iOS 开发者辅助工具，页面简洁，体积小巧。目前包含 json2model 功能。
 
 ## 本期话题
 
@@ -102,6 +102,29 @@ Xcode 14 的编译包会多出一些系统库，你需要添加 `libswiftCoreGra
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
+1、[CleverToolKit](https://apps.apple.com/us/app/clevertoolkit/id6443766349?l=zh&mt=12 "CleverToolKit")：iOS 开发者辅助工具，页面简洁，体积小巧。
+
+目前包含 json2model 功能，将 json 解析成项目中使用的 Model，支持 Swift、OC 两种语言，Swift 支持的框架包括 Codable、SwiftyJSON、HandyJSON，OC 支持的框架包括 YYModel、MJExtension。同时该功能还支持了 Xcode Editor Extension，无需打开工具在 Xcode 内部便可以实现操作，共享工具外部设置。
+
+后续还会添加一些好用的功能到这个软件中去。
+
+![](https://cdn.zhangferry.com/Images/20221020221106.png)
+
+![](https://cdn.zhangferry.com/Images/20221020221117.png)
+
+2、[Mac-QuickLook](https://github.com/haokaiyang/Mac-QuickLook "Mac-QuickLook")：收录了许多好用的 QuickLook 的插件和软件包。
+
+![](https://cdn.zhangferry.com/Images/20221020210850.png)
+
+3、[MenuBarX](https://apps.apple.com/cn/app/menubarx-%E5%BC%BA%E5%A4%A7%E7%9A%84%E8%8F%9C%E5%8D%95%E6%A0%8F%E6%B5%8F%E8%A7%88%E5%99%A8/id1575588022?mt=12 "MenuBarX")：一款强大的 Mac 菜单栏浏览器，把网页添加到菜单栏上，像原生 App 一样即开即用，为你打开 Web Apps 的新世界。
+
+![](https://cdn.zhangferry.com/Images/20221020213844.png)
+
+![](https://cdn.zhangferry.com/Images/20221020213939.png)
+
+4、[SpiderCard 蜘蛛纸牌 for Mac](https://github.com/KelvinQQ/SpiderCard "SpiderCard 蜘蛛纸牌 for Mac")：仿 Windows 经典单机游戏 —— 蜘蛛纸牌。
+
+![](https://cdn.zhangferry.com/Images/shot_1.png)
 
 ## 关于我们
 
