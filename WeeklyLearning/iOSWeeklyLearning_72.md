@@ -1,12 +1,12 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #72 | 1024 提前预热
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 本期话题：1024 程序员节活动，App Store 现已开放 iOS 16.1 和 iPadOS 16.1 App 提交
-> * 本周学习：
-> * 内容推荐：
+> * 本周学习：当设置 `UIImageView` 高亮时，会暂停当前的动画；Xcode 14 编译包在 iOS 12.2 以下设备崩溃
+> * 内容推荐：灵动岛有很多玩法还待探索，本期推荐一些相关文章
 > * 摸一下鱼：CleverToolKit：iOS 开发者辅助工具，页面简洁，体积小巧。目前包含 json2model 功能。
 
 ## 本期话题
@@ -132,12 +132,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #71 | iOS / One More Thing?](https://mp.weixin.qq.com/s/0mAKYvVuPLKEA2qnsNfCvQ)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #70 | iOS / iPadOS 16.1 公测版 Beta 3 发布，支持老款 iPad 台前调度](https://mp.weixin.qq.com/s/rSPC8lgvUKPKfgR53xdHqg)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #69| 准备登陆灵动岛](https://mp.weixin.qq.com/s/Miy8xsHYHHSXsl5NtxswQA)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #68 |  iPhone14 灵动岛创意](https://mp.weixin.qq.com/s/YNukagI-VTOsIkhlYM6dEQ)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
