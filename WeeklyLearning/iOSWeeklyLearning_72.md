@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #72 | 1024 提前预热
+# iOS 摸鱼周报 #72 | 1024 开始预热
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
