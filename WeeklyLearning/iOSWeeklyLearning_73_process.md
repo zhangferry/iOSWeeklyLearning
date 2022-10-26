@@ -25,7 +25,14 @@
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+最近在写脚本，这期介绍几个帮助脚本语言接收参数更优雅的三方库；
+
+- shell: [getoptions](https://github.com/ko1nksm/getoptions)
+- python: [python-fire](https://github.com/google/python-fire)
+- js：[commander.js](https://github.com/tj/commander.js)
+- ruby：[commander](https://github.com/commander-rb/commander)
 
 
 ## 关于我们
