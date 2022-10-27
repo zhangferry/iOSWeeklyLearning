@@ -22,6 +22,18 @@
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
+1、[Check for internet connection with Swift](https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift) -- Stack Overflow
+
+[@夏天](https://juejin.cn/user/3298190611456638): 当存在在 iOS App 上监测网络状态的需求时，不妨看一看这个提问，在回答中介绍了通过 `SCNetworkReachability` 来实现网络状态监听及 `NWPathMonitor`。如果你的系统支持的版本在 `iOS 12` 以上并且你有需要实现一个网络状态监听的程序，可以试一试`NWPathMonitor`。
+
+2、[Detecting Internet Access on iOS 12+ | by Ross Butler | Medium](https://medium.com/@rwbutler/nwpathmonitor-the-new-reachability-de101a5a8835) -- Medium
+
+[@夏天](https://juejin.cn/user/3298190611456638): 这是一篇关于如果通过`NWPathMonitor`来实现 `iOS 12` 以上实现网络可达性判断的文章，文章介绍了 `NWPathMonitor` 的优点以及在后面断网时的不足，并且介绍了一个兼容的库 [Connectivity](https://github.com/rwbutler/Connectivity)，但是该库由于使用了 `Combine` 并不兼容 iOS 13 以下了。
+
+3、[我是如何在新西兰找到iOS开发工作的？](https://www.youtube.com/channel/UCiEbxa6e5o3mtBJIwhRxbHA?sub_confirmation=1)-- 陈宜龙(@iOS程序犭袁)
+
+[@夏天](https://juejin.cn/user/3298190611456638):  陈宜龙大佬是我学习 iOS 比较追寻的一个博主了，最近他润去了新西兰，可以查看他的其他的  `YouTube`  视频。
+
 
 ## 摸一下鱼
 
