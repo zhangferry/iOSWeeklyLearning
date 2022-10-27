@@ -11,7 +11,17 @@
 
 ## 本期话题
 
+### [Apple Search Ads 新增广告位](https://searchads.apple.com/advanced "Apple Search Ads 新增广告位")
 
+[zhangferry](zhangferry.com)：Apple Search Ads 是 Apple 自己的广告投放产品，它主要用于 App Store 内的广告投放。原来广告位是在搜索结果页（不搜索时也会展示广告），最近又新增了两个广告入口，一个是 Today 产品卡片的底部，一个是在产品详情页的底部。
+
+![](https://cdn.zhangferry.com/Images/20221027230936.png)
+
+关于 Apple 对广告位的扩展，遭到不少人的反对，主要集中在这几点：
+
+* Apple 在注重隐私的背景下逐步限制 Facebook 和 Google 等的广告追踪能力，而自己却在一步步扩大广告的范围。限制广告追踪难道不是在为自己的广告业务铺路？
+* 广告最重要的是精准推荐，Apple Search Ads 如果说推荐精准那是不是就意味着它在分析用户行为。
+* 按照这个趋势，Apple 很有可能还会在 App Store 或者其他系统级应用层面添加广告位。
 
 ## 本周学习
 
