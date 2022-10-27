@@ -15,7 +15,80 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[JY](https://juejin.cn/user/1574156380931144/posts)
+
+#### Swift 函数派发方式总结
+
+`Swift` 当中主要有三种派发方式
+- sil_witness_table/sil_vtable：函数表派发
+- objc_method：消息机制派发
+- 不在上述范围内的属于直接派发
+
+
+
+这里总结了一份 `Swift` 派发方式的表格
+
+|            |                         **直接派发**                         |  **函数表派发**  |                   **消息派发**                   |
+| :--------: | :----------------------------------------------------------: | :--------------: | :----------------------------------------------: |
+|  NSObject  |                @nonobjc 或者 final 修饰的方法                | 声明作用域中方法 |         扩展方法及被 dynamic 修饰的方法          |
+|   Class    |        不被 @objc 修饰的扩展方法及被 final 修饰的方法        | 声明作用域中方法 |  dynamic 修饰的方法或者被 @objc 修饰的扩展方法   |
+|  Protocol  |                           扩展方法                           | 声明作用域中方法 | @objc 修饰的方法或者被 objc 修饰的协议中所有方法 |
+| Value Type |                           所有方法                           |        无        |                        无                        |
+|    其他    | 全局方法，staic 修饰的方法；使用 final 声明的类里面的所有方法；使用 private 声明的方法和属性会隐式 final 声明； |                  |                                                  |
+
+##### 协议 + 拓展
+
+由上表我们可以得知，在 `Swift` 中，协议声明作用域中的方法是函数表派发，而拓展则是直接派发，当协议当中实现了 `print` 函数，那么最后调用会根据当前对象的实际类型进行调用 
+
+```Swift
+protocol testA{
+  func print()
+}
+
+extension testA{
+  func print(){
+    print("print A")
+  }
+}
+
+struct testStruct:testA {
+  func print(){
+    print("print B")
+  }
+}
+
+let one:testA = testStruct()
+let two:testStruct = testStruct()
+one.print() // print B
+two.print() // print B
+```
+
+**追问：如果 `protocol` 没有实现 `print()` 方法，又出输出什么？**
+
+```swift
+protocol testA{}
+
+extension testA{
+  func print(){
+    print("print A")
+  }
+}
+
+struct testStruct:testA {
+  func print(){
+    print("print B")
+  }
+}
+
+let one:testA = testStruct()
+let two:testStruct = testStruct()
+one.print() // print A
+two.print() // print B
+```
+
+因为协议中没有声明 `print` 函数，所以这时，`one` 被声明成`testA` ， 只会按照拓展中的声明类型去进行直接派发
+
+而 `two` 被声明成为 `testStruct`，所用调用的是 `testStruct` 当中的 `print` 函数
 
 
 ## 内容推荐
