@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #73 | 待定
+# iOS 摸鱼周报 #73 | Apple Search Ads 惹争议
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -32,7 +32,7 @@
 * 设置界面大改，跟 iPhone 风格保持一致：用意应该是想统一 macOS 与 iOS 的交互，对于初次从 iPhone 切换到 macOS 的用户比较友好。但对于习惯了老板 macOS 设置界面的人来说，有点难受，很多内容都需要重新适应。
 * Stage Manager（台前调度）：它是一个独立功能，如果打开，当桌面出现超过 1 个窗口时就会自动触发，将多余窗口折叠到屏幕一侧变成缩略窗口，一块显示器中缩略窗口最多有 5 组，双显示器就是 10 组，基本满足大多数情况了。一屏如果超过 5 组，较早折叠的会被覆盖，手动将缩略窗口拖出，还可以让一屏同时展示多个窗口。如果想查看桌面的文件，可以点击屏幕空白切换，再次点击切换为窗口模式。习惯了之后感觉还是挺实用的一项功能。
 * Spotlight 加强：可以搜索更详细的内容，这项提升是跟 iOS 一起的，结合图片中的文字识别，搜索结果会更加丰富。我测试发现还能搜索 iCloud 里的内容
-* Metal 3：Metal 3 的意义不仅是在 Mac 端能够直接开发出特效更加复杂的游戏，它有很多渲染层面的补足，能够让很多支持 DirectX 的游戏可以相对完整的转向 Metal 3，就这个层面来说，Mac 端可玩的游戏就会有很大补充。到目前为止，Apple 在 WWDC 里提到的那几款游戏大作都还没上线，其他可玩的资源也没找到，实际效果还需要等真实的测评。
+* Metal 3：Metal 3 的意义不仅是在 Mac 端能够直接开发出特效更加复杂的游戏，它凭借很多渲染层面的补足及加强，能够让很多 DirectX 的游戏可以相对完整的转换到 Metal 3 上，但就这个层面来说，Mac 端可玩的游戏就会有很大补充。[《生化危机 村庄》](https://www.residentevil.com/village/en-asia/mac/ "《生化危机 村庄》")也已经登录 Mac App Store，售价 39.99 美元，国区没有上线。根据网上的测评这款游戏在 Mac 上的表现还不错，期待未来有更多游戏大作登录 Mac。
 
 ## 本周学习
 
@@ -122,7 +122,7 @@ two.print() // print B
 
 2、[Detecting Internet Access on iOS 12+ | by Ross Butler | Medium](https://medium.com/@rwbutler/nwpathmonitor-the-new-reachability-de101a5a8835 "Detecting Internet Access on iOS 12+ | by Ross Butler | Medium") -- Medium
 
-[@夏天](https://juejin.cn/user/3298190611456638): 这是一篇关于如果通过`NWPathMonitor`来实现 `iOS 12` 以上实现网络可达性判断的文章，文章介绍了 `NWPathMonitor` 的优点以及在后面断网时的不足，并且介绍了一个兼容的库 [Connectivity](https://github.com/rwbutler/Connectivity)，但是该库由于使用了 `Combine` 并不兼容 iOS 13 以下了。
+[@夏天](https://juejin.cn/user/3298190611456638): 这是一篇关于如果通过 `NWPathMonitor` 来实现 `iOS 12` 以上实现网络可达性判断的文章，文章介绍了 `NWPathMonitor` 的优点以及在后面断网时的不足，并且介绍了一个兼容的库 [Connectivity](https://github.com/rwbutler/Connectivity)，但是该库由于使用了 `Combine` 并不兼容 iOS 13 以下了。
 
 3、[我是如何在新西兰找到iOS开发工作的？](https://www.youtube.com/channel/UCiEbxa6e5o3mtBJIwhRxbHA?sub_confirmation=1 "我是如何在新西兰找到iOS开发工作的？")-- 陈宜龙(@iOS程序犭袁)
 
