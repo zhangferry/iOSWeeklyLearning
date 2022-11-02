@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #73 | Apple Search Ads 惹争议
+# iOS 摸鱼周报 #73 | macOS Ventura 初体验
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -168,7 +168,7 @@ two.print() // print B
  4. 参与关键方案设计，用技术和数据解决问题
 
 ### 岗位要求
-有过千万级dau app的基础架构方面开发经验，具有钻研 iOS 系统底层实现与优化的能力，能够对行业最前沿技术保持好奇心，对技术推动业务有深刻理解。
+有过千万级 DAU App 的基础架构方面开发经验，具有钻研 iOS 系统底层实现与优化的能力，能够对行业最前沿技术保持好奇心，对技术推动业务有深刻理解。
 
 ### 内推联系方式
 
