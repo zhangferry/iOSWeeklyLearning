@@ -142,9 +142,9 @@ two.print() // print B
 
 2、[原神助手 - mac端](https://github.com/zhangferry/genshin-helper "原神助手-mac端")：最近完了一段时间原神，偶然间看到一个原神助手的工具：[vikiboss/genshin-helper](https://github.com/vikiboss/genshin-helper "vikiboss/genshin-helper")，支持原神签到、祈愿分析、游戏详细数据等功能。项目是基于 Electron 和 React 开发的，作者因为没有 mac 电脑，仅提供了windows的包。于是我 fork 了该项目，添加了 mac 版本的包，大家如果有需要可以自行下载。
 
-祈愿分析抓取祈愿页面的链接填入即可。（我一共抽了 155 次，才出一个五星角色，真就最强无敌大非酋。）
+祈愿分析抓取祈愿详情分析页面的链接填入即可。
 
-![](https://cdn.zhangferry.com/Images/20221030161224.png)
+![](https://cdn.zhangferry.com/Images/20221103093409.png)
 
 3、[网页飙车](https://slowroads.io/ "网页飙车")：该游戏可以通过程序自动生成景观和道路，用户可以在这条路上驾驶，无需登录，无需安装，只有无尽的道路。
 
