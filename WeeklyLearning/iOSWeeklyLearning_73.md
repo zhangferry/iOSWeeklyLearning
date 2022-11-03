@@ -27,9 +27,9 @@
 
 ![](https://cdn.zhangferry.com/Images/20221030212611.png)
 
-[@zhangferry](zhangferry.com)：macOS Ventrua 已经发布了正式版，家里电脑涉及开发环节介绍，就很自信的进行了升级。听说有些人升级之后不少软件没有适配，直接用不了了，所以升级之前对于强依赖的软件可以上网查一下是否能够正常运行再决定是否升级。新系统体验一段时间之后，有这些功能值得说一下。
+[@zhangferry](zhangferry.com)：macOS Ventrua 已经发布了正式版，安全起见只对家里电脑进行了升级。听说有些人升级之后不少软件没有适配，直接用不了了，所以升级之前对于强依赖的软件可以上网查一下是否能够正常运行再决定是否升级。新系统体验一段时间之后，有这些功能值得说一下：
 
-* 设置界面大改，跟 iPhone 风格保持一致：用意应该是想统一 macOS 与 iOS 的交互，对于初次从 iPhone 切换到 macOS 的用户比较友好。但对于习惯了老板 macOS 设置界面的人来说，有点难受，很多内容都需要重新适应。
+* 设置界面大改，跟 iPhone 风格保持一致：用意应该是想统一 macOS 与 iOS 的交互，对于初次从 iPhone 切换到 macOS 的用户比较友好。但对于习惯了老版 macOS 设置界面的人来说，有点难受，很多内容都需要重新适应。
 * Stage Manager（台前调度）：它是一个独立功能，如果打开，当桌面出现超过 1 个窗口时就会自动触发，将多余窗口折叠到屏幕一侧变成缩略窗口，一块显示器中缩略窗口最多有 5 组，双显示器就是 10 组，基本满足大多数情况了。一屏如果超过 5 组，较早折叠的会被覆盖，手动将缩略窗口拖出，还可以让一屏同时展示多个窗口。如果想查看桌面的文件，可以点击屏幕空白切换，再次点击切换为窗口模式。习惯了之后感觉还是挺实用的一项功能。
 * Spotlight 加强：可以搜索更详细的内容，这项提升是跟 iOS 一起的，结合图片中的文字识别，搜索结果会更加丰富。我测试发现还能搜索 iCloud 里的内容
 * Metal 3：Metal 3 的意义不仅是在 Mac 端能够直接开发出特效更加复杂的游戏，它凭借很多渲染层面的补足及加强，能够让很多 DirectX 的游戏可以相对完整的转换到 Metal 3 上，但就这个层面来说，Mac 端可玩的游戏就会有很大补充。[《生化危机 村庄》](https://www.residentevil.com/village/en-asia/mac/ "《生化危机 村庄》")也已经登录 Mac App Store，售价 39.99 美元，国区没有上线。根据网上的测评这款游戏在 Mac 上的表现还不错，期待未来有更多游戏大作登录 Mac。
@@ -140,9 +140,9 @@ two.print() // print B
 - js：[commander.js](https://github.com/tj/commander.js "commander.js")
 - ruby：[commander](https://github.com/commander-rb/commander "commander")
 
-2、[原神助手 - mac端](https://github.com/zhangferry/genshin-helper "原神助手-mac端")：最近完了一段时间原神，偶然间看到一个原神助手的工具：[vikiboss/genshin-helper](https://github.com/vikiboss/genshin-helper "vikiboss/genshin-helper")，支持原神签到、祈愿分析、游戏详细数据等功能。项目是基于 Electron 和 React 开发的，作者因为没有 mac 电脑，仅提供了windows的包。于是我 fork 了该项目，添加了 mac 版本的包，大家如果有需要可以自行下载。
+2、[原神助手 - mac端](https://github.com/zhangferry/genshin-helper "原神助手-mac端")：最近在玩原神，偶然间看到一个原神助手的工具：[vikiboss/genshin-helper](https://github.com/vikiboss/genshin-helper "vikiboss/genshin-helper")，支持原神签到、祈愿分析、游戏详细数据等功能。项目是基于 Electron 和 React 开发的，作者因为没有 mac 电脑，仅提供了windows的包。于是我 fork 了该项目，添加了 mac 版本的包，大家如果有需要可以自行下载。
 
-祈愿分析抓取祈愿详情分析页面的链接填入即可。
+祈愿分析抓取祈愿详情分析页面的链接填入即可：
 
 ![](https://cdn.zhangferry.com/Images/20221103093409.png)
 
