@@ -76,7 +76,7 @@
 
 ### @阿卡拉
 
-![](/Users/readyhe/Desktop/20221031231150.png)
+![](https://cdn.zhangferry.com/Images/20221031231150.png)
 
 ### @JY
 
