@@ -1,6 +1,6 @@
 # iOS 求职寒冬？听听他们怎么说
 
-这是一次线上分享的文字整理版。原版视频内容可以点这里查看：[线上视频](https://www.bilibili.com/video/BV1gG411P7iu/?vd_source=f78da65b081aa6d30ae7bf2aded1d695 "线上视频")
+这是一次线上分享的文字整理版。原版视频内容可以点这里查看：[线上视频](https://www.bilibili.com/video/BV1gG411P7iu/?vd_source=f78da65b081aa6d30ae7bf2aded1d695 "本期分享视频内容")。
 
 ## 为啥会有这场分享
 
