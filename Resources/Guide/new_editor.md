@@ -49,7 +49,7 @@ iOS摸鱼周报，主要分享大家开发过程遇到的经验教训及一些�
 | 廖靖宇       | JY          | 坐标上海微盟，iOS开发，对底层性能优化以及Mach-O，逆向方面比较感兴趣                 | 掘金：https://juejin.cn/user/1574156380931144/posts
 | 陶宗强       | 远恒之义        | 坐标重庆，iOS 开发，关注 Swift 与 SwiftUI                         | https://github.com/eternaljust
 | 强子        | 强子          | 坐标北京，58驾考：iOS + ReactNative                            | https://www.jianshu.com/u/5875a5736734
-| 静静        | QuietGirl         | 坐标北京，6年iOS开发    |  https://github.com/byshb
+| 静静        | 宁静致远       | 坐标北京，6年iOS开发    |  https://github.com/byshb
 
 
 ## 协作形式
