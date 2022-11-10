@@ -4,14 +4,22 @@
 
 ### 本期概要
 
-> * 本期话题：
+> * 本期话题：11 月 14 日，参与新一周的 Ask Apple 活动
 > * 本周学习：iOS NSDateFormatter 设置问题 & iOS 16 部分 pods 库签名问题
 > * 内容推荐：SPM 工程实践以及性能优化好文推荐
 > * 摸一下鱼：本期推荐一款跨平台的摸鱼网站、和两款坐姿监控 APP，摸鱼的时候也不要忘记保持正确坐姿；一个根据年历、地图、人物等生成文学图谱的网站；帮助从 intel 平缓过渡到苹果自研 M 系列芯片的软件检测 app。
 
 ## 本期话题
 
+### [11 月 14 日，参与新一周的 Ask Apple 活动]("11 月 14 日，参与新一周的 Ask Apple 活动" https://developer.apple.com/cn/news/?id=oif6dumm)
 
+![](https://cdn.zhangferry.com/Images/weekly74_topic.jpeg)
+
+[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：欢迎继续参与新一周激动人心的 Ask Apple 开发者系列活动，与 Apple 专家直接交流沟通。针对如何将最新技术集成到您的 App 中、设计直观的 UI，以及测试最新软件等主题大胆提问。
+
+活动将于 11 月 14 日至 18 日举行，届时将提供多种语言和多个时区的在线一对一咨询和小组 Q&A。现已面向 Apple Developer Program 和 Apple Developer Enterprise Program 的当前成员开放注册。
+
+Ask Apple 开发者系列活动终场周将在 12 月推出，敬请关注详情。
 
 ## 本周学习
 
