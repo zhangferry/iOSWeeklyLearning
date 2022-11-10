@@ -84,13 +84,25 @@ end
 
 ## 内容推荐
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
+1、[SwifterSwift](https://github.com/SwifterSwift/SwifterSwift) -- github
+
+[@夏天](https://juejin.cn/user/3298190611456638): SwifterSwift 是 **500 多个原生 Swift 扩展的集合**，为 iOS、macOS、tvOS、watchOS 和 Linux 提供了（超过 500 个）适用于各种原生数据类型、UIKit 和 Cocoa 类的便捷方法、语法糖和性能改进。
+
+![](https://cdn.zhangferry.com/Images/SwifterSwift.png)
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
+1、[知识图谱](https://cnkgraph.com)：一个根据年历、地图、人物等生成文学图谱。关于本月的相关文献，关于本地的相关诗词，关于某地的相关文档。
+
+没事的时候准备准备，有可能用的上。
+
+![](https://cdn.zhangferry.com/Images/知识图谱.png)
+
+2、[Thief](https://github.com/cteamx/Thief): 作者说这是**一款真正的创新摸鱼神器**。一款创新跨平台摸鱼神器，支持小说、股票、网页、视频、直播、PDF、游戏等摸鱼模式，为上班族打造的上班必备神器，使用此软件可以让上班倍感轻松，远离 ICU。
 
 ## 关于我们
 
