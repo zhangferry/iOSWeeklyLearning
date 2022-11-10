@@ -84,13 +84,29 @@ end
 
 ## 内容推荐
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
 
 1、[SwifterSwift](https://github.com/SwifterSwift/SwifterSwift) -- github
 
 [@夏天](https://juejin.cn/user/3298190611456638): SwifterSwift 是 **500 多个原生 Swift 扩展的集合**，为 iOS、macOS、tvOS、watchOS 和 Linux 提供了（超过 500 个）适用于各种原生数据类型、UIKit 和 Cocoa 类的便捷方法、语法糖和性能改进。
 
 ![](https://cdn.zhangferry.com/Images/SwifterSwift.png)
+
+2、[货拉拉用户 iOS 端卡顿优化实践](https://juejin.cn/post/7160951025782751263 "货拉拉用户 iOS 端卡顿优化实践") -- 货拉拉技术
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：卡顿优化一直是客户端性能治理的重要方向之一，优化卡顿，将 APP 的用户体验做到极致，在一定程度上能够提升用户的忠诚度和 APP 的市场占有率。本文是货拉拉技术通过检测卡顿以及对卡顿的治理实践的记录，同时也总结了一些在编码阶段就规避卡顿的方法。
+
+3、[云音乐 iOS 端代码静态检测实践](https://mp.weixin.qq.com/s/5ZcGBCnrUYwUA0RXyPJt9w "云音乐iOS端代码静态检测实践") -- 网易云音乐技术团队
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：本文是网易云音乐技术团队保障代码质量、防止代码劣化的一套静态代码检测实践，文中代码详尽，步骤也很清晰地记录了通过定制 OCLint 并自定义规则、优化静态检测耗时的过程。
+
+4、[Swift Package Manager 工程实践](https://mp.weixin.qq.com/s/q7jolU99K7FI9JvAxjwRwg “Swift Package Manager 工程实践”) -- 狐友技术团队
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：本文将详细介绍狐友团队在引入 Swift Package Manager 进行工程实践中，探索和累积的相关知识和实践经验，我们将从结构设计、资源处理、链接方式的选择、编译与链接参数设置、异常处理，这五个方面展开详细介绍，每个小部分结尾都提供了最佳实践的总结。
+
+5、[5-Second Test](https://babich.biz/5-second-test-in-product-design/ “5-Second Test”) -- Nick Babich
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：5 秒测试是一个简单的练习，可以帮助衡量用户对您的设计的第一印象。本文是有关如何使用此类测试的快速指南，对于 app 开发来说，对我们的产品设计有点作用。
 
 ## 摸一下鱼
 
