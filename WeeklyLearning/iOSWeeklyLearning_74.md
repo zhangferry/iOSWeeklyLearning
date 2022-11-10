@@ -1,15 +1,39 @@
-# iOS 摸鱼周报 #74 | 待定
+# iOS 摸鱼周报 #74 | 抖音 iOS 基础技术大揭秘 Vol.02 周六见
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：11 月 14 日，参与新一周的 Ask Apple 活动
+> * 本期话题：抖音 iOS 基础技术大揭秘 Vol.02 本周六见；11 月 14 日，参与新一周的 Ask Apple 活动
 > * 本周学习：iOS NSDateFormatter 设置问题 & iOS 16 部分 pods 库签名问题
 > * 内容推荐：SPM 工程实践以及性能优化好文推荐
 > * 摸一下鱼：本期推荐一款跨平台的摸鱼网站、和两款坐姿监控 APP，摸鱼的时候也不要忘记保持正确坐姿；一个根据年历、地图、人物等生成文学图谱的网站；帮助从 intel 平缓过渡到苹果自研 M 系列芯片的软件检测 app。
 
 ## 本期话题
+
+### 抖音 iOS 基础技术大揭秘 Vol.02
+
+[@zhanferry](zhanferry.com)：抖音 iOS 基础技术在年初的时候办过一次技术分享，分享主题为：
+
+* 大型 App 开发架构演进及挑战
+* 抖音 iOS 自动化服务：容器化和规模化探索
+* 超级 App 构建效能提升 40%！JOJO，字节自研 iOS 构建系统
+* 抖音 iOS 体验优化：流程性优化探索
+* 抖音 iOS 稳定性优化与探索
+
+这期内容介绍及回放视频可以在这里获取：[超全回顾 | 5位抖音工程师揭秘抖音iOS基础技术（附PPT和回放视频）](https://mp.weixin.qq.com/s/dFkGjCgZeXbYxsu3F40L-Q)。
+
+本次分享是第二期，时间是 11 月 12 日下午 2 点，也就是本周六下午两点。分享主题为：
+
+* 抖音 iOS 从静态分析到准入体系：进击的「钟馗」
+* 抖音 iOS 视频播放品质优化实践
+* 抖音 iOS 首页 Feed 重构探索与实践
+* 抖音 iOS 自动化服务：工具链演进与优化实践
+* 机器学习技术在抖音 iOS 的探索与实践
+
+![](https://cdn.zhangferry.com/Images/20221110232112.png)
+
+
 
 ### [11 月 14 日，参与新一周的 Ask Apple 活动]("11 月 14 日，参与新一周的 Ask Apple 活动" https://developer.apple.com/cn/news/?id=oif6dumm)
 
