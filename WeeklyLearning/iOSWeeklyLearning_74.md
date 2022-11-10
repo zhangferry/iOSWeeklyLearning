@@ -35,7 +35,7 @@
 
 
 
-### [11 月 14 日，参与新一周的 Ask Apple 活动]("11 月 14 日，参与新一周的 Ask Apple 活动" https://developer.apple.com/cn/news/?id=oif6dumm)
+### [11 月 14 日，参与新一周的 Ask Apple 活动](https://developer.apple.com/cn/news/?id=oif6dumm "11 月 14 日，参与新一周的 Ask Apple 活动")
 
 ![](https://cdn.zhangferry.com/Images/weekly74_topic.jpeg)
 
@@ -132,11 +132,11 @@ end
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：本文是网易云音乐技术团队保障代码质量、防止代码劣化的一套静态代码检测实践，文中代码详尽，步骤也很清晰地记录了通过定制 OCLint 并自定义规则、优化静态检测耗时的过程。
 
-4、[Swift Package Manager 工程实践](https://mp.weixin.qq.com/s/q7jolU99K7FI9JvAxjwRwg “Swift Package Manager 工程实践”) -- 狐友技术团队
+4、[Swift Package Manager 工程实践](https://mp.weixin.qq.com/s/q7jolU99K7FI9JvAxjwRwg "Swift Package Manager 工程实践") -- 狐友技术团队
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：本文将详细介绍狐友团队在引入 Swift Package Manager 进行工程实践中，探索和累积的相关知识和实践经验，我们将从结构设计、资源处理、链接方式的选择、编译与链接参数设置、异常处理，这五个方面展开详细介绍，每个小部分结尾都提供了最佳实践的总结。
 
-5、[5-Second Test](https://babich.biz/5-second-test-in-product-design/ “5-Second Test”) -- Nick Babich
+5、[5-Second Test](https://babich.biz/5-second-test-in-product-design/ "5-Second Test") -- Nick Babich
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：5 秒测试是一个简单的练习，可以帮助衡量用户对您的设计的第一印象。本文是有关如何使用此类测试的快速指南，对于 app 开发来说，对我们的产品设计有点作用。
 
@@ -157,7 +157,7 @@ end
 2. [Thief](https://github.com/cteamx/Thief "Thief]"): 作者说这是**一款真正的创新摸鱼神器**。一款创新跨平台摸鱼神器，支持小说、股票、网页、视频、直播、PDF、游戏等摸鱼模式，为上班族打造的上班必备神器，使用此软件可以让上班倍感轻松，远离 ICU。
 3. [iMobie M1 App Checker](https://www.imobie.com/m1-app-checker/ "iMobie M1 App Checker"): 这款应用由专注于 Apple 领域 10 年的 iMobie 团队打造，旨在为所有需要平稳过渡到苹果自研 Mx 芯片的用户提供帮助，可以实现对所有已安装 App 的 CPU 类型检测，同时提供检查 iOS 应用是否可以安装到 Mac 端。
 4. [pose-monitor](github.com/linyiLYi/pose-monitor "pose-monitor"): 国内开发者在 GitHub 开源的一款 Android 应用：「PoseMon 让爷康康」，可借助 AI 技术，实时监测不良坐姿，并及时给出语音提示。应用不需要联网使用，所有 AI 特性均在手机本地运行，不需要将视频画面传输至外部服务器，仅需要摄像头权限用于获取姿态画面。
-5. [顶瓜瓜](https://apps.apple.com/cn/app/id1629577265 “顶瓜瓜”)：顶瓜瓜是一款检测头部位置、帮助保持坐姿的 App。将设备放在桌上，打开摄像头，即可开始坐姿守护。你会化身为一只头顶西瓜的动物，当你低头、歪头时，西瓜会掉下来。功能通过设备的原深感相机（True Depth Camera）实现，无需购买其他智能硬件，无需穿戴、无接触。无需联网，全部本地计算，保护您的隐私！
+5. [顶瓜瓜](https://apps.apple.com/cn/app/id1629577265 "顶瓜瓜")：顶瓜瓜是一款检测头部位置、帮助保持坐姿的 App。将设备放在桌上，打开摄像头，即可开始坐姿守护。你会化身为一只头顶西瓜的动物，当你低头、歪头时，西瓜会掉下来。功能通过设备的原深感相机（True Depth Camera）实现，无需购买其他智能硬件，无需穿戴、无接触。无需联网，全部本地计算，保护您的隐私！
 
 ## 关于我们
 
