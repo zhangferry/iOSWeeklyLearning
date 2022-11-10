@@ -6,7 +6,7 @@
 
 > * 本期话题：
 > * 本周学习：iOS NSDateFormatter 设置问题 & iOS 16 部分 pods 库签名问题
-> * 内容推荐：
+> * 内容推荐：SPM 工程实践以及性能优化好文推荐
 > * 摸一下鱼：本期推荐一款跨平台的摸鱼网站、和两款坐姿监控 APP，摸鱼的时候也不要忘记保持正确坐姿；一个根据年历、地图、人物等生成文学图谱的网站；帮助从 intel 平缓过渡到苹果自研 M 系列芯片的软件检测 app。
 
 ## 本期话题
@@ -107,6 +107,10 @@ end
 5、[5-Second Test](https://babich.biz/5-second-test-in-product-design/ “5-Second Test”) -- Nick Babich
 
 [@Mimosa](https://juejin.cn/user/1433418892590136)：5 秒测试是一个简单的练习，可以帮助衡量用户对您的设计的第一印象。本文是有关如何使用此类测试的快速指南，对于 app 开发来说，对我们的产品设计有点作用。
+
+6、[百度APP iOS端内存优化实践-内存管控方案](https://mp.weixin.qq.com/s/dETOGD3NYU2SdZhxGu0SZg) --  百度App技术
+
+[@Hello World](https://juejin.cn/user/2999123453164605/posts): 内存问题是业务开发中经常被忽视的问题，恰恰它又是很多 Crash 的罪魁祸首。例如 OOM Crash，如何治理内存成了开发中的重要一环。本文从基础原理出发讲述了如何监控内存。并从源码角度分析了应该如何选取内存指标作为衡量的阈值。
 
 ## 摸一下鱼
 
