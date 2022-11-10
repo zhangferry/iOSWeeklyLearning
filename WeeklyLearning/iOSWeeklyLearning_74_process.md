@@ -1,13 +1,13 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #74 | 待定
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 本期话题：
-> * 本周学习：iOS NSDateFormatter 设置问题 & iOS 16 部分 pods 库提示签名问题
+> * 本周学习：iOS NSDateFormatter 设置问题 & iOS 16 部分 pods 库签名问题
 > * 内容推荐：
-> * 摸一下鱼：
+> * 摸一下鱼：本期推荐一款跨平台的摸鱼网站、和两款坐姿监控 APP，摸鱼的时候也不要忘记保持正确坐姿；一个根据年历、地图、人物等生成文学图谱的网站；帮助从 intel 平缓过渡到苹果自研 M 系列芯片的软件检测 app。
 
 ## 本期话题
 
@@ -96,13 +96,16 @@ end
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
-1、[知识图谱](https://cnkgraph.com)：一个根据年历、地图、人物等生成文学图谱。关于本月的相关文献，关于本地的相关诗词，关于某地的相关文档。
+1. [知识图谱](https://cnkgraph.com)：一个根据年历、地图、人物等生成文学图谱。关于本月的相关文献，关于本地的相关诗词，关于某地的相关文档。
 
 没事的时候准备准备，有可能用的上。
 
 ![](https://cdn.zhangferry.com/Images/知识图谱.png)
 
-2、[Thief](https://github.com/cteamx/Thief): 作者说这是**一款真正的创新摸鱼神器**。一款创新跨平台摸鱼神器，支持小说、股票、网页、视频、直播、PDF、游戏等摸鱼模式，为上班族打造的上班必备神器，使用此软件可以让上班倍感轻松，远离 ICU。
+2. [Thief](https://github.com/cteamx/Thief): 作者说这是**一款真正的创新摸鱼神器**。一款创新跨平台摸鱼神器，支持小说、股票、网页、视频、直播、PDF、游戏等摸鱼模式，为上班族打造的上班必备神器，使用此软件可以让上班倍感轻松，远离 ICU。
+3. [iMobie M1 App Checker](https://www.imobie.com/m1-app-checker/ "iMobie M1 App Checker"): 这款应用由专注于 Apple 领域 10 年的 iMobie 团队打造，旨在为所有需要平稳过渡到苹果自研 Mx 芯片的用户提供帮助，可以实现对所有已安装 App 的 CPU 类型检测，同时提供检查 iOS 应用是否可以安装到 Mac 端。
+4. [pose-monitor](github.com/linyiLYi/pose-monitor "pose-monitor"): 国内开发者在 GitHub 开源的一款 Android 应用：「PoseMon 让爷康康」，可借助 AI 技术，实时监测不良坐姿，并及时给出语音提示。应用不需要联网使用，所有 AI 特性均在手机本地运行，不需要将视频画面传输至外部服务器，仅需要摄像头权限用于获取姿态画面。
+5. [顶瓜瓜](https://apps.apple.com/cn/app/id1629577265 “顶瓜瓜”)：顶瓜瓜是一款检测头部位置、帮助保持坐姿的 App。将设备放在桌上，打开摄像头，即可开始坐姿守护。你会化身为一只头顶西瓜的动物，当你低头、歪头时，西瓜会掉下来。功能通过设备的原深感相机（True Depth Camera）实现，无需购买其他智能硬件，无需穿戴、无接触。无需联网，全部本地计算，保护您的隐私！
 
 ## 关于我们
 
@@ -110,12 +113,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #73 | macOS Ventura 初体验](https://mp.weixin.qq.com/s/Om_1TOGKWkMiNneB6Ittrw)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #72 | 1024 开始预热](https://mp.weixin.qq.com/s/WUVAHbJe_dmA-DVFXpF2Qw)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #71 | iOS / One More Thing?](https://mp.weixin.qq.com/s/0mAKYvVuPLKEA2qnsNfCvQ)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #70 | iOS / iPadOS 16.1 公测版 Beta 3 发布，支持老款 iPad 台前调度](https://mp.weixin.qq.com/s/rSPC8lgvUKPKfgR53xdHqg)https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
