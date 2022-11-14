@@ -1,7 +1,7 @@
-# 程序员的自我修养（链接、装载与库）学习日记一（连载）
-![首图](https://cdn.zhangferry.com/Images/%E7%A7%8B%E5%A4%A9%E5%8D%A1%E9%80%9A%E6%89%8B%E7%BB%98%E9%A3%8E%E7%AB%96%E7%89%88%E6%8F%92%E7%94%BB__2022-11-07+16_45_20.png)
+# 《程序员的自我修养（链接、装载与库）》学习笔记一（稳固而知新）
+![封面](https://cdn.zhangferry.com/Images/%E7%A7%8B%E5%A4%A9%E5%8D%A1%E9%80%9A%E6%89%8B%E7%BB%98%E9%A3%8E%E7%AB%96%E7%89%88%E6%8F%92%E7%94%BB__2022-11-07+16_45_20.png)
 
-《程序员的自我修养 - 链接、装载与库》这本书，主要是介绍了系统软件的一些运行机制、原理。在不同的系统平台上，一个应用程序在编译、链接、运行发生的各种事项，并对此进行了深入的剖析。本书主要分成四个大的章节，温故而知新、静态链接、装载与动态链接、库与运行库：
+[《程序员的自我修养 - 链接、装载与库》](https://book.douban.com/subject/3652388/ "《程序员的自我修养 - 链接、装载与库》")这本书，主要是介绍了系统软件的一些运行机制、原理。在不同的系统平台上，一个应用程序在编译、链接、运行发生的各种事项，并对此进行了深入的剖析。本书主要分成四个大的章节，温故而知新、静态链接、装载与动态链接、库与运行库：
 
 |  温故而知新  |     静态链接     |     装载与动态链接     |   库与运行库   |
 | :----------: | :--------------: | :--------------------: | :------------: |
@@ -51,7 +51,7 @@ int main() {
 
 计算机基本结构：**CPU、内存、I/O 控制芯片**，如下图：
 
-<img src="https://cdn.zhangferry.com/Images/WX20221112-175653@2x.png" width = "650" height = "230"/>
+<img src="https://cdn.zhangferry.com/Images/WX20221112-175653@2x.png" width = "650"/>
 
 #### CPU 的发展史
 
@@ -63,7 +63,7 @@ int main() {
 
 下图为计算机的软件体系结构分层:
 
-<img src="https://cdn.zhangferry.com/Images/%E8%AF%95%E8%AF%95.png" width = "650" height = "330"/>
+<img src="https://cdn.zhangferry.com/Images/%E8%AF%95%E8%AF%95.png" width = "650"/>
 
 1. 计算机软件体系结构是分层的，层与层之间通信的协议，称之为接口。
   1. 开发工具与应用程序都使用操作系统的**应用程序编程接口**。
@@ -126,19 +126,23 @@ int main() {
 
 #### 中间层
 除了分层设计，中间层的设计，也是非常巧妙的存在。
+
 在计算机软件体系结构中，中间层作为下面层级的包装和扩展，中间层的存在，保证了软硬件的相对独立。
 中间层的强大之处在 LLVM 设计的过程中也深有体现。
 
 首先解释下 LLVM：
+
 LLVM 是构架编译器（compiler）的框架系统，以 C++ 编写而成，用于优化以任意程序语言编写的程序的编译时间（compile-time）、链接时间（link-time）、运行时间（run-time）以及空闲时间（idle-time），对开发者保持开放，并兼容已有脚本。
 
 LLVM 的大体结构设计如下图：
 ![](https://cdn.zhangferry.com/Images/WX20221107-232225@2x.png)
 
 它的设计主要可以分为编译器前端（Frontend）、优化器（Optimizer）、后端和代码生成器（Backend And CodeGenerator）。
+
 笔者理解优化器（Optimizer）不仅仅作为编译过程中的一道工序（做各种优化并且改善代码的运行时间，减少冗余计算），优化器还作为 LLVM 设计最为精妙的地方--`中间层`。
 
 为什么这么说呢？
+
 前端语法种类繁多，后端硬件架构种类繁多，而正是中间层的存在，使得 LLVM 的架构即可以为各种语言独立编写前端，也可以为任意硬件架构编写后端，实现了开发语言和硬件架构之间相对独立，这才是其真正的强大之处。
 
 #### 类似软件的设计原则的体现
@@ -182,7 +186,7 @@ LLVM 的大体结构设计如下图：
 
 MMU是内存管理单元，有时也称作分页内存管理单元，MMU在操作系统的控制下负责将虚拟内存实际翻译成物理内存，其与CPU以及物理内存的关系如下图：
 
-<img src="https://cdn.zhangferry.com/Images/WX20221112-133253@2x.png" width = "600" height = "70"/>
+<img src="https://cdn.zhangferry.com/Images/WX20221112-133253@2x.png" width = "600"/>
 
 1. 物理地址空间是由地址总线条数决定的。
 2. 虚拟地址是想象出来的，每个进程都拥有独立的虚拟空间，这样做到了进程的地址隔离。
@@ -195,26 +199,29 @@ MMU是内存管理单元，有时也称作分页内存管理单元，MMU在操�
 
 1. 分段的基本思路是把一段与程序所需要的内存空间大小的虚拟空间映射到某个地址空间，映射关系如下图所示，通过使用分段，可以解决不隔离和不固定的问题，因为程序A和程序B被映射到了两块不同的物理空间。
 
-   <img src="https://cdn.zhangferry.com/Images/WX20221112-180320@2x.png" width = "570" height = "360"/>
+   <img src="https://cdn.zhangferry.com/Images/WX20221112-180320@2x.png" width = "570"/>
 
 2. 但是分段内存使用效率低下，内存映射以程序为单位，如果内存不足，被换出的是整个程序，其实程序内的很多数据，都不会被频繁用到，没必要被一起移除内存。
 
 3. 分页就是将地址空间分为固定大小的页，进程的虚拟地址空间按页分隔，不常用的放入磁盘，用到时取出来即可，内存使用效率低下的问题得到了解决。
 
-   <img src="https://cdn.zhangferry.com/Images/WX20221112-180013@2x.png" width = "600" height = "400"/>
+   <img src="https://cdn.zhangferry.com/Images/WX20221112-180013@2x.png" width = "600"/>
 
 #### 内存共享的实现机制
 虚拟空间页称之为虚拟页，物理内存的页为物理页，磁盘中的页为磁盘页，不同虚拟页被同时映射到同一个物理页，即可实现内存共享。
 
 #### Page Fault
 虚拟页不在内存中，当需要用到时，就会捕获 Page Fault。
+
 对于 iOS 开发来说，虚拟内存也是通过分页管理的，当访问到某些数据并没有加载到内存时，操作系统就会阻塞当前线程，新加载一页到物理内存，并且将虚拟内存与之对应，这个阻塞的过程就叫做缺页中断，App 启动的时候 Page Fault次数多了会影响启动速度，而我们优化启动速的方式之一就是通过二进制重排，减少 Page Fault 的次数。
 
-<div align=center><img src="https://cdn.zhangferry.com/Images/WX20221112-185849@2x.png" width = "670" height = "150"/>
+<div align=center><img src="https://cdn.zhangferry.com/Images/WX20221112-185849@2x.png" width = "670"/>
+
 
 当 App 的启动过程中如果需要启动符号1、启动符号2、启动符号3、启动符号4，那么 page1，page2，page3，page4 就都需要加载到内存中。
 
-<div align=center><img src="https://cdn.zhangferry.com/Images/WX20221112-185930@2x.png" width = "670" height = "150"/>
+<div align=center><img src="https://cdn.zhangferry.com/Images/WX20221112-185930@2x.png" width = "670"/>
+
 
 
 而我们可以做的就是通过二进制的重排，将启动符号1、启动符号2、启动符号3、启动符号4放到了同一页，那么只需要 page1加载到内存即可。
@@ -280,16 +287,16 @@ MMU是内存管理单元，有时也称作分页内存管理单元，MMU在操�
 作者给我们举了一种情况：
 
 ```c++
- x = 0;
- // Thread1中
- lock();
- x++;
- unlock();
+x = 0;
+// Thread1中
+lock();
+x++;
+unlock();
  
- Thread2中
- lock();
- x++;
- unlock();
+// Thread2中
+lock();
+x++;
+unlock();
 ```
 
 上文已经介绍了 ++ 操作并非原子操作，编译器为了提高 x 的 访问速度，需要把  x  的值放入某个寄存器里面。
@@ -325,11 +332,17 @@ T* GetInstance {
 
 这是单例模式 double-check 的案例，其中双重 if 可以令 lock 的开销降到最低，但是上面的代码其实是存在问题的，而问题就是来自于 CPU 的乱序执行。
 
- `pInst = new T` 一共会分为三步，① 分配内存，② 调用构造函数 ③ 将内存地址的值赋值给 pInst。
+ `pInst = new T` 一共会分为三步：
 
-在这三步中 ② ③ 可能会被 CPU 颠倒顺序，那么就会出现这种情况：
+1、分配内存
 
-pInst 已经不是NULL了，但是还没有构造完毕，这时候另一个线程调用单例方法，发现 pInst 不为 NULL，就会将尚未构造完成的对象地址返回，这时候类就有可能产生异常。
+2、调用构造函数 
+
+3、将内存地址的值赋值给 pInst。
+
+在这三步中 2、3 可能会被 CPU 颠倒顺序，那么就会出现这种情况：
+
+`pInst` 已经不是 NULL 了，但是还没有构造完毕，这时候另一个线程调用单例方法，发现 `pInst` 不为 NULL，就会将尚未构造完成的对象地址返回，这时候类就有可能产生异常。
 
 为解决这个问题，我们可以使用 barrier 指令，来阻止 CPU 将该指令之前的指令交换到 barrier 之后， POWERPC 体系结构使用 barrier 优化后的单例方法如下：
 
@@ -356,7 +369,7 @@ T* GetInstance {
 
     一个用户使用的线程就唯一对应一个内核使用的线程，这样用户线程就有了和内核线程一致的优点。这种情况下，才是真正的并发，如下图：
 
-    <img src="https://cdn.zhangferry.com/Images/WX20221112-190535@2x.png" width = "620" height = "200"/>
+    <img src="https://cdn.zhangferry.com/Images/WX20221112-190535@2x.png" width = "620"/>
 
     * 优点：一个线程受阻时，其他的线程不会受到影响。
     * 缺点1：内核线程数量的限制，导致用户线程受到限制。
@@ -366,7 +379,7 @@ T* GetInstance {
 
     多个用户线程映射一个内核线程，如下图：
 
-    <img src="https://cdn.zhangferry.com/Images/WX20221112-181704@2x.png" width = "560" height = "220"/>
+    <img src="https://cdn.zhangferry.com/Images/WX20221112-181704@2x.png" width = "560"/>
 
     * 优点：高效的上下文切换和几乎无限制的线程数量。
     * 缺点1：一个线程阻塞，其他线程都将无法执行。
@@ -376,7 +389,7 @@ T* GetInstance {
 
     将多个用户线程映射到不止一个的内核线程，如下图：
 
-    <img src="https://cdn.zhangferry.com/Images/WX20221112-181741@2x.png" width = "550" height = "290"/>
+    <img src="https://cdn.zhangferry.com/Images/WX20221112-181741@2x.png" width = "550"/>
 
     * 优点1：一个线程的阻塞不会导致所有线程阻塞。
     * 优点2：多对多模型，线程的数量没有什么限制。
