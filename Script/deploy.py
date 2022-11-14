@@ -100,9 +100,10 @@ class BlogRepo:
                 if index > 3:
                     # 去除封面内容
                     new_content.append(lines[index])
-            fileHandler.seek(0)
+
+        with open(file_path, "w") as fp:
             for newline in new_content:
-                fileHandler.write(newline)
+                fp.writelines(newline)
 
     def deploy(self):
         """推送仓库"""

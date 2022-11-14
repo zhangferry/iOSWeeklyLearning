@@ -5,8 +5,8 @@ from deploy import BlogArticleBuilder, BlogRepo
 class MyTestCase(unittest.TestCase):
 
     def setUp(self):
-        article_args = ["--name", "bookreview_effective_engineer",
-                        "--tags", "效率,书评"]
+        article_args = ["--name", "cultivation_for_programmer_booknotes_1",
+                        "--tags", "书评,读书笔记"]
         self.builder = BlogArticleBuilder(article_args)
 
     def test_deploy_article(self):
