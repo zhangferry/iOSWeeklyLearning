@@ -11,7 +11,11 @@
 
 ## 本期话题
 
+### [iPhone 14 / Pro 系列卫星 SOS 紧急求救服务已在美国和加拿大正式推出](https://www.ithome.com/0/654/091.htm "iPhone 14 / Pro 系列卫星 SOS 紧急求救服务已在美国和加拿大正式推出")
 
+[@远恒之义](https://github.com/eternaljust)：卫星 SOS 紧急求救服务是 Apple 今年发布所有 iPhone 14 / Pro 系列机型提供的新功能，用户能够在没有蜂窝网络和 Wi-Fi 信号覆盖区域通过卫星紧急服务发送消息。从 11 月 15 号开始，美国和加拿大的 iPhone 14 / Pro 系列用户可通过卫星使用紧急 SOS，此服务还将于 12 月在法国、德国、爱尔兰和英国推出。[Apple 官网关于卫星紧急求救](https://support.apple.com/en-us/HT213426 "Use Emergency SOS via satellite on your iPhone 14")的介绍说明，用户使用前必须升级到 iOS 16.1 正式版系统，同时从 iPhone 14 / Pro 系列手机激活之日起，此服务两年内免费使用。遗憾的是，国行版 iPhone 14 / Pro 系列不支持此服务功能。
+
+![Use Emergency SOS via satellite on your iPhone 14](https://cdn.zhangferry.com/Images/iphone-14-emergency-sos-via-satellite.png)
 
 ## 本周学习
 
