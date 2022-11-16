@@ -11,6 +11,18 @@
 
 ## 本期话题
 
+### 关于远程工作
+
+[@zhangferry](zhangferry.com)：最近关注到 [Remote In Tech](https://remoteintech.company/ "Remote In Tech")，一个收集远程工作和半远程工作的网站。远程工作我们都理解，就是完全在家办公，半远程就是比如一周中，我们一三五在家办公，二四去到公司。在今年的 2 月份，携程宣布推行 “3+2” 混合办公制度，就是属于半远程工作制。当时网上铺天盖地的报道，在讨论这会不会带来远程办公的趋势。大半年过去了，只找到 36Kr 上的一篇相关报道：
+
+> 在携程内部，不少中层管理者并不认同“3+2”混合办公政策。有的部门和团队会明确表示不建议或不可以回家远程，有的要求居家要有更多产出，或者早晚频繁开会、打卡、写日报，**目的是让大家放弃申请**。
+>
+> -- 来源：[监控员工好累啊……来看看远程管理如何解放双手](https://36kr.com/p/1891835331989509 "监控员工好累啊……来看看远程管理如何解放双手")
+
+国内也有一个比较专注于远程工作的网站 [电鸭](https://eleduck.com/ "电鸭")，看前几页的信息，基本都是国外公司、Web3、区块链相关。
+
+远程办公即考验公司的管理能力，又对员工本身素质提出了很高的要求，还有这其中的信任、绩效评定等问题，都需要有一个合适的解决方案。看来国内公司要推进远程办公，还有很长的路要走啊。
+
 ### [iPhone 14 / Pro 系列卫星 SOS 紧急求救服务已在美国和加拿大正式推出](https://www.ithome.com/0/654/091.htm "iPhone 14 / Pro 系列卫星 SOS 紧急求救服务已在美国和加拿大正式推出")
 
 [@远恒之义](https://github.com/eternaljust)：卫星 SOS 紧急求救服务是 Apple 今年发布所有 iPhone 14 / Pro 系列机型提供的新功能，用户能够在没有蜂窝网络和 Wi-Fi 信号覆盖区域通过卫星紧急服务发送消息。从 11 月 15 号开始，美国和加拿大的 iPhone 14 / Pro 系列用户可通过卫星使用紧急 SOS，此服务还将于 12 月在法国、德国、爱尔兰和英国推出。[Apple 官网关于卫星紧急求救](https://support.apple.com/en-us/HT213426 "Use Emergency SOS via satellite on your iPhone 14")的介绍说明，用户使用前必须升级到 iOS 16.1 正式版系统，同时从 iPhone 14 / Pro 系列手机激活之日起，此服务两年内免费使用。遗憾的是，国行版 iPhone 14 / Pro 系列不支持此服务功能。
@@ -54,8 +66,25 @@
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
 
+1、[Learn X in Y minutes](https://learnxinyminutes.com/ "Learn X in Y minutes")：这是一个用于快速学习一门编程语言或开发工具的网站。根据二八定律，一件工具，其 20% 的功能，就能满足 80% 的需求。所以打算初尝一门编程语言，最佳的方式就是先了解那20%最重要的功能，这个网站的目的就在于此。
+
+2、[我用400天，做了一款让所有人免费商用的开源字体](https://www.bilibili.com/video/BV1sP411g7PZ)：这是B站up主 [oooooohmygosh](https://space.bilibili.com/38053181) 的一期视频，讲述自己用 400 天时间一直在做的一款开源字体，开源地址：[smiley-sans](https://github.com/atelier-anchor/smiley-sans "smiley-sans")。我们都知道代码是可以被开源的，但其实字体也是能够开源的。国内大部分字体都是在已有开源字体基础上进行的二次修改，从零开始设计一款字体的人则非常少。因为这代表着需要考虑整个字体的风格统一性，英文还好，中文汉字那么多，想想都是一个巨大的工程。而且得意黑还支持了泛欧陆、越南文在内的100多种语言，真的很强。
+
+虽然会很辛苦，视频中更多感受到的却是作者和一起协作的小伙伴的创作热情，大家都认为这是一件有意义的事，相信这件事能帮助到更多的人，所以做起来也乐此不疲。这才是开源精神啊。
+
+![](https://cdn.zhangferry.com/Images/20221116233128.png)
+
+3、[isowords](https://github.com/pointfreeco/isowords "isowords")：一款开源的单词游戏项目，用 SwiftUI 开发，可以用来学习用 SwiftUI 做完整项目的话可以如何设计。
+
+![](https://cdn.zhangferry.com/Images/20221116235723.png)
+
+4、[interview warmup](https://grow.google/certificates/interview-warmup/ "interview warmup")：Google 推出的一个能够模拟面试的网站，你需要提前告诉它你是做什么的，然后 AI 会根据你的回答自动生成几道题。回答过程会全程录音，然后根据结果给你打分，还会提一些建议。你也可以反复练习，以提高面试能力。
+
+![](https://cdn.zhangferry.com/Images/20221117000646.png)
+
+5、[DumpApp](https://www.dumpapp.com/ "DumpApp")：一个专注于 iOS 应用砸壳和签名的网站，还提供企业签，个人签等服务，有些内容需要付费。
 
 ## 关于我们
 
