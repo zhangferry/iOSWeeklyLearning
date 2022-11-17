@@ -86,7 +86,7 @@ let standard = UIFont.systemFont(ofSize: 46, weight: .bold, width: .standard)
 let expanded = UIFont.systemFont(ofSize: 46, weight: .bold, width: .expanded)
 ```
 
-来源：[iOS16 中的 3 种新字体宽度样式 - Swift 社区](https://mp.weixin.qq.com/s/84TG_7yFxpsXF7cHTbVbFw "iOS16 中的 3 种新字体宽度样式 - Swift 社区")
+来源：[iOS16 中的 3 种新字体宽度样式 - Swift 社区](https://mp.weixin.qq.com/s/84TG_7yFxpsXF7cHTbVbFw)
 
 ## 内容推荐
 
@@ -106,7 +106,7 @@ let expanded = UIFont.systemFont(ofSize: 46, weight: .bold, width: .expanded)
 
 [@东坡肘子](https://www.fatbobman.com/): Swift Package Manager（SPM）允许软件包将 xcframework bundle 声明为可用目标。该技术通常用于提供对闭源库的访问，并且可以通过减少获取 SPM 存储库所花费的时间来提高 CI 性能。在向项目添加二进制目标时，必须考虑其优缺点，并了解 xcframeworks 在它们支持的平台上所能发挥作用。
 
-4、[如何在 SwiftUI 中创建条形图](https://mp.weixin.qq.com/s/xPykVjkb9aLtu8rha3tQqA "如何在 SwiftUI 中创建条形图") -- 来自：Swift 社区
+4、[如何在 SwiftUI 中创建条形图](https://mp.weixin.qq.com/s/xPykVjkb9aLtu8rha3tQqA) -- 来自：Swift 社区
 
 [@东坡肘子](https://www.fatbobman.com/): Apple 在 WWDC 2022 期间宣布了一个名为 Swift Charts 的全新框架，方便开发者创建与苹果官方水准相当的图表应用。本文是 Swift 社区推出的有关 Swift Charts 系列文章中的一篇，其他内容还包括：[如何创建折线图](https://mp.weixin.qq.com/s/V_qXskB41WYHwaPdV877mg)、[在 Swift 图表中使用 Foudation 库中的测量类型](https://mp.weixin.qq.com/s/V_qXskB41WYHwaPdV877mg) 等内容。
 
