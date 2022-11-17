@@ -1,13 +1,13 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #75 |关于远程工作
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本期话题：关于远程工作相关信息，iPhone 14 / Pro 系列卫星 SOS 紧急求救服务已在美国和加拿大正式推出
+> * 本周学习：iOS16 中的 3 种新字体宽度样式
+> * 内容推荐：Ask Apple 2022 十月问答汇总，Swift 以及 SwiftUI 相关的好文推荐
+> * 摸一下鱼：本期摸鱼推荐一个快速学习编程语言或开发工具的网站、B站up主开源的一套免费商用的字体、SwiftUI 开发的开源单词游戏项目、以及 Google 推出的能够模拟面试的网站；还有一个可以脱壳 app 的在线网站
 
 ## 本期话题
 
@@ -45,7 +45,7 @@
 
 ![](https://images.xiaozhuanlan.com/photo/2022/f9a30607ad412d7b23ba4e43f5396ade.png)
 
-## UIFont.Width
+### UIFont.Width
 
 Apple 引入了新的结构体 `UIFont.Width`，这代表了一种新的宽度样式。
 
@@ -61,7 +61,7 @@ Apple 引入了新的结构体 `UIFont.Width`，这代表了一种新的宽度�
 
 ![](https://images.xiaozhuanlan.com/photo/2022/0a80f9d3f6deb35081eb1e6ce611ab62.png)
 
-## SF 字体和新的宽度样式
+### SF 字体和新的宽度样式
 
 如何将 SF 字体和新的宽度样式一起使用
 
@@ -124,7 +124,7 @@ let expanded = UIFont.systemFont(ofSize: 46, weight: .bold, width: .expanded)
 
 1、[Learn X in Y minutes](https://learnxinyminutes.com/ "Learn X in Y minutes")：这是一个用于快速学习一门编程语言或开发工具的网站。根据二八定律，一件工具，其 20% 的功能，就能满足 80% 的需求。所以打算初尝一门编程语言，最佳的方式就是先了解那20%最重要的功能，这个网站的目的就在于此。
 
-2、[我用400天，做了一款让所有人免费商用的开源字体](https://www.bilibili.com/video/BV1sP411g7PZ)：这是B站up主 [oooooohmygosh](https://space.bilibili.com/38053181) 的一期视频，讲述自己用 400 天时间一直在做的一款开源字体，开源地址：[smiley-sans](https://github.com/atelier-anchor/smiley-sans "smiley-sans")。我们都知道代码是可以被开源的，但其实字体也是能够开源的。国内大部分字体都是在已有开源字体基础上进行的二次修改，从零开始设计一款字体的人则非常少。因为这代表着需要考虑整个字体的风格统一性，英文还好，中文汉字那么多，想想都是一个巨大的工程。而且得意黑还支持了泛欧陆、越南文在内的100多种语言，真的很强。
+2、[我用400天，做了一款让所有人免费商用的开源字体](https://www.bilibili.com/video/BV1sP411g7PZ "我用400天，做了一款让所有人免费商用的开源字体")：这是B站up主 [oooooohmygosh](https://space.bilibili.com/38053181) 的一期视频，讲述自己用 400 天时间一直在做的一款开源字体，开源地址：[smiley-sans](https://github.com/atelier-anchor/smiley-sans "smiley-sans")。我们都知道代码是可以被开源的，但其实字体也是能够开源的。国内大部分字体都是在已有开源字体基础上进行的二次修改，从零开始设计一款字体的人则非常少。因为这代表着需要考虑整个字体的风格统一性，英文还好，中文汉字那么多，想想都是一个巨大的工程。而且得意黑还支持了泛欧陆、越南文在内的100多种语言，真的很强。
 
 虽然会很辛苦，视频中更多感受到的却是作者和一起协作的小伙伴的创作热情，大家都认为这是一件有意义的事，相信这件事能帮助到更多的人，所以做起来也乐此不疲。这才是开源精神啊。
 
@@ -146,12 +146,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #74 | 抖音 iOS 基础技术大揭秘 Vol.02 周六见](https://mp.weixin.qq.com/s/lhhV0Qlc9NtFoM6nF7gZbA)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #73 | macOS Ventura 初体验](https://mp.weixin.qq.com/s/Om_1TOGKWkMiNneB6Ittrw)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #72 | 1024 开始预热](https://mp.weixin.qq.com/s/WUVAHbJe_dmA-DVFXpF2Qw)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #71 | iOS / One More Thing?](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
