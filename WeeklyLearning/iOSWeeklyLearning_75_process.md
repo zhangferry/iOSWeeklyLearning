@@ -31,8 +31,62 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[FBY 展菲](https://github.com/fanbaoying)
 
+### iOS16 中的 3 种新字体宽度样式
+
+在 iOS 16 中，Apple 引入了三种新的宽度样式字体到 SF 字体库。
+
+1.   Compressed 
+
+2.   Condensed 
+
+3.   Expend
+
+![](https://images.xiaozhuanlan.com/photo/2022/f9a30607ad412d7b23ba4e43f5396ade.png)
+
+## UIFont.Width
+
+Apple 引入了新的结构体 `UIFont.Width`，这代表了一种新的宽度样式。
+
+目前已有的四种样式。
+
+* standard：我们总是使用的默认宽度。
+
+* compressed：最窄的宽度样式。
+
+* condensed：介于压缩和标准之间的宽度样式。
+
+* expanded：最宽的宽度样式。
+
+![](https://images.xiaozhuanlan.com/photo/2022/0a80f9d3f6deb35081eb1e6ce611ab62.png)
+
+## SF 字体和新的宽度样式
+
+如何将 SF 字体和新的宽度样式一起使用
+
+为了使用新的宽度样式，Apple 有一个新的 `UIFont` 的类方法来接收新的 `UIFont.Width` 。
+
+```swift
+class UIFont : NSObject {
+    class func systemFont(
+        ofSize fontSize: CGFloat,
+        weight: UIFont.Weight,
+        width: UIFont.Width
+    ) -> UIFont
+}
+```
+
+你可以像平常创建字体那样来使用新的方法。
+
+```swift
+let condensed = UIFont.systemFont(ofSize: 46, weight: .bold, width: .condensed)
+let compressed = UIFont.systemFont(ofSize: 46, weight: .bold, width: .compressed)
+let standard = UIFont.systemFont(ofSize: 46, weight: .bold, width: .standard)
+let expanded = UIFont.systemFont(ofSize: 46, weight: .bold, width: .expanded)
+```
+
+来源：[iOS16 中的 3 种新字体宽度样式 - Swift 社区](https://mp.weixin.qq.com/s/84TG_7yFxpsXF7cHTbVbFw "iOS16 中的 3 种新字体宽度样式 - Swift 社区")
 
 ## 内容推荐
 
