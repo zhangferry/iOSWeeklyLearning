@@ -184,6 +184,15 @@
       "contributions": [
         "blog"
       ]
+    },
+    {
+      "login": "readyhe",
+      "name": "ready",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31380513?v=4",
+      "profile": "https://github.com/readyhe",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
