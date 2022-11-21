@@ -1,6 +1,6 @@
 # iOSWeeklyLearning
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## 周报介绍
@@ -106,6 +106,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://github.com/eternaljust"><img src="https://avatars.githubusercontent.com/u/17566920?v=4?s=100" width="100px;" alt="远恒之义"/><br /><sub><b>远恒之义</b></sub></a><br /><a href="#blog-eternaljust" title="Blogposts">📝</a></td>
       <td align="center"><a href="https://akashark.github.io/"><img src="https://avatars.githubusercontent.com/u/26460192?v=4?s=100" width="100px;" alt="Alloc Alice"/><br /><sub><b>Alloc Alice</b></sub></a><br /><a href="#blog-AkaShark" title="Blogposts">📝</a></td>
       <td align="center"><a href="https://github.com/byshb"><img src="https://avatars.githubusercontent.com/u/18521866?v=4?s=100" width="100px;" alt="byshb"/><br /><sub><b>byshb</b></sub></a><br /><a href="#blog-byshb" title="Blogposts">📝</a></td>
+      <td align="center"><a href="https://github.com/readyhe"><img src="https://avatars.githubusercontent.com/u/31380513?v=4?s=100" width="100px;" alt="ready"/><br /><sub><b>ready</b></sub></a><br /><a href="#blog-readyhe" title="Blogposts">📝</a></td>
     </tr>
   </tbody>
 </table>
