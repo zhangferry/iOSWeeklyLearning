@@ -88,11 +88,33 @@
 
 来源：[How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html)和[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
-
 ## 内容推荐
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+整理编辑：[远恒之义](https://github.com/eternaljust)
 
+1、[在 SwiftUI 中创建自适应的程序化导航方案](https://www.fatbobman.com/posts/adaptive-navigation-scheme/ "在 SwiftUI 中创建自适应的程序化导航方案") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：随着苹果对 iPadOS 的不断投入，越来越多的开发者都希望自己的应用能够在 iPad 中有更好的表现。尤其当用户开启了台前调度（ Stage Manager ）功能后，应用对不同视觉大小模式的兼容能力就越发显得重要。本文将就如何创建可自适应不同尺寸模式的程序化导航方案这一内容进行探讨。
+
+2、[简介 iOS 16 新的 Layout 协议](https://www.appcoda.com.tw/ios16-layout-protocol/ "简介 iOS 16 新的 Layout 协议") -- 来自：appcoda
+
+[@远恒之义](https://github.com/eternaljust)：在 iOS 16 中，Apple 推出了 Layout 协议，希望进一步简化在 SwiftUI 构建 UI Layout 的步骤。本文将介绍这个新协议的用途和使用方法，并用它们的 Layout 规则创建属于自己的容器。
+
+3、[Swift project in 2023](https://www.swift.org/blog/focus-areas-2023/ "Swift project in 2023") -- 来自：swift.org
+
+[@远恒之义](https://github.com/eternaljust)：来自 Swift 官网博客的消息，Swift 核心团队收集并整理了社区和论坛所关注的信息，列出了他们明年的工作计划和内容。其中核心团队会更新重组，将创建更多工作组，包括一个致力于提高 Swift 跨平台可用性的工作组。语言工作组专注于在五个主要语言领域：Concurrency（并发）、Generics（泛型）、Ownership（内存所有权）、Macros（宏）和 C++ interoperability（C++ 互操作性）。同时编译器开发团队将改进编译器与构建系统和自身其他调用的交互方式。其他还包括对 Swift 包管理器的优化，文档工作组将开发工具来解决文档需求，网站工作组专注于通过多种方式增强 swift.org 网站，服务器工作组专注于提升服务器和 Linux 上的 Swift 状态等。
+
+4、[如何在 SwiftUI 中使用手势](https://www.swiftanytime.com/gestures-in-swiftui/ "如何在 SwiftUI 中使用手势") -- 来自：swiftanytime
+
+[@远恒之义](https://github.com/eternaljust)：在如今的触摸屏手机中，实体按键快消失殆尽了，几乎所有的操作都基于手指手势。现代手机可以识别多种手势感应：点击、拖动、滑动、捏合、双击、旋转、摇动、触摸和长按等等，本文将介绍 SwiftUI 中一些基本且最常用的手势使用。
+
+5、[SwiftUI 按钮的基本用法](https://sarunw.com/posts/swiftui-button-basic/ "SwiftUI 按钮的基本用法") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：SwiftUI 中的按钮十分方便使用和自定义。按钮界面很简单，只需要做两件事：动作和标签。动作是一种方法或闭包，当用户单击或点击按钮时会调用它，标签是描述按钮用途的视图，可以是文本、图标图像或任何自定义视图。使用自定义按钮也非常容易，任选 `buttonStyle(_:)` 内置五种按钮样式之一即可。
+
+6、[如何在 SwiftUI 中使用自定义字体](https://sarunw.com/posts/swiftui-custom-font/ "如何在 SwiftUI 中使用自定义字体") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：要在 SwiftUI 中使用自定义字体，你需要执行以下步骤：查找在你的应用中能免费使用的自定义字体；将字体文件添加到你的 Xcode 项目，同时在 Info.plist 中引入注册；最后使用 `custom(_:size:)` 方法来初始化字体。
 
 ## 摸一下鱼
 
