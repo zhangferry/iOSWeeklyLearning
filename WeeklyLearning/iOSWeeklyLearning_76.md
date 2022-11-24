@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #76 | 如何智慧提问？
+# iOS 摸鱼周报 #76 | 程序员提问的智慧
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
