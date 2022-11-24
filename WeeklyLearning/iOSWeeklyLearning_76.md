@@ -10,7 +10,7 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[阿拉卡](https://github.com/readyhe)
 
 ### 面向程序员，如何智慧提问？
 
