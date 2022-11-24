@@ -4,14 +4,9 @@
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
-
-## 本期话题
-
-
+> * 本周学习：如何智慧提问？
+> * 内容推荐：SwiftUI 相关的一些博客推荐
+> * 摸一下鱼：Combine 操作符；Token，Session，JWT 这些鉴权技术有哪些区别？Mac 版微信为何不断往电脑中写日志？；Github 开源两款字体；一个摸鱼小网站。
 
 ## 本周学习
 
@@ -118,8 +113,33 @@
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
 
+1、[Combine operators cheat sheet](https://tanaschita.com/20221121-cheatsheet-combine-operators/ "Combine operators cheat sheet")：Combine 里有很多操作符，这些操作符很多并不能通过命名就完全区分出来，那该如何记忆和理解这些操作符的含义呢，tanaschita 用 SwiftUI 实现了这些操作符的可视化表达。如果你看过 RxSwift 的文档应该对这些图标非常亲切。
+
+![](https://cdn.zhangferry.com/Images/20221124201158.png)
+
+2、[Session, cookie, token, JWT, SSO 和 OAuth 2.0 是什么](https://twitter.com/alexxubyte/status/1595455518583029764 "Session, cookie, token, JWT, SSO 和 OAuth 2.0 是什么")：这几种常用的身份校验技术有什么区别呢， Alex Xu 做了这样一张图用于解释它们的区别以及用于解决的问题。
+
+![](https://cdn.zhangferry.com/Images/20221124205007.png)
+
+3、[电脑端微信不断写日志](https://v.douyin.com/rVWRmUG/ "微信在电脑不断写日志")：来源于抖音一位技术博主的视频，详细描述了微信在电脑端不断写日志的过程。利用 Xcode 的 Instruments 里的 File Activity，采集微信在后台的文件读取记录。会发现很多 xlog 日志的生成，但因为文件是加密的，我们并不能解析里面是什么内容。我看了我电脑里的日志，有三天我的电脑都是没有打开的，但是却能找到这几天的 xlog 日志，也就是说即使是休眠状态，微信依然在尝试写东西。该日志并非完全本地，还会通过网络进行上传。目前关于这些数据是做什么的还没有查到任何相关资料。
+
+如果你感觉不放心，可以通过这种方式，关闭日志写权限：
+
+```bash
+$ sudo chmod 400 ~/Library/Containers/com.tencent.xinWeChat/Data/Library/Caches/com.tencent.xinWeChat/2.0b4.0.9/log
+```
+
+4、对于新技术很多开发都会抑制不住想去尝试，比如 SwiftUI，当你有这种想法时你可能会理解这张图的含义。
+
+![](https://cdn.zhangferry.com/Images/20221124205551.png)
+
+5、[Github 推出的两种开源字体 mona & hubot sans](https://github.com/mona-sans "Github 推出的两种开源字体 mona & hubot sans")：这是一种强大而通用的字体，以Degarism风格设计，灵感来源于工业时代的怪诞风格。Mona Sans在产品、网络和印刷领域都很有效。Hubot Sans 字体更修长，有一种独特的技术感。
+
+![](https://cdn.zhangferry.com/Images/20221124211158.png)
+
+6、[Moyu.Games](https://moyu.games/ "摸鱼游戏")：一个站点聚合网站，一直工作也挺累的，偶尔摸摸鱼吧。
 
 ## 关于我们
 
