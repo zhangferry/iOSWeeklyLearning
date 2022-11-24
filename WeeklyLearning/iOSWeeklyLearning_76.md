@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #76 | 如何智慧提问？
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -81,7 +81,7 @@
 
 问题：你的程序有Bug，能帮我解决吗？
 
-来源：[How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html)和[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+来源：[How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html "How To Ask Questions The Smart Way")和[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md "提问的智慧")
 
 ## 内容推荐
 
@@ -147,12 +147,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #75 | 远程工作推行之难](https://mp.weixin.qq.com/s/nguqKvkuzDBR9o-Yw6y3KQ)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #74 | 抖音 iOS 基础技术大揭秘 Vol.02 周六见](https://mp.weixin.qq.com/s/lhhV0Qlc9NtFoM6nF7gZbA)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #73 | macOS Ventura 初体验](https://mp.weixin.qq.com/s/Om_1TOGKWkMiNneB6Ittrw)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #72 | 1024 开始预热](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
