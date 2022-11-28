@@ -17,7 +17,7 @@
 
 整理编辑：[宁静致远](https://github.com/byshb)
 
-### class_rw_t 和 class_ro_t 区别
+### class_rw_t 与 class_ro_t 的区别
 
 这两个结构体类型在苹果 opensource 的源码中定义的，于是直接打开源代码（[objc4-838](https://github.com/apple-oss-distributions/objc4/tree/objc4-838)）进行分析：
 
