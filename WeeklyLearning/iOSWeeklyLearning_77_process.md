@@ -17,9 +17,9 @@
 
 整理编辑：[宁静致远](https://github.com/byshb)
 
-### class_rw_t 和 class_ro_t
+### class_rw_t 和 class_ro_t 区别
 
-这两个结构体类型在苹果 opensource 的源码中定义的，于是直接打开源代码（objc4-838）进行分析：
+这两个结构体类型在苹果 opensource 的源码中定义的，于是直接打开源代码（[objc4-838](https://github.com/apple-oss-distributions/objc4/tree/objc4-838)）进行分析：
 
 ```c++
 struct class_rw_t {
@@ -85,7 +85,7 @@ const method_array_t methods() const {
 1. ⽤过 Runtime 的 Api 进⾏动态修改的时候。
 2. 有分类的时候，且分类和本类都为⾮懒加载类的时候。实现了 `+load` ⽅法即为⾮懒加载类。
 
-还有就是经上述分析，成员变量是存在于 `ro` 当中的，一经编译就不能修改了，那是不是所有的类都不能运行时添加实例变量了呢？答案是运行时创建的类，可以在 `objc_allocateClassPair` 方法之后，`objc_registerClassPair` 方法之前通过 `class_addIvar()` 添加实例变量，除此之外已经创建的类的实例变量内存布局是不能被修改的。
+还有就是经上述分析，成员变量是存在于 `ro` 当中的，一经编译就不能修改了，那是不是所有的类都不能运行时添加实例变量了呢？答案是运行时创建的类，可以在 `objc_allocateClassPair` 方法之后，`objc_registerClassPair` 方法之前，通过 `class_addIvar()` 添加实例变量，除此之外已经创建的类的实例变量内存布局是不能被修改的。
 
 
 ## 内容推荐
