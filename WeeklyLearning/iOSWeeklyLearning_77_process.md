@@ -22,6 +22,29 @@
 
 整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
 
+1、[当谈论协程时，我们在谈论什么](https://mp.weixin.qq.com/s/IO4ynnKEfy2Rt-Me7EIeqg)  -- 来自： 腾讯程序员
+
+[@夏天](https://juejin.cn/user/3298190611456638): 本文详细介绍了协程的概念，作者通过文章来回答了四个问题： 
+
+* **Q1 (Why):** 为什么需要协程？
+* **Q2 (What):** 到底什么是协程？
+* **Q3 (How):** 怎么实现协程 (库)？
+* **Q4 (Usage):** 使用协程时需要注意什么？
+
+不但能够帮助你理解协程，而且文章结构清晰。
+
+2、[Be careful with Obj-C bridging in Swift](https://swiftrocks.com/be-careful-with-objc-bridging-in-swift) -- 来自：SwiftRocks
+
+[@夏天](https://juejin.cn/user/3298190611456638): 当我们要将 Swift 中 `String` 转为 `NSString` 时，一般使用 `as` 语法糖来进行转换，但是作者认为这并不是一个安全的方案。 
+
+3、[Understanding `@inlinable` in Swift](https://swiftrocks.com/understanding-inlinable-in-swift) -- 来自：SwiftRocks
+
+[@夏天](https://juejin.cn/user/3298190611456638): 了解 `@inlinable` 是如何工作的，通过使用 `@inlinable` 可以提高我们的某些代码的性能。
+
+4、[App Store and TestFlight review times](https://www.runway.team/appreviewtimes) --  来自：RUNWAY
+
+[@夏天](https://juejin.cn/user/3298190611456638): 一个关于 App Store 和 TestFlight 审核时间的统计的文章。当我们上架到 App Store 和 TestFlight 时，我们大概需要多久才能审核成功。
+
 
 ## 摸一下鱼
 
