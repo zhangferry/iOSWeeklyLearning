@@ -118,7 +118,15 @@ const method_array_t methods() const {
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
+
+最近CSDN上线的一款新工具箱应用--猿如意，内置一些好用的效率工具；
+
+![猿如意](http://cdn.zhangferry.com/20221201180541.png)
+
+类似的工具还有 [uTools](https://www.u.tools/)
+
+![uTools](http://cdn.zhangferry.com/20221201181157.png)
 
 
 ## 关于我们
