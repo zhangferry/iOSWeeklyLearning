@@ -146,6 +146,21 @@ const method_array_t methods() const {
 
     ![](https://cdn.zhangferry.com/Images/weekly_77_moyu_1.png)
 
+3、[CampusShame](https://github.com/forthespada/CampusShame "CampusShame")：Github 上总结的校招污点和非污点公司名单。校招污点行为**包括**但不限于：毁意向书、毁两方协定、毁三方协定、试用期裁员、大量裁应届生。
+
+4、[Roadmap.sh](https://roadmap.sh/ "Roadmap.sh")：这是一个致力于帮助开发者学习和选择的社区，这里提供了很多岗位的 Roadmap 和优质学习资料。
+
+![](https://cdn.zhangferry.com/Images/20221201233541.png)
+
+5、[email 是如何工作的？](https://twitter.com/alexxubyte/status/1593637888834473984 "email 是如何工作的？")：这张图描述了邮件服务的工作原理。
+
+![](https://cdn.zhangferry.com/Images/20221202000720.png)
+
+邮件服务主要有两套协议组成，一个是 SMTP 用于存储邮件内容，一个是 IMAP/POP 用于拉取邮件内容，对于不同的邮件服务，会由接收方进行发送，这里用的是 SMTP 协议。
+
+6、[正则表达式速查卡](https://twitter.com/linuxtoy/status/1597754607697948673 "正则表达式速查卡")：正则表达式是一种很实用的文本模式匹配语言，Linuxtoy 总结了这份速查卡。
+
+![](https://cdn.zhangferry.com/Images/20221202002037.png)
 
 ## 关于我们
 
