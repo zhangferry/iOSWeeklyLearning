@@ -134,13 +134,17 @@ const method_array_t methods() const {
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
-最近CSDN上线的一款新工具箱应用--猿如意，内置一些好用的效率工具；
+1. 最近CSDN上线的一款新工具箱应用-- [猿如意](https://devbit.csdn.net/ "猿如意")，内置一些好用的效率工具；
 
 ![猿如意](http://cdn.zhangferry.com/20221201180541.png)
 
-类似的工具还有 [uTools](https://www.u.tools/)
+类似的工具还有 [uTools](https://www.u.tools/ "uTools")
 
 ![uTools](http://cdn.zhangferry.com/20221201181157.png)
+
+2. [来个电话](https://apps.apple.com/cn/app/%E6%9D%A5%E4%B8%AA%E7%94%B5%E8%AF%9D-%E5%81%87%E6%9D%A5%E7%94%B5%E8%AE%A9%E4%BD%A0%E8%84%B1%E8%BA%AB%E8%A7%A3%E5%9B%B4/id985946832 "来个电话") 是一款可以帮助你从无聊的无意义社交中脱身解围的应用。不仅是精确到分钟的来电时间，还一比一仿真了系统的来电界面，当你耳朵贴近手机时也会自动熄灭屏幕，让你能毫无破绽、以假乱真的离开无聊的聚会。原价 12 元，目前限免中。设置界面如下：
+
+    ![](https://cdn.zhangferry.com/Images/weekly_77_moyu_1.png)
 
 
 ## 关于我们
