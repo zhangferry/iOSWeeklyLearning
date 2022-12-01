@@ -1,17 +1,17 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #77 |圣诞将至，请注意 App 审核进度问题
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 本期话题：圣诞节将至，请为您的 App 做好准备； Developer 设计开发加速器｜如何在游戏中支持手柄、在 iPhone 锁屏上扩展你的 App 体验
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本周学习：class_rw_t 与 class_ro_t 的区别
+> * 内容推荐：Swift 优秀文章推荐，涉及协程，类型转换以及 `inlinable` 关键字讲解
+> * 摸一下鱼：CSDN上线的新工具箱应用猿如意，内置了好用的效率工具
 
 ## 本期话题
 
-### [圣诞节将至，请为您的 App 做好准备]("圣诞节将至，请为您的 App 做好准备" https://developer.apple.com/cn/news/?id=xpkhwg3l)
+### [圣诞节将至，请为您的 App 做好准备](https://developer.apple.com/cn/news/?id=xpkhwg3l "圣诞节将至，请为您的 App 做好准备")
 
 [@师大小海腾](https://juejin.cn/user/782508012091645/posts)：App Store 最繁忙的季节即将到来！确保及时更新您的 App 和产品页面，并在岁末假日到来之前做好准备。很高兴今年的整个假日季期间同样会开放 App 提交，我们非常期待看到您提交的 App。平均而言，90% 的提交内容会在 24 小时内得到审核。但请注意，在 12 月 23 日至 27 日，完成审核所需的时间可能略长一些。
 
@@ -117,15 +117,15 @@ const method_array_t methods() const {
 
 不但能够帮助你理解协程，而且文章结构清晰。
 
-2、[Be careful with Obj-C bridging in Swift](https://swiftrocks.com/be-careful-with-objc-bridging-in-swift) -- 来自：SwiftRocks
+2、[Be careful with Obj-C bridging in Swift](https://swiftrocks.com/be-careful-with-objc-bridging-in-swift "Be careful with Obj-C bridging in Swift") -- 来自：SwiftRocks
 
 [@夏天](https://juejin.cn/user/3298190611456638): 当我们要将 Swift 中 `String` 转为 `NSString` 时，一般使用 `as` 语法糖来进行转换，但是作者认为这并不是一个安全的方案。 
 
-3、[Understanding `@inlinable` in Swift](https://swiftrocks.com/understanding-inlinable-in-swift) -- 来自：SwiftRocks
+3、[Understanding `@inlinable` in Swift](https://swiftrocks.com/understanding-inlinable-in-swift "Understanding `@inlinable` in Swift") -- 来自：SwiftRocks
 
 [@夏天](https://juejin.cn/user/3298190611456638): 了解 `@inlinable` 是如何工作的，通过使用 `@inlinable` 可以提高我们的某些代码的性能。
 
-4、[App Store and TestFlight review times](https://www.runway.team/appreviewtimes) --  来自：RUNWAY
+4、[App Store and TestFlight review times](https://www.runway.team/appreviewtimes "App Store and TestFlight review times") --  来自：RUNWAY
 
 [@夏天](https://juejin.cn/user/3298190611456638): 一个关于 App Store 和 TestFlight 审核时间的统计的文章。当我们上架到 App Store 和 TestFlight 时，我们大概需要多久才能审核成功。
 
@@ -149,12 +149,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/UmXvtKYS6Z0a30yPRyIV9g)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #75 | 远程工作推行之难](https://mp.weixin.qq.com/s/nguqKvkuzDBR9o-Yw6y3KQ)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #74 | 抖音 iOS 基础技术大揭秘 Vol.02 周六见](https://mp.weixin.qq.com/s/lhhV0Qlc9NtFoM6nF7gZbA)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #73 | macOS Ventura 初体验](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
