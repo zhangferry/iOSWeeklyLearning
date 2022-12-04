@@ -23,7 +23,7 @@ int main() {
 
 在 Linux 下执行，需要使用使用 `gcc` 来编译，首先通过 `gcc hello.c`，这会产生默认命名为 `a.out` 的可执行文件，然后通过 `./a.out ` 执行这个文件，输出 `Hello World`，事实上，这里要分为4个步骤：预处理，编译，汇编，链接。
 
-<img src="https://cdn.zhangferry.com/Images/src=http---images2015.cnblogs.com-blog-1143923-201707-1143923-20170724160214543-879547387.jpg&refer=http---images2015.cnblogs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto-2.webp" width = "500"/>
+<img src="https://cdn.zhangferry.com/Images/WX20221204-231309@2x.png" width = "500"/>
 
 ## 编译
 
@@ -31,7 +31,7 @@ int main() {
 
 预编译主要做了如下的操作：
 
-1. 处理 `#` 开头的指令，例如 `#define` 进行宏替换，#if、`#ifdef`，`#elif`，`#else`，`#endif`。
+1. 处理 `#` 开头的指令，例如 `#define` 进行宏替换，`#if`、`#ifdef`，`#elif`，`#else`，`#endif`。
 2. 删除注释。
 3. 添加行号和文件名标识，用于编译时产生调试用的信息等。
 4. 保留 `#pragma` 编译器指令。
@@ -67,7 +67,7 @@ CompilerExpression.c 源代码输入到扫描器，运用一种类似于有限�
 
 针对上面 CompilerExpression.c 里面的代码，我们可以使用 `clang` 进行**词法分析**：`clang -fmodules -fsyntax-only -Xclang -dump-tokens CompilerExpression.c `，打印如下：
 
-```
+```bash
 void 'void'	 [StartOfLine]	Loc=<CompilerExpression.c:1:1>
 identifier 'test'	 [LeadingSpace]	Loc=<CompilerExpression.c:1:6>
 l_paren '('		Loc=<CompilerExpression.c:1:10>
@@ -98,7 +98,7 @@ identifier 'index'		Loc=<CompilerExpression.c:4:21>
 
 #### 语法分析
 
-对词法分析的结果进行语法分析，生成语法树（以表达式为节点的树），复杂的语句就是很多表达式的组合，编译器的开发者仅仅需要改变语法规则，即可适配多种编程语言。
+对词法分析的结果进行语法分析，生成**语法树**（以表达式为节点的树），复杂的语句就是很多表达式的组合，编译器的开发者仅仅需要改变语法规则，即可适配多种编程语言。
 
 上面的代码中的语句，就是由赋值表达式、加法表达式、乘法表达式、数组表达式、括号表达式组合成的复杂语句，经过语法分析之后，就会形成下图所示的语法树，在这个阶段如果出现表达式不合法（括号不匹配、表达式缺少操作符）编译器就会报告语法分析阶段的错误：
 
@@ -106,9 +106,9 @@ identifier 'index'		Loc=<CompilerExpression.c:4:21>
 
 
 
-语法分析会形成抽象语法树 `AST`，我们继续使用 `clang` 命令进行语法分析 `clang -fmodules -fsyntax-only -Xclang -ast-dump CompilerExpression.c`，得到的结果如下：
+语法分析会形成**抽象语法树** `AST`，我们继续使用 `clang` 命令进行语法分析 `clang -fmodules -fsyntax-only -Xclang -ast-dump CompilerExpression.c`，得到的结果如下：
 
-```
+```bash
 TranslationUnitDecl 0x7fccdc822808 <<invalid sloc>> <invalid sloc>
 |-TypedefDecl 0x7fccdc823048 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
 | `-BuiltinType 0x7fccdc822dd0 '__int128'
@@ -138,12 +138,12 @@ TranslationUnitDecl 0x7fccdc822808 <<invalid sloc>> <invalid sloc>
 - `TypedefDecl` 类型描述，对应typedef。
 - `FunctionDecl` 代表 C/C++方法定义。
 - `CompoundStmt` 代表了像 `{ stmt stmt }` 这样的statement的集合。实际上就是用 `{}` and `{{}}` 包裹的代码块。
-- 之前说过语法分析的结果，会生成以表达式为节点的树，Clang `AST` 中的所有表达式都由 `Expr` 的子类表示。
+- 之前说过语法分析的结果，会生成以表达式为节点的树，clang `AST` 中的所有表达式都由 `Expr` 的子类表示。
 - `BinaryOperator` 类是 `Expr` 类的子类，其包括两个子节点。
 
 上文也说过在这个阶段如果出现表达式不合法（括号不匹配、表达式缺少操作符）编译器就会报告语法分析阶段的错误，所以我将 CompilerExpression.c 中的 `array[index] = (index + 4) * (2 + 6)` 中的 `;` 去掉试一下：
 
-```
+```bash
 CompilerExpression.c:4:41: error: expected ';' after expression
     array[index] = (index + 4) * (2 + 6)
                                         ^
@@ -188,7 +188,7 @@ array[index] = t2
 
 得到 .ll 文件，`IR` 代码如下：
 
-```
+```bash
 ; ModuleID = 'CompilerExpression.c'
 source_filename = "CompilerExpression.c"
 target datalayout = "e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
@@ -243,19 +243,19 @@ movl %eax, array(, %edx, 4)
 
 还有，我们都知道 Xcode 是使用 Clang 来编译 Objective-C 语言的，而 Xcode 供给我们 7 个等级的编译选项，在 Xcode -> Build Setting -> Apple LLVM 9.0 - Code Generation -> Optimization Level 中进行设置。
 
-- None [-O0]：不优化
-- Fast [-O1]：大函数所需的编译时间和内存消耗都会稍微增加
-- Faster [-O2]：编译器执行所有不涉及时间空间交换的所有的支持的优化选项
-- Fastest [-O3]：在开启Fast [-O1]项支持的所有优化项的同时，开启函数内联和寄存器重命名选项
-- Fastest, Smallest [-Os]：在不显着增加代码大小的情况下尽量提供高性能
-- Fastest, Aggressive Optimizations [-Ofast]：与Fastest, Smallest [-Os]相比该级别还执行其他更激进的优化
-- Smallest, Aggressive Size Optimizations [-Oz]：不使用LTO的情况下减小代码大小
+- **None [-O0]**：不优化
+- **Fast [-O1]**：大函数所需的编译时间和内存消耗都会稍微增加
+- **Faster [-O2]**：编译器执行所有不涉及时间空间交换的所有的支持的优化选项
+- **Fastest [-O3]**：在开启Fast [-O1]项支持的所有优化项的同时，开启函数内联和寄存器重命名选项
+- **Fastest, Smallest [-Os]**：在不显着增加代码大小的情况下尽量提供高性能
+- **Fastest, Aggressive Optimizations [-Ofast]**：与Fastest, Smallest [-Os]相比该级别还执行其他更激进的优化
+- **Smallest, Aggressive Size Optimizations [-Oz]**：不使用LTO的情况下减小代码大小
 
 设置不同优化选项，中间代码的大小会相应变化。
 
 ## 链接
 
-代码经过标代码优化器，已经变成了最优的汇编代码结构，但是如果此时的代码里面使用到了别的目标文件定义的符号怎么办？这时就引出了链接，之所以称之为链接，就是因为链接时需要将很多的文件链接链接起立，才能得到最终的可执行文件。
+代码经过标代码优化器，已经变成了最优的汇编代码结构，但是如果此时的代码里面使用到了别的目标文件定义的符号怎么办？这就引出了链接，之所以称之为链接，就是因为链接时需要将很多的文件链接链接起立，才能得到最终的可执行文件。
 
 最开始的时候，程序员采用纸带打孔的方式输入程序的，然而指令是通过绝对地址进行寻址跳转的，指令修改过后，绝对的地址就需要进行调整，重定位的计算耗时又容易出错，于是就出现了汇编语言，采用符号的方式进行指令的跳转，每次汇编程序的时候修正符号指令到正确的地址。汇编使得程序的扩展更加方便，但是代码量开始膨胀，于是需要进行模块的划分，产生大量的模块，这些模块互相依赖又相对独立，链接之后模块间的变量访问和函数访问才有了真实的地址。模块链接的过程，本书的作者很形象生动的比作了拼图的过程，链接完成之后，才能产生一个可以真正执行的程序。
 
@@ -433,7 +433,7 @@ C++ 的 main 之前需要初始化进程的执行环境等， main 之后需要�
 4. **函数调用方式相同**
 5. ...
 
-2，3，4等是与可执行文件的二进制兼容性相关（ABI）
+其中 **2，3，4** 等是与可执行文件的二进制兼容性相关**（ABI）**
 
 #### ABI稳定
 
@@ -730,7 +730,7 @@ ELF 文件中有许多类似于段名、变量名之类的字符串，使用字�
 
 使用 `nm` 可以查看目标文件的符号表： `nm SimpleSection.o` 打印的所有符号如下：
 
-```
+```bash
 00000000 T funcl
 00000000 D global_init_var
 00000004 C global_uninit_var
@@ -754,7 +754,7 @@ typedef struct {
 	Elf64_Half	st_shndx;
 	Elf64_Addr	st_value;
 	Elf64_Xword	st_size;
-} Elf64_Sym;//64位
+} Elf64_Sym; //64位
 ```
 
 1. `st_info` 符号类型和绑定信息，低4位表示符号类型，高28位表示符号绑定信息。
@@ -808,7 +808,7 @@ extern "C" {
 
 如果是单独的某个函数或者变量定义为 C 语言的符号也可以使用extern：
 
-```c
+```c++
 extern "C" int func(int);
 extern "C" int var;
 ```
@@ -951,7 +951,7 @@ Load Commands 的部分信息如下：
 
 几种常见的命令简介如下：
 
-使用最多的是 LC_SEGMENT_64 命令，该命令表示将相应的 segment 映射到虚拟地址空间中，一个程序一般会分为多个段，每一个段有唯一的段名，不同类型的数据放入不同的段中，LC_SEGMENT_64 中包含了五种类型：
+使用最多的是 `LC_SEGMENT_64` 命令，该命令表示将相应的 segment 映射到虚拟地址空间中，一个程序一般会分为多个段，每一个段有唯一的段名，不同类型的数据放入不同的段中，`LC_SEGMENT_64` 中包含了五种类型：
 
 - `PAGEZERO`：可执行文件捕获空指针的段
 - `TEXT`：代码段和只读数据
@@ -959,21 +959,21 @@ Load Commands 的部分信息如下：
 - `DATA`：全局变量和静态变量
 - `LINKEDIT`：包含动态链接器所需的符号、字符串表等数据
 
-动态链接相关信息：LC_DYLD_INFO_ONLY：
+动态链接相关信息：`LC_DYLD_INFO_ONLY`：
 
-- `Rebase`：进行重定向的位置信息。当MachO 加载到内存里，系统会随机分配一个内存偏移大小 ASLR，和 rebase 里面的 offset，对接(位置相加)获取代码在内存中的实际位置。再根据 size 开辟实际内存。
+- `Rebase`：进行重定向的位置信息。当MachO 加载到内存里，系统会随机分配一个内存偏移大小 `ASLR`，和 `rebase` 里面的 `offset`，对接(位置相加)获取代码在内存中的实际位置。再根据 size 开辟实际内存。
 - `Binding`：绑定的位置信息
 - `Weak Binding`：弱绑定的位置信息
 - `Lazy Binding`：懒加载绑定的位置信息
 - `Export`：对外的位置信息
 
-LC_SYMTAB 标识了 Symbol Table 和 String Table 的位置。
+`LC_SYMTAB` 标识了 `Symbol Table` 和 `String Table` 的位置。
 
-LC_LOAD_DYLINKER 标识了动态连接器的位置，用来加载动态库等。
+`LC_LOAD_DYLINKER` 标识了动态连接器的位置，用来加载动态库等。
 
-MachO 程序入口：设置程序主线程的入口地址和栈大小 LC_MAIN，反编译后根据 LC_MAIN 标识的地址可以找到入口 main 代码，dyld 源码中 `dyld::_main` 可以看到 LC_MAIN 的使用，获取入口和调用。
+MachO 程序入口：设置程序主线程的入口地址和栈大小 `LC_MAIN`，反编译后根据 `LC_MAIN` 标识的地址可以找到入口 `main` 代码，`dyld` 源码中 `dyld::_main` 可以看到 `LC_MAIN` 的使用，获取入口和调用。
 
-LC_LOAD_DYLIB 是比较重要的加载动态库的指令，Name 标识了具体的动态库的路径，对一个 Mach-O 注入自定义的动态库时就是在 Load Commands 和 Data 中间添加 LC_LOAD_DYLIB 指令和信息进去。
+`LC_LOAD_DYLIB` 是比较重要的加载动态库的指令，Name 标识了具体的动态库的路径，对一个 Mach-O 注入自定义的动态库时就是在 Load Commands 和 Data 中间添加 `LC_LOAD_DYLIB` 指令和信息进去。
 
 #### Data
 
