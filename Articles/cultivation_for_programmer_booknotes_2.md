@@ -67,7 +67,7 @@ CompilerExpression.c 源代码输入到扫描器，运用一种类似于有限�
 
 针对上面 CompilerExpression.c 里面的代码，我们可以使用 `clang` 进行**词法分析**：`clang -fmodules -fsyntax-only -Xclang -dump-tokens CompilerExpression.c `，打印如下：
 
-```c
+```
 void 'void'	 [StartOfLine]	Loc=<CompilerExpression.c:1:1>
 identifier 'test'	 [LeadingSpace]	Loc=<CompilerExpression.c:1:6>
 l_paren '('		Loc=<CompilerExpression.c:1:10>
@@ -108,7 +108,7 @@ identifier 'index'		Loc=<CompilerExpression.c:4:21>
 
 语法分析会形成抽象语法树 `AST`，我们继续使用 `clang` 命令进行语法分析 `clang -fmodules -fsyntax-only -Xclang -ast-dump CompilerExpression.c`，得到的结果如下：
 
-```c++
+```
 TranslationUnitDecl 0x7fccdc822808 <<invalid sloc>> <invalid sloc>
 |-TypedefDecl 0x7fccdc823048 <<invalid sloc>> <invalid sloc> implicit __int128_t '__int128'
 | `-BuiltinType 0x7fccdc822dd0 '__int128'
@@ -143,7 +143,7 @@ TranslationUnitDecl 0x7fccdc822808 <<invalid sloc>> <invalid sloc>
 
 上文也说过在这个阶段如果出现表达式不合法（括号不匹配、表达式缺少操作符）编译器就会报告语法分析阶段的错误，所以我将 CompilerExpression.c 中的 `array[index] = (index + 4) * (2 + 6)` 中的 `;` 去掉试一下：
 
-```c
+```
 CompilerExpression.c:4:41: error: expected ';' after expression
     array[index] = (index + 4) * (2 + 6)
                                         ^
@@ -343,7 +343,7 @@ void swap(int* a, int* b) {
 
 我们看一下 a.o 和 经过链接之后的 ab，首先 `objdump -d a.o` 如下：
 
-```c
+```assembly
 a.o:	file format mach-o 64-bit x86-64
 
 Disassembly of section __TEXT,__text:
@@ -364,7 +364,7 @@ Disassembly of section __TEXT,__text:
 
 **13行** 和 **1a行**地址是临时给到的，需要进行重定位，再使用 `objdump` 看下 ab ，`objdump -d ab` ：
 
-```c
+```assembly
 ab:	file format mach-o 64-bit x86-64
 
 Disassembly of section __TEXT,__text:
@@ -404,7 +404,7 @@ Disassembly of section __TEXT,__text:
 
 至于链接器怎么就知道 `shared` 和 `swap` 是需要进行调整的指令呢？这里就涉及到了一个叫做**重定位表**的段，也叫做**重定位段**，其实上面也有说过，`.rel.text` 是针对代码段的重定位表，`.rel.data` 是针对数据段的重定位表， `objdump -r a.o ` 结果如下：
 
-```
+```assembly
 a.o:	file format mach-o 64-bit x86-64
 
 RELOCATION RECORDS FOR [__text]:
@@ -730,7 +730,7 @@ ELF 文件中有许多类似于段名、变量名之类的字符串，使用字�
 
 使用 `nm` 可以查看目标文件的符号表： `nm SimpleSection.o` 打印的所有符号如下：
 
-```ruby
+```
 00000000 T funcl
 00000000 D global_init_var
 00000004 C global_uninit_var
@@ -746,7 +746,7 @@ ELF 文件中有许多类似于段名、变量名之类的字符串，使用字�
 
 我们查看下 64 位的 `Elf64_Sym` 结构定义如下：
 
-```
+```c
 typedef struct {
 	Elf64_Word	st_name;
 	unsigned char	st_info;
@@ -808,7 +808,7 @@ extern "C" {
 
 如果是单独的某个函数或者变量定义为 C 语言的符号也可以使用extern：
 
-```c++
+```c
 extern "C" int func(int);
 extern "C" int var;
 ```
@@ -817,7 +817,7 @@ extern "C" int var;
 
 开发中我们经常会遇到符号被重复定义的错误，比如说我们在两个目标文件中都定义了相同的全局整形变量 `global`，并将它们同时初始化，那么链接器将两个目标文件链接的时候就会报错，对于 C/C++ 语言来说，这种**已初始化的全局符号**可以称之为强符号，有些符号的定义称之为弱符号，比如说未**初始化的全局符号**，强符号和弱符号是针对定义来说的，而不是针对符号的引用。我们也可以使用 `__attribute__((weak))`，来定义强符号为弱符号，下面我们看一段代码：
 
-```c++
+```c
 extern int ext; // 非强符号也非弱符号
 
 int weak; // 弱符号
@@ -921,7 +921,7 @@ Mach-O文件中 中 Data 段之后就都是 __LINKEDIT 部分，具体如下：
 
 #### Header
 
-```c++
+```c
 struct mach_header_64 {
 	uint32_t	magic;		/* 标识当前 Mach-O位32位（0xfeedface）/ 64位 （0xfeedfacf） */
 	cpu_type_t	cputype;	/* CPU 类型 */
@@ -938,7 +938,7 @@ struct mach_header_64 {
 
  Load command描述了文件中数据的具体组织结构，不同的数据类型使用不同的加载命令。它的大小和数目在header中已经被提供。
 
-```c++
+```c
 struct load_command {
     uint32_t cmd;       /* cmd 类型 */
     uint32_t cmdsize;   /* cmd size */
@@ -981,7 +981,7 @@ Data 分为 `Segment` 和 `Section` 两个部分，存放代码、数据、字�
 
 Segment 结构体定义如下：
 
-```c++
+```c
 struct segment_command_64 { /* for 64-bit architectures */
 	uint32_t	cmd;		/* Load Commands 部分中提到的cmd类型 */
 	uint32_t	cmdsize;	/* cmd size */
@@ -1001,7 +1001,7 @@ struct segment_command_64 { /* for 64-bit architectures */
 
 Section 结构体定义如下：
 
-```c++
+```c
 struct section_64 { /* for 64-bit architectures */
 	char		sectname[16];	/* section名称 */
 	char		segname[16];	/* 所属的segment名称 */
@@ -1045,9 +1045,7 @@ struct section_64 { /* for 64-bit architectures */
 - `otool`: 查看 mach-o 特定部分和段的内容
 - `lipo`: 常用于多架构 mach-o 文件的处理
 
-
-
- **总结一下上面的内容：**
+## 总结
 
 1. 编译过程主要是分为 词法分析、语法分析、语义分析、生成中间代码、目标代码的生成与优化。
 
@@ -1065,14 +1063,3 @@ struct section_64 { /* for 64-bit architectures */
 
 8. Mach-O 是 MacOS/iOS 系统下的执行文件等的格式，有 `Header`、Load Command、`Data` 组成。
 
-   
-
-参考链接
-
-- [详解 Mach-O 文件结构](http://events.jianshu.io/p/8f2740fbfe82)
-
-- [Mach-O入门理解](https://blog.csdn.net/gyhjlauy/article/details/124231590)
-
-- [Mach-O文件分析](https://juejin.cn/post/6964238764612943885)
-
-  
