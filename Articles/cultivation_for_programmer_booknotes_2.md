@@ -774,8 +774,8 @@ typedef struct {
 1. `func1` 和 `main` 位置在代码段， `Ndx` 是1，类型为 STT_FUNC，由于是全局可见的，所以是 STB_GLOBAL， Size 表示指令所占字节数， Value表示函数相对于代码段的起始位置的偏移。
 2. `printf` 这个符号，在 SimpleSection.c 中被引用，，但是没有定义，所以 `Ndx` 是 `SHN_UNDEF`。
 3. `global_init_var` 是已初始化的全局变量，定义在 BSS 段，下标为 3.
-4. `global_uninit_var` 是未初始化的全局变量，是一个 SHN_COMMON 类型的符号，本书未存在于 BSS 段。
-5. `static_var` 和 `static_var2` 绑定属性是 `STB_LOCAL`。
+4. `global_uninit_var` 是未初始化的全局变量，是一个 SHN_COMMON 类型的符号，本身未存在于 BSS 段。
+5. `static_var` 和 `static_var2` 绑定属性是 `STB_LOCAL`，编译内部单元可见。
 6. `STT_SECTION`，表示下标为 `Ndx` 的段的段名，符号名没有显示，其实符号名即为段名。
 
 #### 符号修饰和函数签名
@@ -806,7 +806,7 @@ extern "C" {
 
 在  {} 中的代码会被 C++ 编译器当做 C 的代码来处理， 当然 C++ 的名称机制也将不起作用。
 
-如果是单独的某个函数或者变量定义为 C 语言的符号也可以使用extern：
+如果是单独的某个函数或者变量定义为 C 语言的符号也可以使用 extern：
 
 ```c++
 extern "C" int func(int);
@@ -947,7 +947,19 @@ struct load_command {
 
 Load Commands 的部分信息如下：
 
-![](https://cdn.zhangferry.com/Images/WX20221127-233542@2x.png)
+|      LC_SEGMENT_64       |     将文件中的段映射到进程地址空间中      |
+| :----------------------: | :---------------------------------------: |
+|  **LC_DYLD_INFO_ONLY**   |           **动态链接相关信息**            |
+|      **LC_SYMTAB**       |              **符号表地址**               |
+|     **LC_DYSYMTAB**      |             **动态符号地址**              |
+|   **LC_LOAD_DYLINKER**   | **指定内核执行加载文件所需的动态连接器**  |
+|       **LC_UUID**        | **指定图像或其对应的dSYM文件的128位UUID** |
+| **LC_VERSION_MIN_MACSX** |      **文件最低支持的操作系统版本**       |
+|  **LC_SOURCE_VERSION**   |              **源代码版本**               |
+|       **LC_MAIN**        |         **程序main函数加载地址**          |
+|    **LC_LOAD_DYLIB**     |              **依赖库路径**               |
+|  **LC_FUNCTION_STARTS**  |            **函数起始表地址**             |
+|  **LC_CODE_SIGNATURE**   |               **代码签名**                |
 
 几种常见的命令简介如下：
 
@@ -961,7 +973,7 @@ Load Commands 的部分信息如下：
 
 动态链接相关信息：`LC_DYLD_INFO_ONLY`：
 
-- `Rebase`：进行重定向的位置信息。当MachO 加载到内存里，系统会随机分配一个内存偏移大小 `ASLR`，和 `rebase` 里面的 `offset`，对接(位置相加)获取代码在内存中的实际位置。再根据 size 开辟实际内存。
+- `Rebase`：进行重定向的位置信息。当 Mach-O 加载到内存里，系统会随机分配一个内存偏移大小 `ASLR`，和 `rebase` 里面的 `offset`，对接(位置相加)获取代码在内存中的实际位置。再根据 size 开辟实际内存。
 - `Binding`：绑定的位置信息
 - `Weak Binding`：弱绑定的位置信息
 - `Lazy Binding`：懒加载绑定的位置信息
@@ -971,7 +983,7 @@ Load Commands 的部分信息如下：
 
 `LC_LOAD_DYLINKER` 标识了动态连接器的位置，用来加载动态库等。
 
-MachO 程序入口：设置程序主线程的入口地址和栈大小 `LC_MAIN`，反编译后根据 `LC_MAIN` 标识的地址可以找到入口 `main` 代码，`dyld` 源码中 `dyld::_main` 可以看到 `LC_MAIN` 的使用，获取入口和调用。
+Mach-O 程序入口：设置程序主线程的入口地址和栈大小 `LC_MAIN`，反编译后根据 `LC_MAIN` 标识的地址可以找到入口 `main` 代码，`dyld` 源码中 `dyld::_main` 可以看到 `LC_MAIN` 的使用，获取入口和调用。
 
 `LC_LOAD_DYLIB` 是比较重要的加载动态库的指令，Name 标识了具体的动态库的路径，对一个 Mach-O 注入自定义的动态库时就是在 Load Commands 和 Data 中间添加 `LC_LOAD_DYLIB` 指令和信息进去。
 
@@ -1038,12 +1050,12 @@ struct section_64 { /* for 64-bit architectures */
 - `__objc_classrefs`: 被引用的类列表
 - `__objc _catlist`: Category列表
 
-我们可以使用系统自带查看 mach-o 的工具：
+我们可以使用系统自带查看 Mach-O 的工具：
 
-- `file` : 查看 mach-o 的文件类型
-- `nm`: 查看 mach-o 文件的符号表
-- `otool`: 查看 mach-o 特定部分和段的内容
-- `lipo`: 常用于多架构 mach-o 文件的处理
+- `file` : 查看 Mach-O 的文件类型
+- `nm`: 查看 Mach-O 文件的符号表
+- `otool`: 查看 Mach-O 特定部分和段的内容
+- `lipo`: 常用于多架构 Mach-O 文件的处理
 
 ## 总结
 
