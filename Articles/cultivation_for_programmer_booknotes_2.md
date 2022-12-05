@@ -1040,15 +1040,15 @@ struct section_64 { /* for 64-bit architectures */
 
 常见的__DATA Segment 的 Section 如下
 
-- `__nl_symbol_ptr`: 非懒加载指针表,dyld 加载会立即绑定
+- `__nl_symbol_ptr`: 非懒加载指针表，dyld 加载会立即绑定
 - `__ls_symbol_ptr`: 懒加载指针表
 - `__mod_init_func`: constructor 函数
 - `__mod_term_func`: destructor 函数
 - `__objc_classlist`: 类列表
 - `__objc_nlclslist`: 实现了 load 方法的类
-- `__objc_protolist`: protocol的列表
+- `__objc_protolist`: protocol 的列表
 - `__objc_classrefs`: 被引用的类列表
-- `__objc _catlist`: Category列表
+- `__objc _catlist`: Category 列表
 
 我们可以使用系统自带查看 Mach-O 的工具：
 
@@ -1073,5 +1073,5 @@ struct section_64 { /* for 64-bit architectures */
 
 7. `DWARF` 一种通用的调试文件格式，支持源码级别的调试，但是所占体积较大，我们可以使用 `Strip` 命令来去掉 ELF 文件中的调试信息。
 
-8. Mach-O 是 MacOS/iOS 系统下的执行文件等的格式，有 `Header`、Load Command、`Data` 组成。
+8. Mach-O 是 MacOS/iOS 系统下的执行文件等的格式，有 `Header`、`Load Command`、`Data` 组成。
 
