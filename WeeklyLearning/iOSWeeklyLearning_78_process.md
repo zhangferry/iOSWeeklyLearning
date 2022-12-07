@@ -24,8 +24,33 @@
 
 ## 内容推荐
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+> 本期将推荐近期的一些优秀博文，涵盖 ChatGPT、SwiftUI、Swift 等方面的内容
 
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
+
+1、[注册 ChatGPT 全攻略](https://zhuanlan.zhihu.com/p/589365506 "注册 ChatGPT 全攻略") -- 来自：BoxChen
+
+[@东坡肘子](https://www.fatbobman.com/): 上周 IT 届最火爆的新闻莫过于 OpenAI 推出了用于人机交流的 ChatGPT 模型。遗憾的是，由于验证码的关系，国内开发者很难亲身体验。本文将介绍通过接入码平台实现注册的全过程。由于原文网站访问不便，附带的是知乎转载的地址。
+
+2、[用 OpenAI 的 ChatGPT 会话机器学习模型为 SwitfUI 应用程序创建工作代码](https://www.createwithswift.com/prototyping-swiftui-interfaces-with-openais-chatgpt/ "用 OpenAI 的 ChatGPT 会话机器学习模型为 SwitfUI 应用程序创建工作代码") -- 来自：Moritz Philip Recke
+
+[@东坡肘子](https://www.fatbobman.com/): 最近一段时间，OpenAI 发布了许多人工智能 API 和机器学习模型，支持文本摘要、翻译、解析非结构化数据、分类、文本组合等用例。最新添加的是一个名为 ChatGPT 的模型，它是作为对话工具实现的。本文将介绍如何使用 OpenAI 的 ChatGPT 会话机器学习模型为 SwitfUI 应用程序创建工作代码。
+
+3、[在 SwiftUI 中构建自定义布局](https://swiftwithmajid.com/2022/11/16/building-custom-layout-in-swiftui-basics/ "在 SwiftUI 中构建自定义布局") -- 来自：Majid
+
+[@东坡肘子](https://www.fatbobman.com/): SwiftUI 4 中提供了 Layout 协议，允许开发者在不使用GeometryReader 的情况下挖掘布局系统来构建自定义布局。作者将通过三篇文章（ 基础、缓存、间距 ）介绍如何通过新的布局协议在 SwiftUI 中构建布局。
+
+4、[MacOS Ventura 系统 ssh 不再支持 ssh-rsa 的原因及解决办法](https://blog.twofei.com/881/ "MacOS Ventura 系统 ssh 不再支持 ssh-rsa 的原因及解决办法") -- 来自：桃子
+
+[@东坡肘子](https://www.fatbobman.com/): 升级到 MacOS Ventura 系统后，如果尝试使用 ssh 登录服务器，大概率会发现无法登录。本文将分析出现问题的原因并提供解决的办法。
+
+5、[SwiftUI 与 Core Data](https://www.fatbobman.com/posts/modern-Core-Data-Problem/ "SwiftUI 与 Core Data") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): 如何让 Core Data 融入流行的应用架构体系，在 SwiftUI、TCA、Unit Tests、Preview 等环境下更加顺畅地工作已成为很多开发者当前主要困扰。作者将通过几篇文章来介绍近半年来在这方面的一些想法、收获、体会及实践。
+
+6、[Swift Error](https://juejin.cn/post/7130593449174106149/ "Swift Error") -- 来自：移动端小伙伴
+
+[@东坡肘子](https://www.fatbobman.com/): 在开发中，往往最容易被忽略的内容就是对错误的处理。有经验的开发者，能够对自己写的每行代码负责，而且非常清楚自己写的代码在什么时候会出现异常，这样就能提前做好错误处理。Swift Error Handling 能够让开发者快速而简便的告知编译器一个函数能否抛出错误，并且在抛出后以合适的方式去处理错误。作者将通过两篇文章对 Swift Error 的用法、特点、优化等内容进行介绍。
 
 ## 摸一下鱼
 
