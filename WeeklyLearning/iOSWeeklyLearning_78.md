@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #78 | App Store 定价机制重大升级
+# iOS 摸鱼周报 #78 | 用 ChatGPT 做点好玩的事
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -10,6 +10,34 @@
 > * 摸一下鱼：本期摸鱼带来可以无限生成配色组合的网站 **randoma11y**，听猫咪不同状态声音的网站 **purrli**，由前任天堂设计师的创意团队建立的像素风格的透明素材网站 **dotown**，以及在 Webstorm 中配置 Touchbar 的指南。
 
 ## 本期话题
+
+### 用 ChatGPT 做点好玩的事
+
+![image-20221208221437827](/Users/zhangferry/Library/Application Support/typora-user-images/image-20221208221437827.png)
+
+[@zhangferry](zhangferry.com)：[ChatGPT](https://chat.openai.com/chat "ChatGPT") 是最近大火的一个预训练语言模型。GPT 是 Generative Pretrained Transformer 的缩写，意思是通过预先训练得到的转换器进行生成。GPT 是一个神经网络模型，它能够学习大量的文本数据，并能够根据这些数据生成新的文本内容。它可以用来进行文本自动补全、文本生成、机器翻译等任务。GPT 的性能非常优秀，可以达到人类水平，或者甚至更优。
+
+ChatGPT 可以用来与人进行自然语言对话。它可以帮助人们解决问题，提供信息，进行虚拟咨询，或者只是作为一个会说话的机器人来提供娱乐。
+
+> 以上是ChatGPT自己的介绍。
+
+很多人用 ChatGPT 写代码、扮演终端、写小说、写周报、做题等等，另外我再介绍两个比较好玩的项目。
+
+#### [wechat-chatgpt](https://github.com/fuergaosi233/wechat-chatgpt "wechat-chatpgt")
+
+一个 Github 项目，基于 wechaty 实现，可以让一个特定账号充当 ChatGPT 的身份，你来跟它对话，这样就真正成为了一名生活小助手了。
+
+![](https://cdn.zhangferry.com/Images/20221208222746.png)
+
+#### VSCode 插件：ChatGPT中文版
+
+在 VSCode 插件市场搜索 「ChatGPT中文版」即可找到，它主要利用 ChatGPT 在编程领域的能力，提供代码解释、重构、异常分析等能力。目前还需要依赖你有ChatGPT账号，并提供对应的 SessionToken 才能正常使用。以下是我用这个工具尝试分析 wechat-chatgpt 里的一段代码得出的解释。这个功能真的很厉害有木有！
+
+![](https://cdn.zhangferry.com/Images/20221208222913.png)
+
+其实 ChatGPT 也具备通过描述写代码的能力了，看代码，写代码，改代码好像它都会了，那是否就意味着它能替代程序员呢？我感觉就目前来说还为时尚早，ChatGPT 主要具备的还是单点能力，某一个特定功能，某一段特定代码，它能提供帮助，这类能力其实更像搜索引擎，只不过它能过滤和聚类答案。所以要让他现在就替换一个程序员去工作根本不可能。
+
+但 AI 的发展就是要替换很多岗位的，像现在的电话销售，很多都已经是程序在给你聊天了，而且你还不一定发现。所以以后程序会不会代替写程序的人，完成自我迭代，我是乐观派，我感觉大概率是会的。不过在那个时间点到来之前，还是好好享受我们可以支配程序的快乐吧。
 
 ### [Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点](https://developer.apple.com/cn/news/?id=qzex35ch "Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点")
 
