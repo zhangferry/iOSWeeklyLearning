@@ -4,7 +4,7 @@
 
 ### 本期概要
 
-> * 本期话题：App Store 定价机制最重大升级
+> * 本期话题：用 ChatGPT 做点好玩的事；App Store 定价机制最重大升级
 > * 本周学习：解决 Mac Intel 转 Apple Silicon 开发环境配置问题
 > * 内容推荐：本期将推荐近期的一些优秀博文，涵盖 ChatGPT、SwiftUI、Swift 等方面的内容
 > * 摸一下鱼：本期摸鱼带来可以无限生成配色组合的网站 **randoma11y**，听猫咪不同状态声音的网站 **purrli**，由前任天堂设计师的创意团队建立的像素风格的透明素材网站 **dotown**，以及在 Webstorm 中配置 Touchbar 的指南。
