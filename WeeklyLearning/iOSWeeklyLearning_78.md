@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 本期话题：App Store 定价机制最重大升级
-> * 本周学习：Mac Intel 转 Apple Silicon iOS 开发环境配置解决
+> * 本周学习：解决 Mac Intel 转 Apple Silicon 开发环境配置问题
 > * 内容推荐：本期将推荐近期的一些优秀博文，涵盖 ChatGPT、SwiftUI、Swift 等方面的内容
 > * 摸一下鱼：本期摸鱼带来可以无限生成配色组合的网站 **randoma11y**，听猫咪不同状态声音的网站 **purrli**，由前任天堂设计师的创意团队建立的像素风格的透明素材网站 **dotown**，以及在 Webstorm 中配置 Touchbar 的指南。
 
@@ -21,7 +21,7 @@
 
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
 
-### Mac Intel 转 Apple Silicon iOS 开发环境配置解决
+### 解决 Mac Intel 转 Apple Silicon 开发环境配置问题
 
 越来越多的开发者已经使用 Apple Silicon 芯片的 mac 作为开发工具，笔者近期也更换了 M2 作为主力机，记录一下从 Intel 切换到 M2 过程中遇到的环境配置问题。
 
@@ -43,9 +43,9 @@
 
     > `homebrew` 没有提供实现重新安装所有库的命令，可以使用管道结合`xargs`命令: `brew list | xargs brew reinstall`
     >
-    > **Tips**: shell 中 **|**表示管道，可以将左侧命令的标准输出转换为标准输入，提供给右侧命令。而   `xargs` 是将标准输入转为命令行参数，更多内容参考 [xargs 命令教程](https://www.ruanyifeng.com/blog/2019/08/xargs-tutorial.html "xargs 命令教程")
+    > **Tips**: `shell` 中 `|` 表示管道，可以将左侧命令的标准输出转换为标准输入，提供给右侧命令。而   `xargs` 是将标准输入转为命令行参数，更多内容参考 [xargs 命令教程](https://www.ruanyifeng.com/blog/2019/08/xargs-tutorial.html "xargs 命令教程")
 
-5. `Rbenv` 可以直接安装 `Ruby`**3.x** 版本，**2.7.1 **版本则需要使用 `RUBY_CFLAGS="-w" rbenv install 2.7.1` 参数禁止所有warring 和 error，安装 **2.7.2** 及更高版本在环境中做以下配置即可（验证成功）：
+5. `Rbenv` 可以直接安装 `Ruby`**3.x** 版本，**2.7.1**版本则需要使用 `RUBY_CFLAGS="-w" rbenv install 2.7.1` 参数禁止所有warring 和 error，安装 **2.7.2** 及更高版本在环境中做以下配置即可（验证成功）：
 
     ![](https://cdn.zhangferry.com/Images/weekly78_study_02.png)
 
