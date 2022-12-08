@@ -1,13 +1,13 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #78 | App Store 定价机制最重大升级
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本期话题：App Store 定价机制最重大升级
+> * 本周学习：Mac Intel 转 Apple Silicon iOS 开发环境配置解决
+> * 内容推荐：本期将推荐近期的一些优秀博文，涵盖 ChatGPT、SwiftUI、Swift 等方面的内容
+> * 摸一下鱼：本期摸鱼带来可以无限生成配色组合的网站 **randoma11y**，听猫咪不同状态声音的网站 **purrli**，由前任天堂设计师的创意团队建立的像素风格的透明素材网站 **dotown**，以及在 Webstorm 中配置 Touchbar 的指南。
 
 ## 本期话题
 
@@ -20,6 +20,38 @@
 ## 本周学习
 
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### Mac Intel 转 Apple Silicon iOS 开发环境配置解决
+
+越来越多的开发者已经使用 Apple Silicon 芯片的 mac 作为开发工具，笔者近期也更换了 M2 作为主力机，记录一下从 Intel 切换到 M2 过程中遇到的环境配置问题。
+
+我使用 **迁移助理** 工具做的整个开发环境的拷贝，用时 1~2 小时完成了大约 250G 内容的传输，这种切换方式优势在于整个开发环境完全保持一致，不会丢失现有环境配置导致项目开发运行时才发现问题。可以快速投入开发，但也为后续的环境兼容带来了一些麻烦。所以如果你的开发机环境配置不复杂，建议重新安装开发环境。
+
+1. 先从简单的项目适配说起，由于 Apple Silicon 是 arm 架构，如果工程 debug 环境暂未支持 arm 架构并且需要使用模拟器运行项目，有两种办法：使用 Rosetta 模式运行模拟器、或者更新 SDK 以适配 arm 架构
+
+    建议优先工程适配 arm 架构，因为目前 Rosetta 模式运行模拟器会存在一些问题，例如列表滚动阻尼效果缺失，xcode 14 后模拟器二次 build 会黑屏卡在 `launching $(projectname)` 阶段等各种使用问题。
+
+    > 但是一些引入的二进制 SDK 暂不支持 debug 模式的 arm架构，例如微信的 SDK。只能退而求其次通过 Rosetta 模式运行模拟器。需要设置 `Build Setting => Architectures =>Excluded Architectures` 在 debug 模式设置 `arm64` 以此移除工程 debug 模式对 arm 架构的支持，模拟器会自动切换到 Rosetta 模式。
+
+2. 从 Intel 切换过来时 Mac 上安装的 app 大部分都是基于 Intel 架构的，在 Apple Silicon 上使用不存在问题，但是性能效率会有影响，部分软件使用时会有明显卡顿。所以建议如果软件有arm 架构或者通用架构的版本，重新安装即可。这里推荐一个应用[iMobie M1 App Checker](https://www.imobie.com/m1-app-checker/ "iMobie M1 App Checker")可以快速查询所有安装的 app 架构，如图所示：
+
+    ![](https://cdn.zhangferry.com/Images/weekly_78_study_01.png)
+
+3. 如果有使用 `Homebrew` 管理工具，重新安装 arm 版本后，管理的包路径发生了变更，新路径为 **/opt/homebrew/bin**，如果脚本或者配置中使用了 `Homebrew` 管理命令的绝对路径，则需要修改，例如我们工程中有引入过 `Carthage`，该工具需要在项目`Build Phases`中添加执行命令 `/usr/local/bin/carthage copy-frameworks`，编译会报错找不到 `carthage` 执行文件。
+
+4. 更新 `Homebrew` 后建议重新安装所有已安装的库，否则后续会遇到各种离奇的问题。例如在使用 `Rbenv` 管理安装 `Ruby` 时会各种报错，因为 `Ruby`依赖 `ruby-build、readline、openssl`等工具，如果这些工具仍然是旧版本，可能会不兼容，需要重新安装最新版本。
+
+    > `homebrew` 没有提供实现重新安装所有库的命令，可以使用管道结合`xargs`命令: `brew list | xargs brew reinstall`
+    >
+    > **Tips**: shell 中 **|**表示管道，可以将左侧命令的标准输出转换为标准输入，提供给右侧命令。而   `xargs` 是将标准输入转为命令行参数，更多内容参考 [xargs 命令教程](https://www.ruanyifeng.com/blog/2019/08/xargs-tutorial.html "xargs 命令教程")
+
+5. `Rbenv` 可以直接安装 `Ruby`**3.x** 版本，**2.7.1 **版本则需要使用 `RUBY_CFLAGS="-w" rbenv install 2.7.1` 参数禁止所有warring 和 error，安装 **2.7.2** 及更高版本在环境中做以下配置即可（验证成功）：
+
+    ![](https://cdn.zhangferry.com/Images/weekly78_study_02.png)
+
+暂时遇到以上问题，如果有更多问题和疑问，可以留言讨论。
+
+* [Installation issues with Arm Mac](https://github.com/rbenv/ruby-build/issues/1691 "Installation issues with Arm Mac")
 
 
 ## 内容推荐
@@ -85,12 +117,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/UmXvtKYS6Z0a30yPRyIV9g)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #75 | 远程工作推行之难](https://mp.weixin.qq.com/s/nguqKvkuzDBR9o-Yw6y3KQ)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #74 | 抖音 iOS 基础技术大揭秘 Vol.02 周六见](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
