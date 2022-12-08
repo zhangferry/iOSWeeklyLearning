@@ -13,7 +13,7 @@
 
 ### 用 ChatGPT 做点好玩的事
 
-![image-20221208221437827](/Users/zhangferry/Library/Application Support/typora-user-images/image-20221208221437827.png)
+![](https://cdn.zhangferry.com/Images/20221208230711.png)
 
 [@zhangferry](zhangferry.com)：[ChatGPT](https://chat.openai.com/chat "ChatGPT") 是最近大火的一个预训练语言模型。GPT 是 Generative Pretrained Transformer 的缩写，意思是通过预先训练得到的转换器进行生成。GPT 是一个神经网络模型，它能够学习大量的文本数据，并能够根据这些数据生成新的文本内容。它可以用来进行文本自动补全、文本生成、机器翻译等任务。GPT 的性能非常优秀，可以达到人类水平，或者甚至更优。
 
@@ -31,7 +31,11 @@ ChatGPT 可以用来与人进行自然语言对话。它可以帮助人们解决
 
 #### VSCode 插件：ChatGPT中文版
 
-在 VSCode 插件市场搜索 「ChatGPT中文版」即可找到，它主要利用 ChatGPT 在编程领域的能力，提供代码解释、重构、异常分析等能力。目前还需要依赖你有ChatGPT账号，并提供对应的 SessionToken 才能正常使用。以下是我用这个工具尝试分析 wechat-chatgpt 里的一段代码得出的解释。这个功能真的很厉害有木有！
+在 VSCode 插件市场搜索 「ChatGPT中文版」即可找到，它主要利用 ChatGPT 在编程领域的能力，提供代码解释、重构、异常分析等能力。
+
+![](https://cdn.zhangferry.com/Images/20221208230456.png)
+
+目前还需要依赖你有ChatGPT账号，并提供对应的 SessionToken 才能正常使用。以下是我用这个工具尝试分析 wechat-chatgpt 里的一段代码得出的解释。这个功能真的很厉害有木有！
 
 ![](https://cdn.zhangferry.com/Images/20221208222913.png)
 
