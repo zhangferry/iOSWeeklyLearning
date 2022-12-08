@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #78 | App Store 定价机制最重大升级
+# iOS 摸鱼周报 #78 | App Store 定价机制重大升级
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
