@@ -54,7 +54,29 @@
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[Mim0sa](https://juejin.cn/user/1433418892590136/posts)
+
+1. Apple 官方放出的 [Stable Diffusion with Core ML on Apple Silicon ](https://machinelearning.apple.com/research/stable-diffusion-coreml-apple-silicon "Stable Diffusion with Core ML on Apple Silicon")，你现在可以在 Apple 的平台上以 CoreML 的形式运行 Stable Diffusion 了。
+
+   ![sd_apple](https://cdn.zhangferry.com/Images/sd_apple.jpg)
+
+2. 一个很棒的配色网站 [randoma11y](https://randoma11y.com/ "randoma11y")，可以无限生成配色组合。
+
+   ![randoma11yImg](https://cdn.zhangferry.com/Images/randoma11yImg.png)
+
+3. [purrli](https://purrli.com/ "purrli") 一个可以听猫咪不同状态声音的网站。
+
+   ![purrliImg](https://cdn.zhangferry.com/Images/purrliImg.png)
+
+4. [dotown](https://dotown.maeda-design-room.net/ "dotown") 一个由前任天堂设计师的创意团队建立的像素风格的透明素材网站，这些素材的都使用尽可能低的分辨率进行抽象的点阵表达，风格一致，充满怀旧游戏氛围，极具特色。
+
+   ![dotownImg](https://cdn.zhangferry.com/Images/dotownImg.png)
+
+5. 一份在 Webstorm 中配置 Touchbar 的[指南](https://juejin.cn/post/7174175965113745416 "指南")。
+
+6. [赛百味的台湾官网](https://subway.com.tw/GoWeb2/include/meals-nutrition.html "赛百味的台湾官网")有所有三明治的营养信息，虽然产品略有不同但有需要的话也可以参考一下。
+
+   ![subwayImg](https://cdn.zhangferry.com/Images/subwayImg.png)
 
 
 ## 关于我们
