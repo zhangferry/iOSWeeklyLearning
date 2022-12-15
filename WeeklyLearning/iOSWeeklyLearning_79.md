@@ -4,16 +4,16 @@
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本期话题：iOS 16.2 发布，带来了无边记 App；D2 本周开始
+> * 本周学习：Xcode 僵尸对象 Zombie Objects
+> * 内容推荐：几篇 Swift 相关的文章
+> * 摸一下鱼：再次解读灵动岛的定位；面相算法初学者的算法书「Hello 算法」；关于独立开发如何养活自己的讨论
 
 ## 本期话题
 
 ### iOS 16.2 发布
 
-[@zhangferry](zhangferry.com)：iOS 16.2 主要发布了这些功能，其中值得单独拿出来讲的是 Freeform App 这个东西。
+[@zhangferry](zhangferry.com)：iOS 16.2 主要发布了这些功能，其中 Freeform 这个全新内置 App 感觉值得拿出来单独讲一讲。
 
 ![](https://cdn.zhangferry.com/Images/20221215234359.png)
 
@@ -44,7 +44,7 @@
 ## 本周学习
 
 整理编辑：[JY](https://juejin.cn/user/1574156380931144/posts)
-#### Xcode 僵尸对象Zombie Objects
+#### Xcode 僵尸对象 Zombie Objects
 
 Zombie Objects 是用来调试与内存有关的问题，跟踪对象的释放过程的工具，通常用来排查野指针问题。
 
@@ -109,23 +109,23 @@ if (string_has_prefix(clsName, "_NSZombie_")) {
 
 整理编辑：[Mim0sa](https://juejin.cn/user/1433418892590136/posts)
 
-1、[源码探索SwiftUI框架—TCA](https://juejin.cn/post/7164699554711863326) -- 来自：合合信息
+1、[源码探索SwiftUI框架—TCA](https://juejin.cn/post/7164699554711863326 "源码探索SwiftUI框架—TCA") -- 来自：合合信息
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：本文将会详细的带你体验 TCA 框架该如何去使用，从定义、绑定到调用，并从源码探析整个流程的逻辑，清晰易懂。同时 TCA 也还在快速的发展和推进中，可以期待 TCA 的完善。
 
-2、[《游戏学导论》- 笔记](http://pjhubs.com/2022/01/29/game05/) -- 来自：PJHubs
+2、[《游戏学导论》- 笔记](http://pjhubs.com/2022/01/29/game05/ "《游戏学导论》- 笔记") -- 来自：PJHubs
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：这是一份博主学习华科熊硕老师的《游戏学导论》的系列笔记文章，主要讨论了游戏作为人文社会的一部分中，人与游戏之间的关系和理解，感兴趣的朋友可以读一下。
 
-3、[GCDWebServer 使用详解](https://xiaovv.me/2018/11/30/GCDWebServer-BasicUse/) -- 来自：笑忘书店
+3、[GCDWebServer 使用详解](https://xiaovv.me/2018/11/30/GCDWebServer-BasicUse/ "GCDWebServer 使用详解") -- 来自：笑忘书店
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：GCDWebServer 是一个基于 GCD 的轻量级服务器框架，使用 GCDWebServer 我们可以很轻松的在我们的应用中搭建一个 HTTP 服务器，比如可以使用 GCDWebServer 来实现一个无线U盘 App。该篇文章比较详细的讲解了这个框架的主要使用流程，有两种语言的实现，代码内容详实。
 
-4、[SwiftOnTap](https://swiftontap.com/) -- 来自：SwiftOnTap
+4、[SwiftOnTap](https://swiftontap.com/ "SwiftOnTap") -- 来自：SwiftOnTap
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：这是一份看起来很像官方文档，但是又比官方文档详细很多的 SwiftUI 文档，由一些 iOS 开发者一起维护，将一些在官方文档上写的不清楚、不详细的地方重新编写，填补了 Apple 文档的一些漏洞，其中各种 UI 类的实现还有动画和图片作为辅佐，很好用。
 
-5、[What is the difference between #available and @available](https://sarunw.com/posts/available-vs-available/) -- 来自：Sarunw
+5、[What is the difference between #available and @available](https://sarunw.com/posts/available-vs-available/ "What is the difference between #available and @available") -- 来自：Sarunw
 
 [@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：本文主要讨论了 # 和 @ 在 Swift 代码中的不同的意义。
 
@@ -149,7 +149,7 @@ if (string_has_prefix(clsName, "_NSZombie_")) {
 
 ![](https://cdn.zhangferry.com/Images/20221216000024.png)
 
-3、[那些独立开发者（非外包）是都是怎么养活自己的](https://www.v2ex.com/t/900741 "哪些独立开发者是都是怎么养活自己的")：来自 V2EX 上的一个帖子，评论区有很多独立开发者的项目。我们可以发现一些有趣的独立项目，同时也能看到一些独立开发者的生活状态，这条路不那么容易走。如果你向往独立开发的话，也可以了解他们遇到的问题。
+3、[那些独立开发者（非外包）都是怎么养活自己的](https://www.v2ex.com/t/900741 "哪些独立开发者都是怎么养活自己的")：来自 V2EX 上的一个帖子，评论区有很多独立开发者的项目。我们可以发现一些有趣的独立项目，同时也能看到一些独立开发者的生活状态，这条路不那么容易走。如果你向往独立开发的话，也可以了解他们遇到的问题。
 
 4、[新冠病毒感染者居家预防治疗指南](https://docs.qq.com/doc/DTVZTdENJbnhWaFpQ "新冠病毒感染者居家预防治疗指南")：随着防疫政策的放开，身边有越来越多的人🐑了，🐑了该如何应对？这份在线文档综合多份机构的新冠治疗指南汇总制作而成，比如什么症状应该用什么药？跟自己同住的人应该如何防护？如何消杀？儿童、孕妇被感染应该如何处理？去医院就诊应该注意什么情况？另外还提供了很多中医和饮食相关的注意事项。
 
@@ -160,12 +160,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #78 | iOS 摸鱼周报 #78 | 用 ChatGPT 做点好玩的](https://mp.weixin.qq.com/s/27J4NguYRsxYWmff_6iDcg)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/UmXvtKYS6Z0a30yPRyIV9g)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #75 | 远程工作推行之难](https://mp.weixin.qq.com/s/nguqKvkuzDBR9o-Yw6y3KQ)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
