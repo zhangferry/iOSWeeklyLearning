@@ -50,7 +50,7 @@ objc_destructInstance(self);
 objc_setClass(self, zombieCls);
 ```
 
-#### Zombie Object 是如何被触发的
+#### Zombie Object 触发时做了什么？
 
 ```C++
 // 获取对象class
