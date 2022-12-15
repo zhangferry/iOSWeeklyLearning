@@ -31,8 +31,67 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[JY](https://juejin.cn/user/1574156380931144/posts)
+#### Xcode 僵尸对象Zombie Objects
 
+Zombie Objects 是用来调试与内存有关的问题，跟踪对象的释放过程的工具，通常用来排查野指针问题。
+
+在 `Xcode` -> `Edit Scheme` -> `Memory Management` -> `Zombie Objects` 
+
+#### 僵尸对象的生成过程：
+
+```C++
+// 获取到即将deallocted对象所属类（Class）
+Class cls = object_getClass(self);
+    
+// 获取类名
+const char *clsName = class_getName(cls)
+    
+// 生成僵尸对象类名
+const char *zombieClsName = "_NSZombie_" + clsName;
+    
+// 查看是否存在相同的僵尸对象类名，不存在则创建
+Class zombieCls = objc_lookUpClass(zombieClsName);
+if (!zombieCls) {
+    // 获取僵尸对象类 _NSZombie_
+    Class baseZombieCls = objc_lookUpClass(“_NSZombie_");
+        
+    // 创建zombieClsName类
+    zombieCls = objc_duplicateClass(baseZombieCls, zombieClsName, 0);
+}
+// 在对象内存未被释放的情况下销毁对象的成员变量及关联引用。
+objc_destructInstance(self);
+    
+// 修改对象的isa指针，令其指向特殊的僵尸类
+objc_setClass(self, zombieCls);
+```
+
+#### Zombie Object 触发时做了什么？
+
+```C++
+// 获取对象class
+Class cls = object_getClass(self);
+    
+// 获取对象类名
+const char *clsName = class_getName(cls);
+    
+// 检测是否带有前缀_NSZombie_
+if (string_has_prefix(clsName, "_NSZombie_")) {
+    // 获取被野指针对象类名
+    const char *originalClsName = substring_from(clsName, 10);
+     
+    // 获取当前调用方法名
+    const char *selectorName = sel_getName(_cmd);
+    　　
+    // 输出日志
+    print("*** - [%s %s]: message sent to deallocated instance %p", originalClsName, selectorName, self);
+        
+    // 结束进程
+    abort();
+}
+```
+
+系统修改对象的 `isa` 指针，令其指向特殊的僵尸类，使其变为僵尸对象，并且打印一条包含该对象的日志，然后终止应用程序。
 
 ## 内容推荐
 
