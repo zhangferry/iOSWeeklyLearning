@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #79 | Freeform上线 & D2 本周开始
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -11,11 +11,17 @@
 
 ## 本期话题
 
-### [Freeform App 上线](https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/ "Freeform App上线")
+### iOS 16.2 发布
+
+[@zhangferry](zhangferry.com)：iOS 16.2 主要发布了这些功能，其中值得单独拿出来讲的是 Freeform App 这个东西。
+
+![](https://cdn.zhangferry.com/Images/20221215234359.png)
+
+#### [Freeform App 上线](https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/ "Freeform App上线")
 
 ![](https://cdn.zhangferry.com/Images/20221215212106.png)
 
-[@zhangferry](zhangferry.com)：随 iOS 16.2，Apple 发布了新的系统应用 Freeform，同时有 iPad 和 Mac 版，中文译为：「无边记」，该 App 定位于创造性的头脑风暴和协作。Freeform 有这些特点：
+随 iOS 16.2，Apple 发布了新的系统应用 Freeform，同时有 iPad 和 Mac 版，中文译为：「无边记」，该 App 定位于创造性的头脑风暴和协作。Freeform 有这些特点：
 
 * 创作空间无限，想画多大就画多大。
 
@@ -28,6 +34,12 @@
 * 可以边创作边开启 Facetime。
 
 白板是一个相对自由的创作空间，我想到的一些使用场景是，办公室的远程会议，大家一起想一些 idea；网课里老师远程教授知识，通过 Freeform 跟学生进行互动。
+
+### 第十七届 D2 本周末开始
+
+本届 D2 为期两天共五场活动，议题范围从开发者的研发交付到监控运维，从运行时的上层框架到底层引擎，从过去始终在效率与体验间平衡的跨端技术，到将引领下一代体验革命的 3D/XR 技术全部都会涵盖。会议详情可以查看这篇介绍：[3D/XR、自研 SwiftUI、Lynx、QUIC、边缘计算、Flutter 等话题集结，与32位技术专家相约第十七届 D2！](https://mp.weixin.qq.com/s/xFeWpkZcRHQygmORAuHkFw "3D/XR、自研 SwiftUI、Lynx、QUIC、边缘计算、Flutter 等话题集结，与32位技术专家相约第十七届 D2！")。
+
+因为是付费活动，所以整体的会议质量和讨论氛围都会好很多。如果你对议题感兴趣可以付费购买门票或者在上面那篇文章底部留言获取门票抽取资格。
 
 ## 本周学习
 
@@ -126,14 +138,20 @@ if (string_has_prefix(clsName, "_NSZombie_")) {
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[zhangferry](zhangferry.com)
 
 1、[【深度解读】喧嚣过后，再来聊聊灵动岛](https://www.bilibili.com/video/BV1W14y1N7MY "【深度解读】喧嚣过后，再来聊聊灵动岛")：这是ZEALER官方频道的一期视频，作者从 Apple 的开发者文档和UI交互的深层用意两方面去考虑灵动岛的设计意图。灵动岛的主要作用是「补上了iOS高频更新信息管理缺失的一环」，由此也延伸出了几个观点：
 
 * 微信消息不可能适配灵动岛
 * 灵动岛未来不会成为多任务的入口
 
-2、[新冠病毒感染者居家预防治疗指南](https://docs.qq.com/doc/DTVZTdENJbnhWaFpQ "新冠病毒感染者居家预防治疗指南")：随着防疫政策的放开，身边有越来越多的人🐑了，🐑了该如何应对？这份在线文档综合多份机构的新冠治疗指南汇总制作而成，比如什么症状应该用什么药？跟自己同住的人应该如何防护？如何消杀？儿童、孕妇被感染应该如何处理？去医院就诊应该注意什么情况？另外还提供了很多中医和饮食相关的注意事项。
+2、[Hello 算法](https://www.hello-algo.com/ "Hello 算法")：「如果您是 **算法初学者**，完全没有接触过算法，或者已经有少量刷题，对数据结构与算法有朦胧的理解，在会与不会之间反复横跳，那么这本书就是为您而写！」这本书第一作者是 Krahets，力扣全网阅读量最高博主。 他曾经求职也踩过算法的雷，于是就有了后来的发愤图强，并写作这本面相初学者的算法小书。
+
+![](https://cdn.zhangferry.com/Images/20221216000024.png)
+
+3、[那些独立开发者（非外包）是都是怎么养活自己的](https://www.v2ex.com/t/900741 "哪些独立开发者是都是怎么养活自己的")：来自 V2EX 上的一个帖子，评论区有很多独立开发者的项目。我们可以发现一些有趣的独立项目，同时也能看到一些独立开发者的生活状态，这条路不那么容易走。如果你向往独立开发的话，也可以了解他们遇到的问题。
+
+4、[新冠病毒感染者居家预防治疗指南](https://docs.qq.com/doc/DTVZTdENJbnhWaFpQ "新冠病毒感染者居家预防治疗指南")：随着防疫政策的放开，身边有越来越多的人🐑了，🐑了该如何应对？这份在线文档综合多份机构的新冠治疗指南汇总制作而成，比如什么症状应该用什么药？跟自己同住的人应该如何防护？如何消杀？儿童、孕妇被感染应该如何处理？去医院就诊应该注意什么情况？另外还提供了很多中医和饮食相关的注意事项。
 
 
 ## 关于我们
