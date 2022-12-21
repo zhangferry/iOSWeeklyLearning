@@ -20,7 +20,31 @@
 
 ## 内容推荐
 
-整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+整理编辑：[@远恒之义](https://github.com/eternaljust)
+
+1、[SwiftUI 与 Core Data —— 安全地响应数据](https://www.fatbobman.com/posts/modern-Core-Data-Respond-Data-safely/ "SwiftUI 与 Core Data —— 安全地响应数据") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：保证应用不因 Core Data 的原因导致意外崩溃是对开发者的起码要求。本文将介绍可能在视图中产生严重错误的原因，如何避免，以及在保证视图对数据变化实时响应的前提下如何为使用者提供更好、更准确的信息。
+
+2、[如何使用 SwiftUI Grid API 创建网格布局](https://www.appcoda.com.tw/swiftui-grid-api/ "如何使用 SwiftUI Grid API 创建网格布局") -- 来自：Simon Ng
+
+[@远恒之义](https://github.com/eternaljust)：Grid 视图是一种容器视图，它以二维布局排列其他视图，Grid 为开发人员提供了构建基于网格的布局的更多选项。你可以使用 HStack 和 VStack 来构建类似的布局，不过 Grid 视图可以为你节省大量代码并使你的代码可读性更高，你可以尝试使用 Grid 来构建一些有趣的布局。
+
+3、[如何对 SwiftUI list 中的列表行进行重新排序](https://sarunw.com/posts/swiftui-list-onmove/ "如何对 SwiftUI list 中的列表行进行重新排序") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：想要启用 SwiftUI 列表行重新排序，你只需执行以下步骤即可：创建数据源（必须是可变的）、使用填充列表视图 `ForEach`、将 `onMove(perform:)` 修饰符应用于 `ForEach`、手动移动项目 `onMove` 的闭包，调用方法十分简单方便。
+
+4、[如何创建 iOS 锁屏小部件？](https://swiftsenpai.com/development/create-lock-screen-widget/?utm_source=rss&utm_medium=rss&utm_campaign=create-lock-screen-widget "如何创建 iOS 锁屏小部件？") -- 来自：Lee Kah Seng
+
+[@远恒之义](https://github.com/eternaljust)：在 iOS 16 中，Apple 新增了锁定屏幕，其中锁屏小组件带来 app 新的曝光入口。与桌面小组件类似，锁屏小组件主要用 WidgetKit 来实现功能。不同的是，Apple 引入了 3 个新的不同类型的锁屏小组件：`accessoryCircular`、`accessoryRectangular` 和 `accessoryInline`，前两个为小与中两种尺寸，后者为单行文本。
+
+5、[用 SwiftUI 实现 AI 聊天对话 app - iChatGPT](https://juejin.cn/post/7175051294808211512 "用 SwiftUI 实现 AI 聊天对话 app - iChatGPT") -- 来自掘金：37手游iOS技术运营团队
+
+[@远恒之义](https://github.com/eternaljust)：iChatGP 是一款用 SwiftUI 实现的开源 ChatGPT app，支持系统 iOS 14.0+、iPadOS 14.0+、macOS 11.0+，目前已实现 ChatGPT 基本聊天功能：直接与 ChatGPT 对话，并且保留上下文；复制问题和回答内容；快捷重复提问。
+
+6、[EBPF 介绍](https://coolshell.cn/articles/22320.html "EBPF 介绍") -- 来自：酷壳
+
+[@远恒之义](https://github.com/eternaljust)：eBPF（extened Berkeley Packet Filter）是一种内核技术，它允许开发人员在不修改内核代码的情况下运行特定的功能。eBPF 比起传统的 BPF 来说，传统的 BPF 只能用于网络过滤，而 eBPF 则可以用于更多的应用场景，包括网络监控、安全过滤和性能分析等。耗子叔在文末留了一个彩蛋，聊了聊他对大火的 ChatGPT 一些看法。
 
 
 ## 摸一下鱼
