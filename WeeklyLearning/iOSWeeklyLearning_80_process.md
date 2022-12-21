@@ -27,6 +27,19 @@
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
+1、[A Tour in the Wonderland of Math with Python](https://github.com/neozhaoliang/pywonderland) 通过渲染高质量的图像、视频和动画来展示数学之美。
+
+![](https://cdn.zhangferry.com/Images/125026787-dad59700-e0b7-11eb-889f-b0c737413b6a.png)
+
+2、[MindForger](https://www.mindforger.com/#home)，是一款个人知识管理工具
+
+![](https://cdn.zhangferry.com/Images/1-title-screen.jpg)
+
+MindForger的目标是模仿人类的思维--学习、回忆、识别、联想、遗忘--以实现与你的思维的协同，使你的搜索、阅读和写作更有效率。
+
+不仅如此，MindForger 尊重隐私，并确保知识安全。
+
+不仅仅是一个markdown 编辑器，更是一个辅助的智能助手。
 
 ## 关于我们
 
