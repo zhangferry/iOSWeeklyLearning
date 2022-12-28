@@ -5,7 +5,7 @@
 ### 本期概要
 
 > * 本期话题：
-> * 本周学习：
+> * 本周学习：iOS 堆栈调用理论回顾
 > * 内容推荐：
 > * 摸一下鱼：
 
@@ -16,6 +16,80 @@
 ## 本周学习
 
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+
+### iOS 堆栈调用理论回顾
+
+我们都知道程序的函数调用利用的是栈结构，每嵌套调用一次函数，就执行一次压栈操作，函数执行完毕后，执行出栈操作回到栈底(也就是函数调用处)，继续执行后续指令。
+大部分操作系统栈的增长方向都是从高往低(包括 iOS / Mac OS)，意味着每次函数调用栈开辟都是在做内存地址的减法，`Stack Pointer` 指向栈顶，`Frame Pointer` 指向上一个栈帧的 `Stack Pointer`的地址值，通过 `Frame Pointer` 就可以递归回溯获取整个调用栈。 
+每一次压栈时的数据结构被称为**栈帧**(Stack Frame)，里面存储了当前函数的栈顶指针以及栈底指针，如果我们能拿到每一次压栈的数据结构, 则可以根据这两个指针来递归回溯整个调用栈。
+
+对于 x86_64或者 arm64 架构, 函数调用的汇编指令 `call/bl` 做法都是类似的：
+
+1. 先将函数调用的下一条指令地址入栈，这一条指令是被调用函数执行结束后需要跳转执行的指令，一般存储到 `LR`寄存器中。如果后续还有其他函数调用，则会把`LR`存入栈帧进行保存。
+2. 然后保存调用函数 `caller` 的 `FP` 指针，保存位置紧邻 `LR` 存储的内存地址。
+3. 开辟新的栈空间，重新赋值 `FP` 指向新的栈的栈底，即被调用函数的栈帧的栈底。
+
+![](https://cdn.zhangferry.com/Images/weekly_80_study_01.png)
+
+通过上面的操作，我们已经可以实现串起整个函数调用链。但是由于我们只获取到 `LR`的值，它记录的是 `caller` 函数中的某一条指令地址，而我们的二进制文件存储的都是函数调用的首地址，所以要如何通过 `LR` 对应到具体的函数是下一步要做的事情。采用的方法也很好理解，即通过遍历 `MachO`的符号表，找到每个栈帧中存储的 `LR`的值最相近的高地址的函数，认为该函数是 `Caller`调用函数。
+
+上面针对的是普通的函数调用，在实际情况下会有一些特殊的函数调用，例如内联或者尾调用等。这些都是没有办法通过上面的方式获取到调用栈的。
+
+另外 x86_64 和 arm64 还有一些不同之处在于，arm64 下编译器可能会做一个优化：即针对叶子节点函数会优化栈帧结构，不再入栈保存 `FP`，这时读取到的 `FP`指针实际是 `Caller` 函数的 `FP`。
+
+这个优化只针对 `FP`指针，叶子节点函数的`LR`指针还是会保存的（因为需要出栈继续执行下条指令）。所以我们可以通过线程上下文获取当前的 `LR` 对比`FP`计算得到的`LR` 是否是同一个地址，来判断最后一次的 `FP`是叶子节点函数的 `FP` 还是它的调用方的 `FP`。相同表示未优化 `FP`，不同表示已优化，则需要记录本次的 `LR`。
+
+具体实现代码可以参考 [BSBacktraceLogger](https://github.com/bestswifter/BSBacktraceLogger "BSBacktraceLogger")，简化的核心代码如下：
+
+```objective-c
+NSString *_bs_backtraceOfThread(thread_t thread) {
+  // 初始化50长度的指针数组
+  uintptr_t backtraceBuffer[50];
+  int i = 0;
+// ...
+  const uintptr_t instructionAddress = bs_mach_instructionAddress(&machineContext);
+  backtraceBuffer[i] = instructionAddress;
+  ++i;
+  // 通过线程上下文获取 LR 地址 
+  uintptr_t linkRegister = bs_mach_linkRegister(&machineContext);
+  if(instructionAddress == 0) {
+​    return @"Fail to get instruction address";
+  }
+  // 自定义的帧实体链表, 存储上一个调用栈以及返回地址(lr)
+  BSStackFrameEntry frame = {0};
+    
+  // fp指针
+  const uintptr_t framePtr = bs_mach_framePointer(&machineContext);
+  if(framePtr == 0 ||
+​    // 将fp存储的内容 (pre fp指针)存储到previous, fp+1 存储的内容(lr)存储到return_address
+​    bs_mach_copyMem((void *)framePtr, &frame, sizeof(frame)) != KERN_SUCCESS) {
+​    return @"Fail to get frame pointer";
+  }
+  // lr和fp读取的数据不相等, 是因为arm64下 编译器做的优化处理,即叶子函数复用调用函数的调用栈fp, 但是lr和sp是没有复用的, 所以为了避免丢帧,使用lr填充
+  if (linkRegister != 0 && frame.return_address != linkRegister)  {
+​    backtraceBuffer[i] = linkRegister;
+​    i++;
+  }
+    
+  // 原理就是通过当前栈帧的fp读取下一个指针数据,记录的是上一个栈帧的fp数据, fp + 2,存储的是lr数据, 即当前栈退栈后的返回地址(bl的下一条指令地址)
+  for(; i < 50; i++) {
+​    backtraceBuffer[i] = frame.return_address;
+      // ... 容错处理
+  }
+  // 开始符号化，这里就是文中说的通过 lr 获取最近的函数首地址进行符号化
+  int backtraceLength = i;
+  Dl_info symbolicated[backtraceLength]；
+  bs_symbolicate(backtraceBuffer, symbolicated, backtraceLength, 0);
+    // ... 打印结果
+  return [resultString copy];
+}
+```
+
+代码中的 ` if (linkRegister != 0 && frame.return_address != linkRegister) ` 片段 `BSBacktraceLogger` 中是没有的，当根据打印堆栈将调用栈数调整到恰好 50 个时，会发现最后一个叶子节点函数栈帧丢失，也就是文中说的针对 arm64的优化。
+
+以上代码仅是 `FP`和 `LR`的递归回溯的实现，符号化部分参考函数 `bs_symbolicate()`。
+
+也可以查看 `BSBacktraceLogger` 的 [fork](https://github.com/talka123456/BSBacktraceLogger "BSBacktraceLogger fork") 版本代码，增加了核心代码逻辑注释方便学习。
 
 
 ## 内容推荐
