@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #80 |开发加速器 SwiftUI 中管理数据模型
+# iOS 摸鱼周报 #80 |Developer 设计开发加速器话题，SwiftUI 中管理数据模型
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -7,7 +7,7 @@
 > * 本期话题： Developer 设计开发加速器｜在 SwiftUI 中管理数据模型
 > * 本周学习：iOS 堆栈调用理论回顾
 > * 内容推荐：SwiftUI 好文推荐
-> * 摸一下鱼：一款个人知识管理工具 MindForger，通过渲染高质量的图像、视频和动画展示数学之美；LearnGPT；洞悉开源趋势的网站：ossinsight.io；Github推文：今年学到了哪些有趣的东西
+> * 摸一下鱼：一款个人知识管理工具 MindForger，通过渲染高质量的图像、视频和动画展示数学之美。
 
 ## 本期话题
 
@@ -45,7 +45,7 @@
 
 具体实现代码可以参考 [BSBacktraceLogger](https://github.com/bestswifter/BSBacktraceLogger "BSBacktraceLogger")，简化的核心代码如下：
 
-```objectivec
+```objective-c
 NSString *_bs_backtraceOfThread(thread_t thread) {
   // 初始化50长度的指针数组
   uintptr_t backtraceBuffer[50];
@@ -142,18 +142,6 @@ MindForger的目标是模仿人类的思维--学习、回忆、识别、联想�
 不仅如此，MindForger 尊重隐私，并确保知识安全。
 
 不仅仅是一个markdown 编辑器，更是一个辅助的智能助手。
-
-3、[LearnGPT](https://www.learngpt.com/ "LearnGPT")：ChatGPT 是一个非常强大的工具，但对于它能做什么我们大多数情况还是随便想一些问题或者通过其他人发的测试样例进行了解。为了大家更方便了解 ChatGPT，这个网站专门收集了跟 ChatGPT 对话产生的有意思的问题。
-
-![](https://cdn.zhangferry.com/Images/20221229225526.png)
-
-4、[Open Source Software Insight](https://ossinsight.io/ "Open Source Software Insight")：一个洞悉开源软件的网站，从非常多的维度总结了当前开源软件的趋势，还可以以数据视角去了解仓库和开发者的各类信息，主要数据来源为 Github。
-
-![](https://cdn.zhangferry.com/Images/20221229231811.png)
-
-![](https://cdn.zhangferry.com/Images/20221229231119.png)
-
-5、[Twitter - 今年你阅读过的，或者学习到的最有趣的内容是什么](https://twitter.com/github/status/1608134934891270147 "Twitter")：来自 Github 官方推文，评论区有很多优质的内容。
 
 ## 关于我们
 
