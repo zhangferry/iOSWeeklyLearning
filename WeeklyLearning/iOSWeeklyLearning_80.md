@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #64 | 与 App Store 专家会面交流
+# iOS 摸鱼周报 #80 |Developer 设计开发加速器话题，SwiftUI 中管理数据模型
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -6,8 +6,8 @@
 
 > * 本期话题： Developer 设计开发加速器｜在 SwiftUI 中管理数据模型
 > * 本周学习：iOS 堆栈调用理论回顾
-> * 内容推荐：
-> * 摸一下鱼：
+> * 内容推荐：SwiftUI 好文推荐
+> * 摸一下鱼：一款个人知识管理工具 MindForger，通过渲染高质量的图像、视频和动画展示数学之美。
 
 ## 本期话题
 
@@ -15,7 +15,7 @@
 
 [@师大小海腾](https://juejin.cn/user/782508012091645/posts)：SwiftUI 以一种声明式的编程方式来定义用户界面，而这需要由您来定义数据与视图之间的依赖关系，以便能让 SwiftUI 正确工作。通过本次活动，您将了解 SwiftUI 提供的各种工具，用于将 App 的数据连接到用户界面。您还可以深入了解 SwiftUI 框架驱动的原理，以便能让您的 App 正确运作并且拥有良好性能。
 
-活动将于 2023 年 1 月 10 日（周二）举办。名额有限。请在 2023 年 1 月 9 日前报名参加。**报名地址**：https://developer.apple.com/events/view/D793NQ6482/dashboard。
+活动将于 2023 年 1 月 10 日（周二）举办。名额有限。请在 2023 年 1 月 9 日前报名参加。**报名地址：** [https://developer.apple.com/events/view/D793NQ6482/dashboard](https://developer.apple.com/events/view/D793NQ6482/dashboard "Developer 设计开发加速器｜在 SwiftUI 中管理数据模型")。
 
 ## 本周学习
 
@@ -129,11 +129,11 @@ NSString *_bs_backtraceOfThread(thread_t thread) {
 
 整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
 
-1、[A Tour in the Wonderland of Math with Python](https://github.com/neozhaoliang/pywonderland) 通过渲染高质量的图像、视频和动画来展示数学之美。
+1、[A Tour in the Wonderland of Math with Python](https://github.com/neozhaoliang/pywonderland "A Tour in the Wonderland of Math with Python") 通过渲染高质量的图像、视频和动画来展示数学之美。
 
 ![](https://cdn.zhangferry.com/Images/125026787-dad59700-e0b7-11eb-889f-b0c737413b6a.png)
 
-2、[MindForger](https://www.mindforger.com/#home)，是一款个人知识管理工具
+2、[MindForger](https://www.mindforger.com/#home "MindForger")，是一款个人知识管理工具
 
 ![](https://cdn.zhangferry.com/Images/1-title-screen.jpg)
 
@@ -149,12 +149,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #63 | Apple 企业家培训营已开放申请](https://mp.weixin.qq.com/s/nAMshUG4AjWLAAHOFPVqXg)
+[iOS 摸鱼周报 #79 | Freeform上线 & D2 本周开始](https://mp.weixin.qq.com/s/HdEhmXt60853tzM6xiVUwA)
 
-[iOS 摸鱼周报 #62 |  Live Activity 上线 Beta 版 ](https://mp.weixin.qq.com/s/HySX4Yaf3Zxy8Wn-LyUO0A)
+[iOS 摸鱼周报 #78 |  用 ChatGPT 做点好玩的事 ](https://mp.weixin.qq.com/s/27J4NguYRsxYWmff_6iDcg)
 
-[iOS 摸鱼周报 #61 |  Developer 设计开发加速器](https://mp.weixin.qq.com/s/WfwqRhC-9-isUanv8ZnvMQ)
+[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
 
-[iOS 摸鱼周报 #60 | 2022 Apple 高校优惠活动开启](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
