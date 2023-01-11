@@ -98,32 +98,29 @@ NSString *_bs_backtraceOfThread(thread_t thread) {
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+> 本期将推荐近期的一些优秀博文，涵盖如何保护剪切板内容、SwiftUI 的视图风格、iOS 应用启动优化等方面的内容
 
-1、[SwiftUI 与 Core Data —— 安全地响应数据](https://www.fatbobman.com/posts/modern-Core-Data-Respond-Data-safely/ "SwiftUI 与 Core Data —— 安全地响应数据") -- 来自：东坡肘子
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
 
-[@远恒之义](https://github.com/eternaljust)：保证应用不因 Core Data 的原因导致意外崩溃是对开发者的起码要求。本文将介绍可能在视图中产生严重错误的原因，如何避免，以及在保证视图对数据变化实时响应的前提下如何为使用者提供更好、更准确的信息。
+1、[如何防止复制和粘贴到其他 iOS 应用程序中](https://blog.eidinger.info/prevent-copy-paste-into-other-ios-apps "如何防止复制和粘贴到其他 iOS 应用程序中") -- 来自：Marco Edinger
 
-2、[如何使用 SwiftUI Grid API 创建网格布局](https://www.appcoda.com.tw/swiftui-grid-api/ "如何使用 SwiftUI Grid API 创建网格布局") -- 来自：Simon Ng
+[@东坡肘子](https://www.fatbobman.com/): 在企业应用程序中，经常需要通过防止最终用户将内容复制和粘贴到其他应用程序中来保护敏感信息。在这篇文章中，作者将向你展示为 iOS 应用程序引入这种高级剪贴板保护功能的多种方法。
 
-[@远恒之义](https://github.com/eternaljust)：Grid 视图是一种容器视图，它以二维布局排列其他视图，Grid 为开发人员提供了构建基于网格的布局的更多选项。你可以使用 HStack 和 VStack 来构建类似的布局，不过 Grid 视图可以为你节省大量代码并使你的代码可读性更高，你可以尝试使用 Grid 来构建一些有趣的布局。
+2、[掌握 Swift Concurrency 的 AsyncStream](https://www.donnywals.com/understanding-swift-concurrencys-asyncstream/ "掌握 Swift Concurrency 的 AsyncStream") -- 来自：Donny wals
 
-3、[如何对 SwiftUI list 中的列表行进行重新排序](https://sarunw.com/posts/swiftui-list-onmove/ "如何对 SwiftUI list 中的列表行进行重新排序") -- 来自：sarunw
+[@东坡肘子](https://www.fatbobman.com/): 创建自定义的异步序列的最好方法是什么？实现 AsyncSequence 协议并构建你的 AsyncIterator 确实可以解决一切问题，但实现起来很繁琐而且容易出错。在这篇文章中，作者将向你展示如何利用 Swift 的 AsyncStream 来构建自定义的异步序列，在你需要的时候产生数值。
 
-[@远恒之义](https://github.com/eternaljust)：想要启用 SwiftUI 列表行重新排序，你只需执行以下步骤即可：创建数据源（必须是可变的）、使用填充列表视图 `ForEach`、将 `onMove(perform:)` 修饰符应用于 `ForEach`、手动移动项目 `onMove` 的闭包，调用方法十分简单方便。
+3、[SwiftUI 视图的样式 —— 视图样式是如何工作的](https://peterfriese.dev/posts/swiftui-styling-views/ "SwiftUI 视图的样式 —— 视图样式是如何工作的") -- 来自：Peter Friese
 
-4、[如何创建 iOS 锁屏小部件？](https://swiftsenpai.com/development/create-lock-screen-widget/?utm_source=rss&utm_medium=rss&utm_campaign=create-lock-screen-widget "如何创建 iOS 锁屏小部件？") -- 来自：Lee Kah Seng
+[@东坡肘子](https://www.fatbobman.com/): SwiftUI 视图的样式是一个强大的概念，让开发者在设计应用程序时具有很大的灵活性，且不会丢失我们使用的视图的语义。支持此概念的 SwiftUI 视图列表令人印象深刻：按钮、选择器、菜单、切换、指示器、文本和标签、集合视图、导航视图、窗口和工具栏以及组等。因此，下次在你需要定制 UI 元素的特殊外观时，请先查看苹果的文档，看看是否已经有满足你需求的风格。如果没有，本文将告诉你如何创建自定义样式。
 
-[@远恒之义](https://github.com/eternaljust)：在 iOS 16 中，Apple 新增了锁定屏幕，其中锁屏小组件带来 app 新的曝光入口。与桌面小组件类似，锁屏小组件主要用 WidgetKit 来实现功能。不同的是，Apple 引入了 3 个新的不同类型的锁屏小组件：`accessoryCircular`、`accessoryRectangular` 和 `accessoryInline`，前两个为小与中两种尺寸，后者为单行文本。
+4、[Dependencies —— Point Free 发布了新的开源依赖库](https://www.pointfree.co/blog/posts/92-a-new-library-to-control-dependencies-and-avoid-letting-them-control-you "Dependencies —— Point Free 发布了新的开源依赖库") -- 来自：Point Free
 
-5、[用 SwiftUI 实现 AI 聊天对话 app - iChatGPT](https://juejin.cn/post/7175051294808211512 "用 SwiftUI 实现 AI 聊天对话 app - iChatGPT") -- 来自掘金：37手游iOS技术运营团队
+[@东坡肘子](https://www.fatbobman.com/): 依赖性是指你的应用程序中需要与不受你控制的外部系统交互的类型和功能。典型的例子是向服务器发出网络请求的 API 客户端，但也有一些看似无害的东西，如 UUID 和日期初始化器、文件访问、用户默认值，甚至时钟和计时器，都可以被认为是依赖关系。Point Free 将 TCA 中广受好评的依赖功能分离出来构建成一个独立且开源的依赖管理系统，以便让更多的开发者受益。
 
-[@远恒之义](https://github.com/eternaljust)：iChatGP 是一款用 SwiftUI 实现的开源 ChatGPT app，支持系统 iOS 14.0+、iPadOS 14.0+、macOS 11.0+，目前已实现 ChatGPT 基本聊天功能：直接与 ChatGPT 对话，并且保留上下文；复制问题和回答内容；快捷重复提问。
+5、[云音乐 iOS 启动性能优化「开荒篇」](https://juejin.cn/post/7145672412883845127 "云音乐 iOS 启动性能优化「开荒篇」") -- 来自：网易云音乐技术团队
 
-6、[EBPF 介绍](https://coolshell.cn/articles/22320.html "EBPF 介绍") -- 来自：酷壳
-
-[@远恒之义](https://github.com/eternaljust)：eBPF（extened Berkeley Packet Filter）是一种内核技术，它允许开发人员在不修改内核代码的情况下运行特定的功能。eBPF 比起传统的 BPF 来说，传统的 BPF 只能用于网络过滤，而 eBPF 则可以用于更多的应用场景，包括网络监控、安全过滤和性能分析等。耗子叔在文末留了一个彩蛋，聊了聊他对大火的 ChatGPT 一些看法。
-
+[@东坡肘子](https://www.fatbobman.com/): App 启动作为用户使用应用的第一个体验点，直接决定着用户对 App 的第一印象。网易云音乐作为一个有着近 10 年发展历史的 App，随着各种业务不停的发展和复杂场景的堆叠，不同的业务和需求不停地往启动链路上增加代码，这给 App 的启动性能带来了极大的挑战。而随着云音乐用户基数的不断扩大和深度使用，越来越多的用户反馈启动速度慢，况且启动速度过慢更甚至会降低用户的留存意愿。因此，云音乐 iOS App 急需要进行一个专项针对启动性能进行优化。本文将介绍云音乐技术团队在 App 启动优化方面所做出的努力。（ 编者同大多数评论的想法一致，在不解决开屏广告的情况下，一切基于技术层面的优化都很难让用户有较大的感知 ）
 
 ## 摸一下鱼
 
