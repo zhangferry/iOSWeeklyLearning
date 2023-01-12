@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #81 |Apple 推出 Apple Business Connect
+# iOS 摸鱼周报 #81 | Apple 推出 Apple Business Connect
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -7,7 +7,7 @@
 > * 本期话题： Developer 设计开发加速器｜探索 iPad 最新技术，Apple 推出 Apple Business Connect
 > * 本周学习：基础知识回顾：iOS 中的 const 修饰符
 > * 内容推荐：本期将推荐近期的一些优秀博文，涵盖如何保护剪切板内容、SwiftUI 的视图风格、iOS 应用启动优化等方面的内容
-> * 摸一下鱼：一款个人知识管理工具 MindForger，通过渲染高质量的图像、视频和动画展示数学之美。
+> * 摸一下鱼：基于 MarkDown 的写作工具以及一文多发的工具 openwrite；从 TimeMachine 中移除开发依赖包的工具 Asimov
 
 ## 本期话题
 
@@ -96,11 +96,11 @@ const-qualified type 'NSMutableString *const __strong'
 
 整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
-1、[openwrite](https://openwrite.cn/) 提供了基于`MarkDown`的写作工具以及一文多发的工具，适合需要做新媒体矩阵的程序员。
+1、[openwrite](https://openwrite.cn/ "openwrite") 提供了基于`MarkDown`的写作工具以及一文多发的工具，适合需要做新媒体矩阵的程序员。
 
 ![](http://cdn.zhangferry.com/20230112163018.png)
 
-2、[Asimov](https://github.com/stevegrunwell/asimov)  自动检查本地磁盘把开发依赖的文件包全部从 TimeMachine 移出掉的好用工具。
+2、[Asimov](https://github.com/stevegrunwell/asimov "Asimov")  自动检查本地磁盘把开发依赖的文件包全部从 TimeMachine 移出掉的好用工具。
 
 ## 关于我们
 
