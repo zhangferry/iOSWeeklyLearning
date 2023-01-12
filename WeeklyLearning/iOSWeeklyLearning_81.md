@@ -7,7 +7,7 @@
 > * 本期话题： Developer 设计开发加速器｜探索 iPad 最新技术，Apple 推出 Apple Business Connect
 > * 本周学习：基础知识回顾：iOS 中的 const 修饰符
 > * 内容推荐：本期将推荐近期的一些优秀博文，涵盖如何保护剪切板内容、SwiftUI 的视图风格、iOS 应用启动优化等方面的内容
-> * 摸一下鱼：基于 MarkDown 的写作工具以及一文多发的工具 openwrite；从 TimeMachine 中移除开发依赖包的工具 Asimov
+> * 摸一下鱼：基于 MarkDown 的写作工具以及一文多发的工具 openwrite；从 TimeMachine 中移除开发依赖包的工具 Asimov；查看个人 Github 全年使用趋势的 Github Trends；一份开源软件使用指南；AI 辅助 Code reivew 的工具。
 
 ## 本期话题
 
@@ -101,6 +101,18 @@ const-qualified type 'NSMutableString *const __strong'
 ![](http://cdn.zhangferry.com/20230112163018.png)
 
 2、[Asimov](https://github.com/stevegrunwell/asimov "Asimov")  自动检查本地磁盘把开发依赖的文件包全部从 TimeMachine 移出掉的好用工具。
+
+3、[Github Trends](https://www.githubtrends.io/wrapped "Github Trends")：一个 Github 图标统计工具，需要首先给仓库 Star 你才能用这个功能。
+
+![](https://cdn.zhangferry.com/Images/github-wrapped.png)
+
+4、[开源软件指南](https://opensource.guide/ "开源软件指南")：关于开源软件的一份指南，如何向开源软件共享，如何做自己的开源软件，如何围绕开源做社区，还有这些环节的最佳实践。
+
+![](https://cdn.zhangferry.com/Images/20230112223404.png)
+
+5、[AI-powered code review](https://codeball.ai/ "AI-powered code review")：AI 加持的 Code review 工具，对于开源软件是免费的，目前使用形式是基于 Github Action。
+
+![](https://cdn.zhangferry.com/Images/20230112225337.png)
 
 ## 关于我们
 
