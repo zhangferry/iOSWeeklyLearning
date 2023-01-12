@@ -11,11 +11,15 @@
 
 ## 本期话题
 
-###  Developer 设计开发加速器｜在 SwiftUI 中管理数据模型
+### [设计开发加速器线上讲座：探索 iPad 最新技术](https://developer.apple.com/events/view/U2U58S76GX/dashboard "设计开发加速器线上讲座：探索 iPad 最新技术") 
 
-[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：SwiftUI 以一种声明式的编程方式来定义用户界面，而这需要由您来定义数据与视图之间的依赖关系，以便能让 SwiftUI 正确工作。通过本次活动，您将了解 SwiftUI 提供的各种工具，用于将 App 的数据连接到用户界面。您还可以深入了解 SwiftUI 框架驱动的原理，以便能让您的 App 正确运作并且拥有良好性能。
+[@远恒之义](https://github.com/eternaljust)：本次课程将通过一系列创新性 App 的演示，带领您充分了解 iPad 最新技术特性，学习如何利用功能强大的 API 来让您的 App 在 iPad 的体验更上一层楼。活动时间：2023 年 2 月 16 日上午 10:00 (GMT+8) – 中午 12:00 (GMT+8) (UTC+08:00)，报名截止：2023 年 2 月 15 日。
 
-活动将于 2023 年 1 月 10 日（周二）举办。名额有限。请在 2023 年 1 月 9 日前报名参加。**报名地址：** [https://developer.apple.com/events/view/D793NQ6482/dashboard](https://developer.apple.com/events/view/D793NQ6482/dashboard "Developer 设计开发加速器｜在 SwiftUI 中管理数据模型")。
+### [Apple 推出 Apple Business Connect](https://www.apple.com.cn/newsroom/2023/01/introducing-apple-business-connect/ "Apple 推出 Apple Business Connect")
+
+[@远恒之义](https://github.com/eternaljust)：近日，Apple 推出了 Apple Business Connect，这是一款全新的免费工具，让企业可以在地点卡中自定义显示精美图像、关键信息和特别促销活动。这款免费工具让各种规模的企业都能认领相应地址的地点卡，并自主设计关键信息在 Apple 地图、信息、钱包、Siri 等各种 app 中向超过十亿 Apple 用户展示的方式。Business Connect 的推出，方便了世界各地的 Apple 用户都能找到关于美食、购物、旅行目的地的精确信息。
+
+![通过 Business Connect，企业可以向顾客展示优惠或促销信息，用户可还以在地图 app 地点卡中直接执行的多种操作。](https://cdn.zhangferry.com/Images/81-apple-business-connect.png)
 
 ## 本周学习
 
