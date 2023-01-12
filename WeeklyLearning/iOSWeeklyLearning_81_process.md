@@ -128,21 +128,13 @@ NSString *_bs_backtraceOfThread(thread_t thread) {
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[CoderStar](https://mp.weixin.qq.com/mp/homepage?__biz=MzU4NjQ5NDYxNg==&hid=1&sn=659c56a4ceebb37b1824979522adbb15&scene=18)
 
-1、[A Tour in the Wonderland of Math with Python](https://github.com/neozhaoliang/pywonderland "A Tour in the Wonderland of Math with Python") 通过渲染高质量的图像、视频和动画来展示数学之美。
+1、[openwrite](https://openwrite.cn/) 提供了基于`MarkDown`的写作工具以及一文多发的工具，适合需要做新媒体矩阵的程序员。
 
-![](https://cdn.zhangferry.com/Images/125026787-dad59700-e0b7-11eb-889f-b0c737413b6a.png)
+![](http://cdn.zhangferry.com/20230112163018.png)
 
-2、[MindForger](https://www.mindforger.com/#home "MindForger")，是一款个人知识管理工具
-
-![](https://cdn.zhangferry.com/Images/1-title-screen.jpg)
-
-MindForger的目标是模仿人类的思维--学习、回忆、识别、联想、遗忘--以实现与你的思维的协同，使你的搜索、阅读和写作更有效率。
-
-不仅如此，MindForger 尊重隐私，并确保知识安全。
-
-不仅仅是一个markdown 编辑器，更是一个辅助的智能助手。
+2、[Asimov](https://github.com/stevegrunwell/asimov)  自动检查本地磁盘把开发依赖的文件包全部从 TimeMachine 移出掉的好用工具。
 
 ## 关于我们
 
