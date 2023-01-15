@@ -1621,4 +1621,659 @@ Vision 是苹果在 WWDC 2017 推出的图像识别框架。与 Core Image、AV 
 
 [@我是熊大](https://github.com/Tliens)：PAG 是一套完整的动画工作流解决方案。提供从 AE (Adobe After Effects) 导出插件，到桌面预览工具，再到覆盖 iOS，Android，macOS，Windows，Linux 和 Web 等各平台的渲染 SDK。PAG 方案目前已经接入了腾讯系 40 余款应用，包括微信，手机QQ，王者荣耀，腾讯视频，QQ音乐等头部产品。
 
-************
+***
+> 每年一度的苹果开发者盛会在不久前落幕了。今年的 WWDC 一如既往地精彩。我们将分几期将一些有关 WWDC 2022 上推出的新内容、新技术介绍给大家。
+
+整理编辑：[东坡肘子](https://www.fatbobman.com), [Mimosa](https://juejin.cn/user/1433418892590136)
+
+1、[怎么快速看完 WWDC22](https://www.ethanhuang13.com/p/144 "怎么快速看完 WWDC22") -- 来自：Ethan Huang
+
+[@东坡肘子](https://www.fatbobman.com/)：今年的 WWDC 2022 很精彩，内容也非常多。跟其他人不同的是，Ethan Huang 写的不是整理好的笔记、个别的知识点，而是一套有效率的吸收策略。涵盖：建立全面的印象、挑选有兴趣的主题深入以及如何利用社群来发现重要的知识。
+
+2、[WWDC22 笔记](https://ming1016.github.io/2022/06/10/wwdc22-notes/ "WWDC22 笔记") -- 来自：戴铭
+
+[@东坡肘子](https://www.fatbobman.com/)：边看、边记、边整理是本文的特色。作者采用了类似日记的方式，记录并整理了自己在观看 WWDC 2022 期间的每日心得。这种方式也值得其他的开发者借鉴。
+
+3、[Swift 5.7 新特性](https://juejin.cn/post/7107058234409615373 "Swift 5.7 新特性") -- 来自：Paul Hudson 中文译者：猫克杯
+
+[@东坡肘子](https://www.fatbobman.com/)：Swift 5.7 变化巨大，新特性中包括正则表达式， if let 速记语法，以及围绕 any 和 some 关键字的一致性改动。在本文中，Paul Hudson 想向你介绍重大变化，提供一些实际操作示例，以便你可以快速了解和掌握。
+
+4、[WWDC 2022 在线休息室中有关 SwiftUI 的讨论](https://swiftui-lab.com/digital-lounges-2022/ "WWDC 2022 在线休息室中有关 SwiftUI 的讨论") -- 来自：Javier
+
+[@东坡肘子](https://www.fatbobman.com/)：从 WWDC 2021 开始，苹果引入了在线休息室（ Digital Lounge ），为广大开发者提供了同苹果各个团队的工程师和设计师展开文字形式的讨论，针对最新技术提出问题，寻求编程方面的帮助以及结交演讲嘉宾的机会。今年 Javier 一如既往地对 WWDC 2022 在线休息室中有关 SwiftUI 方面的讨论进行了整理，并添加了自己的评论。
+
+5、[SwiftUI 4.0 的全新导航系统](https://www.fatbobman.com/posts/new_navigator_of_SwiftUI_4/ "SwiftUI 4.0 的全新导航系统") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：长久以来，开发者对 SwiftUI 的导航系统颇有微词。受 NavigationView 的能力限制，开发者需要动用各种技巧乃至黑科技才能实现一些本应具备的基本功能（例如：返回根视图、向堆栈添加任意视图、返回任意层级视图 、Deep Link 跳转等 ）。SwiftUI 4.0 对导航系统作出了重大改变，提供了以视图堆栈为管理对象的新 API ，让开发者可以轻松实现编程式导航。本文将对新的导航系统作以介绍。
+
+6、[WWDC 2022 Swift Student Challenge Submissions](https://wwdc.github.io/2022 "WWDC 2022 Swift Student Challenge Submissions") -- 来自：WWDC Students
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：一年一度的 [WWDC Swift Student Challenge](https://developer.apple.com/wwdc22/swift-student-challenge/) 随着 WWDC 22 的召开也随之落幕了，全球无数学生开发者通过提交作品来争抢 300 多张 WWDC 现场门票，在这个网站可以看到许多优秀学生开发者今年制作的作品，以及视频演示链接，其中许多作品效果令人惊艳，难以想象其中某些作品仅出自初高中生之手。
+
+7、[WWDC 2022 Summary for Designers](https://uxmisfit.com/2022/06/06/wwdc-2022-summary/ "WWDC 2022 Summary for Designers") -- 来自：Thalion
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：最关注每年 WWDC 的群体莫过于程序员了，但其实除了程序员之外，也有许多并非是 Coder 的人在默默地关注着，设计师（UX/UI）就是其中的一员。本文作者通过自己的视角来解读了对于设计师们来说，这次 WWDC 中有哪些值得注意的点、在新系统中，有哪些地方更加提升了用户的体验的、以及一些他自己的看法等等。
+
+***
+> 每年一度的苹果开发者盛会在不久前落幕了。今年的 WWDC 一如既往地精彩。我们将分几期将一些有关 WWDC 2022 上推出的新内容、新技术介绍给大家。
+
+整理编辑：[远恒之义](https://github.com/eternaljust)，[Mimosa](https://juejin.cn/user/1433418892590136)
+
+1、[WWDC22: Wrap up and recommended talks](https://www.hackingwithswift.com/articles/254/wwdc22-wrap-up-and-recommended-talks "WWDC22: Wrap up and recommended talks") -- 来自：hackingwithswift
+
+[@远恒之义](https://github.com/eternaljust)：WWDC22 精彩纷呈，本文作者回顾了他参与本次活动的过程，一些现场有趣的故事，10 个最喜欢的演讲主题，6 个推荐视频来了解刚推出的新内容，还有几个丰富的 WWDC22 周边社区活动。
+
+2、[在 SwiftUI 利用 Live Text API 從圖片中擷取文本](https://www.appcoda.com.tw/live-text-api/ "在 SwiftUI 利用 Live Text API 從圖片中擷取文本") -- 来自：appcoda
+
+[@远恒之义](https://github.com/eternaljust)：在新的 iOS 16，Apple 发布了 Live Text API，可以将图像转换为机器可读的文本格式。我们只需使用 VisionKit 中的一个新类别 DataScannerViewController，来启用有 Live Text 功能的相机，就能提取出图像中的文本。本文同时为你提供了一个 demo 来快速上手体验。
+
+3、[iOS CarPlay｜WWDC22 - 通过 CarPlay 让你的 App 发挥更大的作用](https://juejin.cn/post/7114239495360233479 "iOS CarPlay｜WWDC22 - 通过 CarPlay 让你的 App 发挥更大的作用") -- 来自：师大小海腾
+
+[@远恒之义](https://github.com/eternaljust)：时隔 2 年，CarPlay 迎来了大更新。在 iOS16 中新增的两种支持 CarPlay 的 App 类型：Fueling App 和 Driving Task App。感兴趣的话，和作者一起来探索 Navigation App 如何在受支持车辆中的数字仪表盘上实时绘制地图。
+
+此外，Apple 今年给我们带来了 CarPlay Simulator，它是一个 Mac App，可以帮助你在不离开办公桌的情况下连接 iPhone Device 来开发和测试 CarPlay App，模拟真实环境，而无需经常来回跑到你的车上或购买售后市场主机进行测试。这大幅度提升了开发者的开发测试体验。
+
+4、[用 Table 在 SwiftUI 下创建表格](https://www.fatbobman.com/posts/table_in_SwiftUI/ "用 Table 在 SwiftUI 下创建表格") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：Table 是 SwiftUI 3.0 中为 macOS 平台提供的表格控件，开发者通过它可以快捷地创建可交互的多列表格。在 WWDC 2022 中，Table 被拓展到 iPadOS 平台，让其拥有了更大的施展空间。本文将介绍 Table 的用法、分析 Table 的特点以及如何在其他的平台上实现类似的功能。
+
+5、[What’s the difference between any and some in Swift 5.7?](https://www.donnywals.com/whats-the-difference-between-any-and-some-in-swift-5-7/ "What’s the difference between any and some in Swift 5.7?") -- 来自：Donny Wals
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：作者通过举例来说明了在 Swift 5.7 中你该如何选择 some 还是 any 关键词，阐述了他们之间的不同，同时谈了一下该如何正确的使用它们，以及未来可能在 Swift 6 中的表现。在作者的另一篇文章 [What are primary associated types in Swift 5.7?](https://www.donnywals.com/what-are-primary-associated-types-in-swift-5-7/) 中它也谈到了，在实际使用场景，例如关联类型的使用中，some 和 any 关键词对程序的影响。
+
+6、[深入理解 Git 底层实现原理](http://chuquan.me/2022/05/21/understand-principle-of-git/ "深入理解 Git 底层实现原理") -- 来自：楚权
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：大家平时都在使用 Git，但是其中的底层实现原理大家了解么？该文章作者从 Git 整体的架构出发，分层讲解了各层作用，主要谈了对象数据库的设计等。同时也给出了基于其原理的一个设计案例 —— CocoaPods Source 管理机制。文章整体写的通俗易懂，配图也简洁大方。
+
+***
+> 本期内容仍以介绍 WWDC 2022 上推出的新技术为主
+
+1、[Grid 格狀排版](https://youtu.be/N2pXtupyblI "Grid 格狀排版") -- 来自：Jane
+
+[@东坡肘子](https://www.fatbobman.com/)：这个视频会介绍 iOS16 新推出的 Grid —— 网格排版 View 。Grid 是一个十分强大的网格排版工具，极大地改善了 SwiftUI 的版式控制能力。视频会从经典的网格解决方案 GeometryReader 写法讲起，更具体地呈现 Grid 所解决的问题。接着会介绍与 Grid 相关的四个 modifier。
+
+2、[SwiftUI 布局 —— 对齐](https://www.fatbobman.com/posts/layout-alignment/ "SwiftUI 布局 —— 对齐") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：“对齐”是 SwiftUI 中极为重要的概念，然而相当多的开发者并不能很好地驾驭这个布局利器。在 WWDC 2022 中，苹果为 SwiftUI 增添了 Layout 协议，让我们有了更多的机会了解和验证 SwiftUI 的布局原理。本文将结合 Layout 协议的内容对 SwiftUI 的“对齐”进行梳理，希望能让读者对“对齐”有更加清晰地认识和掌握。
+
+3、[Swift Protocol 背后的故事 —— Swift 5.6/5.7](http://zxfcumtcs.github.io/2022/06/30/SwiftProtocol3/ "Swift Protocol 背后的故事 —— Swift 5.6/5.7") -- 来自：雪峰
+
+[@东坡肘子](https://www.fatbobman.com/)：本文是系列文章的第三篇（ 前两篇为 Swift Protocol 背后的故事 —— 实践、Protocol 背后的故事 —— 理论 ），介绍了 Swift 5.6/5.7 在 Protocol 上的相关扩展和优化，主要包括：any、Opaque Parameter、Unlock existentials for all protocols 以及 Primary Associated Types 等内容。
+
+4、[利用 SwiftUI 的新 Charts API 輕鬆建立漂亮的折線圖](https://www.appcoda.com.tw/swiftui-line-charts/ "利用 SwiftUI 的新 Charts API　輕鬆建立漂亮的折線圖") -- 来自：Simon Ng
+
+[@远恒之义](https://github.com/eternaljust)：在 iOS 16 的新版 SwiftUI 中，Apple 重磅更新带来了 Charts 框架。在此之前，我们需要自定义构建图表，或者是依靠第三方库来建立图表。等到现在，我们简单使用 Charts API，就能轻松上手构建折线图。除此之外，开发者还可以更方便地创建动画化和互动的其他图表。
+
+5、[How to Use ShareLink for Sharing Data Like Text and Photos](https://www.appcoda.com/swiftui-sharelink/ "How to Use ShareLink for Sharing Data Like Text and Photos") -- 来自：Simon Ng
+
+[@远恒之义](https://github.com/eternaljust)：当前在 SwiftUI 项目中，我们如果需要调用系统分享数据，必须通过桥接 UIActivityViewController 来实现。在 iOS 16 中，SwiftUI 推出一个名为 ShareLink 的视图控件，当用户点击分享链接时，它会弹出显示系统分享列表，让用户将内容共享到其他应用程序或复制数据以供以后使用。本文将向你展示如何使用 ShareLink 来分享文本、URL 链接和图像等数据。
+
+6、[Implementing a custom native calendar using UICalendarView in iOS16 and Swift](https://ohmyswift.com/blog/2022/06/12/implementing-a-custom-native-calendar-using-uicalendarview-in-ios16-and-swift/ "Implementing a custom native calendar using UICalendarView in iOS16 and Swift") -- 来自：Rizwan Ahmed
+
+[@远恒之义](https://github.com/eternaljust)：以前，面对复杂的日历显示交互需求，我们通常选择第三方日历组件或者自定义日历视图来实现。今年，Apple 引入了原生 UICalendarView，支持在 iOS 16 创建自定义日历视图。本文将介绍如何使用 UICalendarView 来实现自定义原生日历，并支持单选与多选日期。
+
+7、[How to change status bar color in SwiftUI](https://sarunw.com/posts/swiftui-status-bar-color/ "How to change status bar color in SwiftUI") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：在 UIKit 中，我们有很多方法可以[改变状态栏的样式](https://sarunw.com/posts/how-to-set-status-bar-style/ "改变状态栏的样式")。
+然而在 SwiftUI 中，我们无法直接更改状态栏样式，需要通过视图修饰符 .preferredColorScheme 来间接修改。这种方式将影响应用程序中的每个视图，相当于手动设置了浅色与深色模式。在 iOS 16 中，我们使用新的修饰符 .toolbarColorScheme 来影响特定导航堆栈上的状态栏，也可以单独在目标视图中再次设置来覆盖此值。
+
+***
+> 对于国内的 iOSer 来说，WWDC 内参是一个较好的了解 WWDC 新内容途径，目前超过三成的文章已经出炉，今年的内参质量更上一层楼。今年我们部分摸鱼编辑参与其中，你可以查看[WWDC22内参参与体验](https://mp.weixin.qq.com/s/1x6JaHxb-bT3NtDb56BHDw)，今天还有机会获得邀请码呦。
+
+1、[使用 LLDB 调试 Swift](https://xiaozhuanlan.com/topic/4809126537 "使用 LLDB 调试 Swift") -- 来自：WWDC22内参
+
+[@夏天](https://juejin.cn/user/3298190611456638)：使用 LLDB 调试 Swift 代码时，有时候有点力不从心，有时候找不到源码，有时候指令失效等。文章介绍了几个解决方案来解决命令失效的问题。文章最后还介绍了如何正确的为打包 Framework 设置参数，确保 LLDB 能够正常运行。
+
+2、[Safari 和 WebKit 新特性介绍](https://xiaozhuanlan.com/topic/1560743928 "Safari 和 WebKit 新特性介绍") -- 来自：WWDC22内参
+
+[@夏天](https://juejin.cn/user/3298190611456638)：苹果关于 Safari 和 WebKit 的更新，可能是其为了追平某些功能在各个浏览器上相同或相似的体验。文章介绍了一些前端的概念，以及几个有助于前端开发的网站 [Can I use](https://caniuse.com/) 和 [MDN](https://developer.mozilla.org/en-US/)。
+
+3、[在 SwiftUI 中组合各种自定义布局](https://xiaozhuanlan.com/topic/1507368249 "在 SwiftUI 中组合各种自定义布局") -- 来自：WWDC22内参
+
+[@夏天](https://juejin.cn/user/3298190611456638)：Grid 是一个十分强大的网格排版工具，极大地改善了 SwiftUI 的版式控制能力。除了 Grid， 文章还介绍了 `ViewThatFits` 以及使用 `AnyLayout` 在不同的布局类型之间平滑地过渡。
+
+4、[快速链接：优化构建和启动耗时](https://xiaozhuanlan.com/topic/1509638472 "快速链接：优化构建和启动耗时") -- 来自：WWDC22内参
+
+[@夏天](https://juejin.cn/user/3298190611456638)：一篇关于实现更快构建和优化 APP 提交和缩短启动耗时的文章。文章介绍了静态链接和动态链接相关的概念，并引申其原理内容。构建和启动相关的知识，一直是 iOS 开发中较为深奥的一部分，文章介绍的内容无论你是学习还是准备面试，都有一定的作用。
+
+5、[Swift 新特性介绍](https://xiaozhuanlan.com/topic/2498765013 "Swift 新特性介绍") -- 来自：WWDC22内参
+
+[@夏天](https://juejin.cn/user/3298190611456638)：是一篇让你快速了解今 Swift 更新内容的文章，为你提供了最近几年 Swift 发展的概览，介绍了今年更新的内容。如果你需要对今年 Swift 更新内容有一个了解，不失为一种途径。
+
+7、[探索 In-App Purchase 集成和迁移](https://xiaozhuanlan.com/topic/8024563197 "探索 In-App Purchase 集成和迁移") -- 来自：WWDC22内参
+
+[@夏天](https://juejin.cn/user/3298190611456638)：IAP 可能是部分国内开发者上架 App Store 的一种`阻碍`。去年 Apple 对 IAP 大拆大建，今年也新增了部分功能。如果你近期有关于 IAP 相关的内容，可以回顾最近两年的内参，对你有不小的帮助。
+
+6、[Swift 编程语言](https://www.cnswift.org/ "Swift 编程语言")--来自：cnswift
+
+[@Hello World](https://juejin.cn/user/2999123453164605/posts)：比 SwiftGG `更快` 的 Swift 中文版本。
+
+***
+1、[SwiftUI中的后台任务](https://swiftwithmajid.com/2022/07/06/background-tasks-in-swiftui/ "SwiftUI中的后台任务") -- 来自：Majid
+
+[@东坡肘子](https://www.fatbobman.com/)：苹果随着 iOS 13 一起发布了一个 BackgroundTasks 框架。该框架允许开发者使用代码在后台智能地安排工作。在 SwiftUI 4.0 中，苹果又新增了 backgroundTask 视图修饰器，进一步降低了使用后台框架的难度。Majid 将通过本文介绍如何在 SwiftUI 中安排和处理后台任务。
+
+2、[SwiftUI 布局 —— 尺寸](https://www.fatbobman.com/posts/layout-dimensions-1/ "SwiftUI 布局 —— 尺寸") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：在 SwiftUI 中，尺寸这一布局中极为重要的概念，似乎变得有些神秘。无论是设置尺寸还是获取尺寸都不是那么地符合直觉。本文将从布局的角度入手，为你揭开盖在 SwiftUI 尺寸概念上面纱，了解并掌握 SwiftUI 中众多尺寸的含义与用法；并通过创建符合 Layout 协议的 frame 和 fixedSize 视图修饰器的复制品，让你对 SwiftUI 的布局机制有更加深入地理解。
+
+3、[WWDC 2022 数字会客室中有关 Core Data 的内容](https://useyourloaf.com/blog/wwdc22-core-data-lab-notes/ "WWDC 2022 数字会客室中有关 Core Data 的内容") -- 来自：Keith Harrison
+
+[@东坡肘子](https://www.fatbobman.com/)：在 WWDC 2022 中，虽然苹果没有为 Core Data 增加新的功能，但这并不意味着 Core Data 在苹果生态中变得不那么重要。Keith Harrison 整理了在 WWDC 2022 数字会客室中有关 Core Data 方面的一些讨论，主要涉及：数据同步、异步加载等方面的内容。
+
+4、[Bottom Sheet in SwiftUI on iOS 16 with presentationDetents modifier](https://sarunw.com/posts/swiftui-bottom-sheet/ "Bottom Sheet in SwiftUI on iOS 16 with presentationDetents modifier") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：底部表单(Bottom Sheet)是一种类似 Apple 地图主页面拖动的控件，你可以从设备屏幕底部向上滑动，来调整页面内容的显示大小。在 iOS 15 UIKit 中，Apple 推出了 `UISheetPresentationController`，支持展示 `.medium` 和 `.large` 两种形态。今年，iOS 16 SwiftUI 推出了 `presentationdetents` 修饰符，除了支持之前的大中尺寸，新的修饰符还升级了三种设置方式：固定高度(`.height`)，分数(`.fraction`)以及自定义高度逻辑(`.custom`)。
+
+5、[利用新的 ImageRenderer API 輕鬆把 SwiftUI 視圖轉換為圖像](https://www.appcoda.com.tw/imagerenderer-swiftui/ "利用新的 ImageRenderer API 輕鬆把 SwiftUI 視圖轉換為圖像") -- 来自：Simon Ng
+
+[@远恒之义](https://github.com/eternaljust)：iOS 16 SwiftUI 新推出了 `ImageRenderer`。利用这个 API，我们可以轻松把 SwiftUI 中的视图转换为图像，再保存这个图像到系统相册中。同时，分享视图转换后的图像也是轻而易举的操作。此外，通过设置 `ImageRenderer` 类别中的 `scale` 属性，你还可以调整渲染图像的比例，从而提高图像的解析度。
+
+6、[信息安全 | 互联网时代，如何建立信任？](https://mp.weixin.qq.com/s?__biz=Mzg3MjcxNzUxOQ==&mid=2247484972&idx=1&sn=4f0d819e8ab9456bd2ee81942abb3f22&chksm=ceea4b8cf99dc29ad27798c860c9db89621d81497fb6a5d206ed0602d75cffbb1bfdbec5809a&token=2062691669&lang=zh_CN#rd) -- 来自公众号：Bo2SS
+
+[@doubleLLL3](https://github.com/doubleLLL3)：文章从信息安全是什么说起，到为什么，到怎么做，脉络清晰，层层递进，最后还聊了一些相关的应用加深理解。
+
+通过文章可以让读者回答并理解以下问题：
+
+1）信息传输一般使用对称加密+非对称加密，为什么？不能只使用其中一种吗？
+
+2）信息安全为什么需要数字签名？
+
+3）为什么签名前需要做哈希操作？
+
+4）信息安全为什么需要数字证书？
+
+文章的终极目标是：当我们在遇到密码学相关问题时，不再恐惧和迷惑。
+
+***
+1、 [开源｜WBBlades 重要节点更新-专为提效而设计](https://mp.weixin.qq.com/s/tXxhnDKerobyxoWuEBGjNQ) -- 来自：58技术
+
+[@皮拉夫大王]()：给 iOS 开发人员提供基于 Mach-O 文件解析的工具集，工具包括无用类检测（支持 OC 和 Swift）、包大小分析（支持单个静态库/动态库的包大小分析）、点对点崩溃解析（基于系统日志，支持有符号状态和无符号状态），主要基于 Mach-O 文件的分析、轻量符号表剥离，系统日志解析等技术手段。
+
+2、[iOS 不必现崩溃的点对点解析以及治理](https://mp.weixin.qq.com/s/tGvE-2flzhm4skkrfbUIBA) -- 来自：58技术
+
+[@皮拉夫大王]()：本文章中介绍 iOS 端发生崩溃后，在无法复现的情况下如何针对各种不同类型的崩溃日志进行解析，包括普通堆栈，wakesup 崩溃，json 格式日志，bugly 堆栈类型等。此外还介绍了系统日志存在异常情况进行自动修正的方法，包括进程名称丢失，基地址丢失，偏移地址错误等。
+
+3、[西瓜视频iOS启动优化实践](https://juejin.cn/post/7122472926792089607 "西瓜视频iOS启动优化实践") -- 来自：QYizhong
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：本文介绍了在西瓜视频在 iOS 启动方面做了哪些努力去优化，将启动时面临的问题都一一列出，并根据问题的不同性质和影响阶段，提供了不同的优化的方案，并配上精致的动画来帮助读者理解优化前后的区别。同时也介绍了防劣化与监控的相关知识和实践来保证保持优化效果以及感知线上劣化情况。
+
+4、[Background Modes Tutorial: Getting Started](https://www.raywenderlich.com/34269507-background-modes-tutorial-getting-started "Background Modes Tutorial: Getting Started") -- 来自：raywenderlich
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：这是一篇面向新手的 Background Modes 开发指南，通过该教程，你可以了解到应用程序可以在后台执行的逻辑，以及四个样例：播放音频、获取位置更新、有限长度任务、后台请求。并且有 Swift 5.5 的代码工程样例佐以配合。
+
+5、[WWDC 22 Sessions 手绘笔记](https://drive.google.com/drive/folders/1Ux57jowC_IziRpJgPrvqf4M6GlLxslOL "WWDC 22 Sessions 手绘笔记") -- 来自：manu
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：来自 Apple 系统开发工程师 [manu](https://twitter.com/codePrincess) 的 WWDC 22 手绘笔记，包含多个 What's New 系列以及 Create ML、Actors 等热门 session。她的手绘笔记制作精美、风格强烈，言简意赅的概括了 session 的内容，非常推荐大家看一下。
+
+6、[SwiftUI Split View Configuration](https://useyourloaf.com/blog/swiftui-split-view-configuration "SwiftUI Split View Configuration") -- 来自：useyourloaf
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：本文主要讨论了在 iOS 16 SwiftUI 中使用 NavigationSplitView 创建两列或三列布局的过程，提到了一些在 beta 或者之后版本可能出现的坑以及对应的解决方案。
+
+***
+1、[Experimenting with Live Activities](https://oleb.net/2022/live-activity/ "Experimenting with Live Activities") -- 来自：Ole Begemann
+
+[@远恒之义](https://github.com/eternaljust)：上周更新的 iOS 16 beta 4 是第一个支持实时活动 Live Activities 的版本，实时活动是一个类似于小组件的视图，放置在锁定屏幕底部并能实时更新。苹果官方推荐的有用示例包括现场体育比分或火车出发时间。
+
+本文作者和一群朋友设计了一个小盒子，可以连接到自行车的轮毂发电机，测量速度和距离，并通过蓝牙将数据发送到 iOS 应用程序，再利用 Live Activities 把数据同步更新到手机锁定屏幕上。本文是作者使用该 API 来实现第一个 Live Activities 的笔记，文中展示了一个实际操作视频，同时介绍了作者使用 Live Activities 的一些尝试和疑问，主要关于实时活动的几点：使用限制条件、锁屏配色、动画控制以及代码共享。
+
+2、[Ultimate guide on Timer in Swift](https://www.swiftanytime.com/ultimate-guide-on-timer-in-swift/ "Ultimate guide on Timer in Swift") -- 来自：Team SA
+
+[@远恒之义](https://github.com/eternaljust)：计时器 Timer 是用于在特定时间间隔后执行任何任务的类。计时器在 Swift 中使用非常方便，我们可以用于执行有延迟的任务或重复的工作。本文介绍以下了内容：如何执行任务，重复和非重复的定时器，使用 RunLoop 模式，跟踪计时器，定时器优化以减少能源和功率影响。这些内容覆盖了 Timer 方方面面的使用场景，是一份 Swift 计时器的终极指南。
+
+3、[Variable Color in SF Symbols 4](https://sarunw.com/posts/sf-symbols-variable-color/ "Variable Color in SF Symbols 4") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：今年在 WWDC22 中，Apple 推出了 SF Symbols 4，带来了新特性可变颜色 Variable Color，你可以根据百分比值来更改符号的外观显示。新功能将有利于一些可以显示进度趋势的符号，例如 Wi-Fi 信号、扬声器响度。需要注意的是，并非所有符号都支持可变颜色。你需要下载最新的 SF Symbols App，通过从左侧面板中选择“变量”类别来浏览支持可变颜色的符号。
+
+4、[How to Use the SwiftUI PhotosPicker](https://swiftsenpai.com/development/swiftui-photos-picker/?utm_source=rss&utm_medium=rss&utm_campaign=swiftui-photos-picker "How to Use the SwiftUI PhotosPicker") -- 来自：Lee Kah Seng
+
+[@远恒之义](https://github.com/eternaljust)：在今年的 WWDC22 中，Apple 对 SwiftUI 进行了大量改进，SwiftUI 终于在 iOS 16 中获得了自己的原生图片选择器视图 PhotosPicker。PhotosPicker 视图支持 PHPickerViewController 中所有常见的功能，包括单选、多选、资源类型过滤和相册切换等功能。在 SwiftUI 中使用 PhotosPicker 视图非常简单，本文将介绍如何使用该图片选择器。
+
+5、[实时切换 Core Data 的云同步状态](https://www.fatbobman.com/posts/real-time-switching-of-cloud-syncs-status/ "实时切换 Core Data 的云同步状态") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：在 WWDC 2019 上，苹果推出了 Core Data with CloudKit API，极大地降低了 Core Data 数据的云同步门槛。由于该服务对于开发者来说几乎是免费的，因此在之后的几年中，越来越多的开发者在应用中集成了该服务，并为用户带来了良好的跨设备、跨平台的使用体验。本文将对实时切换 Core Data 云同步状态的实现原理、操作细节以及注意事项进行探讨和说明。
+
+6、[避免 SwiftUI 视图的重复计算](https://www.fatbobman.com/posts/avoid_repeated_calculations_of_SwiftUI_views/ "避免 SwiftUI 视图的重复计算") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：在 SwiftUI 中，每个视图都有与其对应的状态，当状态变化时，SwiftUI 都将重新计算与其对应视图的 body 值，这就是 SwiftUI “视图是状态的函数”的基本概念。如果视图响应了不该响应的状态，或者视图的状态中包含了不该包含的成员，都可能造成 SwiftUI 对该视图进行不必要的更新（重复计算），当类似情况集中出现，将直接影响应用的交互响应，并产生卡顿的状况。通常我们会将这种多余的计算行为称之为过度计算或重复计算。本文将介绍如何减少（甚至避免）类似的情况发生，从而改善 SwiftUI 应用的整体表现。
+
+***
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+
+1、[Xamarin 文档](https://docs.microsoft.com/zh-cn/xamarin/ "Xamarin 文档") -- 来自：Microsoft
+
+[@夏天](https://juejin.cn/user/3298190611456638)：除了常见的 React Native、Flutter、Weex 之外，在跨平台上还有一些值得尝试的跨平台方案，比如来自 Microsoft 的 Xamarin 就允许你使用 .NET 代码和特定于平台的用户界面生成适用于 Android、iOS 和 macOS 的本机应用。也许，这不失为一个新的全栈选择。
+
+2、[Qt](https://www.qt.io/ "Qt") -- 来自：*Qt* Company 
+
+[@夏天](https://juejin.cn/user/3298190611456638)：除了上文的 C# 之外，由 *Qt* Company 开发的跨平台 C++ 图形用户界面应用程序开发框架。C ++ 拥有卓越的性能，那么用它开发出来的桌面或移动端应用是否能够在编写之初就能够凌驾在其他应用之上呢？当然其涵盖的点还包括嵌入式及微控制器（MCU），一次学习，干啥都行。除了付费以外，似乎没啥缺点。
+
+3、[Geeks for Geeks](https://practice.geeksforgeeks.org/home "Geeks for Geeks") -- 来自：GeeksforGeeks
+
+[@夏天](https://juejin.cn/user/3298190611456638)：一个对开发者来说很全面的网站，提供了算法，系统设计等基础内容。还提供了 [Practice](https://practice.geeksforgeeks.org/explore?page=1&curated[]=1&sortBy=submissions&curated_names[]=SDE%20Sheet) 和一些付费/免费的课程及文章。你也可以订阅他们的 [YouTube 账号](https://www.youtube.com/geeksforgeeksvideos) 观看视频课程，教程中的 CS Subject 适合大量入门或者基础不扎实的程序员。不过语言教学没有 Swift...
+
+4、[iOS Conf SG](https://iosconf.sg/ "iOS Conf SG") -- 来自：iOS Conf SG
+
+[@夏天](https://juejin.cn/user/3298190611456638)：号称东南亚最大的 iOS 开发者大会。从 2016 年举办至今已有 6 年，一个纯为 iOS 开发者举办的开发者大会。每年大概有 15 个左右的视频来讲述一些 iOS 相关的视频，你可以在 [YouTube ](https://www.youtube.com/c/iOSConfSG) 进行观看。
+
+***
+> 本期介绍三个着重于报道 Swift 语言发展的电子报以及近期的几篇优秀博文
+
+1、[Swift 周报](https://mp.weixin.qq.com/s/npUMmAzYjzThEjrf0jJ4GQ "Swift 周报") -- 来自：Swift社区
+
+[@东坡肘子](https://www.fatbobman.com/)：由于英文版的 Swift 周报停更，由国内 Swift 爱好者维护的中文版 Swift 周报也停滞了一段时间。从八月开始，中文版 Swift 周报重装上阵，全部内容由周报编辑组自行整理。当前模块分为：新闻、提案、Swift 论坛、推荐博文等。
+
+2、[波报|Pofat 的 Swift 中文电子報](https://pofat.substack.com/archive "波报|Pofat 的 Swift 中文电子報") -- 来自：Pofat
+
+[@东坡肘子](https://www.fatbobman.com/)：Pofat 是一个在苹果生态系打滚多年的 App 工程师，出于对 “工作的表层之下” 有更多了解的渴望，创办了波报，作为他用来探索的手段。当前的内容包括：Swift 和 LLVM 官方消息、Swift 和 LLVM 论坛新鲜事、Swift （或其它相关）的底层原理探讨等内容。
+
+3、[Swift Evolution Monthly](https://se-monthly.flinedev.com/issues/swift-evolution-monthly-first-issue-background-history-chris-lattner-6-proposals-1092625 "Swift Evolution Monthly") -- 来自：Cihat Gündüz
+
+[@东坡肘子](https://www.fatbobman.com/)：由 Cihat Gündüz 于数月前创建的月报，专注于介绍进展中的 Swift 提案。创建该刊物很大的原因也是由于 Swift Weekly Brief 的停刊。
+
+4、[iOS 中的手势传递（一）操作系统层](https://juejin.cn/post/7132069500656517151 "iOS 中的手势传递（一）操作系统层") -- 来自：RickeyBoy
+
+[@东坡肘子](https://www.fatbobman.com/)：通常我们处理手势是在 UIView 层级，直接使用 UIButton、UIGestureRecognizer 等来捕获手势，而本文重点讲的是在此之前，手势识别与传递的过程，在介绍整个过程的同时，也能对整个操作系统的工作方式有一定的了解。
+
+5、[在 SwiftUI 中用 Text 实现图文混排](https://www.fatbobman.com/posts/mixing_text_and_graphics_with_Text_in_SwiftUI/ "在 SwiftUI 中用 Text 实现图文混排") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/)：SwiftUI 提供了强大的布局能力，不过这些布局操作都是在视图之间进行的。当我们想在 Text 中进行图文混排时，需要采用与视图布局不同的思路与操作方式。本文将首先介绍一些与 Text 有关的知识，并通过一个实际案例，为大家梳理出在 SwiftUI 中用 Text 实现图文混排的思路。
+
+6、[Github 实用小技巧](https://xuanwo.io/reports/2022-32/ "Github 实用小技巧") -- 来自：漩涡
+
+[@东坡肘子](https://www.fatbobman.com/)：漩涡从一个开源项目从业者的角度，介绍了一些他在工作中经常使用的 Github 实用小技巧。包括：引用 Github Issues/PR/Discussion、使用 Fix / Close 来关联一个 Issue、可折叠的区块、Draft / Ready for review、请求 Review、引用回复等内容。
+
+***
+整理编辑：[Mim0sa](https://juejin.cn/user/1433418892590136)
+
+1、[从响应式编程到 Combine 实践](https://mp.weixin.qq.com/s/b_q6R64xkq8Rl9EiIde4MA "从响应式编程到 Combine 实践") -- 来自：字节跳动技术团队
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：来自字节跳动技术团队的 Combine 实践记录，文章从浅到深讲解了响应式编程的特点、选择 Combine 的理由以及具体实践。也介绍了 Combine 中的三个关键概念，事件发布／操作变形／订阅使用，也提及了一些常见错误等，很适合不是特别了解响应式编程的同学。
+
+2、[不改一行业务代码，飞书 iOS 低端机启动优化实践](https://mp.weixin.qq.com/s/KQJ5QXHdhwHRN65KdD45qA "不改一行业务代码，飞书 iOS 低端机启动优化实践") -- 来自：字节跳动技术团队
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：低端机启动优化实践，文章讨论了在低端机的情况下，会在启动时有哪些特点，介绍了在 GCD queue 上发现的问题和优化方案。
+
+3、[RunLoop的实际使用](https://mp.weixin.qq.com/s/GrkCUyxsoxqdkbeJcoAIdw "RunLoop的实际使用") -- 来自：搜狐技术产品
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：来自搜狐技术产品的一篇比较基础的 RunLoop 文章，从线程保活开始介绍了 RunLoop 在实际开发中的使用，然后介绍了卡顿监测和 Crash 防护中的高阶使用。
+
+4、[iOS下锁的独白](https://mp.weixin.qq.com/s/3d365xrDKp7TwwY_htloiA "iOS下锁的独白") -- 来自：搜狐技术产品
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：来自搜狐技术产品的一篇关于锁的文章，介绍了 iOS 中的锁有哪一些，以及如何使用。文章中的代码和注释清晰明了，归纳的也很全。
+
+5、[Avoiding race conditions in Swift](https://medium.com/swiftcairo/avoiding-race-conditions-in-swift-9ccef0ec0b26 "Avoiding race conditions in Swift") -- 来自：Mostafa Abdellateef
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：一篇关于如何避免竞争的文章，文章内容比较简单，但是观点很深入，探讨了在软件的设计中去避免资源的竞争，靠的不是一味的使用各种锁、栅栏，而是精良的设计。文中举的例子生动易懂且随文的图片制作精良。
+
+6、[How do 3D transforms of iOS views work under the hood?](https://www.thealexanderlee.com/blog/how-do-3d-transforms-of-ios-views-work-under-the-hood "How do 3D transforms of iOS views work under the hood?") -- 来自：Alex Lee
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136)：本文主要介绍了 3D transforms 的各种变化是怎么得来的，配有手绘介绍图，但需要一点点数学知识才可以读懂。
+
+
+***
+1、[在 SwiftUI 中实现视图居中的若干种方法](https://www.fatbobman.com/posts/centering_the_View_in_SwiftUI/ "在 SwiftUI 中实现视图居中的若干种方法") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：将某个视图在父视图中居中显示是一个常见的需求，即使对于 SwiftUI 的初学者来说这也并非难事。在 SwiftUI 中，有很多手段可以达成此目的。本文将介绍其中的一些方法，并对每种方法背后的实现原理、适用场景以及注意事项做以说明。
+
+2、[SwiftUI Navigation 框架的新功能](https://www.appcoda.com.tw/swiftui-navigation/ "SwiftUI Navigation 框架的新功能") -- 来自：AppCoda 编辑团队
+
+[@远恒之义](https://github.com/eternaljust)：自推出以来，NavigationView 一直都是 SwiftUI Navigation 框架的致命弱点。它之前不支持 NavigationLink 中延迟载入目标视图，无法以编程方式导航 Deep Link。在 iOS 16 中，Apple 推出了一个以数据驱动的新导航结构 NavigationStack，让开发者可以从堆栈中推入和弹出视图，NavigationPath 用于管理 routing 堆栈，同时使用 navigationDestination 修饰符来有效率地导航视图。
+
+3、[ContextMenu in SwiftUI](https://www.swiftanytime.com/contextmenu-in-swiftui/ "ContextMenu in SwiftUI") -- 来自：Team SA
+
+[@远恒之义](https://github.com/eternaljust)：在 UiKit 中，使用 3D Touch 按压可实现 Peek 和 Pop 快速预览内容并提供上下文菜单操作，这是一个非常棒的交互体验。在 SwiftUI 中，我们可以用 Menu 弹出菜单进行交互，使用 ContextMenu 则能达到和 UiKit 类似的体验。本文将介绍使用 .contextMenu 修饰符来长按触发上下文菜单，并结合 Menu 和 Button 来添加子菜单。
+
+4、[SwiftUI Gauge](https://sarunw.com/posts/swiftui-gauge/ "SwiftUI Gauge") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：仪表 Gauge 在 iOS 16 (SwiftUI 4) 中引入，是一种能显示范围内值的视图。在现实世界中，仪表是用于测量某物的大小、数量或内容，比如燃油表、温度表、转速表和速度表等仪器设备。Gauge 和 Slider 有些类似，你可以将 Gauge 视为 ProgressView 和 Slider 的结合。本文将介绍 Gauge 的使用方法，几种样式标签显示，以及如何进行自定义仪表视图。
+
+5、[Lock screen widgets in SwiftUI](https://swiftwithmajid.com/2022/08/30/lock-screen-widgets-in-swiftui/ "Lock screen widgets in SwiftUI") -- 来自：Majid
+
+[@远恒之义](https://github.com/eternaljust)：锁屏小组件是 iOS 16 最重磅的功能更新，作为 iPhone 设备上最顶级的访问入口，我们需要把握住用户使用自家 App 的曝光机会。实现锁屏小部件非常简单，因为它的 API 能与主屏幕小部件共享相同的代码。本文将介绍如何为我们的应用程序实现锁屏小部件。
+
+
+***
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+
+1. [基于 LLVM 自制编译器——序](http://chuquan.me/2022/07/17/compiler-for-kaleidoscope-00/ "基于 LLVM 自制编译器——序")  -- 来自：楚权的世界
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：文章是基于官方教程 [《My First Language Frontend with LLVM Tutorial》](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html "《My First Language Frontend with LLVM Tutorial》") 的翻译，有助于加深对编译原理的理解。
+
+   这位大佬的其他内容也值得推荐。
+
+2. [How to improve iOS build times with modularization](https://www.runway.team/blog/how-to-improve-ios-build-times-with-modularization "How to improve iOS build times with modularization") -- 来自：Bruno Rocha
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：文章分析了影响 iOS 构建的因素，以及当我们使用模块化后如何使用 **API/Impl** 技术更快地编译相互依赖的模块。
+
+3. [ARC and Memory Management in Swift](https://www.raywenderlich.com/966538-arc-and-memory-management-in-swift "ARC and Memory Management in Swift") -- 来自：RayWenderlich
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：RayWenderlich 教程系列的文章质量都比较高，本文介绍了 ARC 的工作原理以及内存管理的最佳实践，顺便介绍了如何发现内存泄露，很完整的一个教程。
+
+4. [Hot Reloading in Swift](https://www.merowing.info/hot-reloading-in-swift/ "Hot Reloading in Swift") —— Krzysztof Zabłocki
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：如同 Injection  一样的帮助热重载的工具[DyCI](https://github.com/DyCI/dyci-main "DyCI")，文章并没有涉足原理，但是讲述了一些设计历程。
+
+5. [App 如何通过注入动态库的方式实现极速编译调试？](https://time.geekbang.org/column/article/87188 "App 如何通过注入动态库的方式实现极速编译调试？")—— 戴铭《iOS 开发高手课》
+
+   [@夏天](https://juejin.cn/user/3298190611456638)：使用动态库加载方式进行极速调试，简单分析了 Flutter 和 Injection 的原理。
+
+***
+整理编辑：[东坡肘子](https://www.fatbobman.com)
+
+> 本期将介绍近期的几篇优秀博文
+
+1、[SwiftUI布局协议](https://swiftui-lab.com/layout-protocol-part-1/ "SwiftUI布局协议") -- 来自：Javier
+
+[@东坡肘子](https://www.fatbobman.com/)：在 SwiftUI 诞生初期，SwiftUI-Lab 的 Javier 便对 SwiftUI 进行了深入地研究，可以说很多 SwiftUI 的使用者都是通过阅读他的文章才开始了解 SwiftUI 的布局机制。针对今年 SwiftUI 新增的 Layout 协议，Javier 也贡献出了精彩研究文章。文章共分上下两部分，上篇着重介绍理论，下篇提供了许多有趣的案例演示。
+
+2、[iPhone 14 屏幕尺寸](https://useyourloaf.com/blog/iphone-14-screen-sizes/ "iPhone 14 屏幕尺寸") -- 来自：Keith Harrison
+
+[@东坡肘子](https://www.fatbobman.com/)：iPhone 14 Pro 和 iPhone 14 Pro Max 用灵动岛替换了刘海，这导致了屏幕的分辨率也发生了变化。本文对 2022 年 iPhone 14 系列机型的屏幕尺寸的变化做了总结。
+
+3、[如何判断 ScrollView、List 是否正在滚动中](https://www.fatbobman.com/posts/how_to_judge_ScrollView_is_scrolling/ "如何判断 ScrollView、List 是否正在滚动中") -- 来自：Holly Borla
+
+[@东坡肘子](https://www.fatbobman.com/)：SwiftUI 4 重写了 ScrollView 和 List 的底层实现，这意味着以前通过 Hack 的方式获取滚动状态的手段将不再有效。本文将介绍几种在 SwiftUI 中获取当前滚动状态的方法，每种方法都有各自的优势和局限性。
+
+4、[Swift 5.7 正式发布](https://www.swift.org/blog/swift-5.7-released/ "Swift 5.7 正式发布") -- 来自：Holly Borla
+
+[@东坡肘子](https://www.fatbobman.com/)：Swift 5.7 现已正式发布! Swift 5.7包括对语言和标准库的重大补充，对编译器的增强以获得更好的开发者体验，对Swift生态系统中的工具的改进，包括SourceKit-LSP和Swift Package Manager，完善的Windows支持等等。
+
+5、[Combine中的内存管理](https://tanaschita.com/20220912-memory-management-in-combine/ "Combine中的内存管理") -- 来自：Holly Borla
+
+[@东坡肘子](https://www.fatbobman.com/)：就像其他异步操作一样，内存管理是 Combine 的一个重要部分。一个订阅者只要想接收值就需要保留一个订阅，然而，一旦不再需要订阅，所有的引用应该被正确地释放。在这种情况下，一个常见的问题是我们是否应该使用弱引用。本文将通过一些例子来帮助读者更好地理解 Combine 中的内存管理。
+
+6、[Apple Watch 应用开发系列](https://juejin.cn/post/7136115417323405325 "Apple Watch 应用开发系列") -- 来自：Layer
+
+[@东坡肘子](https://www.fatbobman.com/)：2015 年 4 月 24 日，Apple 发布了第一代 Apple Watch。 无论我们对 Apple Watch 看法如何，watchOS 肯定是我们要支持的 Apple 生态系统的一部分，确保我们的应用获得更大的曝光率。作者将通过创建一个 watchOS 应用程序，来展示如何将我们现有的 iOS 开发知识转移到 watchOS 上来。
+
+7、[灵动岛开发演示](https://www.youtube.com/watch?v=gEWvV-TmjqE&t=65s "灵动岛开发演示") -- 来自：Kavsoft
+
+[@东坡肘子](https://www.fatbobman.com/)：Kavsoft 将在本视频中演示如何使用 SwiftUI 开发可用于 Apple iPhone 14 Pro 灵动岛的 Live Actitivy。
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+1、[How necessary are the programming fundamentals?](https://swiftrocks.com/how-necessary-are-the-programming-fundamentals "How necessary are the programming fundamentals?") -- 来自： Bruno Rocha
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：我们平时写写业务代码好像用不到高深的算法、数据结构等知识，但是在大厂的面试中似乎又不可避免以高难度的形态出现，那这些编程基础知识到底有什么用呢？本文的作者讨论了这一普遍的现象，并以生动的例子提出了自己的见解和类比，并解释了这种情况出现的原因，同时也对这种略显病态的面试流程提出了自己的看法，如果你也有类似的疑惑，相信这篇文章可以给你一些启发。
+
+2、[DocC Tutorial for Swift](https://www.raywenderlich.com/34919511-docc-tutorial-for-swift-getting-started "DocC Tutorial for Swift") -- 来自： raywenderlich
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：在 WWDC21 上，Apple 推出了 DocC，这是一个文档编译器，可以在 Xcode 文档窗口中构建和查看 Swift 包的文档。Apple 在 WWDC22 中扩展了 DocC 功能，因此它也可以记录 Swift 和 Objective-C 项目。在这个教程中，会告诉你 DocC 的工作原理、一些实操的例子以及如何导出和发布。
+
+3、[How to create Rounded Corners Button in UIKit](https://sarunw.com/posts/uikit-rounded-corners-button/ "How to create Rounded Corners Button in UIKit") -- 来自： Sarunw
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：相信很多人还不知道在 iOS 15 之后，我们可以使用 `UIButton.Configuration` 来设置按钮的圆角以及其他表现，这篇文章就带大家熟悉一下这个好用的配置属性。
+
+4、[聊聊 iOS 中的像素对齐](https://juejin.cn/post/7124658703088910350 "聊聊 iOS 中的像素对齐") -- 来自： JPlay
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：当一个 UILabel 的宽度是 500.001 和 500 时会有什么区别？本文探讨了像素不对齐出现的原因以及系统像素补齐的原则，并给出了一些避免和解决的方法。
+
+5、[重新开始学习计算机](https://juejin.cn/post/7124660156612214814 "重新开始学习计算机") -- 来自： JPlay
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：这是一份一位程序员面对 35 岁职业魔咒的应对之道：拥有扎实的、广泛的、不受平台局限的计算机基础知识。
+
+
+***
+1、[StateObject 与 ObservedObject](https://www.fatbobman.com/posts/StateObject_and_ObservedObject/ "StateObject 与 ObservedObject") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：StateObject 和 ObservedObject 两者都是用来订阅可观察对象（ 符合 ObservableObject 协议的引用类型 ）的属性包装器。当被订阅的可观察对象通过内置的 Publisher 发送数据时（ 通过 @Published 或直接调用其 objectWillChange.send 方法 ），StateObject 和 ObservedObject 会驱动其所属的视图进行更新。StateObject 是在 SwiftUI 2.0 中才添加的属性包装器，它的出现解决了在某些情况下使用 ObservedObject 视图会出现超预期的问题。本文将介绍两者间的异同，原理以及注意事项。
+
+2、[SwiftUI 开发之旅：适配深色模式](https://juejin.cn/post/7150553079060889614 "SwiftUI 开发之旅：适配深色模式") -- 来自：掘金 new_cheng
+
+[@远恒之义](https://github.com/eternaljust)：从 iOS 13 开始，苹果支持了深色模式，在昏暗的环境中，我们打开深色模式可获得出色的视觉体验。SwiftUI 默认支持深色模式，对于基本视图的文字和背景都有默认的深色模式样式。本文作者介绍了 Color Set、overrideUserInterfaceStyle 等适配方法，还有如何支持用户手动切换颜色模式。对于深色模式的适配，推荐采用 Assets.xcassets 的方式去定义一个完整的颜色集来适配。
+
+3、[How to dismiss sheet in SwiftUI](https://sarunw.com/posts/swiftui-dismiss-sheet/ "How to dismiss sheet in SwiftUI") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：模态或表单（.sheet）是 iOS 中的核心展示之一。在 SwiftUI 中有三种方法（`in the same view`、`with @Binding`、`with @Environment`）来关闭表单，具体的方式取决于你的视图结构以及支持的最低 iOS 版本。
+
+4、[SwiftUI List Style examples](https://sarunw.com/posts/swiftui-list-style/ "SwiftUI List Style examples") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：SwiftUI 中的 list 列表有多种样式，基于不同的平台也支持许多不同的风格。本文中将专注于 iOS 平台，介绍六种不同的风格：`.automatic`、`.insetGrouped`、`.grouped`、`.inset`、`.plain`、`.sidebar`，每种样式都有简单的代码示例和展示配图。
+
+5、[How to show badge on Tab Bar Item in SwiftUI](https://sarunw.com/posts/swiftui-tabbar-badge/ "How to show badge on Tab Bar Item in SwiftUI") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：tabItem 上的红点角标非常能吸引用户的注意，通常与应用程序图标上未读通知的数量相关联。在 SwiftUI 中，我们能非常方便的实现这个功能，使用 `badge(_:)` 来修饰选项卡栏项目（tabItem），支持设置整数（`.badge(3)`）和字符串（`.badge("99+")`）。
+
+6、[How To Automatically Create .gifs From The iOS Simulator](https://digitalbunker.dev/automatically-create-gifs-from-the-ios-simulator/ "How To Automatically Create .gifs From The iOS Simulator")  -- 来自：digitalbunker
+
+[@远恒之义](https://github.com/eternaljust)：如何在不需要任何第三方工具的情况下，直接从 iOS 模拟器录制视频并导出 .gif？首先，请按住 Option 键并将鼠标悬停在模拟器“保存屏幕”按钮上。按下该 Option 键，此设置将更改为“录制屏幕”。接着，你可以像往常一样继续录制你的应用程序。最后，停止录制，在视频预览消失之前，右键单击它并选择“另存为动画 GIF”。
+
+![来自 digitalbunker 的演示操作 gif](https://cdn.zhangferry.com/Images/ios-simulator-gif.gif)
+
+***
+> 本期我们将推荐一些与实时活动和灵动岛有关的优秀内容
+
+1、[在 iOS 16 中显示实时活动](https://swiftwithmajid.com/2022/09/21/displaying-live-activities-in-ios16/ "在 iOS 16 中显示实时活动") -- 来自：Majid
+
+[@东坡肘子](https://www.fatbobman.com/)：实时活动小组件是 iOS 16 最突出的功能之一。iOS 16 允许我们在锁屏界面或 iPhone 14 Pro 的灵动岛区域显示来自应用程序持续活动的实时状态。本文将介绍如何使用新的 ActivityKit 框架为我们的应用程序构建实时活动小组件。
+
+2、[掌握 SwiftUI 的灵动岛](https://swiftwithmajid.com/2022/09/28/mastering-dynamic-island-in-swiftui/ "掌握 SwiftUI 的灵动岛") -- 来自：Majid
+
+[@东坡肘子](https://www.fatbobman.com/)：本文将介绍如何使用灵动岛功能在 iPhone 14 Pro 上显示应用程序中的实时活动，是上篇文章的延续。
+
+3、[灵动岛 Dynamic Island 初探](https://kingnight.github.io/programming/2022/09/28/灵动岛Dynamic-Island初探.html "灵动岛 Dynamic Island 初探") -- 来自：Kingnight
+
+[@东坡肘子](https://www.fatbobman.com/)：本篇文章将从软件开发角度，探索灵动岛的展现形式、功能限制、如何具体实现、适用场景等各方面的问题；帮助还不了解相关信息的开发者快速理解这一新的展现形式，并结合自身产品形态做出创新。
+
+4、[为 iPhone 14 Pro 的灵动岛设计](https://uxdesign.cc/designing-for-iphone-14-pro-dynamic-island-90ea7f68b71 "为 iPhone 14 Pro 的灵动岛设计") -- 来自：Niels Boey
+
+[@东坡肘子](https://www.fatbobman.com/)：作者是一个产品设计师，本文将从设计师的角度对灵动岛功能进行了介绍和讲解。
+
+5、[实时活动（ Live Activity ）- 在锁定屏幕和灵动岛上显示应用程序的实时数据](https://juejin.cn/post/7144268555779850248 "实时活动（ Live Activity ）- 在锁定屏幕和灵动岛上显示应用程序的实时数据") -- 来自：Layer
+
+[@东坡肘子](https://www.fatbobman.com/)：本文参考、翻译并实现了 Apple‘s documentation activitykit displaying live data with live activities 及 Updating and ending your Live Activity with remote push notifications 内容，并提供了范例代码。
+
+6、[如何激活灵动岛中的像素](https://twitter.com/iphone15ultra/status/1580821164594585600 "如何激活灵动岛中的像素") -- 来自：iPhone 15 Ultra
+
+[@东坡肘子](https://www.fatbobman.com/)：打开黑暗模式 -> 在后台播放一些音乐 -> 转到设置 -> 辅助功能 -> 显示与文本大小 -> 开启/关闭智能反转 -> 你将看到完整的💊。
+
+7、[iOS灵动岛【电商商品秒杀】开发实践](https://juejin.cn/post/7153236337074634788 "iOS灵动岛【电商商品秒杀】开发实践") -- 来自掘金
+
+[@邓利兵](https://github.com/erduoniba)：iOS灵动岛【电商商品秒杀】开发实践，详细讲解了灵动岛的基本概念、开发基本要素及细节。Demo中展示了主工程和灵动岛Widget的通讯方式及灵动岛Widget的布局方式。
+
+***
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+
+1、[Check for internet connection with Swift](https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift "Check for internet connection with Swift") -- Stack Overflow
+
+[@夏天](https://juejin.cn/user/3298190611456638): 当存在在 iOS App 上监测网络状态的需求时，不妨看一看这个提问，在回答中介绍了通过 `SCNetworkReachability` 来实现网络状态监听及 `NWPathMonitor`。如果你的系统支持的版本在 `iOS 12` 以上并且你有需要实现一个网络状态监听的程序，可以试一试`NWPathMonitor`。
+
+2、[Detecting Internet Access on iOS 12+ | by Ross Butler | Medium](https://medium.com/@rwbutler/nwpathmonitor-the-new-reachability-de101a5a8835 "Detecting Internet Access on iOS 12+ | by Ross Butler | Medium") -- Medium
+
+[@夏天](https://juejin.cn/user/3298190611456638): 这是一篇关于如果通过 `NWPathMonitor` 来实现 `iOS 12` 以上实现网络可达性判断的文章，文章介绍了 `NWPathMonitor` 的优点以及在后面断网时的不足，并且介绍了一个兼容的库 [Connectivity](https://github.com/rwbutler/Connectivity)，但是该库由于使用了 `Combine` 并不兼容 iOS 13 以下了。
+
+3、[我是如何在新西兰找到iOS开发工作的？](https://www.youtube.com/channel/UCiEbxa6e5o3mtBJIwhRxbHA?sub_confirmation=1 "我是如何在新西兰找到iOS开发工作的？")-- 陈宜龙(@iOS程序犭袁)
+
+[@夏天](https://juejin.cn/user/3298190611456638):  陈宜龙大佬是我学习 iOS 比较追寻的一个博主了，最近他润去了新西兰，可以查看他的其他的  `YouTube`  视频。
+
+
+***
+整理编辑：[Mimosa](https://juejin.cn/user/1433418892590136)
+
+1、[SwifterSwift](https://github.com/SwifterSwift/SwifterSwift "SwifterSwift") -- github
+
+[@夏天](https://juejin.cn/user/3298190611456638): SwifterSwift 是 **500 多个原生 Swift 扩展的集合**，为 iOS、macOS、tvOS、watchOS 和 Linux 提供了（超过 500 个）适用于各种原生数据类型、UIKit 和 Cocoa 类的便捷方法、语法糖和性能改进。
+
+![](https://cdn.zhangferry.com/Images/SwifterSwift.png)
+
+2、[货拉拉用户 iOS 端卡顿优化实践](https://juejin.cn/post/7160951025782751263 "货拉拉用户 iOS 端卡顿优化实践") -- 货拉拉技术
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：卡顿优化一直是客户端性能治理的重要方向之一，优化卡顿，将 APP 的用户体验做到极致，在一定程度上能够提升用户的忠诚度和 APP 的市场占有率。本文是货拉拉技术通过检测卡顿以及对卡顿的治理实践的记录，同时也总结了一些在编码阶段就规避卡顿的方法。
+
+3、[云音乐 iOS 端代码静态检测实践](https://mp.weixin.qq.com/s/5ZcGBCnrUYwUA0RXyPJt9w "云音乐iOS端代码静态检测实践") -- 网易云音乐技术团队
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：本文是网易云音乐技术团队保障代码质量、防止代码劣化的一套静态代码检测实践，文中代码详尽，步骤也很清晰地记录了通过定制 OCLint 并自定义规则、优化静态检测耗时的过程。
+
+4、[Swift Package Manager 工程实践](https://mp.weixin.qq.com/s/q7jolU99K7FI9JvAxjwRwg "Swift Package Manager 工程实践") -- 狐友技术团队
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：本文将详细介绍狐友团队在引入 Swift Package Manager 进行工程实践中，探索和累积的相关知识和实践经验，我们将从结构设计、资源处理、链接方式的选择、编译与链接参数设置、异常处理，这五个方面展开详细介绍，每个小部分结尾都提供了最佳实践的总结。
+
+5、[5-Second Test](https://babich.biz/5-second-test-in-product-design/ "5-Second Test") -- Nick Babich
+
+[@Mimosa](https://juejin.cn/user/1433418892590136)：5 秒测试是一个简单的练习，可以帮助衡量用户对您的设计的第一印象。本文是有关如何使用此类测试的快速指南，对于 app 开发来说，对我们的产品设计有点作用。
+
+6、[百度APP iOS端内存优化实践-内存管控方案](https://mp.weixin.qq.com/s/dETOGD3NYU2SdZhxGu0SZg) --  百度App技术
+
+[@Hello World](https://juejin.cn/user/2999123453164605/posts)：内存问题是业务开发中经常被忽视的问题，恰恰它又是很多 Crash 的罪魁祸首。例如 OOM，如何治理内存成了开发中的重要一环。本文从基础原理出发讲述了如何监控内存。并从源码角度分析了应该如何选取内存指标作为衡量的阈值。
+
+***
+> 本期将推荐最近的一些优秀博文
+
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
+
+1、[Swift 正则速查手册](https://onevcat.com/2022/11/swift-regex/ "Swift 正则速查手册") -- 来自：王巍
+
+[@东坡肘子](https://www.fatbobman.com/): 与其他语言和平台相比，正则表达式一直是 Swift 语言一个相当大的痛点。Swift 5.7 引入了大量与正则表达式相关的改进。作者在本文中对与新正则有关的话题、方法与示例进行了详尽整理。
+
+2、[深入理解 Aspects 设计原理](http://chuquan.me/2022/11/13/understand-principle-of-aspects/ "深入理解 Aspects 设计原理") -- 来自：楚权
+
+[@东坡肘子](https://www.fatbobman.com/): Aspects 是一款轻量且简易的面向切面编程的框架，其基于 Objective-C Runtime 原理实现。Aspects 允许开发者对类的所有实例的实例方法或单个实例的实例方法添加额外的代码，并且支持设置代码的执行时机。本文记录作者在阅读 Aspects 源码后的一些收获和思考。
+
+3、[Swift 包管理器中的二进制目标](https://www.avanderlee.com/optimization/binary-targets-swift-package-manager/ "Swift 包管理器中的二进制目标") -- 来自：Antoine van der Lee
+
+[@东坡肘子](https://www.fatbobman.com/): Swift Package Manager（SPM）允许软件包将 xcframework bundle 声明为可用目标。该技术通常用于提供对闭源库的访问，并且可以通过减少获取 SPM 存储库所花费的时间来提高 CI 性能。在向项目添加二进制目标时，必须考虑其优缺点，并了解 xcframeworks 在它们支持的平台上所能发挥作用。
+
+4、[如何在 SwiftUI 中创建条形图](https://mp.weixin.qq.com/s/xPykVjkb9aLtu8rha3tQqA) -- 来自：Swift 社区
+
+[@东坡肘子](https://www.fatbobman.com/): Apple 在 WWDC 2022 期间宣布了一个名为 Swift Charts 的全新框架，方便开发者创建与苹果官方水准相当的图表应用。本文是 Swift 社区推出的有关 Swift Charts 系列文章中的一篇，其他内容还包括：[如何创建折线图](https://mp.weixin.qq.com/s/V_qXskB41WYHwaPdV877mg)、[在 Swift 图表中使用 Foudation 库中的测量类型](https://mp.weixin.qq.com/s/V_qXskB41WYHwaPdV877mg) 等内容。
+
+5、[用 ViewInspector 进行 SwiftUI 视图的单元测试](https://augmentedcode.io/2022/11/14/basic-unit-tests-for-swiftui-view-with-viewinspector/ "用 ViewInspector 进行 SwiftUI 视图的单元测试") -- 来自：Toomas Vahter
+
+[@东坡肘子](https://www.fatbobman.com/): 为 UIKit 代码编写单元测试很容易，但对于 SwiftUI 的视图来说则要困难许多。目前主要通过两种途径进行这项工作：使用 pointfreeco 的 SnapshotTesting 库进行快照测试或使用 ViewInspector 检查视图。作为 ViewInspector 的作者， Toomas Vahter 将通过本文向你展示如何为 SwiftUI 的视图构建单元测试。
+
+6、[Ask Apple 2022 十月问答汇总](https://www.fatbobman.com/tags/ask-apple-2022/ "Ask Apple 2022 十月问答汇总") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): Ask Apple 为开发者与苹果工程师创造了在 WWDC 之外进行直接交流的机会。作者用四篇文章对 10 月份活动中与 SwiftUI 和 Core Data 有关的问答内容进行了整理。或许是受到开发者对本次活动正向反馈的鼓励，在本周苹果继续举办了 Ask Apple 活动，有逐步常态化的趋势。其中【集锦-简体中文】频道不仅会对英文问答进行汇总，同时也会用中文为开发者解答各类问题，希望广大开发者能够踊跃参与。
+
+***
+整理编辑：[远恒之义](https://github.com/eternaljust)
+
+1、[在 SwiftUI 中创建自适应的程序化导航方案](https://www.fatbobman.com/posts/adaptive-navigation-scheme/ "在 SwiftUI 中创建自适应的程序化导航方案") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：随着苹果对 iPadOS 的不断投入，越来越多的开发者都希望自己的应用能够在 iPad 中有更好的表现。尤其当用户开启了台前调度（ Stage Manager ）功能后，应用对不同视觉大小模式的兼容能力就越发显得重要。本文将就如何创建可自适应不同尺寸模式的程序化导航方案这一内容进行探讨。
+
+2、[简介 iOS 16 新的 Layout 协议](https://www.appcoda.com.tw/ios16-layout-protocol/ "简介 iOS 16 新的 Layout 协议") -- 来自：appcoda
+
+[@远恒之义](https://github.com/eternaljust)：在 iOS 16 中，Apple 推出了 Layout 协议，希望进一步简化在 SwiftUI 构建 UI Layout 的步骤。本文将介绍这个新协议的用途和使用方法，并用它们的 Layout 规则创建属于自己的容器。
+
+3、[Swift project in 2023](https://www.swift.org/blog/focus-areas-2023/ "Swift project in 2023") -- 来自：swift.org
+
+[@远恒之义](https://github.com/eternaljust)：来自 Swift 官网博客的消息，Swift 核心团队收集并整理了社区和论坛所关注的信息，列出了他们明年的工作计划和内容。其中核心团队会更新重组，将创建更多工作组，包括一个致力于提高 Swift 跨平台可用性的工作组。语言工作组专注于在五个主要语言领域：Concurrency（并发）、Generics（泛型）、Ownership（内存所有权）、Macros（宏）和 C++ interoperability（C++ 互操作性）。同时编译器开发团队将改进编译器与构建系统和自身其他调用的交互方式。其他还包括对 Swift 包管理器的优化，文档工作组将开发工具来解决文档需求，网站工作组专注于通过多种方式增强 swift.org 网站，服务器工作组专注于提升服务器和 Linux 上的 Swift 状态等。
+
+4、[如何在 SwiftUI 中使用手势](https://www.swiftanytime.com/gestures-in-swiftui/ "如何在 SwiftUI 中使用手势") -- 来自：swiftanytime
+
+[@远恒之义](https://github.com/eternaljust)：在如今的触摸屏手机中，实体按键快消失殆尽了，几乎所有的操作都基于手指手势。现代手机可以识别多种手势感应：点击、拖动、滑动、捏合、双击、旋转、摇动、触摸和长按等等，本文将介绍 SwiftUI 中一些基本且最常用的手势使用。
+
+5、[SwiftUI 按钮的基本用法](https://sarunw.com/posts/swiftui-button-basic/ "SwiftUI 按钮的基本用法") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：SwiftUI 中的按钮十分方便使用和自定义。按钮界面很简单，只需要做两件事：动作和标签。动作是一种方法或闭包，当用户单击或点击按钮时会调用它，标签是描述按钮用途的视图，可以是文本、图标图像或任何自定义视图。使用自定义按钮也非常容易，任选 `buttonStyle(_:)` 内置五种按钮样式之一即可。
+
+6、[如何在 SwiftUI 中使用自定义字体](https://sarunw.com/posts/swiftui-custom-font/ "如何在 SwiftUI 中使用自定义字体") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：要在 SwiftUI 中使用自定义字体，你需要执行以下步骤：查找在你的应用中能免费使用的自定义字体；将字体文件添加到你的 Xcode 项目，同时在 Info.plist 中引入注册；最后使用 `custom(_:size:)` 方法来初始化字体。
+
+***
+整理编辑：[夏天](https://juejin.cn/user/3298190611456638)
+
+1、[当谈论协程时，我们在谈论什么](https://mp.weixin.qq.com/s/IO4ynnKEfy2Rt-Me7EIeqg)  -- 来自： 腾讯程序员
+
+[@夏天](https://juejin.cn/user/3298190611456638): 本文详细介绍了协程的概念，作者通过文章来回答了四个问题： 
+
+* **Q1 (Why):** 为什么需要协程？
+* **Q2 (What):** 到底什么是协程？
+* **Q3 (How):** 怎么实现协程 (库)？
+* **Q4 (Usage):** 使用协程时需要注意什么？
+
+不但能够帮助你理解协程，而且文章结构清晰。
+
+2、[Be careful with Obj-C bridging in Swift](https://swiftrocks.com/be-careful-with-objc-bridging-in-swift "Be careful with Obj-C bridging in Swift") -- 来自：SwiftRocks
+
+[@夏天](https://juejin.cn/user/3298190611456638): 当我们要将 Swift 中 `String` 转为 `NSString` 时，一般使用 `as` 语法糖来进行转换，但是作者认为这并不是一个安全的方案。 
+
+3、[Understanding `@inlinable` in Swift](https://swiftrocks.com/understanding-inlinable-in-swift "Understanding `@inlinable` in Swift") -- 来自：SwiftRocks
+
+[@夏天](https://juejin.cn/user/3298190611456638): 了解 `@inlinable` 是如何工作的，通过使用 `@inlinable` 可以提高我们的某些代码的性能。
+
+4、[App Store and TestFlight review times](https://www.runway.team/appreviewtimes "App Store and TestFlight review times") --  来自：RUNWAY
+
+[@夏天](https://juejin.cn/user/3298190611456638): 一个关于 App Store 和 TestFlight 审核时间的统计的文章。当我们上架到 App Store 和 TestFlight 时，我们大概需要多久才能审核成功。
+
+
+***
+> 本期将推荐近期的一些优秀博文，涵盖 ChatGPT、SwiftUI、Swift 等方面的内容
+
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
+
+1、[注册 ChatGPT 全攻略](https://zhuanlan.zhihu.com/p/589365506 "注册 ChatGPT 全攻略") -- 来自：BoxChen
+
+[@东坡肘子](https://www.fatbobman.com/): 上周 IT 届最火爆的新闻莫过于 OpenAI 推出了用于人机交流的 ChatGPT 模型。遗憾的是，由于验证码的关系，国内开发者很难亲身体验。本文将介绍通过接入码平台实现注册的全过程。由于原文网站访问不便，附带的是知乎转载的地址。
+
+2、[用 OpenAI 的 ChatGPT 会话机器学习模型为 SwitfUI 应用程序创建工作代码](https://www.createwithswift.com/prototyping-swiftui-interfaces-with-openais-chatgpt/ "用 OpenAI 的 ChatGPT 会话机器学习模型为 SwitfUI 应用程序创建工作代码") -- 来自：Moritz Philip Recke
+
+[@东坡肘子](https://www.fatbobman.com/): 最近一段时间，OpenAI 发布了许多人工智能 API 和机器学习模型，支持文本摘要、翻译、解析非结构化数据、分类、文本组合等用例。最新添加的是一个名为 ChatGPT 的模型，它是作为对话工具实现的。本文将介绍如何使用 OpenAI 的 ChatGPT 会话机器学习模型为 SwitfUI 应用程序创建工作代码。
+
+3、[在 SwiftUI 中构建自定义布局](https://swiftwithmajid.com/2022/11/16/building-custom-layout-in-swiftui-basics/ "在 SwiftUI 中构建自定义布局") -- 来自：Majid
+
+[@东坡肘子](https://www.fatbobman.com/): SwiftUI 4 中提供了 Layout 协议，允许开发者在不使用GeometryReader 的情况下挖掘布局系统来构建自定义布局。作者将通过三篇文章（ 基础、缓存、间距 ）介绍如何通过新的布局协议在 SwiftUI 中构建布局。
+
+4、[MacOS Ventura 系统 ssh 不再支持 ssh-rsa 的原因及解决办法](https://blog.twofei.com/881/ "MacOS Ventura 系统 ssh 不再支持 ssh-rsa 的原因及解决办法") -- 来自：桃子
+
+[@东坡肘子](https://www.fatbobman.com/): 升级到 MacOS Ventura 系统后，如果尝试使用 ssh 登录服务器，大概率会发现无法登录。本文将分析出现问题的原因并提供解决的办法。
+
+5、[SwiftUI 与 Core Data](https://www.fatbobman.com/posts/modern-Core-Data-Problem/ "SwiftUI 与 Core Data") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): 如何让 Core Data 融入流行的应用架构体系，在 SwiftUI、TCA、Unit Tests、Preview 等环境下更加顺畅地工作已成为很多开发者当前主要困扰。作者将通过几篇文章来介绍近半年来在这方面的一些想法、收获、体会及实践。
+
+6、[Swift Error](https://juejin.cn/post/7130593449174106149/ "Swift Error") -- 来自：移动端小伙伴
+
+[@东坡肘子](https://www.fatbobman.com/): 在开发中，往往最容易被忽略的内容就是对错误的处理。有经验的开发者，能够对自己写的每行代码负责，而且非常清楚自己写的代码在什么时候会出现异常，这样就能提前做好错误处理。Swift Error Handling 能够让开发者快速而简便的告知编译器一个函数能否抛出错误，并且在抛出后以合适的方式去处理错误。作者将通过两篇文章对 Swift Error 的用法、特点、优化等内容进行介绍。
+
+***
+整理编辑：[Mim0sa](https://juejin.cn/user/1433418892590136/posts)
+
+1、[源码探索SwiftUI框架—TCA](https://juejin.cn/post/7164699554711863326 "源码探索SwiftUI框架—TCA") -- 来自：合合信息
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：本文将会详细的带你体验 TCA 框架该如何去使用，从定义、绑定到调用，并从源码探析整个流程的逻辑，清晰易懂。同时 TCA 也还在快速的发展和推进中，可以期待 TCA 的完善。
+
+2、[《游戏学导论》- 笔记](http://pjhubs.com/2022/01/29/game05/ "《游戏学导论》- 笔记") -- 来自：PJHubs
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：这是一份博主学习华科熊硕老师的《游戏学导论》的系列笔记文章，主要讨论了游戏作为人文社会的一部分中，人与游戏之间的关系和理解，感兴趣的朋友可以读一下。
+
+3、[GCDWebServer 使用详解](https://xiaovv.me/2018/11/30/GCDWebServer-BasicUse/ "GCDWebServer 使用详解") -- 来自：笑忘书店
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：GCDWebServer 是一个基于 GCD 的轻量级服务器框架，使用 GCDWebServer 我们可以很轻松的在我们的应用中搭建一个 HTTP 服务器，比如可以使用 GCDWebServer 来实现一个无线U盘 App。该篇文章比较详细的讲解了这个框架的主要使用流程，有两种语言的实现，代码内容详实。
+
+4、[SwiftOnTap](https://swiftontap.com/ "SwiftOnTap") -- 来自：SwiftOnTap
+
+[@Mim0sa](https://juejin.cn/user/1433418892590136/posts)：这是一份看起来很像官方文档，但是又比官方文档详细很多的 SwiftUI 文档，由一些 iOS 开发者一起维护，将一些在官方文档上写的不清楚、不详细的地方重新编写，填补了 Apple 文档的一些漏洞，其中各种 UI 类的实现还有动画和图片作为辅佐，很好用。
+
+***
+整理编辑：[@远恒之义](https://github.com/eternaljust)
+
+1、[SwiftUI 与 Core Data —— 安全地响应数据](https://www.fatbobman.com/posts/modern-Core-Data-Respond-Data-safely/ "SwiftUI 与 Core Data —— 安全地响应数据") -- 来自：东坡肘子
+
+[@远恒之义](https://github.com/eternaljust)：保证应用不因 Core Data 的原因导致意外崩溃是对开发者的起码要求。本文将介绍可能在视图中产生严重错误的原因，如何避免，以及在保证视图对数据变化实时响应的前提下如何为使用者提供更好、更准确的信息。
+
+2、[如何使用 SwiftUI Grid API 创建网格布局](https://www.appcoda.com.tw/swiftui-grid-api/ "如何使用 SwiftUI Grid API 创建网格布局") -- 来自：Simon Ng
+
+[@远恒之义](https://github.com/eternaljust)：Grid 视图是一种容器视图，它以二维布局排列其他视图，Grid 为开发人员提供了构建基于网格的布局的更多选项。你可以使用 HStack 和 VStack 来构建类似的布局，不过 Grid 视图可以为你节省大量代码并使你的代码可读性更高，你可以尝试使用 Grid 来构建一些有趣的布局。
+
+3、[如何对 SwiftUI list 中的列表行进行重新排序](https://sarunw.com/posts/swiftui-list-onmove/ "如何对 SwiftUI list 中的列表行进行重新排序") -- 来自：sarunw
+
+[@远恒之义](https://github.com/eternaljust)：想要启用 SwiftUI 列表行重新排序，你只需执行以下步骤即可：创建数据源（必须是可变的）、使用填充列表视图 `ForEach`、将 `onMove(perform:)` 修饰符应用于 `ForEach`、手动移动项目 `onMove` 的闭包，调用方法十分简单方便。
+
+4、[如何创建 iOS 锁屏小部件？](https://swiftsenpai.com/development/create-lock-screen-widget/?utm_source=rss&utm_medium=rss&utm_campaign=create-lock-screen-widget "如何创建 iOS 锁屏小部件？") -- 来自：Lee Kah Seng
+
+[@远恒之义](https://github.com/eternaljust)：在 iOS 16 中，Apple 新增了锁定屏幕，其中锁屏小组件带来 app 新的曝光入口。与桌面小组件类似，锁屏小组件主要用 WidgetKit 来实现功能。不同的是，Apple 引入了 3 个新的不同类型的锁屏小组件：`accessoryCircular`、`accessoryRectangular` 和 `accessoryInline`，前两个为小与中两种尺寸，后者为单行文本。
+
+5、[用 SwiftUI 实现 AI 聊天对话 app - iChatGPT](https://juejin.cn/post/7175051294808211512 "用 SwiftUI 实现 AI 聊天对话 app - iChatGPT") -- 来自掘金：37手游iOS技术运营团队
+
+[@远恒之义](https://github.com/eternaljust)：iChatGP 是一款用 SwiftUI 实现的开源 ChatGPT app，支持系统 iOS 14.0+、iPadOS 14.0+、macOS 11.0+，目前已实现 ChatGPT 基本聊天功能：直接与 ChatGPT 对话，并且保留上下文；复制问题和回答内容；快捷重复提问。
+
+6、[EBPF 介绍](https://coolshell.cn/articles/22320.html "EBPF 介绍") -- 来自：酷壳
+
+[@远恒之义](https://github.com/eternaljust)：eBPF（extened Berkeley Packet Filter）是一种内核技术，它允许开发人员在不修改内核代码的情况下运行特定的功能。eBPF 比起传统的 BPF 来说，传统的 BPF 只能用于网络过滤，而 eBPF 则可以用于更多的应用场景，包括网络监控、安全过滤和性能分析等。耗子叔在文末留了一个彩蛋，聊了聊他对大火的 ChatGPT 一些看法。
+
+

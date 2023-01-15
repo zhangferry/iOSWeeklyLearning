@@ -14,6 +14,16 @@ def is_ci_env():
         return False
 
 
+def get_latest_weekly_index(weekly_folder_path):
+    """获取可发布的最新序号"""
+    current_index = 1
+    for file in os.listdir(weekly_folder_path):
+        res_number = re.findall(r"_(\d+)\.md", file)
+        if res_number and int(res_number[0]) > current_index:
+            current_index = int(res_number[0])
+    return current_index
+
+
 class BlogRepo:
     """blog仓库信息"""
     def __init__(self, git_url, branch):
@@ -143,13 +153,7 @@ class BlogArticleBuilder:
         # scripts path
         script_path = sys.path[0]
         weekly_folder_path = script_path + "/../" + "WeeklyLearning"
-        if not self.weekly_index:
-            current_index = 1
-            for file in os.listdir(weekly_folder_path):
-                res_number = re.findall(r"_(\d+)\.md", file)
-                if res_number and int(res_number[0]) > current_index:
-                    current_index = int(res_number[0])
-            self.weekly_index = current_index
+        self.weekly_index = get_latest_weekly_index(weekly_folder_path)
 
         return f"{weekly_folder_path}/iOSWeeklyLearning_{self.weekly_index}.md"
 
