@@ -524,7 +524,7 @@ push moduleID
 jump _dl_runtime_resolve
 ```
 
-1. 调用函数并不直接通过 `GOT` 跳转，而是通过一个叫作 `PLT` 项的结构来进行跳转，`bar` 两数在 `PLT` 中的项的地址我们称之为 `bar@plt`。
+1. 调用函数并不直接通过 `GOT` 跳转，而是通过一个叫作 `PLT` 项的结构来进行跳转，`bar` 函数在 `PLT` 中的项的地址我们称之为 `bar@plt`。
 2. `bar@plt` 指令通过 `GOT` 进行间接跳转指令，`bar@GOT` 表示 `GOT` 中保存 `bar` 这个函数相应的项。
 3. 如果链接器初始化阶段并未将 `bar` 的地址填入该项，而是将 `push n` （n 为 `bar` 这个符号引用在重定位表 `.rel.plt` 中的下标）的地址填入到 `bar@GOT` 中。。
 4. 接着又是一条 `push` 指令将模块的 `ID` 压入到堆栈，然后跳转到 `_dl_runtime_resolve`。
@@ -540,6 +540,16 @@ ELF 将 `GOT` 拆分成了两个表叫做  `got` 和  `got.plt` 。其中 `got` 
 - `.got.plt` 的其余项分别对应每个外部函数的引用，整体结构如下图。
 
 <img src="https://cdn.zhangferry.com/Images/WX20230109-195017@2x.png" width = "400"/>
+
+#### fishHook
+
+`fishHook` 由 faceBook 开发，可以在模拟器和设备上对 iOS 上运行的 `Mach-O` 二进制文件进行动态重新绑定符号。
+
+`__DATA ` 段可能包含两个与动态符号绑定相关的部分：`__nl_symbol_ptr `和`__la_symbol_ptr`。`__nl_symbol_ptr  ` 是指向非懒惰绑定数据的指针数组（这些数据在加载库时被绑定），`__la_symbol_ptr ` 是指向导入函数的指针数组，通常在第一次调用该符号时由名为 `dyld_stub_binder` 的例程填充（也可以告诉 `dyld` 在启动时绑定这些）。
+
+其中 `dyld_stub_binder` 的符号的地址是在二进制加载时就已经确定了，这个 `dyld_stub_binder` 有点类似于 Linux 下的 `_dl_runtime_resolve` 函数的作用，目的是为了完成真正的地址绑定工作，并将最终确定好的地址进行填充 `__la_symbol_ptr`，下次调用的时候即可直接跳转，这其实也就是延迟绑定机制的实现。
+
+`fishHook` 也主要利用了共享缓存功能和 `PIC` 技术来实现的 `hook` 功能。`dyld ` 通过更新 `Mach-O` 二进制文件 `__DATA` 段特定部分中的指针来绑定懒惰和非懒惰符号，`fishhook` 通过确定传递给 `rebind_symbols` 的每个符号名称的更新位置，然后写出相应的替换件来重新绑定这些符号。[出自fishHook 的官方介绍](https://github.com/facebook/fishhook)
 
 ### 动态链接相关结构
 
@@ -772,7 +782,16 @@ void * dlsym(void *handle, char *symbol);
 
 ### dyld
 
-关于 dyld **（The dynamic link editor）** 网上介绍的博客非常多，这里简单提一下，感兴趣的可以看下[源码]("https://github.com/apple-oss-distributions/dyld/tags")。
+在 Macos 系统上同样有使用静态库的诸多问题，例如程序链接时间变慢、最终可执行文件变大等等，同样需要动态链接。动态链接时，链接器不是将代码从库复制到最终程序中，而是记录了动态库中使用的符号名称以及库在运行时的路径，虚拟内存系统可在多个进程上重用相同的动态库，和 Linux 系统类似，动态链接仍会导致一些问题：
+
+1. 启动时间变短
+   - 启动应用程序不再只是加载一个可执行文件，而是加载所有关联的 .dylib，然后需要链接。
+2. 有更多的脏内存
+   - 对于静态库，链接器会将所有静态库中的所有全局变量放在主可执行文件中相同的 `__DATA  `页中。
+   - 使用动态库，每个库定义自己的 `__DATA` 页面。
+3. 需要动态链接器 **dyld**，这也是接下来介绍的重点。
+
+关于 **dyld** **（The dynamic link editor）** 网上介绍的博客非常多，这里简单提一下，感兴趣的可以看下[源码]("https://github.com/apple-oss-distributions/dyld/tags")。
 
 它是 Apple 的动态链接器， `Mach-O ` 可执行文件会交由 `dyld` 负责链接 ，装载。目前发展了好几个版本：
 
@@ -826,6 +845,64 @@ void * dlsym(void *handle, char *symbol);
 - 新的抽象基类`Loader`，为进程中加载的每个 `Mach-o` 文件实例化一个 `Loader` 对象，`Loader` 有两个具体的子类 `PrebuiltLoader` 和 `JustInTimeLoader`。
   - `PrebuiltLoader` 只读的。它包含有关其 `Mach-o` 文件的预先计算的信息，包括其路径、验证信息、其依赖的 `dylib` 和一组预先计算的绑定目标。在启动时，`dyld` 会为程序寻找预构建的 `PrebuiltLoader`，验证完有效，则使用它。
   - 如果没有有效的 `PrebuiltLoader`，那么创建并使用新的 `JustInTimeLoader`，`JustInTimeLoader` 然后通过解析 `Mach-o` 找到它的依赖项，进行实时的解析。
+
+#### dyld 是如何工作的
+
+1. `dyld` 从主可执行文件开始，它解析 `Mach-O` 查找依赖的 `dylibs`。
+2. 对于每个`.dylib`，`dyld ` 找到它们，并 `mmap()` 它们。
+3. 然后 `dyld` 为每个步骤递归完成 1-2 步。
+4. 一旦所有东西都加载完毕，`dyld` 就会查找所需的所有绑定符号。
+5. 查找完成后，`dyld ` 在 `fixup` 时使用这些地址。
+6. 一旦所有 `fixup` 完成，`dyld   `就会自下而上运行初始化器。
+
+Note:  自 2017 年 `dyld3` 发布以来，步骤 1 至 4 会缓存。
+
+#### dyld 最新改进 - Page-in linking
+
+`dyld` 在启动时不再对所有 `dylib` 进行 `fixup`，相反，`kernel` 会在 `page in` 的时候惰性地对你的 `__DATA` 页 `fixup`。苹果操作系统在 `dyld` 共享缓存中有特殊情况的 `Page-in linking`，在 22 年已经普遍化（iOS 16, macOS 13 和 watchOS 9），这么做的好处是：
+
+1. 少脏内存。
+
+2. 缩短了 App 启动时间。
+
+3. `DATA_CONST` 页是 `clean` 的内存，这意味着它们可以像 `__TEXT` 页一样被删除和重新创建，从而减少内存压力。
+
+相比静态库，动态链接优点虽多，但是也有缺点，上文已有所介绍。所以我们使用的时候，应找到静态库和动态库的最佳平衡。此外 `Page-in linking` 的使用有几点需要注意：
+
+1. 需要 `chained fixups`，因此要求你的应用程序针对 `iOS 13.4` 或更高版本。
+
+2. 因为使用 `chained fixups`，大多数修复信息将被编码在磁盘上的 `__DATA` 段中，这意味着它在 `page in` 期间对 `kernel` 可用。
+
+3. 上文我们提到了动态装载库，这里的 `chained fixups` 对 `dlopen` 不可用，只是在启动时链接的dylibs(在这种情况下，`dyld` 在 `dlopen` 调用期间进行 `fixup`。
+
+#### Fixups
+
+- 主可执行文件具有各种指向`.dylib ` 的符号的指针。
+- 这些指针（和其他内存分配）直到运行时才能知道。
+- 因为 `__TEXT` 段不能改变(至少在基于代码签名的系统中)，这些动态符号/调用站点变成了对 `__TEXT` 中的链接器合成的 `stub` 的调用。
+- `stub` 从`__DATA ` 段加载一个指针，然后跳转到该位置。
+- 与 `__TEXT`不同，`__DATA` 段可以在运行时更改(这也是能实现 **PIC** 的关键)。
+- 当 `dyld` 解析我们的承诺时，实际上它只是将正确的指针设置到可执行的 `__DATA` 段(在内存中)，指向相关的 `.dylib` 符号(也加载到内存中)。
+- `__LINKEDIT` 段包含了`dyld` 需要的信息，以驱动 `fixup` 工作。
+
+一共存在 3 中修复方式rebases、binds、chained：
+
+1. rebases
+
+   - 当一个 `dylib` 或应用程序有一个指向自身内部的指针时。
+
+   - 由于 `ASLR` 需要，这意味着即使内部指针也需要在应用程序启动时重新 `rebases`。
+2. binds
+
+   - 因为符号在编译时是未定义的，只在运行时可见，符号的地址在每次运行后都是随机定位的，所以需要根据符号名找到实际的调用地址。
+   - 在 `Mach-O` 中的符号分为惰性和非惰性。
+   - 对于惰性加载的符号，编译器为动态库的符号设置了对应的 `stub` （类似中介），每个 `stub` 占用 6 个字节(x64 编译)， 编译之后，调用 `__TEXT` 段中的函数时，汇编指令就是调用这个函数对应的 `stub`，函数在第一次调用时被调用，`stub` 会加载程序调用解析器 `__stub_helper`。`__stub_helper  ` 的主要逻辑就是，调用 `dyld_stub_binder` 来获取符号的地址，并将地址填入  `__la_symbol_ptr`，下次即可直接调用。
+3. chained（iOS 13.4及更高版本支持）
+
+   - 22 年更新，使 `__LINKEDIT` 更小。
+   - 不是存储所有的修复位置，`__LINKEDIT `只存储每个`__DATA` 页中第一个修复位置的位置，以及导入的符号列表。
+   - 其余的信息被编码在 `__DATA` 中。
+   - 它之所以被称为链式，是因为在 `__DATA`中 的 64 位指针位置中，有些位包含到下一个修复位置的偏移量(因此我们以链式方式从修复跳转到修复)。
 
 ## 总结
 
