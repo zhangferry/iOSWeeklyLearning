@@ -23,9 +23,29 @@
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+ 本期将推荐近期的一些优秀博文，涵盖现代 SwiftUI 编程探讨、可变视图、NSTimer、Swift Charts 等方面的内容
 
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
 
+1、[现代 SwiftUI](https://www.pointfree.co/blog/posts/94-modern-swiftui-parent-child-communication "现代 SwiftUI") -- 来自：Piont Free
+
+[@东坡肘子](https://www.fatbobman.com/): 近期 Point Free 在其博客上发表了多篇免费文章，以探索现代 SwiftUI 开发的最佳实践。内容涵盖：视图沟通、可识别数组、状态驱动导航、依赖项、测试等内容。
+
+2、[可变视图](https://chris.eidhof.nl/post/variadic-views/ "可变视图") -- 来自：Chris Eidhof
+
+[@东坡肘子](https://www.fatbobman.com/): _VariadicView 是 SwiftUI 提供的一个未公开 API ，它为布局容器提供了遍历子视图的能力。Chris Eidhof 在 [Moving Parts](https://movingparts.io/variadic-views-in-swiftui) 博客的基础上进一步对该 API 进行了研究，并提出了视图是列表的观点。
+
+3、[NSTimer Block 为什么不会触发循环引用？！](https://juejin.cn/post/7194064273960599611 "NSTimer Block 为什么不会触发循环引用？！") -- 来自：wiiale
+
+[@东坡肘子](https://www.fatbobman.com/): NSTimer 是 iOS Foundation 框架中一种计时器，在经过一定的时间间隔后触发，向目标对象发送指定的消息。本文将通过探究 NSTimer 与 Runloop 之间的关系来分析不会触发循环引用的原因。
+
+4、[Searchable](https://kean.blog/post/pulse-search "Searchable") -- 来自：Alex Grebenyuk
+
+[@东坡肘子](https://www.fatbobman.com/): 从 iOS 15 开始，SwiftUI 通过新的 .searchable 修饰符开始支持搜索栏功能。Alex Grebenyuk 通过本文将其在 Pulse 应用中有关 searchable 的使用体验和心得分享给大家。
+
+5、[掌握 Swift Charts](https://swiftwithmajid.com/2023/01/26/mastering-charts-in-swiftui-custom-marks/ "掌握 Swift Charts") -- 来自：Majid
+
+[@东坡肘子](https://www.fatbobman.com/): Swift Charts 是苹果的一个新框架，允许我们使用 SwiftUI 以声明性的方式可视化数据。Majid 将通过多篇文章对 Swift Charts 进行详尽介绍，目前已以完成：基础、自定义标记、标记样式等内容。
 
 ## 摸一下鱼
 
