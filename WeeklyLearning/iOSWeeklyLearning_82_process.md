@@ -11,9 +11,15 @@
 
 ## 本期话题
 
-###  Developer 设计开发加速器｜在 SwiftUI 中管理数据模型
+### [设计开发加速器线下活动：女性开发者社区日](https://developer.apple.com/events/view/CN36QR48T5/dashboard "设计开发加速器线下活动：女性开发者社区日")
 
-[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：
+[@远恒之义](https://github.com/eternaljust)：Apple 在 2022 年 10 月开展了 Apple Entrepreneur Camp（苹果企业家培训营）课程活动，主要面向女性、黑人和西班牙裔/拉丁裔创业者，帮助她们提供技术支持与免费服务。女性开发者社区日是针对中国女性开发者的特别活动，以此帮助更多的中国女性开发者熟悉了解 Apple 平台。相比之前的企业家培训营要求，本次活动降低了门槛，参会资格不再限制组织必须满足女性创业者与女性开发者。
+
+![](https://cdn.zhangferry.com/Images/82-women-developer-community-day.jpeg)
+
+### [App 和 App 内购买项目即将实行税率和价格调整](https://developer.apple.com/cn/news/?id=g8dce2t4 "App 和 App 内购买项目即将实行税率和价格调整")
+
+[@远恒之义](https://github.com/eternaljust)：2023 年 2 月 13 日起，哥伦比亚、埃及、匈牙利、尼日利亚、挪威、南非和英国 App Store 的 App 及 App 内购买项目 (自动续期订阅除外) 的价格将上调。从 2023 年春季起，App 和 App 内购买项目的定价功能升级将带来 700 个新增的价格点，开发者可更加灵活地管理全球各地区定价。
 
 ## 本周学习
 
