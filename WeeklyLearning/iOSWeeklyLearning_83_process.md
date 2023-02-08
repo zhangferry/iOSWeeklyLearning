@@ -22,9 +22,29 @@
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+本期将推荐近期的一些优秀博文，涵盖 iOS 越狱检测、获取虚拟内存状态、使用 KeyChain 进行持久化 以及 SwiftGG 但新项目等方面的内容
 
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
 
+1、[iOS 数据持久化 —— KeyChain](https://juejin.cn/post/7195486949526732857 "iOS 数据持久化 —— KeyChain") -- 来自：庄周晓梦
+
+[@东坡肘子](https://www.fatbobman.com/): 为了安全的在本地存储敏感数据，不少开发者都会采用系统提供的 KeyChain 框架。在本文中，作者将为你展示如何创建一个通用的同时适用于 iOS、 MacOS 的 keyChain 辅助类，以提高数据增删改查操作的便利性。
+
+2、[2023 年 iOS 越狱检测](https://blog.eidinger.info/ios-jailbreak-detection-in-2023 "2023 年 iOS 越狱检测t") -- 来自：Marco Eidinger
+
+[@东坡肘子](https://www.fatbobman.com/): 在这篇博文中，作者将展示现有的检测越狱的方法并分享代码示例。但更重要的是，通过讨论越狱检测的动机、分享相关实现并提供信息，方便开发者评估越狱检测在 2023 年（或总体上）是否仍是一个好主意。
+
+3、[SwiftUI Layout](https://juejin.cn/post/7196952530256724023 "SwiftUI Layout") -- 来自：东吴贾诩
+
+[@东坡肘子](https://www.fatbobman.com/): 本文作者对 SwiftUI 4 中提供的 Layout 协议做了比较详尽的说明。即使你目前仍使用老版本的 SwiftUI ，通过本文可以了解更多有关 SwiftUI 布局的内部逻辑。
+
+4、[好久不见，SwiftGG](https://mp.weixin.qq.com/s/aK7L3MIyF_ftCh3gvrovuA "好久不见，SwiftGG") -- 来自：SwiftGG
+
+[@东坡肘子](https://www.fatbobman.com/): SwiftGG 是国内知名的苹果生态开发社区，尽管它的公众号处于歇业状态已经很久了，但 SwiftGG 翻译组在这几年并没有处于停滞状态。在本文中，SwiftGG 对近两年的工作进行了总结，并介绍了接下来一些新的计划和打算。同时，也回答了一些网友提出的问题。
+
+5、[iOS APP虚拟内存用量初探](https://mp.weixin.qq.com/s/aK7L3MIyF_ftCh3gvrovuA "iOS APP虚拟内存用量初探") -- 来自：呦呦君
+
+[@东坡肘子](https://www.fatbobman.com/): 在作者当前的项目中有用于 APP 物理内存、系统物理内存等内存状态的获取 API，但是一直缺少获取虚拟内存的 API。由于之前业务上出现过因为虚拟内存耗尽所导致的 Crash，因此本文将基于以上的背景对虚拟内存进行一些调研与探讨。
 
 ## 摸一下鱼
 
