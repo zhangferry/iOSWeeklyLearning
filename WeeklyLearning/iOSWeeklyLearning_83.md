@@ -4,12 +4,14 @@
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本期话题：各大搜索引擎开始接入类 ChatGPT 功能
+> * 本周学习：Python 中的匿名函数与闭包
+> * 内容推荐：iOS 越狱检测、获取虚拟内存状态、使用 KeyChain 进行持久化等内容
+> * 摸一下鱼：Stable Diffusion 功能尝鲜；关于技术规划的思考；大厂复盘文档
 
 ## 本期话题
+
+整理编辑：[zhangferry](zhangferry.com)
 
 ### ChatGPT 的风又起来了
 
@@ -173,12 +175,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
+[iOS 摸鱼周报 #82 | 去中心化社交软件 Damus](https://mp.weixin.qq.com/s/ck4Jn4Cq-yOs_mjAO-WacA)
+
+[iOS 摸鱼周报 #81 | Apple 推出 Apple Business Connect](https://mp.weixin.qq.com/s/Ek6W0MTBDP6PN1uxWQ5M_A)
+
+[iOS 摸鱼周报 #80 | 开发加速器 SwiftUI 中管理数据模型](https://mp.weixin.qq.com/s/eIQLuAIsRQ7eeEnsrL5QuA)
+
 [iOS 摸鱼周报 #79 | Freeform上线 & D2 本周开始](https://mp.weixin.qq.com/s/HdEhmXt60853tzM6xiVUwA)
-
-[iOS 摸鱼周报 #78 |  用 ChatGPT 做点好玩的事 ](https://mp.weixin.qq.com/s/27J4NguYRsxYWmff_6iDcg)
-
-[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
-
-[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
