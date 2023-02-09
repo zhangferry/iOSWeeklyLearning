@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #80 | ChatGPT 的风又起来了
+# iOS 摸鱼周报 #83 | ChatGPT 的风又起来了
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
