@@ -122,6 +122,7 @@ def make_averager():
     return averager
 ```
 
+回到 Objective-C 中的 block，它的定义是：带有自动变量值的匿名函数，
 
 ## 内容推荐
 
@@ -145,7 +146,7 @@ def make_averager():
 
 [@东坡肘子](https://www.fatbobman.com/): SwiftGG 是国内知名的苹果生态开发社区，尽管它的公众号处于歇业状态已经很久了，但 SwiftGG 翻译组在这几年并没有处于停滞状态。在本文中，SwiftGG 对近两年的工作进行了总结，并介绍了接下来一些新的计划和打算。同时，也回答了一些网友提出的问题。
 
-5、[iOS APP虚拟内存用量初探](https://mp.weixin.qq.com/s/aK7L3MIyF_ftCh3gvrovuA "iOS APP虚拟内存用量初探") -- 来自：呦呦君
+5、[iOS APP虚拟内存用量初探](https://juejin.cn/post/7196931784328626234 "iOS APP虚拟内存用量初探") -- 来自：呦呦君
 
 [@东坡肘子](https://www.fatbobman.com/): 在作者当前的项目中有用于 APP 物理内存、系统物理内存等内存状态的获取 API，但是一直缺少获取虚拟内存的 API。由于之前业务上出现过因为虚拟内存耗尽所导致的 Crash，因此本文将基于以上的背景对虚拟内存进行一些调研与探讨。
 
