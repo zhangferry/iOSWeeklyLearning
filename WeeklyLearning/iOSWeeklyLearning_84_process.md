@@ -11,9 +11,11 @@
 
 ## 本期话题
 
-###  Developer 设计开发加速器｜在 SwiftUI 中管理数据模型
+### [设计开发加速器线上讲座：在 App 或游戏内创造无障碍体验](https://developer.apple.com/events/view/ZJPV5C8NC8/dashboard "设计开发加速器线上讲座：在 App 或游戏内创造无障碍体验")
 
-[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：
+[@远恒之义](https://github.com/eternaljust)：Apple 提供了业界领先的旁白功能，是专门为失明及低视力群体服务的屏幕阅读工具，帮助他们便捷地探索 Apple 设备图像中的人物、文字、表格等数据。本次课程将通过 Apple 操作系统内置的辅助功能、辅助功能 API 和开发者工具，开发者们可以为每个用户创建绝佳的无障碍体验。活动时间：2023 年 2 月 21 日上午 10:00 (GMT+8) – 中午 12:15 (GMT+8) (UTC+08:00)，报名截止：2023 年 2 月 20 日。
+
+![通过“标记”为图像添加的描述，在使用“图像探索视图”时，“旁白”可朗读自定义描述](https://cdn.zhangferry.com/Images/84-markup-image-voiceover.png)
 
 ## 本周学习
 
