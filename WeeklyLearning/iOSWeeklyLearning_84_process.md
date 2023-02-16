@@ -25,9 +25,29 @@
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+本期将推荐近期的一些优秀博文，涵盖依赖注入、自定义 Button 外观与行为、正则表达式、创建 XCFramework 以及创建可配置的小组件等方面的内容
 
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
 
+1、[依赖注入和依赖注入容器](https://juejin.cn/post/7193220280993447992 "依赖注入和依赖注入容器") -- 来自：SwiftFun
+
+[@东坡肘子](https://www.fatbobman.com/): 依赖注入是一种常见的设计模式，在合适的时候使用它，可以提高开发者的代码质量。本文作者将从什么是控制反转、什么是依赖注入、依赖注入的种类、依赖注入容器等多个方面对该种设计模式进行探讨。
+
+2、[自定义 Button 的外观和交互行为](https://www.fatbobman.com/posts/custom-button-style-in-SwiftUI/ "自定义 Button 的外观和交互行为") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): 通过 Style 改变组件的外观或行为是 SwiftUI 提供的一项非常强大的功能。本文将介绍如何通过创建符合 ButtonStyle 或 PrimitiveButtonStyle 协议的实现，自定义 Button 的外观以及交互行为。
+
+3、[Swift 正则表达式教程](https://www.kodeco.com/36182126-swift-regex-tutorial-getting-started "Swift 正则表达式教程") -- 来自：Ehab Yosry Amer
+
+[@东坡肘子](https://www.fatbobman.com/): 从 5.7 版本开始，Swift 终于推出了与时代相匹配的正则表达式处理能力。在本文中，作者将引领开发者掌握 Swift Regex 的模式匹配，学习编写易于理解的正则表达式，使用捕获并试用 RegexBuilder。
+
+4、[创建 XCFramework](https://rhonabwy.com/2023/02/10/creating-an-xcframework/ "创建 XCFramework") -- 来自：Joe Heck
+
+[@东坡肘子](https://www.fatbobman.com/): 在 Joe Heck 看来，将 Rust 库暴露给 Swift 的最佳途径是通过基于 C 的 FFI 接口。由于关于如果制作 XCFramework 的细节资料相当稀少，作者为此花费了相当多的精力才得以实现。本文旨在分享从静态库空间进入 Swift 的一些具体实现细节。
+
+5、[如何使用静态选项创建可配置的小部件](https://swiftsenpai.com/development/configurable-widgets-static-options/?utm_source=rss&utm_medium=rss&utm_campaign=configurable-widgets-static-options "如何使用静态选项创建可配置的小部件") -- 来自：Lee Kah Seng
+
+[@东坡肘子](https://www.fatbobman.com/): 小组件的主要理念是让用户快速、方便地获取与他们最相关的信息。为了使这一想法更上一层楼，我们可以让小组件成为可配置的，这允许用户自行选择在小组件上显示什么数据以及如何显示。本文将重点关注具有静态选项的可配置小部件，展示如何设置配置 intent、实现 intent timeline 提供程序并创建一个可配置的小组件。
 
 ## 摸一下鱼
 
