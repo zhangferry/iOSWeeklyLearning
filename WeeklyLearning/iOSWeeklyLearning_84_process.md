@@ -21,7 +21,47 @@
 
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
 
+### Any 和 AnyObject 以及 AnyClass 
 
+`AnyObject` :可以表示任何类类型的对象实例，所有类都隐式地遵循 `AnyObject`；
+
+`Any` :可以表示任何类型，包括基础数据类型、枚举类型、结构体、函数类型等；
+
+`AnyClass` :表示类的元类型，是 `AnyObject.Type` 的别名：定义 `typealias AnyClass = AnyObject.Type；`
+
+> `AnyObject` 是 `Any` 的子集
+
+> `AnyObject.Type`，或者说 `AnyClass` 所表达的其实就是任意类型本身
+
+```Swift
+// 所有的 class 都隐式地实现了这个接口，这也是 AnyObject 只适用于 class 类型的原因，但是并不能代表 struct 类型 
+protocol AnyObject {}
+```
+
+```Swift
+// 如果是AnyObject则会编译错误，但是换成Any后则不会
+let swiftInt: Int = 123
+let swiftString: String = "haha"
+
+var array: [Any] = []
+array.append(swiftInt)
+array.append(swiftString)
+```
+
+```swift
+class A {
+   class func test(){
+     print("test")
+   }
+}
+
+//.self 可以用在类型后面取得类型本身,也可以用在某个实例后面取得这个实例本身
+let typeA: A.Type = A.self
+typeA.test() // print test 
+
+let classA: AnyClass = A.self
+(classA as! A.Type).test() // print test
+```
 
 ## 内容推荐
 
