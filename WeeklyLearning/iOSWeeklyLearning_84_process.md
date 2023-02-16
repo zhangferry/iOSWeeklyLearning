@@ -111,6 +111,14 @@ let classA: AnyClass = A.self
 
 ![](https://cdn.zhangferry.com/Images/20230212194101.png)
 
+5、[stackoverflow.gg](https://stackoverflow.gg/)：一个浏览器插件，让 ChatGPT 来回答 StackOverflow 上的所有问题，包括那些没人回答的问题。虽然 Stackoverflow 禁止 ChatGPT 来写答案，但不代表它不可以去回答这些问题。
+
+![](https://cdn.zhangferry.com/Images/20230214233808.png)
+
+这个团队同时还在做基于 AI 的代码调试和错误日志分析工具：[Adrenaline](https://useadrenaline.com/ "Adrenaline")，使用的是 OpenAI 提供的 API，所以你使用的话还需要配置对应的 API key。
+
+![](https://cdn.zhangferry.com/Images/20230214234207.png)
+
 ## 内推招聘
 
 ### [上海] 小红书 - 社区客户端团队 - 基础体验方向 - iOS/Android
@@ -145,7 +153,7 @@ let classA: AnyClass = A.self
 
 2、对移动研发充满热情，有较强的学习能力，好奇心和积极向上的心态
 
-3、熟悉Objective-C／Swift，熟悉Cocoa设计模式，深入理解MVC MVVM
+3、熟悉Objective-C/Swift，熟悉Cocoa设计模式，深入理解MVC MVVM
 
 4、代码基本功扎实，对于常见的第三方库的使用和原理有一定的理解。对数据结构及算法有一定程度的理解，良好的面向对象化编程思想，熟练运用常见设计模式
 
