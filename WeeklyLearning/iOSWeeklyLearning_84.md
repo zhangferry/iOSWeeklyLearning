@@ -1,25 +1,30 @@
-# iOS 摸鱼周报 #84
+# iOS 摸鱼周报 #84 | 开箱即用的云服务 AirCode
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本期话题：开发加速器：在 App 或游戏内创造无障碍体验
+> * 本周学习：Any 和 AnyObject 以及 AnyClass 
+> * 内容推荐：依赖注入、自定义 Button 外观与行为、正则表达式、创建 XCFramework 以及创建可配置的小组件文章推荐
+> * 摸一下鱼：一个白噪音网站；ChatGPT 飞书机器人配置；在线 NodeJS 平台 AirCode；ChatGPT for stackoverflow 浏览器插件
+> * 内推招聘：[上海] 小红书 - 社区客户端团队 - 基础体验方向
 
 ## 本期话题
 
 ### [设计开发加速器线上讲座：在 App 或游戏内创造无障碍体验](https://developer.apple.com/events/view/ZJPV5C8NC8/dashboard "设计开发加速器线上讲座：在 App 或游戏内创造无障碍体验")
 
-[@远恒之义](https://github.com/eternaljust)：Apple 提供了业界领先的旁白功能，是专门为失明及低视力群体服务的屏幕阅读工具，帮助他们便捷地探索 Apple 设备图像中的人物、文字、表格等数据。本次课程将通过 Apple 操作系统内置的辅助功能、辅助功能 API 和开发者工具，开发者们可以为每个用户创建绝佳的无障碍体验。活动时间：2023 年 2 月 21 日上午 10:00 (GMT+8) – 中午 12:15 (GMT+8) (UTC+08:00)，报名截止：2023 年 2 月 20 日。
+[@远恒之义](https://github.com/eternaljust)：Apple 提供了业界领先的旁白功能，是专门为失明及低视力群体服务的屏幕阅读工具，帮助他们便捷地探索 Apple 设备图像中的人物、文字、表格等数据。本次课程将通过 Apple 操作系统内置的辅助功能、辅助功能 API 和开发者工具，开发者们可以为每个用户创建绝佳的无障碍体验。
+
+活动时间：2023 年 2 月 21 日上午 10:00 (GMT+8) – 中午 12:15 (GMT+8) (UTC+08:00)
+
+报名截止：2023 年 2 月 20 日
 
 ![通过“标记”为图像添加的描述，在使用“图像探索视图”时，“旁白”可朗读自定义描述](https://cdn.zhangferry.com/Images/84-markup-image-voiceover.png)
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[JY](https://juejin.cn/user/1574156380931144/posts)
 
 ### Any 和 AnyObject 以及 AnyClass 
 
@@ -179,12 +184,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #79 | Freeform上线 & D2 本周开始](https://mp.weixin.qq.com/s/HdEhmXt60853tzM6xiVUwA)
+[iOS 摸鱼周报 #83 | ChatGPT 的风又起来了](https://mp.weixin.qq.com/s/Ty95hGBIevHaJQ5TU774aQ)
 
-[iOS 摸鱼周报 #78 |  用 ChatGPT 做点好玩的事 ](https://mp.weixin.qq.com/s/27J4NguYRsxYWmff_6iDcg)
+[iOS 摸鱼周报 #82 | 去中心化社交软件 Damus](https://mp.weixin.qq.com/s/ck4Jn4Cq-yOs_mjAO-WacA)
 
-[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
+[iOS 摸鱼周报 #81 | Apple 推出 Apple Business Connect](https://mp.weixin.qq.com/s/Ek6W0MTBDP6PN1uxWQ5M_A)
 
-[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #80 | 开发加速器 SwiftUI 中管理数据模型](https://mp.weixin.qq.com/s/eIQLuAIsRQ7eeEnsrL5QuA)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
