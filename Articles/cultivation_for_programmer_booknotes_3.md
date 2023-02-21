@@ -87,7 +87,7 @@ CPU 将控制权交给操作系统，操作系统有专门的页错误处理例�
 
 随着进程的执行，页错误会不断的产生，操作系统也会为进程分配相应的物理页面来满足进程执行的需求，如下图所示:
 
-<img src="https://cdn.zhangferry.com/Images/6_6.png" width = "500" height = "330"/>
+<img src="https://cdn.zhangferry.com/Images/6_6666.png" width = "500"/>
 
 缺页本身是一种中断，与一般的中断一样，需要经过 4 个处理步骤：
 
@@ -207,7 +207,7 @@ Apple 在 `iOS 4.3` 内导入了 `ASLR`。
 
  三个段的总长度只有 12014 字节，却占据了 5 个页，即 20480 字节，空间使用率只有 58. 6 %。导致文件段的内部会有很多碎片，浪费磁盘空间。
 
-<img src="https://cdn.zhangferry.com/Images/6_10.png" width = "550" height = "350"/>
+<img src="https://cdn.zhangferry.com/Images/6_101011.png" width = "550"/>
 
 为了解决这种问题，就是让那些各个段接壤部分共享一个物理页面，然后将该物理页面分别映射两次，如下图：
 
@@ -549,7 +549,7 @@ ELF 将 `GOT` 拆分成了两个表叫做  `got` 和  `got.plt` 。其中 `got` 
 
 其中 `dyld_stub_binder` 的符号的地址是在二进制加载时就已经确定了，这个 `dyld_stub_binder` 有点类似于 Linux 下的 `_dl_runtime_resolve` 函数的作用，目的是为了完成真正的地址绑定工作，并将最终确定好的地址进行填充 `__la_symbol_ptr`，下次调用的时候即可直接跳转，这其实也就是延迟绑定机制的实现。
 
-`fishHook` 也主要利用了共享缓存功能和 `PIC` 技术来实现的 `hook` 功能。`dyld ` 通过更新 `Mach-O` 二进制文件 `__DATA` 段特定部分中的指针来绑定懒惰和非懒惰符号，`fishhook` 通过确定传递给 `rebind_symbols` 的每个符号名称的更新位置，然后写出相应的替换件来重新绑定这些符号。[出自fishHook 的官方介绍](https://github.com/facebook/fishhook)
+`fishHook` 也主要利用了共享缓存功能和 `PIC` 技术来实现的 `hook` 功能。`dyld ` 通过更新 `Mach-O` 二进制文件 `__DATA` 段特定部分中的指针来绑定懒惰和非懒惰符号，`fishhook` 通过确定传递给 `rebind_symbols` 的每个符号名称的更新位置，然后写出相应的替换件来重新绑定这些符号。[出自fishHook 的官方介绍](https://github.com/facebook/fishhook/ "出自fishHook 的官方介绍")
 
 ### 动态链接相关结构
 
