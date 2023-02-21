@@ -23,7 +23,7 @@ int main() {
 
 在 Linux 下执行，需要使用使用 `gcc` 来编译，首先通过 `gcc hello.c`，这会产生默认命名为 `a.out` 的可执行文件，然后通过 `./a.out ` 执行这个文件，输出 `Hello World`，事实上，这里要分为4个步骤：预处理，编译，汇编，链接。
 
-<img src="https://cdn.zhangferry.com/Images/WX20221204-231309@2x.png" width = "500"/>
+<img src="https://cdn.zhangferry.com/Images/%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png" width = "500"/>
 
 ## 编译
 
