@@ -11,15 +11,17 @@
 
 ## 本期话题
 
-###  Developer 设计开发加速器｜在 SwiftUI 中管理数据模型
+### [在线讲座：与 App Store 专家会面交流](https://developer.apple.com/cn/news/?id=tfb0r2ql "在线讲座：与 App Store 专家会面交流")
 
-[@师大小海腾](https://juejin.cn/user/782508012091645/posts)：
+[@远恒之义](https://github.com/eternaljust)：Apple 将于 2 月 28 日至 4 月 13 日举行「与 App Store 专家会面交流」在线讲座，探索如何吸引新顾客、测试营销策略、优化订阅等多个主题。感兴趣的 Apple Developer Program 开发者，可登录关联的 Apple ID，查看日程表并注册。
 
-## 本周学习
+![](https://cdn.zhangferry.com/Images/85-event-appstore.jpeg)
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+### [Apple 公布 iOS 16 的普及率已达 81%](https://developer.apple.com/cn/support/app-store/ "Apple 公布 iOS 16 的普及率达 81%")
 
+[@远恒之义](https://github.com/eternaljust)：Apple 官方数据来源于 App Store 上进行交易的设备统计，时间截止至 2023 年 2 月 14 日。在过去四年推出的设备中，iOS 16 的普及率达 81%。在所有的设备中，iOS 16 的普及率达 72%，加上 iOS 15 的 20%，iOS 15 系统及以上的普及率总计 92%。是时候修改 iOS 项目最低版本的限制了，开发者们要紧跟 Apple 的步伐，毕竟现在「小而美」的微信，也早已是 iOS 13 系统起步。
 
+![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
 
 ## 内容推荐
 
