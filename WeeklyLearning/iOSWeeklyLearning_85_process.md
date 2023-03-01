@@ -4,7 +4,7 @@
 
 ### 本期概要
 
-> * 本期话题：在线讲座：与 App Store 专家会面交流；Apple 公布 iOS 16 的普及率达 81%
+> * 本期话题：在线讲座：与 App Store 专家会面交流；加速器线上活动：设计挑战（亚太）
 > * 本周学习：
 > * 内容推荐：
 > * 摸一下鱼：公众号上线一个作画功能；Notion AI 体验；new bing 体验；针对程序员的智能搜索引擎 phind。
@@ -13,15 +13,15 @@
 
 ### [在线讲座：与 App Store 专家会面交流](https://developer.apple.com/cn/news/?id=tfb0r2ql "在线讲座：与 App Store 专家会面交流")
 
-[@远恒之义](https://github.com/eternaljust)：Apple 将于 2 月 28 日至 4 月 13 日举行「与 App Store 专家会面交流」在线讲座，探索如何吸引新顾客、测试营销策略、优化订阅等多个主题。感兴趣的 Apple Developer Program 开发者，可登录关联的 Apple ID，查看日程表并注册。
+[@远恒之义](https://github.com/eternaljust)：Apple 会在 2 月 28 日至 4 月 13 日举行「与 App Store 专家会面交流」在线讲座，探索如何吸引新顾客、测试营销策略、优化订阅等多个主题。感兴趣的 Apple Developer Program 开发者，可登录关联的 Apple ID，查看日程表并注册。
 
 ![](https://cdn.zhangferry.com/Images/85-event-appstore.jpeg)
 
-### [Apple 公布 iOS 16 的普及率已达 81%](https://developer.apple.com/cn/support/app-store/ "Apple 公布 iOS 16 的普及率达 81%")
+### [加速器线上活动：设计挑战（亚太）](https://developer.apple.com/events/view/R67PUKP9H9/dashboard "加速器线上活动：设计挑战（亚太）")
 
-[@远恒之义](https://github.com/eternaljust)：Apple 官方数据来源于 App Store 上进行交易的设备统计，时间截止至 2023 年 2 月 14 日。在过去四年推出的设备中，iOS 16 的普及率达 81%。在所有的设备中，iOS 16 的普及率达 72%，加上 iOS 15 的 20%，iOS 15 系统及以上的普及率总计 92%。是时候修改 iOS 项目最低版本的限制了，开发者们要紧跟 Apple 的步伐，毕竟现在「小而美」的微信，也早已是 iOS 13 系统起步。
+[@远恒之义](https://github.com/eternaljust)：新一期的线上讲座开启，优秀的 App 少不了卓越的设计，与 Apple 设计布道师一起学习重要设计原理的实践方式，并在两项设计挑战当中展示你的设计技能。
 
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
+![](https://cdn.zhangferry.com/Images/85-developer-design.jpeg)
 
 ## 本周学习
 
