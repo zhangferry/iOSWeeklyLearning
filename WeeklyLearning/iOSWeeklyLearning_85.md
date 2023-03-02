@@ -1,4 +1,4 @@
-# iOS 摸鱼周报 #85 | ChatGPT 的 API 开发使用
+# iOS 摸鱼周报 #85 | ChatGPT 的 API 开放使用
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
@@ -13,8 +13,6 @@
 ### [在线讲座：与 App Store 专家会面交流](https://developer.apple.com/cn/news/?id=tfb0r2ql "在线讲座：与 App Store 专家会面交流")
 
 [@远恒之义](https://github.com/eternaljust)：Apple 会在 2 月 28 日至 4 月 13 日举行「与 App Store 专家会面交流」在线讲座，探索如何吸引新顾客、测试营销策略、优化订阅等多个主题。感兴趣的 Apple Developer Program 开发者，可登录关联的 Apple ID，查看日程表并注册。
-
-![](https://cdn.zhangferry.com/Images/85-event-appstore.jpeg)
 
 ### [加速器线上活动：设计挑战（亚太）](https://developer.apple.com/events/view/R67PUKP9H9/dashboard "加速器线上活动：设计挑战（亚太）")
 
