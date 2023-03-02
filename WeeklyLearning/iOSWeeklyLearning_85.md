@@ -1,13 +1,12 @@
-# iOS 摸鱼周报 #85 | AI 工具
+# iOS 摸鱼周报 #85 | ChatGPT 的 API 开发使用
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 本期话题：在线讲座：与 App Store 专家会面交流；加速器线上活动：设计挑战（亚太）
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：公众号上线一个作画功能；Notion AI 体验；new bing 体验；针对程序员的智能搜索引擎 phind。
+> * 内容推荐：本期将推荐近期的一些优秀博文，涵盖基于文本生成图像、SwiftUI 布局、Swift 静态代码检测、原生的 SwiftUI Markdown 渲染包等方面的内容
+> * 摸一下鱼：ChatGPT 的 API 开发使用；Notion AI 体验；new bing 体验；针对程序员的智能搜索引擎 phind
 
 ## 本期话题
 
@@ -22,12 +21,6 @@
 [@远恒之义](https://github.com/eternaljust)：新一期的线上讲座开启，优秀的 App 少不了卓越的设计，与 Apple 设计布道师一起学习重要设计原理的实践方式，并在两项设计挑战当中展示你的设计技能。
 
 ![](https://cdn.zhangferry.com/Images/85-developer-design.jpeg)
-
-## 本周学习
-
-整理编辑：[@zhangferry](zhangferry.com)
-
-### 
 
 ## 内容推荐
 
@@ -63,11 +56,21 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-1、在公众号开发了一个 OpenAI 的功能，关注公众号：「iOS成长之路」，然后在聊天区输入：作画+图像描述内容，来让AI 帮你创作一副图像，使用的 [DALL-E 2](https://openai.com/dall-e-2/ "DALL-E 2") 模型。感觉上没有官网的实现效果好，感兴趣可以体验下。因为 OpenAI 的 API 是付费的，所以限制了使用次数为 5 次。
+1、[ChatGPT 和 Whisper 模型 API 开放](https://openai.com/blog/introducing-chatgpt-and-whisper-apis "ChatGPT 和 Whisper 模型 API 开放")：在 OpenAI 团队一些列的优化下，ChatGPT 的成本降低了 90%，他们要把这部分节省的钱回报开发者，现在开发者可以用相当于 GPT 3.5 十分之一的价格来使用 ChatGPT 的API。之前很多基于 OpenAI API 开发的对话功能将模型从`text-davinci-003`切到`gpt-3.5-turbo`，即完成了切换。作为开发者可以关注这些事项：
 
-![](https://cdn.zhangferry.com/Images/202302261824611.png)
+* 除非机构选择加入，否则通过 API 提交的数据不再用于服务改进（包括模型训练）。
+* 为API用户实施默认的 30 天数据保留政策，并根据用户需求提供更严格的保留选项。
+* 移除我们的预发布审核（通过改进自动监控而解锁）。
+* 改进开发人员文档。
+* 简化我们的服务条款和使用政策，包括关于数据所有权的条款：用户拥有模型的输入和输出。
 
-2、Notion AI 上线：在 Notion AI 的 whitelist 里排了两周多时间都没有获得资格，竟然正式上线了。免费用户有 20 次的使用额度，之后就需要付费，每月 $10。体验了一下 Notion AI 的写作方式，我让它写一篇介绍 NotionAI 和 ChatGPT 这类 AIGC 工具的文章。
+同时 OpenAI CEO 在推特上发表了一则信息：
+
+> 新版摩尔定律很快就要来了，宇宙中的智能每18个月翻一倍。
+
+伴随 ChatGPT 这个风口，相信会有越来越多的基于这个模型的应用场景诞生出来，而更多应用场景更有助于推进 AI 相关技术的快速发展，或许一个新的时代已经到来。
+
+2、[Notion AI 上线](https://www.notion.so/product/ai "Notion AI 上线")：在 Notion AI 的 whitelist 里排了两周多时间都没有获得资格，竟然正式上线了。免费用户有 20 次的使用额度，之后就需要付费，每月 $10。体验了一下 Notion AI 的写作方式，我让它写一篇介绍 NotionAI 和 ChatGPT 这类 AIGC 工具的文章。
 
 ![](https://cdn.zhangferry.com/Images/202302261414807.png)
 
