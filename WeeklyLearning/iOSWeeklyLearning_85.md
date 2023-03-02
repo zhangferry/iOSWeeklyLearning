@@ -64,7 +64,9 @@
 
 同时 OpenAI CEO 在推特上发表了一则信息：
 
-> 新版摩尔定律很快就要来了，宇宙中的智能每18个月翻一倍。
+> a new version of moore’s law that could start soon: the amount of intelligence in the universe doubles every 18 months
+
+即人工智能领域的摩尔定律，宇宙中的智能数量每 18 个月会翻一倍。
 
 伴随 ChatGPT 这个风口，相信会有越来越多的基于这个模型的应用场景诞生出来，而更多应用场景更有助于推进 AI 相关技术的快速发展，或许一个新的时代已经到来。
 
