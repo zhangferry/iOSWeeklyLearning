@@ -11,11 +11,7 @@
 
 ## 本期话题
 
-### [Apple 公布 iOS 16 的普及率已达 81%](https://developer.apple.com/cn/support/app-store/ "Apple 公布 iOS 16 的普及率达 81%")
 
-[@远恒之义](https://github.com/eternaljust)：Apple 官方数据来源于 App Store 上进行交易的设备统计，时间截止至 2023 年 2 月 14 日。在过去四年推出的设备中，iOS 16 的普及率达 81%。在所有的设备中，iOS 16 的普及率达 72%，加上 iOS 15 的 20%，iOS 15 系统及以上的普及率总计 92%。是时候修改 iOS 项目最低版本的限制了，开发者们要紧跟 Apple 的步伐，毕竟现在「小而美」的微信，也早已是 iOS 13 系统起步。
-
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
 
 ## 本周学习
 
@@ -56,9 +52,26 @@
 
 ## 摸一下鱼
 
-整理编辑：[师大小海腾](https://juejin.cn/user/782508012091645/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
 
+1、[roomgpt](https://www.roomgpt.io/ "roomgpt")：利用 AI 技术把你现有的房间生成一个 dream room，只需上传一张当前房间的图片即可。
 
+![](https://cdn.zhangferry.com/Images/202303072231277.png)
+
+2、[潮流周刊](https://weekly.tw93.fun/ "潮流周刊")：作者是妙言的开发者，一位前端工程师。潮流周刊已经发到 119 期了，看了下日期，真的是期期不落。周报里是这样定位这份周刊的：「记录每周看到的前端潮流技术，筛选后用接地气方式发布于此」。周报里保留了一定的生活气息，使得个人色彩相对浓厚。
+
+这也为我对摸鱼周报如何设定基调起到了一定的参考意义，技术周报不一定就得是板板正正的，也可以有血有肉，有情绪，有个性。
+
+3、[基于 ChatGPT 的 API 能做什么产品](https://decohack.zhubai.love/posts/2244447748458225664 "基于 ChatGPT 的 API 能做什么产品")：这是 DecoHack 周刊的第 50 期内容，ChatGPT 的 API 已经开放一周了，随之而来确实有很多基于此的产品出现，本期内容总结了很多有趣的产品。我关注到的产品有：
+
+* [一键总结音视频内容](https://b.jimmylv.cn/ "一键总结音视频内容")：主要面向的是 B 站内容，可以自动总结视频信息。
+* [roamaround.guide](https://roamaround.guide/ "roamaround.guide")：帮助制定旅游计划，我写了一个要去杭州游玩3天，这是它给的建议。
+
+![](https://cdn.zhangferry.com/Images/202303072303406.png)
+
+* [chatgpt-sidebar](https://chatgpt-sidebar.com/ "chatgpt-sidebar")：一个浏览器侧边栏插件，把一些常用的功能，像是文章总结，翻译，语法检查，代码解释等功能进行了一个聚合。
+
+4、[ChatGPT Shortcut](https://newzone.top/chatgpt/ "ChatGPT Shortcut")：总结了 ChatGPT 的常见用法，并把一些使用的快捷指令进行了整理。prompts 是以英文来写的，因为 ChatGPT 语言处理能力非常强，换成中文处理也是可以的。
 
 ## 关于我们
 
