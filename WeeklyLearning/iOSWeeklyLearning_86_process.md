@@ -25,7 +25,29 @@
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+继续推荐近期的一些优秀博文，涵盖 Swift 混编 Module、App Store 价格新政、内存优化、Xcode 命令行参数和构建配置等方面的内容
+
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
+
+1、[云音乐 Swift 混编 Module 化实践](https://juejin.cn/post/7207269389474037817 "云音乐 Swift 混编 Module 化实践") -- 来自：网易云音乐技术团队 冰川
+
+[@东坡肘子](https://www.fatbobman.com/): 云音乐 iOS App 经历多年的迭代，积累了大量的 Objective-C（以下简称 OC）代码。在云音乐中集成的创新业务，因为依赖的历史基础库较少，已经投入使用 Swift。主站业务迟迟没有投入，主要原因是涉及大量的 OC 业务基础库和公共基础库不支持 Swift 混编，OC 组件库参与混编的前提是要完成 Module 化。本文主要介绍在支持云音乐 Swift 混编过程中，Module 化阶段的分析与实践。
+
+2、[关于 App Store 苹果商店价格的那些事（历上最全版）](https://juejin.cn/post/7205562168358895671 "关于 App Store 苹果商店价格的那些事（历上最全版）") -- 来自：37手游iOS技术运营团队
+
+[@东坡肘子](https://www.fatbobman.com/): 从 2008 年苹果 iPhone 3G 和 App Store 推出，到如今 App Store 已经是世界最大的软件商店！苹果于 2022 年 12 月 6 日宣布对 App Store 定价机制作出重大升级，新增了 700 个价格点。本文是37手游iOS技术运营团队对当前 App Store 定价机制的总结和分析。本文在创作中使用了 ChatGPT 和 NotionAI 进行了辅助，也算是一项不错的尝试。
+
+3、[SwiftUI + Core Data App 的内存占用优化之旅](https://www.fatbobman.com/posts/memory-usage-optimization/ "SwiftUI + Core Data App 的内存占用优化之旅") -- 来自：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): 尽管 SwiftUI 的惰性容器以及 Core Data 都有各自的内存占用优化机制，但随着应用视图内容的复杂（ 图文混排 ），越来越多的开发者遇到了内存占用巨大甚至由此导致 App 崩溃的情况。本文将通过对一个演示 App 进行逐步内存优化的方式（ 由原先显示 100 条数据要占用 1.6 GB 内存，优化至显示数百条数据仅需 200 多 MB 内存 ），让读者对 SwiftUI 视图的存续期、惰性视图中子视图的生命周期、托管对象的惰值特性以及持久化存储协调器的行缓存等内容有更多的了解。
+
+4、[将 Streaks Apple Watch App 转换为 SwiftUI](https://crunchybagel.com/converting-streaks-apple-watch-app-to-swiftui/ "将 Streaks Apple Watch App 转换为 SwiftUI") -- 来自：Quentin Zervaas
+
+[@东坡肘子](https://www.fatbobman.com/): Streaks 是一款荣获 Apple 设计奖的代办事项列表应用。经过了 2 年的努力，开发团队将 Apple Watch 版本的开发框架转换成了 SwiftUI。本文讨论了实现这一里程碑的一些技术细节，以及本次转换过程的感受。
+
+5、[在 SwiftUI 中设置不同的环境：命令行参数和构建配置](https://holyswift.app/best-ways-to-set-up-environment-in-swiftui/ "在 SwiftUI 中设置不同的环境：命令行参数和构建配置") -- 来自：Leonardo
+
+[@东坡肘子](https://www.fatbobman.com/): 你是否厌倦了在你的 SwiftUI 应用中硬编码配置设置和数据？您想在运行时向你的应用程序传递值，而不需要手动更改代码吗？不妨看看 Xcode 环境变量和命令行参数吧。在这篇文章中，作者将探讨如何使用这些强大的功能来设置配置值，并在运行时向你的 SwiftUI 应用程序传递参数。Leonardo 将介绍如何在 Xcode 构建设置中设置环境变量，以及如何在 SwiftUI 代码中访问它们。并且还将深入探讨如何使用命令行参数，在你的应用程序从命令行启动时向其传递数值。
 
 
 
