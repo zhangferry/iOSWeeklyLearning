@@ -6,7 +6,7 @@
 
 > * 本期话题：Apple 公布 iOS 16 的普及率已达 81%
 > * 内容推荐：继续推荐近期的一些优秀博文，涵盖 Swift 混编 Module、App Store 价格新政、内存优化、Xcode 命令行参数和构建配置等方面的内容
-> * 摸一下鱼：一些新的基于 ChatGPT API 的工具如雨后春笋般产生，产品形态有这几个：App 客户端、浏览器插件、网站
+> * 摸一下鱼：一些新的基于 ChatGPT API 的工具如雨后春笋般产生，产品形态有这几个：移动端、watch端、浏览器插件、网站等
 
 ## 本期话题
 
@@ -68,9 +68,13 @@
 
 4、[ChatGPT Shortcut](https://newzone.top/chatgpt/ "ChatGPT Shortcut")：总结了 ChatGPT 的常见用法，并把一些使用的快捷指令进行了整理。prompts 是以英文来写的，因为 ChatGPT 语言处理能力非常强，换成中文处理也是可以的。
 
-5、[openai-translator](https://github.com/yetone/openai-translator)：基于 ChatGPT API 的划词翻译浏览器插件，支持桌面端。需要自己提供 Open API Key。
+5、[openai-translator](https://github.com/yetone/openai-translator "openai-translator")：基于 ChatGPT API 的划词翻译浏览器插件，支持桌面端，有翻译、润色、总结内容的功能。需要自己提供 Open API Key。
 
-![](https://cdn.zhangferry.com/Images/223200182-6a1d2a02-3fe0-4723-bdae-99d8b7212a33.gif)
+![](https://cdn.zhangferry.com/Images/202303092233022.png)
+
+6、[watchGPT](https://apps.apple.com/nl/app/watchgpt/id6446047813?l=en "watchGPT")：Apple Watch 端的 ChatGPT 应用上架，可以通过语音来输入命令，大大简化了使用路径。
+
+![](https://cdn.zhangferry.com/Images/202303092229450.png)
 
 ## 关于我们
 
