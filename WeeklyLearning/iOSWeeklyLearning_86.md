@@ -1,23 +1,18 @@
-# iOS 摸鱼周报 #82
+# iOS 摸鱼周报 #86 | 更多基于 ChatGPT API 的产品诞生了
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 本期话题：Apple 公布 iOS 16 的普及率已达 81%
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 内容推荐：继续推荐近期的一些优秀博文，涵盖 Swift 混编 Module、App Store 价格新政、内存优化、Xcode 命令行参数和构建配置等方面的内容
+> * 摸一下鱼：一些新的基于 ChatGPT API 的工具如雨后春笋般产生，产品形态有这几个：App 客户端、浏览器插件、网站
 
 ## 本期话题
 
+### [Apple 公布 iOS 16 的普及率已达 81%](https://developer.apple.com/cn/support/app-store/ "Apple 公布 iOS 16 的普及率达 81%")
 
-
-## 本周学习
-
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
-
-
+[@远恒之义](https://github.com/eternaljust)：Apple 官方数据来源于 App Store 上进行交易的设备统计，时间截止至 2023 年 2 月 14 日。在过去四年推出的设备中，iOS 16 的普及率达 81%。在所有的设备中，iOS 16 的普及率达 72%，加上 iOS 15 的 20%，iOS 15 系统及以上的普及率总计 92%。是时候修改 iOS 项目最低版本的限制了，开发者们要紧跟 Apple 的步伐，毕竟现在「小而美」的微信，也早已是 iOS 13 系统起步。
 
 ## 内容推荐
 
@@ -54,13 +49,13 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-1、[roomgpt](https://www.roomgpt.io/ "roomgpt")：利用 AI 技术把你现有的房间生成一个 dream room，只需上传一张当前房间的图片即可。
-
-![](https://cdn.zhangferry.com/Images/202303072231277.png)
-
-2、[潮流周刊](https://weekly.tw93.fun/ "潮流周刊")：作者是妙言的开发者，一位前端工程师。潮流周刊已经发到 119 期了，看了下日期，真的是期期不落。周报里是这样定位这份周刊的：「记录每周看到的前端潮流技术，筛选后用接地气方式发布于此」。周报里保留了一定的生活气息，使得个人色彩相对浓厚。
+1、[潮流周刊](https://weekly.tw93.fun/ "潮流周刊")：作者是妙言的开发者，一位前端工程师。潮流周刊已经发到 119 期了，看了下日期，真的是期期不落。周报里是这样定位这份周刊的：「记录每周看到的前端潮流技术，筛选后用接地气方式发布于此」。周报里保留了一定的生活气息，使得个人色彩相对浓厚。
 
 这也为我对摸鱼周报如何设定基调起到了一定的参考意义，技术周报不一定就得是板板正正的，也可以有血有肉，有情绪，有个性。
+
+2、[roomgpt](https://www.roomgpt.io/ "roomgpt")：利用 AI 技术把你现有的房间生成一个 dream room，只需上传一张当前房间的图片即可。
+
+![](https://cdn.zhangferry.com/Images/202303072231277.png)
 
 3、[基于 ChatGPT 的 API 能做什么产品](https://decohack.zhubai.love/posts/2244447748458225664 "基于 ChatGPT 的 API 能做什么产品")：这是 DecoHack 周刊的第 50 期内容，ChatGPT 的 API 已经开放一周了，随之而来确实有很多基于此的产品出现，本期内容总结了很多有趣的产品。我关注到的产品有：
 
@@ -73,18 +68,22 @@
 
 4、[ChatGPT Shortcut](https://newzone.top/chatgpt/ "ChatGPT Shortcut")：总结了 ChatGPT 的常见用法，并把一些使用的快捷指令进行了整理。prompts 是以英文来写的，因为 ChatGPT 语言处理能力非常强，换成中文处理也是可以的。
 
+5、[openai-translator](https://github.com/yetone/openai-translator)：基于 ChatGPT API 的划词翻译浏览器插件，支持桌面端。需要自己提供 Open API Key。
+
+![](https://cdn.zhangferry.com/Images/223200182-6a1d2a02-3fe0-4723-bdae-99d8b7212a33.gif)
+
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #79 | Freeform上线 & D2 本周开始](https://mp.weixin.qq.com/s/HdEhmXt60853tzM6xiVUwA)
+[iOS 摸鱼周报 #85 | ChatGPT 的 API 开放使用](https://mp.weixin.qq.com/s/Hhb7ZCDDqEcpIRTlUKiGTQ)
 
-[iOS 摸鱼周报 #78 |  用 ChatGPT 做点好玩的事 ](https://mp.weixin.qq.com/s/27J4NguYRsxYWmff_6iDcg)
+[iOS 摸鱼周报 #84 | 开箱即用的云服务 AirCode](https://mp.weixin.qq.com/s/fKutqWAHfzkbbFgYCvPfIA)
 
-[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
+[iOS 摸鱼周报 #83 | ChatGPT 的风又起来了](https://mp.weixin.qq.com/s/Ty95hGBIevHaJQ5TU774aQ)
 
-[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #82 | 去中心化社交软件 Damus](https://mp.weixin.qq.com/s/ck4Jn4Cq-yOs_mjAO-WacA)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
