@@ -4,18 +4,20 @@
 
 ### 本期概要
 
-> * 本期话题：Apple 公布 iOS 16 的普及率已达 81%
+> * 本期话题：App Store 的定价机制升级扩展；四位女性开发者与 App Store 的故事
 > * 本周学习：
 > * 内容推荐：
 > * 摸一下鱼：
 
 ## 本期话题
 
-### [Apple 公布 iOS 16 的普及率已达 81%](https://developer.apple.com/cn/support/app-store/ "Apple 公布 iOS 16 的普及率达 81%")
+### [App Store 的定价机制升级现已扩展至所有购买类型](https://developer.apple.com/cn/news/?id=dbrszv62 "App Store 的定价机制升级现已扩展至所有购买类型")
 
-[@远恒之义](https://github.com/eternaljust)：Apple 官方数据来源于 App Store 上进行交易的设备统计，时间截止至 2023 年 2 月 14 日。在过去四年推出的设备中，iOS 16 的普及率达 81%。在所有的设备中，iOS 16 的普及率达 72%，加上 iOS 15 的 20%，iOS 15 系统及以上的普及率总计 92%。是时候修改 iOS 项目最低版本的限制了，开发者们要紧跟 Apple 的步伐，毕竟现在「小而美」的微信，也早已是 iOS 13 系统起步。
+[@远恒之义](https://github.com/eternaljust)：即日起，App Store 最全面的定价机制升级迎来更新，包括新增价格点和按店面管理定价的全新工具。其中，你可在 900 个价格点中选择更灵活的定价，根据你熟悉的国家或地区来生成生成全球均衡价格，也可以为各个市场分发定制的内容和服务。此外，全新的增强定价机制更适用于当地顾客的价格，该机制将会在 2023 年 5 月 9 日更新调整。
 
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
+### [四位女性通过 app 与游戏推动文化发展并创造改变](https://www.apple.com.cn/newsroom/2023/03/meet-four-women-using-apps-and-games-to-drive-culture-and-create-change/ "四位女性通过 app 与游戏推动文化发展并创造改变")
+
+[@远恒之义](https://github.com/eternaljust)：女性开发者在开发者生态圈是一股不可忽视的力量，Apple 也一直在竭尽全力帮助女性开发者获得更好的成长，此前开展了包括 Apple Entrepreneur Camp（苹果企业家培训营）课程活动，以及针对中国女性开发者的“女性开发者社区日”特别活动。本篇内容为国际妇女节的主题特写，Apple 沟通了四位不同女性，这些女性主导的团队正在努力彰显女性的声音，文中分享了她们如何利用技术来鼓舞女性、创造社会变革的心得。
 
 ## 本周学习
 
