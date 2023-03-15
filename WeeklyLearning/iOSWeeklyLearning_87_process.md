@@ -35,19 +35,19 @@
 
 2、[手工打造 HTML 解析器的那些事](https://zhgchg.li/posts/2724f02f6e7/ "手工打造 HTML 解析器的那些事") -- 作者：ZhgChgLi
 
-[@东坡肘子](https://www.fatbobman.com/): [ZMarkupParser](https://github.com/ZhgChgLi/ZMarkupParser) 是一个纯 Swift 库，可帮助你将 HTML 字符串转换为具有自定义样式和标签的 NSAttributedString。在本文中，ZhgChgLi 详细介绍了开发该库过程中所涉及的技术细节以及开发故事。本文篇幅很长，难得有开发者会做如此详尽的记录。
+[@东坡肘子](https://www.fatbobman.com/): [ZMarkupParser](https://github.com/ZhgChgLi/ZMarkupParser) 是一个纯 Swift 库，可帮助你将 HTML 字符串转换为具有自定义样式和标签的 NSAttributedString。在本文中，ZhgChgLi 详细介绍了开发该库过程中所涉及的技术细节(HTML String 的 Tokenization 转换、Normalization 处理、Abstract Syntax Tree 的产生、Visitor Pattern / Builder Pattern 的应用)以及一些开发杂谈。本文篇幅很长，难得有开发者会做如此详尽的记录。
 
 3、[结构化并发](http://chuquan.me/2023/03/11/structured-concurrency/ "结构化并发") -- 作者：楚权
 
 [@东坡肘子](https://www.fatbobman.com/): 对于异步与并发，一直以来，业界都有着非常广泛的研究，针对特定场景提出了很多相关的技术，如：Future/Promise、Actor、CSP、异步函数等等。本文通过 GOTO 有害论引出编程历史中结构化编程的演化。以结构化编程作为类比，介绍了结构化并发的核心观点，以及结构化并发的设计理念。结构化并发主要包括作用域、异步函数、计算续体、协程等技术，此外还需要运行时系统的调度，才能最终实现理想的结构化并发。
 
-4、[通过 vacuuming 减少 CoreData 存储规模](https://blog.eidinger.info/keep-your-coredata-store-small-by-vacuuming "通过 vacuuming 减少 CoreData 存储规模") -- 作者：Marco Eidinger
+4、[通过 vacuuming 优化 CoreData 存储文件尺寸](https://blog.eidinger.info/keep-your-coredata-store-small-by-vacuuming "通过 vacuuming 优化 CoreData 存储文件尺寸") -- 作者：Marco Eidinger
 
-[@东坡肘子](https://www.fatbobman.com/): 默认情况下，当你从表中删除数据或删除表、视图或索引等数据库对象时，SQLite 数据库不会自动“释放”磁盘空间。因为 SQLite 只是将删除的对象标记为空闲并保留空间以供将来使用。结果，数据库文件的大小总是在增长。在这篇博文中，Marco Eidinger 将解释 VACUUM 这个概念以及如何将这个概念应用到你的 CoreData 存储中来减少存储规模。
+[@东坡肘子](https://www.fatbobman.com/): 默认情况下，当你从表中删除数据或删除表、视图或索引等数据库对象时，SQLite 数据库不会自动“释放”磁盘空间。因为 SQLite 只是将删除的对象标记为空闲并保留空间以供将来使用。结果，数据库文件的大小总是在增长。在这篇博文中，Marco Eidinger 将解释 VACUUM 这个概念以及如何将这个概念应用到你的 CoreData 存储中来减少存储文件的尺寸。
 
-5、[独立开发周报 #4 (0306-0312)](https://mp.weixin.qq.com/s/cEieMaUxSxDAZq0Cm_gwEQ "独立开发周报 #4 (0306-0312)") -- 作者： vulgur
+5、[独立开发周报 #4 (0306-0312)](https://mp.weixin.qq.com/s/cEieMaUxSxDAZq0Cm_gwEQ "独立开发周报 #4 (0306-0312)") -- 作者：vulgur
 
-[@东坡肘子](https://www.fatbobman.com/):  vulgur 是“极简时钟”、“极简日记”等 App 的作者，从一个月前开始，每周都通过博客的方式来记录自己的开发生活。通过他的记录，你可以对国内的独立开发者的工作、生活状态有更多的了解。
+[@东坡肘子](https://www.fatbobman.com/):  vulgur 是“极简时钟”、“极简日记”等 App 的作者，从一个月前开始，每周都通过博客的方式来记录自己的开发生活。通过他的记录，你可以对国内独立开发者的工作、生活状态有更多的了解。
 
 
 
