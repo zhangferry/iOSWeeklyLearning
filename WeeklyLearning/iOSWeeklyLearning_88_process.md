@@ -4,18 +4,16 @@
 
 ### 本期概要
 
-> * 本期话题：Apple 公布 iOS 16 的普及率已达 81%
+> * 本期话题：Xcode 14.3 RC 版本发布
 > * 本周学习：
 > * 内容推荐：
 > * 摸一下鱼：
 
 ## 本期话题
 
-### [Apple 公布 iOS 16 的普及率已达 81%](https://developer.apple.com/cn/support/app-store/ "Apple 公布 iOS 16 的普及率达 81%")
+### [Xcode 14.3 RC 版本发布](https://developer.apple.com/documentation/xcode-release-notes/xcode-14_3-release-notes "Xcode 14.3 RC 版本发布")
 
-[@远恒之义](https://github.com/eternaljust)：Apple 官方数据来源于 App Store 上进行交易的设备统计，时间截止至 2023 年 2 月 14 日。在过去四年推出的设备中，iOS 16 的普及率达 81%。在所有的设备中，iOS 16 的普及率达 72%，加上 iOS 15 的 20%，iOS 15 系统及以上的普及率总计 92%。是时候修改 iOS 项目最低版本的限制了，开发者们要紧跟 Apple 的步伐，毕竟现在「小而美」的微信，也早已是 iOS 13 系统起步。
-
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
+[@远恒之义](https://github.com/eternaljust)：Apple 于 2023 年 3 月 21 日发布了 [Xcode 14.3 RC 版本](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.3_Release_Candidate/Xcode_14.3_Release_Candidate.xip "Xcode 14.3 RC 版本下载")，新版本要求 macOS Ventura 13.0 系统及以上，最低兼容：MacBook Pro 2017 款、MacBook Air 2018 款、iMac 2017 款以及 Mac mini 2018 款等 Mac 机型。Xcode 14.3 内置 [Swift 5.8](https://www.hackingwithswift.com/articles/256/whats-new-in-swift-5-8 "Swift 5.8 中的新功能")，新版带来了可向后的函数返回部署 API、隐式 self 进行弱自我捕获、改进的结果生成器等新功能，同时内含 iOS 16.4 SDKs。本周三我下载好 Xcode 14.3 解压，编译了一下日常开发的 Swift 项目，仅遇到一个单行隐式函数表达式中，包含两个三元运算符的数据类型相加无法正常推导的报错，声明两个变量类型来拆分三元运算符后即通过了编译，目前暂无遇到其他报错信息。
 
 ## 本周学习
 
