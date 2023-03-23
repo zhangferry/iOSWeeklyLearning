@@ -18,10 +18,9 @@
 
 [@远恒之义](https://github.com/eternaljust)：女性开发者在开发者生态圈是一股不可忽视的力量，Apple 也一直在竭尽全力帮助女性开发者获得更好的成长，此前开展了包括 Apple Entrepreneur Camp（苹果企业家培训营）课程活动，以及针对中国女性开发者的“女性开发者社区日”特别活动。本篇内容为国际妇女节的主题特写，Apple 沟通了四位不同女性，这些女性主导的团队正在努力彰显女性的声音，文中分享了她们如何利用技术来鼓舞女性、创造社会变革的心得。
 
-
 ## 内容推荐
 
-推荐近期的一些优秀博文，涵盖结构化并发、开发者故事、开发经验分享、Swift Builtin 函数等方面的内容。
+推荐近期的一些优秀博文，涵盖结构化并发、开发者故事、开发经验分享、Swift Builtin 函数等方面的内容
 
 整理编辑：[东坡肘子](https://www.fatbobman.com/)
 
@@ -92,7 +91,6 @@ export COMMANDLINE_ARGS="--skip-torch-cuda-test --upcast-sampling --no-half-vae 
 5、[苹果内购录：关于新定价规则的理解与思考](https://mp.weixin.qq.com/s/ZQlBFHuRoDYmYpMfgnsp2Q)：苹果在 3 月 9 号 发布了[新的定价规则](https://developer.apple.com/cn/news/?id=dbrszv62 "Apple 新的定价规则")，其中有一些修改点可能会对现有业务逻辑带来一些影响。本文对历史规则进行了回顾，同时也对新的定价规则进行了分析解读。
 
 除此之外，推荐需要处理内购的同学可以关注一下该 `#苹果内购录` 系列文章。
-
 
 ## 关于我们
 
