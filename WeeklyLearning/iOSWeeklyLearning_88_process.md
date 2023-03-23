@@ -25,8 +25,29 @@
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+推荐近期的一些优秀博文，涵盖 CreateML 使用、Runtime 探索、XCTest 性能测试等方面的内容
 
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
+
+1、[CreateML 使用](https://mp.weixin.qq.com/s/FGwv9cvf1lZDaYa9dh_kmQ "CreateML 使用") -- 作者：王德亮 搜狐技术产品
+
+[@东坡肘子](https://www.fatbobman.com/): CoreML 框架允许将机器学习模型整合到苹果平台的应用程序中。有许多种方法来创建可用于 CoreML 的模型，其中一种方式便是使用 Xcode 附带的 CreateML 开发者应用程序。本文将展示使用 CreateML 来创建模型的流程。
+
+2、[iOS 底层之 Runtime 探索](https://juejin.cn/post/7207330728698806309 "iOS 底层之 Runtime 探索") -- 作者：Joe天青色
+
+[@东坡肘子](https://www.fatbobman.com/): Runtime 简称运行时，Objective-C 语言将尽可能多的决策从编译时和链接时推迟到运行时。只要可能，它都会动态地进行操作。这意味着该语言不仅需要编译器，还需要运行时系统来执行编译的代码。运行时系统充当 Objective-C 语言的一种操作系统。作者将通过三篇文章来梳理并分享自己对 Runtime 的探索过程。
+
+3、[只在视图 Body 中生存的变量](https://www.fatbobman.com/posts/variables-that-only-survive-in-view-body/ "只在视图 Body 中生存的变量") -- 作者：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): 相信不少开发者都会在视图中使用过 `let _ = print("update")`，但很少有人会在 body 中去使用 var 来定义变量，因为实在找不到使用 var 的理由和意义。本文将探讨在 SwiftUI 的视图 body 中用 var 来创建变量的意义和可能的场景。
+
+4、[用结构体包裹函数](https://paul-samuels.com/blog/2023/03/18/wrapping-functions-in-structs/ "用结构体包裹函数") -- 作者：Paul Samuels
+
+[@东坡肘子](https://www.fatbobman.com/): 我们可以在 Swift 中使用函数来捆绑行为，并在我们的应用程序中方便地传递它。使用函数时，当我们遇到一些特殊的可用性问题，可以尝试通过将函数包装在一个结构中来解决。这篇文章 100% 不是建议把每个函数都包装在一个结构中，而是研究一些可能有意义的情况。
+
+5、[使用 XCTest 框架在 Swift 中进行性能测试](https://swiftwithmajid.com/2023/03/15/performance-testing-in-swift-using-xctest-framework/ "使用 XCTest 框架在 Swift 中进行性能测试") -- 作者：Majid
+
+[@东坡肘子](https://www.fatbobman.com/): 在 Swift 中，我们可以使用 XCTest 框架进行性能测试，它是 Xcode 开发环境的一部分。 XCTest 提供了一套全面的工具，用于编写、运行和分析 Swift 应用程序的单元测试和性能测试。 本周我们将学习如何使用 XCTest 框架在 Swift 中进行性能测试。作者 Majid 善长进行系列创作，本文或许是他有关 XCTest 框架的又一系例作品的开篇，目前已经完成了两篇。
 
 
 ## 摸一下鱼
