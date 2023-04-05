@@ -93,6 +93,10 @@ Xcode 14.3 内置 [Swift 5.8](https://www.hackingwithswift.com/articles/256/what
 
 ![](https://cdn.zhangferry.com/Images/202303222234824.png)
 
+4、[kalos.art](https://lib.kalos.art/ "kalos.art")：一个收集 AI 绘画的网站，支持主流的绘画模型。它还根据绘画风格进行了分类，可以选择喜欢的风格，copy 对应 prompt 应用到自己的绘画描述中。
+
+![](https://cdn.zhangferry.com/Images/202303232326509.png)
+
 ## 岗位推荐：小红书-直播-iOS
 
 ### 岗位要求
