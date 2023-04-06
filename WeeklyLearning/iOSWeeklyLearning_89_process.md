@@ -4,18 +4,20 @@
 
 ### 本期概要
 
-> * 本期话题：Apple 公布 iOS 16 的普及率已达 81%
+> * 本期话题：WWDC 23 全球开发者大会日期公布
 > * 本周学习：
 > * 内容推荐：
 > * 摸一下鱼：
 
 ## 本期话题
 
-### [Apple 公布 iOS 16 的普及率已达 81%](https://developer.apple.com/cn/support/app-store/ "Apple 公布 iOS 16 的普及率达 81%")
+### [WWDC 23 全球开发者大会日期公布](https://developer.apple.com/cn/wwdc23/ "WWDC 23 全球开发者大会日期公布")
 
-[@远恒之义](https://github.com/eternaljust)：Apple 官方数据来源于 App Store 上进行交易的设备统计，时间截止至 2023 年 2 月 14 日。在过去四年推出的设备中，iOS 16 的普及率达 81%。在所有的设备中，iOS 16 的普及率达 72%，加上 iOS 15 的 20%，iOS 15 系统及以上的普及率总计 92%。是时候修改 iOS 项目最低版本的限制了，开发者们要紧跟 Apple 的步伐，毕竟现在「小而美」的微信，也早已是 iOS 13 系统起步。
+![](https://cdn.zhangferry.com/Images/89-wwdc23.jpeg)
 
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
+Apple 宣布 WWDC 23 将在北京时间 6 月 6 日至 10 日举行，主要内容是为期一周丰富多彩的技术和社区活动，大会仍采用线上播放形式。通过邀请函图片猜测，本次大会 Apple 可能会带来新的 MR 头显硬件。除了 iOS、iPadOS、macOS、watchOS 和 tvOS 等系统新功能的更新，大会上是否会有 xrOS 新系统的推出也值得关注。
+
+Apple 同时会在 Apple Park 举办面向开发者和学生的全天特别活动，[Swift Student Challenge](https://developer.apple.com/cn/wwdc23/swift-student-challenge/ "Swift Student Challenge ") 也将继续举行，全世界满足条件的学生可以构建自己的 App Playground。完成作品提交截止日期为太平洋夏令时间 2023 年 4 月 19 日，获奖者将会得到 WWDC23 专属夹克、AirPods Pro、定制徽章套装，以及一年开发者会员资格。此外，获奖者还有一次专属的随机抽取出席 Apple Park 特别活动的机会。
 
 ## 本周学习
 
