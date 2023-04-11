@@ -1,21 +1,15 @@
-# iOS 摸鱼周报 #82
+# iOS 摸鱼周报 #90
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：Apple 公布 iOS 16 的普及率已达 81%
+> * 本期话题：
 > * 本周学习：
 > * 内容推荐：
 > * 摸一下鱼：
 
 ## 本期话题
-
-### [Apple 公布 iOS 16 的普及率已达 81%](https://developer.apple.com/cn/support/app-store/ "Apple 公布 iOS 16 的普及率达 81%")
-
-[@远恒之义](https://github.com/eternaljust)：Apple 官方数据来源于 App Store 上进行交易的设备统计，时间截止至 2023 年 2 月 14 日。在过去四年推出的设备中，iOS 16 的普及率达 81%。在所有的设备中，iOS 16 的普及率达 72%，加上 iOS 15 的 20%，iOS 15 系统及以上的普及率总计 92%。是时候修改 iOS 项目最低版本的限制了，开发者们要紧跟 Apple 的步伐，毕竟现在「小而美」的微信，也早已是 iOS 13 系统起步。
-
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
 
 ## 本周学习
 
@@ -33,7 +27,28 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+1、[designtools.ai](https://designtools.ai/ "designtools.ai")：把 AI 融入设计领域的工具汇总网站。可以发现，现在 AI 的能力已经开始往各个垂类蔓延发扬光大了。
 
+![](https://cdn.zhangferry.com/Images/202304112320465.png)
+
+* 交互类：通过 Figma 设计稿生成可交互网站和 React 组件；Figma 工作流自动化；在Figma 里自动生成素材图片；
+* 图像类：生成人物形象；生成产品图、广告营销图；生成 icon，矢量图
+* 颜色类：自动生成色盘
+* 字体类：生成合适的字体
+
+2、[把GPT模型融入游戏角色里](https://reverie.herokuapp.com/arXiv_Demo)：斯坦福大学和Google的研究员做了这样一个产品，创建一个虚拟小镇，里面有 25 个角色，他们的身份提前在 ChatGPT 里定义好，行为方式由 ChatGPT 自动生成，然后驱动各个角色做各自的事情。
+
+各个角色的行为有时间线，且比较多样，像是对话、写作、吃饭、休息、谈恋爱、上班、散步都有。而且他们做的事情时间还可以相互影响，我们关注某一个正在聊天的对象，暂停时间线可以看他聊的啥：
+
+> GR：我在思考如何把数学模式应用到药物研究上，你有什么想法吗？
+>
+> RP：我最近刚读了一篇相关的论文，等下发给你。JM 对这个专题很感兴趣，你也可以跟她交流下。
+
+这个效果真的很有意思，除了游戏层面人物，也可以把这个场景扩展为一个影视剧，类似《楚门的世界》。还可以在一个大环境里，给两个人塑造两个性格，观察他们以后的行为，用来做心理学行为学的研究等等。
+
+![](https://cdn.zhangferry.com/Images/202304112328897.png)
+
+![](https://cdn.zhangferry.com/Images/202304112336624.png)
 
 ## 关于我们
 
