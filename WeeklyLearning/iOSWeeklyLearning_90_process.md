@@ -4,12 +4,20 @@
 
 ### 本期概要
 
-> * 本期话题：
+> * 本期话题：4 月 25 日起必须使用 Xcode 14.1 构建提交 App
 > * 本周学习：
 > * 内容推荐：
 > * 摸一下鱼：
 
 ## 本期话题
+
+### [4 月 25 日起必须使用 Xcode 14.1 构建提交 App](https://developer.apple.com/cn/news/?id=jd9wcyov "4 月 25 日起必须使用 Xcode 14.1 构建提交 App")
+
+[@远恒之义](https://github.com/eternaljust)：Apple 于 2022 年 10 月 18 日开放了 iOS 16.1 的 App 提交，鼓励开发者利用“实时活动”来适配 iOS 16 上的锁定屏幕和灵动岛功能。同时也提醒开发者，会在 4 月份限制提交至 App Store 的 App 必须使用 Xcode 14.1 或更高版本构建。近日，Apple 确定了具体截止时间为 2023 年 4 月 25 日，开发者还剩十来天完成项目的适配工作，留给同学们的时间不多了。推荐下载 Xcode 14.2 来构建项目，使用最新的 Xcode 14.3 打包会遇到 [CocoaPods 报错](https://github.com/CocoaPods/CocoaPods/issues/11808 "Xcode 14.3 Archive CocoaPods 报错") `rsync: link_stat failed:`，需手动修改 `Pods-项目名-frameworks.sh文件` 中 `source="$(readlink "${source}")"` 为 `source="$(readlink -f "${source}")"`。
+
+### [线上讲座：探索 App Store 定价机制升级](https://developer.apple.com/events/view/LMKG9DJV2M/dashboard "线上讲座：探索 App Store 定价机制升级")
+
+[@远恒之义](https://github.com/eternaljust)：本次讲座会探索 App Store 中提供的最新定价功能，Apple 将介绍增强的全球定价机制、按店面管理定价的全新工具、新增价格点以及全球均衡价格功能。同时，Apple 还会分享一些定价的配置示例。
 
 ## 本周学习
 
