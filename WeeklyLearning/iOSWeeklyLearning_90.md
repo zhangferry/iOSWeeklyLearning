@@ -1,29 +1,24 @@
-# iOS 摸鱼周报 #90
+# iOS 摸鱼周报 #90 | 面相任务的 GPT 项目诞生
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
 > * 本期话题：4 月 25 日起必须使用 Xcode 14.1 构建提交 App
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 内容推荐：推荐近期的一些优秀博文，涵盖：自定义 Swift Toolchain、软件测试、AI 应用、Dark Sky 设计经验等方面的内容。
+> * 摸一下鱼：面向任务的 GPT 项目 Auto-GPT；把 GPT 模型融于模拟角色；把AI融于设计流程；Xcode 版本的 Copilot 插件
 
 ## 本期话题
 
 ### [4 月 25 日起必须使用 Xcode 14.1 构建提交 App](https://developer.apple.com/cn/news/?id=jd9wcyov "4 月 25 日起必须使用 Xcode 14.1 构建提交 App")
 
-[@远恒之义](https://github.com/eternaljust)：Apple 于 2022 年 10 月 18 日开放了 iOS 16.1 的 App 提交，鼓励开发者利用“实时活动”来适配 iOS 16 上的锁定屏幕和灵动岛功能。同时也提醒开发者，会在 4 月份限制提交至 App Store 的 App 必须使用 Xcode 14.1 或更高版本构建。近日，Apple 确定了具体截止时间为 2023 年 4 月 25 日，开发者还剩十来天完成项目的适配工作，留给同学们的时间不多了。推荐下载 Xcode 14.2 来构建项目，使用最新的 Xcode 14.3 打包会遇到 [CocoaPods 报错](https://github.com/CocoaPods/CocoaPods/issues/11808 "Xcode 14.3 Archive CocoaPods 报错") `rsync: link_stat failed:`，需手动修改 `Pods-项目名-frameworks.sh文件` 中 `source="$(readlink "${source}")"` 为 `source="$(readlink -f "${source}")"`。
+[@远恒之义](https://github.com/eternaljust)：Apple 于 2022 年 10 月 18 日开放了 iOS 16.1 的 App 提交，鼓励开发者利用“实时活动”来适配 iOS 16 上的锁定屏幕和灵动岛功能。同时也提醒开发者，会在 4 月份限制提交至 App Store 的 App 必须使用 Xcode 14.1 或更高版本构建。近日，Apple 确定了具体截止时间为 2023 年 4 月 25 日，开发者还剩十来天完成项目的适配工作，留给同学们的时间不多了。
+
+推荐下载 Xcode 14.2 来构建项目，使用最新的 Xcode 14.3 打包会遇到 [CocoaPods 报错](https://github.com/CocoaPods/CocoaPods/issues/11808 "Xcode 14.3 Archive CocoaPods 报错") `rsync: link_stat failed:`，需手动修改 `Pods-项目名-frameworks.sh文件` 中 `source="$(readlink "${source}")"` 为 `source="$(readlink -f "${source}")"`。
 
 ### [线上讲座：探索 App Store 定价机制升级](https://developer.apple.com/events/view/LMKG9DJV2M/dashboard "线上讲座：探索 App Store 定价机制升级")
 
 [@远恒之义](https://github.com/eternaljust)：本次讲座会探索 App Store 中提供的最新定价功能，Apple 将介绍增强的全球定价机制、按店面管理定价的全新工具、新增价格点以及全球均衡价格功能。同时，Apple 还会分享一些定价的配置示例。
-
-## 本周学习
-
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
-
-
 
 ## 内容推荐
 
@@ -31,7 +26,7 @@
 
 整理编辑：[东坡肘子](https://www.fatbobman.com/)
 
-1、[抖音 Swift 编译优化 - 基于自定义 Toolchain 编译提速 60%](https://mp.weixin.qq.com/s/MT5MHhZIlyrhuVNM3Ckteg "抖音 Swift 编译优化 - 基于自定义 Toolchain 编译提速 60%") -- 作者：抖音基础技术团队
+1、[抖音 Swift 编译优化 - 基于自定义 Toolchain 编译提速 60%](https://mp.weixin.qq.com/s/MT5MHhZIlyrhuVNM3Ckteg) -- 作者：抖音基础技术团队
 
 [@东坡肘子](https://www.fatbobman.com/): 对于大型项目来说，编译速度至关重要。本文探讨了全部模块化后带来的依赖解析瓶颈问题，并介绍了如何通过自定义工具链来提高抖音的 Swift 编译速度。作者解释了自定义工具链的过程，包括如何增加入参定义、白名单解析和自定义诊断信息等，并分享了如何验证和上线自定义工具链，以及未来可以进一步优化编译速度的方向。本文有助于学习如何提高编译速度，以及如何利用 Swift 工具链进行深度优化。
 
@@ -59,11 +54,13 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+目前 AI 的演进方向分为两条路，一个是用 AI 覆盖传统的生产流程，一个是探索 AI 更广阔的应用场景，本周这两个方向都有不同程度超出预期的产品诞生。
+
 1、[Auto-GPT](https://github.com/Torantulino/Auto-GPT "Auto-GPT")：这是一个实验性的开源项目，由 GPT-4 驱动。它最大的特点是把 LLM 的想法串在一起，以实现设定的目标。这个东西恰好跟上一期内容分享的 GPT4 的能力限制有关：
 
 > 它还没有面向任务的自驱动架构。这个含义是，它可以自己去分解目标，一步步完成，这个处理流程就像一个人去做一件事的步骤一样。
 
-而这个项目就是为了达成这个目标设计的，示例项目中给它的目标是：为接下来要发生的节日创建一个食谱，然后保存这个文件，完成之后你退出程序。以下是Auto-GPT的执行流程：
+而这个项目就是为了达成这个目标设计的，示例项目中给它的目标是：为接下来要发生的节日创建一个食谱，然后保存这个文件，完成之后你退出程序。以下是 Auto-GPT 的执行流程：
 
 > 1、google 搜索即将到来的节日
 >
@@ -82,6 +79,8 @@
 > 8、使用 GPT-4 生成一份地球日主题的食谱，发生命令错误
 >
 > 9、重新纠正再用 GPT-4 去创建食谱，获得结果
+
+![](https://cdn.zhangferry.com/Images/202304132143819.png)
 
 这个才是 AGI 所表现出来的智能，它会自我学习，也会自动纠错，这就像人一样去完成一件事。另一方面因为 AI 有很大的自主性，如果为了达成目标需要付出一定的代价，AI 对这个代价的衡量跟人是不同的，所以这个事情的危险性也很大。项目中也多次提到危险性和免责说明，当这项能力被完全打开的时候，希望打开的不是潘多拉的盒子。
 
