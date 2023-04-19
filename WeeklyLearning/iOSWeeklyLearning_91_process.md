@@ -11,12 +11,6 @@
 
 ## 本期话题
 
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
-
-## 本周学习
-
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
-
 
 
 ## 内容推荐
@@ -49,6 +43,38 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+AI 仍然是我最感兴趣的领域，一起来看下本周这个方向有哪些好玩的事情吧。
+
+1、[AI playground](https://play.vercel.ai/)：Vercel 发布的 AI 模型实验网站，可以选择 OpenAI 的 GPT4，Google 的模型，以及 claude 模型等，还完全免费，缺点也很明显就是不保留聊天记录，不具备上下文能力。
+
+![](https://cdn.zhangferry.com/Images/202304192253945.png)
+
+2、[character.ai](https://beta.character.ai/ "character.ai")：一个尝试把 AI 拟人化的网站，他们给 AI 赋予了各种各样的角色，你可以根据自己的需求跟他们对话。这个想法非常好，因为我们需要解决的问题都是具有特定场景的，这省去了自己去培养 AI 的步骤。
+
+![](https://cdn.zhangferry.com/Images/202304192324509.png)
+
+3、[AI Talk](https://v.douyin.com/D2TDfgW "AI Talk")：这是抖音博主「AI Talk」制作的视频，「AI马斯克对谈AI乔布斯，辩论人工智能对人类的威胁 两位智者谈论AI是否能具有直觉和情感，一场久违的架空对话」。对话均有 GPT4 生成，这个对话的质量非常高，因为声音上也做了语音的拟合，看上去更像是真实存在的一样。
+
+而这也跟数字人的概念非常一致了，在世的人或者逝去但是留有很多资料记录的人都可以根据现有的数据生成一份数字人模型。我们可以随时跟他们交流，他们也能够在网络的世界里永生。
+
+![](https://cdn.zhangferry.com/Images/202304192341147.png)
+
+4、[HealthGPT](https://twitter.com/varunshenoy_/status/1648374949537775616 "Twitter HealthGPT")：来自斯坦福的一位小哥做的基于健康数据分析的HealthGPT，目前该项目已经[开源](https://github.com/StanfordBDHG/HealthGPT "HealthGPt")。想象一下，未来每个人都有一个个性化的人工智能健康助手，它可以:
+
+* 保证隐私的情况下追踪你的信息
+
+* 了解你身体的独特需求
+
+* 能够为你的健身目标提供量身定制的建议
+
+![](https://cdn.zhangferry.com/Images/202304192346044.png)
+
+gfpgan
+
+
+* pytorch
+* clip/blip
+* hugging face
 
 
 ## 关于我们

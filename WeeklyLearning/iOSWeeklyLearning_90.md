@@ -6,7 +6,7 @@
 
 > * 本期话题：4 月 25 日起必须使用 Xcode 14.1 构建提交 App
 > * 内容推荐：推荐近期的一些优秀博文，涵盖：自定义 Swift Toolchain、软件测试、AI 应用、Dark Sky 设计经验等方面的内容。
-> * 摸一下鱼：面向任务的 GPT 项目 Auto-GPT；把 GPT 模型融于模拟角色；把AI融于设计流程；Xcode 版本的 Copilot 插件
+> * 摸一下鱼：面向任务的 GPT 项目 Auto-GPT；把 GPT 模型融于模拟角色；把 AI 融于设计流程；Xcode 版本的 Copilot 插件
 
 ## 本期话题
 
@@ -54,7 +54,7 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-目前 AI 的演进方向分为两条路，一个是用 AI 覆盖传统的生产流程，一个是探索 AI 更广阔的应用场景，本周这两个方向都有不同程度超出预期的产品诞生。
+目前 AI 的演进方向分为两条路，一个是用 AI 覆盖传统的生产流程，一个是探索 AI 更广阔的应用场景。
 
 1、[Auto-GPT](https://github.com/Torantulino/Auto-GPT "Auto-GPT")：这是一个实验性的开源项目，由 GPT-4 驱动。它最大的特点是把 LLM 的想法串在一起，以实现设定的目标。这个东西恰好跟上一期内容分享的 GPT4 的能力限制有关：
 
@@ -62,13 +62,15 @@
 
 而这个项目就是为了达成这个目标设计的，示例项目中给它的目标是：为接下来要发生的节日创建一个食谱，然后保存这个文件，完成之后你退出程序。以下是 Auto-GPT 的执行流程：
 
-> 1、google 搜索即将到来的节日
+![](https://cdn.zhangferry.com/Images/202304132143819.png)
+
+> 1、Google 搜索即将到来的节日
 >
 > 2、检索第一个返回的网站信息，没有找到合适的节日信息
 >
 > 3、检索第二个网站信息，也没有找到合适的节日信息
 >
-> 4、开始变换策略：直接 google 搜索当前的日期，然后加上「节日」
+> 4、开始变换策略：直接 Google 搜索当前的日期，然后加上「节日」
 >
 > 5、检索结果有很多，它为了提高效率，选择了一个带日历视图的网站
 >
@@ -80,11 +82,9 @@
 >
 > 9、重新纠正再用 GPT-4 去创建食谱，获得结果
 
-![](https://cdn.zhangferry.com/Images/202304132143819.png)
+这个才是 AGI 所表现出来的智能，它会自我学习，也会自动纠错，这就像人一样去完成一件事。另一方面因为 AI 有很大的自主性，如果为了达成目标需要付出一定的代价，AI 对这个代价的衡量跟人是不同的，所以这个事情的危险性也很大。项目中也多次提到危险性和免责说明，当这项能力被完全打开的时候，打开的会是潘多拉的盒子吗？
 
-这个才是 AGI 所表现出来的智能，它会自我学习，也会自动纠错，这就像人一样去完成一件事。另一方面因为 AI 有很大的自主性，如果为了达成目标需要付出一定的代价，AI 对这个代价的衡量跟人是不同的，所以这个事情的危险性也很大。项目中也多次提到危险性和免责说明，当这项能力被完全打开的时候，希望打开的不是潘多拉的盒子。
-
-2、[把GPT模型融入游戏角色里](https://reverie.herokuapp.com/arXiv_Demo)：斯坦福大学和Google的研究员做了这样一个产品，创建一个虚拟小镇，里面有 25 个角色，他们的身份提前在 ChatGPT 里定义好，行为方式由 ChatGPT 自动生成，然后驱动各个角色做各自的事情。
+2、[把GPT模型融入游戏角色里](https://reverie.herokuapp.com/arXiv_Demo)：斯坦福大学和 Google 的研究员做这样一个产品，创建一个虚拟小镇，里面有 25 个角色，他们的身份提前在 ChatGPT 里定义好，行为方式由 ChatGPT 自动生成，然后驱动各个角色做各自的事情。
 
 各个角色的行为有时间线，且比较多样，像是对话、写作、吃饭、休息、谈恋爱、上班、散步都有。而且他们做的事情时间还可以相互影响，我们关注某一个正在聊天的对象，暂停时间线可以看他聊的啥：
 
@@ -118,12 +118,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #79 | Freeform上线 & D2 本周开始](https://mp.weixin.qq.com/s/HdEhmXt60853tzM6xiVUwA)
+[iOS 摸鱼周报 #88 | 把 AI 集成到研发流程](https://mp.weixin.qq.com/s/ex3aHSPjKj9woxQwHyRzZA)
 
-[iOS 摸鱼周报 #78 |  用 ChatGPT 做点好玩的事 ](https://mp.weixin.qq.com/s/27J4NguYRsxYWmff_6iDcg)
+[iOS 摸鱼周报 #87 | Planning for AGI](https://mp.weixin.qq.com/s/TwugmMEiGoFKYQY9euhg6Q)
 
-[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
+[iOS 摸鱼周报 #86 | 更多基于 ChatGPT API 的产品诞生了](https://mp.weixin.qq.com/s/y1_V0WKfdwsUL2WjP2zPyA)
 
-[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #85 | ChatGPT 的 API 开放使用](https://mp.weixin.qq.com/s/Hhb7ZCDDqEcpIRTlUKiGTQ)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
