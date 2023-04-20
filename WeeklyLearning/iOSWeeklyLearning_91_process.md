@@ -11,7 +11,13 @@
 
 ## 本期话题
 
+### [线上讲座：探索 Vision 框架](https://developer.apple.com/events/view/93396BVQ5Y/dashboard "线上讲座：探索 Vision 框架")
 
+[@远恒之义](https://github.com/eternaljust)：Vision 是一款基于 Core ML 封装的图像识别框架，支持人脸检测、文本检测、二维码检测、图像配准和特征追踪等能力。本期讲座将探索学习 Vision 框架在 App 内应用计算机视觉相关的能力，进一步了解如何通过不同的 API 在图片和视频上执行任务。会议时间为 2023 年 5 月 9 日上午 10:00 – 中午 11:00，截止报名时间 2023 年 5 月 8 日前。
+
+### [迎接 5 月 9 日推出的增强全球定价机制](https://developer.apple.com/cn/news/?id=74739es1 "迎接 5 月 9 日推出的增强全球定价机制")
+
+[@远恒之义](https://github.com/eternaljust)：Apple 提醒，自 2023 年 5 月 9 日起，App Store 各店面的现有 App 和一次性 App 内购买项目的价格都将以产品当前在美国店面的价格为基础进行更新，除非你在 2023 年 3 月 8 日后进行了相关更新。[全新的增强定价机制](https://developer.apple.com/cn/news/?id=dbrszv62 "全新的增强定价机制")适用于当地顾客的价格，你可以根据你熟悉的国家或地区来生成全球均衡价格，也可以为各个市场分发定制的内容和服务。
 
 ## 内容推荐
 
