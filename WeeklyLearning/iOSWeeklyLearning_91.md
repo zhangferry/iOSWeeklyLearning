@@ -1,13 +1,12 @@
-# iOS 摸鱼周报 #90
+# iOS 摸鱼周报 #91 | 免费的网站托管平台 Vercel
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本期话题：线上讲座：探索 Vision 框架；5月9号，App Store定价以美国价格为基准进行更新
+> * 内容推荐：推荐近期的一些优秀博文，涵盖：App Clip、CloudKit、Swift ABI 稳定性等方面的内容
+> * 摸一下鱼：建了一个交流 AGI 知识的社群；在 Vercel 上部署 ChatGPT 的聊天能力；一个把 AI 拟人化的网站；AI Talk 基于 GPT4 让马斯克和乔布斯进行对话；基于 Apple 健康数据分析的 App HealthGPT
 
 ## 本期话题
 
@@ -49,11 +48,15 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-AI 仍然是我最感兴趣的领域，一起来看下本周这个方向有哪些好玩的事情吧。
+AI 仍然是科技圈最热的领域，我目前对这个领域非常感兴趣，感觉正在见证一个领域的兴起，可以发现最近几期摸鱼的内容全部变成 AI 相关的了。我获取这些信息的途径，要么是看一些博主分享，要么是去 Twitter 进行定向的筛选。但这种方式获取和分享的途径还是有些单一，一直想有一个合适的交流这方面内容的社群，外部一直没有找到，就决定自己先建一个看看吧。考虑社群的形式，微信群虽然易用，但很容易沦为吹水群，且会受到管制的影响，最终决定建一个 discord 频道，discord 有话题的概念，可以看历史信息，还可以方便的加各种扩展功能。聊天室已经就位，地址是：https://discord.gg/Fz6V2rej，如果你感兴趣可以加进来聊一哈。
 
 1、[AI playground](https://play.vercel.ai/)：Vercel 发布的 AI 模型实验网站，可以选择 OpenAI 的 GPT4，Google 的模型，以及 claude 模型等，还完全免费，缺点也很明显就是不保留聊天记录，不具备上下文能力。
 
 ![](https://cdn.zhangferry.com/Images/202304192253945.png)
+
+[Vercel](vercel.com) 是一个免费的网站托管平台，可以部署静态和动态网站，提供免费的域名和 HTTPS 证书。Github 有一个项目[ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web "ChatGPT-Next-Web")实现了 ChatGPT 的聊天界面，可以直接部署到 Vercel 上。然后再关联自己的二级域名，就有了属于自己的调用地址：`chat.zhangferry.com`，大家感兴趣可以访问这个地址体验下。
+
+![](https://cdn.zhangferry.com/Images/202304202218678.png)
 
 2、[character.ai](https://beta.character.ai/ "character.ai")：一个尝试把 AI 拟人化的网站，他们给 AI 赋予了各种各样的角色，你可以根据自己的需求跟他们对话。这个想法非常好，因为我们需要解决的问题都是具有特定场景的，这省去了自己去培养 AI 的步骤。
 
@@ -65,7 +68,7 @@ AI 仍然是我最感兴趣的领域，一起来看下本周这个方向有哪�
 
 ![](https://cdn.zhangferry.com/Images/202304192341147.png)
 
-4、[HealthGPT](https://twitter.com/varunshenoy_/status/1648374949537775616 "Twitter HealthGPT")：来自斯坦福的一位小哥做的基于健康数据分析的HealthGPT，目前该项目已经[开源](https://github.com/StanfordBDHG/HealthGPT "HealthGPt")。想象一下，未来每个人都有一个个性化的人工智能健康助手，它可以:
+4、[HealthGPT](https://twitter.com/varunshenoy_/status/1648374949537775616 "Twitter HealthGPT")：来自斯坦福的一位小哥做的基于健康数据分析的 HealthGPT，目前该项目已经[开源](https://github.com/StanfordBDHG/HealthGPT "HealthGPt")。想象一下，未来每个人都有一个个性化的人工智能健康助手，它可以:
 
 * 保证隐私的情况下追踪你的信息
 
@@ -75,6 +78,35 @@ AI 仍然是我最感兴趣的领域，一起来看下本周这个方向有哪�
 
 ![](https://cdn.zhangferry.com/Images/202304192346044.png)
 
+## iOS 招聘 - 蔚来汽车 APP
+
+### 岗位及团队介绍
+
+电动车是未来几年最热的技术领域之一，所处行业前景一片光明，详见：https://www.nio.cn/events/shanghai-autoshow
+
+* 上下班不需要打卡，弹性工作
+* 领导 Nice，团队工作氛围很融洽，注重个人发展，很好沟通
+* 只要技术 OK，薪资绝对让你满意
+
+工作地点：上海市闵行区宜山路 1999 号科技绿洲三期 23 号楼
+
+### 职责介绍及岗位要求
+
+* 责公司移动产品架构设计，方案的制定，技术可行性研究，系统性能优化及安全加固；
+* 责移动技术难题攻关，解决系统中关键架构问题，对系统稳定性负责；
+* 项目组开发人员的设计评审，Code Review，以保证代码的可读性、可扩展性、易维护性。
+
+**职位要求**
+
+* 本科以上学历，5年以上iOS平台开发经验；有通用中间件SDK相关开发经验优先；
+* 熟悉 WKWebView 基础组件，有 Hybrid 框架、JS Binding 经验优先；
+* 悉 React Native、Flutter，有动态化框架开发经验者优先；
+* 基础 SDK 开发流程，有图片库、埋点、离线包、AB相关开发经验者优先；
+* APM 系统，有稳定性、性能、内存优化经验者优先；
+
+### 联系方式
+
+微信：cuilh2018
 
 ## 关于我们
 
@@ -82,12 +114,12 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #79 | Freeform上线 & D2 本周开始](https://mp.weixin.qq.com/s/HdEhmXt60853tzM6xiVUwA)
+[iOS 摸鱼周报 #90 | 面相任务的 GPT 项目诞生](https://mp.weixin.qq.com/s/Bx8N9HqMP5HE9mzy6l3QVA)
 
-[iOS 摸鱼周报 #78 |  用 ChatGPT 做点好玩的事 ](https://mp.weixin.qq.com/s/27J4NguYRsxYWmff_6iDcg)
+[iOS 摸鱼周报 #89 | WWDC 23 公布](https://mp.weixin.qq.com/s/3B_R0j8dpXpR5G9bCRsyXw)
 
-[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
+[iOS 摸鱼周报 #88 | 把 AI 集成到研发流程](https://mp.weixin.qq.com/s/ex3aHSPjKj9woxQwHyRzZA)
 
-[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #87 | Planning for AGI](https://mp.weixin.qq.com/s/TwugmMEiGoFKYQY9euhg6Q)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
