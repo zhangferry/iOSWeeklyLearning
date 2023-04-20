@@ -75,13 +75,6 @@ AI 仍然是我最感兴趣的领域，一起来看下本周这个方向有哪�
 
 ![](https://cdn.zhangferry.com/Images/202304192346044.png)
 
-gfpgan
-
-
-* pytorch
-* clip/blip
-* hugging face
-
 
 ## 关于我们
 
