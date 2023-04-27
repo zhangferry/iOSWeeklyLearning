@@ -7,6 +7,7 @@
 > * 本期话题：线上讲座：探索 Vision 框架；5月9号，App Store定价以美国价格为基准进行更新
 > * 内容推荐：推荐近期的一些优秀博文，涵盖：App Clip、CloudKit、Swift ABI 稳定性等方面的内容
 > * 摸一下鱼：建了一个交流 AGI 知识的社群；在 Vercel 上部署 ChatGPT 的聊天能力；一个把 AI 拟人化的网站；AI Talk 基于 GPT4 让马斯克和乔布斯进行对话；基于 Apple 健康数据分析的 App HealthGPT
+> * 岗位招聘：蔚来汽车 App iOS 研发
 
 ## 本期话题
 
