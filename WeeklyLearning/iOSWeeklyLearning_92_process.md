@@ -13,6 +13,10 @@
 
 ![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
 
+### [Swift 社区开源了基于 Swift 实现的 Foundation 预览版](https://github.com/apple/swift-foundation "Swift 社区开源了基于 Swift 实现的 Foundation 预览版")
+
+[@东坡肘子](https://www.fatbobman.com/)：几个月前，Swift 社区提出了一个计划，即基于 Swift 实现 Foundation，以改善 Swift 的跨平台开发。现在，这个计划已经得到了很好的落实。这个软件包提供了更快、更安全的 Foundation 实现，并设立了一个新的 Foundation 工作组来协调 Swift 社区的需求和苹果工程的需要。新 Foundation 构建了许多类型的 Swift 实现，包括 JSONEncoder、Calendar、TimeZone 和 Locale 等，还有一个名为 FoundationICU 的单独软件包，用于在非 Darwin 平台上提供国际化支持。这个新实现在 JSON 解码和日期格式化等多方面比之前的 C 和 Objective-C 版本显著提高了性能。
+
 ## 本周学习
 
 整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
@@ -21,8 +25,29 @@
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+推荐近期的一些优秀博文，涵盖：Mirror API、网络可达性优化、SwiftLint 等方面的内容。
 
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
+
+1、[深入了解 SwiftLint](https://www.kodeco.com/38422105-swiftlint-in-depth "深入了解 SwiftLint") -- 作者：Ehab Amer
+
+[@东坡肘子](https://www.fatbobman.com/): 该文为使用 SwiftLint 进行 iOS 开发提供了全面的指南。其中详细介绍了如何使用 SwiftLint，包括构建规则文件、排除文件和文件夹、禁用和配置规则、修复违规、创建自定义规则等。此外，还介绍了如何使用远程规则来进行集中管理以及其他的一些技巧和注意事项，以帮助开发者更好地使用 SwiftLint，并避免一些常见的陷阱。
+
+2、[针对网络可达性优化应用](https://www.avanderlee.com/swift/optimizing-network-reachability/ "针对网络可达性优化应用") -- 作者：ANTOINE VAN DER LEE
+
+[@东坡肘子](https://www.fatbobman.com/): 当开发应用程序时，需要重视网络可达性，因为不是所有用户都拥有良好的互联网连接。因此，优化应用程序以适应不良的网络条件是必要的。在本文中，作者认为在发出请求之前预先检查可达性并不是推荐的方式。相反，配置你的网络层等待连接，并仅允许某些类型的连接可能是更好的选择。该文章还介绍了如何根据返回的错误更新用户界面以响应网络错误，如何使用 NWPathMonitor 检查恢复的连接性，以及如何使用 RocketSim 的网络扩展创建稳定的测试环境。
+
+3、[使用 Swift 的反射功能](https://useyourloaf.com/blog/using-swift-reflection/ "使用 Swift 的反射功能") -- 作者：Keith Harrison
+
+[@东坡肘子](https://www.fatbobman.com/): 许多开发者可能认为自己并没有多少机会使用到 Swift 的反射功能，但在实际开发中，它其实可以发挥重要作用。本文介绍了如何使用 Mirror API 迭代结构体的属性并检查它们是否为非空字符串，以及如何使用它来断言特定的字符串属性的方法是否正确工作。通过这些演示，我们可以重新审视反射功能，并在日常开发中更好地应用它。
+
+4、[使用 SwiftUI 开发 RSS 阅读器](https://ming1016.github.io/2023/04/24/swiftui-rss-reader/ "使用 SwiftUI 开发 RSS 阅读器") -- 作者：戴铭
+
+[@东坡肘子](https://www.fatbobman.com/): 本文是作者参加苹果举办的 SwiftUI 技术沙龙交流会后对内容进行的整理。文章介绍了一个使用 SwiftUI 和 Core Data 实现的 RSS 阅读器应用。其中分享了许多实现细节，比如去重、批量插入、iCloud 同步和数据索引等。该应用通过 NavigationSplitView 实现了 iPad 和 macOS 下的多窗口布局模式，并自定义了用于数据提取的 Controller。最终创建出一个功能齐全的 RSS 阅读器应用。
+
+5、[打造可适配多平台的 SwiftUI 应用](https://www.fatbobman.com/posts/building-multiple-platforms-SwiftUI-App/ "打造可适配多平台的 SwiftUI 应用") -- 作者：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): 在构建适用于多个平台的 SwiftUI 应用程序时，提前考虑兼容性和数据源问题非常重要。为了避免重复的代码调整，开发人员可以预先创建一些辅助代码用于所有需要适配的平台。对于数据源，开发者应该考虑哪些状态是整个应用的全局状态，哪些状态仅限于当前场景（窗口）。通过提前了解和规划这些问题，开发者可以节省花费在适配多平台上的时间，将更多的精力用于创建能够凸显平台特点的产品。同上文一样，本文也是作者在参加 SwiftUI 技术沙龙后对交流内容的整理。
 
 
 ## 摸一下鱼
