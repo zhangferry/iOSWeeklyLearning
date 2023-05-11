@@ -23,7 +23,29 @@
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+推荐近期的一些优秀博文，涵盖：模块化架构、Deep Dish Swift 总结、TabularData 框架等方面的内容。
+
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
+
+1、[使用 SwiftUI 构建大型应用程序：模块化架构指南](https://azamsharp.com/2023/02/28/building-large-scale-apps-swiftui.html "使用 SwiftUI 构建大型应用程序：模块化架构指南") -- 作者：Mohammad Azam
+
+[@东坡肘子](https://www.fatbobman.com/): 应用程序架构是一个复杂的话题。最终，项目的最佳架构取决于许多因素，如项目的规模和复杂性、团队的技能和经验、项目的目标和要求。本文介绍了使用 SwiftUI 构建大型应用程序时的模块化架构指南。指南涵盖了单元测试、数据和文件访问、测试视图模型而不验证用户界面以及理想的测试等方面。成功的应用程序架构的关键是选择适合项目独特需求的模式，并随着项目的发展不断对架构进行评估和调整。
+
+2、[WWDC 2023, 我期待 SwiftUI 带来的新变化](https://www.fatbobman.com/posts/What-I-Hope-to-See-for-SwiftUI-at-WWDC-2023/ "WWDC 2023, 我期待 SwiftUI 带来的新变化") -- 作者：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): 还有约 20 天就到 2023 年的 WWDC 了。开发者们都非常期待苹果会在当天带来哪些新功能。在本文中，作者希望 SwiftUI 能够提供更多原生、稳定的底层 API，例如以属性为粒度的视图关联、统一的 Gesture 逻辑、更完善的文字输入和显示、稳定、高效的 ForEach 实现、向前兼容性等。作者希望苹果能够充分利用 Swift 5.8 提供的 @backDeployed 特性，增强老版本的功能并修复 bug。
+
+3、[Deep Dish Swift 总结](https://danielsaidi.com/blog/2023/04/30/deep-dish-swift-day-1 "Deep Dish Swift 总结") -- 作者：Daniel Saidi
+
+[@东坡肘子](https://www.fatbobman.com/): 随着疫情得到控制，越来越多的线下活动得以顺利举办。作者用了三篇博文总结了 2023 年 Deep Dish Swift 会议的演讲内容。第一天的演讲涵盖了独立开发者的讲座、订阅模型、CI/CD 自动化和 ASO。第二天的演讲涵盖了公司销售、Swift 算法、模块化架构、导师制、Swift Playgrounds 和SwiftUI 导航。第三天的演讲涵盖了服务器端 Swift 和 GraphQL、使用 Swift 创建演示文稿、实时活动、代码风格和 DocC 文档。这次会议涵盖了广泛的 Swift 开发相关主题，使与会者从各个角度深入了解 Swift 语言。
+
+4、[使用 TabularData 来转储模型数据](https://www.swiftjectivec.com/using-the-tabulardata-framework-to-dump-json-or-csv-data-in-swift/ "使用 TabularData 来转储模型数据") -- 作者：Jordan Morgan
+
+[@东坡肘子](https://www.fatbobman.com/): TabularData 框架是一种用于解析 .csv 和 .json 文件的工具，可用于将这些文件导入或导出，并将日志转储到你的控制台中。通过使用数据创建 DataFrame，你可以轻松地对数据进行排序、筛选和可视化。该框架还提供了数据增强和格式化的 API，例如组合列以解码你自己的模型，或使用 numericSummary 打印出统计数据。作者分享了使用 DataFrame 进行可扫描性的小技巧，特别是在处理大量数据时。本文提供了如何创建 DataFrame 并操作数据的示例。
+
+5、[增强 Turbo Native 应用程序：如何隐藏 Web 渲染的内容](https://masilotti.com/hide-web-rendered-content-on-turbo-native-apps/ "增强 Turbo Native 应用程序：如何隐藏 Web 渲染的内容") -- 作者：Joe Masilotti
+
+[@东坡肘子](https://www.fatbobman.com/): 该文讨论了如何在 Turbo Native 应用中隐藏 Web 渲染内容，以增强其原生体验。建议隐藏基于 Web 的标题，并依赖本地导航栏来显示页面标题。使用自定义用户代理标识本地应用，并使用 Rails 助手来识别 Turbo Native 应用。提供了使用 CSS 的缓存友好解决方案，并建议将设计和逻辑集中在应用程序的标题栏周围。文章结尾还介绍了其他可以优化 Turbo Native 应用原生感的小技巧。
 
 
 
