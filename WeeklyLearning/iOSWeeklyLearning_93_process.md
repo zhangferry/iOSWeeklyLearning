@@ -78,7 +78,7 @@
 
 2、[AI 孙燕姿](https://www.bilibili.com/video/BV1io4y1w73k/?vd_source=f78da65b081aa6d30ae7bf2aded1d695 "AI 孙燕姿")：有人用 [so-vits-svc]("https://github.com/svc-develop-team/so-vits-svc" "so-vits-svc") 这个项目模拟出了孙燕姿嗓音唱周杰伦的歌的效果，后续还「孙燕姿」还翻唱了许嵩、朴树等歌手的作品。孙燕姿的声音自带一种高级感，这歌被她一唱都别有新意。不过这是否构成侵权还没有响应的法律出台，so-vits-svc也因为担心法律风险，已经被 Archive 了。
 
-3、[Glarity](https://glarity.app/zh-CN "Glarity")：是最近一个比较火的插件，它可以为搜索引擎的结果、网页甚至 YouTube 视频生成摘要。目前也开源了，因为跟我做的插件功能类似，也是我学习的目标之一。视频的摘要是通过获取视频字幕，转成文字再生成的。
+3、[Glarity](https://glarity.app/zh-CN "Glarity")：是最近一个比较火的插件，它可以为搜索引擎的结果、网页甚至 YouTube 视频生成摘要。这个插件跟我想做的效果类似，但还有一些功能并没有达到理想的状态，该插件已经开源：[chatgpt-google-summary-extension](https://github.com/sparticleinc/chatgpt-google-summary-extension "chatgpt-google-summary-extension")，也是我学习的目标之一。它对于视频摘要的处理是通过获取视频字幕，转成文字再生成的。
 
 4、[ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction "ChatGPT Prompt Engineering for Developer")：这个吴恩达的 DeepLearning.AI 和OpenAI 联合推出的面相开发者的 ChatGPT 课程。网上有搬运的中文版视频，但缺少了官网的交互式界面。原版课程会配有 Juptyter 的交互区，可以实时的修改和调试代码，API Key 也都预制进去了，只要一步步运行代码就可以了。
 
