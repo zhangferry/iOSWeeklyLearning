@@ -11,7 +11,9 @@
 
 ## 本期话题
 
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
+### [ App Store 5 月 9 日增强全球定价机制已更新](https://developer.apple.com/cn/news/upcoming-requirements/?id=05092023a " App Store 5 月 9 日增强全球定价机制已更新")
+
+[@远恒之义](https://github.com/eternaljust)：本周二上午，有同事反馈公司的部分 App 内购商品的价格发生了变化，App 商品显示页面价格与实际付款弹窗 App Store 价格不一致，大多相差几元。这个问题是 Apple 于 5 月 9 日升级更新了增强全球定价机制导致的，如果你在 2023 年 3 月 8 日后没有修改选择 App 的基准国家或地区，那么你的 App 和一次性 App 内购买项目的价格都将默认以美国商店美元为基础，自动调整在其他国家和地区的价格。你可通过在 App Store Connect 后台[更改 App 价格的基准国家或地区](https://developer.apple.com/cn/help/app-store-connect/manage-app-pricing/set-a-price "更改 App 价格的基准国家或地区")，此变更会自动同步到 App 所关联的 App 内购买项目，App 的价格以及同步引起的 App 内购买项目价格也会立即更新生效（修改价格的操作账号必须拥有账户持有人、管理或 App 管理的职能）。
 
 ## 本周学习
 
