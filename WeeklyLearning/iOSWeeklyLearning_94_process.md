@@ -29,9 +29,29 @@
 
 ## 内容推荐
 
-整理编辑：[@远恒之义](https://github.com/eternaljust)
+推荐近期的一些优秀博文，涵盖：#file 的行为变更、如何使用 @_exported 属性、In-App Purchase 实践总结等方面的内容。
 
+整理编辑：[东坡肘子](https://www.fatbobman.com/)
 
+1、[使用 @_exported 属性避免大规模重构](https://www.polpiella.dev/how-we-avoided-a-big-refactor-with-the-exported-attribute "使用 @_exported 属性避免大规模重构") -- 作者：Pol Piella Abadia
+
+[@东坡肘子](https://www.fatbobman.com/): 本文介绍了如何在实际项目中使用 Swift 的 @_exported 属性，以最小化变更的影响并降低引入错误的风险。文章提供了一个用例，其中 @_exported 属性被用来减少重构所影响的文件数量。这种方法的优点是可以减少应用程序中的更改数量，从而降低引入错误的风险。尽管这种方法对于特定的用例非常有效，但在 Swift 单库之外使用 @_exported 属性是不被鼓励的。因此，在使用此方法时，需要仔细考虑其长期影响，并确保使用此属性的场景是必要的，并且仅在必要时使用。
+
+2、[Swift 5.8 中 #file 的行为变更](https://sarunw.com/posts/file-behavior-change/ "Swift 5.8 中 #file 的行为变更") -- 作者：Sarunw
+
+[@东坡肘子](https://www.fatbobman.com/): Swift 5.8 带来了 #file 字面表达式行为的新变化，本文对此进行了介绍。在之前的版本中，#file 和 #filePath 返回相同的结果，即它所在文件的路径。然而，在 Swift 5.8 中，#file 已经被修改为仅返回文件名和模块，而不包括路径。由于这个变化是一项破坏性变化，可能会影响当前代码，在默认情况下该行为被禁用，用户需要使用特性标志启用它（在 Swift 6 中将强制开启）。为了更具体地描述这个行为，开发人员还可以使用 #filePath 和 #fileID 字面表达式。前者返回它所在文件的路径，而后者返回文件名和模块。
+
+3、[云音乐中 In-App Purchase 实践总结篇](https://juejin.cn/post/7233948883045941303 "云音乐中 In-App Purchase 实践总结篇") -- 作者：0linatan0 网易云音乐技术团队
+
+[@东坡肘子](https://www.fatbobman.com/): IAP 的使用曾经备受开发者批评，其中包括商品创建流程过于繁琐和接入自动续费时遇到的许多问题。本文总结了网易云音乐在 In-App Purchase 实践中遇到的问题以及解决方案，包括票据验证、自动续费、退款等内容。作者还介绍了他们开发的基础库 NEStoreKit。通过对业务流程进行抽象，各团队可以快速接入，从而保障支付履约完成、完善交易场景并记录各交易日志。
+
+4、[WWDC 2023，我期待 Core Data 带来的新变化](https://www.fatbobman.com/posts/What-I-Hope-to-See-for-Core-Data-at-WWDC-2023/ "WWDC 2023，我期待 Core Data 带来的新变化") -- 作者：东坡肘子
+
+[@东坡肘子](https://www.fatbobman.com/): 本文列举了作者期待在 WWDC 2023 中看到 Core Data 带来的新变化。其中包括传说中的 Swift 重制版（尽管可能性极低）、用 Swift 重制部分 API、支持更多 SQLite 新特性、更好的 Model Editor 体验、完善 Core Data with CloudKit 的部分 API 以及改善 Core Data with CloudKit 的同步表现。作者希望苹果能够继续发扬这个拥有悠久历史的框架，焕发其第二春。
+
+5、[macOS Swift 原生项目集成 Python3 运行环境](https://juejin.cn/post/7229310327268032569 "macOS Swift 原生项目集成 Python3 运行环境") -- 作者：别nil了
+
+[@东坡肘子](https://www.fatbobman.com/): 与 Swift 相比，Python 拥有更多的第三方库。如果能在 Swift 中使用这些库，开发者可以节省大量时间和精力。本文介绍了在 macOS Swift 原生项目中集成 Python3 运行环境的方法，内容涉及：设置 Python.xcframework、添加 SystemConfiguration.Framework、检查 python-stdlib、创建 Python 头文件、添加 Run Script、检查 Python3 运行环境、使用 pip3 安装第三方依赖库、Python 第三方依赖库的调用方法等方面，并对有关 App Store 审核和打包的 bug 等内容也做了探讨。
 
 ## 摸一下鱼
 
