@@ -11,7 +11,15 @@
 
 ## 本期话题
 
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
+### [Apple 展示无障碍软件辅助新功能](https://www.apple.com.cn/newsroom/2023/05/apple-previews-live-speech-personal-voice-and-more-new-accessibility-features/ "Apple 展示无障碍软件辅助新功能")
+
+[@远恒之义](https://github.com/eternaljust)：Apple 一直秉承制造所有人都能顺畅使用产品的理念，为迎接本周四的全球无障碍宣传日（每年五月第三个星期四），展示了一套为认知能力、视力、听力与肢体活动能力而设计的软件辅助功能。这些功能将于今年晚些时候推出，预计会在秋季的 iOS 17 正式版系统中上线。
+
+针对有认知障碍的用户，Apple 推出 Assistive Access，把电话、信息、相机、照片与音乐等 App 整合为一个单独的 App，并提炼出这些常用 App 的基本功能，以减轻用他们的认知负担。这相当于是系统层级的长辈模式，简化原本复杂的交互逻辑，突出放大文字按钮操作。
+
+对于有语言能力障碍的用户，通过 Live Speech 新功能，他们可以在 iPhone 上打电话时键盘输入文字，当前设备会将文字转成语音并朗读出来。此外，对于面临失语风险的用户，他们可使用 iPhone 录制 15 分钟的音频，通过机器学习的 Personal Voice 技术，创建与自己嗓音相似的 AI 语音，后续就能使用此语音进行文字朗读。
+
+面对失明或低视力用户，iPhone 内置的放大器将新增 Point and Speak 功能，结合相机与激光雷达扫描，视障用户在使用微波炉等家用电器时，iPhone 能识别在按键区移动的手指，朗读出手指指向按键上的功能文字。
 
 ## 本周学习
 
