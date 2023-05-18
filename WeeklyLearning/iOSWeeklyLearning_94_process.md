@@ -23,7 +23,110 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
+
+[Glarity](https://github.com/sparticleinc/chatgpt-google-summary-extension "Glarity") 是 AI 辅助插件中做的非常好的项目，一起来学习下它是如何开发以及如何设计的。前端的开发流程和技术选型跟 iOS 有一定差别，技术细节可以忽略，主要关注流程。
+
+![](https://cdn.zhangferry.com/Images/Glarity.png)
+
+### 技术选项
+
+#### 项目框架
+
+该项目主要采用 TypeScript、React、Tailwind CSS 完成，这几个东西是对传统前端三大项的升级。
+
+TypeScript 可以理解为对 JavaScript 的扩展。JS 设计的比较早，且是作为浏览器的辅助脚本使用，但现代对 JS 的诉求已经越来越多，开发的项目也越来越大。为了解决这个问题，微软发明了 TypeScript，这门语言的主要目的是在 JS 的基础之上添加了静态类型，用于解决 JS 类型系统过于弱化的问题，同时 TypeScript 还支持可选类型、接口、泛型、枚举等编程特性。TypeScript 无法独立执行，它需要先编译成 JavaScript。
+
+React 可以理解为对 HTML 的封装。通过原始的 HTML 去写前端样式，是非常痛苦的，既没有组件复用的能力，这会导致大一点的项目很难维护；也没有虚拟 DOM 的概念，直接操作 DOM 对性能损耗是非常大的。同时为了方便地在 JS 中操作类 HTML 标签语法，让 HTML 和 JS 在写法上融合，React 引入了 JSX。
+
+Tailwind CSS 可以理解为对常用 CSS 的封装，它提供了很多封装好的基础控件，便于快速开发。另一方面 CSS 作为配置文件，难扩展，不易维护。SCSS 是一种 CSS 预处理器，它能融合一部分编程语言的能力，比如变量定义、继承、嵌套、计算等这些功能，类似 TypeScript 之于 JavaScript，CSS 套上一层，以达到便于维护的目的就有了 SCSS。所有的 SCSS 文件最终也需要转成 CSS。
+
+#### 开发流程
+
+**包管理**
+
+衡量一个领域发展是否繁荣，完全可以通过它里面轮子的数量来判断，而前端无疑是轮子最多的开发领域。前端最常用的包管理工具有 npm 和 yarn，yarn 由 Facebook 推出，作为 npm 的替代者，主要目的是用于加速包安装。维护项目依赖了哪些库的文件是 `package.json`，它里面主要记录了当前项目的信息以及包依赖，该文件只有极个别字段在两个包管理工具是不兼容，所以大部分情况我们都可以选择 yarn 来管理这些包。
+
+**代码风格**
+
+每个语言都有自己的代码风格，相应的也都有维护代码风格的 Lint 工具。Glarity 使用了 Prettier 和 ESLint 来管理代码风格，前者主要作用于代码风格约束，如每行最大宽度 100，代码结尾不使用分号，tab 宽度为 2 等。后者主要用于代码质量，语法错误等。
+
+Lint 工具还可以和 Git hook 绑定，利用一个前端库 husky，在 pre-commit 时添加 prettier 操作，这样每次执行 commit 的时候就能保证自动格式化代码了。
+
+```bash
+# pre-commit
+. "$(dirname -- "$0")/_/husky.sh"
+npx lint-staged
+
+# package.json
+{
+  "lint-staged": {
+    "src/*.{js,jsx,ts,tsx,mjs}": [
+      "npx prettier --write",
+      "npx eslint --fix"
+    ]
+  }
+}
+```
+
+这里的 lint-staged 是一个 git 暂存工具，用于优化 lint 速度。
+
+**编译打包**
+
+通常编译打包的目的都是为了让最终产物能在目标系统运行，同时做一些代码优化。对前端项目来说，这个目标系统就是浏览器，浏览器能够直接识别的是 JavaScript/HTML/CSS 文件，所以最终的产物都是这些内容。
+
+常用的工具有 webpack、esbuild 等，前者功能更丰富，适用于较负责项目；后者更快速，配置也比较简单。它们会把对 TypeScript、React、SCSS 还有其他依赖框架处理为标准的 JavaScript/HTML/CSS。TypeScript 的编译对应一个配置文件 `build.mjs`，可以指定环境变量、文件编译范围、导出等编译配置。
+
+```javascript
+let buildConfig = {
+  entryPoints: [
+    'src/content-script/index.tsx',
+    'src/background/index.ts',
+    'src/options/index.tsx',
+    'src/popup/index.tsx',
+  ],
+  bundle: true,
+  outdir: outdir,
+  treeShaking: true,
+  minify: true,
+  drop: ['console', 'debugger'],
+  legalComments: 'none'
+}
+
+async function runEsbuild() {
+  await esbuild.build(buildConfig)
+}
+```
+
+打包产物不只是格式转换，还会有代码修剪，导入很多包之后的 node_modules 通常会非常大，但真正需要的仅仅是一小部分。打包工具会把解析每个文件的导入模块，根据依赖关系，仅导入被需要的模块到包里。
+
+```javascript
+// node_modules/preact/dist/preact.module.js
+function h(n2, l3) {
+  for (var u3 in l3)
+    n2[u3] = l3[u3];
+  return n2;
+}
+function p(n2) {
+  var l3 = n2.parentNode;
+  l3 && l3.removeChild(n2);
+}
+```
+
+以上是 `popup.js` 里的一小段代码，注释里标注了这是来源于 `preact` 这个库的代码。为了优化代码体积和解析速度，变量名被简化为无意义的 n2、l3 等，同时还实现了代码混淆。
+
+#### 浏览器插件
+
+**浏览器插件文件**
+
+Chrome 插件需要这几个文件：
+
+* manifest.json：插件的描述文件，填入插件名称、icon、权限等信息。
+* popup：插件弹窗，一般用来做交互的入口，需要对应的 JS、HTML、CSS 文件。
+* options：设置界面，用于配置插件能力，这里用于控制 GPT 模型选择，页面主题等。Chrome 会提供一个标准的 options 入口，插件 icon 右击之后的 `Options选项`，但页面内容需要全新定制。
+* content.js 和 background.js：前者用于实现跟页面内容之间的交互，可以理解为「前端逻辑」，后者用于数据处理和与 content.js 的通信，可以理解为「后端逻辑」。当前页面内容的读取都在 content.js 里，主要包括页面 DOM 元素解析、 prompt 处理；background.js 接受数据并发起 OpenAI 的请求，然后将结果回传给 content.js。
+
+**浏览器功能**
 
 
 
@@ -57,7 +160,7 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-
+工作休息状态
 
 ## 关于我们
 
