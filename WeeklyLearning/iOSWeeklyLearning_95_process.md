@@ -11,7 +11,9 @@
 
 ## 本期话题
 
-![](https://cdn.zhangferry.com/Images/85-ios16-ipados16.png)
+### [Xcode 14.3.1 RC 版本已修复打包导致的奔溃问题](https://developer.apple.com/forums/thread/727680#753414022 "Xcode 14.3.1 RC 版本已修复打包导致的奔溃问题")
+
+[@远恒之义](https://github.com/eternaljust)：Apple 于 2023 年 5 月 17 日发布 Xcode 14.3.1 RC 版本，修复了在 Xcode 14.3 打包导致 iOS 13 系统上的奔溃问题。根据最新的版本发行说明，该问题表现为：用 Xcode 14.3 打包 Swift 项目混编 OC 协议，会导致在 iOS 13 系统出现启动奔溃 (When targeting devices running iOS 13, apps built with Xcode 14.3 and using Objective-C protocols from Swift, sometimes crash at launch)。Apple 已从 2023 年 4 月 25 日起，限制了最新提交至 App Store 的 App 必须使用 Xcode 14.1 或更高版本构建，还在使用低版本 Xcode 的同学，建议下载最新的 [Xcode 14.3.1 RC 版本](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.3.1_Release_Candidate/Xcode_14.3.1_Release_Candidate.xip "Xcode 14.3.1 RC 版本")来打包。
 
 ## 本周学习
 
