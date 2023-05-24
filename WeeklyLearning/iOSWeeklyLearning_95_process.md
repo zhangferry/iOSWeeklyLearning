@@ -17,7 +17,27 @@
 
 ## 本周学习
 
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
+整理编辑：[zhangferry](https://zhangferry.com)
+
+这是学习 Glarity 项目的第二期，本期会更多的学习。
+
+### 产品核心功能
+
+**搜索引擎的结果**
+
+
+
+**视频字幕**
+
+
+
+**文章概要**
+
+
+
+### 产品规划
+
+
 
 
 
@@ -53,7 +73,11 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
+1、微软build大会
 
+
+
+2、
 
 ## 关于我们
 
