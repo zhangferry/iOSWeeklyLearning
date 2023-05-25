@@ -11,6 +11,16 @@
 
 ## 本期话题
 
+### [WWDC 23 定档](https://developer.apple.com/wwdc23/ "WWDC 23 定档")
+
+![](https://cdn.zhangferry.com/Images/202305250758432.png)
+
+WWDC 23 时间公布，北京时间 6 月 6 号凌晨一点。
+
+根据外网信息，本次发布会会有常规系统升级： iOS/iPadOS 17、macOS 14、watchOS 10；15'' Macbook Air；头显设备及及对应的 xrOS。
+
+头显设备和 xrOS 值得期待，不过对于 AI 能力的扩展，Apple 生态上不知道有没有什么动作。
+
 ### [Xcode 14.3.1 RC 版本已修复打包导致的奔溃问题](https://developer.apple.com/forums/thread/727680#753414022 "Xcode 14.3.1 RC 版本已修复打包导致的奔溃问题")
 
 [@远恒之义](https://github.com/eternaljust)：Apple 于 2023 年 5 月 17 日发布 Xcode 14.3.1 RC 版本，修复了在 Xcode 14.3 打包导致 iOS 13 系统上的奔溃问题。根据最新的版本发行说明，该问题表现为：用 Xcode 14.3 打包 Swift 项目混编 OC 协议，会导致在 iOS 13 系统出现启动奔溃 (When targeting devices running iOS 13, apps built with Xcode 14.3 and using Objective-C protocols from Swift, sometimes crash at launch)。Apple 已从 2023 年 4 月 25 日起，限制了最新提交至 App Store 的 App 必须使用 Xcode 14.1 或更高版本构建，还在使用低版本 Xcode 的同学，建议下载最新的 [Xcode 14.3.1 RC 版本](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_14.3.1_Release_Candidate/Xcode_14.3.1_Release_Candidate.xip "Xcode 14.3.1 RC 版本")来打包。
@@ -73,11 +83,22 @@
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-1、微软build大会
+1、[Apple Design Awards](https://developer.apple.com/design/awards/ "Apple Design Awards") 设计奖决赛产品名单公布，WWDC 期间将公布决胜者。
 
+![](https://cdn.zhangferry.com/Images/202305252206602.png)
 
+2、[《WWDC23 内参》免费领取及作者&审核招募](https://mp.weixin.qq.com/s/S04VnQRDNIcjZUJ8xCrQBg)：WWDC 大会即将到来，老司机技术将继续创作《WWDC23 内参》，并**免费**提供给所有关注者。关注「老司机技术」公众号，回复「2023」，免费领取。同时也欢迎有相应经验或资深的开发者一起创作 《WWDC23 内参》。
 
-2、
+3、[微软 Build 2023](https://news.microsoft.com/build-2023/ "微软 Build 2023")，我只看了 Keynote 里的内容，已经被震撼到了，微软太强了，对 AI 能力的规划超出了绝大数人的想象。本次 Build 大会会公布 50+ new updates，本节视频只列出了 5 个：
+
+* Bring Bing to ChatGPT：之前是把 GPT4 迁移至 Bing，面对的是搜索场景；现在把 Bing 迁移至 GPT-4，双向合作，这个场景不仅仅是聊天了，还有一系列围绕 ChatGPT 搭建的产品体系，将都可以访问 ChatGPT 和 Bing 这两个庞大的数据信息，这个增强会是大杀器。
+* Windows Copilot：  Windows 11 菜单栏将会有一个常驻的 AI 交互入口，你可以随时唤起它，提出自己的诉求，像是系统配置、文件分析、推荐音乐、设计Logo等等，并直接在交互框里完成相应的功能唤出，演示的效果贼酷。把 AI 入口嵌入到操作系统，真的太绝了，macOS 啥时候才能享受这样的功能啊🙃
+* Copilot Stacks：微软致力于打造一个基于 AI Plugin 的 Copilot 生态，通过 Azure 提供一系列基础能力供开发者使用，微软系产品的插件标准也将跟 ChatGPT 的插件保持一致。以后没有 AI 能力的应用就像现在没有联网的应用一样。
+	![](https://cdn.zhangferry.com/Images/202305252317906.png)
+* Azure AI Studio：为 Copilot 生态提供支持的一整套开发基建服务，包含创建、自定义模型、训练、评估、发布等环节，以创建新一代的 AI 应用。
+* Mrcrosoft Fabric：一个为 AI 应用配套的数据分析平台，既有用于监控和分析当前应用的使用情况。
+
+4、
 
 ## 关于我们
 
