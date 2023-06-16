@@ -122,7 +122,7 @@ Visual Look Up 是 VisionKit 的另一个功能，允许用户轻松识别和了
 
 观察到的几点趋势：
 
-* What's new 仅两年一直都是最大比重，说明苹果的创新力仍在持续，今年的 `Meet` 系列更多
+* What's new 近两年一直都是最大比重，说明苹果的创新力仍在持续，今年的 `Meet` 系列更多
 * SwiftUI 一直都有明显位置
 * Swift 和 Metal 这两项相关技术今年降低很多
 * 今年首次出现 `spatial`，且频率很高，它对应了 visionOS 的发布
