@@ -5,9 +5,8 @@
 ### 本期概要
 
 > * 本期话题：智源大会线下参会体验
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 内容推荐：苹果在 WWDC 2023 上发布了许多新产品与新技术，本期将推荐几篇相关博客文章。
+> * 摸一下鱼：OpenAI API 更新；面向国内的 OpenAI API Key 服务 API2D； 《Design for spatial user interfaces》 Session 总结；每个软件开发都应该知道的事；图解 QUIC 连接
 
 ## 本期话题
 
@@ -26,12 +25,6 @@
 * 国内在 AI 领域的投入和产出都很高，不能只通过大模型的差距，来衡量 AI 领域整体的差异。很多 AI 环节涉及的关键技术，都有国内的替代产品。
 * AI 领域的发力很多都在走开源路线，借助于社区的贡献和检验来完成 AI 产品本身
 * 从事 AI 底层研究的主要还集中在这些研究机构和高校上，科技公司对于底层研究的投入还可以再多一点
-
-## 本周学习
-
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
-
-
 
 ## 内容推荐
 
@@ -59,8 +52,6 @@
 
 [@东坡肘子](https://www.fatbobman.com/): 像往年一样，苹果在 WWDC 2023 上推出了全新的 Xcode 15。在本文中，京东云技术团队将逐一介绍 Xcode 15 引入的新功能。包括更简洁的宏、文档和日志功能，使开发者能够更高效地编写和维护代码。更智能的自动补全和测试分析功能大大提高了开发效率。更方便的包管理功能通过拆分下载和 Git 集成简化了开发流程。此外，Xcode 15 还增强了图片资产和框架的安全性管理，为应用提供更高级的安全保障。这些新功能为开发者带来了更高效、更方便和更安全的开发体验。
 
-
-
 ## 摸一下鱼
 
 整理编辑：[zhangferry](https://zhangferry.com)
@@ -87,18 +78,26 @@
 * 系统控件会自带焦点反馈效果（类比桌面端的 Hover 效果，在 visionOS 就是眼睛注视到控件时的效果 ）
 * 在 visionOS 中弹出菜单不需要箭头，系统按钮会在选中时显示白色背景，所以需要注意的是尽量也不要设计白色背景的按钮，否则会和系统按钮的选中态混淆
 
+4、[every-programemr-should-known](https://github.com/mtdvio/every-programmer-should-know "https://github.com/mtdvio/every-programmer-should-know")：每个软件工程师都应该了解的东西，这是 Github 一个高星项目。它总结了作为软件开发者应该了解的信息，涵盖技术、求职、设计等各个方面。
+
+![](https://cdn.zhangferry.com/Images/202306160931680.png)
+
+5、[图解 QUIC 连接](https://cangsdarm.github.io/illustrate/quic "图解 QUIC 连接")：QUIC 是一个基于 UDP 的安全流协议，它构成了 HTTP/3 的基础。这个页面通过图文并茂的方式对 QUIC 每一个字节的传输流程都进行了解释和再现。
+
+![](https://cdn.zhangferry.com/Images/202306160935911.png)
+
 ## 关于我们
 
 iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的博客、高质量的学习资料、实用的开发工具等。周报仓库在这里：https://github.com/zhangferry/iOSWeeklyLearning ，如果你有好的的内容推荐可以通过 issue 的方式进行提交。另外也可以申请成为我们的常驻编辑，一起维护这份周报。另可关注公众号：iOS成长之路，后台点击进群交流，联系我们，获取更多内容。
 
 ### 往期推荐
 
-[iOS 摸鱼周报 #79 | Freeform上线 & D2 本周开始](https://mp.weixin.qq.com/s/HdEhmXt60853tzM6xiVUwA)
+[iOS 摸鱼周报 #96 | Vision Pro 打开空间计算的大门](https://mp.weixin.qq.com/s/BM3SucfO9yhQChIPbnuwrA)
 
-[iOS 摸鱼周报 #78 |  用 ChatGPT 做点好玩的事 ](https://mp.weixin.qq.com/s/27J4NguYRsxYWmff_6iDcg)
+[iOS 摸鱼周报 #95 | WWDC23 is coming](https://mp.weixin.qq.com/s/hi8Dy2H_iBFWeO0V_tQ5xw)
 
-[iOS 摸鱼周报 #77 | 圣诞将至，请注意 App 审核进度问题](https://mp.weixin.qq.com/s/yYdGO1kRcwQJ3-z-aavHYA)
+[iOS 摸鱼周报 #94 | 前端项目开发流程学习](https://mp.weixin.qq.com/s/f2Z1VRpk4Ehh3KxuY_NrvA)
 
-[iOS 摸鱼周报 #76 | 程序员提问的智慧](https://mp.weixin.qq.com/s/5chb-a9u7VMdLis1FG6B6Q)
+[iOS 摸鱼周报 #93 | AIGC 尝试](https://mp.weixin.qq.com/s/ios0QYKmnYtJ8URvZLJ1TA)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
