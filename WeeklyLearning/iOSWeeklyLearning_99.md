@@ -1,13 +1,12 @@
-# iOS 摸鱼周报 #99
+# iOS 摸鱼周报 #99 | 
 
 ![](https://cdn.zhangferry.com/Images/moyu_weekly_cover.jpeg)
 
 ### 本期概要
 
-> * 本期话题：
-> * 本周学习：
-> * 内容推荐：
-> * 摸一下鱼：
+> * 本期话题：macOS Sonoma 体验
+> * 内容推荐：Swift 宏、Core Data 新特性、SwiftData 介绍、自动生成 RESTful APIs、iOS 应用保护等内容
+> * 摸一下鱼：Public Apple Frameworks；微软提供的面相前端初学者的课程；苹果M2 Ultra：AI大模型的新希望；AI 生成的艺术二维码；
 
 ## 本期话题
 
@@ -35,15 +34,9 @@ macOS 上的 Web App 要比移动端的 Home Screen 意义大的多，因为移�
 
 3、小组件
 
-也是同步 iOS 端的 Widgets 功能，可以把小组件直接拖动到桌面上去。
+也是同步 iOS 端的 Widgets 功能，可以把小组件直接拖动到桌面上去。主要电脑桌面经常都是满的，会覆盖小组件，所以关注到它们的频率也不高。
 
 ![](https://cdn.zhangferry.com/Images/202307060855894.png)
-
-## 本周学习
-
-整理编辑：[Hello World](https://juejin.cn/user/2999123453164605/posts)
-
-
 
 ## 内容推荐
 
@@ -80,7 +73,11 @@ macOS 上的 Web App 要比移动端的 Home Screen 意义大的多，因为移�
 
 ![](https://cdn.zhangferry.com/Images/202307060905262.png) 
 
-2、[苹果M2 Ultra：AI大模型的新希望](https://www.bilibili.com/video/BV1fh4y1M7DX/ "苹果M2 Ultra：AI大模型的新希望")： 今年科技圈最火的就是 AI 领域，各种大模型层出不穷，大模型对算力要求很高，这似乎成了模型训练最大的障碍之一。简单列一下 Nvidia 推出的几种显卡的显存和价格：
+2、[Web-Dev-For-Beginners](https://microsoft.github.io/Web-Dev-For-Beginners/#/ "Web-Dev-For-Beginners")：微软提供的面相前端初学者的课程，学习 JS、CSS、HTML，课程公 24 节，包括课后作业，测试，解决方案等。最后会有多个实践项目，浏览器插件、太空游戏、银行应用等。
+
+![](https://cdn.zhangferry.com/Images/202307062322477.png)
+
+3、[苹果M2 Ultra：AI大模型的新希望](https://www.bilibili.com/video/BV1fh4y1M7DX/ "苹果M2 Ultra：AI大模型的新希望")： 今年科技圈最火的就是 AI 领域，各种大模型层出不穷，大模型对算力要求很高，这似乎成了模型训练最大的障碍之一。简单列一下 Nvidia 推出的几种显卡的显存和价格：
 
 | 显卡     | 显存 | 价格    |
 | -------- | ---- | ------- |
@@ -94,13 +91,13 @@ H100 之所以比 A100 贵那么多是因为 H100 采用了全新一代的琥珀
 
 作者购买了 128 GB 内存的 M2 Ultra，本地就跑起来了 LLaMA 330 亿参数的大模型。当然 完全发挥 M 系列芯片的优势还需要各类软件的适配，这个实现就有赖与开源社区针对 M 芯片在 LLaMA 模型上的特别优化。所以在 AI 芯片领域能打破 Nvidia 垄断的，很有可能就是苹果。
 
-3、[QR Code AI Art Generator](https://huggingface.co/spaces/huggingface-projects/QR-code-AI-art-generator "QR Code AI Art Generator")：最近 AI 艺术的二维码比较火，它是由 4 名中国大学生开发出来的，项目是 [QR Code ControlNet](https://huggingface.co/ioclab/ioc-controlnet/tree/main/models "QR Code ControlNet")。在 StableDiffusion WebUI 中利用 ControlNet 控制灰度和光影，它们保证了二维码的准确性；再利用 Lora 模型实现不同的风格画风，就有了一张特定特别和二维码结合的新图片。这个项目可以让你线上体验这种 AI 艺术风格的二维码，我这里用的 Prompt 是：masterpiece, best quality, cyberpunk city，可以扫一下看出来的是什么：
+4、[QR Code AI Art Generator](https://huggingface.co/spaces/huggingface-projects/QR-code-AI-art-generator "QR Code AI Art Generator")：最近 AI 艺术的二维码比较火，它是由 4 名中国大学生开发出来的，项目是 [QR Code ControlNet](https://huggingface.co/ioclab/ioc-controlnet/tree/main/models "QR Code ControlNet")。在 StableDiffusion WebUI 中利用 ControlNet 控制灰度和光影，它们保证了二维码的准确性；再利用 Lora 模型实现不同的风格画风，就有了一张特定特别和二维码结合的新图片。这个项目可以让你线上体验这种 AI 艺术风格的二维码，我这里用的 Prompt 是：masterpiece, best quality, cyberpunk city，可以扫一下看出来的是什么：
 
 ![](https://cdn.zhangferry.com/Images/202307062236345.png)
 
-4、[对谈半佛仙人：看似复制成功，实则刻舟求剑](https://www.xiaoyuzhoufm.com/episode/649c0aa1f5604aa55e1491c4 "对谈半佛仙人：看似复制成功，实则刻舟求剑")：这期博客非常欢乐，收获比较大的是半佛老师对待生态的态度。因为工作，因为家庭，因为学业，我们经常会有不开心、沮丧的时候。这个时候如果有人跟你说，别忙了，去出去散散心去；别躺着了，跑步运动去；别学了，打游戏去，刷刷短视频，看看修马蹄子的，洗地毯的，来一个赛博按摩。如果没人对你说，就自己跟自己说，让时间静静的浪费掉本身也是一件治愈的事情。
+5、[对谈半佛仙人：看似复制成功，实则刻舟求剑](https://www.xiaoyuzhoufm.com/episode/649c0aa1f5604aa55e1491c4 "对谈半佛仙人：看似复制成功，实则刻舟求剑")：这期博客非常欢乐，收获比较大的是半佛老师对待生态的态度。因为工作，因为家庭，因为学业，我们经常会有不开心、沮丧的时候。这个时候如果有人跟你说，别忙了，去出去散散心去；别躺着了，跑步运动去；别学了，打游戏去，刷刷短视频，看看修马蹄子的，洗地毯的，来一个赛博按摩。如果没人对你说，就自己跟自己说，让时间静静的浪费掉本身也是一件治愈的事情。
 
-因为李玟越来越多的人开始关注抑郁症，但我国抑郁症就医率不足 10 %，说明大部分对抑郁症患者都是选择逃避的。抑郁症本身是一种病，它是需要药物治疗的，而且也是可以治好的。相较于抑郁症，更多的时候我们应该保持一种松弛的心态，不要在意别人的看法，不要积攒不好的情绪，适当躺平，适当摆烂，浪费时间，也是在享受生活。
+因为李玟越来越多的人又关注了抑郁症，看到一个数字，我国抑郁症就医率不足 10 %，说明大部分抑郁症患者对于抑郁都是选择逃避的。抑郁症本身是一种病，它是需要药物治疗的，而且大部分抑郁症都是可以治好的。很多抑郁症来自于平常负面情绪的积累，所以宣泄情绪，给自己减负非常重要，不要在意别人的看法，不要未还没有发生的事情担忧，躺平，摆烂，浪费时间，这些都没什么，自己开心最重要。
 
 ## 关于我们
 
@@ -115,7 +112,5 @@ iOS 摸鱼周报，主要分享开发过程中遇到的经验教训、优质的�
 [iOS 摸鱼周报 #96 | Vision Pro 打开空间计算的大门](https://mp.weixin.qq.com/s/BM3SucfO9yhQChIPbnuwrA)
 
 [iOS 摸鱼周报 #95 | WWDC23 is coming](https://mp.weixin.qq.com/s/hi8Dy2H_iBFWeO0V_tQ5xw)
-
-[iOS 摸鱼周报 #94 | 前端项目开发流程学习](https://mp.weixin.qq.com/s/f2Z1VRpk4Ehh3KxuY_NrvA)
 
 ![](https://cdn.zhangferry.com/Images/WechatIMG384.jpeg)
