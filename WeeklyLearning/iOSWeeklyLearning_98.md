@@ -7,13 +7,13 @@
 > * 本期话题：visionOS 模拟器体验；Safari Technology Preview 173 发布
 > * 本周学习：React Hooks 相关的几个概念介绍
 > * 内容推荐：mergeable libraries、Swift on Server、Observation 框架、通过 ReviewKit 获得更多好评、Apple AR 技术全景等博客推荐。
-> * 摸一下鱼：Diffusion Bee 2 发布，致力于打造 Mac 端最优秀的 StableDiffusion 开源工具；GPT Engineer 项目来让 AI 来充当软件工程师；「三五环」一期关于投资、创业的播客分享
+> * 摸一下鱼：Diffusion Bee 2 发布，支持视频制作，致力于打造 Mac 端最优秀的 StableDiffusion 开源工具；GPT Engineer 项目来让 AI 来充当软件工程师；「三五环」一期关于投资、创业的播客分享
 
 ## 本期话题
 
 ### [Xcode 15 Beta 2](https://developer.apple.com/download/all/?q=xcode%2015 "Xcode 15 Beta 2")
 
-[@zhangferry](zhangferry.com)：Xcode 15 beta 2 包含 visionOS，已经可以利用 visionOS 模拟器来运行系统或自己的 App 看一下它们在新系统上的运行状态了。模拟器无法模拟手势，所以所有操作都是通过鼠标和键盘完成，但主要的设计细节还是可以通过模拟器感受到的。少数派有一篇文章比较详细的介绍了各项体验：[visionOS beta 1 快速体验](https://sspai.com/post/80536 "visionOS beta 1 快速体验")
+[@zhangferry](zhangferry.com)：Xcode 15 beta 2 包含 visionOS，已经可以利用 visionOS 模拟器来运行系统或自己的 App 看一下它们在新系统上的运行状态了。模拟器无法模拟手势，所以所有操作都是通过鼠标和键盘完成，但界面上的设计细节还是可以通过模拟器感受到的。少数派有一篇文章比较详细的介绍了各项体验：[visionOS beta 1 快速体验](https://sspai.com/post/80536 "visionOS beta 1 快速体验")
 
 ![](https://cdn.zhangferry.com/Images/202306300009456.png)
 
@@ -83,7 +83,7 @@ function Counter() {
 } 
 ```
 
-代码看着精简了很多，这种方式也是官方推荐的写法。回到函数式的两个问题，看函数式组件是如何解决的，无状态，无生命周期，在这里分别对应 `useState` 和 `useEffect `函数。
+函数式组件会精简很多代码，运行效率也更高些，是官方推荐的写法。回到函数式的两个问题，看函数式组件是如何解决的，无状态，无生命周期，在这里分别对应 `useState` 和 `useEffect `函数。
 
 `useState` 函数可以赋值一个初始值，这里是 0，它有两个返回值，count 表示值变量，setCount 表示修改该变量的 setter 方法。
 
@@ -119,7 +119,7 @@ const onRefresh = useCallback(async () => {
 
 除了这两个 Hooks，还有用于实现其他特性的几个常用的内置 Hooks：
 
-* useContext：共享上下文
+* useContext：共享上下文，用于优化多级组件树之间需要一级一级通过 props 传值的情况
 * useCallback：返回缓存的回调函数，防止函数多次生成
 * useMemo：返回缓存的计算结果，防止重复计算
 * useLayoutEffect：与 useEffect 类型，但是在所有 DOM 变更之后同步调用 effect
@@ -163,13 +163,13 @@ const onRefresh = useCallback(async () => {
 
 整理编辑：[zhangferry](https://zhangferry.com)
 
-1、[Diffusion Bee](https://github.com/divamgupta/diffusionbee-stable-diffusion-ui "Diffusion Bee")：之前推荐过的一个项目，macOS 系统下的 Stable Diffusion GUI 应用。当时版本还比较早，只能使用内置模型，最近它发布了 2.2.1(Beta) 版本。全新 UI，可以直接制作视频内容，支持 Lora 模型，支持 ControlNet，支持无限 AI 画布，自由修改图片。基本是一个完整功能的 Stable Diffusion WebUI 了。而且该项目针对 Mac 系统做了很多参数调优，出图速度比直接搭建的 webui 快很多。
+1、[Diffusion Bee](https://github.com/divamgupta/diffusionbee-stable-diffusion-ui "Diffusion Bee")：之前推荐过的一个项目，macOS 系统下的 Stable Diffusion GUI 应用。当时版本还比较早，只能使用内置模型，最近它发布了 2.2.1(Beta) 版本。全新 UI，可以直接制作视频内容，支持 Lora 模型，支持 ControlNet，支持无限 AI 画布，自由修改图片。基本是一个完整功能的 Stable Diffusion WebUI 了。而且该项目针对 Mac 系统做了很多参数调优，出图速度比直接搭建的 WebUI 快很多。
 
 ![](https://cdn.zhangferry.com/Images/202306292342223.png)
 
 3、[GPT Engineer](https://github.com/AntonOsika/gpt-engineer "GPT Engineer")：这个项目使用结构化的方式让 GPT 来解决编程问题，它跟 AutoGPT 很像，是被用于专门解决编程问题的。使用流程是：
 
-* 创建一个 prompt 文件，里面描述你要做的事情
+* 创建一个 prompt 文件，描述你要做的事情
 * 读取这个文件，GPT 会根据不明确的信息再向你提问，你需要回答他的问题来消除所有的不确定性问题
 * 执行编写任务
 
