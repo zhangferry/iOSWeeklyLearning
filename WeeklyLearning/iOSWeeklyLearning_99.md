@@ -30,7 +30,7 @@ web app 是 macOS Sonoma 开始引入的新功能，类似 iOS 中的 Home Scree
 
 ![](https://cdn.zhangferry.com/Images/202307042324626.png)
 
-macOS 上的 Web App 要比移动端的 Home Screen 意义大的多，因为移动端并不缺应用，浏览特定网站是一个低频场景。而mac 的问题在于应用少，浏览网站是一个高频场景。有很多网站为了做 mac 端都是套壳 H5，有了 Web APP 直接无缝升级为 「Applicaiton」，这对苹果生态和应用本身都是利好的。
+macOS 上的 Web App 要比移动端的 Home Screen 意义大的多，因为移动端并不缺应用，浏览特定网站是一个低频场景。而 mac 端的问题在于应用少，浏览网站是一个高频场景。有很多网站为了做 mac 端都是套壳 H5，有了 Web APP 直接无缝升级为 「Applicaiton」，这对苹果生态和应用本身都是利好的。
 
 3、小组件
 
@@ -77,7 +77,7 @@ macOS 上的 Web App 要比移动端的 Home Screen 意义大的多，因为移�
 
 ![](https://cdn.zhangferry.com/Images/202307062322477.png)
 
-3、[苹果M2 Ultra：AI大模型的新希望](https://www.bilibili.com/video/BV1fh4y1M7DX/ "苹果M2 Ultra：AI大模型的新希望")： 今年科技圈最火的就是 AI 领域，各种大模型层出不穷，大模型对算力要求很高，这似乎成了模型训练最大的障碍之一。简单列一下 Nvidia 推出的几种显卡的显存和价格：
+3、[苹果M2 Ultra：AI大模型的新希望](https://www.bilibili.com/video/BV1fh4y1M7DX/ "苹果M2 Ultra：AI大模型的新希望")： 今年各种大模型层出不穷，但大模型对算力要求很高，这俨然已经成了模型发展最大的障碍之一。简单列一下 Nvidia 中经常用于 AI 训练的几种显卡的显存和价格：
 
 | 显卡     | 显存 | 价格    |
 | -------- | ---- | ------- |
@@ -87,19 +87,19 @@ macOS 上的 Web App 要比移动端的 Home Screen 意义大的多，因为移�
 
 H100 之所以比 A100 贵那么多是因为 H100 采用了全新一代的琥珀架构，计算性能提升了数倍。所以光看这个价格就知道，大模型训练不是普通人玩得起的。
 
-回到今年发布的 M2 Ultra，最大内存可达 192 GB，在苹果芯片的统一内存架构下， 192 GB 内存就可以是 192 GB 显存。这就意味着原本 8 张 4090才能装得下的 AI 模型，在 M2 Ultra 一张芯片就可以跑起来了。M2 Ultra 192GB + 4 TB 只有 6 w，怎么越算越感觉便宜呢，这一波苹果属实算是弯道超车了。
+今年苹果发布了 M2 Ultra，最大内存可达 192 GB，在苹果芯片的统一内存架构下， 192 GB 内存就可以是 192 GB 显存。这就意味着原本 8 张 4090才能装得下的 AI 模型，在 M2 Ultra 一张芯片就可以跑起来了。看价格 M2 Ultra 192GB + 4 TB 只有 6 w，怎么越算越感觉便宜呢。
 
-作者购买了 128 GB 内存的 M2 Ultra，本地就跑起来了 LLaMA 330 亿参数的大模型。当然 完全发挥 M 系列芯片的优势还需要各类软件的适配，这个实现就有赖与开源社区针对 M 芯片在 LLaMA 模型上的特别优化。所以在 AI 芯片领域能打破 Nvidia 垄断的，很有可能就是苹果。
+理论归理论，视频作者也实践了一波，购买了 128 GB 内存的 M2 Ultra，本地就跑起来了 LLaMA 330 亿参数的大模型。当然完全发挥 M 系列芯片的优势还需要各类软件的适配，这个实现就有赖与开源社区针对 M 芯片在 LLaMA 模型上的特别优化。所以在 AI 芯片领域能打破 Nvidia 垄断的，很有可能就是苹果，这一波苹果属实算是弯道超车了。
 
-4、[QR Code AI Art Generator](https://huggingface.co/spaces/huggingface-projects/QR-code-AI-art-generator "QR Code AI Art Generator")：最近 AI 艺术的二维码比较火，它是由 4 名中国大学生开发出来的，项目是 [QR Code ControlNet](https://huggingface.co/ioclab/ioc-controlnet/tree/main/models "QR Code ControlNet")。在 StableDiffusion WebUI 中利用 ControlNet 控制灰度和光影，它们保证了二维码的准确性；再利用 Lora 模型实现不同的风格画风，就有了一张特定特别和二维码结合的新图片。这个项目可以让你线上体验这种 AI 艺术风格的二维码，我这里用的 Prompt 是：masterpiece, best quality, cyberpunk city，可以扫一下看出来的是什么：
+4、[QR Code AI Art Generator](https://huggingface.co/spaces/huggingface-projects/QR-code-AI-art-generator "QR Code AI Art Generator")：最近 AI 艺术的二维码比较火，它是由 4 名中国大学生开发出来的，项目是 [QR Code ControlNet](https://huggingface.co/ioclab/ioc-controlnet/tree/main/models "QR Code ControlNet")。在 StableDiffusion WebUI 中利用 这个预处理工具 ControlNet 控制灰度和光影，它们保证了二维码的准确性；再利用 Lora 模型实现不同的风格画风，就有了一张特定画风和二维码结合的新图片。AI Art Generator 这个项目可以让你线上体验这种 AI 艺术风格的二维码生成。输入内容，其他参数默认，prompt 是：masterpiece, best quality, cyberpunk city，就有了下面这张图，可以扫一下看出来的是什么：
 
 ![](https://cdn.zhangferry.com/Images/202307062236345.png)
 
-5、[对谈半佛仙人：看似复制成功，实则刻舟求剑](https://www.xiaoyuzhoufm.com/episode/649c0aa1f5604aa55e1491c4 "对谈半佛仙人：看似复制成功，实则刻舟求剑")：这期博客非常欢乐，收获比较大的是半佛老师对待生态的态度。半佛老师有糖尿病和一些基础病，新冠的时候身体反应特别激烈，差点交代过来。从那以后就一下看开了，开始反思，发现这么努力，这么卷的工作没有任何价值，感受到濒死状态后才明白身体健康才是最重要的。
+5、[对谈半佛仙人：看似复制成功，实则刻舟求剑](https://www.xiaoyuzhoufm.com/episode/649c0aa1f5604aa55e1491c4 "对谈半佛仙人：看似复制成功，实则刻舟求剑")：这期博客非常欢乐，收获比较大的是半佛老师对待生活的态度。半佛老师有糖尿病，新冠的时候身体反应比较激烈，差点交代过来。从那以后就一下看开了，开始反思，发现这么努力，这么卷的工作没有任何价值，感受到濒死状态后才明白身体健康有多么重要。
 
-完整的健康还包括心理健康，找一个爱好，快乐的，没有任何心理负担的把时间浪费掉非常重要。别忙工作了，出去散散心去；别躺着了，跑步运动去；别学了，打游戏去，再或者刷刷短视频，看看修马蹄子的，洗地毯的，挤黑头的，解解压，来一个赛博按摩。
+完整的健康即包括身体健康，也包括心理健康。最近因为李玟轻生的事件越来越多的人又关注到了抑郁症。看到一个数字，我国抑郁症就医率不足 10 %，说明大部分抑郁症患者对于抑郁都是选择逃避的。抑郁症本身是一种病，它是需要药物治疗的，而且大部分抑郁症都是可以治好的。一方面要正视和重视抑郁症，一方面也要注意情绪的宣泄。失业、房贷、家庭等一系列事情都有可能成为负面情绪的源头，不断在心底挤压。
 
-因为李玟越来越多的人又关注到了抑郁症，看到一个数字，我国抑郁症就医率不足 10 %，说明大部分抑郁症患者对于抑郁都是选择逃避的。抑郁症本身是一种病，它是需要药物治疗的，而且大部分抑郁症都是可以治好的。很多抑郁症就是来自于平常负面情绪的积累，所以宣泄情绪，给自己减负，真的很重要，躺平，摆烂，浪费时间，自己开心最重要。
+这个时候，找一个爱好，快乐的，没有任何心理负担的把时间浪费掉非常重要。别再忙工作了，打球去、跑步去；别再卷了，撸串喝酒去；别再学了，打游戏、刷短视频去，看看修马蹄子的，洗地毯的，挤黑头的，来一个赛博按摩。躺平，摆烂，消磨时间，能让自己开心起来的就是最好的。
 
 ## 关于我们
 
